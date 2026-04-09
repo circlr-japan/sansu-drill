@@ -183,7 +183,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .ratio-box{display:flex;flex-direction:column;align-items:center;gap:4px;}
 .ratio-hint{font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px;}
 
-
 .quiz-footer{padding:8px 16px 32px;}
 .btn-submit{width:100%;padding:18px;background:linear-gradient(135deg,#2563EB,#3B82F6);color:white;border:none;border-radius:var(--radius);font-size:17px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(37,99,235,0.35);transition:transform 0.15s;-webkit-tap-highlight-color:transparent;}
 .btn-submit:active{transform:scale(0.98);}
@@ -250,6 +249,17 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-retry{width:100%;padding:18px;background:linear-gradient(135deg,#2563EB,#3B82F6);color:white;border:none;border-radius:var(--radius);font-size:17px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(37,99,235,0.35);transition:transform 0.15s;-webkit-tap-highlight-color:transparent;margin-bottom:12px;}
 .btn-retry:active{transform:scale(0.98);}
 .btn-top-link{width:100%;padding:16px;background:var(--surface);color:var(--text-muted);border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-weight:500;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+
+/* ===== 今日のレポート シェア機能 ===== */
+.share-section{padding:20px 16px 0;}
+.share-section-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;}
+.report-canvas-wrapper{border:1.5px solid #DDD6FE;border-radius:14px;overflow:hidden;margin-bottom:14px;background:#EEEDFE;}
+#reportCanvas{display:block;width:100%;height:auto;}
+.share-btn-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px;}
+.btn-share-x{display:flex;align-items:center;justify-content:center;gap:7px;background:#000;color:#fff;border:none;border-radius:var(--radius);padding:14px 8px;font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-share-x:active{background:#222;}
+.btn-save-img{display:flex;align-items:center;justify-content:center;gap:7px;background:var(--surface);color:var(--text);border:1.5px solid var(--border);border-radius:var(--radius);padding:14px 8px;font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-save-img:active{background:var(--bg);}
 </style>
 </head>
 <body>
@@ -387,6 +397,24 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <div class="ad-slot">広告スペース（320×50）</div>
 
+  <!-- ===== 今日のレポート シェア ===== -->
+  <div class="share-section" id="shareSection" style="display:none;">
+    <div class="share-section-title">📊 今日のレポートをシェアしよう！</div>
+    <div class="report-canvas-wrapper">
+      <canvas id="reportCanvas" width="800" height="800"></canvas>
+    </div>
+    <div class="share-btn-grid">
+      <button class="btn-share-x" onclick="postToX()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.256 5.632 5.908-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Xでポスト
+      </button>
+      <button class="btn-save-img" onclick="saveReportImage()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+        画像を保存
+      </button>
+    </div>
+  </div>
+
   <div class="result-actions">
     <button class="btn-retry" onclick="retryQuiz()">🔄 もう一度 同じ学年に挑戦！</button>
     <button class="btn-top-link" onclick="goTop()">← 学年選択に戻る</button>
@@ -498,112 +526,95 @@ function updateTimerDisplay(){
 // ============================================================
 // 評価ロジック
 // ============================================================
-function getTimeRank(sec){
-  if(sec<=50)return{rank:'S',cls:'rank-s',msg:'超高速！'};
-  if(sec<=75)return{rank:'A',cls:'rank-a',msg:'とても速い'};
-  if(sec<=100)return{rank:'B',cls:'rank-b',msg:'速い'};
-  if(sec<=125)return{rank:'C',cls:'rank-c',msg:'標準'};
-  if(sec<=150)return{rank:'D',cls:'rank-d',msg:'やや遅い'};
-  return{rank:'E',cls:'rank-e',msg:'要練習'};
-}
 function getScoreRank(correct){
-  const p=correct/25*100;
-  if(p===100)return{rank:'S',cls:'rank-s',msg:'100%'};
-  if(p>=90)return{rank:'A',cls:'rank-a',msg:p.toFixed(0)+'%'};
-  if(p>=80)return{rank:'B',cls:'rank-b',msg:p.toFixed(0)+'%'};
-  if(p>=70)return{rank:'C',cls:'rank-c',msg:p.toFixed(0)+'%'};
-  if(p>=60)return{rank:'D',cls:'rank-d',msg:p.toFixed(0)+'%'};
-  return{rank:'E',cls:'rank-e',msg:p.toFixed(0)+'%'};
+  if(correct===25)return{rank:'S',cls:'rank-s',msg:'全問正解！'};
+  if(correct>=22)return{rank:'A',cls:'rank-a',msg:`${correct}問正解`};
+  if(correct>=18)return{rank:'B',cls:'rank-b',msg:`${correct}問正解`};
+  if(correct>=12)return{rank:'C',cls:'rank-c',msg:`${correct}問正解`};
+  if(correct>=6) return{rank:'D',cls:'rank-d',msg:`${correct}問正解`};
+  return{rank:'E',cls:'rank-e',msg:`${correct}問正解`};
 }
-function getOverallRank(sr,tr){
-  const o=['S','A','B','C','D','E'];
-  const idx=Math.min(5,Math.round(o.indexOf(sr)*0.6+o.indexOf(tr)*0.4));
-  const r=o[idx];
-  const msgs={S:'完璧！',A:'優秀！',B:'よくできました',C:'標準',D:'もう少し',E:'要練習'};
+function getTimeRank(sec){
+  if(sec<=40) return{rank:'S',cls:'rank-s',msg:'超高速！'};
+  if(sec<=70) return{rank:'A',cls:'rank-a',msg:'速い！'};
+  if(sec<=100)return{rank:'B',cls:'rank-b',msg:'普通'};
+  if(sec<=150)return{rank:'C',cls:'rank-c',msg:'もう少し'};
+  return{rank:'D',cls:'rank-d',msg:'ゆっくり'};
+}
+function getOverallRank(sRank,tRank){
+  const order=['S','A','B','C','D','E'];
+  const si=order.indexOf(sRank),ti=order.indexOf(tRank);
+  const avg=Math.round((si+ti)/2);
+  const r=order[avg]||'C';
+  const msgs={S:'すばらしい',A:'よくできました',B:'がんばりました',C:'もう少し',D:'要練習',E:'基礎から'};
   const clss={S:'rank-s',A:'rank-a',B:'rank-b',C:'rank-c',D:'rank-d',E:'rank-e'};
   return{rank:r,cls:clss[r],msg:msgs[r]};
 }
 
 // ============================================================
-// ページ遷移
+// ページ切り替え
 // ============================================================
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
 }
-function goTop(){stopTimer();cancelCountdown();showPage('topPage');loadRanking(currentRankingGrade);}
+function goTop(){
+  clearInterval(timerInterval);
+  clearInterval(countdownInterval);
+  showPage('topPage');
+  loadRanking(currentRankingGrade);
+}
 
 // ============================================================
-// カウントダウン
+// 学年選択 → カウントダウン → クイズ
 // ============================================================
 function selectGrade(grade){
   currentGrade=grade;
-  questions=generateQuestions(grade);
-  document.getElementById('countdownGrade').textContent=GRADES[grade].label;
   showPage('countdownPage');
-  startCountdown();
-}
-function startCountdown(){
+  document.getElementById('countdownGrade').textContent=GRADES[grade].label;
   let count=5;
   const numEl=document.getElementById('countdownNum');
-  const labelEl=document.getElementById('countdownLabel');
+  const lblEl=document.getElementById('countdownLabel');
   numEl.className='countdown-num';
   numEl.textContent=count;
-  labelEl.textContent='秒後にスタート！';
+  lblEl.textContent='秒後にスタート！';
+  clearInterval(countdownInterval);
   countdownInterval=setInterval(()=>{
     count--;
-    if(count>0){
-      numEl.style.animation='none';
-      void numEl.offsetWidth;
-      numEl.style.animation='scaleIn 0.4s ease';
-      numEl.textContent=count;
-    } else {
-      clearInterval(countdownInterval);
-      numEl.className='countdown-num go';
-      numEl.textContent='START!';
-      labelEl.textContent='';
-      setTimeout(()=>startQuiz(),600);
-    }
+    if(count>0){numEl.textContent=count;numEl.className='countdown-num';numEl.style.animation='none';void numEl.offsetWidth;numEl.style.animation='';}
+    else if(count===0){numEl.textContent='GO!';numEl.className='countdown-num go';lblEl.textContent='';}
+    else{clearInterval(countdownInterval);startQuiz();}
   },1000);
 }
 function cancelCountdown(){
   clearInterval(countdownInterval);
-  countdownInterval=null;
+  showPage('topPage');
+}
+function startQuiz(){
+  const gen=GRADES[currentGrade].generators;
+  questions=[];
+  for(let i=0;i<25;i++){questions.push(gen[i%gen.length]());}
+  renderQuestions();
+  showPage('quizPage');
+  document.getElementById('quizGradeBadge').textContent=GRADES[currentGrade].label;
+  document.getElementById('shareSection').style.display='none';
+  startTimer();
+  updateProgress();
 }
 
 // ============================================================
-// クイズ開始
+// 問題レンダリング
 // ============================================================
-function generateQuestions(grade){
-  const gens=GRADES[grade].generators;
-  const qs=[];
-  for(let i=0;i<25;i++)qs.push(gens[i%gens.length]());
-  for(let i=qs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qs[i],qs[j]]=[qs[j],qs[i]];}
-  return qs;
-}
-function startQuiz(){
-  document.getElementById('quizGradeBadge').textContent=GRADES[currentGrade].label;
-  document.getElementById('progressInfo').textContent='0/25';
-  document.getElementById('progressFill').style.width='0%';
-  renderQuestions();
-  showPage('quizPage');
-  startTimer();
-}
-function isFracAnswer(ans){
-  return typeof ans==='string'&&ans.includes('/');
-}
-function isRatioAnswer(ans){
-  return typeof ans==='string'&&(ans.includes(':')||ans.includes('：'));
-}
 function renderQuestions(){
   const wrap=document.getElementById('questionsWrap');
   wrap.innerHTML='';
   questions.forEach((q,i)=>{
     const card=document.createElement('div');
     card.className='question-card';
-    const needFrac=isFracAnswer(String(q.a));
-    const needRatio=isRatioAnswer(String(q.a));
+    card.style.animationDelay=(i*0.03)+'s';
+    const needFrac=typeof q.a==='string'&&q.a.includes('/');
+    const needRatio=typeof q.a==='string'&&q.a.includes('：');
     const inputHTML=needFrac?`
       <div class="frac-input-wrap">
         <div class="frac-box">
@@ -687,7 +698,6 @@ function handleEnterRatio(e,i,part){
   }
 }
 function focusNextInput(i){
-  // 次の問題の入力欄を探す（通常 / 分数 / 比）
   const nextNorm=document.getElementById(`ans_${i+1}`);
   const nextFrac=document.getElementById(`ans_${i+1}_n`);
   const nextRatio=document.getElementById(`ans_${i+1}_l`);
@@ -833,13 +843,12 @@ function showResult(score,correct,wrong,results,finalTime){
   });
 
   showPage('resultPage');
+  // ===== 今日のレポート =====
+  showReportCard(score, correct, 25, finalTime, currentGrade);
 }
 
 // ============================================================
-// ランキング（localStorage ベース・全ユーザー共有をシミュレート）
-// ※ 本格的な全国ランキングにはサーバーが必要です。
-//   localStorage はブラウザ内のみ有効です。
-//   全国対応にするには Firebase / Supabase 等の導入が必要です。
+// ランキング（localStorageベース）
 // ============================================================
 function getRankingKey(grade){return `sansu_ranking_g${grade}`;}
 function loadRankingData(grade){
@@ -908,6 +917,100 @@ function loadRanking(grade){
 }
 
 function retryQuiz(){selectGrade(currentGrade);}
+
+// ============================================================
+// 今日のレポート シェア機能
+// ============================================================
+function showReportCard(score, correct, total, seconds, grade) {
+  document.getElementById('shareSection').style.display = 'block';
+  _drawReport(score, correct, total, seconds, grade);
+}
+
+function _drawReport(score, correct, total, seconds, grade) {
+  const canvas = document.getElementById('reportCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = 800, H = 800;
+  canvas.width = W; canvas.height = H;
+
+  const rate = Math.round((correct / total) * 100);
+  const evalG = score >= 90 ? 'S' : score >= 70 ? 'A' : score >= 50 ? 'B' : 'C';
+  const evalT = {S:'完璧！',A:'すごい！',B:'よくできました',C:'がんばろう！'}[evalG];
+
+  const BG='#EEEDFE',CARD='#FFFFFF',BORDER='#CECBF6',ACCENT='#7F77DD',DARK='#534AB7',TEXT='#1a1a2e',MUTED='#534AB7',GRAY='#888888';
+  const font=(sz,w)=>`${w||400} ${sz}px "Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif`;
+
+  ctx.fillStyle=BG; ctx.fillRect(0,0,W,H);
+
+  [[W*0.88,80,60],[W*0.93,155,38],[W*0.76,55,24],[40,H-75,42],[78,H-36,26],[18,H-125,16]]
+  .forEach(([x,y,r])=>{ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle='rgba(127,119,221,0.14)';ctx.fill();});
+
+  ctx.textAlign='center';
+  ctx.fillStyle=DARK; ctx.font=font(31,700);
+  ctx.fillText('📐 今日のさんすうレポート',W/2,74);
+  const dateStr=new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
+  ctx.fillStyle=MUTED; ctx.font=font(20);
+  ctx.fillText(`小学${grade}年生  ／  ${dateStr}`,W/2,114);
+
+  const cx=W/2,cy=288,R=118,sw=14;
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.fillStyle=CARD;ctx.fill();
+  ctx.strokeStyle=BORDER;ctx.lineWidth=2;ctx.stroke();
+  ctx.beginPath();ctx.arc(cx,cy,R-sw/2,0,Math.PI*2);ctx.strokeStyle='rgba(0,0,0,0.07)';ctx.lineWidth=sw;ctx.stroke();
+  ctx.beginPath();ctx.arc(cx,cy,R-sw/2,-Math.PI/2,-Math.PI/2+(rate/100)*Math.PI*2);ctx.strokeStyle=ACCENT;ctx.lineWidth=sw;ctx.lineCap='round';ctx.stroke();
+  ctx.fillStyle=TEXT;ctx.font=font(70,700);ctx.textAlign='center';ctx.fillText(score,cx,cy+22);
+  ctx.fillStyle=MUTED;ctx.font=font(20);ctx.fillText('点',cx,cy+56);
+
+  const cW=200,cH=108,gap=18,totW=cW*3+gap*2,sx=(W-totW)/2,cY=448;
+  [{label:'正解数',val:`${correct}/${total}問`},{label:'正解率',val:`${rate}%`},{label:'回答時間',val:formatTime(seconds)}]
+  .forEach((s,i)=>{
+    const x=sx+i*(cW+gap);
+    _rr(ctx,x,cY,cW,cH,14);ctx.fillStyle=CARD;ctx.fill();ctx.strokeStyle=BORDER;ctx.lineWidth=1.5;ctx.stroke();
+    ctx.textAlign='center';ctx.fillStyle=MUTED;ctx.font=font(17);ctx.fillText(s.label,x+cW/2,cY+40);
+    ctx.fillStyle=TEXT;ctx.font=font(30,700);ctx.fillText(s.val,x+cW/2,cY+82);
+  });
+
+  _rr(ctx,W/2-185,590,370,60,30);ctx.fillStyle='#EDE9FE';ctx.fill();ctx.strokeStyle=ACCENT;ctx.lineWidth=1.5;ctx.stroke();
+  ctx.fillStyle=DARK;ctx.font=font(28,700);ctx.textAlign='center';ctx.fillText(`評価 ${evalG}　${evalT}`,W/2,629);
+
+  ctx.fillStyle=GRAY;ctx.font=font(17);ctx.fillText('shougaku-sansu-drill26.netlify.app',W/2,712);
+  ctx.fillStyle=ACCENT;ctx.font=font(19);ctx.fillText('#算数ドリル　#小学生　#今日の学習',W/2,754);
+}
+
+function _rr(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+
+function postToX(){
+  const scoreEl=document.getElementById('statScore');
+  const score=scoreEl?scoreEl.textContent.replace(/[^0-9]/g,''):'??';
+  const correct=document.getElementById('statCorrect')?.textContent||'??';
+  const time=document.getElementById('resultTime')?.textContent||'?:??';
+  const evalEl=document.getElementById('evalOverallRank');
+  const evalG=evalEl?evalEl.textContent:'?';
+  const text=
+    `📐 小学${currentGrade}年生 算数ドリルに挑戦！\n\n`+
+    `🏆 ${score}点 ／ 100点\n`+
+    `✅ 正解数：${correct}問\n`+
+    `⏱ 回答時間：${time}\n`+
+    `⭐ 総合評価：${evalG}\n\n`+
+    `無料で挑戦しよう👇\n`+
+    `https://shougaku-sansu-drill26.netlify.app/\n\n`+
+    `#算数ドリル #小学生 #今日の学習 #勉強`;
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`,'_blank','noopener,noreferrer');
+}
+
+function saveReportImage(){
+  const canvas=document.getElementById('reportCanvas');
+  if(!canvas)return;
+  const a=document.createElement('a');
+  a.download=`sansu-report-${new Date().toISOString().slice(0,10)}.png`;
+  a.href=canvas.toDataURL('image/png');
+  a.click();
+}
 
 // ============================================================
 // 初期化
