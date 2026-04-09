@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shougaku-sansu-drill26.netlify.app/sitemap.xml
