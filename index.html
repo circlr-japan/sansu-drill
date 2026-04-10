@@ -312,7 +312,17 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-pdf-dl:active{transform:scale(0.98);}
 .btn-pdf-dl:disabled{background:#CBD5E1;box-shadow:none;cursor:not-allowed;}
 .pdf-note{font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px;line-height:1.6;}
-/* ===== 難易度ボタン（クイズ） ===== */
+/* ===== パパママ報告 ===== */
+.report-parent-section{margin:0 0 0;padding:20px 16px 0;}
+.report-parent-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.report-parent-sub{font-size:12px;color:var(--text-muted);margin-bottom:12px;}
+.report-parent-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+.rps-card{background:var(--bg);border-radius:10px;padding:10px 12px;text-align:center;border:1px solid var(--border);}
+.rps-label{font-size:11px;color:var(--text-muted);display:block;margin-bottom:3px;}
+.rps-val{font-size:22px;font-weight:700;color:var(--primary);}
+.report-parent-btns{display:block;}
+.btn-line{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;background:#06C755;color:#fff;border:none;border-radius:var(--radius);padding:16px 8px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-line:active{background:#05a849;}
 .diff-btn{padding:10px 6px;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
 .diff-btn:active{transform:scale(0.96);}
 .diff-easy.active{border-color:#059669;background:#F0FDF4;color:#059669;}
@@ -519,6 +529,30 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       <button class="btn-save-img" onclick="saveReportImage()">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
         画像を保存
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== パパママ報告 ===== -->
+  <div class="report-parent-section" id="reportParentSection" style="display:none;">
+    <div class="report-parent-title">👨‍👩‍👧 パパ・ママに報告する</div>
+    <div class="report-parent-sub">今日の取り組み結果をまとめて送ろう！</div>
+    <div class="report-parent-stats">
+      <div class="rps-card">
+        <span class="rps-label">今日の実施回数</span>
+        <span class="rps-val" id="todayCount">0</span>
+        <span style="font-size:11px;color:var(--text-muted);">回</span>
+      </div>
+      <div class="rps-card">
+        <span class="rps-label">今日の平均点</span>
+        <span class="rps-val" id="todayAvg">0</span>
+        <span style="font-size:11px;color:var(--text-muted);">点</span>
+      </div>
+    </div>
+    <div class="report-parent-btns">
+      <button class="btn-line" onclick="reportToLine()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINEでパパ・ママに送る
       </button>
     </div>
   </div>
@@ -1084,6 +1118,9 @@ function showResult(score,correct,wrong,results,finalTime){
   showPage('resultPage');
   // ===== 今日のレポート =====
   showReportCard(score, correct, 25, finalTime, currentGrade);
+  // ===== 当日記録を保存してパパママ報告セクション更新 =====
+  _saveTodayRecord(score);
+  _updateParentReport();
 }
 
 // ============================================================
@@ -1205,6 +1242,76 @@ function _escHtml(str){
   return String(str)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;')
     .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ============================================================
+// パパママ報告 — 当日記録の保存・集計・送信
+// ============================================================
+
+// 今日の日付キー (YYYY-MM-DD)
+function _todayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+// 当日のドリル結果を localStorage に追記
+function _saveTodayRecord(score) {
+  const key = 'nijumaru_today_' + _todayKey();
+  let records = [];
+  try { records = JSON.parse(localStorage.getItem(key) || '[]'); } catch {}
+  records.push({ score, grade: currentGrade, ts: Date.now() });
+  try { localStorage.setItem(key, JSON.stringify(records)); } catch {}
+}
+
+// 当日データを集計して返す
+function _getTodayStats() {
+  const key = 'nijumaru_today_' + _todayKey();
+  let records = [];
+  try { records = JSON.parse(localStorage.getItem(key) || '[]'); } catch {}
+  if (records.length === 0) return { count: 0, avg: 0 };
+  const avg = Math.round(records.reduce((s, r) => s + r.score, 0) / records.length);
+  return { count: records.length, avg };
+}
+
+// パパママ報告セクションのUI更新
+function _updateParentReport() {
+  const stats = _getTodayStats();
+  document.getElementById('todayCount').textContent = stats.count;
+  document.getElementById('todayAvg').textContent   = stats.avg;
+  document.getElementById('reportParentSection').style.display = 'block';
+}
+
+// 報告メッセージ本文を生成
+function _buildReportMsg() {
+  const stats   = _getTodayStats();
+  const today   = new Date().toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
+  const grade   = GRADES[currentGrade].label;
+  const scoreEl = document.getElementById('statScore');
+  const score   = scoreEl ? scoreEl.textContent.replace(/[^0-9]/g, '') : '??';
+  const time    = document.getElementById('resultTime')?.textContent || '?:??';
+  const evalEl  = document.getElementById('evalOverallRank');
+  const evalG   = evalEl ? evalEl.textContent : '?';
+
+  return (
+    `📐 ${today}のさんすうドリル報告\n` +
+    `━━━━━━━━━━━━━━\n` +
+    `👦 ${grade}\n\n` +
+    `📅 今日の取り組み\n` +
+    `　✅ 実施回数：${stats.count}回\n` +
+    `　⭐ 平均点：${stats.avg}点\n\n` +
+    `🎯 直近の結果\n` +
+    `　🏆 得点：${score}点\n` +
+    `　⏱ 回答時間：${time}\n` +
+    `　📊 評価：${evalG}\n` +
+    `━━━━━━━━━━━━━━\n` +
+    `にじゅうまる。算数ドリル\n` +
+    `https://shougaku-sansu-drill26.netlify.app/`
+  );
+}
+
+// LINE で送る
+function reportToLine() {
+  const msg = _buildReportMsg();
+  window.open(`https://line.me/R/share?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
 }
 
 function retryQuiz(){selectGrade(currentGrade);}
