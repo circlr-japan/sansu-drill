@@ -897,7 +897,17 @@ function showPage(id){
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
 }
-function goTop(){stopTimer();cancelCountdown();showPage('topPage');loadRanking(currentRankingGrade);}
+function goTop(){
+  stopTimer();
+  cancelCountdown();
+  // 結果ページのコンテンツをリセット
+  document.getElementById('shareSection').style.display       = 'none';
+  document.getElementById('reportParentSection').style.display = 'none';
+  document.getElementById('rankingEntrySection').style.display = 'none';
+  document.getElementById('reviewList').innerHTML              = '';
+  showPage('topPage');
+  loadRanking(currentRankingGrade);
+}
 
 // ============================================================
 // ドリル選択（学年・難易度）
