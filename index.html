@@ -998,9 +998,10 @@ function generatePdf() {
   btn.disabled = true;
   btn.innerHTML = '⏳ 生成中...';
 
-  setTimeout(() => {
+  // Canvas描画は非同期で行い UIをブロックしない
+  setTimeout(async () => {
     try {
-      _buildPdf(selectedPdfGrade);
+      await _buildPdfCanvas(selectedPdfGrade);
     } catch(e) {
       alert('PDF生成に失敗しました。ブラウザを更新してお試しください。');
       console.error(e);
@@ -1010,11 +1011,11 @@ function generatePdf() {
   }, 50);
 }
 
-function _buildPdf(grade) {
+// ── Canvas → 画像 → PDF 方式（日本語完全対応）──
+async function _buildPdfCanvas(grade) {
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
 
-  // 20問ランダム生成
+  // 20問ランダム生成（問題・解答で共有）
   const gen = GRADES[grade].generators;
   const qs = [];
   for (let i = 0; i < 20; i++) qs.push(gen[i % gen.length]());
@@ -1023,163 +1024,195 @@ function _buildPdf(grade) {
   const today = new Date().toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
   const dateStr = new Date().toISOString().slice(0, 10);
 
-  // ==============================
-  // PAGE 1: 問題ページ
-  // ==============================
-  _drawDrillPage(doc, qs, gradeLabel, today, false);
+  // A4 @ 3x解像度（210mm × 297mm → 2480 × 3508px相当）
+  const PX_PER_MM = 11.811; // 300dpi / 25.4
+  const PW = Math.round(210 * PX_PER_MM); // 2480
+  const PH = Math.round(297 * PX_PER_MM); // 3508
 
-  // ==============================
-  // PAGE 2: 解答ページ
-  // ==============================
+  // ページ1（問題）とページ2（解答）を Canvas で描画して base64化
+  const img1 = await _renderPageCanvas(qs, gradeLabel, today, false, PW, PH);
+  const img2 = await _renderPageCanvas(qs, gradeLabel, today, true,  PW, PH);
+
+  // jsPDF に画像として埋め込む
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+  doc.addImage(img1, 'PNG', 0, 0, 210, 297);
   doc.addPage();
-  _drawDrillPage(doc, qs, gradeLabel, today, true);
-
+  doc.addImage(img2, 'PNG', 0, 0, 210, 297);
   doc.save(`sansu-drill-grade${grade}-${dateStr}.pdf`);
 }
 
-function _drawDrillPage(doc, qs, gradeLabel, today, isAnswer) {
-  const W = 210, H = 297;
-  const ML = 15, MR = 15, MT = 15;
+// ── 1ページ分を Canvas に描画して PNG データURLを返す ──
+function _renderPageCanvas(qs, gradeLabel, today, isAnswer, PW, PH) {
+  return new Promise(resolve => {
+    const cv = document.createElement('canvas');
+    cv.width = PW; cv.height = PH;
+    const ctx = cv.getContext('2d');
+    const sc = PW / 210; // mm → px スケール
 
-  // ── ヘッダー背景 ──
-  doc.setFillColor(37, 99, 235);
-  doc.rect(0, 0, W, 28, 'F');
+    const mm = v => v * sc;
+    const FONT_JP = '"Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif';
 
-  // タイトル
-  doc.setTextColor(255, 255, 255);
-  doc.setFontSize(16);
-  doc.setFont('helvetica', 'bold');
-  const pageTitle = isAnswer
-    ? `${gradeLabel} 算数ドリル【解答】`
-    : `${gradeLabel} 算数ドリル`;
-  doc.text(pageTitle, W / 2, 12, { align: 'center' });
+    // ── 背景 ──
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, PW, PH);
 
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'normal');
-  doc.text('文部科学省 学習指導要領準拠　｜　1問5点 × 20問 ＝ 100点満点', W / 2, 20, { align: 'center' });
+    // ── ヘッダー ──
+    const hdrH = mm(30);
+    ctx.fillStyle = '#2563EB';
+    ctx.fillRect(0, 0, PW, hdrH);
 
-  // ── 記入欄 ──
-  let y = 35;
-  doc.setTextColor(30, 41, 59);
-  doc.setDrawColor(200, 200, 200);
-  doc.setLineWidth(0.3);
-
-  // 氏名・日付・得点 の行
-  const fieldY = y;
-  // 氏名
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'normal');
-  doc.setTextColor(100, 116, 139);
-  doc.text('お名前', ML, fieldY + 4);
-  doc.setDrawColor(30, 41, 59);
-  doc.setLineWidth(0.5);
-  doc.line(ML + 14, fieldY + 5, ML + 80, fieldY + 5);
-
-  // 日付
-  doc.text('日付', ML + 86, fieldY + 4);
-  doc.line(ML + 97, fieldY + 5, ML + 140, fieldY + 5);
-
-  // 得点
-  doc.setFillColor(239, 246, 255);
-  doc.roundedRect(ML + 148, fieldY - 1, 32, 10, 2, 2, 'FD');
-  doc.setTextColor(37, 99, 235);
-  doc.setFontSize(9);
-  doc.text('得点', ML + 152, fieldY + 4);
-  doc.setFontSize(14);
-  doc.setFont('helvetica', 'bold');
-  doc.text('／100', ML + 162, fieldY + 6);
-
-  y += 16;
-
-  // 区切り線
-  doc.setDrawColor(226, 232, 240);
-  doc.setLineWidth(0.4);
-  doc.line(ML, y, W - MR, y);
-  y += 6;
-
-  // ── 問題グリッド（2列 × 10行）──
-  const colW = (W - ML - MR - 8) / 2;
-  const rowH = isAnswer ? 11.5 : 11.5;
-  const numPerCol = 10;
-
-  for (let i = 0; i < 20; i++) {
-    const col = i < numPerCol ? 0 : 1;
-    const row = i < numPerCol ? i : i - numPerCol;
-    const x = ML + col * (colW + 8);
-    const qy = y + row * rowH;
-
-    // カード背景
-    const isEven = row % 2 === 0;
-    doc.setFillColor(isEven ? 248 : 255, isEven ? 250 : 255, isEven ? 252 : 255);
-    doc.roundedRect(x, qy, colW, rowH - 1.5, 1.5, 1.5, 'F');
-    doc.setDrawColor(226, 232, 240);
-    doc.setLineWidth(0.25);
-    doc.roundedRect(x, qy, colW, rowH - 1.5, 1.5, 1.5, 'D');
-
-    // 問題番号バッジ
-    doc.setFillColor(37, 99, 235);
-    doc.roundedRect(x + 1.5, qy + 1.8, 9, 5, 1, 1, 'F');
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(6.5);
-    doc.setFont('helvetica', 'bold');
-    doc.text(String(i + 1), x + 6, qy + 5.5, { align: 'center' });
-
-    // 問題文
-    doc.setTextColor(30, 41, 59);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    const qText = _sanitizeText(qs[i].q);
-    doc.text(qText, x + 13, qy + 5.8);
-
-    // 解答欄 or 解答
+    // ヘッダー右上に解答バッジ
     if (isAnswer) {
-      const ansText = _sanitizeText(String(qs[i].a));
-      doc.setFillColor(240, 253, 244);
-      doc.roundedRect(x + colW - 36, qy + 1.5, 34, 7, 1.5, 1.5, 'F');
-      doc.setDrawColor(134, 239, 172);
-      doc.setLineWidth(0.4);
-      doc.roundedRect(x + colW - 36, qy + 1.5, 34, 7, 1.5, 1.5, 'D');
-      doc.setTextColor(22, 163, 74);
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'bold');
-      doc.text(ansText, x + colW - 19, qy + 6.8, { align: 'center' });
-    } else {
-      // 空白解答欄
-      doc.setFillColor(255, 255, 255);
-      doc.setDrawColor(148, 163, 184);
-      doc.setLineWidth(0.4);
-      doc.roundedRect(x + colW - 36, qy + 1.5, 34, 7, 1.5, 1.5, 'D');
+      ctx.fillStyle = '#16A34A';
+      _cvRoundRect(ctx, PW - mm(38), mm(6), mm(30), mm(12), mm(3));
+      ctx.fill();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = `700 ${mm(5.5)}px ${FONT_JP}`;
+      ctx.textAlign = 'center';
+      ctx.fillText('解答ページ', PW - mm(23), mm(14));
     }
-  }
 
-  // ── フッター ──
-  const footerY = H - 10;
-  doc.setDrawColor(226, 232, 240);
-  doc.setLineWidth(0.3);
-  doc.line(ML, footerY - 3, W - MR, footerY - 3);
-  doc.setFontSize(7.5);
-  doc.setFont('helvetica', 'normal');
-  doc.setTextColor(148, 163, 184);
-  doc.text('shougaku-sansu-drill26.netlify.app　｜　© 2024 小学校算数ドリル', W / 2, footerY + 1, { align: 'center' });
-  if (isAnswer) {
-    doc.setTextColor(22, 163, 74);
-    doc.text('【解答ページ】', ML, footerY + 1);
-  }
+    // タイトル
+    ctx.fillStyle = '#FFFFFF';
+    ctx.textAlign = 'center';
+    const titleSuffix = isAnswer ? '【解答】' : '';
+    ctx.font = `700 ${mm(8)}px ${FONT_JP}`;
+    ctx.fillText(`${gradeLabel}　算数ドリル${titleSuffix}`, PW / 2, mm(13));
+    ctx.font = `400 ${mm(4.2)}px ${FONT_JP}`;
+    ctx.fillStyle = 'rgba(255,255,255,0.88)';
+    ctx.fillText('文部科学省 学習指導要領準拠　｜　1問5点 × 20問 ＝ 100点満点', PW / 2, mm(23));
+
+    // ── 記入欄 ──
+    let cy = mm(38);
+    ctx.textAlign = 'left';
+
+    // お名前
+    ctx.fillStyle = '#64748B';
+    ctx.font = `400 ${mm(4)}px ${FONT_JP}`;
+    ctx.fillText('お名前', mm(15), cy + mm(4));
+    ctx.strokeStyle = '#1E293B';
+    ctx.lineWidth = mm(0.5);
+    ctx.beginPath(); ctx.moveTo(mm(29), cy + mm(5.5)); ctx.lineTo(mm(100), cy + mm(5.5)); ctx.stroke();
+
+    // 日付
+    ctx.fillText('日付', mm(106), cy + mm(4));
+    ctx.beginPath(); ctx.moveTo(mm(116), cy + mm(5.5)); ctx.lineTo(mm(160), cy + mm(5.5)); ctx.stroke();
+
+    // 得点ボックス
+    ctx.fillStyle = '#EFF6FF';
+    _cvRoundRect(ctx, mm(164), cy - mm(1), mm(31), mm(11), mm(2));
+    ctx.fill();
+    ctx.strokeStyle = '#BFDBFE';
+    ctx.lineWidth = mm(0.4);
+    _cvRoundRect(ctx, mm(164), cy - mm(1), mm(31), mm(11), mm(2));
+    ctx.stroke();
+    ctx.fillStyle = '#2563EB';
+    ctx.font = `700 ${mm(4)}px ${FONT_JP}`;
+    ctx.fillText('得点', mm(166), cy + mm(4));
+    ctx.font = `700 ${mm(6)}px ${FONT_JP}`;
+    ctx.fillText('／100', mm(175), cy + mm(7));
+
+    cy += mm(16);
+
+    // 区切り線
+    ctx.strokeStyle = '#E2E8F0';
+    ctx.lineWidth = mm(0.4);
+    ctx.beginPath(); ctx.moveTo(mm(15), cy); ctx.lineTo(mm(195), cy); ctx.stroke();
+    cy += mm(6);
+
+    // ── 問題グリッド（2列 × 10行）──
+    const colW = mm(87);
+    const colGap = mm(8);
+    const rowH = mm(11.8);
+    const colX = [mm(15), mm(15) + colW + colGap];
+    const ansBoxW = mm(34);
+
+    for (let i = 0; i < 20; i++) {
+      const col = i < 10 ? 0 : 1;
+      const row = i < 10 ? i : i - 10;
+      const qx = colX[col];
+      const qy = cy + row * rowH;
+      const cardH = rowH - mm(1.5);
+
+      // カード背景
+      ctx.fillStyle = row % 2 === 0 ? '#F8FAFC' : '#FFFFFF';
+      _cvRoundRect(ctx, qx, qy, colW, cardH, mm(2));
+      ctx.fill();
+      ctx.strokeStyle = '#E2E8F0';
+      ctx.lineWidth = mm(0.3);
+      _cvRoundRect(ctx, qx, qy, colW, cardH, mm(2));
+      ctx.stroke();
+
+      // 番号バッジ
+      ctx.fillStyle = '#2563EB';
+      _cvRoundRect(ctx, qx + mm(1.5), qy + mm(2), mm(10), mm(6), mm(1.2));
+      ctx.fill();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = `700 ${mm(4)}px ${FONT_JP}`;
+      ctx.textAlign = 'center';
+      ctx.fillText(String(i + 1), qx + mm(6.5), qy + mm(6.5));
+
+      // 問題文
+      ctx.fillStyle = '#1E293B';
+      ctx.textAlign = 'left';
+      ctx.font = `500 ${mm(5)}px ${FONT_JP}`;
+      // 全角記号を読みやすい記号に変換
+      const qTxt = qs[i].q
+        .replace(/＋/g,'＋').replace(/－/g,'－').replace(/＝/g,'＝')
+        .replace(/×/g,'×').replace(/÷/g,'÷');
+      ctx.fillText(qTxt, qx + mm(13.5), qy + mm(7));
+
+      // 解答欄 or 解答
+      const abx = qx + colW - ansBoxW - mm(1.5);
+      const aby = qy + mm(1.8);
+      const abh = mm(7.5);
+      if (isAnswer) {
+        ctx.fillStyle = '#F0FDF4';
+        _cvRoundRect(ctx, abx, aby, ansBoxW, abh, mm(1.5));
+        ctx.fill();
+        ctx.strokeStyle = '#86EFAC';
+        ctx.lineWidth = mm(0.5);
+        _cvRoundRect(ctx, abx, aby, ansBoxW, abh, mm(1.5));
+        ctx.stroke();
+        ctx.fillStyle = '#16A34A';
+        ctx.font = `700 ${mm(5.2)}px ${FONT_JP}`;
+        ctx.textAlign = 'center';
+        ctx.fillText(String(qs[i].a), abx + ansBoxW / 2, aby + mm(5.6));
+      } else {
+        ctx.fillStyle = '#FFFFFF';
+        _cvRoundRect(ctx, abx, aby, ansBoxW, abh, mm(1.5));
+        ctx.fill();
+        ctx.strokeStyle = '#94A3B8';
+        ctx.lineWidth = mm(0.5);
+        _cvRoundRect(ctx, abx, aby, ansBoxW, abh, mm(1.5));
+        ctx.stroke();
+      }
+    }
+
+    // ── フッター ──
+    const fy = PH - mm(10);
+    ctx.strokeStyle = '#E2E8F0';
+    ctx.lineWidth = mm(0.3);
+    ctx.beginPath(); ctx.moveTo(mm(15), fy - mm(3)); ctx.lineTo(mm(195), fy - mm(3)); ctx.stroke();
+
+    ctx.fillStyle = '#94A3B8';
+    ctx.font = `400 ${mm(3.5)}px ${FONT_JP}`;
+    ctx.textAlign = 'center';
+    ctx.fillText('shougaku-sansu-drill26.netlify.app　©2024 小学校算数ドリル', PW / 2, fy + mm(2));
+
+    resolve(cv.toDataURL('image/png'));
+  });
 }
 
-// 全角→半角 など jsPDF で扱えるよう変換
-function _sanitizeText(str) {
-  return str
-    .replace(/＋/g, '+').replace(/－/g, '-').replace(/×/g, 'x')
-    .replace(/÷/g, '/').replace(/＝/g, '=').replace(/（/g, '(')
-    .replace(/）/g, ')').replace(/　/g, ' ').replace(/：/g, ':')
-    .replace(/。/g, '').replace(/、/g, ',')
-    .replace(/[^\x00-\x7E]/g, c => {
-      // 残った全角数字など
-      const code = c.charCodeAt(0);
-      if (code >= 0xFF01 && code <= 0xFF5E) return String.fromCharCode(code - 0xFEE0);
-      return c;
-    });
+// Canvas 角丸矩形ヘルパー
+function _cvRoundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y); ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r); ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h); ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r); ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
 }
 
 // ============================================================
