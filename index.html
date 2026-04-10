@@ -12,16 +12,16 @@
 <meta name="keywords" content="にじゅうまる,算数ドリル,小学生,無料,算数問題,1年生,2年生,3年生,4年生,5年生,6年生,たし算,ひき算,かけ算,わり算,分数,小数,九九,練習問題,100点,算数テスト">
 <meta name="author" content="にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://circlr-japan.github.io/sansu-drill/">
+<link rel="canonical" href="https://shougaku-sansu-drill26.netlify.app/">
 
 <!-- ===== OGP（SNSシェア用） ===== -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="にじゅうまる。算数ドリル【学年別】">
 <meta property="og:description" content="にじゅうまる。算数ドリル【学年別】。小学1〜6年生対応・無料。文部科学省学習指導要領準拠。初級・中級・上級の3段階。各学年25問・100点満点。タイムランキング機能つき！スマホ・タブレット対応。">
-<meta property="og:url" content="https://circlr-japan.github.io/sansu-drill/">
+<meta property="og:url" content="https://shougaku-sansu-drill26.netlify.app/">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://circlr-japan.github.io/sansu-drill/ogp.png">
+<meta property="og:image" content="https://shougaku-sansu-drill26.netlify.app/ogp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="にじゅうまる。算数ドリル【学年別】">
 <meta name="twitter:description" content="にじゅうまる。算数ドリル【学年別】。小学1〜6年生対応・無料。初級・中級・上級の3段階。各学年25問・100点満点。タイムランキング機能つき！スマホ・タブレット対応。">
-<meta name="twitter:image" content="https://circlr-japan.github.io/sansu-drill/ogp.png">
+<meta name="twitter:image" content="https://shougaku-sansu-drill26.netlify.app/ogp.png">
 
 <!-- ===== 構造化データ（教育コンテンツとしてGoogleに認識させる） ===== -->
 <script type="application/ld+json">
@@ -37,7 +37,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "にじゅうまる。算数ドリル",
-  "url": "https://circlr-japan.github.io/sansu-drill/",
+  "url": "https://shougaku-sansu-drill26.netlify.app/",
   "description": "にじゅうまる。算数ドリル【学年別】。小学1〜6年生対応の無料算数ドリル。文部科学省学習指導要領準拠。初級・中級・上級の3段階。各学年25問・100点満点。",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -312,6 +312,13 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-pdf-dl:active{transform:scale(0.98);}
 .btn-pdf-dl:disabled{background:#CBD5E1;box-shadow:none;cursor:not-allowed;}
 .pdf-note{font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px;line-height:1.6;}
+/* ===== ドリル選択セクション ===== */
+.drill-select-section{margin:16px;background:var(--surface);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border-left:4px solid var(--primary);}
+.drill-select-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.drill-select-sub{font-size:12px;color:var(--text-muted);margin-bottom:6px;line-height:1.7;}
+.btn-drill-start{width:100%;margin-top:14px;padding:18px;background:linear-gradient(135deg,#2563EB,#3B82F6);color:#fff;border:none;border-radius:var(--radius);font-size:17px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(37,99,235,0.35);transition:transform 0.15s;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent;}
+.btn-drill-start:active{transform:scale(0.98);}
+.btn-drill-start:disabled{background:#CBD5E1;box-shadow:none;cursor:not-allowed;}
 /* ===== パパママ報告 ===== */
 .report-parent-section{margin:0 0 0;padding:20px 16px 0;}
 .report-parent-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
@@ -323,11 +330,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .report-parent-btns{display:block;}
 .btn-line{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;background:#06C755;color:#fff;border:none;border-radius:var(--radius);padding:16px 8px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
 .btn-line:active{background:#05a849;}
-.diff-btn{padding:10px 6px;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
-.diff-btn:active{transform:scale(0.96);}
-.diff-easy.active{border-color:#059669;background:#F0FDF4;color:#059669;}
-.diff-normal.active{border-color:#2563EB;background:#EFF6FF;color:#2563EB;}
-.diff-hard.active{border-color:#DC2626;background:#FEF2F2;color:#DC2626;}
 </style>
 </head>
 <body>
@@ -343,30 +345,35 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <div class="ad-slot">広告スペース（728×90 または 320×50）</div>
 
-  <div class="section-title">学年を選んでスタート！</div>
-  <div class="grade-grid">
-    <div class="grade-card g1" onclick="selectGrade(1)"><span class="emoji">✏️</span><div class="gnum">1年</div><div class="glabel">小学1年生</div><div class="gtopic">たし算・ひき算<br>10までの数・繰り上がり</div></div>
-    <div class="grade-card g2" onclick="selectGrade(2)"><span class="emoji">🔢</span><div class="gnum">2年</div><div class="glabel">小学2年生</div><div class="gtopic">2桁の計算<br>かけ算九九</div></div>
-    <div class="grade-card g3" onclick="selectGrade(3)"><span class="emoji">➗</span><div class="gnum">3年</div><div class="glabel">小学3年生</div><div class="gtopic">わり算・あまり<br>大きな数</div></div>
-    <div class="grade-card g4" onclick="selectGrade(4)"><span class="emoji">🔷</span><div class="gnum">4年</div><div class="glabel">小学4年生</div><div class="gtopic">小数・概数<br>2桁×2桁</div></div>
-    <div class="grade-card g5" onclick="selectGrade(5)"><span class="emoji">📊</span><div class="gnum">5年</div><div class="glabel">小学5年生</div><div class="gtopic">分数の計算<br>割合・体積</div></div>
-    <div class="grade-card g6" onclick="selectGrade(6)"><span class="emoji">🎓</span><div class="gnum">6年</div><div class="glabel">小学6年生</div><div class="gtopic">分数÷分数<br>比・速さ・円</div></div>
-  </div>
+  <!-- ===== ドリル選択セクション ===== -->
+  <div class="drill-select-section">
+    <div class="drill-select-title">✏️ 算数ドリルをスタート</div>
+    <div class="drill-select-sub">学年と難易度を選んで「スタート」ボタンを押してね！</div>
 
-  <!-- 難易度セレクタ -->
-  <div style="padding:12px 16px 0;">
-    <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:8px;">⚡ 難易度を選ぶ</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-      <button class="diff-btn diff-easy active" id="diffEasy" onclick="setDifficulty('easy')">🌱 初級</button>
-      <button class="diff-btn diff-normal" id="diffNormal" onclick="setDifficulty('normal')">⭐ 中級</button>
-      <button class="diff-btn diff-hard" id="diffHard" onclick="setDifficulty('hard')">🔥 上級</button>
+    <!-- 学年 -->
+    <div class="pdf-row-label">① 学年</div>
+    <div class="pdf-grade-grid">
+      <div class="pdf-grade-btn pg1" id="drillGradeBtn1" onclick="selectDrillGrade(1)"><span class="pgnum">1年</span><span class="pglabel">小学1年生</span></div>
+      <div class="pdf-grade-btn pg2" id="drillGradeBtn2" onclick="selectDrillGrade(2)"><span class="pgnum">2年</span><span class="pglabel">小学2年生</span></div>
+      <div class="pdf-grade-btn pg3" id="drillGradeBtn3" onclick="selectDrillGrade(3)"><span class="pgnum">3年</span><span class="pglabel">小学3年生</span></div>
+      <div class="pdf-grade-btn pg4" id="drillGradeBtn4" onclick="selectDrillGrade(4)"><span class="pgnum">4年</span><span class="pglabel">小学4年生</span></div>
+      <div class="pdf-grade-btn pg5" id="drillGradeBtn5" onclick="selectDrillGrade(5)"><span class="pgnum">5年</span><span class="pglabel">小学5年生</span></div>
+      <div class="pdf-grade-btn pg6" id="drillGradeBtn6" onclick="selectDrillGrade(6)"><span class="pgnum">6年</span><span class="pglabel">小学6年生</span></div>
     </div>
-    <div style="font-size:11px;color:var(--text-faint);margin-top:6px;text-align:center;" id="diffDesc">初級：やさしい問題でしっかり練習</div>
-  </div>
 
-  <div class="info-card" style="margin-top:16px;">
-    <h3>📋 使い方</h3>
-    <p>学年を選ぶと5秒カウントダウン後にスタート！<br>25問すべて答えて「採点する」ボタンを押すと結果が表示されます。<br><strong>1問4点 × 25問 ＝ 100点満点</strong></p>
+    <!-- 難易度 -->
+    <div class="pdf-row-label">② 難易度</div>
+    <div class="pdf-3col">
+      <button class="pdf-opt-btn drill-diff-btn" id="drillDiffEasy"   onclick="selectDrillDiff('easy')">🌱 初級<span class="pdf-pts">やさしい</span></button>
+      <button class="pdf-opt-btn drill-diff-btn" id="drillDiffNormal" onclick="selectDrillDiff('normal')">⭐ 中級<span class="pdf-pts">標準</span></button>
+      <button class="pdf-opt-btn drill-diff-btn" id="drillDiffHard"   onclick="selectDrillDiff('hard')">🔥 上級<span class="pdf-pts">むずかしい</span></button>
+    </div>
+
+    <button class="btn-drill-start" id="btnDrillStart" onclick="startDrillFromSelector()" disabled>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+      学年を選んでください
+    </button>
+    <div class="pdf-note">1問4点 × 25問 ＝ 100点満点　※ 5秒カウントダウン後にスタート</div>
   </div>
 
   <div class="ad-slot">広告スペース（320×100）</div>
@@ -802,18 +809,42 @@ function showPage(id){
 function goTop(){stopTimer();cancelCountdown();showPage('topPage');loadRanking(currentRankingGrade);}
 
 // ============================================================
-// 難易度選択
+// ドリル選択（学年・難易度）
 // ============================================================
-const DIFF_DESC={
-  easy:  '初級：やさしい問題でしっかり練習',
-  normal:'中級：標準的な問題でレベルアップ',
-  hard:  '上級：チャレンジ問題で実力試し！'
-};
-function setDifficulty(diff){
-  currentDifficulty=diff;
-  document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('diff'+diff.charAt(0).toUpperCase()+diff.slice(1)).classList.add('active');
-  document.getElementById('diffDesc').textContent=DIFF_DESC[diff];
+let selectedDrillGrade = 0;
+let selectedDrillDiff  = '';
+
+function selectDrillGrade(grade) {
+  selectedDrillGrade = grade;
+  document.querySelectorAll('[id^="drillGradeBtn"]').forEach(b => b.classList.remove('selected'));
+  document.getElementById('drillGradeBtn' + grade).classList.add('selected');
+  _updateDrillStartBtn();
+}
+
+function selectDrillDiff(diff) {
+  selectedDrillDiff = diff;
+  document.querySelectorAll('.drill-diff-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('drillDiff' + diff.charAt(0).toUpperCase() + diff.slice(1)).classList.add('selected');
+  _updateDrillStartBtn();
+}
+
+function _updateDrillStartBtn() {
+  const btn = document.getElementById('btnDrillStart');
+  if (!selectedDrillGrade) {
+    btn.disabled = true;
+    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg> 学年を選んでください`;
+    return;
+  }
+  const diffLabel = {easy:'🌱 初級', normal:'⭐ 中級', hard:'🔥 上級'}[selectedDrillDiff || 'easy'];
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg> 小学${selectedDrillGrade}年生 ${diffLabel} スタート！`;
+}
+
+function startDrillFromSelector() {
+  if (!selectedDrillGrade) return;
+  const diff = selectedDrillDiff || 'easy';
+  currentDifficulty = diff;
+  selectGrade(selectedDrillGrade);
 }
 
 // ============================================================
@@ -1304,7 +1335,7 @@ function _buildReportMsg() {
     `　📊 評価：${evalG}\n` +
     `━━━━━━━━━━━━━━\n` +
     `にじゅうまる。算数ドリル\n` +
-    `https://circlr-japan.github.io/sansu-drill/`
+    `https://shougaku-sansu-drill26.netlify.app/`
   );
 }
 
@@ -1314,7 +1345,11 @@ function reportToLine() {
   window.open(`https://line.me/R/share?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
 }
 
-function retryQuiz(){selectGrade(currentGrade);}
+function retryQuiz(){
+  // 同じ学年・難易度で再スタート
+  currentDifficulty = selectedDrillDiff || 'easy';
+  selectGrade(currentGrade);
+}
 
 // ============================================================
 // PDF ドリル生成
@@ -1504,7 +1539,7 @@ function _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isA
     ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.3);
     ctx.beginPath(); ctx.moveTo(s(15),PH-s(12)); ctx.lineTo(s(195),PH-s(12)); ctx.stroke();
     ctx.fillStyle='#94A3B8'; ctx.font=`400 ${s(3.2)}px ${F}`; ctx.textAlign='center';
-    ctx.fillText('circlr-japan.github.io/sansu-drill　©2024 にじゅうまる。算数ドリル', PW/2, PH-s(6));
+    ctx.fillText('shougaku-sansu-drill26.netlify.app　©2024 にじゅうまる。算数ドリル', PW/2, PH-s(6));
 
     resolve(cv.toDataURL('image/png'));
   });
@@ -1613,7 +1648,7 @@ function _drawReport(score, correct, total, seconds, grade) {
 
   // フッター
   ctx.fillStyle=GRAY; ctx.font=font(17);
-  ctx.fillText('circlr-japan.github.io/sansu-drill', W/2, 712);
+  ctx.fillText('shougaku-sansu-drill26.netlify.app', W/2, 712);
   ctx.fillStyle=ACCENT; ctx.font=font(19);
   ctx.fillText('#にじゅうまる算数ドリル　#小学生　#今日の学習', W/2, 754);
 }
@@ -1642,7 +1677,7 @@ function postToX() {
     `⏱ 回答時間：${time}\n` +
     `⭐ 総合評価：${evalG}\n\n` +
     `無料で挑戦しよう👇\n` +
-    `https://circlr-japan.github.io/sansu-drill/\n\n` +
+    `https://shougaku-sansu-drill26.netlify.app/\n\n` +
     `#にじゅうまる算数ドリル #小学生 #今日の学習 #勉強`;
 
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
