@@ -65,6 +65,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- jsPDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import { getDatabase, ref, push, query, orderByChild, limitToFirst, get, serverTimestamp }
+    from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDXfHjeXLrDor--YiGBvL9_8QPhD6XSpak",
+    authDomain: "sansu-drill-3c2e5.firebaseapp.com",
+    databaseURL: "https://sansu-drill-3c2e5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "sansu-drill-3c2e5",
+    storageBucket: "sansu-drill-3c2e5.firebasestorage.app",
+    messagingSenderId: "503231593616",
+    appId: "1:503231593616:web:5cc6308b0401b048492c15"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db  = getDatabase(app);
+
+  // グローバルに公開（通常スクリプトから呼べるように）
+  window._fbDb              = db;
+  window._fbRef             = ref;
+  window._fbPush            = push;
+  window._fbQuery           = query;
+  window._fbOrderByChild    = orderByChild;
+  window._fbLimitToFirst    = limitToFirst;
+  window._fbGet             = get;
+  window._fbServerTimestamp = serverTimestamp;
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -1062,75 +1091,128 @@ function showResult(score,correct,wrong,results,finalTime){
 }
 
 // ============================================================
-// ランキング（localStorage ベース・全ユーザー共有をシミュレート）
-// ※ 本格的な全国ランキングにはサーバーが必要です。
-//   localStorage はブラウザ内のみ有効です。
-//   全国対応にするには Firebase / Supabase 等の導入が必要です。
+// 全国ランキング（Firebase Realtime Database）
 // ============================================================
-function getRankingKey(grade){return `sansu_ranking_g${grade}`;}
-function loadRankingData(grade){
-  try{return JSON.parse(localStorage.getItem(getRankingKey(grade))||'[]');}catch{return[];}
-}
-function saveRankingData(grade,data){
-  try{localStorage.setItem(getRankingKey(grade),JSON.stringify(data));}catch{}
+
+// Firebase が module として読み込まれるまで少し待つ
+function _fbReady(){ return !!window._fbDb; }
+
+// ランキング登録（100点のみ）
+async function registerRanking(){
+  if(rankingRegistered) return;
+  if(!_fbReady()){ alert('通信の準備中です。少し待ってからお試しください。'); return; }
+
+  const nameInput = document.getElementById('rankingNameInput');
+  const name = nameInput.value.trim().slice(0,10) || '匿名';
+  const entrySection = document.getElementById('rankingEntrySection');
+
+  // ボタンを無効化してローディング表示
+  entrySection.querySelector('.btn-register').disabled = true;
+  entrySection.querySelector('.btn-register').textContent = '登録中...';
+
+  try {
+    const rankRef = window._fbRef(window._fbDb, `rankings/grade${currentGrade}`);
+    await window._fbPush(rankRef, {
+      name,
+      time: finalTimeForRanking,
+      score: 100,
+      date: Date.now()
+    });
+
+    rankingRegistered = true;
+    entrySection.innerHTML = `
+      <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:14px;padding:20px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">✅</div>
+        <div style="font-size:16px;font-weight:700;color:#16A34A;">登録完了！</div>
+        <div style="font-size:13px;color:#15803D;margin-top:6px;">「${name}」さんのタイム ${formatTime(finalTimeForRanking)} を全国ランキングに登録しました🎉</div>
+      </div>`;
+
+    // トップのランキングも更新
+    loadRanking(currentGrade);
+
+  } catch(e) {
+    console.error('ランキング登録エラー:', e);
+    entrySection.querySelector('.btn-register').disabled = false;
+    entrySection.querySelector('.btn-register').textContent = 'ランキングに登録する 🏆';
+    alert('登録に失敗しました。通信状況を確認してください。');
+  }
 }
 
-function registerRanking(){
-  if(rankingRegistered)return;
-  const nameInput=document.getElementById('rankingNameInput');
-  const name=nameInput.value.trim()||'匿名';
-  const data=loadRankingData(currentGrade);
-  data.push({name,time:finalTimeForRanking,date:Date.now()});
-  data.sort((a,b)=>a.time-b.time);
-  const top10=data.slice(0,10);
-  saveRankingData(currentGrade,top10);
-  rankingRegistered=true;
-  document.getElementById('rankingEntrySection').innerHTML=`
-    <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:14px;padding:20px;text-align:center;">
-      <div style="font-size:32px;margin-bottom:8px;">✅</div>
-      <div style="font-size:16px;font-weight:700;color:#16A34A;">登録完了！</div>
-      <div style="font-size:13px;color:#15803D;margin-top:4px;">「${name}」さんのタイム ${formatTime(finalTimeForRanking)} を登録しました</div>
-    </div>`;
-}
 function skipRanking(){
-  document.getElementById('rankingEntrySection').style.display='none';
+  document.getElementById('rankingEntrySection').style.display = 'none';
 }
 
 // ============================================================
 // ランキング表示（トップページ）
 // ============================================================
 function initRankingTabs(){
-  const tabs=document.getElementById('rankingTabs');
-  tabs.innerHTML='';
-  [1,2,3,4,5,6].forEach(g=>{
-    const btn=document.createElement('button');
-    btn.className='grade-tab'+(g===1?' active':'');
-    btn.textContent=`${g}年生`;
-    btn.onclick=()=>loadRanking(g);
+  const tabs = document.getElementById('rankingTabs');
+  tabs.innerHTML = '';
+  [1,2,3,4,5,6].forEach(g => {
+    const btn = document.createElement('button');
+    btn.className = 'grade-tab' + (g===1 ? ' active' : '');
+    btn.textContent = `${g}年生`;
+    btn.onclick = () => loadRanking(g);
     tabs.appendChild(btn);
   });
 }
-function loadRanking(grade){
-  currentRankingGrade=grade;
-  document.querySelectorAll('.grade-tab').forEach((t,i)=>{
-    t.classList.toggle('active',i+1===grade);
+
+async function loadRanking(grade){
+  currentRankingGrade = grade;
+  document.querySelectorAll('.grade-tab').forEach((t,i) => {
+    t.classList.toggle('active', i+1 === grade);
   });
-  const data=loadRankingData(grade);
-  const list=document.getElementById('rankingList');
-  if(data.length===0){
-    list.innerHTML='<div class="rank-empty">まだ記録がありません。<br>100点を取るとランキングに登録できます！</div>';
+
+  const list = document.getElementById('rankingList');
+  list.innerHTML = '<div class="rank-empty">読み込み中...</div>';
+
+  // Firebase 未準備の場合はローカルにフォールバック
+  if(!_fbReady()){
+    setTimeout(() => loadRanking(grade), 800);
     return;
   }
-  const medals=['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
-  list.innerHTML=data.map((r,i)=>`
-    <div class="rank-row rank-${i+1}">
-      <div class="rank-medal">${medals[i]||`${i+1}`}</div>
-      <div class="rank-info">
-        <div class="rank-name">${r.name}</div>
-        <div class="rank-date">${formatDate(r.date)}</div>
-      </div>
-      <div class="rank-time">${formatTime(r.time)}</div>
-    </div>`).join('');
+
+  try {
+    const rankRef  = window._fbRef(window._fbDb, `rankings/grade${grade}`);
+    const rankQuery = window._fbQuery(
+      rankRef,
+      window._fbOrderByChild('time'),
+      window._fbLimitToFirst(10)
+    );
+    const snapshot = await window._fbGet(rankQuery);
+
+    if(!snapshot.exists()){
+      list.innerHTML = '<div class="rank-empty">まだ記録がありません。<br>100点を取るとランキングに登録できます！</div>';
+      return;
+    }
+
+    // 取得データを配列化してタイム昇順ソート
+    const entries = [];
+    snapshot.forEach(child => entries.push(child.val()));
+    entries.sort((a,b) => a.time - b.time);
+
+    const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
+    list.innerHTML = entries.slice(0,10).map((r,i) => `
+      <div class="rank-row rank-${i+1}">
+        <div class="rank-medal">${medals[i] || String(i+1)}</div>
+        <div class="rank-info">
+          <div class="rank-name">${_escHtml(r.name)}</div>
+          <div class="rank-date">${formatDate(r.date)}</div>
+        </div>
+        <div class="rank-time">${formatTime(r.time)}</div>
+      </div>`).join('');
+
+  } catch(e) {
+    console.error('ランキング取得エラー:', e);
+    list.innerHTML = '<div class="rank-empty">ランキングの取得に失敗しました。<br>通信状況を確認してください。</div>';
+  }
+}
+
+// XSS対策
+function _escHtml(str){
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function retryQuiz(){selectGrade(currentGrade);}
