@@ -1504,7 +1504,7 @@ function _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isA
     ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.3);
     ctx.beginPath(); ctx.moveTo(s(15),PH-s(12)); ctx.lineTo(s(195),PH-s(12)); ctx.stroke();
     ctx.fillStyle='#94A3B8'; ctx.font=`400 ${s(3.2)}px ${F}`; ctx.textAlign='center';
-    ctx.fillText('shougaku-sansu-drill26.netlify.app　©2024 にじゅうまる。算数ドリル', PW/2, PH-s(6));
+    ctx.fillText('circlr-japan.github.io/sansu-drill　©2024 にじゅうまる。算数ドリル', PW/2, PH-s(6));
 
     resolve(cv.toDataURL('image/png'));
   });
@@ -1613,7 +1613,7 @@ function _drawReport(score, correct, total, seconds, grade) {
 
   // フッター
   ctx.fillStyle=GRAY; ctx.font=font(17);
-  ctx.fillText('shougaku-sansu-drill26.netlify.app', W/2, 712);
+  ctx.fillText('circlr-japan.github.io/sansu-drill', W/2, 712);
   ctx.fillStyle=ACCENT; ctx.font=font(19);
   ctx.fillText('#にじゅうまる算数ドリル　#小学生　#今日の学習', W/2, 754);
 }
