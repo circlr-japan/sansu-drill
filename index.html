@@ -68,7 +68,7 @@
 <!-- Firebase -->
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-  import { getDatabase, ref, push, query, orderByChild, limitToFirst, get, serverTimestamp }
+  import { getDatabase, ref, push, get, serverTimestamp }
     from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
   const firebaseConfig = {
@@ -88,11 +88,7 @@
   window._fbDb              = db;
   window._fbRef             = ref;
   window._fbPush            = push;
-  window._fbQuery           = query;
-  window._fbOrderByChild    = orderByChild;
-  window._fbLimitToFirst    = limitToFirst;
   window._fbGet             = get;
-  window._fbServerTimestamp = serverTimestamp;
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -1173,26 +1169,22 @@ async function loadRanking(grade){
   }
 
   try {
-    const rankRef  = window._fbRef(window._fbDb, `rankings/grade${grade}`);
-    const rankQuery = window._fbQuery(
-      rankRef,
-      window._fbOrderByChild('time'),
-      window._fbLimitToFirst(10)
-    );
-    const snapshot = await window._fbGet(rankQuery);
+    const rankRef = window._fbRef(window._fbDb, `rankings/grade${grade}`);
+    const snapshot = await window._fbGet(rankRef);
 
     if(!snapshot.exists()){
       list.innerHTML = '<div class="rank-empty">まだ記録がありません。<br>100点を取るとランキングに登録できます！</div>';
       return;
     }
 
-    // 取得データを配列化してタイム昇順ソート
+    // 全件取得してクライアント側でタイム昇順ソート → 上位10件
     const entries = [];
     snapshot.forEach(child => entries.push(child.val()));
     entries.sort((a,b) => a.time - b.time);
+    const top10 = entries.slice(0, 10);
 
     const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
-    list.innerHTML = entries.slice(0,10).map((r,i) => `
+    list.innerHTML = top10.map((r,i) => `
       <div class="rank-row rank-${i+1}">
         <div class="rank-medal">${medals[i] || String(i+1)}</div>
         <div class="rank-info">
