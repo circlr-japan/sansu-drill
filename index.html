@@ -267,8 +267,9 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 /* ===== PDF ドリル ダウンロード ===== */
 .pdf-section{margin:16px;background:var(--surface);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border-left:4px solid #7C3AED;}
 .pdf-section-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
-.pdf-section-sub{font-size:12px;color:var(--text-muted);margin-bottom:16px;line-height:1.7;}
-.pdf-grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.pdf-section-sub{font-size:12px;color:var(--text-muted);margin-bottom:6px;line-height:1.7;}
+.pdf-row-label{font-size:11px;font-weight:700;color:var(--text-muted);letter-spacing:0.5px;margin:12px 0 6px;}
+.pdf-grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px;}
 .pdf-grade-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
 .pdf-grade-btn:active{transform:scale(0.96);}
 .pdf-grade-btn.selected{border-color:#7C3AED;background:#F5F3FF;}
@@ -276,10 +277,22 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .pdf-grade-btn .pglabel{font-size:10px;color:var(--text-muted);display:block;margin-top:2px;}
 .pg1 .pgnum{color:#DC2626;}.pg2 .pgnum{color:#D97706;}.pg3 .pgnum{color:#059669;}
 .pg4 .pgnum{color:#2563EB;}.pg5 .pgnum{color:#7C3AED;}.pg6 .pgnum{color:#DB2777;}
-.btn-pdf-dl{width:100%;padding:16px;background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(124,58,237,0.35);transition:transform 0.15s;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent;}
+.pdf-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px;}
+.pdf-opt-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);transition:all 0.15s;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.pdf-opt-btn:active{transform:scale(0.96);}
+.pdf-opt-btn.selected{border-color:#7C3AED;background:#F5F3FF;color:#7C3AED;}
+.pdf-pts{font-size:9px;font-weight:400;color:var(--text-faint);}
+.pdf-opt-btn.selected .pdf-pts{color:#9F7AEA;}
+.btn-pdf-dl{width:100%;margin-top:14px;padding:16px;background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(124,58,237,0.35);transition:transform 0.15s;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent;}
 .btn-pdf-dl:active{transform:scale(0.98);}
 .btn-pdf-dl:disabled{background:#CBD5E1;box-shadow:none;cursor:not-allowed;}
 .pdf-note{font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px;line-height:1.6;}
+/* ===== 難易度ボタン（クイズ） ===== */
+.diff-btn{padding:10px 6px;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
+.diff-btn:active{transform:scale(0.96);}
+.diff-easy.active{border-color:#059669;background:#F0FDF4;color:#059669;}
+.diff-normal.active{border-color:#2563EB;background:#EFF6FF;color:#2563EB;}
+.diff-hard.active{border-color:#DC2626;background:#FEF2F2;color:#DC2626;}
 </style>
 </head>
 <body>
@@ -305,6 +318,17 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="grade-card g6" onclick="selectGrade(6)"><span class="emoji">🎓</span><div class="gnum">6年</div><div class="glabel">小学6年生</div><div class="gtopic">分数÷分数<br>比・速さ・円</div></div>
   </div>
 
+  <!-- 難易度セレクタ -->
+  <div style="padding:12px 16px 0;">
+    <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:8px;">⚡ 難易度を選ぶ</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+      <button class="diff-btn diff-easy active" id="diffEasy" onclick="setDifficulty('easy')">🌱 初級</button>
+      <button class="diff-btn diff-normal" id="diffNormal" onclick="setDifficulty('normal')">⭐ 中級</button>
+      <button class="diff-btn diff-hard" id="diffHard" onclick="setDifficulty('hard')">🔥 上級</button>
+    </div>
+    <div style="font-size:11px;color:var(--text-faint);margin-top:6px;text-align:center;" id="diffDesc">初級：やさしい問題でしっかり練習</div>
+  </div>
+
   <div class="info-card" style="margin-top:16px;">
     <h3>📋 使い方</h3>
     <p>学年を選ぶと5秒カウントダウン後にスタート！<br>25問すべて答えて「採点する」ボタンを押すと結果が表示されます。<br><strong>1問4点 × 25問 ＝ 100点満点</strong></p>
@@ -315,7 +339,10 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   <!-- ===== PDF ドリル ダウンロード ===== -->
   <div class="pdf-section">
     <div class="pdf-section-title">📄 算数ドリル PDF ダウンロード</div>
-    <div class="pdf-section-sub">学年を選んで「PDF保存」ボタンを押すと、ランダム20問のドリル（問題＋解答の2ページ）がダウンロードされます。印刷してご利用ください。<br>1問5点 × 20問 ＝ 100点満点</div>
+    <div class="pdf-section-sub">学年・難易度・問題数を選んで「PDF保存」ボタンを押すと、問題ページ＋解答ページの2枚がダウンロードされます。</div>
+
+    <!-- 学年 -->
+    <div class="pdf-row-label">① 学年</div>
     <div class="pdf-grade-grid">
       <div class="pdf-grade-btn pg1" id="pdfGradeBtn1" onclick="selectPdfGrade(1)"><span class="pgnum">1年</span><span class="pglabel">小学1年生</span></div>
       <div class="pdf-grade-btn pg2" id="pdfGradeBtn2" onclick="selectPdfGrade(2)"><span class="pgnum">2年</span><span class="pglabel">小学2年生</span></div>
@@ -324,11 +351,28 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       <div class="pdf-grade-btn pg5" id="pdfGradeBtn5" onclick="selectPdfGrade(5)"><span class="pgnum">5年</span><span class="pglabel">小学5年生</span></div>
       <div class="pdf-grade-btn pg6" id="pdfGradeBtn6" onclick="selectPdfGrade(6)"><span class="pgnum">6年</span><span class="pglabel">小学6年生</span></div>
     </div>
+
+    <!-- 難易度 -->
+    <div class="pdf-row-label">② 難易度</div>
+    <div class="pdf-3col">
+      <button class="pdf-opt-btn pdf-diff-btn" id="pdfDiffEasy" onclick="selectPdfDiff('easy')">🌱 初級</button>
+      <button class="pdf-opt-btn pdf-diff-btn" id="pdfDiffNormal" onclick="selectPdfDiff('normal')">⭐ 中級</button>
+      <button class="pdf-opt-btn pdf-diff-btn" id="pdfDiffHard" onclick="selectPdfDiff('hard')">🔥 上級</button>
+    </div>
+
+    <!-- 問題数 -->
+    <div class="pdf-row-label">③ 問題数</div>
+    <div class="pdf-3col">
+      <button class="pdf-opt-btn pdf-cnt-btn" id="pdfCnt20" onclick="selectPdfCount(20)">20問<span class="pdf-pts">5点×20</span></button>
+      <button class="pdf-opt-btn pdf-cnt-btn" id="pdfCnt30" onclick="selectPdfCount(30)">30問<span class="pdf-pts">3点×30</span></button>
+      <button class="pdf-opt-btn pdf-cnt-btn" id="pdfCnt40" onclick="selectPdfCount(40)">40問<span class="pdf-pts">2.5点×40</span></button>
+    </div>
+
     <button class="btn-pdf-dl" id="btnPdfDl" onclick="generatePdf()" disabled>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
       学年を選んでください
     </button>
-    <div class="pdf-note">※ PDFはブラウザの印刷機能でA4用紙に印刷できます<br>※ 問題はランダム生成のため毎回異なります</div>
+    <div class="pdf-note">※ 印刷はA4・縦・余白なし推奨　※ 問題はランダム生成で毎回異なります</div>
   </div>
 
   <!-- 全国ランキング -->
@@ -472,57 +516,154 @@ function formatTime(sec){const m=Math.floor(sec/60);const s=sec%60;return m+':'+
 function formatDate(ts){const d=new Date(ts);return `${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;}
 
 // ============================================================
-// 問題データ
+// 問題データ（難易度: easy=初級 / normal=中級 / hard=上級）
 // ============================================================
 const GRADES={
-  1:{label:'小学1年生',generators:[
-    ()=>{const a=rnd(1,5),b=rnd(1,9-a);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-    ()=>{const a=rnd(6,9),b=rnd(10-a,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法（繰り上がり）'};},
-    ()=>{const b=rnd(1,8),a=rnd(b+1,9);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-    ()=>{const b=rnd(1,9);return{q:`10 ＋ ${b} ＝`,a:10+b,type:'加法'};},
-    ()=>{const b=rnd(1,9),a=rnd(11,19);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法（繰り下がり）'};}
-  ]},
-  2:{label:'小学2年生',generators:[
-    ()=>{const a=rnd(10,90),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-    ()=>{const b=rnd(1,9),a=rnd(b+10,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-    ()=>{const a=rnd(11,60),b=rnd(11,40);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-    ()=>{const b=rnd(10,40),a=rnd(b+5,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-    ()=>{const a=rnd(2,9),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法（九九）'};}
-  ]},
-  3:{label:'小学3年生',generators:[
-    ()=>{const a=rnd(100,600),b=rnd(100,400);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-    ()=>{const b=rnd(10,99),a=rnd(100,500);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-    ()=>{const a=rnd(11,30),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-    ()=>{const b=rnd(2,9),q=rnd(2,9);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-    ()=>{const d=rnd(2,9),q2=rnd(1,8),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2,hint:'（商だけを答えてください）',type:'あまりのある除法'};}
-  ]},
-  4:{label:'小学4年生',generators:[
-    ()=>{const a=rnd(1,50)*1000,b=rnd(1,50)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},
-    ()=>{const a=rnd(11,50),b=rnd(11,30);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-    ()=>{const b=rnd(2,9),q=rnd(11,40);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-    ()=>{const a=(rnd(1,49)/10).toFixed(1),b=(rnd(1,49)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},
-    ()=>{const b=(rnd(1,29)/10).toFixed(1),a=(rnd(+b*10+1,79)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}
-  ]},
-  5:{label:'小学5年生',generators:[
-    ()=>{const a=rnd(1,19)/10,b=rnd(1,19)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},
-    ()=>{const b=rnd(2,9),q=rnd(2,8);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q,type:'小数の除法'};},
-    ()=>{const d=rnd(4,9),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d),type:'分数の加法'};},
-    ()=>{const p=rnd(1,10)*10,base=rnd(1,10)*100;return{q:`${base}円の${p}% は何円ですか？`,a:base*p/100,type:'割合'};},
-    ()=>{const a=rnd(2,8),b=rnd(2,8),c=rnd(2,8);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の直方体の体積は何cm³ですか？`,a:a*b*c,type:'体積'};}
-  ]},
-  6:{label:'小学6年生',generators:[
-    ()=>{const n1=rnd(1,4),d1=rnd(2,6),n2=rnd(1,4),d2=rnd(2,6);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},
-    ()=>{const a=rnd(1,6),b=rnd(1,6),t=rnd(2,5);return{q:`${a*t}：${b*t} を最も簡単な整数の比にすると？`,a:`${a}：${b}`,type:'比'};},
-    ()=>{const s=rnd(2,10)*10,t=rnd(2,6);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s,type:'速さ'};},
-    ()=>{const r=rnd(2,8);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},
-    ()=>{const n=rnd(1,4),d=rnd(2,8),m=rnd(2,5);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d),type:'分数の乗法'};}
-  ]}
+  1:{label:'小学1年生',generators:{
+    easy:[
+      ()=>{const a=rnd(1,4),b=rnd(1,4);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'たし算'};},
+      ()=>{const b=rnd(1,3),a=rnd(b+1,5);return{q:`${a} － ${b} ＝`,a:a-b,type:'ひき算'};},
+      ()=>{const b=rnd(1,4);return{q:`${b} ＋ 0 ＝`,a:b,type:'たし算'};},
+      ()=>{const a=rnd(2,5);return{q:`${a} － 1 ＝`,a:a-1,type:'ひき算'};},
+      ()=>{const a=rnd(1,4),b=rnd(1,4);return{q:`${b} ＋ ${a} ＝`,a:a+b,type:'たし算'};},
+    ],
+    normal:[
+      ()=>{const a=rnd(1,5),b=rnd(1,9-a);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const a=rnd(6,9),b=rnd(10-a,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'繰り上がり'};},
+      ()=>{const b=rnd(1,8),a=rnd(b+1,9);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const b=rnd(1,9);return{q:`10 ＋ ${b} ＝`,a:10+b,type:'加法'};},
+      ()=>{const b=rnd(1,9),a=rnd(11,19);return{q:`${a} － ${b} ＝`,a:a-b,type:'繰り下がり'};}
+    ],
+    hard:[
+      ()=>{const a=rnd(5,9),b=rnd(5,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'繰り上がり'};},
+      ()=>{const b=rnd(3,9),a=rnd(11,18);return{q:`${a} － ${b} ＝`,a:a-b,type:'繰り下がり'};},
+      ()=>{const a=rnd(10,15),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const a=rnd(10,19),b=rnd(1,9);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(5,9),b=rnd(5,9-a+5);return{q:`${a} ＋ ${b} ＋ 1 ＝`,a:a+b+1,type:'3数のたし算'};}
+    ]
+  }},
+  2:{label:'小学2年生',generators:{
+    easy:[
+      ()=>{const a=rnd(10,50),b=rnd(1,5);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const b=rnd(1,5),a=rnd(b+10,50);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};},
+      ()=>{const a=rnd(10,30),b=rnd(10,20);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const a=rnd(2,4),b=rnd(2,4);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};}
+    ],
+    normal:[
+      ()=>{const a=rnd(10,90),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const b=rnd(1,9),a=rnd(b+10,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(11,60),b=rnd(11,40);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const b=rnd(10,40),a=rnd(b+5,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(2,9),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};}
+    ],
+    hard:[
+      ()=>{const a=rnd(50,99),b=rnd(10,50);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const b=rnd(20,60),a=rnd(b+1,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(6,9),b=rnd(6,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九（難）'};},
+      ()=>{const a=rnd(40,80),b=rnd(20,50);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const a=rnd(7,9),b=rnd(7,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九（難）'};}
+    ]
+  }},
+  3:{label:'小学3年生',generators:{
+    easy:[
+      ()=>{const a=rnd(100,300),b=rnd(100,200);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const b=rnd(10,50),a=rnd(100,300);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
+      ()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
+      ()=>{const a=rnd(11,20),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};}
+    ],
+    normal:[
+      ()=>{const a=rnd(100,600),b=rnd(100,400);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const b=rnd(10,99),a=rnd(100,500);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(11,30),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
+      ()=>{const b=rnd(2,9),q=rnd(2,9);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
+      ()=>{const d=rnd(2,9),q2=rnd(1,8),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2,hint:'（商のみ）',type:'あまりのある除法'};}
+    ],
+    hard:[
+      ()=>{const a=rnd(400,999),b=rnd(200,600);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
+      ()=>{const b=rnd(100,400),a=rnd(b+100,999);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
+      ()=>{const a=rnd(21,50),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
+      ()=>{const b=rnd(5,9),q=rnd(10,20);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
+      ()=>{const d=rnd(5,9),q2=rnd(5,12),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2,hint:'（商のみ）',type:'あまりのある除法'};}
+    ]
+  }},
+  4:{label:'小学4年生',generators:{
+    easy:[
+      ()=>{const a=rnd(1,10)*1000,b=rnd(1,10)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},
+      ()=>{const a=rnd(11,20),b=rnd(11,15);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
+      ()=>{const b=rnd(2,5),q=rnd(5,20);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
+      ()=>{const a=(rnd(1,19)/10).toFixed(1),b=(rnd(1,19)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},
+      ()=>{const b=(rnd(1,9)/10).toFixed(1),a=(rnd(+b*10+1,29)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}
+    ],
+    normal:[
+      ()=>{const a=rnd(1,50)*1000,b=rnd(1,50)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},
+      ()=>{const a=rnd(11,50),b=rnd(11,30);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
+      ()=>{const b=rnd(2,9),q=rnd(11,40);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
+      ()=>{const a=(rnd(1,49)/10).toFixed(1),b=(rnd(1,49)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},
+      ()=>{const b=(rnd(1,29)/10).toFixed(1),a=(rnd(+b*10+1,79)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}
+    ],
+    hard:[
+      ()=>{const a=rnd(10,99)*1000,b=rnd(10,99)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},
+      ()=>{const a=rnd(30,99),b=rnd(20,50);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
+      ()=>{const b=rnd(5,9),q=rnd(30,60);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
+      ()=>{const a=(rnd(10,99)/10).toFixed(1),b=(rnd(10,99)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},
+      ()=>{const b=(rnd(10,49)/10).toFixed(1),a=(rnd(+b*10+1,199)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}
+    ]
+  }},
+  5:{label:'小学5年生',generators:{
+    easy:[
+      ()=>{const a=rnd(1,9)/10,b=rnd(1,9)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},
+      ()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q,type:'小数の除法'};},
+      ()=>{const d=rnd(4,6),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d),type:'分数の加法'};},
+      ()=>{const p=rnd(1,5)*10,base=rnd(1,5)*100;return{q:`${base}円の${p}% は？`,a:base*p/100,type:'割合'};},
+      ()=>{const a=rnd(2,5),b=rnd(2,5),c=rnd(2,5);return{q:`縦${a}cm、横${b}cm、高さ${c}cmの体積は？`,a:a*b*c,type:'体積'};}
+    ],
+    normal:[
+      ()=>{const a=rnd(1,19)/10,b=rnd(1,19)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},
+      ()=>{const b=rnd(2,9),q=rnd(2,8);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q,type:'小数の除法'};},
+      ()=>{const d=rnd(4,9),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d),type:'分数の加法'};},
+      ()=>{const p=rnd(1,10)*10,base=rnd(1,10)*100;return{q:`${base}円の${p}% は何円ですか？`,a:base*p/100,type:'割合'};},
+      ()=>{const a=rnd(2,8),b=rnd(2,8),c=rnd(2,8);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の直方体の体積は何cm³ですか？`,a:a*b*c,type:'体積'};}
+    ],
+    hard:[
+      ()=>{const a=rnd(11,29)/10,b=rnd(11,29)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},
+      ()=>{const b=rnd(3,9),q=rnd(5,15);return{q:`${+(b*q*1.5).toFixed(1)} ÷ ${b} ＝`,a:+(q*1.5).toFixed(1),type:'小数の除法'};},
+      ()=>{const d1=rnd(3,6),d2=rnd(3,6),n1=rnd(1,d1-1),n2=rnd(1,d2-1),lcm=d1*d2/gcd(d1,d2);return{q:`${n1}/${d1} ＋ ${n2}/${d2} ＝`,a:fracStr(n1*(lcm/d1)+n2*(lcm/d2),lcm),type:'通分'};},
+      ()=>{const p=rnd(1,10)*5,base=rnd(2,20)*100;return{q:`${base}円の${p}% は何円ですか？`,a:base*p/100,type:'割合'};},
+      ()=>{const a=rnd(5,12),b=rnd(5,12),c=rnd(5,12);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の直方体の体積は何cm³ですか？`,a:a*b*c,type:'体積'};}
+    ]
+  }},
+  6:{label:'小学6年生',generators:{
+    easy:[
+      ()=>{const n1=rnd(1,3),d1=rnd(2,4),n2=rnd(1,3),d2=rnd(2,4);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},
+      ()=>{const a=rnd(1,4),b=rnd(1,4),t=rnd(2,3);return{q:`${a*t}：${b*t} を簡単な比にすると？`,a:`${a}：${b}`,type:'比'};},
+      ()=>{const s=rnd(1,5)*10,t=rnd(2,4);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s,type:'速さ'};},
+      ()=>{const r=rnd(2,5);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},
+      ()=>{const n=rnd(1,3),d=rnd(2,5),m=rnd(2,4);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d),type:'分数の乗法'};}
+    ],
+    normal:[
+      ()=>{const n1=rnd(1,4),d1=rnd(2,6),n2=rnd(1,4),d2=rnd(2,6);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},
+      ()=>{const a=rnd(1,6),b=rnd(1,6),t=rnd(2,5);return{q:`${a*t}：${b*t} を最も簡単な整数の比にすると？`,a:`${a}：${b}`,type:'比'};},
+      ()=>{const s=rnd(2,10)*10,t=rnd(2,6);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s,type:'速さ'};},
+      ()=>{const r=rnd(2,8);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},
+      ()=>{const n=rnd(1,4),d=rnd(2,8),m=rnd(2,5);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d),type:'分数の乗法'};}
+    ],
+    hard:[
+      ()=>{const n1=rnd(2,6),d1=rnd(3,8),n2=rnd(2,6),d2=rnd(3,8);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},
+      ()=>{const a=rnd(3,9),b=rnd(3,9),t=rnd(4,8);return{q:`${a*t}：${b*t} を最も簡単な整数の比にすると？`,a:`${a}：${b}`,type:'比'};},
+      ()=>{const s=rnd(5,20)*10,t=rnd(3,8);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s,type:'速さ'};},
+      ()=>{const r=rnd(6,12);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},
+      ()=>{const n1=rnd(2,5),d1=rnd(3,8),n2=rnd(2,5),d2=rnd(3,8);return{q:`${n1}/${d1} × ${n2}/${d2} ＝`,a:fracStr(n1*n2,d1*d2),type:'分数の乗法'};}
+    ]
+  }}
 };
 
 // ============================================================
 // 状態管理
 // ============================================================
 let currentGrade=1;
+let currentDifficulty='normal'; // 'easy'|'normal'|'hard'
 let questions=[];
 let timerInterval=null;
 let elapsedSeconds=0;
@@ -602,11 +743,26 @@ function showPage(id){
 function goTop(){stopTimer();cancelCountdown();showPage('topPage');loadRanking(currentRankingGrade);}
 
 // ============================================================
+// 難易度選択
+// ============================================================
+const DIFF_DESC={
+  easy:  '初級：やさしい問題でしっかり練習',
+  normal:'中級：標準的な問題でレベルアップ',
+  hard:  '上級：チャレンジ問題で実力試し！'
+};
+function setDifficulty(diff){
+  currentDifficulty=diff;
+  document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('diff'+diff.charAt(0).toUpperCase()+diff.slice(1)).classList.add('active');
+  document.getElementById('diffDesc').textContent=DIFF_DESC[diff];
+}
+
+// ============================================================
 // カウントダウン
 // ============================================================
 function selectGrade(grade){
   currentGrade=grade;
-  questions=generateQuestions(grade);
+  questions=generateQuestions(grade, currentDifficulty);
   document.getElementById('countdownGrade').textContent=GRADES[grade].label;
   showPage('countdownPage');
   startCountdown();
@@ -642,8 +798,9 @@ function cancelCountdown(){
 // ============================================================
 // クイズ開始
 // ============================================================
-function generateQuestions(grade){
-  const gens=GRADES[grade].generators;
+function generateQuestions(grade, difficulty){
+  const diff = difficulty || 'normal';
+  const gens=GRADES[grade].generators[diff];
   const qs=[];
   for(let i=0;i<25;i++)qs.push(gens[i%gens.length]());
   for(let i=qs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qs[i],qs[j]]=[qs[j],qs[i]];}
@@ -982,6 +1139,195 @@ function retryQuiz(){selectGrade(currentGrade);}
 // PDF ドリル生成
 // ============================================================
 let selectedPdfGrade = 0;
+let selectedPdfDiff  = '';   // 'easy'|'normal'|'hard'
+let selectedPdfCount = 0;    // 20|30|40
+
+const DIFF_LABEL = { easy:'🌱 初級', normal:'⭐ 中級', hard:'🔥 上級' };
+const DIFF_COLORS = { easy:'#059669', normal:'#2563EB', hard:'#DC2626' };
+const DIFF_BG     = { easy:'#F0FDF4', normal:'#EFF6FF', hard:'#FEF2F2' };
+
+function selectPdfGrade(grade) {
+  selectedPdfGrade = grade;
+  document.querySelectorAll('.pdf-grade-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('pdfGradeBtn' + grade).classList.add('selected');
+  _updatePdfBtn();
+}
+function selectPdfDiff(diff) {
+  selectedPdfDiff = diff;
+  document.querySelectorAll('.pdf-diff-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('pdfDiff' + diff.charAt(0).toUpperCase() + diff.slice(1)).classList.add('selected');
+  _updatePdfBtn();
+}
+function selectPdfCount(cnt) {
+  selectedPdfCount = cnt;
+  document.querySelectorAll('.pdf-cnt-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('pdfCnt' + cnt).classList.add('selected');
+  _updatePdfBtn();
+}
+function _updatePdfBtn() {
+  const btn = document.getElementById('btnPdfDl');
+  if (!selectedPdfGrade) { btn.disabled = true; btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 学年を選んでください`; return; }
+  const diff  = selectedPdfDiff  || 'normal';
+  const cnt   = selectedPdfCount || 20;
+  const dl = DIFF_LABEL[diff];
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 小学${selectedPdfGrade}年生 ${dl} ${cnt}問 PDF保存`;
+}
+
+function generatePdf() {
+  if (!selectedPdfGrade) return;
+  const btn = document.getElementById('btnPdfDl');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ 生成中...';
+  const diff = selectedPdfDiff  || 'normal';
+  const cnt  = selectedPdfCount || 20;
+  setTimeout(async () => {
+    try { await _buildPdfCanvas(selectedPdfGrade, diff, cnt); }
+    catch(e) { alert('PDF生成に失敗しました。ブラウザを更新してお試しください。'); console.error(e); }
+    _updatePdfBtn();
+  }, 50);
+}
+
+// ── Canvas → PNG → PDF 方式（日本語対応）──
+async function _buildPdfCanvas(grade, diff, cnt) {
+  const { jsPDF } = window.jspdf;
+  const gen = GRADES[grade].generators[diff];
+  const qs = [];
+  for (let i = 0; i < cnt; i++) qs.push(gen[i % gen.length]());
+  // シャッフル
+  for (let i = qs.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [qs[i],qs[j]]=[qs[j],qs[i]]; }
+
+  const gradeLabel = GRADES[grade].label;
+  const diffLabel  = DIFF_LABEL[diff];
+  const diffColor  = DIFF_COLORS[diff];
+  const diffBg     = DIFF_BG[diff];
+  const pts = cnt===20 ? 5 : cnt===30 ? 3 : 2.5;
+  const dateStr = new Date().toISOString().slice(0, 10);
+  const diffKey = {easy:'shokyuu',normal:'chukyu',hard:'jokyu'}[diff];
+
+  const PX = 11.811, PW = Math.round(210*PX), PH = Math.round(297*PX);
+
+  const img1 = await _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, false, PW, PH);
+  const img2 = await _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, true,  PW, PH);
+
+  const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4', compress:true });
+  doc.addImage(img1,'PNG',0,0,210,297);
+  doc.addPage();
+  doc.addImage(img2,'PNG',0,0,210,297);
+  doc.save(`sansu-drill-g${grade}-${diffKey}-${cnt}q-${dateStr}.pdf`);
+}
+
+function _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isAnswer, PW, PH) {
+  return new Promise(resolve => {
+    const cv = document.createElement('canvas');
+    cv.width = PW; cv.height = PH;
+    const ctx = cv.getContext('2d');
+    const s = v => v * PW / 210;
+    const F = '"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif';
+
+    // 白背景
+    ctx.fillStyle='#fff'; ctx.fillRect(0,0,PW,PH);
+
+    // ヘッダー
+    ctx.fillStyle='#2563EB'; ctx.fillRect(0,0,PW,s(30));
+    // 難易度バッジ
+    ctx.fillStyle = diffColor;
+    _rr2(ctx, PW-s(46), s(7), s(38), s(14), s(3)); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font=`700 ${s(5.5)}px ${F}`; ctx.textAlign='center';
+    ctx.fillText(diffLabel + (isAnswer?' 解答':''), PW-s(27), s(17));
+    // タイトル
+    ctx.font=`700 ${s(7.5)}px ${F}`; ctx.textAlign='center'; ctx.fillStyle='#fff';
+    ctx.fillText(`${gradeLabel}　算数ドリル${isAnswer?'【解答】':''}`, PW/2, s(13));
+    ctx.font=`400 ${s(3.8)}px ${F}`; ctx.fillStyle='rgba(255,255,255,0.85)';
+    ctx.fillText(`文部科学省 学習指導要領準拠　｜　1問${pts}点 × ${cnt}問 ＝ 100点満点`, PW/2, s(22));
+
+    // 記入欄
+    let cy = s(37);
+    ctx.textAlign='left';
+    ctx.fillStyle='#64748B'; ctx.font=`400 ${s(4)}px ${F}`;
+    ctx.fillText('お名前', s(15), cy+s(4));
+    ctx.strokeStyle='#1E293B'; ctx.lineWidth=s(0.5);
+    ctx.beginPath(); ctx.moveTo(s(30),cy+s(5.5)); ctx.lineTo(s(100),cy+s(5.5)); ctx.stroke();
+    ctx.fillText('日付', s(106), cy+s(4));
+    ctx.beginPath(); ctx.moveTo(s(116),cy+s(5.5)); ctx.lineTo(s(162),cy+s(5.5)); ctx.stroke();
+    // 得点ボックス
+    ctx.fillStyle='#EFF6FF'; _rr2(ctx,s(165),cy-s(1),s(30),s(11),s(2)); ctx.fill();
+    ctx.strokeStyle='#BFDBFE'; ctx.lineWidth=s(0.4); _rr2(ctx,s(165),cy-s(1),s(30),s(11),s(2)); ctx.stroke();
+    ctx.fillStyle='#2563EB'; ctx.font=`700 ${s(3.8)}px ${F}`;
+    ctx.fillText('得点', s(167), cy+s(4));
+    ctx.font=`700 ${s(6)}px ${F}`; ctx.fillText(`／100`, s(176), cy+s(7));
+
+    cy += s(16);
+    ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.4);
+    ctx.beginPath(); ctx.moveTo(s(15),cy); ctx.lineTo(s(195),cy); ctx.stroke();
+    cy += s(5);
+
+    // 問題グリッド（列数と行高さを問題数で動的計算）
+    const cols = cnt <= 20 ? 2 : cnt <= 30 ? 2 : 2;
+    const perCol = Math.ceil(cnt / cols);
+    const availH = PH - cy - s(18);
+    const rowH = availH / perCol;
+    const colW = (PW - s(30)) / cols;
+    const ansW = s(cnt<=20 ? 34 : cnt<=30 ? 28 : 24);
+    const fontSize = cnt<=20 ? s(5) : cnt<=30 ? s(4.2) : s(3.7);
+    const numFontSize = cnt<=20 ? s(4) : s(3.5);
+
+    for (let i = 0; i < cnt; i++) {
+      const col = Math.floor(i / perCol);
+      const row = i % perCol;
+      const qx = s(15) + col * colW;
+      const qy = cy + row * rowH;
+      const cardH = rowH - s(1.2);
+
+      // カード
+      ctx.fillStyle = row%2===0 ? '#F8FAFC' : '#fff';
+      _rr2(ctx,qx,qy,colW-s(4),cardH,s(2)); ctx.fill();
+      ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.25);
+      _rr2(ctx,qx,qy,colW-s(4),cardH,s(2)); ctx.stroke();
+
+      // 番号バッジ
+      ctx.fillStyle='#2563EB';
+      _rr2(ctx, qx+s(1.5), qy+s(1.8), s(cnt>30?7:9), s(cnt>30?5:6), s(1)); ctx.fill();
+      ctx.fillStyle='#fff'; ctx.font=`700 ${numFontSize}px ${F}`; ctx.textAlign='center';
+      ctx.fillText(String(i+1), qx+s(cnt>30?5:6), qy+s(cnt>30?5.7:6.5));
+
+      // 問題文
+      ctx.fillStyle='#1E293B'; ctx.textAlign='left'; ctx.font=`500 ${fontSize}px ${F}`;
+      ctx.fillText(qs[i].q, qx+s(cnt>30?10:13), qy + cardH/2 + fontSize*0.35);
+
+      // 解答欄
+      const abx = qx + colW - s(4) - ansW;
+      const aby = qy + s(1.8);
+      const abh = cardH - s(3.6);
+      if (isAnswer) {
+        ctx.fillStyle = diffBg; _rr2(ctx,abx,aby,ansW,abh,s(1.5)); ctx.fill();
+        ctx.strokeStyle = diffColor; ctx.lineWidth=s(0.5); _rr2(ctx,abx,aby,ansW,abh,s(1.5)); ctx.stroke();
+        ctx.fillStyle = diffColor; ctx.font=`700 ${fontSize}px ${F}`; ctx.textAlign='center';
+        ctx.fillText(String(qs[i].a), abx+ansW/2, aby+abh/2+fontSize*0.38);
+      } else {
+        ctx.fillStyle='#fff'; _rr2(ctx,abx,aby,ansW,abh,s(1.5)); ctx.fill();
+        ctx.strokeStyle='#94A3B8'; ctx.lineWidth=s(0.5); _rr2(ctx,abx,aby,ansW,abh,s(1.5)); ctx.stroke();
+      }
+    }
+
+    // フッター
+    ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.3);
+    ctx.beginPath(); ctx.moveTo(s(15),PH-s(12)); ctx.lineTo(s(195),PH-s(12)); ctx.stroke();
+    ctx.fillStyle='#94A3B8'; ctx.font=`400 ${s(3.2)}px ${F}`; ctx.textAlign='center';
+    ctx.fillText('shougaku-sansu-drill26.netlify.app　©2024 小学校算数ドリル', PW/2, PH-s(6));
+
+    resolve(cv.toDataURL('image/png'));
+  });
+}
+
+function _rr2(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
 
 function selectPdfGrade(grade) {
   selectedPdfGrade = grade;
