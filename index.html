@@ -111,19 +111,21 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 @media(min-width:768px){
   #quizPage{
     display:grid;
-    grid-template-columns:640px 1fr;
-    grid-template-rows:auto 1fr auto;
+    grid-template-columns:50vw 50vw;
+    grid-template-rows:auto 1fr auto auto;
     max-width:100%;
     width:100%;
     min-height:100vh;
     align-items:start;
   }
+  body{max-width:100% !important;}
   #quizPage .quiz-header{
     grid-column:1;
     grid-row:1;
     position:sticky;
     top:0;
     z-index:50;
+    max-width:50vw;
   }
   #quizPage .questions-wrap{
     grid-column:1;
@@ -140,13 +142,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   .freespace-panel{
     grid-column:2;
     grid-row:1 / 5;
-    position:sticky;
+    position:fixed;
     top:0;
+    right:0;
+    width:50vw;
     height:100vh;
     display:flex;
     flex-direction:column;
     border-left:1.5px solid var(--border);
     background:var(--surface);
+    z-index:40;
   }
 }
 @media(max-width:767px){
@@ -540,6 +545,8 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
         <div class="fs-color-dot fs-active" style="background:#1E293B;" data-color="#1E293B" onclick="fsSetColor(this)" title="黒"></div>
         <div class="fs-color-dot" style="background:#DC2626;" data-color="#DC2626" onclick="fsSetColor(this)" title="赤"></div>
         <div class="fs-color-dot" style="background:#2563EB;" data-color="#2563EB" onclick="fsSetColor(this)" title="青"></div>
+        <!-- 全消去（上部に移動） -->
+        <button class="btn-fs-clear" onclick="fsClear()">全消去</button>
       </div>
     </div>
     <div class="freespace-canvas-wrap" id="freespaceCanvasWrap">
@@ -548,7 +555,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="freespace-footer">
       <span class="fs-size-label">太さ</span>
       <input type="range" class="fs-size-slider" id="fsSizeSlider" min="1" max="20" value="3" oninput="fsUpdateSize(this.value)">
-      <button class="btn-fs-clear" onclick="fsClear()">全消去</button>
     </div>
   </div>
 </div>
@@ -1436,7 +1442,7 @@ function _buildReportMsg() {
     `　📊 評価：${evalG}\n` +
     `━━━━━━━━━━━━━━\n` +
     `にじゅうまる。算数ドリル\n` +
-    `https://shougaku-sansu-drill26.netlify.app/`
+    `https://circlr-japan.github.io/sansu-drill/`
   );
 }
 
