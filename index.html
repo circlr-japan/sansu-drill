@@ -197,6 +197,8 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .ranking-section{margin:16px;}
 .ranking-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
 .ranking-header h3{font-size:15px;font-weight:700;color:var(--text);}
+.top-rank-cat{font-size:12px;font-weight:600;padding:5px 12px;border-radius:100px;border:1.5px solid var(--border);background:var(--surface);color:var(--text-muted);cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
+.top-rank-cat.active{background:#7C3AED;color:#fff;border-color:#7C3AED;}
 .grade-tabs{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px 12px;}
 .grade-tab{font-size:12px;font-weight:600;padding:5px 12px;border-radius:100px;border:1.5px solid var(--border);background:var(--surface);color:var(--text-muted);cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
 .grade-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);}
@@ -565,10 +567,23 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   <!-- 全国ランキング -->
   <div class="ranking-section">
     <div class="ranking-header">
-      <h3>🏆 全国タイムランキング TOP10</h3>
+      <h3>🏆 全国ランキング TOP10</h3>
     </div>
-    <div class="grade-tabs" id="rankingTabs"></div>
-    <div class="ranking-list" id="rankingList"><div class="rank-empty">読み込み中...</div></div>
+    <!-- カテゴリタブ -->
+    <div style="display:flex;gap:8px;padding:0 16px 8px;flex-wrap:wrap;">
+      <button class="top-rank-cat active" id="topCatDrill" onclick="switchTopRankCat('drill')">📐 算数ドリル</button>
+      <button class="top-rank-cat" id="topCatTime"    onclick="switchTopRankCat('time')">⏱ 九九1分間</button>
+      <button class="top-rank-cat" id="topCatEndless" onclick="switchTopRankCat('endless')">♾️ 九九無制限</button>
+    </div>
+    <!-- 算数ドリル：学年タブ -->
+    <div id="topRankDrillArea">
+      <div class="grade-tabs" id="rankingTabs"></div>
+      <div class="ranking-list" id="rankingList"><div class="rank-empty">読み込み中...</div></div>
+    </div>
+    <!-- 九九ランキング -->
+    <div id="topRankKukuArea" style="display:none;">
+      <div class="ranking-list" id="topKukuRankingList"><div class="rank-empty">読み込み中...</div></div>
+    </div>
   </div>
 
   <div class="ad-slot">広告スペース（320×50）</div>
@@ -2500,6 +2515,65 @@ function taReportToLine() {
 // ============================================================
 initRankingTabs();
 loadRanking(1);
+
+// TOPページ ランキングカテゴリ切り替え
+let topRankCat = 'drill';
+
+function switchTopRankCat(cat) {
+  topRankCat = cat;
+  ['drill','time','endless'].forEach(c => {
+    document.getElementById('topCat' + c.charAt(0).toUpperCase() + c.slice(1))
+      .classList.toggle('active', c === cat);
+  });
+  const drillArea = document.getElementById('topRankDrillArea');
+  const kukuArea  = document.getElementById('topRankKukuArea');
+  if (cat === 'drill') {
+    drillArea.style.display = '';
+    kukuArea.style.display  = 'none';
+  } else {
+    drillArea.style.display = 'none';
+    kukuArea.style.display  = '';
+    loadTopKukuRanking(cat);
+  }
+}
+
+async function loadTopKukuRanking(mode) {
+  const list = document.getElementById('topKukuRankingList');
+  list.innerHTML = '<div class="rank-empty">読み込み中...</div>';
+  if (!_fbReady()) {
+    setTimeout(() => { if (topRankCat === mode) loadTopKukuRanking(mode); }, 800);
+    return;
+  }
+  try {
+    const snapshot = await window._fbGet(
+      window._fbRef(window._fbDb, `kuku_rankings/${mode}`)
+    );
+    if (!snapshot.exists()) {
+      list.innerHTML = '<div class="rank-empty">まだ記録がありません！<br>九九チャレンジに挑戦しよう！</div>';
+      return;
+    }
+    const entries = [];
+    const raw = snapshot.val();
+    if (raw && typeof raw === 'object') {
+      Object.values(raw).forEach(v => { if (v && 'score' in v) entries.push(v); });
+    }
+    entries.sort((a,b) => b.score - a.score);
+    const top10  = entries.slice(0, 10);
+    const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
+    list.innerHTML = top10.map((r,i) => `
+      <div class="rank-row rank-${i+1}">
+        <div class="rank-medal">${medals[i] || String(i+1)}</div>
+        <div class="rank-info">
+          <div class="rank-name">${_escHtml(r.name)}</div>
+          <div class="rank-date">${formatDate(r.date)}</div>
+        </div>
+        <div class="rank-time">${r.score}問</div>
+      </div>`).join('');
+  } catch(e) {
+    console.error(e);
+    list.innerHTML = '<div class="rank-empty">取得に失敗しました。</div>';
+  }
+}
 </script>
 </body>
 </html>
