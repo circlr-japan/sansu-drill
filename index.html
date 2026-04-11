@@ -109,7 +109,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 
 /* ===== タブレット・PC：クイズページ2カラム ===== */
 @media(min-width:768px){
-  #quizPage{
+  body.quiz-active{max-width:100% !important;}
+  body.quiz-active #quizPage{
     display:grid;
     grid-template-columns:50vw 50vw;
     grid-template-rows:auto 1fr auto auto;
@@ -118,8 +119,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     min-height:100vh;
     align-items:start;
   }
-  body{max-width:100% !important;}
-  #quizPage .quiz-header{
+  body.quiz-active #quizPage .quiz-header{
     grid-column:1;
     grid-row:1;
     position:sticky;
@@ -127,21 +127,19 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     z-index:50;
     max-width:50vw;
   }
-  #quizPage .questions-wrap{
+  body.quiz-active #quizPage .questions-wrap{
     grid-column:1;
     grid-row:2;
   }
-  #quizPage .ad-slot{
+  body.quiz-active #quizPage .ad-slot{
     grid-column:1;
     grid-row:3;
   }
-  #quizPage .quiz-footer{
+  body.quiz-active #quizPage .quiz-footer{
     grid-column:1;
     grid-row:4;
   }
   .freespace-panel{
-    grid-column:2;
-    grid-row:1 / 5;
     position:fixed;
     top:0;
     right:0;
@@ -902,6 +900,8 @@ function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
+  // クイズページのみ body に quiz-active クラスを付ける（グリッドレイアウト有効化）
+  document.body.classList.toggle('quiz-active', id === 'quizPage');
   // フリースペースはクイズページのみ・タブレット/PC幅のみ表示
   const fs = document.getElementById('freespacePanel');
   if(fs){
@@ -1363,7 +1363,17 @@ async function loadRanking(grade){
 
     // 全件取得してクライアント側でタイム昇順ソート → 上位10件
     const entries = [];
-    snapshot.forEach(child => entries.push(child.val()));
+    const raw = snapshot.val();
+    if(raw && typeof raw === 'object'){
+      // push()で生成されたキー配下のオブジェクトを配列化
+      Object.values(raw).forEach(v => {
+        if(v && typeof v === 'object' && 'time' in v) entries.push(v);
+      });
+    }
+    if(entries.length === 0){
+      list.innerHTML = '<div class="rank-empty">まだ記録がありません。<br>100点を取るとランキングに登録できます！</div>';
+      return;
+    }
     entries.sort((a,b) => a.time - b.time);
     const top10 = entries.slice(0, 10);
 
