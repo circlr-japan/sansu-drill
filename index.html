@@ -396,6 +396,60 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .report-parent-btns{display:block;}
 .btn-line{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;background:#06C755;color:#fff;border:none;border-radius:var(--radius);padding:16px 8px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
 .btn-line:active{background:#05a849;}
+/* ===== タイムアタックモード ===== */
+.ta-section{margin:16px;background:linear-gradient(135deg,#1E40AF,#7C3AED);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-lg);}
+.ta-section-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ta-section-sub{font-size:12px;color:rgba(255,255,255,0.8);margin-bottom:14px;line-height:1.7;}
+.btn-ta-start{width:100%;padding:16px;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.6);border-radius:var(--radius);font-size:16px;font-weight:700;font-family:'Noto Sans JP',sans-serif;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-ta-start:active{background:rgba(255,255,255,0.3);}
+
+/* タイムアタックページ */
+#taPage{animation:fadeIn 0.3s ease;}
+.ta-header{background:linear-gradient(135deg,#1E40AF,#7C3AED);padding:20px 20px 16px;text-align:center;position:relative;}
+.ta-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:12px;}
+.ta-timer-ring{width:120px;height:120px;margin:0 auto 8px;position:relative;}
+.ta-timer-ring svg{transform:rotate(-90deg);}
+.ta-timer-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:36px;font-weight:700;color:#fff;font-variant-numeric:tabular-nums;}
+.ta-timer-text.ta-danger{color:#FCA5A5;animation:pulse 0.5s ease infinite;}
+.ta-count-row{display:flex;justify-content:center;gap:24px;margin-top:8px;}
+.ta-count-box{text-align:center;}
+.ta-count-label{font-size:11px;color:rgba(255,255,255,0.7);}
+.ta-count-val{font-size:28px;font-weight:700;color:#fff;}
+
+.ta-question-wrap{padding:20px 16px 8px;}
+.ta-question-card{background:var(--surface);border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow-lg);text-align:center;border:2px solid transparent;transition:border-color 0.15s;}
+.ta-question-card.ta-correct{border-color:#16A34A;animation:ta-flash-ok 0.3s ease;}
+.ta-question-card.ta-wrong{border-color:#DC2626;animation:ta-flash-ng 0.3s ease;}
+@keyframes ta-flash-ok{0%{background:#F0FDF4;}100%{background:var(--surface);}}
+@keyframes ta-flash-ng{0%{background:#FEF2F2;}100%{background:var(--surface);}}
+.ta-q-text{font-size:40px;font-weight:700;color:var(--text);margin-bottom:20px;letter-spacing:2px;}
+.ta-input{width:100%;border:3px solid #E2E8F0;border-radius:12px;padding:16px;font-size:32px;font-weight:700;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#F8FAFC;text-align:center;outline:none;transition:border-color 0.15s;-webkit-appearance:none;}
+.ta-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 4px rgba(37,99,235,0.12);}
+.ta-hint{font-size:12px;color:var(--text-faint);margin-top:8px;}
+
+.ta-stop-wrap{padding:8px 16px 24px;}
+.btn-ta-stop{width:100%;padding:16px;background:linear-gradient(135deg,#DC2626,#EF4444);color:#fff;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(220,38,38,0.35);-webkit-tap-highlight-color:transparent;}
+.btn-ta-stop:active{opacity:0.85;}
+
+/* タイムアタック結果ページ */
+#taResultPage{animation:fadeIn 0.3s ease;}
+.ta-result-hero{background:linear-gradient(135deg,#1E40AF,#7C3AED);padding:40px 20px 32px;text-align:center;}
+.ta-result-emoji{font-size:56px;display:block;margin-bottom:12px;}
+.ta-result-count{font-size:72px;font-weight:700;color:#fff;line-height:1;}
+.ta-result-unit{font-size:18px;color:rgba(255,255,255,0.8);margin-top:4px;}
+.ta-result-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:20px 16px 0;}
+.ta-stat-box{background:var(--surface);border-radius:12px;padding:16px;text-align:center;box-shadow:var(--shadow);}
+.ta-stat-val{font-size:26px;font-weight:700;color:var(--primary);}
+.ta-stat-lbl{font-size:11px;color:var(--text-muted);margin-top:3px;}
+.ta-history-section{padding:20px 16px 0;}
+.ta-history-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;}
+.ta-history-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid var(--border);font-size:13px;}
+.ta-history-date{color:var(--text-muted);}
+.ta-history-val{font-weight:700;color:var(--primary);}
+.ta-result-actions{padding:20px 16px 40px;display:flex;flex-direction:column;gap:10px;}
+.btn-ta-retry{padding:18px;background:linear-gradient(135deg,#1E40AF,#7C3AED);color:#fff;border:none;border-radius:var(--radius);font-size:17px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(124,58,237,0.35);-webkit-tap-highlight-color:transparent;}
+.btn-ta-line{display:flex;align-items:center;justify-content:center;gap:7px;padding:16px;background:#06C755;color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.btn-ta-top{padding:14px;background:var(--surface);color:var(--text-muted);border:1.5px solid var(--border);border-radius:var(--radius);font-size:14px;font-weight:500;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 </style>
 </head>
 <body>
@@ -444,7 +498,15 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <div class="ad-slot">広告スペース（320×100）</div>
 
-  <!-- ===== PDF ドリル ダウンロード ===== -->
+  <!-- ===== タイムアタックモード ===== -->
+  <div class="ta-section">
+    <div class="ta-section-title">⚡ タイムアタック — 九九チャレンジ</div>
+    <div class="ta-section-sub">1分間で九九をできるだけ多く答えよう！<br>STOPするまで問題が続きます。</div>
+    <button class="btn-ta-start" onclick="startTimeAttack()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+      タイムアタック スタート！
+    </button>
+  </div>
   <div class="pdf-section">
     <div class="pdf-section-title">📄 にじゅうまる。算数ドリル PDF ダウンロード</div>
     <div class="pdf-section-sub">学年・難易度・問題数を選んで「PDF保存」ボタンを押すと、問題ページ＋解答ページの2枚がダウンロードされます。</div>
@@ -494,6 +556,86 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <div class="ad-slot">広告スペース（320×50）</div>
   <footer>文部科学省 小学校学習指導要領解説 算数編 準拠<br>© 2024 にじゅうまる。算数ドリル. All rights reserved.<br><a href="/privacy.html" style="color:#94A3B8;font-size:11px;text-decoration:underline;">プライバシーポリシー</a>&nbsp;|&nbsp;<a href="/privacy.html#contact" style="color:#94A3B8;font-size:11px;text-decoration:underline;">お問い合わせ</a></footer>
+</div>
+
+<!-- ========== TIME ATTACK PAGE ========== -->
+<div id="taPage" class="page">
+  <div class="ta-header">
+    <div class="ta-title">⚡ タイムアタック — 九九チャレンジ</div>
+    <!-- 円形カウントダウンタイマー -->
+    <div class="ta-timer-ring">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="8"/>
+        <circle id="taTimerArc" cx="60" cy="60" r="52" fill="none" stroke="#fff" stroke-width="8"
+          stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="0"/>
+      </svg>
+      <div class="ta-timer-text" id="taTimerText">60</div>
+    </div>
+    <div class="ta-count-row">
+      <div class="ta-count-box">
+        <div class="ta-count-label">正解</div>
+        <div class="ta-count-val" id="taCorrectCount">0</div>
+      </div>
+      <div class="ta-count-box">
+        <div class="ta-count-label">問題数</div>
+        <div class="ta-count-val" id="taTotalCount">0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ta-question-wrap">
+    <div class="ta-question-card" id="taQuestionCard">
+      <div class="ta-q-text" id="taQText">3 × 4 ＝</div>
+      <input class="ta-input" type="text" id="taInput" inputmode="numeric" pattern="[0-9]*"
+        placeholder="答えを入力" autocomplete="off" oninput="taCheckInput()">
+      <div class="ta-hint" id="taHint">数字を入力すると自動で次の問題へ進みます</div>
+    </div>
+  </div>
+
+  <div class="ta-stop-wrap">
+    <button class="btn-ta-stop" onclick="stopTimeAttack()">
+      ■ STOP して結果を見る
+    </button>
+  </div>
+</div>
+
+<!-- ========== TIME ATTACK RESULT PAGE ========== -->
+<div id="taResultPage" class="page">
+  <div class="ta-result-hero">
+    <span class="ta-result-emoji" id="taResultEmoji">🎉</span>
+    <div class="ta-result-count" id="taResultCount">0</div>
+    <div class="ta-result-unit">問 正解！</div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.75);margin-top:8px;" id="taResultSub"></div>
+  </div>
+
+  <div class="ta-result-stats">
+    <div class="ta-stat-box">
+      <div class="ta-stat-val" id="taResTotal">0</div>
+      <div class="ta-stat-lbl">回答した問題数</div>
+    </div>
+    <div class="ta-stat-box">
+      <div class="ta-stat-val" id="taResRate">0%</div>
+      <div class="ta-stat-lbl">正解率</div>
+    </div>
+  </div>
+
+  <!-- 過去の記録 -->
+  <div class="ta-history-section">
+    <div class="ta-history-title">📈 過去の記録（このブラウザ）</div>
+    <div id="taHistoryList"></div>
+  </div>
+
+  <div class="ta-result-actions">
+    <button class="btn-ta-retry" onclick="startTimeAttack()">
+      ⚡ もう一度チャレンジ！
+    </button>
+    <button class="btn-ta-line" onclick="taReportToLine()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEでパパ・ママに報告
+    </button>
+    <button class="btn-ta-top" onclick="goTop()">← トップに戻る</button>
+  </div>
+  <footer>© 2024 にじゅうまる。算数ドリル</footer>
 </div>
 
 <!-- ========== COUNTDOWN PAGE ========== -->
@@ -1946,6 +2088,194 @@ function saveReportImage() {
     }
   }, 50);
 })();
+
+// ============================================================
+// タイムアタックモード（九九 1分間チャレンジ）
+// ============================================================
+const TA_DURATION = 60; // 秒
+const TA_CIRCUMFERENCE = 2 * Math.PI * 52; // ≒ 326.7
+
+let taTimer       = null;
+let taRemaining   = TA_DURATION;
+let taCorrect     = 0;
+let taTotal       = 0;
+let taCurrentAns  = 0;
+let taLastA       = 0;
+let taLastB       = 0;
+
+// 九九問題を1問生成（直前と同じ式を避ける）
+function taNextQuestion() {
+  let a, b;
+  do {
+    a = Math.floor(Math.random() * 9) + 1;
+    b = Math.floor(Math.random() * 9) + 1;
+  } while (a === taLastA && b === taLastB);
+  taLastA = a; taLastB = b;
+  taCurrentAns = a * b;
+  document.getElementById('taQText').textContent = `${a} × ${b} ＝`;
+  document.getElementById('taInput').value = '';
+  document.getElementById('taInput').focus();
+  // カードのフラッシュクラスをリセット
+  const card = document.getElementById('taQuestionCard');
+  card.classList.remove('ta-correct', 'ta-wrong');
+}
+
+// タイマー円弧を更新
+function taUpdateArc(remaining) {
+  const arc = document.getElementById('taTimerArc');
+  const text = document.getElementById('taTimerText');
+  if (!arc || !text) return;
+  const pct = remaining / TA_DURATION;
+  arc.style.strokeDashoffset = TA_CIRCUMFERENCE * (1 - pct);
+  text.textContent = remaining;
+  text.className = 'ta-timer-text' + (remaining <= 10 ? ' ta-danger' : '');
+  // 残り10秒で円弧を赤に
+  arc.style.stroke = remaining <= 10 ? '#FCA5A5' : '#fff';
+}
+
+// スタート
+function startTimeAttack() {
+  taRemaining = TA_DURATION;
+  taCorrect   = 0;
+  taTotal     = 0;
+  taLastA     = 0;
+  taLastB     = 0;
+
+  document.getElementById('taCorrectCount').textContent = '0';
+  document.getElementById('taTotalCount').textContent   = '0';
+  document.getElementById('taHint').textContent = '数字を入力すると自動で次の問題へ進みます';
+  taUpdateArc(TA_DURATION);
+  taNextQuestion();
+  showPage('taPage');
+
+  clearInterval(taTimer);
+  taTimer = setInterval(() => {
+    taRemaining--;
+    taUpdateArc(taRemaining);
+    if (taRemaining <= 0) {
+      clearInterval(taTimer);
+      taFinish();
+    }
+  }, 1000);
+
+  // 入力フォーカス
+  setTimeout(() => document.getElementById('taInput')?.focus(), 300);
+}
+
+// 入力チェック（桁数が合ったら自動判定）
+function taCheckInput() {
+  const input = document.getElementById('taInput');
+  const val   = input.value.trim();
+  if (val === '') return;
+
+  const num = parseInt(val, 10);
+  const correct = taCurrentAns;
+
+  // 正解の桁数に達したら自動判定（最大2桁=81）
+  const digits = String(correct).length;
+  if (val.length >= digits || (num > correct && val.length >= 1)) {
+    taTotal++;
+    const card = document.getElementById('taQuestionCard');
+    if (num === correct) {
+      taCorrect++;
+      card.classList.remove('ta-wrong');
+      card.classList.add('ta-correct');
+      document.getElementById('taHint').textContent = '⭕ 正解！';
+    } else {
+      card.classList.remove('ta-correct');
+      card.classList.add('ta-wrong');
+      document.getElementById('taHint').textContent = `✕ 正解は ${correct}`;
+    }
+    document.getElementById('taCorrectCount').textContent = taCorrect;
+    document.getElementById('taTotalCount').textContent   = taTotal;
+    // 少し待ってから次の問題
+    setTimeout(() => taNextQuestion(), 400);
+  }
+}
+
+// STOP ボタン
+function stopTimeAttack() {
+  clearInterval(taTimer);
+  taFinish();
+}
+
+// 結果表示
+function taFinish() {
+  clearInterval(taTimer);
+  const rate = taTotal > 0 ? Math.round(taCorrect / taTotal * 100) : 0;
+  const emoji = taCorrect >= 40 ? '🏆' : taCorrect >= 25 ? '🎉' : taCorrect >= 15 ? '😊' : '💪';
+  const sub   = taCorrect >= 40 ? 'すごい！九九マスター！'
+              : taCorrect >= 25 ? 'よくできました！'
+              : taCorrect >= 15 ? 'がんばりました！'
+              : 'もう一度チャレンジ！';
+
+  document.getElementById('taResultEmoji').textContent  = emoji;
+  document.getElementById('taResultCount').textContent  = taCorrect;
+  document.getElementById('taResultSub').textContent    = sub;
+  document.getElementById('taResTotal').textContent     = taTotal;
+  document.getElementById('taResRate').textContent      = rate + '%';
+
+  // 記録を保存
+  taSaveRecord(taCorrect, taTotal, rate);
+  taRenderHistory();
+  showPage('taResultPage');
+}
+
+// ローカルストレージに記録保存
+function taSaveRecord(correct, total, rate) {
+  const KEY = 'nijumaru_ta_history';
+  let hist = [];
+  try { hist = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch {}
+  hist.unshift({
+    correct, total, rate,
+    date: Date.now()
+  });
+  hist = hist.slice(0, 10); // 最大10件
+  try { localStorage.setItem(KEY, JSON.stringify(hist)); } catch {}
+}
+
+// 履歴表示
+function taRenderHistory() {
+  const KEY = 'nijumaru_ta_history';
+  let hist = [];
+  try { hist = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch {}
+  const el = document.getElementById('taHistoryList');
+  if (!hist.length) {
+    el.innerHTML = '<div style="font-size:13px;color:var(--text-faint);padding:8px 0;">まだ記録がありません</div>';
+    return;
+  }
+  el.innerHTML = hist.map((r, i) => `
+    <div class="ta-history-row">
+      <span class="ta-history-date">${i === 0 ? '今回' : formatDate(r.date)}</span>
+      <span class="ta-history-val">${r.correct}問正解 / ${r.total}問 (${r.rate}%)</span>
+    </div>`).join('');
+}
+
+// LINE報告
+function taReportToLine() {
+  const today = new Date().toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
+  const rate  = taTotal > 0 ? Math.round(taCorrect / taTotal * 100) : 0;
+
+  // 過去ベスト取得
+  let best = taCorrect;
+  try {
+    const hist = JSON.parse(localStorage.getItem('nijumaru_ta_history') || '[]');
+    hist.forEach(r => { if (r.correct > best) best = r.correct; });
+  } catch {}
+
+  const msg =
+    `⚡ ${today} 九九タイムアタック結果\n` +
+    `━━━━━━━━━━━━━━\n` +
+    `🏆 正解数：${taCorrect}問\n` +
+    `📝 回答数：${taTotal}問\n` +
+    `✅ 正解率：${rate}%\n` +
+    `⭐ 過去最高：${best}問\n` +
+    `━━━━━━━━━━━━━━\n` +
+    `にじゅうまる。算数ドリル\n` +
+    `https://circlr-japan.github.io/sansu-drill/`;
+
+  window.open(`https://line.me/R/share?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+}
 
 // ============================================================
 // 初期化
