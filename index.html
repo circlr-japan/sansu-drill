@@ -157,6 +157,9 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 }
 
 .ad-slot{text-align:center;margin:12px 16px;min-height:60px;overflow:hidden;}
+/* カウントダウン広告（画面下部固定） */
+.cd-ad-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(15,23,42,0.85);padding:6px 16px 8px;z-index:100;max-width:640px;margin:0 auto;}
+.cd-ad-bar ins{min-height:50px;}
 .page{display:none;}.page.active{display:block;}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -616,6 +619,15 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="countdown-label" id="taCountdownLabel">秒後にスタート！</div>
     <button class="countdown-cancel" onclick="cancelTaCountdown()">キャンセル</button>
   </div>
+  <div class="cd-ad-bar">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-3034271297570921"
+      data-ad-slot="auto"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 </div>
 
 <!-- ========== 九九ゲームページ ========== -->
@@ -732,6 +744,16 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="countdown-num" id="countdownNum">5</div>
     <div class="countdown-label" id="countdownLabel">秒後にスタート！</div>
     <button class="countdown-cancel" onclick="cancelCountdown()">キャンセル</button>
+  </div>
+  <!-- 広告：画面下部固定・カウントダウンの邪魔にならない位置 -->
+  <div class="cd-ad-bar">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-3034271297570921"
+      data-ad-slot="auto"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 </div>
 
