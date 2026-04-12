@@ -1245,6 +1245,8 @@ function renderQuestions(){
     card.className='question-card';
     const needFrac=isFracAnswer(String(q.a));
     const needRatio=isRatioAnswer(String(q.a));
+    // 小数の答えは decimal キーボード（小数点入力可）、整数は numeric（テンキー）
+    const needDecimal = !needFrac && !needRatio && String(q.a).includes('.');
     const inputHTML=needFrac?`
       <div class="frac-input-wrap">
         <div class="frac-box">
@@ -1280,7 +1282,9 @@ function renderQuestions(){
       </div>
       <div class="ratio-hint">※ 左と右の数を別々に入力してください</div>
     `:`
-      <input class="answer-input" type="text" inputmode="numeric" pattern="[0-9]*"
+      <input class="answer-input" type="text"
+        inputmode="${needDecimal ? 'decimal' : 'numeric'}"
+        ${needDecimal ? '' : 'pattern="[0-9]*"'}
         placeholder="答えを入力" id="ans_${i}" autocomplete="off"
         oninput="updateProgress()"
         onkeydown="handleEnter(event,${i})">
