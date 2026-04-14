@@ -479,6 +479,22 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-ta-line{display:flex;align-items:center;justify-content:center;gap:7px;padding:14px;background:#06C755;color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .btn-ta-other{display:flex;align-items:center;justify-content:center;gap:7px;padding:14px;background:var(--surface);color:var(--text-muted);border:1.5px solid var(--border);border-radius:var(--radius);font-size:14px;font-weight:500;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .btn-ta-top{padding:12px;background:var(--surface);color:var(--text-muted);border:1.5px solid var(--border);border-radius:var(--radius);font-size:13px;font-weight:500;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+
+/* ===== 収益導線（PDFエリア改善） ===== */
+.pdf-value-copy{font-size:12px;color:var(--text-muted);text-align:center;margin-top:12px;line-height:1.7;}
+.premium-box{margin-top:14px;background:linear-gradient(135deg,#FAF5FF,#F5F3FF);border:1.5px solid #D8B4FE;border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(124,58,237,0.08);}
+.premium-box h3{font-size:15px;font-weight:700;color:#5B21B6;margin-bottom:8px;text-align:center;}
+.premium-box p{font-size:12px;color:#6D28D9;text-align:center;line-height:1.7;margin-bottom:10px;}
+.premium-list{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px;}
+.premium-list li{background:#fff;border:1px solid rgba(124,58,237,0.10);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;color:#4C1D95;}
+.btn-premium{width:100%;padding:15px;background:linear-gradient(135deg,#7C3AED,#8B5CF6);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(124,58,237,0.28);transition:transform 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-premium:active{transform:scale(0.98);}
+.premium-mini-note{font-size:10px;color:var(--text-faint);text-align:center;margin-top:8px;line-height:1.6;}
+.article-promo{margin:16px;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FCD34D;border-radius:14px;padding:18px;box-shadow:var(--shadow);}
+.article-promo h3{font-size:15px;font-weight:700;color:#92400E;margin-bottom:6px;}
+.article-promo p{font-size:12px;color:#B45309;line-height:1.7;margin-bottom:10px;}
+.article-promo .btn-article-premium{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#F59E0B,#FBBF24);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;text-align:center;text-decoration:none;box-shadow:0 6px 18px rgba(245,158,11,0.22);}
+
 </style>
 </head>
 <body>
@@ -592,6 +608,20 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       学年を選んでください
     </button>
     <div class="pdf-note">※ 印刷はA4・縦・余白なし推奨　※ 問題はランダム生成で毎回異なります</div>
+
+    <div class="pdf-value-copy">このプリントが気に入った方へ。続けやすさを上げる機能をプレミアムとして追加できます。</div>
+    <div class="premium-box">
+      <h3>✨ もっと効率よく学習したい方へ</h3>
+      <p>無料版で試して、よければ次の機能を追加できます。</p>
+      <ul class="premium-list">
+        <li>✔ 苦手だけを自動出題</li>
+        <li>✔ 100問まとめドリル</li>
+        <li>✔ 学習履歴つき</li>
+      </ul>
+      <button class="btn-premium" onclick="goPremiumPage()">プレミアムを見る</button>
+      <div class="premium-mini-note">※ プレミアム機能の案内ページへ移動します。</div>
+    </div>
+
   </div>
 
   <!-- 全国ランキング -->
@@ -1885,7 +1915,7 @@ function generatePdf() {
   const diff = selectedPdfDiff  || 'normal';
   const cnt  = selectedPdfCount || 20;
   setTimeout(async () => {
-    try { await _buildPdfCanvas(selectedPdfGrade, diff, cnt); }
+    try { await _buildPdfCanvas(selectedPdfGrade, diff, cnt); showPremiumCTA(); }
     catch(e) {
       console.error('PDF生成エラー:', e);
       alert('PDF生成に失敗しました。\n\n原因: ' + (e.message || '不明') + '\n\nブラウザを更新してお試しください。');

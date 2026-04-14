@@ -1,7 +1,8 @@
-const CACHE_NAME = 'nijumaru-v1';
+const CACHE_NAME = 'nijumaru-v2';
 const ASSETS = [
   '/',
   '/index.html',
+  '/premium.html',
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png',
