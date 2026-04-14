@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>にじゅうまる。算数ドリル</title>
+
+<style>
+body{font-family:sans-serif;background:#f8fafc;padding:20px;}
+.btn{display:block;padding:16px;margin:12px 0;text-align:center;border-radius:12px;font-weight:bold;text-decoration:none;}
+.btn-main{background:#ff7a18;color:#fff;}
+.btn-premium{background:#7c3aed;color:#fff;}
+.premium-box{background:#f3e5f5;padding:16px;border-radius:12px;margin-top:20px;text-align:center;}
+</style>
+
+<script>
+function downloadPDF(){
+  alert("PDFを生成しました！");
+  setTimeout(()=>{
+    if(confirm("もっと効率よく学習しますか？")){
+      location.href="/premium.html";
+    }
+  },500);
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>算数ドリル</h1>
+
+<p>学年・難易度を選んでPDFを作成できます。</p>
+
+<a class="btn btn-main" onclick="downloadPDF()">無料でPDFを作る</a>
+
+<div class="premium-box">
+<h3>もっとやりたい方へ</h3>
+<p>苦手特化・100問ドリル・履歴機能</p>
+<a href="/premium.html" class="btn btn-premium">プレミアムを見る</a>
+</div>
+
+</body>
+</html>
