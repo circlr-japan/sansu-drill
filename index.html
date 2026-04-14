@@ -479,6 +479,18 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-ta-line{display:flex;align-items:center;justify-content:center;gap:7px;padding:14px;background:#06C755;color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .btn-ta-other{display:flex;align-items:center;justify-content:center;gap:7px;padding:14px;background:var(--surface);color:var(--text-muted);border:1.5px solid var(--border);border-radius:var(--radius);font-size:14px;font-weight:500;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .btn-ta-top{padding:12px;background:var(--surface);color:var(--text-muted);border:1.5px solid var(--border);border-radius:var(--radius);font-size:13px;font-weight:500;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+
+/* ===== 収益導線（PDFエリア改善） ===== */
+.pdf-value-copy{font-size:12px;color:var(--text-muted);text-align:center;margin-top:12px;line-height:1.7;}
+.premium-box{margin-top:14px;background:linear-gradient(135deg,#FAF5FF,#F5F3FF);border:1.5px solid #D8B4FE;border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(124,58,237,0.08);}
+.premium-box h3{font-size:15px;font-weight:700;color:#5B21B6;margin-bottom:8px;text-align:center;}
+.premium-box p{font-size:12px;color:#6D28D9;text-align:center;line-height:1.7;margin-bottom:10px;}
+.premium-list{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px;}
+.premium-list li{background:#fff;border:1px solid rgba(124,58,237,0.10);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;color:#4C1D95;}
+.btn-premium{width:100%;padding:15px;background:linear-gradient(135deg,#7C3AED,#8B5CF6);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(124,58,237,0.28);transition:transform 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-premium:active{transform:scale(0.98);}
+.premium-mini-note{font-size:10px;color:var(--text-faint);text-align:center;margin-top:8px;line-height:1.6;}
+
 </style>
 </head>
 <body>
@@ -592,6 +604,20 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       学年を選んでください
     </button>
     <div class="pdf-note">※ 印刷はA4・縦・余白なし推奨　※ 問題はランダム生成で毎回異なります</div>
+
+    <div class="pdf-value-copy">このプリントが気に入った方へ。続けやすさを上げる機能をプレミアムとして追加できます。</div>
+    <div class="premium-box">
+      <h3>✨ もっと効率よく学習したい方へ</h3>
+      <p>無料版で試して、よければ次の機能を追加できる設計です。</p>
+      <ul class="premium-list">
+        <li>✔ 苦手だけを自動出題</li>
+        <li>✔ 100問まとめドリル</li>
+        <li>✔ 学習履歴つき</li>
+      </ul>
+      <button class="btn-premium" onclick="openPremiumPreview()">プレミアムを見る</button>
+      <div class="premium-mini-note">※ いまは案内ボタンの仮設置版です。プレミアムページ作成後、このボタンのリンク先を差し替えて使えます。</div>
+    </div>
+
   </div>
 
   <!-- 全国ランキング -->
@@ -1864,6 +1890,20 @@ function _updatePdfBtn() {
   btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 小学${selectedPdfGrade}年生 ${dl} ${cnt}問 PDF保存`;
 }
 
+
+function openPremiumPreview() {
+  alert('プレミアム機能ページはこれから追加できます。\n\nおすすめの有料機能\n・苦手だけ出題\n・100問まとめドリル\n・学習履歴の保存\n\nプレミアムページ作成後は、このボタンを /premium などに差し替えてください。');
+}
+
+function showPremiumCTA() {
+  setTimeout(() => {
+    const goPremium = confirm('PDFのダウンロードが完了しました。\n\nもっと効率よく学習したい方へ\n・苦手だけを自動出題\n・100問まとめドリル\n・学習履歴つき\n\nプレミアム案内を確認しますか？');
+    if (goPremium) {
+      openPremiumPreview();
+    }
+  }, 250);
+}
+
 function generatePdf() {
   if (!selectedPdfGrade) return;
   const btn = document.getElementById('btnPdfDl');
@@ -1872,7 +1912,7 @@ function generatePdf() {
   const diff = selectedPdfDiff  || 'normal';
   const cnt  = selectedPdfCount || 20;
   setTimeout(async () => {
-    try { await _buildPdfCanvas(selectedPdfGrade, diff, cnt); }
+    try { await _buildPdfCanvas(selectedPdfGrade, diff, cnt); showPremiumCTA(); }
     catch(e) {
       console.error('PDF生成エラー:', e);
       alert('PDF生成に失敗しました。\n\n原因: ' + (e.message || '不明') + '\n\nブラウザを更新してお試しください。');
