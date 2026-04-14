@@ -6,6 +6,21 @@
 <meta name="google-site-verification" content="zEnFmVrZY541NhsEUEE5al2tYmKOqSJ4GJj3-RS1uf4" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
 
+<!-- ===== PWA ===== -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1E40AF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="にじゅうまる。">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(()=>{});
+  });
+}
+</script>
+
 <!-- ===== 基本SEOタグ ===== -->
 <title>にじゅうまる。算数ドリル【学年別】無料</title>
 <meta name="description" content="小学1〜6年生対応の無料算数ドリル「にじゅうまる。算数ドリル」。文部科学省学習指導要領準拠。初級・中級・上級の3段階。たし算・ひき算・かけ算・わり算・分数・小数など各学年25問・100点満点。スマホ・タブレット対応。">
@@ -608,7 +623,67 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   data-ad-format="auto"
   data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-  <footer>文部科学省 小学校学習指導要領解説 算数編 準拠<br>© 2025 にじゅうまる。算数ドリル. All rights reserved.<br><a href="https://nijumaru-drill.com/privacy.html" style="color:#94A3B8;font-size:11px;text-decoration:underline;">プライバシーポリシー</a>&nbsp;|&nbsp;<a href="https://nijumaru-drill.com/privacy.html#contact" style="color:#94A3B8;font-size:11px;text-decoration:underline;">お問い合わせ</a></footer>
+
+  <!-- ===== 記事リンクセクション ===== -->
+  <div style="padding:20px 16px 8px;">
+    <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.8px;margin-bottom:12px;">📚 算数学習のヒント</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
+      <a href="/how-to-use.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">📖</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">ドリルの使い方</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">全機能を解説</div>
+      </a>
+      <a href="/teaching-tips.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">👨‍👩‍👧</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">苦手な子への教え方</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">保護者向け</div>
+      </a>
+      <a href="/kuku-tips.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">✖️</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">九九の覚え方</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">段別攻略法</div>
+      </a>
+      <a href="/grade-guide.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">📋</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">学年別 学習内容</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">1〜6年生まとめ</div>
+      </a>
+      <a href="/reduce-mistakes.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">✏️</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">計算ミスをなくす</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">5つの方法</div>
+      </a>
+      <a href="/test-prep.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">📝</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">テスト前日の対策</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">点数アップのコツ</div>
+      </a>
+      <a href="/study-habits.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">📅</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">毎日続けるコツ</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">習慣づくり</div>
+      </a>
+      <a href="/faq.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
+        <div style="font-size:18px;margin-bottom:4px;">❓</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">よくある質問</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">FAQ</div>
+      </a>
+    </div>
+
+    <!-- ===== 楽天モーションウィジェット（自動最適化） ===== -->
+    <div style="padding:20px 16px 4px;">
+      <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.8px;margin-bottom:10px;">🎯 あなたへのおすすめ教材</div>
+      <div style="overflow:hidden;border-radius:10px;background:var(--card);border:1px solid var(--border);">
+        <script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="097cb958.bc61ad34.097cb959.eac353a7";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="468x160";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ts="1776063409681";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
+      </div>
+      <div style="font-size:10px;color:var(--text-faint);text-align:center;margin-top:6px;">※ 楽天アフィリエイトリンクを含みます</div>
+    </div>
+
+    <!-- ===== 楽天APIウィジェット（カテゴリ別・リアルタイム） ===== -->
+    <div id="rakuten-affiliate-widget"></div>
+  </div>
+
+  <footer>文部科学省 小学校学習指導要領解説 算数編 準拠<br>© 2025 にじゅうまる。算数ドリル. All rights reserved.<br><a href="https://nijumaru-drill.com/privacy.html" style="color:#94A3B8;font-size:11px;text-decoration:underline;">プライバシーポリシー</a>&nbsp;|&nbsp;<a href="https://nijumaru-drill.com/privacy.html#contact" style="color:#94A3B8;font-size:11px;text-decoration:underline;">お問い合わせ</a>&nbsp;|&nbsp;<a href="https://nijumaru-drill.com/faq.html" style="color:#94A3B8;font-size:11px;text-decoration:underline;">FAQ</a></footer>
 </div>
 
 <!-- ========== 九九カウントダウン ========== -->
@@ -2637,5 +2712,6 @@ async function loadTopKukuRanking(mode) {
   }
 }
 </script>
+<script src="/affiliate.js" defer></script>
 </body>
 </html>

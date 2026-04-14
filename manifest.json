@@ -1,0 +1,38 @@
+{
+  "name": "にじゅうまる。算数ドリル",
+  "short_name": "にじゅうまる。",
+  "description": "小学1〜6年生対応の無料算数ドリル。学年別・レベル別で毎日の計算練習に。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#1E40AF",
+  "orientation": "portrait",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education"],
+  "shortcuts": [
+    {
+      "name": "1年生ドリル",
+      "url": "/?grade=1",
+      "description": "1年生の算数ドリルをスタート"
+    },
+    {
+      "name": "九九チャレンジ",
+      "url": "/?mode=kuku",
+      "description": "九九タイムアタック"
+    }
+  ]
+}
