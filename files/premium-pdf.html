@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>解答付きPDF生成 | にじゅうまる。算数ドリル プレミアム</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary:#2563EB;--purple:#7C3AED;--purple-light:#F5F3FF;
+  --bg:#F8FAFC;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
+  --border:#E2E8F0;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
+@media(min-width:640px){body{max-width:680px;margin:0 auto;}}
+
+.header{background:linear-gradient(135deg,#1E40AF,#7C3AED);padding:22px 20px 26px;color:#fff;}
+.header a{color:rgba(255,255,255,0.82);font-size:13px;text-decoration:none;}
+.header h1{font-size:20px;font-weight:700;margin-top:6px;line-height:1.4;}
+.header p{font-size:13px;color:rgba(255,255,255,0.86);margin-top:6px;}
+
+.content{padding:16px 16px 60px;}
+
+/* ── 認証ゲート ── */
+#authGate{background:var(--surface);border-radius:16px;padding:24px 20px;box-shadow:var(--shadow);text-align:center;}
+#authGate h2{font-size:17px;font-weight:700;margin-bottom:8px;}
+#authGate p{font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.7;}
+.auth-input{width:100%;border:2px solid var(--border);border-radius:10px;padding:13px 14px;font-size:16px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color 0.15s;}
+.auth-input:focus{border-color:var(--purple);}
+.auth-error{font-size:12px;color:#DC2626;margin-top:6px;display:none;}
+.btn{width:100%;border:none;border-radius:var(--radius);padding:15px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;}
+.btn-purple{background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;box-shadow:0 6px 20px rgba(124,58,237,0.28);margin-top:12px;}
+.btn-purple:active{transform:scale(0.98);}
+.btn-purple:disabled{background:#CBD5E1;box-shadow:none;cursor:not-allowed;}
+
+/* ── ジェネレーター ── */
+#generator{display:none;}
+.section{background:var(--surface);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);margin-bottom:14px;}
+.section h2{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--text);}
+.row-label{font-size:11px;font-weight:700;color:var(--text-muted);letter-spacing:0.5px;margin:12px 0 6px;text-transform:uppercase;}
+.row-label:first-of-type{margin-top:0;}
+
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.grade-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
+.grade-btn.sel{border-color:var(--purple);background:var(--purple-light);}
+.grade-btn:active{transform:scale(0.96);}
+.grade-btn .gnum{font-size:19px;font-weight:700;display:block;}
+.grade-btn .glabel{font-size:10px;color:var(--text-muted);display:block;margin-top:1px;}
+
+.opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.opt-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);transition:all 0.15s;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.opt-btn.sel{border-color:var(--purple);background:var(--purple-light);color:var(--purple);}
+.opt-btn:active{transform:scale(0.96);}
+.opt-btn small{font-size:9px;font-weight:400;color:var(--text-muted);}
+.opt-btn.sel small{color:#9F7AEA;}
+
+/* 問題数スライダー */
+.count-row{display:flex;align-items:center;gap:12px;margin-top:4px;}
+.count-slider{flex:1;accent-color:var(--purple);height:5px;}
+.count-val{font-size:20px;font-weight:700;color:var(--purple);min-width:52px;text-align:right;}
+.count-presets{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px;}
+.preset-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:7px 4px;text-align:center;cursor:pointer;font-size:12px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);transition:all 0.15s;}
+.preset-btn.sel{border-color:var(--purple);background:var(--purple-light);color:var(--purple);}
+
+/* オプション */
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
+.toggle-row:last-child{border-bottom:none;}
+.toggle-label{font-size:14px;font-weight:600;}
+.toggle-desc{font-size:11px;color:var(--text-muted);}
+.toggle{position:relative;display:inline-block;width:44px;height:24px;}
+.toggle input{opacity:0;width:0;height:0;}
+.toggle-slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#CBD5E1;transition:.3s;border-radius:24px;}
+.toggle-slider:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background:#fff;transition:.3s;border-radius:50%;}
+input:checked+.toggle-slider{background:var(--purple);}
+input:checked+.toggle-slider:before{transform:translateX(20px);}
+
+/* 名前・タイトル入力 */
+.text-input{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:11px 12px;font-size:14px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color 0.15s;background:var(--bg);}
+.text-input:focus{border-color:var(--purple);background:#fff;}
+
+/* 生成ボタン */
+#btnGenerate{margin-top:4px;}
+.progress-wrap{display:none;margin-top:12px;}
+.progress-bar{height:6px;background:var(--border);border-radius:99px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,#7C3AED,#9F67FA);border-radius:99px;transition:width 0.3s ease;width:0%;}
+.progress-text{font-size:12px;color:var(--text-muted);text-align:center;margin-top:6px;}
+
+/* 完了バナー */
+#doneBanner{display:none;margin-top:14px;background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:1.5px solid #86EFAC;border-radius:14px;padding:16px;}
+#doneBanner .title{font-size:15px;font-weight:700;color:#15803D;margin-bottom:4px;}
+#doneBanner .sub{font-size:13px;color:#166534;}
+
+footer{text-align:center;padding:16px 16px 36px;font-size:11px;color:#94A3B8;}
+footer a{color:#94A3B8;text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="/index.html">← トップに戻る</a>
+  <h1>📄 解答付きPDF生成</h1>
+  <p>プレミアム版　── 解答ページ・名前欄・日付入り対応</p>
+</div>
+
+<div class="content">
+
+  <!-- ── 認証ゲート ── -->
+  <div id="authGate">
+    <h2>🔐 プレミアム認証</h2>
+    <p>購入時に発行されたアクセスコードを入力してください。<br>アクセスコードは購入完了メールに記載されています。</p>
+    <input type="password" id="accessCodeInput" class="auth-input" placeholder="アクセスコードを入力" maxlength="32" autocomplete="off">
+    <div id="authError" class="auth-error">コードが正しくありません。購入完了メールをご確認ください。</div>
+    <button class="btn btn-purple" onclick="checkAuth()">確認する</button>
+    <p style="font-size:11px;color:var(--text-muted);margin-top:14px;line-height:1.7;">
+      まだ購入していない方は<a href="/premium.html" style="color:var(--purple);">プレミアムページ</a>から購入できます。<br>
+      ※ このページはブックマーク保存を推奨します。
+    </p>
+  </div>
+
+  <!-- ── PDFジェネレーター ── -->
+  <div id="generator">
+
+    <div class="section">
+      <h2>① 学年</h2>
+      <div class="grade-grid">
+        <div class="grade-btn" id="gradeBtn1" onclick="selGrade(1)"><span class="gnum">1年</span><span class="glabel">小学1年生</span></div>
+        <div class="grade-btn" id="gradeBtn2" onclick="selGrade(2)"><span class="gnum">2年</span><span class="glabel">小学2年生</span></div>
+        <div class="grade-btn" id="gradeBtn3" onclick="selGrade(3)"><span class="gnum">3年</span><span class="glabel">小学3年生</span></div>
+        <div class="grade-btn" id="gradeBtn4" onclick="selGrade(4)"><span class="gnum">4年</span><span class="glabel">小学4年生</span></div>
+        <div class="grade-btn" id="gradeBtn5" onclick="selGrade(5)"><span class="gnum">5年</span><span class="glabel">小学5年生</span></div>
+        <div class="grade-btn" id="gradeBtn6" onclick="selGrade(6)"><span class="gnum">6年</span><span class="glabel">小学6年生</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>② 難易度</h2>
+      <div class="opt-grid">
+        <button class="opt-btn" id="diffEasy"   onclick="selDiff('easy')">🌱 初級<small>やさしい</small></button>
+        <button class="opt-btn" id="diffNormal" onclick="selDiff('normal')">⭐ 中級<small>標準</small></button>
+        <button class="opt-btn" id="diffHard"   onclick="selDiff('hard')">🔥 上級<small>むずかしい</small></button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>③ 問題数</h2>
+      <div class="count-row">
+        <input type="range" id="countSlider" class="count-slider" min="10" max="100" step="10" value="20" oninput="onSlider(this.value)">
+        <span class="count-val"><span id="countDisp">20</span>問</span>
+      </div>
+      <div class="count-presets">
+        <div class="preset-btn sel" id="preset20"  onclick="setCount(20)">20問</div>
+        <div class="preset-btn"    id="preset40"  onclick="setCount(40)">40問</div>
+        <div class="preset-btn"    id="preset60"  onclick="setCount(60)">60問</div>
+        <div class="preset-btn"    id="preset100" onclick="setCount(100)">100問</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>④ オプション</h2>
+
+      <div class="toggle-row">
+        <div>
+          <div class="toggle-label">解答ページを付ける</div>
+          <div class="toggle-desc">問題ページの後に解答ページを追加</div>
+        </div>
+        <label class="toggle"><input type="checkbox" id="optAnswer" checked><span class="toggle-slider"></span></label>
+      </div>
+
+      <div class="toggle-row">
+        <div>
+          <div class="toggle-label">名前欄・日付欄</div>
+          <div class="toggle-desc">ドリルに氏名・日付の記入欄を表示</div>
+        </div>
+        <label class="toggle"><input type="checkbox" id="optNameDate" checked><span class="toggle-slider"></span></label>
+      </div>
+
+      <div class="toggle-row">
+        <div>
+          <div class="toggle-label">得点欄</div>
+          <div class="toggle-desc">採点後に書き込む得点ボックスを表示</div>
+        </div>
+        <label class="toggle"><input type="checkbox" id="optScore" checked><span class="toggle-slider"></span></label>
+      </div>
+
+      <div style="margin-top:14px;">
+        <div class="row-label">タイトルカスタム（任意）</div>
+        <input type="text" id="customTitle" class="text-input" placeholder="例：夏休みドリル　第1回" maxlength="24">
+      </div>
+
+      <div style="margin-top:10px;">
+        <div class="row-label">お子さんのお名前（任意）</div>
+        <input type="text" id="childName" class="text-input" placeholder="例：田中 太郎" maxlength="20">
+      </div>
+    </div>
+
+    <div class="section">
+      <button class="btn btn-purple" id="btnGenerate" onclick="generatePremiumPdf()" disabled>学年を選んでください</button>
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">準備中...</div>
+      </div>
+      <div id="doneBanner">
+        <div class="title">✅ PDFを保存しました！</div>
+        <div class="sub">解答付き・名前欄・日付入りのPDFがダウンロードされました。<br>もう一度生成するにはボタンをもう一度押してください。</div>
+      </div>
+    </div>
+
+  </div><!-- /generator -->
+</div>
+
+<footer>
+  © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
+  <a href="/privacy.html">プライバシーポリシー</a>　<a href="/premium.html">プレミアムについて</a>
+</footer>
+
+<script>
+// ============================================================
+// 認証
+// ============================================================
+/*
+  認証の優先順位:
+    1. URLパラメータ ?code=XXXX-XXXX-XXXX  （thanks.htmlからの遷移）
+    2. sessionStorage  nijumaru_access_code  （同一セッション内の継続利用）
+    3. 手動入力                              （コードをメモしていた場合）
+
+  コード検証:
+    thanks.html と同じ SALT + session_id → SHA-256 → 先頭12桁 で生成したコードと照合。
+    VALID_CODES にハードコードしたコードも引き続き有効（移行期・テスト用）。
+*/
+
+// thanks.html と同じ SALT（必ず一致させること）
+const SALT = 'nijumaru-premium-2025';
+
+// ハードコードのフォールバックコード（テスト用・手動発行分）
+const VALID_CODES = [
+  'NIJUMARU-TEST-2024', // テスト用（本番前に削除）
+];
+
+// SHA-256 ベースのコード検証（thanks.html と同一ロジック）
+async function _codeFromSession(sessionId) {
+  const msg = SALT + ':' + sessionId;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  const raw = hex.slice(0, 12).toUpperCase();
+  return `${raw.slice(0,4)}-${raw.slice(4,8)}-${raw.slice(8,12)}`;
+}
+
+// 入力コードが有効かを検証（sessionStorageに保存されたsession_idとの照合）
+async function _isValidCode(inputCode) {
+  const upper = inputCode.trim().toUpperCase();
+  // ハードコードのコードチェック
+  if (VALID_CODES.some(c => c.toUpperCase() === upper)) return true;
+  // session_id ベースのコードチェック
+  const storedSessionId = sessionStorage.getItem('nijumaru_session_id');
+  if (storedSessionId) {
+    const expected = await _codeFromSession(storedSessionId);
+    if (expected === upper) return true;
+  }
+  // sessionStorageに保存済みコードと一致するかチェック
+  const storedCode = sessionStorage.getItem('nijumaru_access_code');
+  if (storedCode && storedCode.toUpperCase() === upper) return true;
+  return false;
+}
+
+function _showGenerator(code) {
+  // コードを入力欄に表示（確認用）
+  if (code) document.getElementById('accessCodeInput').value = code;
+  document.getElementById('authGate').style.display = 'none';
+  document.getElementById('generator').style.display = 'block';
+}
+
+async function checkAuth() {
+  const code = document.getElementById('accessCodeInput').value;
+  const valid = await _isValidCode(code);
+  if (valid) {
+    sessionStorage.setItem('nijumaru_premium_auth', '1');
+    if (!sessionStorage.getItem('nijumaru_access_code')) {
+      sessionStorage.setItem('nijumaru_access_code', code.trim().toUpperCase());
+    }
+    _showGenerator(null);
+  } else {
+    document.getElementById('authError').style.display = 'block';
+  }
+}
+
+// ページ読み込み時：URL/sessionStorage から自動認証
+window.addEventListener('DOMContentLoaded', async () => {
+  const params = new URLSearchParams(location.search);
+  const urlCode = params.get('code');   // thanks.html からの ?code=
+  const ssAuth  = sessionStorage.getItem('nijumaru_premium_auth');
+  const ssCode  = sessionStorage.getItem('nijumaru_access_code');
+
+  if (urlCode) {
+    // URLにコードがある → 自動検証
+    const valid = await _isValidCode(urlCode);
+    if (valid) {
+      sessionStorage.setItem('nijumaru_premium_auth', '1');
+      sessionStorage.setItem('nijumaru_access_code', urlCode.trim().toUpperCase());
+      _showGenerator(urlCode);
+      return;
+    }
+  }
+
+  if (ssAuth === '1') {
+    // 同一セッション内で認証済み
+    _showGenerator(ssCode);
+    return;
+  }
+
+  // 手動入力 → コードをセットして待機
+  if (ssCode) document.getElementById('accessCodeInput').value = ssCode;
+  document.getElementById('accessCodeInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') checkAuth();
+  });
+});
+
+
+// ============================================================
+// 問題生成ユーティリティ
+// ============================================================
+function rnd(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function gcd(a,b){return b===0?a:gcd(b,a%b);}
+function fracStr(n,d){const g=gcd(Math.abs(n),Math.abs(d));const sn=n/g,sd=d/g;if(sd===1)return String(sn);return `${sn}/${sd}`;}
+
+const GRADES={
+  1:{label:'小学1年生',generators:{
+    easy:[
+      ()=>{const a=rnd(1,4),b=rnd(1,4);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(1,3),a=rnd(b+1,5);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const b=rnd(1,4);return{q:`${b} ＋ 0 ＝`,a:b};},
+      ()=>{const a=rnd(2,5);return{q:`${a} － 1 ＝`,a:a-1};},
+      ()=>{const a=rnd(1,4),b=rnd(1,4);return{q:`${b} ＋ ${a} ＝`,a:a+b};},
+    ],
+    normal:[
+      ()=>{const a=rnd(1,5),b=rnd(1,9-a);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const a=rnd(6,9),b=rnd(10-a,9);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(1,8),a=rnd(b+1,9);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const b=rnd(1,9);return{q:`10 ＋ ${b} ＝`,a:10+b};},
+      ()=>{const b=rnd(1,9),a=rnd(11,19);return{q:`${a} － ${b} ＝`,a:a-b};}
+    ],
+    hard:[
+      ()=>{const a=rnd(5,9),b=rnd(5,9);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(3,9),a=rnd(11,18);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(10,15),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const a=rnd(10,19),b=rnd(1,9);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(5,9),b=rnd(5,9);return{q:`${a} ＋ ${b} ＋ 1 ＝`,a:a+b+1};}
+    ]
+  }},
+  2:{label:'小学2年生',generators:{
+    easy:[
+      ()=>{const a=rnd(10,50),b=rnd(1,5);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(1,5),a=rnd(b+10,50);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const a=rnd(10,30),b=rnd(10,20);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const a=rnd(2,4),b=rnd(2,4);return{q:`${a} × ${b} ＝`,a:a*b};}
+    ],
+    normal:[
+      ()=>{const a=rnd(10,90),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(1,9),a=rnd(b+10,99);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(11,60),b=rnd(11,40);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(10,40),a=rnd(b+5,99);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(2,9),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b};}
+    ],
+    hard:[
+      ()=>{const a=rnd(50,99),b=rnd(10,50);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(20,60),a=rnd(b+1,99);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(6,9),b=rnd(6,9);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const a=rnd(40,80),b=rnd(20,50);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const a=rnd(7,9),b=rnd(7,9);return{q:`${a} × ${b} ＝`,a:a*b};}
+    ]
+  }},
+  3:{label:'小学3年生',generators:{
+    easy:[
+      ()=>{const a=rnd(100,300),b=rnd(100,200);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(10,50),a=rnd(100,300);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q} ÷ ${b} ＝`,a:q};},
+      ()=>{const a=rnd(11,20),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b};}
+    ],
+    normal:[
+      ()=>{const a=rnd(100,600),b=rnd(100,400);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(10,99),a=rnd(100,500);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(11,30),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const b=rnd(2,9),q=rnd(2,9);return{q:`${b*q} ÷ ${b} ＝`,a:q};},
+      ()=>{const d=rnd(2,9),q2=rnd(1,8),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2};}
+    ],
+    hard:[
+      ()=>{const a=rnd(400,999),b=rnd(200,600);return{q:`${a} ＋ ${b} ＝`,a:a+b};},
+      ()=>{const b=rnd(100,400),a=rnd(b+100,999);return{q:`${a} － ${b} ＝`,a:a-b};},
+      ()=>{const a=rnd(21,50),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const b=rnd(5,9),q=rnd(10,20);return{q:`${b*q} ÷ ${b} ＝`,a:q};},
+      ()=>{const d=rnd(5,9),q2=rnd(5,12),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2};}
+    ]
+  }},
+  4:{label:'小学4年生',generators:{
+    easy:[
+      ()=>{const a=rnd(1,10)*1000,b=rnd(1,10)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b};},
+      ()=>{const a=rnd(11,20),b=rnd(11,15);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const b=rnd(2,5),q=rnd(5,20);return{q:`${b*q} ÷ ${b} ＝`,a:q};},
+      ()=>{const a=(rnd(1,19)/10).toFixed(1),b=(rnd(1,19)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1))};},
+      ()=>{const b=(rnd(1,9)/10).toFixed(1),a=(rnd(+b*10+1,29)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1))};}
+    ],
+    normal:[
+      ()=>{const a=rnd(1,50)*1000,b=rnd(1,50)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b};},
+      ()=>{const a=rnd(11,50),b=rnd(11,30);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const b=rnd(2,9),q=rnd(11,40);return{q:`${b*q} ÷ ${b} ＝`,a:q};},
+      ()=>{const a=(rnd(1,49)/10).toFixed(1),b=(rnd(1,49)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1))};},
+      ()=>{const b=(rnd(1,29)/10).toFixed(1),a=(rnd(+b*10+1,79)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1))};}
+    ],
+    hard:[
+      ()=>{const a=rnd(10,99)*1000,b=rnd(10,99)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b};},
+      ()=>{const a=rnd(30,99),b=rnd(20,50);return{q:`${a} × ${b} ＝`,a:a*b};},
+      ()=>{const b=rnd(5,9),q=rnd(30,60);return{q:`${b*q} ÷ ${b} ＝`,a:q};},
+      ()=>{const a=(rnd(10,99)/10).toFixed(1),b=(rnd(10,99)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1))};},
+      ()=>{const b=(rnd(10,49)/10).toFixed(1),a=(rnd(+b*10+1,199)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1))};}
+    ]
+  }},
+  5:{label:'小学5年生',generators:{
+    easy:[
+      ()=>{const a=rnd(1,9)/10,b=rnd(1,9)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2)};},
+      ()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q};},
+      ()=>{const d=rnd(4,6),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d)};},
+      ()=>{const p=rnd(1,5)*10,base=rnd(1,5)*100;return{q:`${base}円の${p}% は？`,a:base*p/100};},
+      ()=>{const a=rnd(2,5),b=rnd(2,5),c=rnd(2,5);return{q:`縦${a}cm、横${b}cm、高さ${c}cmの体積は？`,a:a*b*c};}
+    ],
+    normal:[
+      ()=>{const a=rnd(1,19)/10,b=rnd(1,19)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2)};},
+      ()=>{const b=rnd(2,9),q=rnd(2,8);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q};},
+      ()=>{const d=rnd(4,9),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d)};},
+      ()=>{const p=rnd(1,10)*10,base=rnd(1,10)*100;return{q:`${base}円の${p}% は何円ですか？`,a:base*p/100};},
+      ()=>{const a=rnd(2,8),b=rnd(2,8),c=rnd(2,8);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の体積は何cm³ですか？`,a:a*b*c};}
+    ],
+    hard:[
+      ()=>{const a=rnd(11,29)/10,b=rnd(11,29)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2)};},
+      ()=>{const b=rnd(3,9),q=rnd(5,15);return{q:`${+(b*q*1.5).toFixed(1)} ÷ ${b} ＝`,a:+(q*1.5).toFixed(1)};},
+      ()=>{const d1=rnd(3,6),d2=rnd(3,6),n1=rnd(1,d1-1),n2=rnd(1,d2-1),lcm=d1*d2/gcd(d1,d2);return{q:`${n1}/${d1} ＋ ${n2}/${d2} ＝`,a:fracStr(n1*(lcm/d1)+n2*(lcm/d2),lcm)};},
+      ()=>{const p=rnd(1,10)*5,base=rnd(2,20)*100;return{q:`${base}円の${p}% は何円ですか？`,a:base*p/100};},
+      ()=>{const a=rnd(5,12),b=rnd(5,12),c=rnd(5,12);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の体積は何cm³ですか？`,a:a*b*c};}
+    ]
+  }},
+  6:{label:'小学6年生',generators:{
+    easy:[
+      ()=>{const n1=rnd(1,3),d1=rnd(2,4),n2=rnd(1,3),d2=rnd(2,4);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2)};},
+      ()=>{const a=rnd(1,4),b=rnd(1,4),t=rnd(2,3);return{q:`${a*t}：${b*t} を簡単な比にすると？`,a:`${a}：${b}`};},
+      ()=>{const s=rnd(1,5)*10,t=rnd(2,4);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s};},
+      ()=>{const r=rnd(2,5);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2)};},
+      ()=>{const n=rnd(1,3),d=rnd(2,5),m=rnd(2,4);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d)};}
+    ],
+    normal:[
+      ()=>{const n1=rnd(1,4),d1=rnd(2,6),n2=rnd(1,4),d2=rnd(2,6);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2)};},
+      ()=>{const a=rnd(1,6),b=rnd(1,6),t=rnd(2,5);return{q:`${a*t}：${b*t} を最も簡単な整数の比にすると？`,a:`${a}：${b}`};},
+      ()=>{const s=rnd(2,10)*10,t=rnd(2,6);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s};},
+      ()=>{const r=rnd(2,8);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2)};},
+      ()=>{const n=rnd(1,4),d=rnd(2,8),m=rnd(2,5);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d)};}
+    ],
+    hard:[
+      ()=>{const n1=rnd(2,6),d1=rnd(3,8),n2=rnd(2,6),d2=rnd(3,8);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2)};},
+      ()=>{const a=rnd(3,9),b=rnd(3,9),t=rnd(4,8);return{q:`${a*t}：${b*t} を最も簡単な整数の比にすると？`,a:`${a}：${b}`};},
+      ()=>{const s=rnd(5,20)*10,t=rnd(3,8);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s};},
+      ()=>{const r=rnd(6,12);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2)};},
+      ()=>{const n1=rnd(2,5),d1=rnd(3,8),n2=rnd(2,5),d2=rnd(3,8);return{q:`${n1}/${d1} × ${n2}/${d2} ＝`,a:fracStr(n1*n2,d1*d2)};}
+    ]
+  }}
+};
+
+const DIFF_LABEL  = { easy:'🌱 初級', normal:'⭐ 中級', hard:'🔥 上級' };
+const DIFF_COLORS = { easy:'#059669', normal:'#2563EB', hard:'#DC2626' };
+const DIFF_BG     = { easy:'#F0FDF4', normal:'#EFF6FF', hard:'#FEF2F2' };
+
+// ============================================================
+// UI 状態
+// ============================================================
+let selGradeVal = null;
+let selDiffVal  = null;
+let selCountVal = 20;
+
+function selGrade(g) {
+  selGradeVal = g;
+  document.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('sel'));
+  document.getElementById('gradeBtn' + g).classList.add('sel');
+  updateGenBtn();
+}
+function selDiff(d) {
+  selDiffVal = d;
+  document.querySelectorAll('.opt-btn[id^=diff]').forEach(b => b.classList.remove('sel'));
+  document.getElementById('diff' + d[0].toUpperCase() + d.slice(1)).classList.add('sel');
+  updateGenBtn();
+}
+function onSlider(v) {
+  selCountVal = parseInt(v);
+  document.getElementById('countDisp').textContent = v;
+  [20,40,60,100].forEach(p => {
+    document.getElementById('preset'+p).classList.toggle('sel', selCountVal === p);
+  });
+}
+function setCount(n) {
+  selCountVal = n;
+  document.getElementById('countSlider').value = n;
+  document.getElementById('countDisp').textContent = n;
+  [20,40,60,100].forEach(p => {
+    document.getElementById('preset'+p).classList.toggle('sel', selCountVal === p);
+  });
+}
+function updateGenBtn() {
+  const btn = document.getElementById('btnGenerate');
+  if (selGradeVal && selDiffVal) {
+    btn.disabled = false;
+    btn.textContent = 'PDFを生成する（解答付き）';
+  } else if (!selGradeVal) {
+    btn.disabled = true;
+    btn.textContent = '学年を選んでください';
+  } else {
+    btn.disabled = true;
+    btn.textContent = '難易度を選んでください';
+  }
+}
+
+// ============================================================
+// PDF 生成（プレミアム版：解答付き対応）
+// ============================================================
+async function generatePremiumPdf() {
+  if (!selGradeVal || !selDiffVal) return;
+
+  const btn = document.getElementById('btnGenerate');
+  btn.disabled = true;
+  document.getElementById('doneBanner').style.display = 'none';
+
+  const progressWrap = document.getElementById('progressWrap');
+  const progressFill = document.getElementById('progressFill');
+  const progressText = document.getElementById('progressText');
+  progressWrap.style.display = 'block';
+
+  const withAnswer = document.getElementById('optAnswer').checked;
+  const withNameDate = document.getElementById('optNameDate').checked;
+  const withScore = document.getElementById('optScore').checked;
+  const customTitle = document.getElementById('customTitle').value.trim();
+  const childName   = document.getElementById('childName').value.trim();
+
+  try {
+    progressFill.style.width = '10%';
+    progressText.textContent = '問題を生成中...';
+
+    const gen = GRADES[selGradeVal].generators[selDiffVal];
+    const qs = [];
+    const seen = new Set();
+    const MAX_RETRY = selCountVal * 10;
+    let retry = 0;
+    while(qs.length < selCountVal && retry < MAX_RETRY){
+      const q = gen[Math.floor(Math.random() * gen.length)]();
+      if(!seen.has(q.q)){ seen.add(q.q); qs.push(q); }
+      retry++;
+    }
+    while(qs.length < selCountVal) qs.push(gen[Math.floor(Math.random() * gen.length)]());
+    for(let i=qs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qs[i],qs[j]]=[qs[j],qs[i]];}
+
+    const gradeLabel = GRADES[selGradeVal].label;
+    const diffLabel  = DIFF_LABEL[selDiffVal];
+    const diffColor  = DIFF_COLORS[selDiffVal];
+    const diffBg     = DIFF_BG[selDiffVal];
+
+    // 問題数に応じた配点
+    const pts = selCountVal <= 20 ? 5 : selCountVal <= 25 ? 4 : selCountVal <= 50 ? 2 : 1;
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const diffKey = {easy:'shokyuu',normal:'chukyu',hard:'jokyu'}[selDiffVal];
+
+    // 解像度（150dpi相当）
+    const PX = 5.906;
+    const PW = Math.round(210 * PX);
+    const PH = Math.round(297 * PX);
+
+    const options = { withNameDate, withScore, customTitle, childName };
+
+    progressFill.style.width = '30%';
+    progressText.textContent = '問題ページを描画中...';
+    const img1 = await _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, selCountVal, false, PW, PH, options);
+
+    let img2 = null;
+    if (withAnswer) {
+      progressFill.style.width = '60%';
+      progressText.textContent = '解答ページを描画中...';
+      img2 = await _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, selCountVal, true, PW, PH, options);
+    }
+
+    progressFill.style.width = '85%';
+    progressText.textContent = 'PDFを生成中...';
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4', compress:true });
+    doc.addImage(img1,'PNG',0,0,210,297);
+    if (img2) {
+      doc.addPage();
+      doc.addImage(img2,'PNG',0,0,210,297);
+    }
+
+    const suffix = withAnswer ? '-with-answer' : '';
+    doc.save(`premium-drill-g${selGradeVal}-${diffKey}-${selCountVal}q${suffix}-${dateStr}.pdf`);
+
+    progressFill.style.width = '100%';
+    progressText.textContent = '完了！';
+    setTimeout(() => { progressWrap.style.display = 'none'; }, 1000);
+    document.getElementById('doneBanner').style.display = 'block';
+
+  } catch(e) {
+    console.error('PDF生成エラー:', e);
+    alert('PDF生成に失敗しました。\n\n原因: ' + (e.message || '不明') + '\n\nブラウザを更新してお試しください。');
+    progressWrap.style.display = 'none';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'PDFを生成する（解答付き）';
+}
+
+function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isAnswer, PW, PH, opts) {
+  return new Promise(resolve => {
+    const cv = document.createElement('canvas');
+    cv.width = PW; cv.height = PH;
+    const ctx = cv.getContext('2d');
+    const s = v => v * PW / 210;
+    const F = '"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif';
+
+    // 白背景
+    ctx.fillStyle='#fff'; ctx.fillRect(0,0,PW,PH);
+
+    // ヘッダー（プレミアム：グラデーション）
+    const hGrad = ctx.createLinearGradient(0,0,PW,s(30));
+    hGrad.addColorStop(0,'#1E40AF');
+    hGrad.addColorStop(1,'#7C3AED');
+    ctx.fillStyle = hGrad;
+    ctx.fillRect(0,0,PW,s(30));
+
+    // 難易度バッジ
+    ctx.fillStyle = diffColor;
+    _rr2p(ctx, PW-s(50), s(7), s(42), s(14), s(3)); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font=`700 ${s(5.5)}px ${F}`; ctx.textAlign='center';
+    ctx.fillText(diffLabel + (isAnswer?' 解答':''), PW-s(29), s(17));
+
+    // タイトル
+    const titleText = opts.customTitle
+      ? `${opts.customTitle}${isAnswer?'【解答】':''}`
+      : `${gradeLabel}　にじゅうまる。算数ドリル${isAnswer?'【解答】':''}`;
+    ctx.font=`700 ${s(7)}px ${F}`; ctx.textAlign='center'; ctx.fillStyle='#fff';
+    ctx.fillText(titleText, PW/2, s(13));
+    ctx.font=`400 ${s(3.6)}px ${F}`; ctx.fillStyle='rgba(255,255,255,0.85)';
+    ctx.fillText(`文部科学省 学習指導要領準拠　｜　1問${pts}点 × ${cnt}問 ＝ 100点満点`, PW/2, s(22));
+
+    // ── 記入欄 ──
+    let cy = s(37);
+    if (opts.withNameDate) {
+      ctx.textAlign='left';
+      ctx.fillStyle='#64748B'; ctx.font=`400 ${s(4)}px ${F}`;
+      // 名前欄
+      ctx.fillText('お名前', s(15), cy+s(4));
+      if (opts.childName && !isAnswer) {
+        // 名前プリセット（子供の名前が入力されていれば薄く表示）
+        ctx.fillStyle='#CBD5E1';
+        ctx.fillText(opts.childName, s(31), cy+s(4));
+        ctx.fillStyle='#64748B';
+      }
+      ctx.strokeStyle='#1E293B'; ctx.lineWidth=s(0.5);
+      ctx.beginPath(); ctx.moveTo(s(30),cy+s(5.5)); ctx.lineTo(s(105),cy+s(5.5)); ctx.stroke();
+      // 日付欄
+      ctx.fillText('日付', s(110), cy+s(4));
+      const today = new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
+      ctx.fillStyle='#CBD5E1'; ctx.font=`400 ${s(3.5)}px ${F}`;
+      ctx.fillText(today, s(122), cy+s(4));
+      ctx.fillStyle='#64748B'; ctx.font=`400 ${s(4)}px ${F}`;
+      ctx.strokeStyle='#1E293B';
+      ctx.beginPath(); ctx.moveTo(s(120),cy+s(5.5)); ctx.lineTo(s(168),cy+s(5.5)); ctx.stroke();
+    }
+
+    // 得点ボックス
+    if (opts.withScore) {
+      ctx.fillStyle='#EFF6FF'; _rr2p(ctx,s(170),cy-s(1),s(25),s(11),s(2)); ctx.fill();
+      ctx.strokeStyle='#BFDBFE'; ctx.lineWidth=s(0.4); _rr2p(ctx,s(170),cy-s(1),s(25),s(11),s(2)); ctx.stroke();
+      ctx.fillStyle='#2563EB'; ctx.font=`700 ${s(3.8)}px ${F}`; ctx.textAlign='left';
+      ctx.fillText('得点', s(172), cy+s(4));
+      ctx.font=`700 ${s(5.5)}px ${F}`; ctx.fillText(`／100`, s(178), cy+s(7.5));
+    }
+
+    cy += s(18);
+    ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.4);
+    ctx.beginPath(); ctx.moveTo(s(15),cy); ctx.lineTo(s(195),cy); ctx.stroke();
+    cy += s(5);
+
+    // ── 問題グリッド ──
+    const cols = 2;
+    const perCol = Math.ceil(cnt / cols);
+    const availH = PH - cy - s(16);
+    const rowH = availH / perCol;
+    const colW = (PW - s(30)) / cols;
+    const ansW = s(cnt<=20 ? 34 : cnt<=30 ? 28 : cnt<=60 ? 22 : 18);
+    const fontSize = cnt<=20 ? s(5) : cnt<=30 ? s(4.2) : cnt<=60 ? s(3.6) : s(3.0);
+    const numFontSize = cnt<=20 ? s(4) : s(3.3);
+
+    for (let i = 0; i < cnt; i++) {
+      const col = Math.floor(i / perCol);
+      const row = i % perCol;
+      const qx = s(15) + col * colW;
+      const qy = cy + row * rowH;
+      const cardH = rowH - s(1.2);
+
+      // カード背景
+      ctx.fillStyle = row%2===0 ? '#F8FAFC' : '#fff';
+      _rr2p(ctx,qx,qy,colW-s(4),cardH,s(2)); ctx.fill();
+      ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.25);
+      _rr2p(ctx,qx,qy,colW-s(4),cardH,s(2)); ctx.stroke();
+
+      // 番号バッジ
+      ctx.fillStyle='#2563EB';
+      _rr2p(ctx, qx+s(1.5), qy+s(1.5), s(cnt>60?6:8), s(cnt>60?4.5:5.5), s(1)); ctx.fill();
+      ctx.fillStyle='#fff'; ctx.font=`700 ${numFontSize}px ${F}`; ctx.textAlign='center';
+      ctx.fillText(String(i+1), qx+s(cnt>60?4:5.5), qy+s(cnt>60?5:5.8));
+
+      // 問題文
+      ctx.fillStyle='#1E293B'; ctx.textAlign='left'; ctx.font=`500 ${fontSize}px ${F}`;
+      ctx.fillText(String(qs[i].q), qx+s(cnt>60?9:12), qy + cardH/2 + fontSize*0.35);
+
+      // 解答欄
+      const abx = qx + colW - s(4) - ansW;
+      const aby = qy + s(1.5);
+      const abh = cardH - s(3);
+      if (isAnswer) {
+        ctx.fillStyle = diffBg; _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.fill();
+        ctx.strokeStyle = diffColor; ctx.lineWidth=s(0.5); _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.stroke();
+        ctx.fillStyle = diffColor; ctx.font=`700 ${fontSize}px ${F}`; ctx.textAlign='center';
+        ctx.fillText(String(qs[i].a), abx+ansW/2, aby+abh/2+fontSize*0.38);
+      } else {
+        ctx.fillStyle='#fff'; _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.fill();
+        ctx.strokeStyle='#94A3B8'; ctx.lineWidth=s(0.5); _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.stroke();
+      }
+    }
+
+    // フッター
+    ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.3);
+    ctx.beginPath(); ctx.moveTo(s(15),PH-s(12)); ctx.lineTo(s(195),PH-s(12)); ctx.stroke();
+    ctx.fillStyle='#94A3B8'; ctx.font=`400 ${s(3.2)}px ${F}`; ctx.textAlign='center';
+    ctx.fillText('nijumaru-drill.com　©2025 にじゅうまる。算数ドリル　PREMIUM', PW/2, PH-s(6));
+
+    resolve(cv.toDataURL('image/png'));
+  });
+}
+
+function _rr2p(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+</script>
+</body>
+</html>
