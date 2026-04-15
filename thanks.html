@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ご購入ありがとうございます | にじゅうまる。算数ドリル</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --purple:#7C3AED;--purple-light:#F5F3FF;--green:#16A34A;
+  --bg:#F8FAFC;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
+  --border:#E2E8F0;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh;}
+@media(min-width:640px){body{max-width:600px;margin:0 auto;}}
+
+/* ── ヘッダー ── */
+.header{
+  background:linear-gradient(135deg,#1E40AF,#7C3AED);
+  padding:28px 20px 32px;
+  text-align:center;
+  color:#fff;
+}
+.header-icon{font-size:52px;display:block;margin-bottom:10px;animation:pop 0.6s ease;}
+@keyframes pop{0%{transform:scale(0.5);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.header h1{font-size:22px;font-weight:700;line-height:1.4;}
+.header p{font-size:13px;color:rgba(255,255,255,0.86);margin-top:8px;}
+
+/* ── コンテンツ ── */
+.content{padding:20px 16px 60px;}
+
+/* ── ローディング ── */
+#loadingState{text-align:center;padding:32px 0;}
+.spinner{width:40px;height:40px;border:4px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 14px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+#loadingState p{font-size:14px;color:var(--text-muted);}
+
+/* ── 成功状態 ── */
+#successState{display:none;}
+
+.success-card{
+  background:linear-gradient(135deg,#F0FDF4,#ECFDF5);
+  border:1.5px solid #86EFAC;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:16px;
+  text-align:center;
+}
+.success-card .icon{font-size:36px;margin-bottom:8px;}
+.success-card h2{font-size:18px;font-weight:700;color:#15803D;margin-bottom:6px;}
+.success-card p{font-size:13px;color:#166534;line-height:1.7;}
+
+.section{background:var(--surface);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);margin-bottom:14px;}
+.section h3{font-size:15px;font-weight:700;margin-bottom:12px;color:var(--text);}
+
+/* アクセスコード表示 */
+.code-box{
+  background:var(--purple-light);
+  border:2px dashed #C4B5FD;
+  border-radius:12px;
+  padding:16px;
+  text-align:center;
+  margin:10px 0;
+}
+.code-label{font-size:11px;font-weight:700;color:#6D28D9;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px;}
+.code-value{font-size:22px;font-weight:700;color:#4C1D95;letter-spacing:2px;font-family:monospace;}
+.copy-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 18px;
+  background:#7C3AED;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:700;
+  font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;
+}
+.copy-btn:active{transform:scale(0.97);}
+.copied-msg{font-size:11px;color:var(--green);margin-top:6px;height:16px;}
+
+/* ステップ */
+.steps{list-style:none;display:grid;gap:10px;}
+.step{display:flex;gap:12px;align-items:flex-start;}
+.step-num{
+  min-width:26px;height:26px;
+  background:var(--purple);color:#fff;
+  border-radius:50%;
+  font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:1px;
+}
+.step-text{font-size:13px;color:#334155;line-height:1.7;}
+.step-text b{color:var(--text);}
+
+/* CTA */
+.btn{
+  display:block;width:100%;border:none;border-radius:var(--radius);
+  padding:16px;font-size:15px;font-weight:700;
+  font-family:'Noto Sans JP',sans-serif;cursor:pointer;text-decoration:none;
+  text-align:center;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#7C3AED,#9F67FA);
+  color:#fff;
+  box-shadow:0 6px 20px rgba(124,58,237,0.3);
+}
+.btn-secondary{
+  background:var(--surface);color:#6D28D9;
+  border:1.5px solid #D8B4FE;margin-top:10px;
+}
+
+/* ── エラー状態 ── */
+#errorState{display:none;text-align:center;padding:24px 0;}
+#errorState .icon{font-size:40px;margin-bottom:12px;}
+#errorState p{font-size:13px;color:var(--text-muted);line-height:1.7;}
+.retry-btn{
+  display:inline-block;margin-top:14px;padding:11px 24px;
+  background:var(--purple);color:#fff;border-radius:10px;
+  font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;border:none;
+}
+
+/* ── 注意書き ── */
+.note-box{
+  background:#FFFBEB;border:1px solid #FDE68A;
+  border-radius:12px;padding:12px 14px;font-size:12px;color:#92400E;
+  line-height:1.7;margin-bottom:14px;
+}
+
+footer{text-align:center;padding:16px 16px 36px;font-size:11px;color:#94A3B8;}
+footer a{color:#94A3B8;text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span class="header-icon">🎉</span>
+  <h1>ご購入ありがとうございます！</h1>
+  <p>にじゅうまる。算数ドリル プレミアム</p>
+</div>
+
+<div class="content">
+
+  <!-- ローディング -->
+  <div id="loadingState">
+    <div class="spinner"></div>
+    <p>購入情報を確認しています...</p>
+  </div>
+
+  <!-- 成功 -->
+  <div id="successState">
+    <div class="success-card">
+      <div class="icon">✅</div>
+      <h2>購入が確認できました</h2>
+      <p>解答付きPDFをすぐに生成できます。<br>下のアクセスコードを保存しておいてください。</p>
+    </div>
+
+    <div class="section">
+      <h3>🔑 あなたのアクセスコード</h3>
+      <div class="code-box">
+        <div class="code-label">ACCESS CODE</div>
+        <div class="code-value" id="accessCodeDisplay">------</div>
+        <button class="copy-btn" onclick="copyCode()">コピーする</button>
+        <div class="copied-msg" id="copiedMsg"></div>
+      </div>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:10px;line-height:1.7;">
+        ※ このコードはブックマークまたはメモ帳に保存することをおすすめします。<br>
+        ※ このページを閉じても、再度このURLを開けばコードを確認できます。
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>📄 使い方</h3>
+      <ul class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">下の「解答付きPDFを生成する」ボタンをタップ</div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">アクセスコードの入力欄に、上記のコードを貼り付け（自動入力される場合もあります）</div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-text"><b>学年・難易度・問題数（最大100問）</b>を選んでPDF生成</div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-text">何度でも生成できます。毎回問題はランダムで変わります</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      ⚠️ アクセスコードは<b>ご本人のみ</b>でご利用ください。<br>
+      このURLは購入者限定ページです。SNS等への投稿はご遠慮ください。
+    </div>
+
+    <a class="btn btn-primary" id="toPremiumPdfBtn" href="/premium-pdf.html">解答付きPDFを生成する →</a>
+    <a class="btn btn-secondary" href="/index.html">トップページに戻る</a>
+  </div>
+
+  <!-- エラー -->
+  <div id="errorState">
+    <div class="icon">⚠️</div>
+    <p>購入情報の確認中にエラーが発生しました。<br>しばらく待ってからページを再読み込みするか、<br>以下のリンクからサポートへお問い合わせください。</p>
+    <p style="margin-top:12px;font-size:12px;color:#94A3B8;">URLが正しいことをご確認ください。<br>Stripeから送られたメールのリンクをお使いください。</p>
+    <button class="retry-btn" onclick="location.reload()">再読み込みする</button>
+    <p style="margin-top:16px;"><a href="/index.html" style="font-size:12px;color:var(--text-muted);">トップページに戻る</a></p>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
+  <a href="/privacy.html">プライバシーポリシー</a>
+</footer>
+
+<script>
+/*
+  ============================================================
+  Stripe Payment Link → thanks.html の仕組み
+
+  Stripe Payment Link の設定:
+    「購入後にリダイレクト」→ https://nijumaru-drill.com/thanks.html?session_id={CHECKOUT_SESSION_ID}
+
+  このページの動作:
+    1. URLから session_id を取得
+    2. session_id をハッシュしてアクセスコードを生成
+       （サーバーレス：Stripe Webhook 不要で即時発行）
+    3. 生成したアクセスコードを sessionStorage に保存
+       → premium-pdf.html でそのまま自動入力される
+
+  セキュリティについて:
+    - session_id は Stripe が発行する推測不能なランダム文字列
+    - session_id → コード の変換はクライアント側で行うが、
+      SALT を変更することで総当たりを困難にできる
+    - より厳密にしたい場合は、Stripe Webhook + Vercel Functions で
+      サーバー側検証に切り替えることを推奨
+  ============================================================
+*/
+
+// ★ ここのSALTは自分だけが知る文字列に変更してください
+const SALT = 'nijumaru-premium-2025';
+
+// session_id からアクセスコードを生成（SHA-256ベース）
+async function deriveAccessCode(sessionId) {
+  const msg = SALT + ':' + sessionId;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  // 先頭12文字を4文字×3ブロックに整形: ABCD-EFGH-IJKL
+  const raw = hex.slice(0, 12).toUpperCase();
+  return `${raw.slice(0,4)}-${raw.slice(4,8)}-${raw.slice(8,12)}`;
+}
+
+// コードをクリップボードにコピー
+async function copyCode() {
+  const code = document.getElementById('accessCodeDisplay').textContent;
+  try {
+    await navigator.clipboard.writeText(code);
+    const msg = document.getElementById('copiedMsg');
+    msg.textContent = '✓ コピーしました';
+    setTimeout(() => { msg.textContent = ''; }, 2000);
+  } catch {
+    // フォールバック
+    const el = document.getElementById('accessCodeDisplay');
+    const range = document.createRange();
+    range.selectNode(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+  }
+}
+
+// メイン処理
+(async () => {
+  const params = new URLSearchParams(location.search);
+  const sessionId = params.get('session_id');
+
+  if (!sessionId) {
+    // session_id がない → 直接アクセス
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('errorState').style.display = 'block';
+    return;
+  }
+
+  try {
+    // アクセスコードを生成
+    const code = await deriveAccessCode(sessionId);
+
+    // 表示
+    document.getElementById('accessCodeDisplay').textContent = code;
+
+    // sessionStorage に保存（premium-pdf.html が自動入力に使う）
+    sessionStorage.setItem('nijumaru_premium_auth', '1');
+    sessionStorage.setItem('nijumaru_access_code', code);
+    sessionStorage.setItem('nijumaru_session_id', sessionId);
+
+    // premium-pdf.html へのリンクにコードを埋め込む
+    document.getElementById('toPremiumPdfBtn').href =
+      `/premium-pdf.html?code=${encodeURIComponent(code)}`;
+
+    // UI 切り替え
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('successState').style.display = 'block';
+
+  } catch(e) {
+    console.error(e);
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('errorState').style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>

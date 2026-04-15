@@ -222,39 +222,102 @@ footer a{color:#94A3B8;text-decoration:underline;}
 // 認証
 // ============================================================
 /*
-  アクセスコードの管理方法：
-  ・今は VALID_CODES 配列に直接記載（シンプル運用）
-  ・将来 Stripe / note 連携後は API 検証に切り替え可能
-  ・コードは購入者に1つずつ発行（例: NIJU-XXXX-XXXX）
+  認証の優先順位:
+    1. URLパラメータ ?code=XXXX-XXXX-XXXX  （thanks.htmlからの遷移）
+    2. sessionStorage  nijumaru_access_code  （同一セッション内の継続利用）
+    3. 手動入力                              （コードをメモしていた場合）
+
+  コード検証:
+    thanks.html と同じ SALT + session_id → SHA-256 → 先頭12桁 で生成したコードと照合。
+    VALID_CODES にハードコードしたコードも引き続き有効（移行期・テスト用）。
 */
+
+// thanks.html と同じ SALT（必ず一致させること）
+const SALT = 'nijumaru-premium-2025';
+
+// ハードコードのフォールバックコード（テスト用・手動発行分）
 const VALID_CODES = [
-  'NIJUMARU-TEST-2024', // テスト用コード（本番前に削除すること）
-  // 'NIJU-ABCD-1234',  // ← 購入者ごとに追加
+  'NIJUMARU-TEST-2024', // テスト用（本番前に削除）
 ];
 
-function checkAuth() {
-  const code = document.getElementById('accessCodeInput').value.trim().toUpperCase();
-  const valid = VALID_CODES.some(c => c.toUpperCase() === code);
+// SHA-256 ベースのコード検証（thanks.html と同一ロジック）
+async function _codeFromSession(sessionId) {
+  const msg = SALT + ':' + sessionId;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  const raw = hex.slice(0, 12).toUpperCase();
+  return `${raw.slice(0,4)}-${raw.slice(4,8)}-${raw.slice(8,12)}`;
+}
+
+// 入力コードが有効かを検証（sessionStorageに保存されたsession_idとの照合）
+async function _isValidCode(inputCode) {
+  const upper = inputCode.trim().toUpperCase();
+  // ハードコードのコードチェック
+  if (VALID_CODES.some(c => c.toUpperCase() === upper)) return true;
+  // session_id ベースのコードチェック
+  const storedSessionId = sessionStorage.getItem('nijumaru_session_id');
+  if (storedSessionId) {
+    const expected = await _codeFromSession(storedSessionId);
+    if (expected === upper) return true;
+  }
+  // sessionStorageに保存済みコードと一致するかチェック
+  const storedCode = sessionStorage.getItem('nijumaru_access_code');
+  if (storedCode && storedCode.toUpperCase() === upper) return true;
+  return false;
+}
+
+function _showGenerator(code) {
+  // コードを入力欄に表示（確認用）
+  if (code) document.getElementById('accessCodeInput').value = code;
+  document.getElementById('authGate').style.display = 'none';
+  document.getElementById('generator').style.display = 'block';
+}
+
+async function checkAuth() {
+  const code = document.getElementById('accessCodeInput').value;
+  const valid = await _isValidCode(code);
   if (valid) {
     sessionStorage.setItem('nijumaru_premium_auth', '1');
-    document.getElementById('authGate').style.display = 'none';
-    document.getElementById('generator').style.display = 'block';
-    document.getElementById('accessCodeInput').addEventListener('keydown', e => { if(e.key==='Enter') checkAuth(); });
+    if (!sessionStorage.getItem('nijumaru_access_code')) {
+      sessionStorage.setItem('nijumaru_access_code', code.trim().toUpperCase());
+    }
+    _showGenerator(null);
   } else {
     document.getElementById('authError').style.display = 'block';
   }
 }
 
-// ページ読み込み時に認証済みチェック
-window.addEventListener('DOMContentLoaded', () => {
-  if (sessionStorage.getItem('nijumaru_premium_auth') === '1') {
-    document.getElementById('authGate').style.display = 'none';
-    document.getElementById('generator').style.display = 'block';
+// ページ読み込み時：URL/sessionStorage から自動認証
+window.addEventListener('DOMContentLoaded', async () => {
+  const params = new URLSearchParams(location.search);
+  const urlCode = params.get('code');   // thanks.html からの ?code=
+  const ssAuth  = sessionStorage.getItem('nijumaru_premium_auth');
+  const ssCode  = sessionStorage.getItem('nijumaru_access_code');
+
+  if (urlCode) {
+    // URLにコードがある → 自動検証
+    const valid = await _isValidCode(urlCode);
+    if (valid) {
+      sessionStorage.setItem('nijumaru_premium_auth', '1');
+      sessionStorage.setItem('nijumaru_access_code', urlCode.trim().toUpperCase());
+      _showGenerator(urlCode);
+      return;
+    }
   }
+
+  if (ssAuth === '1') {
+    // 同一セッション内で認証済み
+    _showGenerator(ssCode);
+    return;
+  }
+
+  // 手動入力 → コードをセットして待機
+  if (ssCode) document.getElementById('accessCodeInput').value = ssCode;
   document.getElementById('accessCodeInput').addEventListener('keydown', e => {
     if (e.key === 'Enter') checkAuth();
   });
 });
+
 
 // ============================================================
 // 問題生成ユーティリティ
@@ -483,11 +546,16 @@ async function generatePremiumPdf() {
 
     const gen = GRADES[selGradeVal].generators[selDiffVal];
     const qs = [];
-    for (let i = 0; i < selCountVal; i++) qs.push(gen[i % gen.length]());
-    for (let i = qs.length-1; i > 0; i--) {
-      const j = Math.floor(Math.random()*(i+1));
-      [qs[i],qs[j]] = [qs[j],qs[i]];
+    const seen = new Set();
+    const MAX_RETRY = selCountVal * 10;
+    let retry = 0;
+    while(qs.length < selCountVal && retry < MAX_RETRY){
+      const q = gen[Math.floor(Math.random() * gen.length)]();
+      if(!seen.has(q.q)){ seen.add(q.q); qs.push(q); }
+      retry++;
     }
+    while(qs.length < selCountVal) qs.push(gen[Math.floor(Math.random() * gen.length)]());
+    for(let i=qs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qs[i],qs[j]]=[qs[j],qs[i]];}
 
     const gradeLabel = GRADES[selGradeVal].label;
     const diffLabel  = DIFF_LABEL[selDiffVal];
