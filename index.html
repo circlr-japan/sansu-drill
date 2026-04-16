@@ -564,7 +564,16 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   </div>
   <div class="pdf-section">
     <div class="pdf-section-title">📄 にじゅうまる。算数ドリル PDF ダウンロード</div>
-    <div class="pdf-section-sub">学年・難易度・問題数を選んで「PDF保存」を押すと、<strong>問題ページのみ</strong>がダウンロードされます。<br><span style="color:#7C3AED;font-size:11px;">💡 <a href="/premium.html" style="color:#7C3AED;font-weight:700;">解答付き・名前欄・日付入り（最大100問）</a>は100問チャレンジで。</span></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;">
+      <div class="pdf-section-sub" style="margin-bottom:0;">学年・難易度・問題数を選んで「PDF保存」を押すと、<strong>問題ページのみ</strong>がダウンロードされます。<br><span style="color:#7C3AED;font-size:11px;">💡 <a href="/premium.html" style="color:#7C3AED;font-weight:700;">解答付き・名前欄・日付入り（最大120問）</a>は100問チャレンジで。</span></div>
+      <div id="pdfCountBadge" style="font-size:11px;font-weight:700;color:#64748B;background:#F1F5F9;border-radius:99px;padding:3px 10px;white-space:nowrap;flex-shrink:0;">本日 残り 3/3 回</div>
+    </div>
+    <div id="pdfLimitBanner" style="display:none;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FCD34D;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
+      <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:4px;">⚠️ 本日の無料PDF生成（3回）を使い切りました</div>
+      <div style="font-size:12px;color:#A16207;line-height:1.7;">明日0時にリセットされます。<br>
+        <a href="/premium.html" style="color:#D97706;font-weight:700;">100問チャレンジ（¥100）</a>なら回数制限なしで何度でも生成できます。</div>
+      <a href="/premium.html" style="display:block;margin-top:8px;padding:10px;background:linear-gradient(135deg,#F59E0B,#FBBF24);color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;">100問チャレンジを見る →</a>
+    </div>
 
     <!-- 学年 -->
     <div class="pdf-row-label">① 学年</div>
@@ -684,16 +693,56 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       </a>
     </div>
 
-    <!-- ===== 楽天モーションウィジェット（自動最適化） ===== -->
-    <div style="padding:20px 16px 4px;">
-      <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.8px;margin-bottom:10px;">🎯 あなたへのおすすめ教材</div>
-      <div style="overflow:hidden;border-radius:10px;background:var(--card);border:1px solid var(--border);">
-        <script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="097cb958.bc61ad34.097cb959.eac353a7";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="468x160";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ts="1776063409681";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
-      </div>
-      <div style="font-size:10px;color:var(--text-faint);text-align:center;margin-top:6px;">※ 楽天アフィリエイトリンクを含みます</div>
+    <!-- ★ A8.net 広告①：RISU算数 ── 記事直下・「もっと深く学ばせたい」文脈で最高適合 -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:8px;">📣 おすすめ教材</div>
+      <a href="https://px.a8.net/svt/ejp?a8mat=3Z4B2O+4PG5EA+19R+ZQNG3" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FCD34D;border-radius:14px;padding:14px 16px;text-decoration:none;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:32px;flex-shrink:0;">🧮</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:3px;">RISU算数（タブレット教材）</div>
+            <div style="font-size:11px;color:#A16207;line-height:1.6;">幼児〜大学受験生まで対応。つまずきをAIが検知して個別最適化。今なら無料お試し可能。</div>
+          </div>
+        </div>
+      </a>
+      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3Z4B2O+4PG5EA+19R+ZQNG3" alt="">
     </div>
 
-    <!-- ===== 楽天APIウィジェット（カテゴリ別・リアルタイム） ===== -->
+    <!-- ★ A8.net 広告②：Z会 ── 「本格的な通信教育」訴求・学年別コンテンツの直後に配置 -->
+    <div style="margin-bottom:16px;">
+      <a href="https://px.a8.net/svt/ejp?a8mat=3Z4B2O+B0N4Q+OG+10JNIP" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#EFF6FF,#F0F9FF);border:1.5px solid #BFDBFE;border-radius:14px;padding:14px 16px;text-decoration:none;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:32px;flex-shrink:0;">📘</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#1E40AF;margin-bottom:3px;">Z会の通信教育（資料請求無料）</div>
+            <div style="font-size:11px;color:#1D4ED8;line-height:1.6;">幼児〜大学受験まで対応。思考力・記述力を育む本格派。まずは無料で資料請求。</div>
+          </div>
+        </div>
+      </a>
+      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3Z4B2O+B0N4Q+OG+10JNIP" alt="">
+    </div>
+
+    <!-- ★ A8.net 広告③：Santa（TOEIC） ── 保護者向け・「自分も勉強したい」文脈でフッター前に配置 -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:8px;">👨‍👩‍👧 保護者の方へ</div>
+      <a href="https://px.a8.net/svt/ejp?a8mat=3Z4B2O+DXME82+54JK+5YZ77" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#F5F3FF,#EEF2FF);border:1.5px solid #DDD6FE;border-radius:14px;padding:14px 16px;text-decoration:none;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:32px;flex-shrink:0;">🎧</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#4C1D95;margin-bottom:3px;">Santa（AIによるTOEIC学習）</div>
+            <div style="font-size:11px;color:#6D28D9;line-height:1.6;">AIが最短でTOEICスコアを伸ばす。トップ大学生のフォローアップ付き。まずは無料体験。</div>
+          </div>
+        </div>
+      </a>
+      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3Z4B2O+DXME82+54JK+5YZ77" alt="">
+    </div>
+    <div style="font-size:10px;color:var(--text-faint);text-align:center;margin-bottom:8px;">※ アフィリエイト広告を含みます</div>
+
+    <!-- 楽天モーションウィジェット -->
+    <div style="overflow:hidden;border-radius:10px;background:var(--card);border:1px solid var(--border);margin-bottom:6px;">
+      <script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="097cb958.bc61ad34.097cb959.eac353a7";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="468x160";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ts="1776063409681";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
+    </div>
+    <div style="font-size:10px;color:var(--text-faint);text-align:center;margin-bottom:4px;">※ 楽天アフィリエイトリンクを含みます</div>
     <div id="rakuten-affiliate-widget"></div>
   </div>
 
@@ -1944,25 +1993,69 @@ function selectPdfCount(cnt) {
   document.getElementById('pdfCnt' + cnt).classList.add('selected');
   _updatePdfBtn();
 }
+// ── 無料PDF 1日3回制限 ──
+const PDF_LIMIT_KEY  = 'nijumaru_pdf_date';
+const PDF_COUNT_KEY  = 'nijumaru_pdf_count';
+const PDF_DAILY_LIMIT = 3;
+
+function _getPdfCount() {
+  const today = new Date().toISOString().slice(0,10);
+  const savedDate = localStorage.getItem(PDF_LIMIT_KEY);
+  if (savedDate !== today) {
+    localStorage.setItem(PDF_LIMIT_KEY, today);
+    localStorage.setItem(PDF_COUNT_KEY, '0');
+    return 0;
+  }
+  return parseInt(localStorage.getItem(PDF_COUNT_KEY) || '0', 10);
+}
+function _incrementPdfCount() {
+  const today = new Date().toISOString().slice(0,10);
+  localStorage.setItem(PDF_LIMIT_KEY, today);
+  localStorage.setItem(PDF_COUNT_KEY, String(_getPdfCount() + 1));
+}
+function _pdfLimitReached() { return _getPdfCount() >= PDF_DAILY_LIMIT; }
+
 function _updatePdfBtn() {
-  const btn = document.getElementById('btnPdfDl');
-  if (!selectedPdfGrade) { btn.disabled = true; btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 学年を選んでください`; return; }
-  const diff  = selectedPdfDiff  || 'normal';
-  const cnt   = selectedPdfCount || 20;
-  const dl = DIFF_LABEL[diff];
+  const btn   = document.getElementById('btnPdfDl');
+  const badge = document.getElementById('pdfCountBadge');
+  const used  = _getPdfCount();
+  const left  = Math.max(0, PDF_DAILY_LIMIT - used);
+
+  if (badge) badge.textContent = `本日 残り ${left}/${PDF_DAILY_LIMIT} 回`;
+
+  if (_pdfLimitReached()) {
+    btn.disabled = true;
+    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 本日の無料PDF生成回数（${PDF_DAILY_LIMIT}回）に達しました`;
+    // 制限バナーを表示
+    const limitEl = document.getElementById('pdfLimitBanner');
+    if (limitEl) limitEl.style.display = 'block';
+    return;
+  }
+  if (!selectedPdfGrade) {
+    btn.disabled = true;
+    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 学年を選んでください`;
+    return;
+  }
+  const diff = selectedPdfDiff  || 'normal';
+  const cnt  = selectedPdfCount || 20;
+  const dl   = DIFF_LABEL[diff];
   btn.disabled = false;
   btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 小学${selectedPdfGrade}年生 ${dl} ${cnt}問 PDF保存`;
 }
 
 function generatePdf() {
   if (!selectedPdfGrade) return;
+  if (_pdfLimitReached()) return;
   const btn = document.getElementById('btnPdfDl');
   btn.disabled = true;
   btn.innerHTML = '⏳ 生成中...';
   const diff = selectedPdfDiff  || 'normal';
   const cnt  = selectedPdfCount || 20;
   setTimeout(async () => {
-    try { await _buildPdfCanvas(selectedPdfGrade, diff, cnt); }
+    try {
+      await _buildPdfCanvas(selectedPdfGrade, diff, cnt);
+      _incrementPdfCount(); // 成功時のみカウント
+    }
     catch(e) {
       console.error('PDF生成エラー:', e);
       alert('PDF生成に失敗しました。\n\n原因: ' + (e.message || '不明') + '\n\nブラウザを更新してお試しください。');

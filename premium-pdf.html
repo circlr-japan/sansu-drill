@@ -131,6 +131,13 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
   <!-- ── PDFジェネレーター ── -->
   <div id="generator">
+    <!-- トライアルバナー（1日無料期間中のみ表示） -->
+    <div id="trialBanner" style="display:none;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1.5px solid #FCD34D;border-radius:14px;padding:12px 14px;margin-bottom:14px;">
+      <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:4px;">🎁 1日間無料トライアル中</div>
+      <div style="font-size:12px;color:#A16207;line-height:1.7;">今すぐ全機能を無料でお試しできます。<span id="trialRemaining" style="font-weight:700;"></span><br>
+        継続利用は <a href="/premium.html" style="color:#D97706;font-weight:700;">100問チャレンジ（¥100）</a> をご購入ください。
+      </div>
+    </div>
 
     <div class="section">
       <h2>① 学年</h2>
@@ -154,12 +161,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
     </div>
 
     <div class="section">
-      <h2>③ 問題数</h2>
+      <h2>③ 問題数 <span style="font-size:12px;font-weight:400;color:var(--text-muted);">（1ページ40問・A4縦）</span></h2>
       <div class="count-presets">
-        <div class="preset-btn sel" id="preset20"  onclick="setCount(20)">20問<span class="preset-sub">5点×20</span></div>
-        <div class="preset-btn"    id="preset40"  onclick="setCount(40)">40問<span class="preset-sub">2.5点×40</span></div>
-        <div class="preset-btn"    id="preset60"  onclick="setCount(60)">60問<span class="preset-sub">約1.7点×60</span></div>
-        <div class="preset-btn"    id="preset100" onclick="setCount(100)">100問<span class="preset-sub">1点×100</span></div>
+        <div class="preset-btn sel" id="preset40"  onclick="setCount(40)">40問<span class="preset-sub">1ページ</span></div>
+        <div class="preset-btn"    id="preset80"  onclick="setCount(80)">80問<span class="preset-sub">2ページ</span></div>
+        <div class="preset-btn"    id="preset120" onclick="setCount(120)">120問<span class="preset-sub">3ページ</span></div>
       </div>
     </div>
 
@@ -230,6 +236,30 @@ const VALID_CODES = [
   'NIJUMARU-TEST-2024', // テスト用（本番前に削除）
 ];
 
+// ── 1日無料トライアル ──
+// 初回アクセス日時をlocalStorageに記録。24時間以内なら無料で使える。
+const TRIAL_KEY = 'nijumaru_trial_start';
+function _isInTrial() {
+  const stored = localStorage.getItem(TRIAL_KEY);
+  if (!stored) {
+    // 初回アクセス：開始時刻を記録
+    localStorage.setItem(TRIAL_KEY, Date.now().toString());
+    return true;
+  }
+  const elapsed = Date.now() - parseInt(stored, 10);
+  return elapsed < 24 * 60 * 60 * 1000; // 24時間以内
+}
+function _trialRemainingText() {
+  const stored = localStorage.getItem(TRIAL_KEY);
+  if (!stored) return '';
+  const elapsed = Date.now() - parseInt(stored, 10);
+  const remaining = 24 * 60 * 60 * 1000 - elapsed;
+  if (remaining <= 0) return '';
+  const h = Math.floor(remaining / 3600000);
+  const m = Math.floor((remaining % 3600000) / 60000);
+  return `残り約${h}時間${m}分`;
+}
+
 // SHA-256 ベースのコード検証（thanks.html と同一ロジック）
 async function _codeFromSession(sessionId) {
   const msg = SALT + ':' + sessionId;
@@ -239,28 +269,34 @@ async function _codeFromSession(sessionId) {
   return `${raw.slice(0,4)}-${raw.slice(4,8)}-${raw.slice(8,12)}`;
 }
 
-// 入力コードが有効かを検証（sessionStorageに保存されたsession_idとの照合）
+// 入力コードが有効かを検証
 async function _isValidCode(inputCode) {
   const upper = inputCode.trim().toUpperCase();
-  // ハードコードのコードチェック
   if (VALID_CODES.some(c => c.toUpperCase() === upper)) return true;
-  // session_id ベースのコードチェック
   const storedSessionId = sessionStorage.getItem('nijumaru_session_id');
   if (storedSessionId) {
     const expected = await _codeFromSession(storedSessionId);
     if (expected === upper) return true;
   }
-  // sessionStorageに保存済みコードと一致するかチェック
   const storedCode = sessionStorage.getItem('nijumaru_access_code');
   if (storedCode && storedCode.toUpperCase() === upper) return true;
   return false;
 }
 
-function _showGenerator(code) {
-  // コードを入力欄に表示（確認用）
+function _showGenerator(code, isTrial) {
   if (code) document.getElementById('accessCodeInput').value = code;
   document.getElementById('authGate').style.display = 'none';
   document.getElementById('generator').style.display = 'block';
+  // トライアル中の場合はバナーを表示
+  if (isTrial) {
+    const remaining = _trialRemainingText();
+    const banner = document.getElementById('trialBanner');
+    if (banner) {
+      banner.style.display = 'block';
+      const rem = document.getElementById('trialRemaining');
+      if (rem && remaining) rem.textContent = remaining;
+    }
+  }
 }
 
 async function checkAuth() {
@@ -271,37 +307,43 @@ async function checkAuth() {
     if (!sessionStorage.getItem('nijumaru_access_code')) {
       sessionStorage.setItem('nijumaru_access_code', code.trim().toUpperCase());
     }
-    _showGenerator(null);
+    _showGenerator(null, false);
   } else {
     document.getElementById('authError').style.display = 'block';
   }
 }
 
-// ページ読み込み時：URL/sessionStorage から自動認証
+// ページ読み込み時：URL/sessionStorage/トライアル の順で認証
 window.addEventListener('DOMContentLoaded', async () => {
-  const params = new URLSearchParams(location.search);
-  const urlCode = params.get('code');   // thanks.html からの ?code=
+  const params  = new URLSearchParams(location.search);
+  const urlCode = params.get('code');
   const ssAuth  = sessionStorage.getItem('nijumaru_premium_auth');
   const ssCode  = sessionStorage.getItem('nijumaru_access_code');
 
+  // 1. URLコード
   if (urlCode) {
-    // URLにコードがある → 自動検証
     const valid = await _isValidCode(urlCode);
     if (valid) {
       sessionStorage.setItem('nijumaru_premium_auth', '1');
       sessionStorage.setItem('nijumaru_access_code', urlCode.trim().toUpperCase());
-      _showGenerator(urlCode);
+      _showGenerator(urlCode, false);
       return;
     }
   }
 
+  // 2. 同一セッション認証済み
   if (ssAuth === '1') {
-    // 同一セッション内で認証済み
-    _showGenerator(ssCode);
+    _showGenerator(ssCode, false);
     return;
   }
 
-  // 手動入力 → コードをセットして待機
+  // 3. 1日無料トライアル
+  if (_isInTrial()) {
+    _showGenerator(null, true);
+    return;
+  }
+
+  // 4. 手動入力待ち
   if (ssCode) document.getElementById('accessCodeInput').value = ssCode;
   document.getElementById('accessCodeInput').addEventListener('keydown', e => {
     if (e.key === 'Enter') checkAuth();
@@ -466,7 +508,7 @@ const DIFF_BG     = { easy:'#F0FDF4', normal:'#EFF6FF', hard:'#FEF2F2' };
 // ============================================================
 let selGradeVal = null;
 let selDiffVal  = null;
-let selCountVal = 20;
+let selCountVal = 40;
 
 function selGrade(g) {
   selGradeVal = g;
@@ -482,7 +524,7 @@ function selDiff(d) {
 }
 function setCount(n) {
   selCountVal = n;
-  [20,40,60,100].forEach(p => {
+  [40,80,120].forEach(p => {
     document.getElementById('preset'+p).classList.toggle('sel', selCountVal === p);
   });
 }
@@ -515,21 +557,19 @@ async function generatePremiumPdf() {
   const progressText = document.getElementById('progressText');
   progressWrap.style.display = 'block';
 
-  // プレミアム版：解答ページ・名前欄・日付欄は常にON
-  const withAnswer   = true;
-  const withNameDate = true;
-  const withScore    = document.getElementById('optScore').checked;
-  const customTitle  = document.getElementById('customTitle').value.trim();
-  const childName    = document.getElementById('childName').value.trim();
+  const withScore   = document.getElementById('optScore').checked;
+  const customTitle = document.getElementById('customTitle').value.trim();
+  const childName   = document.getElementById('childName').value.trim();
+  const options = { withScore, customTitle, childName };
 
   try {
-    progressFill.style.width = '10%';
+    progressFill.style.width = '8%';
     progressText.textContent = '問題を生成中...';
 
     const gen = GRADES[selGradeVal].generators[selDiffVal];
     const qs = [];
     const seen = new Set();
-    const MAX_RETRY = selCountVal * 10;
+    const MAX_RETRY = selCountVal * 12;
     let retry = 0;
     while(qs.length < selCountVal && retry < MAX_RETRY){
       const q = gen[Math.floor(Math.random() * gen.length)]();
@@ -543,46 +583,46 @@ async function generatePremiumPdf() {
     const diffLabel  = DIFF_LABEL[selDiffVal];
     const diffColor  = DIFF_COLORS[selDiffVal];
     const diffBg     = DIFF_BG[selDiffVal];
+    const dateStr    = new Date().toISOString().slice(0, 10);
+    const diffKey    = {easy:'shokyuu',normal:'chukyu',hard:'jokyu'}[selDiffVal];
 
-    // 問題数に応じた配点
-    const pts = selCountVal <= 20 ? 5 : selCountVal <= 25 ? 4 : selCountVal <= 50 ? 2 : 1;
-    const dateStr = new Date().toISOString().slice(0, 10);
-    const diffKey = {easy:'shokyuu',normal:'chukyu',hard:'jokyu'}[selDiffVal];
-
-    // 解像度（150dpi相当）
+    const PER_PAGE   = 40;
+    const totalPages = Math.ceil(selCountVal / PER_PAGE);
     const PX = 5.906;
     const PW = Math.round(210 * PX);
     const PH = Math.round(297 * PX);
 
-    const options = { withNameDate, withScore, customTitle, childName };
-
-    progressFill.style.width = '30%';
-    progressText.textContent = '問題ページを描画中...';
-    const img1 = await _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, selCountVal, false, PW, PH, options);
-
-    let img2 = null;
-    if (withAnswer) {
-      progressFill.style.width = '60%';
-      progressText.textContent = '解答ページを描画中...';
-      img2 = await _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, selCountVal, true, PW, PH, options);
-    }
-
-    progressFill.style.width = '85%';
-    progressText.textContent = 'PDFを生成中...';
-
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4', compress:true });
-    doc.addImage(img1,'PNG',0,0,210,297);
-    if (img2) {
-      doc.addPage();
-      doc.addImage(img2,'PNG',0,0,210,297);
+
+    // 問題ページ
+    for (let p = 0; p < totalPages; p++) {
+      const pageQs  = qs.slice(p * PER_PAGE, (p+1) * PER_PAGE);
+      progressFill.style.width = Math.round(8 + (p / totalPages) * 40) + '%';
+      progressText.textContent = `問題ページ ${p+1}/${totalPages} を描画中...`;
+      const img = await _renderPremiumPage(pageQs, gradeLabel, diffLabel, diffColor, diffBg,
+        p+1, totalPages, false, PW, PH, options, p * PER_PAGE);
+      if (p > 0) doc.addPage();
+      doc.addImage(img,'PNG',0,0,210,297);
     }
 
-    doc.save(`premium-drill-g${selGradeVal}-${diffKey}-${selCountVal}q-${dateStr}.pdf`);
+    // 解答ページ
+    for (let p = 0; p < totalPages; p++) {
+      const pageQs  = qs.slice(p * PER_PAGE, (p+1) * PER_PAGE);
+      progressFill.style.width = Math.round(50 + (p / totalPages) * 40) + '%';
+      progressText.textContent = `解答ページ ${p+1}/${totalPages} を描画中...`;
+      const img = await _renderPremiumPage(pageQs, gradeLabel, diffLabel, diffColor, diffBg,
+        p+1, totalPages, true, PW, PH, options, p * PER_PAGE);
+      doc.addPage();
+      doc.addImage(img,'PNG',0,0,210,297);
+    }
 
+    progressFill.style.width = '95%';
+    progressText.textContent = 'PDFを保存中...';
+    doc.save(`premium-drill-g${selGradeVal}-${diffKey}-${selCountVal}q-${dateStr}.pdf`);
     progressFill.style.width = '100%';
-    progressText.textContent = '完了！';
-    setTimeout(() => { progressWrap.style.display = 'none'; }, 1000);
+    progressText.textContent = `完了！（${selCountVal}問 / ${totalPages}ページ×2）`;
+    setTimeout(() => { progressWrap.style.display = 'none'; }, 1200);
     document.getElementById('doneBanner').style.display = 'block';
 
   } catch(e) {
@@ -590,120 +630,105 @@ async function generatePremiumPdf() {
     alert('PDF生成に失敗しました。\n\n原因: ' + (e.message || '不明') + '\n\nブラウザを更新してお試しください。');
     progressWrap.style.display = 'none';
   }
-
   btn.disabled = false;
   btn.textContent = 'PDFを生成する（解答付き）';
 }
 
-function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isAnswer, PW, PH, opts) {
+// 1ページ = 40問固定 / 2列×20行
+function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg,
+    pageNum, totalPages, isAnswer, PW, PH, opts, qsOffset) {
   return new Promise(resolve => {
     const cv = document.createElement('canvas');
     cv.width = PW; cv.height = PH;
     const ctx = cv.getContext('2d');
     const s = v => v * PW / 210;
     const F = '"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif';
+    const cnt = qs.length;
 
-    // 白背景
     ctx.fillStyle='#fff'; ctx.fillRect(0,0,PW,PH);
 
-    // ヘッダー（プレミアム：グラデーション）
-    const hGrad = ctx.createLinearGradient(0,0,PW,s(30));
-    hGrad.addColorStop(0,'#1E40AF');
-    hGrad.addColorStop(1,'#7C3AED');
-    ctx.fillStyle = hGrad;
-    ctx.fillRect(0,0,PW,s(30));
+    // ヘッダー
+    const hGrad = ctx.createLinearGradient(0,0,PW,s(28));
+    hGrad.addColorStop(0,'#1E40AF'); hGrad.addColorStop(1,'#7C3AED');
+    ctx.fillStyle = hGrad; ctx.fillRect(0,0,PW,s(28));
 
-    // 難易度バッジ
     ctx.fillStyle = diffColor;
-    _rr2p(ctx, PW-s(50), s(7), s(42), s(14), s(3)); ctx.fill();
-    ctx.fillStyle='#fff'; ctx.font=`700 ${s(5.5)}px ${F}`; ctx.textAlign='center';
-    ctx.fillText(diffLabel + (isAnswer?' 解答':''), PW-s(29), s(17));
+    _rr2p(ctx, PW-s(48), s(6), s(40), s(14), s(3)); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font=`700 ${s(5)}px ${F}`; ctx.textAlign='center';
+    ctx.fillText(diffLabel + (isAnswer?' 解答':''), PW-s(28), s(15.5));
 
-    // タイトル
-    const titleText = opts.customTitle
-      ? `${opts.customTitle}${isAnswer?'【解答】':''}`
-      : `${gradeLabel}　にじゅうまる。算数ドリル${isAnswer?'【解答】':''}`;
-    ctx.font=`700 ${s(7)}px ${F}`; ctx.textAlign='center'; ctx.fillStyle='#fff';
-    ctx.fillText(titleText, PW/2, s(13));
-    ctx.font=`400 ${s(3.6)}px ${F}`; ctx.fillStyle='rgba(255,255,255,0.85)';
-    ctx.fillText(`文部科学省 学習指導要領準拠　｜　1問${pts}点 × ${cnt}問 ＝ 100点満点`, PW/2, s(22));
+    const titleBase = opts.customTitle || `${gradeLabel}　にじゅうまる。算数ドリル`;
+    ctx.font=`700 ${s(6.5)}px ${F}`; ctx.textAlign='center'; ctx.fillStyle='#fff';
+    ctx.fillText(isAnswer ? titleBase+'【解答】' : titleBase, PW/2, s(12));
+    const pageInfo = totalPages > 1 ? `　（${pageNum}/${totalPages}ページ）` : '';
+    ctx.font=`400 ${s(3.4)}px ${F}`; ctx.fillStyle='rgba(255,255,255,0.85)';
+    ctx.fillText(`文部科学省 学習指導要領準拠　｜　問題 ${qsOffset+1}〜${qsOffset+cnt}${pageInfo}`, PW/2, s(21));
 
-    // ── 記入欄 ──
-    let cy = s(37);
-    if (opts.withNameDate) {
-      ctx.textAlign='left';
-      ctx.fillStyle='#64748B'; ctx.font=`400 ${s(4)}px ${F}`;
-      // 名前欄
-      ctx.fillText('お名前', s(15), cy+s(4));
-      if (opts.childName && !isAnswer) {
-        // 名前プリセット（子供の名前が入力されていれば薄く表示）
-        ctx.fillStyle='#CBD5E1';
-        ctx.fillText(opts.childName, s(31), cy+s(4));
-        ctx.fillStyle='#64748B';
+    let cy = s(34);
+    if (pageNum === 1 && !isAnswer) {
+      ctx.textAlign='left'; ctx.fillStyle='#64748B'; ctx.font=`400 ${s(3.8)}px ${F}`;
+      ctx.fillText('お名前', s(15), cy+s(3.8));
+      if (opts.childName) {
+        ctx.fillStyle='#CBD5E1'; ctx.fillText(opts.childName, s(30), cy+s(3.8)); ctx.fillStyle='#64748B';
       }
-      ctx.strokeStyle='#1E293B'; ctx.lineWidth=s(0.5);
-      ctx.beginPath(); ctx.moveTo(s(30),cy+s(5.5)); ctx.lineTo(s(105),cy+s(5.5)); ctx.stroke();
-      // 日付欄
-      ctx.fillText('日付', s(110), cy+s(4));
+      ctx.strokeStyle='#1E293B'; ctx.lineWidth=s(0.45);
+      ctx.beginPath(); ctx.moveTo(s(28),cy+s(5)); ctx.lineTo(s(105),cy+s(5)); ctx.stroke();
+      ctx.fillText('日付', s(110), cy+s(3.8));
       const today = new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
-      ctx.fillStyle='#CBD5E1'; ctx.font=`400 ${s(3.5)}px ${F}`;
-      ctx.fillText(today, s(122), cy+s(4));
-      ctx.fillStyle='#64748B'; ctx.font=`400 ${s(4)}px ${F}`;
+      ctx.fillStyle='#CBD5E1'; ctx.font=`400 ${s(3.2)}px ${F}`;
+      ctx.fillText(today, s(120), cy+s(3.8)); ctx.fillStyle='#64748B'; ctx.font=`400 ${s(3.8)}px ${F}`;
       ctx.strokeStyle='#1E293B';
-      ctx.beginPath(); ctx.moveTo(s(120),cy+s(5.5)); ctx.lineTo(s(168),cy+s(5.5)); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(s(118),cy+s(5)); ctx.lineTo(s(168),cy+s(5)); ctx.stroke();
+      if (opts.withScore) {
+        ctx.fillStyle='#EFF6FF'; _rr2p(ctx,s(171),cy-s(1),s(24),s(10),s(2)); ctx.fill();
+        ctx.strokeStyle='#BFDBFE'; ctx.lineWidth=s(0.35); _rr2p(ctx,s(171),cy-s(1),s(24),s(10),s(2)); ctx.stroke();
+        ctx.fillStyle='#2563EB'; ctx.font=`700 ${s(3.5)}px ${F}`; ctx.textAlign='left';
+        ctx.fillText('得点', s(173), cy+s(3.5)); ctx.font=`700 ${s(5)}px ${F}`;
+        ctx.fillText('／100', s(178), cy+s(7));
+      }
+      cy += s(14);
+      ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.35);
+      ctx.beginPath(); ctx.moveTo(s(15),cy); ctx.lineTo(s(195),cy); ctx.stroke();
+      cy += s(3);
+    } else {
+      ctx.fillStyle='#64748B'; ctx.font=`400 ${s(3.5)}px ${F}`; ctx.textAlign='left';
+      ctx.fillText(`問題 ${qsOffset+1}〜${qsOffset+cnt}`, s(15), cy+s(3));
+      cy += s(10);
+      ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.35);
+      ctx.beginPath(); ctx.moveTo(s(15),cy); ctx.lineTo(s(195),cy); ctx.stroke();
+      cy += s(3);
     }
 
-    // 得点ボックス
-    if (opts.withScore) {
-      ctx.fillStyle='#EFF6FF'; _rr2p(ctx,s(170),cy-s(1),s(25),s(11),s(2)); ctx.fill();
-      ctx.strokeStyle='#BFDBFE'; ctx.lineWidth=s(0.4); _rr2p(ctx,s(170),cy-s(1),s(25),s(11),s(2)); ctx.stroke();
-      ctx.fillStyle='#2563EB'; ctx.font=`700 ${s(3.8)}px ${F}`; ctx.textAlign='left';
-      ctx.fillText('得点', s(172), cy+s(4));
-      ctx.font=`700 ${s(5.5)}px ${F}`; ctx.fillText(`／100`, s(178), cy+s(7.5));
-    }
-
-    cy += s(18);
-    ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.4);
-    ctx.beginPath(); ctx.moveTo(s(15),cy); ctx.lineTo(s(195),cy); ctx.stroke();
-    cy += s(5);
-
-    // ── 問題グリッド ──
-    const cols = 2;
-    const perCol = Math.ceil(cnt / cols);
-    const availH = PH - cy - s(16);
-    const rowH = availH / perCol;
-    const colW = (PW - s(30)) / cols;
-    const ansW = s(cnt<=20 ? 34 : cnt<=30 ? 28 : cnt<=60 ? 22 : 18);
-    const fontSize = cnt<=20 ? s(5) : cnt<=30 ? s(4.2) : cnt<=60 ? s(3.6) : s(3.0);
-    const numFontSize = cnt<=20 ? s(4) : s(3.3);
+    // 問題グリッド: 2列×20行 = 40問/ページ
+    const COLS = 2, ROWS = 20;
+    const availH = PH - cy - s(14);
+    const rowH   = availH / ROWS;
+    const colW   = (PW - s(30)) / COLS;
+    const ansW   = s(28);
+    const fontSize = s(3.8), numFontSize = s(3.2);
 
     for (let i = 0; i < cnt; i++) {
-      const col = Math.floor(i / perCol);
-      const row = i % perCol;
-      const qx = s(15) + col * colW;
-      const qy = cy + row * rowH;
-      const cardH = rowH - s(1.2);
+      const col   = Math.floor(i / ROWS);
+      const row   = i % ROWS;
+      const qx    = s(15) + col * colW;
+      const qy    = cy + row * rowH;
+      const cardH = rowH - s(0.8);
 
-      // カード背景
       ctx.fillStyle = row%2===0 ? '#F8FAFC' : '#fff';
-      _rr2p(ctx,qx,qy,colW-s(4),cardH,s(2)); ctx.fill();
-      ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.25);
-      _rr2p(ctx,qx,qy,colW-s(4),cardH,s(2)); ctx.stroke();
+      _rr2p(ctx,qx,qy,colW-s(4),cardH,s(1.5)); ctx.fill();
+      ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.2);
+      _rr2p(ctx,qx,qy,colW-s(4),cardH,s(1.5)); ctx.stroke();
 
-      // 番号バッジ
       ctx.fillStyle='#2563EB';
-      _rr2p(ctx, qx+s(1.5), qy+s(1.5), s(cnt>60?6:8), s(cnt>60?4.5:5.5), s(1)); ctx.fill();
+      _rr2p(ctx, qx+s(1.2), qy+s(1.2), s(8), s(5), s(1)); ctx.fill();
       ctx.fillStyle='#fff'; ctx.font=`700 ${numFontSize}px ${F}`; ctx.textAlign='center';
-      ctx.fillText(String(i+1), qx+s(cnt>60?4:5.5), qy+s(cnt>60?5:5.8));
+      ctx.fillText(String(qsOffset+i+1), qx+s(5.2), qy+s(5.2));
 
-      // 問題文
       ctx.fillStyle='#1E293B'; ctx.textAlign='left'; ctx.font=`500 ${fontSize}px ${F}`;
-      ctx.fillText(String(qs[i].q), qx+s(cnt>60?9:12), qy + cardH/2 + fontSize*0.35);
+      ctx.fillText(String(qs[i].q), qx+s(11), qy + cardH/2 + fontSize*0.38);
 
-      // 解答欄
       const abx = qx + colW - s(4) - ansW;
-      const aby = qy + s(1.5);
-      const abh = cardH - s(3);
+      const aby = qy + s(1.2), abh = cardH - s(2.4);
       if (isAnswer) {
         ctx.fillStyle = diffBg; _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.fill();
         ctx.strokeStyle = diffColor; ctx.lineWidth=s(0.5); _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.stroke();
@@ -711,16 +736,14 @@ function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, c
         ctx.fillText(String(qs[i].a), abx+ansW/2, aby+abh/2+fontSize*0.38);
       } else {
         ctx.fillStyle='#fff'; _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.fill();
-        ctx.strokeStyle='#94A3B8'; ctx.lineWidth=s(0.5); _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.stroke();
+        ctx.strokeStyle='#94A3B8'; ctx.lineWidth=s(0.4); _rr2p(ctx,abx,aby,ansW,abh,s(1.5)); ctx.stroke();
       }
     }
 
-    // フッター
     ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.3);
-    ctx.beginPath(); ctx.moveTo(s(15),PH-s(12)); ctx.lineTo(s(195),PH-s(12)); ctx.stroke();
-    ctx.fillStyle='#94A3B8'; ctx.font=`400 ${s(3.2)}px ${F}`; ctx.textAlign='center';
-    ctx.fillText('nijumaru-drill.com　©2025 にじゅうまる。算数ドリル　PREMIUM', PW/2, PH-s(6));
-
+    ctx.beginPath(); ctx.moveTo(s(15),PH-s(11)); ctx.lineTo(s(195),PH-s(11)); ctx.stroke();
+    ctx.fillStyle='#94A3B8'; ctx.font=`400 ${s(3)}px ${F}`; ctx.textAlign='center';
+    ctx.fillText(`nijumaru-drill.com　©2025 にじゅうまる。算数ドリル　PREMIUM　${pageNum}/${totalPages}`, PW/2, PH-s(5));
     resolve(cv.toDataURL('image/png'));
   });
 }
