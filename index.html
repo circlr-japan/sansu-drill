@@ -564,7 +564,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   </div>
   <div class="pdf-section">
     <div class="pdf-section-title">📄 にじゅうまる。算数ドリル PDF ダウンロード</div>
-    <div class="pdf-section-sub">学年・難易度・問題数を選んで「PDF保存」ボタンを押すと、問題ページ＋解答ページの2枚がダウンロードされます。</div>
+    <div class="pdf-section-sub">学年・難易度・問題数を選んで「PDF保存」を押すと、<strong>問題ページのみ</strong>がダウンロードされます。<br><span style="color:#7C3AED;font-size:11px;">💡 <a href="/premium.html" style="color:#7C3AED;font-weight:700;">解答付き・名前欄・日付入り（最大100問）</a>は100問チャレンジで。</span></div>
 
     <!-- 学年 -->
     <div class="pdf-row-label">① 学年</div>
@@ -598,6 +598,14 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       学年を選んでください
     </button>
     <div class="pdf-note">※ 印刷はA4・縦・余白なし推奨　※ 問題はランダム生成で毎回異なります</div>
+    <div id="premiumNudge" style="display:none;margin-top:14px;background:linear-gradient(135deg,#F5F3FF,#EEF2FF);border:1.5px solid #DDD6FE;border-radius:14px;padding:14px 16px;">
+      <div style="font-size:13px;font-weight:700;color:#5B21B6;margin-bottom:6px;">📄 ダウンロードできました！</div>
+      <div style="font-size:12px;color:#6D28D9;line-height:1.7;">
+        <b>解答付き・名前欄・日付入り・最大100問</b>のPDFは<br>
+        <a href="/premium.html" style="color:#7C3AED;font-weight:700;">100問チャレンジ（¥100）</a>をご利用ください。
+      </div>
+      <a href="/premium.html" style="display:block;margin-top:10px;padding:11px;background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;border-radius:12px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;">100問チャレンジを見る →</a>
+    </div>
   </div>
 
   <!-- 全国ランキング -->
@@ -1991,19 +1999,19 @@ async function _buildPdfCanvas(grade, diff, cnt) {
   const dateStr = new Date().toISOString().slice(0, 10);
   const diffKey = {easy:'shokyuu',normal:'chukyu',hard:'jokyu'}[diff];
 
-  // 解像度を150dpi相当に抑える（40問でもメモリ超過しない）
-  const PX = 5.906; // 150dpi / 25.4
-  const PW = Math.round(210 * PX); // 約1240px
-  const PH = Math.round(297 * PX); // 約1754px
+  const PX = 5.906;
+  const PW = Math.round(210 * PX);
+  const PH = Math.round(297 * PX);
 
+  // 無料版：問題ページのみ（解答ページはプレミアム）
   const img1 = await _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, false, PW, PH);
-  const img2 = await _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, true,  PW, PH);
 
   const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4', compress:true });
   doc.addImage(img1,'PNG',0,0,210,297);
-  doc.addPage();
-  doc.addImage(img2,'PNG',0,0,210,297);
   doc.save(`sansu-drill-g${grade}-${diffKey}-${cnt}q-${dateStr}.pdf`);
+
+  // プレミアム誘導バナーを表示
+  _showPremiumNudge();
 }
 
 function _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isAnswer, PW, PH) {
@@ -2107,6 +2115,11 @@ function _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isA
 
     resolve(cv.toDataURL('image/png'));
   });
+}
+
+function _showPremiumNudge() {
+  const el = document.getElementById('premiumNudge');
+  if (el) { el.style.display = 'block'; el.scrollIntoView({behavior:'smooth', block:'nearest'}); }
 }
 
 function _rr2(ctx,x,y,w,h,r){

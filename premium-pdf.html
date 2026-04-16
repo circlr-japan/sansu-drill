@@ -62,9 +62,17 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .count-row{display:flex;align-items:center;gap:12px;margin-top:4px;}
 .count-slider{flex:1;accent-color:var(--purple);height:5px;}
 .count-val{font-size:20px;font-weight:700;color:var(--purple);min-width:52px;text-align:right;}
-.count-presets{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px;}
-.preset-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:7px 4px;text-align:center;cursor:pointer;font-size:12px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);transition:all 0.15s;}
+.count-presets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.preset-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);transition:all 0.15s;display:flex;flex-direction:column;align-items:center;gap:3px;-webkit-tap-highlight-color:transparent;}
 .preset-btn.sel{border-color:var(--purple);background:var(--purple-light);color:var(--purple);}
+.preset-btn:active{transform:scale(0.96);}
+.preset-sub{font-size:9px;font-weight:400;color:inherit;opacity:0.7;}
+
+.always-on-note{
+  margin-top:12px;background:#F0FDF4;border:1px solid #86EFAC;
+  border-radius:10px;padding:9px 12px;
+  font-size:12px;color:#166534;font-weight:500;
+}
 
 /* オプション */
 .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
@@ -147,53 +155,35 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
     <div class="section">
       <h2>③ 問題数</h2>
-      <div class="count-row">
-        <input type="range" id="countSlider" class="count-slider" min="10" max="100" step="10" value="20" oninput="onSlider(this.value)">
-        <span class="count-val"><span id="countDisp">20</span>問</span>
-      </div>
       <div class="count-presets">
-        <div class="preset-btn sel" id="preset20"  onclick="setCount(20)">20問</div>
-        <div class="preset-btn"    id="preset40"  onclick="setCount(40)">40問</div>
-        <div class="preset-btn"    id="preset60"  onclick="setCount(60)">60問</div>
-        <div class="preset-btn"    id="preset100" onclick="setCount(100)">100問</div>
+        <div class="preset-btn sel" id="preset20"  onclick="setCount(20)">20問<span class="preset-sub">5点×20</span></div>
+        <div class="preset-btn"    id="preset40"  onclick="setCount(40)">40問<span class="preset-sub">2.5点×40</span></div>
+        <div class="preset-btn"    id="preset60"  onclick="setCount(60)">60問<span class="preset-sub">約1.7点×60</span></div>
+        <div class="preset-btn"    id="preset100" onclick="setCount(100)">100問<span class="preset-sub">1点×100</span></div>
       </div>
     </div>
 
     <div class="section">
-      <h2>④ オプション</h2>
+      <h2>④ カスタマイズ</h2>
 
-      <div class="toggle-row">
-        <div>
-          <div class="toggle-label">解答ページを付ける</div>
-          <div class="toggle-desc">問題ページの後に解答ページを追加</div>
+      <div class="row-label">タイトル（任意）</div>
+      <input type="text" id="customTitle" class="text-input" placeholder="例：夏休みドリル　第1回" maxlength="24">
+
+      <div class="row-label" style="margin-top:12px;">お子さんのお名前（任意）</div>
+      <input type="text" id="childName" class="text-input" placeholder="例：田中 太郎" maxlength="20">
+
+      <div style="margin-top:14px;border-top:1px solid var(--border);padding-top:14px;">
+        <div class="toggle-row">
+          <div>
+            <div class="toggle-label">得点欄を表示</div>
+            <div class="toggle-desc">採点後に書き込む得点ボックス</div>
+          </div>
+          <label class="toggle"><input type="checkbox" id="optScore" checked><span class="toggle-slider"></span></label>
         </div>
-        <label class="toggle"><input type="checkbox" id="optAnswer" checked><span class="toggle-slider"></span></label>
       </div>
 
-      <div class="toggle-row">
-        <div>
-          <div class="toggle-label">名前欄・日付欄</div>
-          <div class="toggle-desc">ドリルに氏名・日付の記入欄を表示</div>
-        </div>
-        <label class="toggle"><input type="checkbox" id="optNameDate" checked><span class="toggle-slider"></span></label>
-      </div>
-
-      <div class="toggle-row">
-        <div>
-          <div class="toggle-label">得点欄</div>
-          <div class="toggle-desc">採点後に書き込む得点ボックスを表示</div>
-        </div>
-        <label class="toggle"><input type="checkbox" id="optScore" checked><span class="toggle-slider"></span></label>
-      </div>
-
-      <div style="margin-top:14px;">
-        <div class="row-label">タイトルカスタム（任意）</div>
-        <input type="text" id="customTitle" class="text-input" placeholder="例：夏休みドリル　第1回" maxlength="24">
-      </div>
-
-      <div style="margin-top:10px;">
-        <div class="row-label">お子さんのお名前（任意）</div>
-        <input type="text" id="childName" class="text-input" placeholder="例：田中 太郎" maxlength="20">
+      <div class="always-on-note">
+        ✅ 解答ページ・名前欄・日付欄は常に付きます
       </div>
     </div>
 
@@ -490,17 +480,8 @@ function selDiff(d) {
   document.getElementById('diff' + d[0].toUpperCase() + d.slice(1)).classList.add('sel');
   updateGenBtn();
 }
-function onSlider(v) {
-  selCountVal = parseInt(v);
-  document.getElementById('countDisp').textContent = v;
-  [20,40,60,100].forEach(p => {
-    document.getElementById('preset'+p).classList.toggle('sel', selCountVal === p);
-  });
-}
 function setCount(n) {
   selCountVal = n;
-  document.getElementById('countSlider').value = n;
-  document.getElementById('countDisp').textContent = n;
   [20,40,60,100].forEach(p => {
     document.getElementById('preset'+p).classList.toggle('sel', selCountVal === p);
   });
@@ -534,11 +515,12 @@ async function generatePremiumPdf() {
   const progressText = document.getElementById('progressText');
   progressWrap.style.display = 'block';
 
-  const withAnswer = document.getElementById('optAnswer').checked;
-  const withNameDate = document.getElementById('optNameDate').checked;
-  const withScore = document.getElementById('optScore').checked;
-  const customTitle = document.getElementById('customTitle').value.trim();
-  const childName   = document.getElementById('childName').value.trim();
+  // プレミアム版：解答ページ・名前欄・日付欄は常にON
+  const withAnswer   = true;
+  const withNameDate = true;
+  const withScore    = document.getElementById('optScore').checked;
+  const customTitle  = document.getElementById('customTitle').value.trim();
+  const childName    = document.getElementById('childName').value.trim();
 
   try {
     progressFill.style.width = '10%';
@@ -596,8 +578,7 @@ async function generatePremiumPdf() {
       doc.addImage(img2,'PNG',0,0,210,297);
     }
 
-    const suffix = withAnswer ? '-with-answer' : '';
-    doc.save(`premium-drill-g${selGradeVal}-${diffKey}-${selCountVal}q${suffix}-${dateStr}.pdf`);
+    doc.save(`premium-drill-g${selGradeVal}-${diffKey}-${selCountVal}q-${dateStr}.pdf`);
 
     progressFill.style.width = '100%';
     progressText.textContent = '完了！';
