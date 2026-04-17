@@ -22,17 +22,17 @@ if('serviceWorker' in navigator){
 </script>
 
 <!-- ===== 基本SEOタグ ===== -->
-<title>にじゅうまる。算数ドリル【学年別】無料</title>
-<meta name="description" content="小学1〜6年生対応の無料算数ドリル「にじゅうまる。算数ドリル」。文部科学省学習指導要領準拠。初級・中級・上級の3段階。たし算・ひき算・かけ算・わり算・分数・小数など各学年25問・100点満点。スマホ・タブレット対応。">
-<meta name="keywords" content="にじゅうまる,算数ドリル,小学生,無料,算数問題,1年生,2年生,3年生,4年生,5年生,6年生,たし算,ひき算,かけ算,わり算,分数,小数,九九,練習問題,100点,算数テスト">
+<title>算数ドリル【無料・小学生1〜6年生】印刷できるPDF対応 | にじゅうまる。</title>
+<meta name="description" content="小学1〜6年生対応の無料算数ドリル。たし算・ひき算・九九・わり算・分数・小数など学年別・3段階難易度。毎回ランダム生成で繰り返し使える。PDF印刷対応・スマホ対応・文部科学省学習指導要領準拠。">
+<meta name="keywords" content="算数ドリル,小学生,無料,印刷,PDF,1年生,2年生,3年生,4年生,5年生,6年生,たし算,ひき算,かけ算,わり算,九九,分数,小数,計算練習,算数プリント,にじゅうまる">
 <meta name="author" content="にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nijumaru-drill.com/">
 
 <!-- ===== OGP（SNSシェア用） ===== -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="にじゅうまる。算数ドリル【学年別】">
-<meta property="og:description" content="にじゅうまる。算数ドリル【学年別】。小学1〜6年生対応・無料。文部科学省学習指導要領準拠。初級・中級・上級の3段階。各学年25問・100点満点。タイムランキング機能つき！スマホ・タブレット対応。">
+<meta property="og:title" content="算数ドリル【無料・小学1〜6年生】PDF印刷対応 | にじゅうまる。">
+<meta property="og:description" content="学年別・3段階難易度の無料算数ドリル。毎回ランダム生成で繰り返し使える。PDF印刷対応・スマホ対応。文部科学省学習指導要領準拠。">
 <meta property="og:url" content="https://nijumaru-drill.com/">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:locale" content="ja_JP">
@@ -42,25 +42,47 @@ if('serviceWorker' in navigator){
 
 <!-- ===== Twitter Card ===== -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="にじゅうまる。算数ドリル【学年別】">
-<meta name="twitter:description" content="にじゅうまる。算数ドリル【学年別】。小学1〜6年生対応・無料。初級・中級・上級の3段階。各学年25問・100点満点。タイムランキング機能つき！スマホ・タブレット対応。">
+<meta name="twitter:title" content="算数ドリル【無料・小学1〜6年生】PDF印刷対応 | にじゅうまる。">
+<meta name="twitter:description" content="学年別・3段階難易度の無料算数ドリル。毎回ランダム生成で繰り返し使える。PDF印刷対応・スマホ対応。">
 <meta name="twitter:image" content="https://nijumaru-drill.com/ogp.png">
 
-<!-- ===== 構造化データ（教育コンテンツとしてGoogleに認識させる） ===== -->
+<!-- ===== 構造化データ（教育アプリ） ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "にじゅうまる。算数ドリル",
+  "alternateName": "算数ドリル無料",
   "url": "https://nijumaru-drill.com/",
-  "description": "にじゅうまる。算数ドリル【学年別】。小学1〜6年生対応の無料算数ドリル。文部科学省学習指導要領準拠。初級・中級・上級の3段階。各学年25問・100点満点。",
+  "description": "小学1〜6年生対応の無料算数ドリル。学年別・3段階難易度。毎回ランダム生成で繰り返し使える。PDF印刷対応・スマホ対応。文部科学省学習指導要領準拠。",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "JPY"
-  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "無料版",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    {
+      "@type": "Offer",
+      "name": "100問チャレンジ",
+      "price": "100",
+      "priceCurrency": "JPY"
+    },
+    {
+      "@type": "Offer",
+      "name": "サブスクプラン",
+      "price": "300",
+      "priceCurrency": "JPY",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "300",
+        "priceCurrency": "JPY",
+        "unitCode": "MON"
+      }
+    }
+  ],
   "audience": {
     "@type": "EducationalAudience",
     "educationalRole": "student",
@@ -73,7 +95,64 @@ if('serviceWorker' in navigator){
     "educationFramework": "文部科学省 小学校学習指導要領"
   },
   "inLanguage": "ja",
-  "isAccessibleForFree": true
+  "isAccessibleForFree": true,
+  "screenshot": "https://nijumaru-drill.com/ogp.png"
+}
+</script>
+<!-- ===== 構造化データ（FAQPage） ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "にじゅうまる。算数ドリルは無料で使えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、基本機能は完全無料です。学年選択・難易度選択・問題演習・PDF生成（問題ページのみ）がすべて無料でお使いいただけます。解答付きPDFは100問チャレンジ（¥100）またはサブスクプラン（¥300/月）でご利用いただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "何年生から使えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "小学1年生から6年生まで対応しています。各学年の文部科学省学習指導要領に準拠した問題を、初級・中級・上級の3段階の難易度で出題します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "プリント・PDFに印刷できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、A4縦・余白なしでの印刷に最適化されたPDFを生成できます。無料版は問題ページのみ。100問チャレンジ・サブスクプランでは解答付き・名前欄・日付入りのPDFが生成できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "毎回同じ問題が出ますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ、毎回ランダムに生成されます。同じ設定でも問題が変わるため、繰り返し練習に最適です。"
+      }
+    }
+  ]
+}
+</script>
+<!-- ===== 構造化データ（BreadcrumbList） ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "にじゅうまる。算数ドリル",
+      "item": "https://nijumaru-drill.com/"
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -565,7 +644,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   <div class="pdf-section">
     <div class="pdf-section-title">📄 にじゅうまる。算数ドリル PDF ダウンロード</div>
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;">
-      <div class="pdf-section-sub" style="margin-bottom:0;">学年・難易度・問題数を選んで「PDF保存」を押すと、<strong>問題ページのみ</strong>がダウンロードされます。<br><span style="color:#7C3AED;font-size:11px;">💡 <a href="/premium.html" style="color:#7C3AED;font-weight:700;">解答付き・名前欄・日付入り（最大120問）</a>は100問チャレンジで。</span></div>
+      <div class="pdf-section-sub" style="margin-bottom:0;">学年・難易度・問題数を選んで「PDF保存」を押すと、<strong>問題ページのみ</strong>がダウンロードされます。<br><span style="color:#7C3AED;font-size:11px;">💡 <a href="/premium.html" style="color:#7C3AED;font-weight:700;">解答付き・名前欄・日付入り（100問）</a>は100問チャレンジで。</span></div>
       <div id="pdfCountBadge" style="font-size:11px;font-weight:700;color:#64748B;background:#F1F5F9;border-radius:99px;padding:3px 10px;white-space:nowrap;flex-shrink:0;">本日 残り 3/3 回</div>
     </div>
     <div id="pdfLimitBanner" style="display:none;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FCD34D;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
@@ -693,9 +772,23 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       </a>
     </div>
 
-    <!-- ★ A8.net 広告①：RISU算数 ── 記事直下・「もっと深く学ばせたい」文脈で最高適合 -->
+    <!-- ★ Amazon アソシエイト ── 記事直下・最初の教材広告として最高CVR位置 -->
     <div style="margin-bottom:16px;">
       <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:8px;">📣 おすすめ教材</div>
+      <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#FFFBEB,#FFF9F0);border:1.5px solid #F59E0B;border-radius:14px;padding:14px 16px;text-decoration:none;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:32px;flex-shrink:0;">📦</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:3px;">Amazonで算数教材を探す</div>
+            <div style="font-size:11px;color:#A16207;line-height:1.6;">ドリル・参考書・教具など。まとめ買いで送料無料。学年別・苦手単元別に選べます。</div>
+          </div>
+          <div style="flex-shrink:0;background:#FF9900;color:#fff;border-radius:8px;padding:4px 10px;font-size:11px;font-weight:700;">Amazon</div>
+        </div>
+      </a>
+      <div style="font-size:10px;color:var(--text-faint);margin-top:4px;text-align:center;">※ Amazonアソシエイトリンクを含みます</div>
+    </div>
+
+    <!-- ★ A8.net 広告①：RISU算数 ── 「もっと深く学ばせたい」文脈で最高適合 -->
       <a href="https://px.a8.net/svt/ejp?a8mat=3Z4B2O+4PG5EA+19R+ZQNG3" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FCD34D;border-radius:14px;padding:14px 16px;text-decoration:none;">
         <div style="display:flex;align-items:center;gap:12px;">
           <div style="font-size:32px;flex-shrink:0;">🧮</div>
