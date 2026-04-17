@@ -157,7 +157,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
     <div class="success-card">
       <div class="icon">✅</div>
       <h2>購入が確認できました</h2>
-      <p>解答付きPDFをすぐに生成できます。<br>下のアクセスコードを保存しておいてください。</p>
+      <p>100問チャレンジは<strong>本日中（24時まで）何回でも</strong>生成できます。<br>下のアクセスコードを保存してください。明日以降はサブスクプランをご利用ください。</p>
     </div>
 
     <div class="section">
@@ -300,9 +300,12 @@ async function copyCode() {
     sessionStorage.setItem('nijumaru_access_code', code);
     sessionStorage.setItem('nijumaru_session_id', sessionId);
 
-    // premium-pdf.html へのリンクにコードを埋め込む
+    // premium-pdf.html へのリンク（plan=challenge + 当日有効）
+    const today = new Date().toISOString().slice(0, 10);
     document.getElementById('toPremiumPdfBtn').href =
-      `/premium-pdf.html?code=${encodeURIComponent(code)}`;
+      `/premium-pdf.html?code=${encodeURIComponent(code)}&plan=challenge`;
+    // 当日限り有効をsessionStorageに保存
+    sessionStorage.setItem('nijumaru_challenge_date', today);
 
     // UI 切り替え
     document.getElementById('loadingState').style.display = 'none';

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>学年別 算数の学習内容まとめ（小1〜小6）| にじゅうまる。算数ドリル</title>
-<meta name="description" content="小学1年生〜6年生の算数学習内容を学年別に詳しく解説。各学年のつまずきポイントと家庭学習のコツをまとめました。">
+<meta name="description" content="小学1〜6年生の算数学習内容を学年別に紹介。各学年の詳しい解説ページへのリンクもあります。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nijumaru-drill.com/grade-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,208 +12,58 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --primary:#2563EB;--purple:#7C3AED;
-  --bg:#F8FAFC;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
-  --border:#E2E8F0;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
-}
+:root{--bg:#F8FAFC;--surface:#fff;--text:#1E293B;--text-muted:#64748B;--border:#E2E8F0;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
 @media(min-width:640px){body{max-width:720px;margin:0 auto;}}
-
 .header{background:linear-gradient(135deg,#1E40AF,#7C3AED);padding:22px 20px 28px;color:#fff;}
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;}
-.header h1{font-size:20px;font-weight:700;margin-top:8px;line-height:1.4;}
+.header h1{font-size:20px;font-weight:700;margin-top:8px;}
 .header p{font-size:13px;color:rgba(255,255,255,0.85);margin-top:6px;}
-
 .content{padding:16px 16px 56px;}
-
-/* 学年ナビ */
-.grade-nav{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:20px;}
-.grade-nav a{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:var(--surface);border:1.5px solid var(--border);border-radius:10px;
-  padding:8px 4px;text-decoration:none;font-size:13px;font-weight:700;color:var(--text-muted);
-  transition:all 0.15s;
-}
-.grade-nav a:hover,.grade-nav a:active{border-color:var(--purple);background:#F5F3FF;color:var(--purple);}
-.grade-nav a span{font-size:10px;font-weight:400;margin-top:1px;}
-
-/* 学年セクション */
-.grade-section{
-  background:var(--surface);border-radius:16px;padding:20px 16px;
-  box-shadow:var(--shadow);margin-bottom:20px;
-  border-top:4px solid var(--primary);
-}
-.grade-section:nth-child(2){border-top-color:#16A34A;}
-.grade-section:nth-child(3){border-top-color:#D97706;}
-.grade-section:nth-child(4){border-top-color:#DC2626;}
-.grade-section:nth-child(5){border-top-color:#7C3AED;}
-.grade-section:nth-child(6){border-top-color:#0891B2;}
-
-.grade-heading{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.grade-badge{
-  min-width:44px;height:44px;border-radius:50%;
-  background:var(--primary);color:#fff;
-  font-size:18px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.grade-section:nth-child(2) .grade-badge{background:#16A34A;}
-.grade-section:nth-child(3) .grade-badge{background:#D97706;}
-.grade-section:nth-child(4) .grade-badge{background:#DC2626;}
-.grade-section:nth-child(5) .grade-badge{background:#7C3AED;}
-.grade-section:nth-child(6) .grade-badge{background:#0891B2;}
-.grade-title{font-size:18px;font-weight:700;color:var(--text);}
-.grade-sub{font-size:12px;color:var(--text-muted);}
-
-.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.topic-chip{
-  background:var(--bg);border:1px solid var(--border);border-radius:8px;
-  padding:8px 10px;font-size:12px;font-weight:600;color:var(--text);
-}
-.topic-chip .chip-icon{font-size:14px;margin-right:4px;}
-
-.detail-block{margin-bottom:14px;}
-.detail-block h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
-.detail-block p{font-size:13px;color:#334155;line-height:1.75;}
-
-.point-box{
-  background:#FEF9C3;border-left:3px solid #EAB308;
-  border-radius:0 8px 8px 0;padding:10px 12px;margin-top:10px;
-}
-.point-box .point-title{font-size:12px;font-weight:700;color:#854D0E;margin-bottom:3px;}
-.point-box p{font-size:12px;color:#713F12;line-height:1.65;}
-
-.drill-btn{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  width:100%;padding:12px;margin-top:14px;
-  background:linear-gradient(135deg,#2563EB,#3B82F6);color:#fff;
-  border:none;border-radius:12px;font-size:13px;font-weight:700;
-  font-family:'Noto Sans JP',sans-serif;text-decoration:none;cursor:pointer;
-  box-shadow:0 4px 14px rgba(37,99,235,0.25);
-}
-.grade-section:nth-child(2) .drill-btn{background:linear-gradient(135deg,#16A34A,#22C55E);box-shadow:0 4px 14px rgba(22,163,74,0.25);}
-.grade-section:nth-child(3) .drill-btn{background:linear-gradient(135deg,#D97706,#F59E0B);box-shadow:0 4px 14px rgba(217,119,6,0.25);}
-.grade-section:nth-child(4) .drill-btn{background:linear-gradient(135deg,#DC2626,#EF4444);box-shadow:0 4px 14px rgba(220,38,38,0.25);}
-.grade-section:nth-child(5) .drill-btn{background:linear-gradient(135deg,#7C3AED,#9F67FA);box-shadow:0 4px 14px rgba(124,58,237,0.25);}
-.grade-section:nth-child(6) .drill-btn{background:linear-gradient(135deg,#0891B2,#06B6D4);box-shadow:0 4px 14px rgba(8,145,178,0.25);}
-
+.grade-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden;}
+.gc1{border-left:5px solid #2563EB;}.gc2{border-left:5px solid #16A34A;}.gc3{border-left:5px solid #D97706;}
+.gc4{border-left:5px solid #DC2626;}.gc5{border-left:5px solid #7C3AED;}.gc6{border-left:5px solid #0891B2;}
+.grade-head{display:flex;align-items:center;gap:12px;padding:14px 16px 0;}
+.grade-num{font-size:28px;font-weight:700;min-width:32px;}
+.grade-info h2{font-size:16px;font-weight:700;}
+.grade-info p{font-size:12px;color:var(--text-muted);}
+.topic-row{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;}
+.chip{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;}
+.summary{font-size:13px;color:#334155;padding:4px 16px 12px;line-height:1.7;}
+.detail-link{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#F8FAFC;border-top:1px solid var(--border);text-decoration:none;font-size:13px;font-weight:700;}
+.lc1{color:#2563EB;}.lc2{color:#16A34A;}.lc3{color:#D97706;}.lc4{color:#DC2626;}.lc5{color:#7C3AED;}.lc6{color:#0891B2;}
 .ad-wrap{margin:16px 0;border-radius:12px;overflow:hidden;}
-
-/* アフィリエイト */
-.affiliate-block{
-  background:var(--surface);border:1px solid var(--border);border-radius:14px;
-  padding:14px 16px;margin-top:20px;
-}
-.affiliate-block h3{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text);}
-.aff-item{
-  display:flex;align-items:flex-start;gap:10px;
-  padding:10px 0;border-bottom:1px solid var(--border);text-decoration:none;
-}
-.aff-item:last-child{border-bottom:none;padding-bottom:0;}
-.aff-icon{font-size:24px;flex-shrink:0;}
-.aff-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.aff-desc{font-size:11px;color:var(--text-muted);line-height:1.6;}
-
 footer{text-align:center;padding:18px 16px 40px;font-size:11px;color:#94A3B8;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 </head>
 <body>
-
 <div class="header">
   <a href="/index.html">← トップに戻る</a>
   <h1>📋 学年別 算数の学習内容</h1>
-  <p>小学1〜6年生｜各学年のポイントと家庭学習のコツ</p>
+  <p>小学1〜6年生｜各学年のポイントをまとめました</p>
 </div>
-
 <div class="content">
 
-  <!-- 学年ジャンプナビ -->
-  <div class="grade-nav">
-    <a href="#g1">1年<span>たし算</span></a>
-    <a href="#g2">2年<span>九九</span></a>
-    <a href="#g3">3年<span>わり算</span></a>
-    <a href="#g4">4年<span>小数</span></a>
-    <a href="#g5">5年<span>分数</span></a>
-    <a href="#g6">6年<span>比・速さ</span></a>
+  <div class="grade-card gc1">
+    <div class="grade-head"><div class="grade-num">1️⃣</div><div class="grade-info"><h2>小学1年生</h2><p>数の概念・たし算・ひき算の基礎</p></div></div>
+    <div class="topic-row"><span class="chip">10までの数</span><span class="chip">たし算（繰り上がり）</span><span class="chip">ひき算（繰り下がり）</span><span class="chip">長さ・かさの比較</span></div>
+    <div class="summary">10の合成・分解の理解が繰り上がりたし算の土台。「10の補数」をしっかり身につけましょう。</div>
+    <a class="detail-link lc1" href="/grade-1.html">1年生の詳しい解説を見る <span>→</span></a>
   </div>
 
-  <!-- ===== 1年生 ===== -->
-  <div class="grade-section" id="g1">
-    <div class="grade-heading">
-      <div class="grade-badge">1</div>
-      <div>
-        <div class="grade-title">小学1年生</div>
-        <div class="grade-sub">数の概念・たし算・ひき算の基礎</div>
-      </div>
-    </div>
-
-    <div class="topic-grid">
-      <div class="topic-chip"><span class="chip-icon">🔢</span>10までの数</div>
-      <div class="topic-chip"><span class="chip-icon">➕</span>たし算（繰り上がり）</div>
-      <div class="topic-chip"><span class="chip-icon">➖</span>ひき算（繰り下がり）</div>
-      <div class="topic-chip"><span class="chip-icon">📏</span>長さ・かさの比較</div>
-    </div>
-
-    <div class="detail-block">
-      <h3>1年生で学ぶこと</h3>
-      <p>1年生の算数の核心は「数の概念を身体でつかむ」ことです。10までの数の合成・分解（5は3と2、4と1など）を完全に理解することが、繰り上がりのあるたし算の土台になります。</p>
-      <p style="margin-top:8px;">繰り上がりのあるたし算（例：8＋6＝14）は「10のまとまりを作る」考え方で解きます。これが習熟していないと2年生以降のすべての計算でつまずきます。</p>
-    </div>
-
-    <div class="detail-block">
-      <h3>つまずきやすいポイント</h3>
-      <p>「繰り上がり・繰り下がり」の計算で手が止まる子は、10の補数（10にするにはいくつ足りないか）が身についていないことが多いです。例えば「7の補数は3」をパッと言えるようになるまで練習しましょう。</p>
-    </div>
-
-    <div class="point-box">
-      <div class="point-title">💡 家庭学習のポイント</div>
-      <p>おはじきやブロックを使った「10のまとまり作り」が効果的です。毎日5分、繰り上がりのある計算を10問解くだけで大きく変わります。</p>
-    </div>
-
-    <a class="drill-btn" href="/?grade=1">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      1年生のドリルを始める
-    </a>
+  <div class="grade-card gc2">
+    <div class="grade-head"><div class="grade-num">2️⃣</div><div class="grade-info"><h2>小学2年生</h2><p>かけ算（九九）・2桁の加減算</p></div></div>
+    <div class="topic-row"><span class="chip">九九（1〜9の段）</span><span class="chip">1000までの数</span><span class="chip">2桁のたし算・ひき算</span><span class="chip">図形の基本</span></div>
+    <div class="summary">2年生最大の山は「九九」。ランダムに聞かれてもすぐ答えられるレベルまで仕上げることが3年生以降の計算力の土台になります。</div>
+    <a class="detail-link lc2" href="/grade-2.html">2年生の詳しい解説を見る <span>→</span></a>
   </div>
 
-  <!-- ===== 2年生 ===== -->
-  <div class="grade-section" id="g2">
-    <div class="grade-heading">
-      <div class="grade-badge">2</div>
-      <div>
-        <div class="grade-title">小学2年生</div>
-        <div class="grade-sub">かけ算（九九）・2桁の加減算</div>
-      </div>
-    </div>
-
-    <div class="topic-grid">
-      <div class="topic-chip"><span class="chip-icon">✖️</span>九九（1〜9の段）</div>
-      <div class="topic-chip"><span class="chip-icon">🔢</span>1000までの数</div>
-      <div class="topic-chip"><span class="chip-icon">➕</span>2桁のたし算</div>
-      <div class="topic-chip"><span class="chip-icon">📐</span>図形の基本</div>
-    </div>
-
-    <div class="detail-block">
-      <h3>2年生で学ぶこと</h3>
-      <p>2年生の最大の山は「九九」です。九九は3〜4年生の割り算、5〜6年生の分数・小数計算に至るまで、すべての乗除算の基盤です。2年生のうちに完璧に仕上げておくことが最重要です。</p>
-      <p style="margin-top:8px;">九九は「順番に言える」だけでなく「ランダムに聞かれてもすぐ答えられる」レベルまで仕上げましょう。特に7の段・8の段が定着しにくいため、重点的に練習を。</p>
-    </div>
-
-    <div class="detail-block">
-      <h3>2桁の計算でつまずく原因</h3>
-      <p>2桁＋2桁（例：36＋47）の繰り上がりは、1年生の繰り上がり計算が完全に定着していないと難しく感じます。まず1桁の繰り上がりを確認してから進みましょう。</p>
-    </div>
-
-    <div class="point-box">
-      <div class="point-title">💡 九九の覚え方のコツ</div>
-      <p>「リズムで覚える→書いて確認→ランダムクイズ」の3段階で定着させましょう。当サイトの九九タイムアタック機能を使うと、楽しみながら速度を上げられます。</p>
-    </div>
-
-    <a class="drill-btn" href="/?grade=2">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      2年生のドリルを始める
-    </a>
+  <div class="grade-card gc3">
+    <div class="grade-head"><div class="grade-num">3️⃣</div><div class="grade-info"><h2>小学3年生</h2><p>わり算・大きな数・あまりのある計算</p></div></div>
+    <div class="topic-row"><span class="chip">わり算（基本）</span><span class="chip">あまりのあるわり算</span><span class="chip">大きな数（万・億）</span><span class="chip">棒グラフ・表</span></div>
+    <div class="summary">わり算は九九の逆算。「12÷4」は「4×□＝12」と考える力が必要。九九が完璧でないと必ずつまずきます。</div>
+    <a class="detail-link lc3" href="/grade-3.html">3年生の詳しい解説を見る <span>→</span></a>
   </div>
 
   <div class="ad-wrap">
@@ -221,199 +71,31 @@ footer a{color:#94A3B8;text-decoration:underline;}
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
-  <!-- ===== 3年生 ===== -->
-  <div class="grade-section" id="g3">
-    <div class="grade-heading">
-      <div class="grade-badge">3</div>
-      <div>
-        <div class="grade-title">小学3年生</div>
-        <div class="grade-sub">わり算・大きな数・あまりのある計算</div>
-      </div>
-    </div>
-
-    <div class="topic-grid">
-      <div class="topic-chip"><span class="chip-icon">➗</span>わり算（基本）</div>
-      <div class="topic-chip"><span class="chip-icon">➗</span>あまりのあるわり算</div>
-      <div class="topic-chip"><span class="chip-icon">🔢</span>大きな数（万・億）</div>
-      <div class="topic-chip"><span class="chip-icon">📊</span>棒グラフ・表</div>
-    </div>
-
-    <div class="detail-block">
-      <h3>3年生で学ぶこと</h3>
-      <p>3年生は「わり算」が最大のテーマです。わり算は九九の逆算なので、九九が完璧でないとすべて詰まります。「12÷4＝□」は「4×□＝12」と考える力が必要です。</p>
-      <p style="margin-top:8px;">「あまりのあるわり算」は、商（答え）がいくつになるか見当をつける「見積もり力」が求められます。これは4年生の筆算割り算の基礎にもなります。</p>
-    </div>
-
-    <div class="detail-block">
-      <h3>大きな数のつまずき</h3>
-      <p>万の位・千の位の位取りで混乱する子は、「数字を右から4桁で区切る」ルールを繰り返し練習しましょう。23456は「2万3456」と読む練習を。</p>
-    </div>
-
-    <div class="point-box">
-      <div class="point-title">💡 家庭学習のポイント</div>
-      <p>わり算は「わる数の段の九九」を使って解くことを意識させましょう。例えば「27÷3」なら「3の段で27はどこ？」と考える習慣をつけます。</p>
-    </div>
-
-    <a class="drill-btn" href="/?grade=3">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      3年生のドリルを始める
-    </a>
+  <div class="grade-card gc4">
+    <div class="grade-head"><div class="grade-num">4️⃣</div><div class="grade-info"><h2>小学4年生</h2><p>小数・面積・筆算割り算</p></div></div>
+    <div class="topic-row"><span class="chip">小数のたし引き</span><span class="chip">面積（cm²）</span><span class="chip">2〜3桁の割り算</span><span class="chip">折れ線グラフ</span></div>
+    <div class="summary">「小数」が登場し1より小さい数の感覚を身につけることが重要。筆算割り算は「見当→かける→引く→おろす」の手順を体に覚えさせましょう。</div>
+    <a class="detail-link lc4" href="/grade-4.html">4年生の詳しい解説を見る <span>→</span></a>
   </div>
 
-  <!-- ===== 4年生 ===== -->
-  <div class="grade-section" id="g4">
-    <div class="grade-heading">
-      <div class="grade-badge">4</div>
-      <div>
-        <div class="grade-title">小学4年生</div>
-        <div class="grade-sub">小数・面積・筆算割り算</div>
-      </div>
-    </div>
-
-    <div class="topic-grid">
-      <div class="topic-chip"><span class="chip-icon">🔢</span>小数のたし引き</div>
-      <div class="topic-chip"><span class="chip-icon">📐</span>面積（cm²）</div>
-      <div class="topic-chip"><span class="chip-icon">➗</span>2〜3桁の割り算</div>
-      <div class="topic-chip"><span class="chip-icon">📊</span>折れ線グラフ</div>
-    </div>
-
-    <div class="detail-block">
-      <h3>4年生で学ぶこと</h3>
-      <p>4年生は「小数」が登場します。「1より小さい数」「位が右に延びる」という感覚を理解することが重要です。0.1＋0.3＝0.4のように、整数と同じ位取りで計算できることを理解しましょう。</p>
-      <p style="margin-top:8px;">筆算による割り算（例：84÷4）では「商の見当→かける→ひく→おろす」の手順を繰り返します。手順を声に出しながら練習すると定着が早いです。</p>
-    </div>
-
-    <div class="detail-block">
-      <h3>面積でつまずく原因</h3>
-      <p>「縦×横」の公式を覚えても「なぜそうなるか」がわからないと応用できません。1cm²のマス目を数える→縦×横の規則性を発見→公式へ、という流れで理解させましょう。</p>
-    </div>
-
-    <div class="point-box">
-      <div class="point-title">💡 小数計算のポイント</div>
-      <p>筆算では「小数点の位置を揃える」ことが鉄則です。ノートに書くときは小数点を縦一直線に揃える習慣をつけましょう。</p>
-    </div>
-
-    <a class="drill-btn" href="/?grade=4">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      4年生のドリルを始める
-    </a>
+  <div class="grade-card gc5">
+    <div class="grade-head"><div class="grade-num">5️⃣</div><div class="grade-info"><h2>小学5年生</h2><p>分数・小数の乗除・割合・体積</p></div></div>
+    <div class="topic-row"><span class="chip">分数の加減（通分）</span><span class="chip">小数×小数</span><span class="chip">割合・百分率</span><span class="chip">体積（cm³）</span></div>
+    <div class="summary">算数の「大きな転換点」。抽象的な概念が一気に増えます。日常生活の例（30%オフなど）と結びつけた学習が効果的です。</div>
+    <a class="detail-link lc5" href="/grade-5.html">5年生の詳しい解説を見る <span>→</span></a>
   </div>
 
-  <div class="ad-wrap">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <div class="grade-card gc6">
+    <div class="grade-head"><div class="grade-num">6️⃣</div><div class="grade-info"><h2>小学6年生</h2><p>分数の乗除・比・速さ・円の面積</p></div></div>
+    <div class="topic-row"><span class="chip">分数÷分数</span><span class="chip">比と比の値</span><span class="chip">速さ・時間・距離</span><span class="chip">円の面積</span></div>
+    <div class="summary">小学算数の総まとめ。「分数÷分数」は逆数のかけ算、「速さ」ははじきの法則で整理。6年生の内容は中学数学の土台になります。</div>
+    <a class="detail-link lc6" href="/grade-6.html">6年生の詳しい解説を見る <span>→</span></a>
   </div>
-
-  <!-- ===== 5年生 ===== -->
-  <div class="grade-section" id="g5">
-    <div class="grade-heading">
-      <div class="grade-badge">5</div>
-      <div>
-        <div class="grade-title">小学5年生</div>
-        <div class="grade-sub">分数・小数の乗除・割合・体積</div>
-      </div>
-    </div>
-
-    <div class="topic-grid">
-      <div class="topic-chip"><span class="chip-icon">½</span>分数の加減（通分）</div>
-      <div class="topic-chip"><span class="chip-icon">✖️</span>小数×小数</div>
-      <div class="topic-chip"><span class="chip-icon">📊</span>割合・百分率</div>
-      <div class="topic-chip"><span class="chip-icon">📦</span>体積（cm³）</div>
-    </div>
-
-    <div class="detail-block">
-      <h3>5年生で学ぶこと</h3>
-      <p>5年生は算数の「大きな転換点」です。分母が異なる分数の加減算（通分）、小数同士のかけ算・割り算、割合と百分率など、抽象的な概念が一気に増えます。</p>
-      <p style="margin-top:8px;">「割合」は多くの子がつまずく単元です。「割合＝比べる量÷もとにする量」の式を理解するには、具体的な例（150円が300円の何割？）で何度も練習することが大切です。</p>
-    </div>
-
-    <div class="detail-block">
-      <h3>通分・約分のコツ</h3>
-      <p>通分には最小公倍数を求める力が必要です。「4と6の最小公倍数は12」をすっと出せるように、倍数の概念をまず確認しましょう。約分は最大公約数を使います。</p>
-    </div>
-
-    <div class="point-box">
-      <div class="point-title">💡 割合の理解を深めるには</div>
-      <p>日常生活の「30%オフ」「消費税10%」などを実際に計算させると理解が深まります。スーパーのチラシを使った計算練習も効果的です。</p>
-    </div>
-
-    <a class="drill-btn" href="/?grade=5">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      5年生のドリルを始める
-    </a>
-  </div>
-
-  <!-- ===== 6年生 ===== -->
-  <div class="grade-section" id="g6">
-    <div class="grade-heading">
-      <div class="grade-badge">6</div>
-      <div>
-        <div class="grade-title">小学6年生</div>
-        <div class="grade-sub">分数の乗除・比・速さ・円の面積</div>
-      </div>
-    </div>
-
-    <div class="topic-grid">
-      <div class="topic-chip"><span class="chip-icon">½</span>分数÷分数</div>
-      <div class="topic-chip"><span class="chip-icon">⚖️</span>比と比の値</div>
-      <div class="topic-chip"><span class="chip-icon">🚂</span>速さ・時間・距離</div>
-      <div class="topic-chip"><span class="chip-icon">⭕</span>円の面積</div>
-    </div>
-
-    <div class="detail-block">
-      <h3>6年生で学ぶこと</h3>
-      <p>6年生は小学算数の総まとめです。「分数÷分数」は「わる数を逆数にしてかける」という手順が直感に反するため、なぜそうなるかをブロックなど具体物で確認してから手順を覚えましょう。</p>
-      <p style="margin-top:8px;">「速さ」は「速さ＝距離÷時間」「距離＝速さ×時間」「時間＝距離÷速さ」の3式が基本。「はじき（は：速さ、じ：時間、き：距離）」の覚え方で整理する方法が定番です。</p>
-    </div>
-
-    <div class="detail-block">
-      <h3>中学受験・中学算数への橋渡し</h3>
-      <p>6年生の内容は中学数学の「方程式・関数・確率」につながります。特に「比」の考え方は方程式の基礎になります。余裕があれば文字式の入門（□を使った式）まで触れておくと中学でスムーズです。</p>
-    </div>
-
-    <div class="point-box">
-      <div class="point-title">💡 円周率・円の面積</div>
-      <p>「円の面積＝半径×半径×3.14」。この3.14の計算で時間を取られないよう、代表的な値（1×3.14、2×3.14、3×3.14…）を暗記しておくと計算スピードが上がります。</p>
-    </div>
-
-    <a class="drill-btn" href="/?grade=6">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      6年生のドリルを始める
-    </a>
-  </div>
-
-  <!-- A8.netアフィリエイト -->
-  <div class="affiliate-block">
-    <h3>🎯 学習をもっと深めたい方へ</h3>
-    <a class="aff-item" href="https://px.a8.net/svt/ejp?a8mat=3Z4B2O+4PG5EA+19R+ZQNG3" rel="nofollow" target="_blank">
-      <div class="aff-icon">🧮</div>
-      <div>
-        <div class="aff-title">RISU算数（タブレット）</div>
-        <div class="aff-desc">AIがつまずきを自動検知して個別最適化。幼児〜小学生対応。無料お試し可能。</div>
-      </div>
-    </a>
-    <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3Z4B2O+4PG5EA+19R+ZQNG3" alt="">
-    <a class="aff-item" href="https://px.a8.net/svt/ejp?a8mat=3Z4B2O+B0N4Q+OG+10JNIP" rel="nofollow" target="_blank">
-      <div class="aff-icon">📘</div>
-      <div>
-        <div class="aff-title">Z会の通信教育（資料請求無料）</div>
-        <div class="aff-desc">思考力・記述力を育む本格派通信教育。小学生〜大学受験まで対応。</div>
-      </div>
-    </a>
-    <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3Z4B2O+B0N4Q+OG+10JNIP" alt="">
-  </div>
-  <div style="font-size:10px;color:#94A3B8;text-align:center;margin-top:6px;">※ アフィリエイト広告を含みます</div>
 
   <div style="text-align:center;margin-top:20px;">
-    <a href="/index.html" style="display:inline-block;padding:12px 28px;background:var(--primary);color:#fff;border-radius:12px;font-size:14px;font-weight:700;text-decoration:none;">← ドリルトップに戻る</a>
+    <a href="/index.html" style="display:inline-block;padding:12px 28px;background:#2563EB;color:#fff;border-radius:12px;font-size:14px;font-weight:700;text-decoration:none;">← ドリルトップに戻る</a>
   </div>
-
 </div>
-
-<footer>
-  © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>
-</footer>
-
+<footer>© 2025 にじゅうまる。算数ドリル. All rights reserved.<br><a href="/privacy.html">プライバシーポリシー</a></footer>
 </body>
 </html>

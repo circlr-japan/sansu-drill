@@ -131,11 +131,22 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
   <!-- ── PDFジェネレーター ── -->
   <div id="generator">
-    <!-- トライアルバナー（1日無料期間中のみ表示） -->
+    <!-- プランバッジ（JS で動的に書き換え） -->
+    <div id="planBadge" style="display:none;border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:13px;font-weight:700;"></div>
+
+    <!-- トライアルバナー（サブスク：1日無料期間中のみ） -->
     <div id="trialBanner" style="display:none;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1.5px solid #FCD34D;border-radius:14px;padding:12px 14px;margin-bottom:14px;">
       <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:4px;">🎁 1日間無料トライアル中</div>
       <div style="font-size:12px;color:#A16207;line-height:1.7;">今すぐ全機能を無料でお試しできます。<span id="trialRemaining" style="font-weight:700;"></span><br>
-        継続利用は <a href="/premium.html" style="color:#D97706;font-weight:700;">100問チャレンジ（¥100）</a> をご購入ください。
+        継続利用は <a href="/premium.html" style="color:#D97706;font-weight:700;">サブスクプラン（¥300/月）</a> をご購入ください。
+      </div>
+    </div>
+
+    <!-- 当日限りバナー（100問チャレンジ） -->
+    <div id="todayOnlyBanner" style="display:none;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FED7AA;border-radius:14px;padding:12px 14px;margin-bottom:14px;">
+      <div style="font-size:13px;font-weight:700;color:#C2410C;margin-bottom:4px;">⏰ 本日限り有効</div>
+      <div style="font-size:12px;color:#EA580C;line-height:1.7;">100問チャレンジは購入当日のみ、何回でも生成できます。<br>
+        翌日以降も使いたい方は <a href="/premium.html" style="color:#D97706;font-weight:700;">サブスクプラン（¥300/月）</a> をご利用ください。
       </div>
     </div>
 
@@ -160,7 +171,8 @@ footer a{color:#94A3B8;text-decoration:underline;}
       </div>
     </div>
 
-    <div class="section">
+    <!-- 問題数：サブスクのみ表示（100問チャレンジは固定） -->
+    <div class="section" id="countSection" style="display:none;">
       <h2>③ 問題数 <span style="font-size:12px;font-weight:400;color:var(--text-muted);">（1ページ40問・A4縦）</span></h2>
       <div class="count-presets">
         <div class="preset-btn sel" id="preset40"  onclick="setCount(40)">40問<span class="preset-sub">1ページ</span></div>
@@ -169,11 +181,29 @@ footer a{color:#94A3B8;text-decoration:underline;}
       </div>
     </div>
 
-    <div class="section">
-      <h2>④ カスタマイズ</h2>
+    <!-- 問題数固定表示（100問チャレンジ） -->
+    <div class="section" id="countFixed" style="display:none;">
+      <h2>③ 問題数</h2>
+      <div style="background:var(--purple-light);border:1.5px solid #DDD6FE;border-radius:12px;padding:14px 16px;text-align:center;">
+        <div style="font-size:32px;font-weight:700;color:#6D28D9;">100問</div>
+        <div style="font-size:11px;color:#7C3AED;margin-top:2px;">固定（100問チャレンジ）</div>
+      </div>
+    </div>
 
-      <div class="row-label">タイトル（任意）</div>
-      <input type="text" id="customTitle" class="text-input" placeholder="例：夏休みドリル　第1回" maxlength="24">
+    <div class="section">
+      <h2 id="customSectionTitle">④ カスタマイズ</h2>
+
+      <!-- タイトル：サブスクのみ編集可 -->
+      <div id="customTitleRow">
+        <div class="row-label">タイトル（任意）</div>
+        <input type="text" id="customTitle" class="text-input" placeholder="例：夏休みドリル　第1回" maxlength="24">
+      </div>
+
+      <!-- タイトル固定表示（100問チャレンジ） -->
+      <div id="customTitleFixed" style="display:none;">
+        <div class="row-label">タイトル</div>
+        <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:11px 12px;font-size:14px;color:var(--text-muted);">100問チャレンジ（変更不可）</div>
+      </div>
 
       <div class="row-label" style="margin-top:12px;">お子さんのお名前（任意）</div>
       <input type="text" id="childName" class="text-input" placeholder="例：田中 太郎" maxlength="20">
@@ -201,7 +231,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       </div>
       <div id="doneBanner">
         <div class="title">✅ PDFを保存しました！</div>
-        <div class="sub">解答付き・名前欄・日付入りのPDFがダウンロードされました。<br>もう一度生成するにはボタンをもう一度押してください。</div>
+        <div class="sub" id="doneBannerSub">解答付き・名前欄・日付入りのPDFがダウンロードされました。<br>もう一度生成するにはボタンをもう一度押してください。</div>
       </div>
     </div>
 
@@ -228,39 +258,55 @@ footer a{color:#94A3B8;text-decoration:underline;}
     VALID_CODES にハードコードしたコードも引き続き有効（移行期・テスト用）。
 */
 
-// thanks.html と同じ SALT（必ず一致させること）
+
+// ============================================================
+// プラン管理
+// ============================================================
+/*
+  プランの種別:
+    'challenge' : 100問チャレンジ（¥100・購入当日のみ）
+    'sub'       : サブスクプラン（¥300/月・無制限・1日無料トライアル付き）
+    'trial'     : サブスクトライアル（初回24時間・コード不要）
+
+  URL パラメータ:
+    ?plan=challenge  → 100問チャレンジ用
+    ?plan=sub        → サブスク用
+    ?code=XXXX       → thanks.html からの自動認証
+*/
+
 const SALT = 'nijumaru-premium-2025';
+const VALID_CODES_SUB = []; // サブスクコード（手動追加用）
+const VALID_CODES_CHALLENGE = []; // 100問チャレンジコード（手動追加用）
 
-// ハードコードのフォールバックコード（テスト用・手動発行分）
-const VALID_CODES = [
-  'NIJUMARU-TEST-2024', // テスト用（本番前に削除）
-];
+// 当日限り判定（100問チャレンジ）
+// sessionStorageにpurchase_dateを保存し当日かを確認
+const CHALLENGE_DATE_KEY = 'nijumaru_challenge_date';
+function _isChallengeValid() {
+  const stored = sessionStorage.getItem(CHALLENGE_DATE_KEY);
+  if (!stored) return false;
+  return stored === new Date().toISOString().slice(0, 10);
+}
+function _activateChallenge() {
+  sessionStorage.setItem(CHALLENGE_DATE_KEY, new Date().toISOString().slice(0, 10));
+}
 
-// ── 1日無料トライアル ──
-// 初回アクセス日時をlocalStorageに記録。24時間以内なら無料で使える。
+// サブスクトライアル（初回アクセスから24時間）
 const TRIAL_KEY = 'nijumaru_trial_start';
 function _isInTrial() {
   const stored = localStorage.getItem(TRIAL_KEY);
-  if (!stored) {
-    // 初回アクセス：開始時刻を記録
-    localStorage.setItem(TRIAL_KEY, Date.now().toString());
-    return true;
-  }
-  const elapsed = Date.now() - parseInt(stored, 10);
-  return elapsed < 24 * 60 * 60 * 1000; // 24時間以内
+  if (!stored) { localStorage.setItem(TRIAL_KEY, Date.now().toString()); return true; }
+  return Date.now() - parseInt(stored, 10) < 86400000;
 }
 function _trialRemainingText() {
   const stored = localStorage.getItem(TRIAL_KEY);
   if (!stored) return '';
-  const elapsed = Date.now() - parseInt(stored, 10);
-  const remaining = 24 * 60 * 60 * 1000 - elapsed;
-  if (remaining <= 0) return '';
-  const h = Math.floor(remaining / 3600000);
-  const m = Math.floor((remaining % 3600000) / 60000);
+  const rem = 86400000 - (Date.now() - parseInt(stored, 10));
+  if (rem <= 0) return '';
+  const h = Math.floor(rem / 3600000), m = Math.floor((rem % 3600000) / 60000);
   return `残り約${h}時間${m}分`;
 }
 
-// SHA-256 ベースのコード検証（thanks.html と同一ロジック）
+// SHA-256 コード生成
 async function _codeFromSession(sessionId) {
   const msg = SALT + ':' + sessionId;
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
@@ -269,34 +315,78 @@ async function _codeFromSession(sessionId) {
   return `${raw.slice(0,4)}-${raw.slice(4,8)}-${raw.slice(8,12)}`;
 }
 
-// 入力コードが有効かを検証
 async function _isValidCode(inputCode) {
   const upper = inputCode.trim().toUpperCase();
-  if (VALID_CODES.some(c => c.toUpperCase() === upper)) return true;
-  const storedSessionId = sessionStorage.getItem('nijumaru_session_id');
-  if (storedSessionId) {
-    const expected = await _codeFromSession(storedSessionId);
-    if (expected === upper) return true;
-  }
-  const storedCode = sessionStorage.getItem('nijumaru_access_code');
-  if (storedCode && storedCode.toUpperCase() === upper) return true;
+  if ([...VALID_CODES_SUB, ...VALID_CODES_CHALLENGE].some(c => c === upper)) return true;
+  const sid = sessionStorage.getItem('nijumaru_session_id');
+  if (sid) { const e = await _codeFromSession(sid); if (e === upper) return true; }
+  const sc = sessionStorage.getItem('nijumaru_access_code');
+  if (sc && sc === upper) return true;
   return false;
 }
 
-function _showGenerator(code, isTrial) {
-  if (code) document.getElementById('accessCodeInput').value = code;
-  document.getElementById('authGate').style.display = 'none';
+// プランに応じてUIをセットアップ
+// plan: 'challenge' | 'sub' | 'trial'
+function _setupPlanUI(plan) {
+  const badge      = document.getElementById('planBadge');
+  const countSec   = document.getElementById('countSection');
+  const countFixed = document.getElementById('countFixed');
+  const titleRow   = document.getElementById('customTitleRow');
+  const titleFixed = document.getElementById('customTitleFixed');
+  const trialBan   = document.getElementById('trialBanner');
+  const todayBan   = document.getElementById('todayOnlyBanner');
+
+  // 共通
+  badge.style.display = 'block';
   document.getElementById('generator').style.display = 'block';
-  // トライアル中の場合はバナーを表示
-  if (isTrial) {
-    const remaining = _trialRemainingText();
-    const banner = document.getElementById('trialBanner');
-    if (banner) {
-      banner.style.display = 'block';
-      const rem = document.getElementById('trialRemaining');
-      if (rem && remaining) rem.textContent = remaining;
-    }
+  document.getElementById('authGate').style.display = 'none';
+
+  if (plan === 'challenge') {
+    // 100問チャレンジ：問題数固定・タイトル固定・当日限りバナー
+    selCountVal = 100;
+    badge.textContent = '✨ 100問チャレンジ';
+    badge.style.background = 'linear-gradient(135deg,#FFFBEB,#FEF3C7)';
+    badge.style.border = '1.5px solid #FCD34D';
+    badge.style.color = '#92400E';
+    countSec.style.display   = 'none';
+    countFixed.style.display = 'block';
+    titleRow.style.display   = 'none';
+    titleFixed.style.display = 'block';
+    todayBan.style.display   = 'block';
+    // customTitle を固定値にする
+    document.getElementById('customTitle').value = '100問チャレンジ';
+  } else if (plan === 'sub') {
+    // サブスクプラン：問題数選択可・タイトル自由・無制限
+    badge.textContent = '👑 サブスクプラン';
+    badge.style.background = 'linear-gradient(135deg,#F5F3FF,#EEF2FF)';
+    badge.style.border = '1.5px solid #DDD6FE';
+    badge.style.color = '#4C1D95';
+    countSec.style.display   = 'block';
+    countFixed.style.display = 'none';
+    titleRow.style.display   = 'block';
+    titleFixed.style.display = 'none';
+  } else if (plan === 'trial') {
+    // トライアル：サブスクUIと同じだがトライアルバナーを表示
+    badge.textContent = '🎁 1日間無料トライアル中';
+    badge.style.background = 'linear-gradient(135deg,#FFFBEB,#FEF3C7)';
+    badge.style.border = '1.5px solid #FCD34D';
+    badge.style.color = '#92400E';
+    countSec.style.display   = 'block';
+    countFixed.style.display = 'none';
+    titleRow.style.display   = 'block';
+    titleFixed.style.display = 'none';
+    trialBan.style.display   = 'block';
+    const rem = document.getElementById('trialRemaining');
+    if (rem) rem.textContent = _trialRemainingText();
   }
+
+  // sessionStorageにプラン種別を保存（generatePremiumPdf内で参照）
+  sessionStorage.setItem('nijumaru_active_plan', plan);
+}
+
+function _showGenerator(code, plan) {
+  if (code) document.getElementById('accessCodeInput').value = code;
+  _setupPlanUI(plan || 'sub');
 }
 
 async function checkAuth() {
@@ -307,40 +397,62 @@ async function checkAuth() {
     if (!sessionStorage.getItem('nijumaru_access_code')) {
       sessionStorage.setItem('nijumaru_access_code', code.trim().toUpperCase());
     }
-    _showGenerator(null, false);
+    // URLのplanパラメータを優先
+    const params = new URLSearchParams(location.search);
+    const plan = params.get('plan') || 'sub';
+    _showGenerator(null, plan);
   } else {
     document.getElementById('authError').style.display = 'block';
   }
 }
 
-// ページ読み込み時：URL/sessionStorage/トライアル の順で認証
+// ページ読み込み時の認証フロー
 window.addEventListener('DOMContentLoaded', async () => {
   const params  = new URLSearchParams(location.search);
   const urlCode = params.get('code');
+  const urlPlan = params.get('plan'); // 'challenge' | 'sub'
   const ssAuth  = sessionStorage.getItem('nijumaru_premium_auth');
   const ssCode  = sessionStorage.getItem('nijumaru_access_code');
+  const ssPlan  = sessionStorage.getItem('nijumaru_active_plan');
 
-  // 1. URLコード
+  // 1. URLにコードがある（thanks.htmlからの遷移）
   if (urlCode) {
     const valid = await _isValidCode(urlCode);
     if (valid) {
       sessionStorage.setItem('nijumaru_premium_auth', '1');
       sessionStorage.setItem('nijumaru_access_code', urlCode.trim().toUpperCase());
-      _showGenerator(urlCode, false);
+      const plan = urlPlan || 'challenge'; // thanks.htmlからは通常challenge
+      if (plan === 'challenge') _activateChallenge();
+      _showGenerator(urlCode, plan);
       return;
     }
   }
 
-  // 2. 同一セッション認証済み
+  // 2. セッション内で認証済み
   if (ssAuth === '1') {
-    _showGenerator(ssCode, false);
+    // challenge：当日チェック
+    if (ssPlan === 'challenge') {
+      if (!_isChallengeValid()) {
+        // 翌日になっていたら認証切れ → 購入案内
+        document.getElementById('authGate').style.display = 'block';
+        document.getElementById('authGate').innerHTML = `
+          <h2>⏰ 100問チャレンジの有効期限が切れました</h2>
+          <p style="font-size:13px;color:var(--text-muted);margin:12px 0 16px;line-height:1.7;">100問チャレンジは購入当日のみ有効です。<br>継続してご利用いただくには再購入またはサブスクプランをご検討ください。</p>
+          <a href="/premium.html" style="display:block;padding:14px;background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;border-radius:12px;text-align:center;font-size:14px;font-weight:700;text-decoration:none;">プランを確認する</a>
+        `;
+        return;
+      }
+    }
+    _showGenerator(ssCode, ssPlan || 'sub');
     return;
   }
 
-  // 3. 1日無料トライアル
-  if (_isInTrial()) {
-    _showGenerator(null, true);
-    return;
+  // 3. サブスクの1日無料トライアル（plan=subのとき or planパラメータなしのとき）
+  if (!urlPlan || urlPlan === 'sub') {
+    if (_isInTrial()) {
+      _showGenerator(null, 'trial');
+      return;
+    }
   }
 
   // 4. 手動入力待ち
@@ -349,6 +461,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (e.key === 'Enter') checkAuth();
   });
 });
+
+
 
 
 // ============================================================
@@ -548,6 +662,13 @@ function updateGenBtn() {
 async function generatePremiumPdf() {
   if (!selGradeVal || !selDiffVal) return;
 
+  // 100問チャレンジの当日チェック
+  const activePlan = sessionStorage.getItem('nijumaru_active_plan') || 'sub';
+  if (activePlan === 'challenge' && !_isChallengeValid()) {
+    alert('100問チャレンジの有効期限（当日）が切れています。\nサブスクプランへのアップグレードをご検討ください。');
+    return;
+  }
+
   const btn = document.getElementById('btnGenerate');
   btn.disabled = true;
   document.getElementById('doneBanner').style.display = 'none';
@@ -557,9 +678,13 @@ async function generatePremiumPdf() {
   const progressText = document.getElementById('progressText');
   progressWrap.style.display = 'block';
 
-  const withScore   = document.getElementById('optScore').checked;
-  const customTitle = document.getElementById('customTitle').value.trim();
-  const childName   = document.getElementById('childName').value.trim();
+  const withScore = document.getElementById('optScore').checked;
+  const childName = document.getElementById('childName').value.trim();
+  // 100問チャレンジはタイトル固定・問題数固定
+  const customTitle = activePlan === 'challenge'
+    ? '100問チャレンジ'
+    : document.getElementById('customTitle').value.trim();
+  const effectiveCount = activePlan === 'challenge' ? 100 : selCountVal;
   const options = { withScore, customTitle, childName };
 
   try {
@@ -569,14 +694,14 @@ async function generatePremiumPdf() {
     const gen = GRADES[selGradeVal].generators[selDiffVal];
     const qs = [];
     const seen = new Set();
-    const MAX_RETRY = selCountVal * 12;
+    const MAX_RETRY = effectiveCount * 12;
     let retry = 0;
-    while(qs.length < selCountVal && retry < MAX_RETRY){
+    while(qs.length < effectiveCount && retry < MAX_RETRY){
       const q = gen[Math.floor(Math.random() * gen.length)]();
       if(!seen.has(q.q)){ seen.add(q.q); qs.push(q); }
       retry++;
     }
-    while(qs.length < selCountVal) qs.push(gen[Math.floor(Math.random() * gen.length)]());
+    while(qs.length < effectiveCount) qs.push(gen[Math.floor(Math.random() * gen.length)]());
     for(let i=qs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qs[i],qs[j]]=[qs[j],qs[i]];}
 
     const gradeLabel = GRADES[selGradeVal].label;
@@ -587,7 +712,7 @@ async function generatePremiumPdf() {
     const diffKey    = {easy:'shokyuu',normal:'chukyu',hard:'jokyu'}[selDiffVal];
 
     const PER_PAGE   = 40;
-    const totalPages = Math.ceil(selCountVal / PER_PAGE);
+    const totalPages = Math.ceil(effectiveCount / PER_PAGE);
     const PX = 5.906;
     const PW = Math.round(210 * PX);
     const PH = Math.round(297 * PX);
@@ -619,9 +744,9 @@ async function generatePremiumPdf() {
 
     progressFill.style.width = '95%';
     progressText.textContent = 'PDFを保存中...';
-    doc.save(`premium-drill-g${selGradeVal}-${diffKey}-${selCountVal}q-${dateStr}.pdf`);
+    doc.save(`premium-drill-g${selGradeVal}-${diffKey}-${effectiveCount}q-${dateStr}.pdf`);
     progressFill.style.width = '100%';
-    progressText.textContent = `完了！（${selCountVal}問 / ${totalPages}ページ×2）`;
+    progressText.textContent = `完了！（${effectiveCount}問 / ${totalPages}ページ×2）`;
     setTimeout(() => { progressWrap.style.display = 'none'; }, 1200);
     document.getElementById('doneBanner').style.display = 'block';
 

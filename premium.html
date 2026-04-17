@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>プレミアム | にじゅうまる。算数ドリル</title>
-<meta name="description" content="100問チャレンジ（¥100・単発）またはプレミアムプラン（¥500/月）で解答付きPDFを無制限生成。名前欄・日付入り・最大120問対応。">
+<meta name="description" content="100問チャレンジ（¥100・当日限り）またはサブスクプラン（¥300/月・無料トライアルあり）で解答付きPDFを生成。名前欄・日付入り・100問対応。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nijumaru-drill.com/premium.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="プレミアム | にじゅうまる。算数ドリル">
-<meta property="og:description" content="100問チャレンジ（¥100）またはプレミアムプラン（¥500/月）で解答付きPDFを生成。">
+<meta property="og:description" content="100問チャレンジ（¥100・当日限り）またはサブスクプラン（¥300/月）で解答付きPDFを生成。">
 <meta property="og:url" content="https://nijumaru-drill.com/premium.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:locale" content="ja_JP">
@@ -22,20 +22,19 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --primary:#2563EB;--purple:#7C3AED;--purple-light:#F5F3FF;
-  --amber:#D97706;--bg:#F8FAFC;--surface:#fff;
-  --text:#1E293B;--text-muted:#64748B;--border:#E2E8F0;
-  --radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);--shadow-lg:0 8px 28px rgba(0,0,0,0.13);
+  --bg:#F8FAFC;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
+  --border:#E2E8F0;--radius:14px;
+  --shadow:0 2px 12px rgba(0,0,0,0.08);--shadow-lg:0 8px 28px rgba(0,0,0,0.13);
 }
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
 @media(min-width:640px){body{max-width:680px;margin:0 auto;}}
-
 .header{background:linear-gradient(135deg,#1E40AF,#7C3AED);padding:22px 20px 28px;color:#fff;}
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;}
 .header h1{font-size:21px;font-weight:700;margin-top:8px;line-height:1.4;}
 .header p{font-size:13px;color:rgba(255,255,255,0.85);margin-top:6px;}
 .content{padding:18px 16px 56px;}
 
-/* 共通ボタン */
+/* ── 共通ボタン ── */
 .btn-buy{
   display:flex;align-items:center;justify-content:center;gap:8px;
   width:100%;padding:16px 14px;border:none;border-radius:14px;
@@ -47,53 +46,43 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .btn-purple{background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;box-shadow:0 6px 24px rgba(124,58,237,0.28);}
 .btn-outline{background:var(--surface);color:#6D28D9;border:1.5px solid #D8B4FE;box-shadow:none;margin-top:10px;}
 .secure-note{display:flex;align-items:center;justify-content:center;gap:5px;font-size:11px;color:#A16207;margin-top:10px;}
-.secure-note-purple{color:#6D28D9;}
+.secure-note-p{color:#6D28D9;}
 
-/* プランカード */
+/* ── プランカード ── */
 .plan-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:20px;}
-@media(min-width:540px){.plan-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:500px){.plan-grid{grid-template-columns:1fr 1fr;}}
 
 .plan-card{border-radius:18px;padding:20px 16px;position:relative;overflow:hidden;}
-.plan-card-single{
-  background:linear-gradient(135deg,#FFFBEB,#FFF7ED);
-  border:2px solid #FCD34D;box-shadow:var(--shadow-lg);
-}
-.plan-card-monthly{
-  background:linear-gradient(135deg,#F5F3FF,#EEF2FF);
-  border:2px solid #DDD6FE;box-shadow:var(--shadow-lg);
-}
-.plan-badge{
-  display:inline-flex;align-items:center;gap:4px;
-  border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;margin-bottom:10px;
-}
+.plan-challenge{background:linear-gradient(135deg,#FFFBEB,#FFF7ED);border:2px solid #FCD34D;box-shadow:var(--shadow-lg);}
+.plan-sub{background:linear-gradient(135deg,#F5F3FF,#EEF2FF);border:2px solid #DDD6FE;box-shadow:var(--shadow-lg);}
+
+.plan-badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;margin-bottom:10px;}
 .badge-amber{background:#fff;color:#B45309;border:1.5px solid #FCD34D;}
 .badge-purple{background:#fff;color:#5B21B6;border:1.5px solid #C4B5FD;}
 .badge-new{background:#7C3AED;color:#fff;border:none;font-size:10px;padding:3px 8px;margin-left:4px;border-radius:999px;}
 
 .plan-name{font-size:17px;font-weight:700;margin-bottom:4px;}
+.plan-price-row{display:flex;align-items:flex-end;gap:4px;margin-top:4px;}
 .plan-price{font-size:38px;font-weight:700;line-height:1;}
-.plan-price-unit{font-size:14px;font-weight:700;padding-bottom:3px;vertical-align:bottom;}
+.plan-price-unit{font-size:14px;font-weight:700;padding-bottom:3px;}
 .plan-price-note{font-size:11px;margin-top:4px;margin-bottom:14px;}
-.plan-name-single{color:#92400E;}
-.plan-price-single{color:#92400E;}
-.plan-note-single{color:#A16207;}
-.plan-name-monthly{color:#4C1D95;}
-.plan-price-monthly{color:#4C1D95;}
-.plan-note-monthly{color:#6D28D9;}
 
-.feature-list{list-style:none;margin-bottom:16px;display:grid;gap:6px;}
-.feature-list li{font-size:12px;color:#334155;padding:6px 8px;background:rgba(255,255,255,0.7);border-radius:8px;}
-.feature-list li::before{content:"✓ ";font-weight:700;color:#16A34A;}
+.c-name{color:#92400E;}.c-price{color:#92400E;}.c-unit{color:#92400E;}.c-note{color:#A16207;}
+.s-name{color:#4C1D95;}.s-price{color:#4C1D95;}.s-unit{color:#4C1D95;}.s-note{color:#6D28D9;}
 
-.trial-tag{
-  display:inline-block;background:#ECFDF5;color:#065F46;
-  border:1px solid #6EE7B7;border-radius:6px;
-  font-size:11px;font-weight:700;padding:2px 8px;margin-bottom:10px;
-}
+.feat-list{list-style:none;margin-bottom:16px;display:grid;gap:6px;}
+.feat-list li{font-size:12px;color:#334155;padding:6px 8px;background:rgba(255,255,255,0.7);border-radius:8px;}
+.feat-list li::before{content:"✓ ";font-weight:700;color:#16A34A;}
+.feat-list li.no::before{content:"✗ ";color:#DC2626;}
+.feat-list li.no{color:var(--text-muted);}
 
-/* 比較表 */
+.trial-tag{display:inline-block;background:#ECFDF5;color:#065F46;border:1px solid #6EE7B7;border-radius:6px;font-size:11px;font-weight:700;padding:2px 8px;margin-bottom:10px;}
+.today-tag{display:inline-block;background:#FFF7ED;color:#C2410C;border:1px solid #FED7AA;border-radius:6px;font-size:11px;font-weight:700;padding:2px 8px;margin-bottom:10px;}
+
+/* ── セクション ── */
 .section{background:var(--surface);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);margin-bottom:14px;}
 .section h2{font-size:16px;font-weight:700;margin-bottom:14px;}
+
 .compare{width:100%;border-collapse:collapse;font-size:12px;}
 .compare th{background:#1E40AF;color:#fff;padding:9px 6px;text-align:center;}
 .compare th:first-child{text-align:left;padding-left:10px;}
@@ -101,25 +90,30 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .compare td:first-child{text-align:left;padding-left:10px;font-weight:500;}
 .compare tr:nth-child(even) td{background:#F8FAFC;}
 .tag-free{color:var(--text-muted);}
-.tag-paid{color:#7C3AED;font-weight:700;}
-.tag-premium{color:#D97706;font-weight:700;}
+.tag-c{color:#D97706;font-weight:700;}
+.tag-s{color:#7C3AED;font-weight:700;}
 
-/* フロー */
 .flow{display:grid;gap:0;}
 .flow-step{display:flex;gap:14px;position:relative;padding-bottom:18px;}
 .flow-step:last-child{padding-bottom:0;}
 .flow-step:not(:last-child)::after{content:'';position:absolute;left:17px;top:37px;width:2px;bottom:0;background:#E2E8F0;}
 .flow-num{min-width:36px;height:36px;border-radius:50%;background:var(--purple);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .flow-body{padding-top:6px;}
-.flow-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.flow-title{font-size:14px;font-weight:700;margin-bottom:2px;}
 .flow-desc{font-size:12px;color:var(--text-muted);line-height:1.65;}
 .flow-chip{display:inline-block;margin-top:5px;background:var(--purple-light);color:#6D28D9;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;}
 
-/* FAQ */
 .faq-item{border-top:1px solid var(--border);padding:13px 0;}
 .faq-item:first-child{border-top:none;padding-top:0;}
 .faq-q{font-size:14px;font-weight:700;margin-bottom:4px;}
 .faq-a{font-size:13px;color:var(--text-muted);line-height:1.7;}
+
+/* 今後実装予定 */
+.future-section{background:linear-gradient(135deg,#F8FAFC,#F1F5F9);border:1.5px dashed var(--border);border-radius:var(--radius);padding:16px;margin-bottom:14px;}
+.future-section h3{font-size:14px;font-weight:700;color:var(--text-muted);margin-bottom:10px;}
+.future-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:12px;color:var(--text-muted);}
+.future-item:last-child{margin-bottom:0;}
+.future-badge{display:inline-block;background:#E2E8F0;color:#64748B;border-radius:4px;font-size:10px;font-weight:700;padding:1px 6px;flex-shrink:0;margin-top:2px;}
 
 .ad-wrap{margin-bottom:14px;border-radius:12px;overflow:hidden;}
 footer{text-align:center;padding:18px 16px 40px;font-size:11px;color:#94A3B8;}
@@ -131,7 +125,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="header">
   <a href="/index.html">← トップに戻る</a>
   <h1>📄 解答付きPDF生成</h1>
-  <p>名前欄・日付入り・最大120問・無制限生成</p>
+  <p>名前欄・日付入り・100問・解答ページ付き</p>
 </div>
 
 <div class="content">
@@ -139,21 +133,23 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <!-- ── 2プランカード ── -->
   <div class="plan-grid">
 
-    <!-- 単発プラン -->
-    <div class="plan-card plan-card-single">
+    <!-- 100問チャレンジ -->
+    <div class="plan-card plan-challenge">
       <div class="plan-badge badge-amber">✨ 100問チャレンジ</div>
-      <div class="plan-name plan-name-single">単発購入</div>
-      <div style="display:flex;align-items:flex-end;gap:4px;margin-top:4px;">
-        <div class="plan-price plan-price-single">¥100</div>
-        <div class="plan-price-unit" style="color:#92400E;">（税込）</div>
+      <div class="today-tag">⏰ 購入当日のみ有効</div>
+      <div class="plan-name c-name">単発購入</div>
+      <div class="plan-price-row">
+        <div class="plan-price c-price">¥100</div>
+        <div class="plan-price-unit c-unit">（税込）</div>
       </div>
-      <div class="plan-price-note plan-note-single">買い切り・何度でも生成OK</div>
-      <ul class="feature-list">
-        <li>解答付きPDF（無制限生成）</li>
-        <li>プリセット 40 / 80 / 120問</li>
+      <div class="plan-price-note c-note">買い切り・当日中に何回でも生成OK</div>
+      <ul class="feat-list">
+        <li>解答付きPDF（当日無制限）</li>
+        <li>100問固定</li>
         <li>名前欄・日付欄・得点欄</li>
-        <li>カスタムタイトル設定</li>
         <li>1〜6年生・3段階難易度</li>
+        <li class="no">タイトルカスタム不可</li>
+        <li class="no">翌日以降は使用不可</li>
       </ul>
       <a class="btn-buy btn-amber" href="https://buy.stripe.com/00w14f8nP9TL2Uj5tA9sk01" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
@@ -162,31 +158,32 @@ footer a{color:#94A3B8;text-decoration:underline;}
       <div class="secure-note">🔒 Stripe 安全決済 / Apple Pay 対応</div>
     </div>
 
-    <!-- 月額プラン -->
-    <div class="plan-card plan-card-monthly">
+    <!-- サブスクプラン -->
+    <div class="plan-card plan-sub">
       <div style="display:flex;align-items:center;gap:4px;margin-bottom:10px;">
-        <div class="plan-badge badge-purple" style="margin-bottom:0;">👑 プレミアムプラン</div>
-        <div class="badge-new">NEW</div>
+        <div class="plan-badge badge-purple" style="margin-bottom:0;">👑 サブスクプラン</div>
+        <div class="badge-new">おすすめ</div>
       </div>
       <div class="trial-tag">🎁 1日間 無料トライアルあり</div>
-      <div class="plan-name plan-name-monthly">月額サブスク</div>
-      <div style="display:flex;align-items:flex-end;gap:4px;margin-top:4px;">
-        <div class="plan-price plan-price-monthly">¥500</div>
-        <div class="plan-price-unit" style="color:#4C1D95;">/月</div>
+      <div class="plan-name s-name">月額サブスク</div>
+      <div class="plan-price-row">
+        <div class="plan-price s-price">¥300</div>
+        <div class="plan-price-unit s-unit">/月</div>
       </div>
-      <div class="plan-price-note plan-note-monthly">いつでも解約可能</div>
-      <ul class="feature-list">
-        <li>解答付きPDF（無制限生成）</li>
-        <li>プリセット 40 / 80 / 120問</li>
+      <div class="plan-price-note s-note">いつでも解約可能</div>
+      <ul class="feat-list">
+        <li>解答付きPDF（無制限・期限なし）</li>
+        <li>100問固定</li>
         <li>名前欄・日付欄・得点欄</li>
-        <li>カスタムタイトル設定</li>
         <li>1〜6年生・3段階難易度</li>
+        <li>タイトルカスタム自由</li>
+        <li>名前プリセット入力</li>
       </ul>
-      <a class="btn-buy btn-purple" href="https://buy.stripe.com/bJebITeMd8PH3Yn6xE9sk02" target="_blank" rel="noopener">
+      <a class="btn-buy btn-purple" href="https://buy.stripe.com/4gM00b9rT6HzcuT5tA9sk03" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         まず無料で試す
       </a>
-      <div class="secure-note secure-note-purple">🔒 Stripe 安全決済 / いつでも解約</div>
+      <div class="secure-note secure-note-p">🔒 Stripe 安全決済 / いつでも解約</div>
     </div>
 
   </div>
@@ -195,16 +192,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <div class="section">
     <h2>プランの違い</h2>
     <table class="compare">
-      <tr>
-        <th>機能</th><th>無料版</th><th>100問チャレンジ</th><th>プレミアム</th>
-      </tr>
-      <tr><td>PDF生成</td><td class="tag-free">問題のみ</td><td class="tag-paid">解答付き</td><td class="tag-premium">解答付き</td></tr>
-      <tr><td>1日の生成回数</td><td class="tag-free">3回/日</td><td class="tag-paid">無制限</td><td class="tag-premium">無制限</td></tr>
-      <tr><td>問題数</td><td class="tag-free">20〜40問</td><td class="tag-paid">40/80/120問</td><td class="tag-premium">40/80/120問</td></tr>
-      <tr><td>名前・日付欄</td><td class="tag-free">◯</td><td class="tag-paid">◎ カスタム</td><td class="tag-premium">◎ カスタム</td></tr>
-      <tr><td>カスタムタイトル</td><td class="tag-free">×</td><td class="tag-paid">◯</td><td class="tag-premium">◯</td></tr>
-      <tr><td>無料トライアル</td><td class="tag-free">—</td><td class="tag-paid">—</td><td class="tag-premium">1日間</td></tr>
-      <tr><td>料金</td><td class="tag-free">無料</td><td class="tag-paid">¥100（買切）</td><td class="tag-premium">¥500/月</td></tr>
+      <tr><th>機能</th><th>無料版</th><th>100問チャレンジ</th><th>サブスク</th></tr>
+      <tr><td>PDF生成</td><td class="tag-free">問題のみ</td><td class="tag-c">解答付き</td><td class="tag-s">解答付き</td></tr>
+      <tr><td>生成回数</td><td class="tag-free">3回/日</td><td class="tag-c">当日無制限</td><td class="tag-s">無制限</td></tr>
+      <tr><td>有効期限</td><td class="tag-free">毎日リセット</td><td class="tag-c">当日のみ</td><td class="tag-s">サブスク期間中</td></tr>
+      <tr><td>問題数</td><td class="tag-free">20〜40問</td><td class="tag-c">100問固定</td><td class="tag-s">100問固定</td></tr>
+      <tr><td>タイトル変更</td><td class="tag-free">×</td><td class="tag-c">×</td><td class="tag-s">◯ 自由</td></tr>
+      <tr><td>名前プリセット</td><td class="tag-free">×</td><td class="tag-c">◯</td><td class="tag-s">◯</td></tr>
+      <tr><td>無料トライアル</td><td class="tag-free">—</td><td class="tag-c">—</td><td class="tag-s">1日間</td></tr>
+      <tr><td>料金</td><td class="tag-free">無料</td><td class="tag-c">¥100（当日）</td><td class="tag-s">¥300/月</td></tr>
     </table>
   </div>
 
@@ -216,7 +212,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
         <div class="flow-num">1</div>
         <div class="flow-body">
           <div class="flow-title">プランを選んで購入ボタンをタップ</div>
-          <div class="flow-desc">Stripeの安全な決済ページへ移動します。クレジットカード・Apple Payに対応。</div>
+          <div class="flow-desc">Stripeの安全な決済ページへ移動します。クレジットカード・Apple Pay対応。</div>
         </div>
       </div>
       <div class="flow-step">
@@ -231,14 +227,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
         <div class="flow-num">3</div>
         <div class="flow-body">
           <div class="flow-title">コードをコピー・保存</div>
-          <div class="flow-desc">表示されたコードをメモ・ブックマークしておくと、いつでも再利用できます。</div>
+          <div class="flow-desc">表示されたコードをブックマークしておくといつでも使えます。</div>
         </div>
       </div>
       <div class="flow-step">
         <div class="flow-num">4</div>
         <div class="flow-body">
-          <div class="flow-title">学年・難易度・問題数を選んでPDF生成</div>
-          <div class="flow-desc">何度でも生成できます。毎回問題がランダムで変わります。</div>
+          <div class="flow-title">学年・難易度を選んでPDF生成</div>
+          <div class="flow-desc">100問のランダム生成。問題は毎回変わります。</div>
         </div>
       </div>
     </div>
@@ -249,35 +245,44 @@ footer a{color:#94A3B8;text-decoration:underline;}
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
+  <!-- 今後実装予定（サブスクプラン追加機能） -->
+  <div class="future-section">
+    <h3>🔮 サブスクプランへの追加予定機能</h3>
+    <div class="future-item"><span class="future-badge">近日</span>毎日ドリル自動配信・解答後に採点を返す</div>
+    <div class="future-item"><span class="future-badge">近日</span>苦手問題の自動分析・重点出題</div>
+    <div class="future-item"><span class="future-badge">近日</span>学習レポート（週次・月次）</div>
+    <div class="future-item"><span class="future-badge">近日</span>保護者へのLINE通知</div>
+  </div>
+
   <!-- FAQ -->
   <div class="section">
     <h2>よくある質問</h2>
     <div class="faq-item">
-      <div class="faq-q">Q. 100問チャレンジとプレミアムプランの違いは？</div>
-      <div class="faq-a">A. 機能は同じです。100問チャレンジは¥100の買い切り。プレミアムプランは¥500/月で毎月継続利用できます。毎日使う方はプレミアム、まず試したい方は100問チャレンジがおすすめです。</div>
+      <div class="faq-q">Q. 100問チャレンジとサブスクプランの違いは？</div>
+      <div class="faq-a">A. 100問チャレンジは¥100で購入当日のみ使用できます。サブスクプランは¥300/月で期間中いつでも何回でも使用でき、タイトルカスタム機能も使えます。毎日使う方はサブスク、まず試したい方は100問チャレンジがおすすめです。</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Q. プレミアムの無料トライアルとは？</div>
-      <div class="faq-a">A. プレミアムPDF生成ページに初めてアクセスした日から24時間、購入なしで全機能をお試しいただけます。気に入ったらそのままプレミアムプランをご購入ください。</div>
+      <div class="faq-q">Q. サブスクの無料トライアルとは？</div>
+      <div class="faq-a">A. PDF生成ページに初めてアクセスした日から24時間、購入なしで全機能をお試しいただけます。気に入ったらそのままサブスクをご購入ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. 100問チャレンジは翌日も使えますか？</div>
+      <div class="faq-a">A. 使えません。100問チャレンジは購入当日のみ有効です。翌日以降もご利用になる場合はサブスクプランへのご加入をご検討ください。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Q. 解約はいつでもできますか？</div>
-      <div class="faq-a">A. はい。プレミアムプランはStripeのマイページからいつでも解約できます。解約後は次回請求日まで引き続き利用できます。</div>
+      <div class="faq-a">A. はい。Stripeのマイページからいつでも解約できます。解約後は次回請求日まで引き続き利用できます。</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Q. 1ページに何問入りますか？</div>
-      <div class="faq-a">A. 1ページ40問（A4・2列×20行）固定です。40問なら2枚（問題＋解答）、80問なら4枚、120問なら6枚のPDFが生成されます。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Q. アクセスコードをなくした場合は？</div>
-      <div class="faq-a">A. 購入時のURLをブックマークしておくと再確認できます。同じブラウザのセッション中は自動ログイン状態が維持されます。</div>
+      <div class="faq-q">Q. 問題数は変えられますか？</div>
+      <div class="faq-a">A. 現在は100問固定です。問題は毎回ランダムで生成されるため、繰り返し使っても同じ問題にはなりません。</div>
     </div>
   </div>
 
   <!-- 底部CTA -->
   <div style="background:linear-gradient(135deg,#FAF5FF,#EEF2FF);border:1.5px solid #DDD6FE;border-radius:16px;padding:20px 16px;text-align:center;">
-    <p style="font-size:14px;color:#5B21B6;margin-bottom:14px;line-height:1.7;">まずは1日間無料でお試しください。<br>気に入ったらプレミアムプランへ。</p>
-    <a class="btn-buy btn-purple" href="/premium-pdf.html" style="margin-bottom:10px;">
+    <p style="font-size:14px;color:#5B21B6;margin-bottom:14px;line-height:1.7;">まずは1日間無料でお試しください。</p>
+    <a class="btn-buy btn-purple" href="/premium-pdf.html?plan=sub">
       🎁 無料トライアルを始める
     </a>
     <a class="btn-buy btn-outline" href="/index.html">まずは無料版を使う</a>
@@ -289,335 +294,5 @@ footer a{color:#94A3B8;text-decoration:underline;}
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
   <a href="/privacy.html">プライバシーポリシー</a>
 </footer>
-
-</body>
-</html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>100問まとめドリル | にじゅうまる。算数ドリル</title>
-<meta name="description" content="解答付き・名前欄・日付入り。100問まとめPDFドリルを毎回ランダムに何度でも生成。¥100で購入後すぐに使えます。">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://nijumaru-drill.com/premium.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="100問まとめドリル | にじゅうまる。算数ドリル">
-<meta property="og:description" content="解答付き・名前欄・日付入り。100問まとめPDFを毎回ランダムに生成。¥100で購入後すぐ使えます。">
-<meta property="og:url" content="https://nijumaru-drill.com/premium.html">
-<meta property="og:site_name" content="にじゅうまる。算数ドリル">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://nijumaru-drill.com/ogp.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="100問まとめドリル | にじゅうまる。算数ドリル">
-<meta name="twitter:description" content="解答付き・名前欄・日付入り。100問まとめPDFを毎回ランダムに生成。¥100で購入後すぐ使えます。">
-<meta name="twitter:image" content="https://nijumaru-drill.com/ogp.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --primary:#2563EB;--primary-dark:#1E40AF;
-  --purple:#7C3AED;--purple-light:#F5F3FF;
-  --amber:#D97706;--amber-light:#FFFBEB;
-  --bg:#F8FAFC;--surface:#FFFFFF;
-  --text:#1E293B;--text-muted:#64748B;
-  --border:#E2E8F0;--radius:14px;
-  --shadow:0 2px 12px rgba(0,0,0,0.08);
-  --shadow-lg:0 8px 28px rgba(0,0,0,0.13);
-}
-body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
-@media(min-width:640px){body{max-width:680px;margin:0 auto;}}
-
-.header{background:linear-gradient(135deg,#1E40AF,#7C3AED);padding:22px 20px 28px;color:#fff;}
-.header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;}
-.header h1{font-size:21px;font-weight:700;margin-top:8px;line-height:1.4;}
-.header p{font-size:13px;color:rgba(255,255,255,0.85);margin-top:6px;}
-
-.content{padding:18px 16px 56px;}
-
-/* ヒーロー価格カード */
-.hero-card{
-  background:linear-gradient(135deg,#FFFBEB,#FFF7ED);
-  border:2px solid #FCD34D;border-radius:18px;
-  padding:22px 18px 20px;box-shadow:var(--shadow-lg);
-  position:relative;overflow:hidden;
-}
-.hero-card::before{
-  content:'';position:absolute;top:-30px;right:-30px;
-  width:140px;height:140px;background:rgba(251,191,36,0.12);border-radius:50%;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  background:#fff;color:#B45309;border:1.5px solid #FCD34D;
-  border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;margin-bottom:12px;
-}
-.hero-title{font-size:22px;font-weight:700;color:#1E293B;line-height:1.45;margin-bottom:8px;}
-.hero-title span{color:#7C3AED;}
-.hero-sub{font-size:13px;color:#44403C;line-height:1.75;margin-bottom:16px;}
-.price-block{display:flex;align-items:flex-end;gap:8px;margin-bottom:6px;}
-.price-num{font-size:48px;font-weight:700;color:#92400E;line-height:1;}
-.price-unit{font-size:16px;color:#92400E;font-weight:700;padding-bottom:6px;}
-.price-note{font-size:11px;color:#A16207;margin-bottom:18px;}
-
-.btn-buy{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  width:100%;padding:17px 14px;
-  background:linear-gradient(135deg,#F59E0B,#FBBF24);
-  color:#fff;border:none;border-radius:14px;
-  font-size:16px;font-weight:700;font-family:'Noto Sans JP',sans-serif;
-  text-decoration:none;cursor:pointer;
-  box-shadow:0 6px 24px rgba(245,158,11,0.35);
-  transition:transform 0.15s,box-shadow 0.15s;
-}
-.btn-buy:active{transform:scale(0.98);box-shadow:0 3px 12px rgba(245,158,11,0.25);}
-.secure-note{
-  display:flex;align-items:center;justify-content:center;gap:5px;
-  font-size:11px;color:#A16207;margin-top:10px;
-}
-
-/* セクション共通 */
-.section{background:var(--surface);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);margin-top:14px;}
-.section h2{font-size:16px;font-weight:700;margin-bottom:14px;color:var(--text);}
-
-/* 機能リスト */
-.feature-list{display:grid;gap:10px;}
-.feature-item{
-  display:flex;gap:12px;align-items:flex-start;
-  background:var(--bg);border-radius:12px;padding:12px 14px;
-}
-.feature-icon{font-size:22px;flex-shrink:0;margin-top:1px;}
-.feature-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.feature-desc{font-size:12px;color:var(--text-muted);line-height:1.65;}
-
-/* 比較表 */
-.compare{width:100%;border-collapse:collapse;font-size:13px;}
-.compare th{background:#1E40AF;color:#fff;padding:10px 8px;text-align:center;}
-.compare th:first-child{text-align:left;padding-left:12px;}
-.compare td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:center;background:#fff;}
-.compare td:first-child{text-align:left;padding-left:12px;font-weight:500;}
-.compare tr:nth-child(even) td{background:#F8FAFC;}
-.tag-free{color:var(--text-muted);}
-.tag-paid{color:#7C3AED;font-weight:700;}
-
-/* 購入フロー */
-.flow{display:grid;gap:0;}
-.flow-step{display:flex;gap:14px;position:relative;padding-bottom:20px;}
-.flow-step:last-child{padding-bottom:0;}
-.flow-step:not(:last-child)::after{
-  content:'';position:absolute;left:17px;top:37px;
-  width:2px;bottom:0;background:#E2E8F0;
-}
-.flow-num{
-  min-width:36px;height:36px;border-radius:50%;
-  background:var(--purple);color:#fff;font-size:15px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.flow-body{padding-top:6px;}
-.flow-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.flow-desc{font-size:12px;color:var(--text-muted);line-height:1.65;}
-.flow-chip{
-  display:inline-block;margin-top:5px;
-  background:var(--purple-light);color:#6D28D9;
-  border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;
-}
-
-/* FAQ */
-.faq-item{border-top:1px solid var(--border);padding:13px 0;}
-.faq-item:first-child{border-top:none;padding-top:0;}
-.faq-q{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
-.faq-a{font-size:13px;color:var(--text-muted);line-height:1.7;}
-
-/* 底部CTA */
-.bottom-cta{
-  background:linear-gradient(135deg,#FAF5FF,#EEF2FF);
-  border:1.5px solid #DDD6FE;border-radius:16px;
-  padding:20px 16px;margin-top:14px;text-align:center;
-}
-.bottom-cta p{font-size:14px;color:#5B21B6;margin-bottom:14px;line-height:1.7;}
-.btn-secondary{
-  display:block;width:100%;padding:13px;
-  background:#fff;color:#6D28D9;border:1.5px solid #D8B4FE;border-radius:12px;
-  font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;
-  text-decoration:none;text-align:center;margin-top:10px;
-}
-
-.ad-wrap{margin-top:14px;border-radius:12px;overflow:hidden;}
-footer{text-align:center;padding:18px 16px 40px;font-size:11px;color:#94A3B8;}
-footer a{color:#94A3B8;text-decoration:underline;}
-</style>
-</head>
-<body>
-
-<div class="header">
-  <a href="/index.html">← トップに戻る</a>
-  <h1>📄 100問まとめドリル</h1>
-  <p>解答付き・名前欄・日付入り。毎回ランダムで何度でも。</p>
-</div>
-
-<div class="content">
-
-  <div class="hero-card">
-    <div class="hero-badge">✨ 100問チャレンジ</div>
-    <div class="hero-title">印刷するだけで<span>解答付きドリル</span>が完成。</div>
-    <div class="hero-sub">
-      学年・難易度・問題数（最大100問）を選んで生成するだけ。<br>
-      名前欄・日付欄・得点欄つきで、そのまま使えます。<br>
-      問題は毎回ランダムなので何度でも使い回せます。
-    </div>
-    <div class="price-block">
-      <div class="price-num">¥100</div>
-      <div class="price-unit">（税込）</div>
-    </div>
-    <div class="price-note">買い切り・何度でも生成できます</div>
-    <a class="btn-buy" href="https://buy.stripe.com/bJebITeMd8PH3Yn6xE9sk02" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-      ¥100 で購入して今すぐ使う
-    </a>
-    <div class="secure-note">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-      Stripe による安全な決済　／　クレジットカード・Apple Pay 対応
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>できること</h2>
-    <div class="feature-list">
-      <div class="feature-item">
-        <div class="feature-icon">📚</div>
-        <div>
-          <div class="feature-title">最大100問のまとめドリル</div>
-          <div class="feature-desc">10〜100問をスライダーで自由に設定。長期休みの総まとめや、テスト直前の集中練習に。</div>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">✅</div>
-        <div>
-          <div class="feature-title">解答ページ付き</div>
-          <div class="feature-desc">問題ページと解答ページがセット。保護者がラクに採点できます。</div>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">✏️</div>
-        <div>
-          <div class="feature-title">名前欄・日付欄・得点欄つき</div>
-          <div class="feature-desc">印刷してそのまま宿題として渡せる仕上がり。お子さんの名前を事前入力することもできます。</div>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🎲</div>
-        <div>
-          <div class="feature-title">毎回ランダム・1回の中で重複なし</div>
-          <div class="feature-desc">1回の生成内で同じ問題は出ません。毎日使っても飽きないバリエーションを自動で生成します。</div>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🏫</div>
-        <div>
-          <div class="feature-title">小学1〜6年生・3段階の難易度</div>
-          <div class="feature-desc">学年・初級／中級／上級を自由に組み合わせ。復習にも、苦手集中練習にも使えます。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>無料版との違い</h2>
-    <table class="compare">
-      <tr>
-        <th>機能</th><th>無料版</th><th>100問チャレンジ</th>
-      </tr>
-      <tr><td>PDF生成</td><td class="tag-free">◯ 問題のみ</td><td class="tag-paid">◎ 解答付き</td></tr>
-      <tr><td>問題数</td><td class="tag-free">20／30／40問</td><td class="tag-paid">10〜100問</td></tr>
-      <tr><td>名前欄・日付欄</td><td class="tag-free">◯ あり</td><td class="tag-paid">◎ カスタム入力</td></tr>
-      <tr><td>得点欄</td><td class="tag-free">◯ あり</td><td class="tag-paid">◎ ON/OFF可</td></tr>
-      <tr><td>タイトルカスタム</td><td class="tag-free">×</td><td class="tag-paid">◯ 自由入力</td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>購入から使うまでの流れ</h2>
-    <div class="flow">
-      <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-body">
-          <div class="flow-title">「¥100で購入」ボタンをタップ</div>
-          <div class="flow-desc">Stripeの決済ページが開きます。クレジットカード・Apple Pay で支払いできます。</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-body">
-          <div class="flow-title">購入完了 → このサイトに自動で戻る</div>
-          <div class="flow-desc">支払い後、自動的にサンクスページへリダイレクトされます。</div>
-          <div class="flow-chip">アクセスコードが表示されます</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-body">
-          <div class="flow-title">アクセスコードをコピー・保存</div>
-          <div class="flow-desc">表示されたコードをメモ・ブックマークしておくと、いつでも再利用できます。</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-body">
-          <div class="flow-title">学年・難易度・問題数を選んでPDF生成</div>
-          <div class="flow-desc">何度でも生成できます。毎回問題が変わります。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ad-wrap">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-3034271297570921"
-      data-ad-slot="auto"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <div class="section">
-    <h2>よくある質問</h2>
-    <div class="faq-item">
-      <div class="faq-q">Q. 購入後すぐに使えますか？</div>
-      <div class="faq-a">A. はい。支払い完了後に自動でこのサイトに戻り、すぐにPDF生成ページが使えます。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Q. 何回でも生成できますか？</div>
-      <div class="faq-a">A. はい。1回の購入で何度でもPDFを生成できます。問題は毎回ランダムで変わります。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Q. スマホからでも使えますか？</div>
-      <div class="faq-a">A. はい。スマホ・タブレット・PCすべて対応。PDFはA4印刷に最適化されています。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Q. アクセスコードをなくした場合は？</div>
-      <div class="faq-a">A. 購入時のURLをブックマークしておけば再確認できます。同じブラウザ・同一セッション中は自動でログイン状態が維持されます。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Q. 対応している学年は？</div>
-      <div class="faq-a">A. 小学1〜6年生に対応。初級・中級・上級の3段階から選べます。</div>
-    </div>
-  </div>
-
-  <div class="bottom-cta">
-    <p>毎朝5分の計算練習が<br>もっとラクになります。</p>
-    <a class="btn-buy" href="https://buy.stripe.com/bJebITeMd8PH3Yn6xE9sk02" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-      ¥100 で購入して今すぐ使う
-    </a>
-    <a class="btn-secondary" href="/index.html">まずは無料版を試す</a>
-  </div>
-
-</div>
-
-<footer>
-  © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>
-</footer>
-
 </body>
 </html>
