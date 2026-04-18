@@ -4,119 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>今日のドリル | にじゅうまる。算数ドリル</title>
-<meta name="description" content="毎日の算数ドリル。40問・自動採点・学習履歴つき。">
 <meta name="robots" content="noindex">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#1E40AF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="にじゅうまる。">
-<!-- Google tag (gtag.js) -->
+<!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y55CVCFC9P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-Y55CVCFC9P");
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y55CVCFC9P');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- Firebase -->
 <script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-  import { getDatabase, ref, push, get, set, serverTimestamp }
-    from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
-  const cfg = {
-    apiKey:"AIzaSyDXfHjeXLrDor--YiGBvL9_8QPhD6XSpak",
-    authDomain:"sansu-drill-3c2e5.firebaseapp.com",
-    databaseURL:"https://sansu-drill-3c2e5-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId:"sansu-drill-3c2e5"
-  };
-  const app = initializeApp(cfg);
-  const db  = getDatabase(app);
-  window._fbDb   = db;
-  window._fbRef  = ref;
-  window._fbPush = push;
-  window._fbGet  = get;
-  window._fbSet  = set;
-  window._fbTs   = serverTimestamp;
+  import{initializeApp}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import{getDatabase,ref,set,get,push}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+  const cfg={apiKey:"AIzaSyDXfHjeXLrDor--YiGBvL9_8QPhD6XSpak",authDomain:"sansu-drill-3c2e5.firebaseapp.com",databaseURL:"https://sansu-drill-3c2e5-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"sansu-drill-3c2e5"};
+  const db=getDatabase(initializeApp(cfg));
+  window._fbDb=db;window._fbRef=ref;window._fbSet=set;window._fbGet=get;window._fbPush=push;
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --blue:#2563EB;--blue-d:#1E40AF;--purple:#7C3AED;
-  --green:#16A34A;--red:#DC2626;--amber:#D97706;
-  --bg:#F0F4FF;--surface:#fff;--text:#1E293B;--muted:#64748B;
-  --border:#E2E8F0;--radius:14px;
-  --shadow:0 2px 12px rgba(0,0,0,0.08);
-  --shadow-lg:0 8px 28px rgba(37,99,235,0.15);
+  --primary:#2563EB;--primary-light:#EFF6FF;
+  --success:#16A34A;--success-light:#F0FDF4;
+  --danger:#DC2626;--danger-light:#FEF2F2;
+  --warning:#D97706;--bg:#F8FAFC;--surface:#FFFFFF;
+  --border:rgba(0,0,0,0.10);--text:#1E293B;
+  --text-muted:#64748B;--text-faint:#94A3B8;
+  --radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
+  --shadow-lg:0 8px 24px rgba(0,0,0,0.12);
 }
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100svh;-webkit-text-size-adjust:100%;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-text-size-adjust:100%;}
 @media(min-width:480px){body{max-width:540px;margin:0 auto;}}
 
-/* ── アニメーション ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pop{0%{transform:scale(0.8);opacity:0}60%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
-@keyframes slideIn{from{transform:translateX(-8px);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
-@keyframes confetti{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(60px) rotate(360deg);opacity:0}}
-
 /* ── ページ管理 ── */
-.page{display:none;animation:fadeUp 0.35s ease;}
+.page{display:none;}
 .page.active{display:block;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
 
 /* ── ヘッダー ── */
-.header{
-  background:linear-gradient(135deg,var(--blue-d),var(--purple));
-  padding:18px 16px 22px;color:#fff;position:sticky;top:0;z-index:100;
-  box-shadow:0 2px 12px rgba(30,64,175,0.25);
-}
+.header{background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 50%,#60A5FA 100%);padding:16px 16px 20px;color:#fff;}
 .header-row{display:flex;align-items:center;justify-content:space-between;}
-.header a{color:rgba(255,255,255,0.8);font-size:12px;text-decoration:none;}
-.header-title{font-size:17px;font-weight:700;}
-.header-sub{font-size:11px;color:rgba(255,255,255,0.8);margin-top:3px;}
+.header a{color:rgba(255,255,255,0.82);font-size:13px;text-decoration:none;}
+.header-title{font-size:16px;font-weight:700;}
+.header-date{font-size:11px;color:rgba(255,255,255,0.75);}
 
 /* ── 設定ページ ── */
-.content{padding:16px 16px 60px;}
-.setup-card{background:var(--surface);border-radius:20px;padding:20px;box-shadow:var(--shadow-lg);margin-bottom:14px;}
-.setup-card h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:12px;}
-.section-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.6px;text-transform:uppercase;margin-bottom:8px;}
+.setup-content{padding:14px 16px 60px;animation:fadeIn 0.3s ease;}
+.plan-chip{display:inline-block;border-radius:999px;padding:4px 14px;font-size:11px;font-weight:700;margin-bottom:12px;}
+.chip-free{background:#F1F5F9;color:#475569;}
+.chip-sub{background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;}
 
-.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.sel-btn{
-  border:2px solid var(--border);border-radius:10px;padding:10px 6px;
-  text-align:center;cursor:pointer;background:var(--bg);
-  transition:all 0.15s;font-family:'Noto Sans JP',sans-serif;
-  -webkit-tap-highlight-color:transparent;
-}
-.sel-btn:active{transform:scale(0.95);}
-.sel-btn.on{border-color:var(--blue);background:#EFF6FF;}
-.sel-btn .big{font-size:20px;font-weight:700;display:block;}
-.sel-btn .small{font-size:10px;color:var(--muted);display:block;margin-top:1px;}
-.sel-btn.on .small{color:var(--blue);}
+.setup-card{background:var(--surface);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);margin-bottom:12px;}
+.setup-card h2{font-size:15px;font-weight:700;margin-bottom:12px;}
+.row-label{font-size:11px;font-weight:700;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase;margin:12px 0 8px;}
+.row-label:first-of-type{margin-top:0;}
+
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px;}
+.grade-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
+.grade-btn.sel{border-color:var(--primary);background:var(--primary-light);}
+.grade-btn:active{transform:scale(0.96);}
+.grade-btn .gnum{font-size:19px;font-weight:700;display:block;}
+.grade-btn .glbl{font-size:10px;color:var(--text-muted);display:block;margin-top:1px;}
+.grade-btn.sel .glbl{color:var(--primary);}
 
 .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.diff-btn{border:2px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;background:var(--bg);font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--muted);transition:all 0.15s;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.diff-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text-muted);transition:all 0.15s;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;gap:3px;}
 .diff-btn small{font-size:9px;font-weight:400;}
-.diff-btn:active{transform:scale(0.95);}
-.diff-btn.on{border-color:var(--purple);background:var(--purple-light,#F5F3FF);color:var(--purple);}
+.diff-btn:active{transform:scale(0.96);}
+.diff-btn.sel{border-color:#7C3AED;background:#F5F3FF;color:#7C3AED;}
 
-/* 回数選択（サブスクのみ） */
 .freq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.freq-btn{border:2px solid var(--border);border-radius:10px;padding:12px 6px;text-align:center;cursor:pointer;background:var(--bg);transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
-.freq-btn .num{font-size:24px;font-weight:700;color:var(--muted);}
-.freq-btn .lbl{font-size:10px;color:var(--muted);}
-.freq-btn.on{border-color:var(--purple);background:#F5F3FF;}
-.freq-btn.on .num,.freq-btn.on .lbl{color:var(--purple);}
-.freq-btn:active{transform:scale(0.95);}
+.freq-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px 4px;text-align:center;cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
+.freq-btn .fnum{font-size:24px;font-weight:700;color:var(--text-muted);}
+.freq-btn .flbl{font-size:10px;color:var(--text-muted);}
+.freq-btn.sel{border-color:#7C3AED;background:#F5F3FF;}
+.freq-btn.sel .fnum,.freq-btn.sel .flbl{color:#7C3AED;}
+.freq-btn:active{transform:scale(0.96);}
 
-.plan-info{background:linear-gradient(135deg,#F5F3FF,#EEF2FF);border:1.5px solid #DDD6FE;border-radius:12px;padding:12px 14px;font-size:12px;color:#5B21B6;line-height:1.7;margin-bottom:14px;}
-.plan-info a{color:var(--purple);font-weight:700;}
+/* 今日完了バナー */
+.done-today{background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:1.5px solid #86EFAC;border-radius:var(--radius);padding:16px;text-align:center;margin-bottom:12px;}
+.done-today .dicon{font-size:36px;margin-bottom:6px;}
+.done-today h3{font-size:15px;font-weight:700;color:#166534;}
+.done-today p{font-size:12px;color:#166534;margin-top:4px;}
 
+/* スタートボタン */
 .btn-start{
-  width:100%;padding:17px;
-  background:linear-gradient(135deg,var(--blue),#3B82F6);
+  width:100%;padding:17px 14px;
+  background:linear-gradient(135deg,#2563EB,#3B82F6);
   color:#fff;border:none;border-radius:var(--radius);
   font-size:16px;font-weight:700;font-family:'Noto Sans JP',sans-serif;
   cursor:pointer;box-shadow:0 6px 20px rgba(37,99,235,0.3);
@@ -126,155 +104,126 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .btn-start:active{transform:scale(0.98);}
 .btn-start:disabled{background:#CBD5E1;box-shadow:none;cursor:not-allowed;}
 
-/* ── 今日の状態バナー ── */
-.done-banner{
-  background:linear-gradient(135deg,#F0FDF4,#ECFDF5);
-  border:1.5px solid #86EFAC;border-radius:16px;
-  padding:18px;text-align:center;margin-bottom:14px;
-}
-.done-banner .icon{font-size:40px;margin-bottom:8px;}
-.done-banner h3{font-size:16px;font-weight:700;color:#166534;margin-bottom:4px;}
-.done-banner p{font-size:13px;color:#166534;line-height:1.7;}
-.remaining-chip{display:inline-block;background:#ECFDF5;color:#166534;border:1px solid #86EFAC;border-radius:999px;padding:4px 14px;font-size:12px;font-weight:700;margin-top:8px;}
+/* ══ スタンプカレンダー ══ */
+.calendar-section{background:var(--surface);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-bottom:12px;}
+.calendar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.calendar-title{font-size:14px;font-weight:700;}
+.calendar-nav{display:flex;gap:6px;}
+.cal-nav-btn{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;color:var(--text-muted);}
+.cal-nav-btn:active{transform:scale(0.95);}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.cal-dow{font-size:10px;font-weight:700;text-align:center;color:var(--text-muted);padding:2px 0;}
+.cal-dow:first-child{color:#DC2626;}
+.cal-dow:last-child{color:#2563EB;}
+.cal-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:11px;font-weight:600;color:var(--text-muted);position:relative;cursor:default;}
+.cal-cell.today{background:#EFF6FF;color:var(--primary);font-weight:700;}
+.cal-cell.has-stamp{color:var(--text);}
+.stamp{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:18px;line-height:1;}
+.stamp-1{background:linear-gradient(135deg,#FEF9C3,#FEF3C7);}
+.stamp-2{background:linear-gradient(135deg,#DCFCE7,#BBF7D0);}
+.stamp-3{background:linear-gradient(135deg,#DBEAFE,#BFDBFE);}
+.cal-cell.other-month{opacity:0.3;}
 
-/* ── ドリルページ ── */
-#drillPage{background:var(--bg);}
-.drill-header{
-  background:linear-gradient(135deg,var(--blue-d),var(--purple));
-  padding:14px 16px;color:#fff;position:sticky;top:0;z-index:100;
-}
-.drill-header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-.drill-title{font-size:14px;font-weight:700;}
-.drill-meta{font-size:11px;color:rgba(255,255,255,0.85);}
-.progress-bar{height:5px;background:rgba(255,255,255,0.25);border-radius:99px;overflow:hidden;}
-.progress-fill{height:100%;background:#fff;border-radius:99px;transition:width 0.3s ease;}
-
-.q-wrap{padding:12px 12px 80px;}
-.q-card{
-  background:var(--surface);border-radius:16px;
-  padding:16px 14px;margin-bottom:10px;
-  box-shadow:0 1px 8px rgba(0,0,0,0.06);
-  animation:slideIn 0.2s ease;
-  border:2px solid transparent;
-  transition:border-color 0.2s;
-}
-.q-card.correct{border-color:var(--green);background:#F0FDF4;}
-.q-card.wrong{border-color:var(--red);background:#FEF2F2;animation:shake 0.3s ease;}
-.q-head{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
-.q-num{
-  min-width:28px;height:28px;background:var(--blue);color:#fff;
-  border-radius:50%;font-size:12px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.q-card.correct .q-num{background:var(--green);}
-.q-card.wrong .q-num{background:var(--red);}
-.q-text{font-size:18px;font-weight:700;color:var(--text);line-height:1.4;}
-.q-input-row{display:flex;gap:8px;align-items:center;}
-.q-input{
-  flex:1;border:2px solid var(--border);border-radius:10px;
-  padding:11px 12px;font-size:20px;font-weight:700;
-  font-family:'Noto Sans JP',sans-serif;color:var(--text);
-  background:#F8FAFC;text-align:center;outline:none;
-  transition:border-color 0.15s;-webkit-appearance:none;
-}
-.q-input:focus{border-color:var(--blue);background:#fff;}
-.q-card.correct .q-input{border-color:var(--green);background:#F0FDF4;color:var(--green);}
-.q-card.wrong .q-input{border-color:var(--red);background:#FEF2F2;color:var(--red);}
-.q-result{font-size:13px;font-weight:700;margin-top:6px;display:none;}
-.q-card.correct .q-result{display:block;color:var(--green);}
-.q-card.wrong .q-result{display:block;color:var(--red);}
-
-/* 送信バー（固定） */
-.submit-bar{
-  position:fixed;bottom:0;left:0;right:0;
-  background:var(--surface);border-top:1px solid var(--border);
-  padding:12px 16px 20px;z-index:200;
-  max-width:540px;margin:0 auto;
-}
-.btn-submit{
-  width:100%;padding:16px;
-  background:linear-gradient(135deg,var(--blue),#3B82F6);
-  color:#fff;border:none;border-radius:var(--radius);
-  font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;
-  cursor:pointer;box-shadow:0 4px 16px rgba(37,99,235,0.25);
+/* LINEボタン */
+.btn-line{
+  width:100%;padding:13px;margin-top:10px;
+  background:#06C755;color:#fff;border:none;border-radius:var(--radius);
+  font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
   -webkit-tap-highlight-color:transparent;
 }
+.btn-line:active{transform:scale(0.98);}
+
+/* ══ ドリルページ ══ */
+.drill-header{background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 50%,#60A5FA 100%);padding:14px 16px 16px;color:#fff;position:sticky;top:0;z-index:100;}
+.quiz-subrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.progress-info{font-size:12px;color:rgba(255,255,255,0.85);}
+.timer-display{font-size:14px;font-weight:700;color:#fff;}
+.progress-bar-bg{height:6px;background:rgba(255,255,255,0.25);border-radius:3px;overflow:hidden;}
+.progress-bar-fill{height:100%;background:#fff;border-radius:3px;transition:width 0.3s ease;}
+
+/* 問題カード — index.htmlと完全一致 */
+.questions-wrap{padding:14px 16px 8px;}
+.question-card{background:var(--surface);border-radius:var(--radius);padding:18px;margin-bottom:12px;box-shadow:var(--shadow);border:1px solid var(--border);animation:slideUp 0.2s ease both;}
+.q-num-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.q-num-badge{font-size:11px;font-weight:600;color:var(--primary);background:var(--primary-light);padding:3px 10px;border-radius:100px;}
+.q-text{font-size:19px;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:14px;}
+.q-hint{font-size:11px;color:var(--text-faint);margin-top:4px;}
+/* 通常入力 */
+.answer-input{width:100%;border:2px solid #E2E8F0;border-radius:10px;padding:13px;font-size:22px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#F8FAFC;text-align:center;outline:none;transition:border-color 0.15s,background 0.15s;-webkit-appearance:none;appearance:none;}
+.answer-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+.answer-input::placeholder{font-size:13px;font-weight:400;color:#CBD5E1;}
+/* 分数入力 */
+.frac-input-wrap{display:flex;align-items:center;justify-content:center;gap:8px;}
+.frac-box{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.frac-input{width:80px;border:2px solid #E2E8F0;border-radius:10px;padding:10px 6px;font-size:20px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#F8FAFC;text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color 0.15s,background 0.15s;}
+.frac-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+.frac-label{font-size:10px;color:var(--text-faint);font-weight:500;}
+.frac-divider{font-size:28px;font-weight:700;color:var(--text-muted);line-height:1;padding-top:8px;}
+.frac-hint,.ratio-hint{font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px;}
+/* 比入力 */
+.ratio-input-wrap{display:flex;align-items:center;justify-content:center;gap:10px;}
+.ratio-input{width:80px;border:2px solid #E2E8F0;border-radius:10px;padding:10px 6px;font-size:20px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#F8FAFC;text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color 0.15s,background 0.15s;}
+.ratio-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+.ratio-colon{font-size:28px;font-weight:700;color:var(--text);line-height:1;}
+.ratio-box{display:flex;flex-direction:column;align-items:center;gap:4px;}
+/* 採点後の色変え */
+.question-card.correct{border-color:#16A34A;background:#F0FDF4;}
+.question-card.wrong{border-color:#DC2626;background:#FEF2F2;animation:shake 0.3s ease;}
+.question-card.correct .q-num-badge{background:#DCFCE7;color:#16A34A;}
+.question-card.wrong .q-num-badge{background:#FEE2E2;color:#DC2626;}
+.q-result{font-size:13px;font-weight:700;margin-top:8px;display:none;}
+.question-card.correct .q-result{display:block;color:#16A34A;}
+.question-card.wrong .q-result{display:block;color:#DC2626;}
+
+/* 採点バー（固定） */
+.submit-bar{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:12px 16px 24px;z-index:200;max-width:540px;margin:0 auto;}
+.btn-submit{width:100%;padding:16px;background:linear-gradient(135deg,#2563EB,#3B82F6);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,0.25);-webkit-tap-highlight-color:transparent;}
 .btn-submit:disabled{background:#CBD5E1;box-shadow:none;}
 
-/* ── 結果ページ ── */
-#resultPage{min-height:100svh;}
-.result-hero{
-  background:linear-gradient(135deg,var(--blue-d) 0%,var(--purple) 100%);
-  padding:32px 20px 28px;text-align:center;color:#fff;
-}
-.result-score{font-size:72px;font-weight:700;line-height:1;margin:16px 0 4px;animation:pop 0.5s ease;}
-.result-label{font-size:14px;color:rgba(255,255,255,0.85);}
-.result-grade{font-size:13px;color:rgba(255,255,255,0.8);margin-top:6px;}
-
-.result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px 16px 0;}
+/* ══ 結果ページ ══ */
+.result-hero{background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 50%,#60A5FA 100%);padding:28px 20px 24px;text-align:center;color:#fff;}
+@keyframes scaleIn{from{transform:scale(0.5);opacity:0}to{transform:scale(1);opacity:1}}
+.score-ring{width:120px;height:120px;border:6px solid rgba(255,255,255,0.3);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:16px auto;animation:scaleIn 0.4s ease;}
+.score-ring .snum{font-size:44px;font-weight:700;color:#fff;line-height:1;}
+.score-ring .slbl{font-size:12px;color:rgba(255,255,255,0.85);}
+.result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 16px 0;}
 .stat-box{background:var(--surface);border-radius:12px;padding:14px 8px;text-align:center;box-shadow:var(--shadow);}
 .stat-num{font-size:26px;font-weight:700;}
-.stat-lbl{font-size:11px;color:var(--muted);margin-top:2px;}
-.stat-num.ok{color:var(--green);}
-.stat-num.ng{color:var(--red);}
-.stat-num.tm{color:var(--blue);}
-
+.stat-lbl{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.stat-ok{color:#16A34A;} .stat-ng{color:#DC2626;} .stat-tm{color:#2563EB;}
+/* 解答一覧 */
 .review-section{padding:14px 16px;}
-.review-section h3{font-size:14px;font-weight:700;margin-bottom:10px;}
-.review-item{
-  background:var(--surface);border-radius:12px;padding:12px 14px;
-  margin-bottom:8px;box-shadow:0 1px 6px rgba(0,0,0,0.05);
-  border-left:4px solid var(--border);
-}
-.review-item.ok{border-left-color:var(--green);background:#F0FDF4;}
-.review-item.ng{border-left-color:var(--red);background:#FEF2F2;}
-.review-q{font-size:14px;font-weight:600;color:var(--text);}
-.review-ans{font-size:12px;margin-top:4px;}
-.review-ans .ok-a{color:var(--green);font-weight:700;}
-.review-ans .ng-a{color:var(--red);}
-
-/* 履歴セクション */
-.history-section{padding:0 16px 16px;}
+.review-heading{font-size:14px;font-weight:700;margin-bottom:10px;}
+.review-card{background:var(--surface);border-radius:12px;padding:12px 14px;margin-bottom:8px;box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.rc-correct{border-left:4px solid #16A34A;background:#F0FDF4;}
+.rc-wrong{border-left:4px solid #DC2626;background:#FEF2F2;}
+.rc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.rc-qnum{font-size:12px;font-weight:700;color:var(--text-muted);}
+.rc-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;}
+.tag-ok{background:#DCFCE7;color:#16A34A;}
+.tag-ng{background:#FEE2E2;color:#DC2626;}
+.rc-question{font-size:15px;color:var(--text);margin-bottom:8px;}
+.rc-ans-row{font-size:13px;}
+.rc-correct-ans{color:#16A34A;font-weight:700;}
+.rc-your{color:#DC2626;}
+/* 結果アクション */
+.result-actions{padding:14px 16px 40px;display:grid;gap:10px;}
+.btn-again{width:100%;padding:16px;background:linear-gradient(135deg,#2563EB,#3B82F6);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.btn-back{width:100%;padding:14px;background:var(--surface);color:#2563EB;border:1.5px solid var(--border);border-radius:var(--radius);font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+/* 履歴 */
+.history-section{padding:0 16px 14px;}
 .history-section h3{font-size:14px;font-weight:700;margin-bottom:10px;}
-.history-item{
-  display:flex;align-items:center;gap:10px;
-  background:var(--surface);border-radius:10px;padding:10px 12px;
-  margin-bottom:6px;box-shadow:0 1px 4px rgba(0,0,0,0.05);
-}
-.history-date{font-size:11px;color:var(--muted);min-width:56px;}
-.history-score{font-size:16px;font-weight:700;min-width:44px;}
+.history-item{display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:10px;padding:10px 12px;margin-bottom:6px;box-shadow:0 1px 4px rgba(0,0,0,0.05);}
+.history-date{font-size:11px;color:var(--text-muted);min-width:52px;}
+.history-score{font-size:16px;font-weight:700;min-width:48px;}
 .history-bar{flex:1;height:6px;background:#E2E8F0;border-radius:99px;overflow:hidden;}
-.history-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width 0.5s ease;}
-.history-badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;}
-.badge-s{background:#FEF9C3;color:#CA8A04;}
-.badge-a{background:#DCFCE7;color:#16A34A;}
-.badge-b{background:#DBEAFE;color:#2563EB;}
-.badge-c{background:#F3F4F6;color:#6B7280;}
-
-.result-actions{padding:0 16px 40px;display:grid;gap:10px;}
-.btn-action{
-  width:100%;padding:15px;border:none;border-radius:var(--radius);
-  font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;
-  cursor:pointer;-webkit-tap-highlight-color:transparent;
-}
-.btn-again{background:linear-gradient(135deg,var(--blue),#3B82F6);color:#fff;box-shadow:0 4px 14px rgba(37,99,235,0.25);}
-.btn-home{background:var(--surface);color:var(--blue);border:1.5px solid var(--border);}
-
-/* 分数・比入力 */
-.frac-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;}
-.frac-line{width:60%;height:2px;background:var(--text);border-radius:1px;}
-.frac-input{
-  width:100%;border:2px solid var(--border);border-radius:8px;
-  padding:7px 4px;font-size:16px;font-weight:700;
-  font-family:'Noto Sans JP',sans-serif;text-align:center;
-  background:#F8FAFC;outline:none;-webkit-appearance:none;
-}
-.frac-input:focus{border-color:var(--blue);}
-.ratio-wrap{display:flex;align-items:center;gap:6px;flex:1;}
-.ratio-sep{font-size:18px;font-weight:700;color:var(--muted);}
-
-/* 処理中インジケータ */
-.saving-dot{display:inline-block;width:6px;height:6px;background:var(--muted);border-radius:50%;animation:pulse 1s infinite;}
+.history-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#2563EB,#60A5FA);transition:width 0.5s ease;}
+.rank-badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;}
+.rank-s{background:#FEF9C3;color:#CA8A04;}
+.rank-a{background:#DCFCE7;color:#16A34A;}
+.rank-b{background:#DBEAFE;color:#2563EB;}
+.rank-c{background:#F3F4F6;color:#6B7280;}
 </style>
 </head>
 <body>
@@ -285,61 +234,77 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <div class="header-row">
       <a href="/index.html">← トップ</a>
       <span class="header-title">📅 今日のドリル</span>
-      <span style="font-size:11px;color:rgba(255,255,255,0.7);" id="headerDate"></span>
+      <span class="header-date" id="headerDate"></span>
     </div>
   </div>
 
-  <div class="content">
-    <!-- 今日の完了バナー（完了時のみ表示） -->
-    <div id="doneBanner" class="done-banner" style="display:none;">
-      <div class="icon">🎉</div>
-      <h3>今日のドリル完了！</h3>
-      <p id="doneMessage">お疲れさまでした。</p>
-      <span class="remaining-chip" id="remainingChip"></span>
+  <div class="setup-content">
+    <!-- プランチップ -->
+    <span id="planChip" class="plan-chip chip-free">無料版</span>
+
+    <!-- 今日の完了バナー -->
+    <div id="doneBanner" class="done-today" style="display:none;">
+      <div class="dicon">🎉</div>
+      <h3 id="doneTitle">今日のドリル完了！</h3>
+      <p id="doneMsg"></p>
     </div>
 
-    <!-- プラン情報 -->
-    <div class="plan-info" id="planInfo"></div>
-
-    <!-- 学年設定 -->
+    <!-- 設定カード -->
     <div class="setup-card">
       <h2>⚙️ ドリル設定</h2>
-      <div class="section-label">学年</div>
-      <div class="grade-grid" style="margin-bottom:14px;">
-        <div class="sel-btn" id="g1" onclick="setGrade(1)"><span class="big">1年</span><span class="small">小学1年生</span></div>
-        <div class="sel-btn" id="g2" onclick="setGrade(2)"><span class="big">2年</span><span class="small">小学2年生</span></div>
-        <div class="sel-btn" id="g3" onclick="setGrade(3)"><span class="big">3年</span><span class="small">小学3年生</span></div>
-        <div class="sel-btn" id="g4" onclick="setGrade(4)"><span class="big">4年</span><span class="small">小学4年生</span></div>
-        <div class="sel-btn" id="g5" onclick="setGrade(5)"><span class="big">5年</span><span class="small">小学5年生</span></div>
-        <div class="sel-btn" id="g6" onclick="setGrade(6)"><span class="big">6年</span><span class="small">小学6年生</span></div>
+      <div class="row-label">学年</div>
+      <div class="grade-grid">
+        <div class="grade-btn" id="g1" onclick="setGrade(1)"><span class="gnum">1年</span><span class="glbl">小学1年生</span></div>
+        <div class="grade-btn" id="g2" onclick="setGrade(2)"><span class="gnum">2年</span><span class="glbl">小学2年生</span></div>
+        <div class="grade-btn" id="g3" onclick="setGrade(3)"><span class="gnum">3年</span><span class="glbl">小学3年生</span></div>
+        <div class="grade-btn" id="g4" onclick="setGrade(4)"><span class="gnum">4年</span><span class="glbl">小学4年生</span></div>
+        <div class="grade-btn" id="g5" onclick="setGrade(5)"><span class="gnum">5年</span><span class="glbl">小学5年生</span></div>
+        <div class="grade-btn" id="g6" onclick="setGrade(6)"><span class="gnum">6年</span><span class="glbl">小学6年生</span></div>
       </div>
-      <div class="section-label">難易度</div>
-      <div class="diff-grid" style="margin-bottom:14px;">
+      <div class="row-label">難易度</div>
+      <div class="diff-grid" style="margin-bottom:4px;">
         <button class="diff-btn" id="de" onclick="setDiff('easy')">🌱 初級<small>やさしい</small></button>
         <button class="diff-btn" id="dn" onclick="setDiff('normal')">⭐ 中級<small>標準</small></button>
         <button class="diff-btn" id="dh" onclick="setDiff('hard')">🔥 上級<small>むずかしい</small></button>
       </div>
-
-      <!-- サブスク：回数設定 -->
-      <div id="freqSection" style="display:none;">
-        <div class="section-label">1日の回数</div>
+      <!-- サブスクのみ：回数設定 -->
+      <div id="freqRow" style="display:none;">
+        <div class="row-label">1日の回数</div>
         <div class="freq-grid">
-          <div class="freq-btn" id="f1" onclick="setFreq(1)"><div class="num">1</div><div class="lbl">回/日</div></div>
-          <div class="freq-btn" id="f2" onclick="setFreq(2)"><div class="num">2</div><div class="lbl">回/日</div></div>
-          <div class="freq-btn" id="f3" onclick="setFreq(3)"><div class="num">3</div><div class="lbl">回/日</div></div>
+          <div class="freq-btn" id="f1" onclick="setFreq(1)"><div class="fnum">1</div><div class="flbl">回/日</div></div>
+          <div class="freq-btn" id="f2" onclick="setFreq(2)"><div class="fnum">2</div><div class="flbl">回/日</div></div>
+          <div class="freq-btn" id="f3" onclick="setFreq(3)"><div class="fnum">3</div><div class="flbl">回/日</div></div>
         </div>
       </div>
     </div>
 
+    <!-- スタートボタン -->
     <button class="btn-start" id="btnStart" onclick="startDrill()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
       今日のドリルを始める
     </button>
 
+    <!-- ══ スタンプカレンダー ══ -->
+    <div class="calendar-section" style="margin-top:14px;">
+      <div class="calendar-header">
+        <span class="calendar-title" id="calTitle"></span>
+        <div class="calendar-nav">
+          <button class="cal-nav-btn" onclick="moveMonth(-1)">◀</button>
+          <button class="cal-nav-btn" onclick="moveMonth(1)">▶</button>
+        </div>
+      </div>
+      <div class="calendar-grid" id="calGrid"></div>
+      <!-- LINEで報告ボタン -->
+      <button class="btn-line" onclick="reportLine()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.89c.50 0 .901.401.901.9 0 .5-.401.9-.9.9H17.71v1.124h1.655c.499 0 .9.4.9.9s-.401.9-.9.9H16.81a.902.902 0 0 1-.9-.9V9.89c0-.499.401-.9.9-.9h2.555zm-7.719 3.824a.9.9 0 0 1-1.558.616L8.151 12.08v1.633a.9.9 0 0 1-1.8 0V9.89a.9.9 0 0 1 1.557-.617l1.937 2.25V9.89a.9.9 0 1 1 1.8 0v3.824zm-5.985 0a.9.9 0 0 1-1.8 0V9.89a.9.9 0 1 1 1.8 0v3.824zm-3.032-6.8C1.242 2.476 6.766 0 12 0c5.522 0 12 2.638 12 6.914 0 3.48-3.373 6.53-8.248 7.415-.47.087-1.01-.172-1.152-.623-.143-.45.113-.924.57-1.05C18.45 11.792 21.6 9.55 21.6 6.914 21.6 4.057 17.18 1.8 12 1.8c-4.93 0-9.6 2.085-9.6 5.114a4.8 4.8 0 0 0 1.74 3.586.9.9 0 1 1-1.158 1.376A6.6 6.6 0 0 1 .629 6.914z"/></svg>
+        カレンダーをLINEで報告する
+      </button>
+    </div>
+
     <!-- 学習履歴（サブスクのみ） -->
-    <div class="history-section" id="historySection" style="display:none;padding:14px 0 0;">
-      <h3>📈 最近の履歴</h3>
-      <div id="historyList"></div>
+    <div class="history-section" id="histSec" style="display:none;padding-top:14px;">
+      <h3>📈 最近の学習履歴</h3>
+      <div id="histList"></div>
     </div>
   </div>
 </div>
@@ -347,51 +312,52 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 <!-- ══════════════ ドリルページ ══════════════ -->
 <div class="page" id="drillPage">
   <div class="drill-header">
-    <div class="drill-header-row">
-      <span class="drill-title" id="drillTitle">今日のドリル</span>
-      <span class="drill-meta" id="drillMeta"></span>
+    <div class="quiz-subrow">
+      <span id="drillLabel" style="font-size:14px;font-weight:700;color:#fff;"></span>
+      <span class="timer-display" id="drillTimer">0:00</span>
     </div>
-    <div class="progress-bar">
-      <div class="progress-fill" id="drillProgress" style="width:0%"></div>
+    <div class="quiz-subrow">
+      <span class="progress-info" id="drillProgress">0/40</span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.75);">40問</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="drillBar" style="width:0%"></div>
     </div>
   </div>
-  <div class="q-wrap" id="qWrap"></div>
+  <div class="questions-wrap" id="qWrap"></div>
   <div class="submit-bar">
-    <button class="btn-submit" id="btnSubmit" onclick="submitDrill()">
-      採点する
-    </button>
+    <button class="btn-submit" id="btnSubmit" onclick="submitDrill()">採点する</button>
   </div>
 </div>
 
 <!-- ══════════════ 結果ページ ══════════════ -->
 <div class="page" id="resultPage">
   <div class="result-hero">
-    <div style="font-size:13px;color:rgba(255,255,255,0.8);" id="resultDate"></div>
-    <div class="result-score" id="resultScore">0</div>
-    <div class="result-label">点（40問中 <span id="resultCorrect">0</span> 問正解）</div>
-    <div class="result-grade" id="resultGrade"></div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.8);" id="resultDateLabel"></div>
+    <div class="score-ring" id="scoreRing">
+      <div class="snum" id="scoreNum">0</div>
+      <div class="slbl">点</div>
+    </div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.9);" id="resultSub"></div>
+    <div style="margin-top:8px;" id="resultRank"></div>
   </div>
-
   <div class="result-stats">
-    <div class="stat-box"><div class="stat-num ok" id="statOk">0</div><div class="stat-lbl">正解</div></div>
-    <div class="stat-box"><div class="stat-num ng" id="statNg">0</div><div class="stat-lbl">不正解</div></div>
-    <div class="stat-box"><div class="stat-num tm" id="statTime">0:00</div><div class="stat-lbl">所要時間</div></div>
+    <div class="stat-box"><div class="stat-num stat-ok" id="rOk">0</div><div class="stat-lbl">正解</div></div>
+    <div class="stat-box"><div class="stat-num stat-ng" id="rNg">0</div><div class="stat-lbl">不正解</div></div>
+    <div class="stat-box"><div class="stat-num stat-tm" id="rTime">0:00</div><div class="stat-lbl">所要時間</div></div>
   </div>
-
   <div class="review-section">
-    <h3>📋 解答確認</h3>
+    <div class="review-heading">📋 解答一覧（全40問）</div>
     <div id="reviewList"></div>
   </div>
-
-  <div class="history-section" id="resultHistorySection" style="display:none;">
+  <div class="history-section" id="resultHistSec" style="display:none;">
     <h3>📈 学習履歴</h3>
-    <div id="resultHistoryList"></div>
+    <div id="resultHistList"></div>
   </div>
-
   <div class="result-actions">
-    <button class="btn-action btn-again" onclick="startDrill()">もう一度やる</button>
-    <button class="btn-action btn-home" onclick="showPage('setupPage')">設定に戻る</button>
-    <a href="/index.html" style="display:block;width:100%;padding:15px;border-radius:14px;text-align:center;font-size:14px;font-weight:700;color:var(--muted);border:1.5px solid var(--border);background:var(--surface);text-decoration:none;">トップへ戻る</a>
+    <button class="btn-again" onclick="startDrill()">もう一度やる</button>
+    <button class="btn-back" onclick="showPage('setupPage')">設定・カレンダーに戻る</button>
+    <a href="/index.html" style="display:block;text-align:center;padding:14px;color:var(--text-muted);font-size:13px;font-weight:600;text-decoration:none;">トップへ戻る</a>
   </div>
 </div>
 
@@ -405,537 +371,512 @@ function fracStr(n,d){const g=gcd(Math.abs(n),Math.abs(d));const sn=n/g,sd=d/g;i
 
 const GRADES={
   1:{label:'小学1年生',generators:{
-    easy:[
-      ()=>({q:`${rnd(1,4)} ＋ ${rnd(1,4)} ＝`,get a(){return eval(this.q.replace('＋','+').replace('＝',''))},type:'たし算'}),
-      ()=>{const b=rnd(1,3),a=rnd(b+1,5);return{q:`${a} － ${b} ＝`,a:a-b,type:'ひき算'};},
-      ()=>{const b=rnd(1,4);return{q:`${b} ＋ 0 ＝`,a:b,type:'たし算'};},
-      ()=>{const a=rnd(2,5);return{q:`${a} － 1 ＝`,a:a-1,type:'ひき算'};},
-      ()=>{const a=rnd(1,4),b=rnd(1,4);return{q:`${b} ＋ ${a} ＝`,a:a+b,type:'たし算'};},
-    ],
-    normal:[
-      ()=>{const a=rnd(1,5),b=rnd(1,9-a);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const a=rnd(6,9),b=rnd(10-a,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'繰り上がり'};},
-      ()=>{const b=rnd(1,8),a=rnd(b+1,9);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const b=rnd(1,9);return{q:`10 ＋ ${b} ＝`,a:10+b,type:'加法'};},
-      ()=>{const b=rnd(1,9),a=rnd(11,19);return{q:`${a} － ${b} ＝`,a:a-b,type:'繰り下がり'};}
-    ],
-    hard:[
-      ()=>{const a=rnd(5,9),b=rnd(5,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'繰り上がり'};},
-      ()=>{const b=rnd(3,9),a=rnd(11,18);return{q:`${a} － ${b} ＝`,a:a-b,type:'繰り下がり'};},
-      ()=>{const a=rnd(10,15),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const a=rnd(10,19),b=rnd(1,9);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(5,9),b=rnd(5,9);return{q:`${a} ＋ ${b} ＋ 1 ＝`,a:a+b+1,type:'3数のたし算'};}
-    ]
+    easy:[()=>{const a=rnd(1,4),b=rnd(1,4);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'たし算'};},()=>{const b=rnd(1,3),a=rnd(b+1,5);return{q:`${a} － ${b} ＝`,a:a-b,type:'ひき算'};},()=>{const b=rnd(1,4);return{q:`${b} ＋ 0 ＝`,a:b,type:'たし算'};},()=>{const a=rnd(2,5);return{q:`${a} － 1 ＝`,a:a-1,type:'ひき算'};},()=>{const a=rnd(1,4),b=rnd(1,4);return{q:`${b} ＋ ${a} ＝`,a:a+b,type:'たし算'};}],
+    normal:[()=>{const a=rnd(1,5),b=rnd(1,9-a);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const a=rnd(6,9),b=rnd(10-a,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'繰り上がり'};},()=>{const b=rnd(1,8),a=rnd(b+1,9);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const b=rnd(1,9);return{q:`10 ＋ ${b} ＝`,a:10+b,type:'加法'};},()=>{const b=rnd(1,9),a=rnd(11,19);return{q:`${a} － ${b} ＝`,a:a-b,type:'繰り下がり'};}],
+    hard:[()=>{const a=rnd(5,9),b=rnd(5,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'繰り上がり'};},()=>{const b=rnd(3,9),a=rnd(11,18);return{q:`${a} － ${b} ＝`,a:a-b,type:'繰り下がり'};},()=>{const a=rnd(10,15),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const a=rnd(10,19),b=rnd(1,9);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(5,9),b=rnd(5,9);return{q:`${a} ＋ ${b} ＋ 1 ＝`,a:a+b+1,type:'3数'};}]
   }},
   2:{label:'小学2年生',generators:{
-    easy:[
-      ()=>{const a=rnd(10,50),b=rnd(1,5);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const b=rnd(1,5),a=rnd(b+10,50);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};},
-      ()=>{const a=rnd(10,30),b=rnd(10,20);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const a=rnd(2,4),b=rnd(2,4);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};}
-    ],
-    normal:[
-      ()=>{const a=rnd(10,90),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const b=rnd(1,9),a=rnd(b+10,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(11,60),b=rnd(11,40);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const b=rnd(10,40),a=rnd(b+5,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(2,9),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};}
-    ],
-    hard:[
-      ()=>{const a=rnd(50,99),b=rnd(10,50);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const b=rnd(20,60),a=rnd(b+1,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(6,9),b=rnd(6,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九（難）'};},
-      ()=>{const a=rnd(40,80),b=rnd(20,50);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const a=rnd(7,9),b=rnd(7,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九（難）'};}
-    ]
+    easy:[()=>{const a=rnd(10,50),b=rnd(1,5);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const b=rnd(1,5),a=rnd(b+10,50);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};},()=>{const a=rnd(10,30),b=rnd(10,20);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const a=rnd(2,4),b=rnd(2,4);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};}],
+    normal:[()=>{const a=rnd(10,90),b=rnd(1,9);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const b=rnd(1,9),a=rnd(b+10,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(11,60),b=rnd(11,40);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const b=rnd(10,40),a=rnd(b+5,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(2,9),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九'};}],
+    hard:[()=>{const a=rnd(50,99),b=rnd(10,50);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const b=rnd(20,60),a=rnd(b+1,99);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(6,9),b=rnd(6,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九（難）'};},()=>{const a=rnd(40,80),b=rnd(20,50);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const a=rnd(7,9),b=rnd(7,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'九九（難）'};}]
   }},
   3:{label:'小学3年生',generators:{
-    easy:[
-      ()=>{const a=rnd(100,300),b=rnd(100,200);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const b=rnd(10,50),a=rnd(100,300);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-      ()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-      ()=>{const a=rnd(11,20),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};}
-    ],
-    normal:[
-      ()=>{const a=rnd(100,600),b=rnd(100,400);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const b=rnd(10,99),a=rnd(100,500);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(11,30),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-      ()=>{const b=rnd(2,9),q=rnd(2,9);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-      ()=>{const d=rnd(2,9),q2=rnd(1,8),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2,type:'あまりのある除法'};}
-    ],
-    hard:[
-      ()=>{const a=rnd(400,999),b=rnd(200,600);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},
-      ()=>{const b=rnd(100,400),a=rnd(b+100,999);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},
-      ()=>{const a=rnd(21,50),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-      ()=>{const b=rnd(5,9),q=rnd(10,20);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-      ()=>{const d=rnd(5,9),q2=rnd(5,12),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2,type:'あまりのある除法'};}
-    ]
+    easy:[()=>{const a=rnd(100,300),b=rnd(100,200);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const b=rnd(10,50),a=rnd(100,300);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(2,5),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},()=>{const a=rnd(11,20),b=rnd(2,5);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};}],
+    normal:[()=>{const a=rnd(100,600),b=rnd(100,400);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const b=rnd(10,99),a=rnd(100,500);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(11,30),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},()=>{const b=rnd(2,9),q=rnd(2,9);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},()=>{const d=rnd(2,9),q2=rnd(1,8),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2,type:'あまりのある除法',hint:'（商のみ）'};}],
+    hard:[()=>{const a=rnd(400,999),b=rnd(200,600);return{q:`${a} ＋ ${b} ＝`,a:a+b,type:'加法'};},()=>{const b=rnd(100,400),a=rnd(b+100,999);return{q:`${a} － ${b} ＝`,a:a-b,type:'減法'};},()=>{const a=rnd(21,50),b=rnd(2,9);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},()=>{const b=rnd(5,9),q=rnd(10,20);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},()=>{const d=rnd(5,9),q2=rnd(5,12),r=rnd(1,d-1);return{q:`${d*q2+r} ÷ ${d} ＝`,a:q2,type:'あまりのある除法',hint:'（商のみ）'};}]
   }},
   4:{label:'小学4年生',generators:{
-    easy:[
-      ()=>{const a=rnd(1,10)*1000,b=rnd(1,10)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},
-      ()=>{const a=rnd(11,20),b=rnd(11,15);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-      ()=>{const b=rnd(2,5),q=rnd(5,20);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-      ()=>{const a=(rnd(1,19)/10).toFixed(1),b=(rnd(1,19)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},
-      ()=>{const b=(rnd(1,9)/10).toFixed(1),a=(rnd(+b*10+1,29)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}
-    ],
-    normal:[
-      ()=>{const a=rnd(1,50)*1000,b=rnd(1,50)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},
-      ()=>{const a=rnd(11,50),b=rnd(11,30);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-      ()=>{const b=rnd(2,9),q=rnd(11,40);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-      ()=>{const a=(rnd(1,49)/10).toFixed(1),b=(rnd(1,49)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},
-      ()=>{const b=(rnd(1,29)/10).toFixed(1),a=(rnd(+b*10+1,79)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}
-    ],
-    hard:[
-      ()=>{const a=rnd(10,99)*1000,b=rnd(10,99)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},
-      ()=>{const a=rnd(30,99),b=rnd(20,50);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},
-      ()=>{const b=rnd(5,9),q=rnd(30,60);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},
-      ()=>{const a=(rnd(10,99)/10).toFixed(1),b=(rnd(10,99)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},
-      ()=>{const b=(rnd(10,49)/10).toFixed(1),a=(rnd(+b*10+1,199)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}
-    ]
+    easy:[()=>{const a=rnd(1,10)*1000,b=rnd(1,10)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},()=>{const a=rnd(11,20),b=rnd(11,15);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},()=>{const b=rnd(2,5),q=rnd(5,20);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},()=>{const a=(rnd(1,19)/10).toFixed(1),b=(rnd(1,19)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},()=>{const b=(rnd(1,9)/10).toFixed(1),a=(rnd(+b*10+1,29)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}],
+    normal:[()=>{const a=rnd(1,50)*1000,b=rnd(1,50)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},()=>{const a=rnd(11,50),b=rnd(11,30);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},()=>{const b=rnd(2,9),q=rnd(11,40);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},()=>{const a=(rnd(1,49)/10).toFixed(1),b=(rnd(1,49)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},()=>{const b=(rnd(1,29)/10).toFixed(1),a=(rnd(+b*10+1,79)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}],
+    hard:[()=>{const a=rnd(10,99)*1000,b=rnd(10,99)*1000;return{q:`${a.toLocaleString()} ＋ ${b.toLocaleString()} ＝`,a:a+b,type:'大きな数'};},()=>{const a=rnd(30,99),b=rnd(20,50);return{q:`${a} × ${b} ＝`,a:a*b,type:'乗法'};},()=>{const b=rnd(5,9),q=rnd(30,60);return{q:`${b*q} ÷ ${b} ＝`,a:q,type:'除法'};},()=>{const a=(rnd(10,99)/10).toFixed(1),b=(rnd(10,99)/10).toFixed(1);return{q:`${a} ＋ ${b} ＝`,a:+((+a+ +b).toFixed(1)),type:'小数の加法'};},()=>{const b=(rnd(10,49)/10).toFixed(1),a=(rnd(+b*10+1,199)/10).toFixed(1);return{q:`${a} － ${b} ＝`,a:+((+a- +b).toFixed(1)),type:'小数の減法'};}]
   }},
   5:{label:'小学5年生',generators:{
-    easy:[
-      ()=>{const a=rnd(1,9)/10,b=rnd(1,9)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},
-      ()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q,type:'小数の除法'};},
-      ()=>{const d=rnd(4,6),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d),type:'分数の加法'};},
-      ()=>{const p=rnd(1,5)*10,base=rnd(1,5)*100;return{q:`${base}円の${p}% は？`,a:base*p/100,type:'割合'};},
-      ()=>{const a=rnd(2,5),b=rnd(2,5),c=rnd(2,5);return{q:`縦${a}×横${b}×高さ${c}の体積は？`,a:a*b*c,type:'体積'};}
-    ],
-    normal:[
-      ()=>{const a=rnd(1,19)/10,b=rnd(1,19)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},
-      ()=>{const b=rnd(2,9),q=rnd(2,8);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q,type:'小数の除法'};},
-      ()=>{const d=rnd(4,9),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d),type:'分数の加法'};},
-      ()=>{const p=rnd(1,10)*10,base=rnd(1,10)*100;return{q:`${base}円の${p}% は何円？`,a:base*p/100,type:'割合'};},
-      ()=>{const a=rnd(2,8),b=rnd(2,8),c=rnd(2,8);return{q:`縦${a}×横${b}×高さ${c}の体積(cm³)？`,a:a*b*c,type:'体積'};}
-    ],
-    hard:[
-      ()=>{const a=rnd(11,29)/10,b=rnd(11,29)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},
-      ()=>{const b=rnd(3,9),q=rnd(5,15);return{q:`${+(b*q*1.5).toFixed(1)} ÷ ${b} ＝`,a:+(q*1.5).toFixed(1),type:'小数の除法'};},
-      ()=>{const d1=rnd(3,6),d2=rnd(3,6),n1=rnd(1,d1-1),n2=rnd(1,d2-1),lcm=d1*d2/gcd(d1,d2);return{q:`${n1}/${d1} ＋ ${n2}/${d2} ＝`,a:fracStr(n1*(lcm/d1)+n2*(lcm/d2),lcm),type:'通分'};},
-      ()=>{const p=rnd(1,10)*5,base=rnd(2,20)*100;return{q:`${base}円の${p}% は何円？`,a:base*p/100,type:'割合'};},
-      ()=>{const a=rnd(5,12),b=rnd(5,12),c=rnd(5,12);return{q:`縦${a}×横${b}×高さ${c}の体積(cm³)？`,a:a*b*c,type:'体積'};}
-    ]
+    easy:[()=>{const a=rnd(1,9)/10,b=rnd(1,9)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q,type:'小数の除法'};},()=>{const d=rnd(4,6),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d),type:'分数の加法'};},()=>{const p=rnd(1,5)*10,base=rnd(1,5)*100;return{q:`${base}円の${p}% は？`,a:base*p/100,type:'割合'};},()=>{const a=rnd(2,5),b=rnd(2,5),c=rnd(2,5);return{q:`縦${a}×横${b}×高さ${c}の体積は？`,a:a*b*c,type:'体積'};}],
+    normal:[()=>{const a=rnd(1,19)/10,b=rnd(1,19)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},()=>{const b=rnd(2,9),q=rnd(2,8);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q,type:'小数の除法'};},()=>{const d=rnd(4,9),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d),type:'分数の加法'};},()=>{const p=rnd(1,10)*10,base=rnd(1,10)*100;return{q:`${base}円の${p}% は何円？`,a:base*p/100,type:'割合'};},()=>{const a=rnd(2,8),b=rnd(2,8),c=rnd(2,8);return{q:`縦${a}×横${b}×高さ${c}の体積(cm³)?`,a:a*b*c,type:'体積'};}],
+    hard:[()=>{const a=rnd(11,29)/10,b=rnd(11,29)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2),type:'小数の乗法'};},()=>{const b=rnd(3,9),q=rnd(5,15);return{q:`${+(b*q*1.5).toFixed(1)} ÷ ${b} ＝`,a:+(q*1.5).toFixed(1),type:'小数の除法'};},()=>{const d1=rnd(3,6),d2=rnd(3,6),n1=rnd(1,d1-1),n2=rnd(1,d2-1),lcm=d1*d2/gcd(d1,d2);return{q:`${n1}/${d1} ＋ ${n2}/${d2} ＝`,a:fracStr(n1*(lcm/d1)+n2*(lcm/d2),lcm),type:'通分'};},()=>{const p=rnd(1,10)*5,base=rnd(2,20)*100;return{q:`${base}円の${p}% は何円？`,a:base*p/100,type:'割合'};},()=>{const a=rnd(5,12),b=rnd(5,12),c=rnd(5,12);return{q:`縦${a}×横${b}×高さ${c}の体積(cm³)?`,a:a*b*c,type:'体積'};}]
   }},
   6:{label:'小学6年生',generators:{
-    easy:[
-      ()=>{const n1=rnd(1,3),d1=rnd(2,4),n2=rnd(1,3),d2=rnd(2,4);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},
-      ()=>{const a=rnd(1,4),b=rnd(1,4),t=rnd(2,3);return{q:`${a*t}：${b*t} → 簡単な比`,a:`${a}：${b}`,type:'比'};},
-      ()=>{const s=rnd(1,5)*10,t=rnd(2,4);return{q:`${s*t}m を${t}分。分速は？`,a:s,type:'速さ'};},
-      ()=>{const r=rnd(2,5);return{q:`半径${r}cmの円の面積は？(π=3.14)`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},
-      ()=>{const n=rnd(1,3),d=rnd(2,5),m=rnd(2,4);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d),type:'分数の乗法'};}
-    ],
-    normal:[
-      ()=>{const n1=rnd(1,4),d1=rnd(2,6),n2=rnd(1,4),d2=rnd(2,6);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},
-      ()=>{const a=rnd(1,6),b=rnd(1,6),t=rnd(2,5);return{q:`${a*t}：${b*t} → 最も簡単な比`,a:`${a}：${b}`,type:'比'};},
-      ()=>{const s=rnd(2,10)*10,t=rnd(2,6);return{q:`${s*t}m を${t}分。分速は？`,a:s,type:'速さ'};},
-      ()=>{const r=rnd(2,8);return{q:`半径${r}cmの円の面積は？(π=3.14)`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},
-      ()=>{const n=rnd(1,4),d=rnd(2,8),m=rnd(2,5);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d),type:'分数の乗法'};}
-    ],
-    hard:[
-      ()=>{const n1=rnd(2,6),d1=rnd(3,8),n2=rnd(2,6),d2=rnd(3,8);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},
-      ()=>{const a=rnd(3,9),b=rnd(3,9),t=rnd(4,8);return{q:`${a*t}：${b*t} → 最も簡単な比`,a:`${a}：${b}`,type:'比'};},
-      ()=>{const s=rnd(5,20)*10,t=rnd(3,8);return{q:`${s*t}m を${t}分。分速は？`,a:s,type:'速さ'};},
-      ()=>{const r=rnd(6,12);return{q:`半径${r}cmの円の面積は？(π=3.14)`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},
-      ()=>{const n1=rnd(2,5),d1=rnd(3,8),n2=rnd(2,5),d2=rnd(3,8);return{q:`${n1}/${d1} × ${n2}/${d2} ＝`,a:fracStr(n1*n2,d1*d2),type:'分数の乗法'};}
-    ]
+    easy:[()=>{const n1=rnd(1,3),d1=rnd(2,4),n2=rnd(1,3),d2=rnd(2,4);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},()=>{const a=rnd(1,4),b=rnd(1,4),t=rnd(2,3);return{q:`${a*t}：${b*t} を簡単な比にすると？`,a:`${a}：${b}`,type:'比'};},()=>{const s=rnd(1,5)*10,t=rnd(2,4);return{q:`${s*t}m を${t}分。分速は？`,a:s,type:'速さ'};},()=>{const r=rnd(2,5);return{q:`半径${r}cmの円の面積は？（π=3.14）`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},()=>{const n=rnd(1,3),d=rnd(2,5),m=rnd(2,4);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d),type:'分数の乗法'};}],
+    normal:[()=>{const n1=rnd(1,4),d1=rnd(2,6),n2=rnd(1,4),d2=rnd(2,6);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},()=>{const a=rnd(1,6),b=rnd(1,6),t=rnd(2,5);return{q:`${a*t}：${b*t} を最も簡単な比にすると？`,a:`${a}：${b}`,type:'比'};},()=>{const s=rnd(2,10)*10,t=rnd(2,6);return{q:`${s*t}m を${t}分。分速は？`,a:s,type:'速さ'};},()=>{const r=rnd(2,8);return{q:`半径${r}cmの円の面積は？（π=3.14）`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},()=>{const n=rnd(1,4),d=rnd(2,8),m=rnd(2,5);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d),type:'分数の乗法'};}],
+    hard:[()=>{const n1=rnd(2,6),d1=rnd(3,8),n2=rnd(2,6),d2=rnd(3,8);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2),type:'分数の除法'};},()=>{const a=rnd(3,9),b=rnd(3,9),t=rnd(4,8);return{q:`${a*t}：${b*t} を最も簡単な比にすると？`,a:`${a}：${b}`,type:'比'};},()=>{const s=rnd(5,20)*10,t=rnd(3,8);return{q:`${s*t}m を${t}分。分速は？`,a:s,type:'速さ'};},()=>{const r=rnd(6,12);return{q:`半径${r}cmの円の面積は？（π=3.14）`,a:+(r*r*3.14).toFixed(2),type:'円の面積'};},()=>{const n1=rnd(2,5),d1=rnd(3,8),n2=rnd(2,5),d2=rnd(3,8);return{q:`${n1}/${d1} × ${n2}/${d2} ＝`,a:fracStr(n1*n2,d1*d2),type:'分数の乗法'};}]
   }}
 };
 
 // ============================================================
-// 状態管理
+// 状態
 // ============================================================
 const TODAY = new Date().toISOString().slice(0,10);
 const TOTAL = 40;
+const KEY_G='daily_g', KEY_D='daily_d', KEY_F='daily_f';
+const KEY_DONE = d => 'daily_done_'+d;
 
-// localStorage キー
-const KEY_GRADE  = 'daily_grade';
-const KEY_DIFF   = 'daily_diff';
-const KEY_FREQ   = 'daily_freq';   // サブスクのみ
-const KEY_DONE   = 'daily_done_'; // + TODAY → 完了回数
-
-let grade = parseInt(localStorage.getItem(KEY_GRADE)||'1',10);
-let diff  = localStorage.getItem(KEY_DIFF)||'normal';
-let freq  = parseInt(localStorage.getItem(KEY_FREQ)||'1',10);
-let questions = [];
-let startTime = 0;
+let grade = parseInt(localStorage.getItem(KEY_G)||'1',10);
+let diff  = localStorage.getItem(KEY_D)||'normal';
+let freq  = parseInt(localStorage.getItem(KEY_F)||'1',10);
+let questions=[], startTime=0, timerInt=null;
+let calYear = new Date().getFullYear();
+let calMonth = new Date().getMonth();
 
 // プラン判定
 function getPlan(){
-  // サブスクの場合: sessionStorageにnijumaru_active_plan=sub or auth済み
-  const plan = sessionStorage.getItem('nijumaru_active_plan');
-  const auth  = sessionStorage.getItem('nijumaru_premium_auth');
-  if(plan === 'sub' || plan === 'trial') return 'sub';
-  // サブスクのトライアル中も含む
-  const trial = localStorage.getItem('nijumaru_trial_start');
-  if(trial && Date.now() - parseInt(trial,10) < 86400000) return 'sub';
-  if(auth === '1') return 'sub';
+  const p=sessionStorage.getItem('nijumaru_active_plan');
+  if(p==='sub'||p==='trial') return 'sub';
+  const t=localStorage.getItem('nijumaru_trial_start');
+  if(t&&Date.now()-parseInt(t,10)<86400000) return 'sub';
+  if(sessionStorage.getItem('nijumaru_premium_auth')==='1') return 'sub';
   return 'free';
 }
-
-// 今日の完了回数
-function getDoneCount(){ return parseInt(localStorage.getItem(KEY_DONE+TODAY)||'0',10); }
-function addDoneCount(){ localStorage.setItem(KEY_DONE+TODAY, String(getDoneCount()+1)); }
-
-// 上限回数
-function getLimit(){ return getPlan()==='sub' ? freq : 1; }
-
-// 今日まだやれるか
-function canDo(){ return getDoneCount() < getLimit(); }
+function getLimit(){ return getPlan()==='sub'?freq:1; }
+function getDone(d){ return parseInt(localStorage.getItem(KEY_DONE(d))||'0',10); }
+function addDone(){ localStorage.setItem(KEY_DONE(TODAY),String(getDone(TODAY)+1)); }
+function canDo(){ return getDone(TODAY)<getLimit(); }
 
 // ============================================================
-// UI 初期化
+// 初期化
 // ============================================================
-window.addEventListener('DOMContentLoaded', () => {
-  // 日付表示
-  const d = new Date();
-  document.getElementById('headerDate').textContent =
+window.addEventListener('DOMContentLoaded',()=>{
+  const d=new Date();
+  document.getElementById('headerDate').textContent=
     `${d.getMonth()+1}月${d.getDate()}日（${'日月火水木金土'[d.getDay()]}）`;
-
   applySettings();
-  renderPlanInfo();
-  checkDoneState();
-  renderHistory();
+  renderPlanUI();
+  renderCalendar();
+  if(getPlan()==='sub') loadHistory('histList');
 });
 
 function applySettings(){
-  document.querySelectorAll('.sel-btn').forEach(b=>b.classList.remove('on'));
-  document.getElementById('g'+grade)?.classList.add('on');
-  ['de','dn','dh'].forEach(id=>document.getElementById(id)?.classList.remove('on'));
-  document.getElementById({easy:'de',normal:'dn',hard:'dh'}[diff])?.classList.add('on');
+  document.querySelectorAll('.grade-btn').forEach(b=>b.classList.remove('sel'));
+  document.getElementById('g'+grade)?.classList.add('sel');
+  ['de','dn','dh'].forEach(id=>document.getElementById(id)?.classList.remove('sel'));
+  ({easy:'de',normal:'dn',hard:'dh'})[diff] && document.getElementById({easy:'de',normal:'dn',hard:'dh'}[diff])?.classList.add('sel');
   if(getPlan()==='sub'){
-    document.getElementById('freqSection').style.display='block';
-    [1,2,3].forEach(n=>{
-      document.getElementById('f'+n)?.classList.toggle('on', n===freq);
-    });
+    document.getElementById('freqRow').style.display='block';
+    [1,2,3].forEach(n=>document.getElementById('f'+n)?.classList.toggle('sel',n===freq));
   }
 }
+function setGrade(g){grade=g;localStorage.setItem(KEY_G,g);applySettings();}
+function setDiff(d){diff=d;localStorage.setItem(KEY_D,d);applySettings();}
+function setFreq(f){freq=f;localStorage.setItem(KEY_F,f);applySettings();renderPlanUI();}
 
-function renderPlanInfo(){
-  const el = document.getElementById('planInfo');
-  const plan = getPlan();
-  const done = getDoneCount();
-  const limit = getLimit();
-  if(plan==='sub'){
-    el.innerHTML = `👑 サブスクプラン｜本日 ${done}/${limit} 回完了`;
-  } else {
-    el.innerHTML = `無料版｜1日1回・学習履歴は保存されません。<br>
-      <a href="/premium.html">サブスクプラン（¥300/月）</a>で1日3回＋履歴保存が使えます。`;
-  }
-}
-
-function checkDoneState(){
-  const banner = document.getElementById('doneBanner');
-  const btn = document.getElementById('btnStart');
-  const done = getDoneCount();
-  const limit = getLimit();
-
+function renderPlanUI(){
+  const plan=getPlan(), done=getDone(TODAY), limit=getLimit();
+  // チップ
+  const chip=document.getElementById('planChip');
+  chip.className='plan-chip '+(plan==='sub'?'chip-sub':'chip-free');
+  chip.textContent=plan==='sub'?'👑 サブスクプラン':'無料版';
+  // 完了バナー
+  const banner=document.getElementById('doneBanner');
+  const btn=document.getElementById('btnStart');
   if(!canDo()){
     banner.style.display='block';
-    document.getElementById('doneMessage').textContent =
-      getPlan()==='sub'
-        ? `本日の設定回数（${limit}回）をすべて完了しました！`
-        : '明日また挑戦しよう！';
-    document.getElementById('remainingChip').textContent =
-      getPlan()==='sub' ? `${done}/${limit}回完了` : '明日0時にリセット';
-    btn.disabled = true;
-    btn.textContent = '本日は完了しました';
+    document.getElementById('doneTitle').textContent='今日のドリル完了！';
+    document.getElementById('doneMsg').textContent=
+      plan==='sub'?`本日の設定回数（${limit}回）をすべて完了しました！`:'明日また挑戦しよう！';
+    btn.disabled=true;
+    btn.innerHTML='本日は完了しました';
   } else {
     banner.style.display='none';
-    btn.disabled = false;
-    const rem = limit - done;
-    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      今日のドリルを始める（残り${rem}回）`;
+    btn.disabled=false;
+    const rem=limit-done;
+    btn.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>今日のドリルを始める（残り${rem}回）`;
   }
+  // 履歴セクション
+  document.getElementById('histSec').style.display=plan==='sub'?'block':'none';
 }
-
-function setGrade(g){ grade=g; localStorage.setItem(KEY_GRADE,g); applySettings(); }
-function setDiff(d){ diff=d;  localStorage.setItem(KEY_DIFF,d);  applySettings(); }
-function setFreq(f){ freq=f;  localStorage.setItem(KEY_FREQ,f);  applySettings(); renderPlanInfo(); checkDoneState(); }
 
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
+  if(id==='setupPage'){renderPlanUI();renderCalendar();}
 }
 
 // ============================================================
 // ドリル開始
 // ============================================================
-function generateQuestions(){
-  const gens = GRADES[grade].generators[diff];
-  const qs = [];
-  const seen = new Set();
-  let retry = 0;
-  while(qs.length < TOTAL && retry < TOTAL*12){
-    const q = gens[Math.floor(Math.random()*gens.length)]();
-    if(!seen.has(q.q)){ seen.add(q.q); qs.push(q); }
-    retry++;
+function isFracAnswer(a){return typeof a==='string'&&a.includes('/');}
+function isRatioAnswer(a){return typeof a==='string'&&(a.includes(':')||a.includes('：'));}
+
+function genQuestions(){
+  const gens=GRADES[grade].generators[diff];
+  const qs=[]; const seen=new Set(); let r=0;
+  while(qs.length<TOTAL&&r<TOTAL*12){
+    const q=gens[Math.floor(Math.random()*gens.length)]();
+    if(!seen.has(q.q)){seen.add(q.q);qs.push(q);}r++;
   }
-  while(qs.length < TOTAL) qs.push(gens[Math.floor(Math.random()*gens.length)]());
+  while(qs.length<TOTAL)qs.push(gens[Math.floor(Math.random()*gens.length)]());
   for(let i=qs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qs[i],qs[j]]=[qs[j],qs[i]];}
   return qs;
 }
 
-function isFrac(v){ return typeof v==='string'&&v.includes('/'); }
-function isRatio(v){ return typeof v==='string'&&(v.includes(':')||v.includes('：')); }
-function isDecimal(v){ return !isFrac(v)&&!isRatio(v)&&String(v).includes('.'); }
-
 function startDrill(){
-  if(!canDo()) return;
-  questions = generateQuestions();
-  startTime = Date.now();
+  if(!canDo())return;
+  questions=genQuestions();
+  startTime=Date.now();
   renderDrill();
-  document.getElementById('drillTitle').textContent =
-    `${GRADES[grade].label}　${['🌱 初級','⭐ 中級','🔥 上級'][['easy','normal','hard'].indexOf(diff)]}`;
-  document.getElementById('drillMeta').textContent = `40問`;
+  document.getElementById('drillLabel').textContent=
+    `${GRADES[grade].label} ${{easy:'🌱 初級',normal:'⭐ 中級',hard:'🔥 上級'}[diff]}`;
+  // タイマー
+  clearInterval(timerInt);
+  timerInt=setInterval(()=>{
+    const s=Math.round((Date.now()-startTime)/1000);
+    const m=Math.floor(s/60);
+    document.getElementById('drillTimer').textContent=m+':'+String(s%60).padStart(2,'0');
+  },1000);
   showPage('drillPage');
 }
 
 function renderDrill(){
-  const wrap = document.getElementById('qWrap');
-  wrap.innerHTML = '';
+  const wrap=document.getElementById('qWrap');
+  wrap.innerHTML='';
   questions.forEach((q,i)=>{
-    const card = document.createElement('div');
-    card.className = 'q-card';
-    card.id = 'qc'+i;
-
-    let inputHTML;
-    if(isFrac(String(q.a))){
-      inputHTML = `<div class="frac-wrap">
-        <input class="frac-input" id="qn${i}" type="text" inputmode="numeric" placeholder="分子" maxlength="6">
-        <div class="frac-line"></div>
-        <input class="frac-input" id="qd${i}" type="text" inputmode="numeric" placeholder="分母" maxlength="6">
-      </div>`;
-    } else if(isRatio(String(q.a))){
-      inputHTML = `<div class="ratio-wrap">
-        <input class="q-input" id="qa${i}" type="text" inputmode="numeric" placeholder="左" maxlength="6" style="text-align:center;">
-        <span class="ratio-sep">：</span>
-        <input class="q-input" id="qb${i}" type="text" inputmode="numeric" placeholder="右" maxlength="6" style="text-align:center;">
-      </div>`;
-    } else {
-      const mode = isDecimal(q.a) ? 'decimal' : 'numeric';
-      inputHTML = `<input class="q-input" id="qi${i}" type="text" inputmode="${mode}" placeholder="答え" maxlength="10">`;
-    }
-
-    card.innerHTML = `
-      <div class="q-head">
-        <div class="q-num">${i+1}</div>
-        <div class="q-text">${q.q}</div>
+    const card=document.createElement('div');
+    card.className='question-card';
+    card.id='qc'+i;
+    const needFrac=isFracAnswer(String(q.a));
+    const needRatio=isRatioAnswer(String(q.a));
+    const needDecimal=!needFrac&&!needRatio&&String(q.a).includes('.');
+    const inputHTML=needFrac?`
+      <div class="frac-input-wrap">
+        <div class="frac-box">
+          <span class="frac-label">分子</span>
+          <input class="frac-input" type="text" inputmode="numeric" pattern="[0-9]*"
+            id="ans_${i}_n" placeholder="?" autocomplete="off"
+            oninput="updateProg()" onkeydown="handleEnterFrac(event,${i},'n')">
+        </div>
+        <div class="frac-divider">―</div>
+        <div class="frac-box">
+          <span class="frac-label">分母</span>
+          <input class="frac-input" type="text" inputmode="numeric" pattern="[0-9]*"
+            id="ans_${i}_d" placeholder="?" autocomplete="off"
+            oninput="updateProg()" onkeydown="handleEnterFrac(event,${i},'d')">
+        </div>
       </div>
-      <div class="q-input-row">${inputHTML}</div>
+      <div class="frac-hint">※ 分子と分母を別々に入力してください</div>`
+    :needRatio?`
+      <div class="ratio-input-wrap">
+        <div class="ratio-box">
+          <span class="frac-label">左</span>
+          <input class="ratio-input" type="text" inputmode="numeric" pattern="[0-9]*"
+            id="ans_${i}_l" placeholder="?" autocomplete="off"
+            oninput="updateProg()" onkeydown="handleEnterRatio(event,${i},'l')">
+        </div>
+        <div class="ratio-colon">：</div>
+        <div class="ratio-box">
+          <span class="frac-label">右</span>
+          <input class="ratio-input" type="text" inputmode="numeric" pattern="[0-9]*"
+            id="ans_${i}_r" placeholder="?" autocomplete="off"
+            oninput="updateProg()" onkeydown="handleEnterRatio(event,${i},'r')">
+        </div>
+      </div>
+      <div class="ratio-hint">※ 左と右の数を別々に入力してください</div>`
+    :`<input class="answer-input" type="text"
+        inputmode="${needDecimal?'decimal':'numeric'}"
+        ${needDecimal?'':'pattern="[0-9]*"'}
+        placeholder="答えを入力" id="ans_${i}" autocomplete="off"
+        oninput="updateProg()" onkeydown="handleEnter(event,${i})">`;
+    card.innerHTML=`
+      <div class="q-num-row">
+        <span class="q-num-badge">問題 ${i+1} / ${TOTAL}</span>
+        <span style="font-size:11px;color:var(--text-faint);">${q.type||''}</span>
+      </div>
+      <div class="q-text">${q.q}</div>
+      ${q.hint?`<div class="q-hint">${q.hint}</div>`:''}
+      ${inputHTML}
       <div class="q-result" id="qr${i}"></div>`;
     wrap.appendChild(card);
   });
-  document.getElementById('drillProgress').style.width = '0%';
+  updateProg();
+}
+
+function updateProg(){
+  let filled=0;
+  questions.forEach((_,i)=>{
+    const v=getUserAns(i);
+    if(v&&v.trim()!=='')filled++;
+  });
+  document.getElementById('drillProgress').textContent=`${filled}/${TOTAL}`;
+  document.getElementById('drillBar').style.width=`${(filled/TOTAL)*100}%`;
+}
+
+// Enterキーで次へ
+function handleEnter(e,i){if(e.key==='Enter'){e.preventDefault();focusNext(i);}}
+function handleEnterFrac(e,i,p){if(e.key==='Enter'){e.preventDefault();if(p==='n'){document.getElementById('ans_'+i+'_d')?.focus();}else focusNext(i);}}
+function handleEnterRatio(e,i,p){if(e.key==='Enter'){e.preventDefault();if(p==='l'){document.getElementById('ans_'+i+'_r')?.focus();}else focusNext(i);}}
+function focusNext(i){
+  if(i+1>=TOTAL)return;
+  const next=document.getElementById('ans_'+(i+1))||document.getElementById('ans_'+(i+1)+'_n');
+  if(next){next.focus();next.scrollIntoView({behavior:'smooth',block:'center'});}
+}
+
+function getUserAns(i){
+  const q=questions[i]; const a=q.a;
+  if(isFracAnswer(String(a))){
+    const n=(document.getElementById('ans_'+i+'_n')?.value||'').trim();
+    const d=(document.getElementById('ans_'+i+'_d')?.value||'').trim();
+    if(!n||!d)return '';
+    const g=gcd(Math.abs(parseInt(n)||1),Math.abs(parseInt(d)||1));
+    return `${parseInt(n)/g}/${parseInt(d)/g}`;
+  }
+  if(isRatioAnswer(String(a))){
+    const l=(document.getElementById('ans_'+i+'_l')?.value||'').trim();
+    const r=(document.getElementById('ans_'+i+'_r')?.value||'').trim();
+    return (!l||!r)?'':`${l}:${r}`;
+  }
+  return (document.getElementById('ans_'+i)?.value||'').trim();
+}
+
+function checkAns(user,correct){
+  if(!user||user.trim()==='')return false;
+  const u=user.trim().replace(/\s/g,'').replace(/：/g,':');
+  const c=String(correct).trim().replace(/\s/g,'').replace(/：/g,':');
+  if(!isNaN(+u)&&!isNaN(+c))return Math.abs(+u- +c)<0.001;
+  return u===c;
 }
 
 // ============================================================
 // 採点
 // ============================================================
-function checkAnswer(user, correct){
-  if(!user || user.trim()==='') return false;
-  const u = user.trim().replace(/\s/g,'').replace(/：/g,':');
-  const c = String(correct).trim().replace(/\s/g,'').replace(/：/g,':');
-  if(!isNaN(+u) && !isNaN(+c)) return Math.abs(+u - +c) < 0.001;
-  return u === c;
-}
-
-function getUserAnswer(i, q){
-  const a = q.a;
-  if(isFrac(String(a))){
-    const n = (document.getElementById('qn'+i)?.value||'').trim();
-    const d = (document.getElementById('qd'+i)?.value||'').trim();
-    if(!n||!d) return '';
-    const g = gcd(Math.abs(parseInt(n)||1), Math.abs(parseInt(d)||1));
-    return `${parseInt(n)/g}/${parseInt(d)/g}`;
-  } else if(isRatio(String(a))){
-    const av = (document.getElementById('qa'+i)?.value||'').trim();
-    const bv = (document.getElementById('qb'+i)?.value||'').trim();
-    if(!av||!bv) return '';
-    return `${av}:${bv}`;
-  } else {
-    return (document.getElementById('qi'+i)?.value||'').trim();
-  }
-}
-
 function submitDrill(){
-  const btn = document.getElementById('btnSubmit');
-  btn.disabled = true;
-  btn.textContent = '採点中...';
-
-  let correct = 0;
-  const results = [];
-
+  clearInterval(timerInt);
+  const btn=document.getElementById('btnSubmit');
+  btn.disabled=true;btn.textContent='採点中...';
+  const elapsed=Math.round((Date.now()-startTime)/1000);
+  let correct=0; const results=[];
   questions.forEach((q,i)=>{
-    const user = getUserAnswer(i, q);
-    const ok   = checkAnswer(user, q.a);
-    if(ok) correct++;
-
-    const card = document.getElementById('qc'+i);
-    card.classList.add(ok ? 'correct' : 'wrong');
-
-    // 色変え（入力欄）
-    const inputs = card.querySelectorAll('input');
-    inputs.forEach(el => { el.readOnly = true; });
-
-    const resEl = document.getElementById('qr'+i);
-    resEl.textContent = ok ? '✓ 正解' : `✗ 正解: ${q.a}`;
-
-    results.push({ q:q.q, a:q.a, user, ok, type:q.type||'' });
-
-    // プログレス更新
-    document.getElementById('drillProgress').style.width = `${((i+1)/TOTAL)*100}%`;
+    const user=getUserAns(i);
+    const ok=checkAns(user,q.a);
+    if(ok)correct++;
+    const card=document.getElementById('qc'+i);
+    card.classList.add(ok?'correct':'wrong');
+    // 入力欄をreadonly
+    card.querySelectorAll('input').forEach(el=>el.readOnly=true);
+    // 結果表示
+    const rEl=document.getElementById('qr'+i);
+    rEl.textContent=ok?'✓ 正解':`✗ 正解: ${q.a}`;
+    results.push({q:q.q,a:q.a,user,ok,type:q.type||''});
   });
-
-  const elapsed = Math.round((Date.now() - startTime) / 1000);
-  const score   = Math.round(correct / TOTAL * 100);
-
-  // カウントアップ
-  addDoneCount();
-
-  // 結果表示
-  setTimeout(() => showResult(score, correct, TOTAL-correct, elapsed, results), 400);
+  const score=Math.round(correct/TOTAL*100);
+  addDone();
+  // カレンダーのスタンプを更新
+  saveStamp(TODAY, getDone(TODAY));
+  setTimeout(()=>showResult(score,correct,TOTAL-correct,elapsed,results),300);
 }
 
 // ============================================================
 // 結果表示
 // ============================================================
-function formatTime(s){ const m=Math.floor(s/60); return m+':'+String(s%60).padStart(2,'0'); }
-
-function getGrade(score){
-  if(score===100) return {rank:'S',label:'完璧！',cls:'badge-s'};
-  if(score>=88)   return {rank:'A',label:'優秀！',cls:'badge-a'};
-  if(score>=72)   return {rank:'B',label:'よくできました',cls:'badge-b'};
-  return              {rank:'C',label:'もう少し',cls:'badge-c'};
+function fmtTime(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function getRank(score){
+  if(score===100)return{rank:'S',label:'完璧！',cls:'rank-s',color:'#16A34A'};
+  if(score>=88) return{rank:'A',label:'優秀！',cls:'rank-a',color:'#16A34A'};
+  if(score>=72) return{rank:'B',label:'よくできました',cls:'rank-b',color:'#2563EB'};
+  return             {rank:'C',label:'もう少し',cls:'rank-c',color:'#64748B'};
 }
 
-function showResult(score, ok, ng, elapsed, results){
-  const g = getGrade(score);
-  document.getElementById('resultScore').textContent   = score;
-  document.getElementById('resultCorrect').textContent = ok;
-  document.getElementById('resultDate').textContent    =
-    new Date().toLocaleDateString('ja-JP',{month:'long',day:'numeric',weekday:'short'});
-  document.getElementById('resultGrade').innerHTML     =
-    `<span class="history-badge ${g.cls}">${g.rank} ${g.label}</span>`;
-  document.getElementById('statOk').textContent   = ok;
-  document.getElementById('statNg').textContent   = ng;
-  document.getElementById('statTime').textContent = formatTime(elapsed);
+function showResult(score,ok,ng,elapsed,results){
+  const g=getRank(score);
+  document.getElementById('scoreNum').textContent=score;
+  document.getElementById('scoreRing').style.borderColor=g.color;
+  document.getElementById('scoreNum').style.color=g.color;
+  document.getElementById('resultSub').textContent=`${ok}問正解 / ${TOTAL}問`;
+  document.getElementById('resultRank').innerHTML=`<span class="rank-badge ${g.cls}">${g.rank} ${g.label}</span>`;
+  document.getElementById('resultDateLabel').textContent=new Date().toLocaleDateString('ja-JP',{month:'long',day:'numeric',weekday:'short'});
+  document.getElementById('rOk').textContent=ok;
+  document.getElementById('rNg').textContent=ng;
+  document.getElementById('rTime').textContent=fmtTime(elapsed);
 
-  // 解答確認
-  const rev = document.getElementById('reviewList');
-  rev.innerHTML = '';
+  // 解答一覧
+  const rev=document.getElementById('reviewList');
+  rev.innerHTML='';
   results.forEach((r,i)=>{
-    const d = document.createElement('div');
-    d.className = 'review-item ' + (r.ok ? 'ok' : 'ng');
-    d.innerHTML = `
-      <div class="review-q">${i+1}. ${r.q}</div>
-      <div class="review-ans">
-        ${r.ok
-          ? `<span class="ok-a">✓ ${r.a}</span>`
-          : `あなたの答え: <span class="ng-a">${r.user||'（未入力）'}</span>　正解: <span class="ok-a">${r.a}</span>`}
-      </div>`;
+    const d=document.createElement('div');
+    d.className='review-card '+(r.ok?'rc-correct':'rc-wrong');
+    d.innerHTML=`
+      <div class="rc-header">
+        <span class="rc-qnum">問題 ${i+1}</span>
+        <span class="rc-tag ${r.ok?'tag-ok':'tag-ng'}">${r.ok?'✓ 正解':'✗ 不正解'}</span>
+      </div>
+      <div class="rc-question">${r.q}</div>
+      <div class="rc-ans-row">${r.ok
+        ?`<span class="rc-correct-ans">✓ ${r.a}</span>`
+        :`<span class="rc-your">あなた: ${r.user||'（未入力）'}</span><br><span class="rc-correct-ans">正解: ${r.a}</span>`
+      }</div>`;
     rev.appendChild(d);
   });
 
-  // Firebase 履歴保存（サブスクのみ）
+  // 履歴保存・表示（サブスクのみ）
   if(getPlan()==='sub'){
-    saveHistory({ date:TODAY, score, ok, ng, elapsed, grade, diff, rank:g.rank });
-    document.getElementById('resultHistorySection').style.display='block';
-    loadResultHistory();
+    saveHistory({date:TODAY,score,ok,ng,elapsed,grade,diff,rank:g.rank});
+    document.getElementById('resultHistSec').style.display='block';
+    loadHistory('resultHistList');
   }
 
+  document.getElementById('btnSubmit').disabled=false;
+  document.getElementById('btnSubmit').textContent='採点する';
   showPage('resultPage');
-  checkDoneState(); // 設定ページの状態を更新しておく
 }
 
 // ============================================================
-// Firebase 学習履歴
+// スタンプカレンダー
 // ============================================================
-// DB パス: dailyHistory/{userId}/{date}_{timestamp}
-// userId は端末固有ID（localStorage で管理）
+// スタンプデータ: localStorage key "daily_stamp_YYYY-MM" = JSON {DD: count}
+function stampKey(y,m){return`daily_stamp_${y}-${String(m+1).padStart(2,'0')}`;}
 
-function getUserId(){
-  let id = localStorage.getItem('nijumaru_uid');
-  if(!id){
-    id = 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-    localStorage.setItem('nijumaru_uid', id);
+function saveStamp(dateStr,count){
+  const d=new Date(dateStr);
+  const key=stampKey(d.getFullYear(),d.getMonth());
+  const data=JSON.parse(localStorage.getItem(key)||'{}');
+  data[String(d.getDate()).padStart(2,'0')]=count;
+  localStorage.setItem(key,JSON.stringify(data));
+}
+
+function getStampData(y,m){
+  return JSON.parse(localStorage.getItem(stampKey(y,m))||'{}');
+}
+
+function moveMonth(dir){
+  calMonth+=dir;
+  if(calMonth<0){calMonth=11;calYear--;}
+  if(calMonth>11){calMonth=0;calYear++;}
+  renderCalendar();
+}
+
+function renderCalendar(){
+  const y=calYear,m=calMonth;
+  document.getElementById('calTitle').textContent=`${y}年${m+1}月`;
+  const stampData=getStampData(y,m);
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML='';
+
+  // 曜日ヘッダー
+  ['日','月','火','水','木','金','土'].forEach(dow=>{
+    const el=document.createElement('div');
+    el.className='cal-dow';
+    el.textContent=dow;
+    grid.appendChild(el);
+  });
+
+  const firstDay=new Date(y,m,1).getDay();
+  const daysInMonth=new Date(y,m+1,0).getDate();
+  const daysInPrev=new Date(y,m,0).getDate();
+  const todayD=new Date();
+  const isThisMonth=todayD.getFullYear()===y&&todayD.getMonth()===m;
+
+  // 前月の余り
+  for(let i=0;i<firstDay;i++){
+    const el=document.createElement('div');
+    el.className='cal-cell other-month';
+    el.textContent=daysInPrev-firstDay+1+i;
+    grid.appendChild(el);
   }
+
+  // 当月
+  for(let d=1;d<=daysInMonth;d++){
+    const el=document.createElement('div');
+    const dd=String(d).padStart(2,'0');
+    const count=parseInt(stampData[dd]||'0',10);
+    el.className='cal-cell'+(isThisMonth&&d===todayD.getDate()?' today':'');
+    el.textContent=d;
+    if(count>0){
+      el.classList.add('has-stamp');
+      const stamp=document.createElement('div');
+      // スタンプの数字＋絵文字
+      const emojis=['','⭐','🌟','🏆'];
+      stamp.className=`stamp stamp-${Math.min(count,3)}`;
+      stamp.innerHTML=`<span style="font-size:14px;">${emojis[Math.min(count,3)]}</span>`;
+      // 数字を小さく右下に
+      if(getPlan()==='sub'&&count>1){
+        stamp.innerHTML=`<span style="font-size:13px;">${emojis[Math.min(count,3)]}</span><span style="position:absolute;bottom:1px;right:3px;font-size:8px;font-weight:700;color:#7C3AED;">${count}</span>`;
+      }
+      el.appendChild(stamp);
+    }
+    grid.appendChild(el);
+  }
+
+  // 次月の余り
+  const total=firstDay+daysInMonth;
+  const remaining=total%7===0?0:7-(total%7);
+  for(let i=1;i<=remaining;i++){
+    const el=document.createElement('div');
+    el.className='cal-cell other-month';
+    el.textContent=i;
+    grid.appendChild(el);
+  }
+}
+
+// LINEで報告
+function reportLine(){
+  const y=calYear,m=calMonth;
+  const stampData=getStampData(y,m);
+  const days=Object.keys(stampData).sort();
+  const daysInMonth=new Date(y,m+1,0).getDate();
+  let calText=`📅 ${y}年${m+1}月 学習カレンダー\n`;
+  calText+=`（${GRADES[grade].label} / ${{easy:'初級',normal:'中級',hard:'上級'}[diff]}）\n\n`;
+
+  // 7日ごとに改行
+  const emojis=['⬜','⭐','🌟','🏆'];
+  const firstDay=new Date(y,m,1).getDay();
+  calText+='日月火水木金土\n';
+  let line='';
+  for(let pad=0;pad<firstDay;pad++) line+='　';
+  for(let d=1;d<=daysInMonth;d++){
+    const dd=String(d).padStart(2,'0');
+    const count=parseInt(stampData[dd]||'0',10);
+    line+=emojis[Math.min(count,3)];
+    if((firstDay+d)%7===0||d===daysInMonth){calText+=line+'\n';line='';}
+  }
+  calText+=`\n達成日数: ${days.length}/${daysInMonth}日\n`;
+  calText+=`にじゅうまる。算数ドリル\nhttps://nijumaru-drill.com/daily.html`;
+  window.open(`https://line.me/R/share?text=${encodeURIComponent(calText)}`, '_blank', 'noopener,noreferrer');
+}
+
+// ============================================================
+// Firebase 学習履歴（サブスクのみ）
+// ============================================================
+function getUID(){
+  let id=localStorage.getItem('nijumaru_uid');
+  if(!id){id='u'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);localStorage.setItem('nijumaru_uid',id);}
   return id;
 }
 
 async function saveHistory(data){
-  if(!window._fbDb) return;
+  if(!window._fbDb)return;
   try{
-    const uid  = getUserId();
-    const key  = `${data.date}_${Date.now()}`;
-    const path = `dailyHistory/${uid}/${key}`;
-    await window._fbSet(window._fbRef(window._fbDb, path), {
-      ...data,
-      ts: Date.now(),
-    });
-  }catch(e){ console.warn('履歴保存失敗:', e); }
+    const uid=getUID();
+    const key=`${data.date}_${Date.now()}`;
+    await window._fbSet(window._fbRef(window._fbDb,`dailyHistory/${uid}/${key}`),{...data,ts:Date.now()});
+  }catch(e){console.warn('履歴保存失敗:',e);}
 }
 
-async function getHistory(limit=10){
-  if(!window._fbDb) return [];
+async function loadHistory(containerId){
+  const el=document.getElementById(containerId);
+  if(!el||!window._fbDb)return;
   try{
-    const uid  = getUserId();
-    const snap = await window._fbGet(window._fbRef(window._fbDb, `dailyHistory/${uid}`));
-    if(!snap.exists()) return [];
-    const entries = [];
-    snap.forEach(child => { entries.push(child.val()); });
+    const uid=getUID();
+    const snap=await window._fbGet(window._fbRef(window._fbDb,`dailyHistory/${uid}`));
+    if(!snap.exists()){el.innerHTML='<div style="font-size:12px;color:var(--text-muted);padding:8px 0;">まだ記録がありません</div>';return;}
+    const entries=[];
+    snap.forEach(c=>entries.push(c.val()));
     entries.sort((a,b)=>b.ts-a.ts);
-    return entries.slice(0, limit);
-  }catch(e){ return []; }
+    const list=entries.slice(0,7);
+    el.innerHTML=list.map(r=>{
+      const g=getRank(r.score);
+      return `<div class="history-item">
+        <div class="history-date">${(r.date||'').slice(5).replace('-','/')}</div>
+        <div class="history-score" style="color:${r.score>=80?'#16A34A':r.score>=60?'#2563EB':'#DC2626'}">${r.score}点</div>
+        <div class="history-bar"><div class="history-bar-fill" style="width:${r.score}%"></div></div>
+        <span class="rank-badge ${g.cls}">${g.rank}</span>
+      </div>`;
+    }).join('');
+  }catch(e){console.warn(e);}
 }
 
-function renderHistoryList(list, containerId){
-  const el = document.getElementById(containerId);
-  if(!el) return;
-  if(list.length===0){
-    el.innerHTML = '<div style="font-size:12px;color:var(--muted);padding:8px 0;">まだ記録がありません</div>';
-    return;
-  }
-  el.innerHTML = list.map(r=>{
-    const g = getGrade(r.score);
-    const d = r.date ? r.date.slice(5).replace('-','/') : '';
-    return `<div class="history-item">
-      <div class="history-date">${d}</div>
-      <div class="history-score" style="color:${r.score>=80?'var(--green)':r.score>=60?'var(--blue)':'var(--red)'}">${r.score}点</div>
-      <div class="history-bar"><div class="history-bar-fill" style="width:${r.score}%"></div></div>
-      <span class="history-badge ${g.cls}">${g.rank}</span>
-    </div>`;
-  }).join('');
-}
-
-async function renderHistory(){
-  if(getPlan()!=='sub') return;
-  document.getElementById('historySection').style.display='block';
-  const list = await getHistory(7);
-  renderHistoryList(list, 'historyList');
-}
-
-async function loadResultHistory(){
-  const list = await getHistory(10);
-  renderHistoryList(list, 'resultHistoryList');
-}
-
-// ============================================================
-// 初期化
-// ============================================================
-// 設定の自動反映
-window.addEventListener('DOMContentLoaded', () => {
-  const d = new Date();
-  document.getElementById('headerDate').textContent =
-    `${d.getMonth()+1}月${d.getDate()}日（${'日月火水木金土'[d.getDay()]}）`;
-  applySettings();
-  renderPlanInfo();
-  checkDoneState();
-  renderHistory();
-});
+// 起動時にスタンプ整合性チェック（今日の done が既にあればスタンプも更新）
+(function(){
+  const done=getDone(TODAY);
+  if(done>0) saveStamp(TODAY, done);
+})();
 </script>
 </body>
 </html>

@@ -579,7 +579,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <!-- 毎日ドリルバナー -->
   <div style="padding:14px 16px 0;">
-    <a href="/daily-drill.html" style="display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1E40AF,#7C3AED);border-radius:14px;padding:14px 16px;text-decoration:none;box-shadow:0 4px 16px rgba(37,99,235,0.25);">
+    <a href="/daily.html" style="display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1E40AF,#7C3AED);border-radius:14px;padding:14px 16px;text-decoration:none;box-shadow:0 4px 16px rgba(37,99,235,0.25);">
       <div style="font-size:36px;flex-shrink:0;">📅</div>
       <div style="flex:1;">
         <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:3px;">毎日ドリル</div>
@@ -738,30 +738,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 
-  <!-- ===== 毎日ドリルバナー ===== -->
-  <div style="margin:0 16px 16px;">
-    <a href="/daily.html" style="display:block;background:linear-gradient(135deg,#1E40AF,#7C3AED);border-radius:16px;padding:16px;text-decoration:none;box-shadow:0 6px 20px rgba(37,99,235,0.25);" id="dailyBanner">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div style="font-size:36px;flex-shrink:0;">📅</div>
-        <div style="flex:1;">
-          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:3px;">今日のドリル</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.6;" id="dailyBannerSub">毎日40問・自動採点・学習履歴つき</div>
-        </div>
-        <div style="background:rgba(255,255,255,0.2);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;">始める →</div>
-      </div>
-    </a>
-  </div>
-  <script>
-  // 今日の完了状態をバナーに反映
-  (function(){
-    const today = new Date().toISOString().slice(0,10);
-    const done  = parseInt(localStorage.getItem('daily_done_'+today)||'0',10);
-    if(done > 0){
-      const sub = document.getElementById('dailyBannerSub');
-      if(sub) sub.textContent = `今日 ${done} 回完了 — もう一度やる`;
-    }
-  })();
-  </script>
 
   <!-- ===== 記事リンクセクション ===== -->
   <div style="padding:20px 16px 8px;">
