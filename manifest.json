@@ -27,6 +27,11 @@
   ],
   "shortcuts": [
     {
+      "name": "今日のドリル",
+      "url": "/daily.html",
+      "description": "毎日40問・自動採点"
+    },
+    {
       "name": "1年生ドリル",
       "url": "/?grade=1",
       "description": "1年生の算数ドリルをスタート"
