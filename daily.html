@@ -111,17 +111,22 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .calendar-nav{display:flex;gap:6px;}
 .cal-nav-btn{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;color:var(--text-muted);}
 .cal-nav-btn:active{transform:scale(0.95);}
-.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+/* 曜日ヘッダー（aspect-ratio なし） */
+.cal-dow-row{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:2px;}
 .cal-dow{font-size:10px;font-weight:700;text-align:center;color:var(--text-muted);padding:2px 0;}
 .cal-dow:first-child{color:#DC2626;}
 .cal-dow:last-child{color:#2563EB;}
-.cal-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:11px;font-weight:600;color:var(--text-muted);position:relative;cursor:default;}
+/* 日付セルグリッド（aspect-ratio: 1 で正方形） */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.cal-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:11px;font-weight:600;color:var(--text-muted);position:relative;cursor:default;overflow:hidden;}
 .cal-cell.today{background:#EFF6FF;color:var(--primary);font-weight:700;}
-.cal-cell.has-stamp{color:var(--text);}
-.stamp{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:18px;line-height:1;}
+.cal-cell.has-stamp{color:transparent;}/* スタンプがある日は数字を隠す */
+.stamp{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:8px;gap:0;}
 .stamp-1{background:linear-gradient(135deg,#FEF9C3,#FEF3C7);}
 .stamp-2{background:linear-gradient(135deg,#DCFCE7,#BBF7D0);}
 .stamp-3{background:linear-gradient(135deg,#DBEAFE,#BFDBFE);}
+.stamp-emoji{font-size:15px;line-height:1;}
+.stamp-num{font-size:8px;font-weight:700;color:#7C3AED;line-height:1;margin-top:1px;}
 .cal-cell.other-month{opacity:0.3;}
 
 /* LINEボタン */
@@ -293,7 +298,13 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
           <button class="cal-nav-btn" onclick="moveMonth(1)">▶</button>
         </div>
       </div>
-      <div class="calendar-grid" id="calGrid"></div>
+      <!-- 曜日ヘッダー（別div）-->
+      <div class="cal-dow-row">
+        <div class="cal-dow">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div>
+        <div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow">土</div>
+      </div>
+      <!-- 日付セル（aspect-ratio:1 の正方形グリッド）-->
+      <div class="cal-grid" id="calGrid"></div>
       <!-- LINEで報告ボタン -->
       <button class="btn-line" onclick="reportLine()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.89c.50 0 .901.401.901.9 0 .5-.401.9-.9.9H17.71v1.124h1.655c.499 0 .9.4.9.9s-.401.9-.9.9H16.81a.902.902 0 0 1-.9-.9V9.89c0-.499.401-.9.9-.9h2.555zm-7.719 3.824a.9.9 0 0 1-1.558.616L8.151 12.08v1.633a.9.9 0 0 1-1.8 0V9.89a.9.9 0 0 1 1.557-.617l1.937 2.25V9.89a.9.9 0 1 1 1.8 0v3.824zm-5.985 0a.9.9 0 0 1-1.8 0V9.89a.9.9 0 1 1 1.8 0v3.824zm-3.032-6.8C1.242 2.476 6.766 0 12 0c5.522 0 12 2.638 12 6.914 0 3.48-3.373 6.53-8.248 7.415-.47.087-1.01-.172-1.152-.623-.143-.45.113-.924.57-1.05C18.45 11.792 21.6 9.55 21.6 6.914 21.6 4.057 17.18 1.8 12 1.8c-4.93 0-9.6 2.085-9.6 5.114a4.8 4.8 0 0 0 1.74 3.586.9.9 0 1 1-1.158 1.376A6.6 6.6 0 0 1 .629 6.914z"/></svg>
@@ -747,21 +758,14 @@ function renderCalendar(){
   document.getElementById('calTitle').textContent=`${y}年${m+1}月`;
   const stampData=getStampData(y,m);
   const grid=document.getElementById('calGrid');
-  grid.innerHTML='';
-
-  // 曜日ヘッダー
-  ['日','月','火','水','木','金','土'].forEach(dow=>{
-    const el=document.createElement('div');
-    el.className='cal-dow';
-    el.textContent=dow;
-    grid.appendChild(el);
-  });
+  grid.innerHTML=''; // 日付セルのみ（曜日はHTML固定）
 
   const firstDay=new Date(y,m,1).getDay();
   const daysInMonth=new Date(y,m+1,0).getDate();
   const daysInPrev=new Date(y,m,0).getDate();
   const todayD=new Date();
   const isThisMonth=todayD.getFullYear()===y&&todayD.getMonth()===m;
+  const emojis=['','⭐','🌟','🏆'];
 
   // 前月の余り
   for(let i=0;i<firstDay;i++){
@@ -776,19 +780,16 @@ function renderCalendar(){
     const el=document.createElement('div');
     const dd=String(d).padStart(2,'0');
     const count=parseInt(stampData[dd]||'0',10);
-    el.className='cal-cell'+(isThisMonth&&d===todayD.getDate()?' today':'');
-    el.textContent=d;
+    const isToday=isThisMonth&&d===todayD.getDate();
+    el.className='cal-cell'+(isToday?' today':'');
+    el.textContent=d; // スタンプがない日は数字表示
+
     if(count>0){
-      el.classList.add('has-stamp');
+      el.classList.add('has-stamp'); // 数字をtransparentで隠す
       const stamp=document.createElement('div');
-      // スタンプの数字＋絵文字
-      const emojis=['','⭐','🌟','🏆'];
       stamp.className=`stamp stamp-${Math.min(count,3)}`;
-      stamp.innerHTML=`<span style="font-size:14px;">${emojis[Math.min(count,3)]}</span>`;
-      // 数字を小さく右下に
-      if(getPlan()==='sub'&&count>1){
-        stamp.innerHTML=`<span style="font-size:13px;">${emojis[Math.min(count,3)]}</span><span style="position:absolute;bottom:1px;right:3px;font-size:8px;font-weight:700;color:#7C3AED;">${count}</span>`;
-      }
+      // 絵文字＋回数数字（1回でも数字表示）
+      stamp.innerHTML=`<span class="stamp-emoji">${emojis[Math.min(count,3)]}</span><span class="stamp-num">${count}回</span>`;
       el.appendChild(stamp);
     }
     grid.appendChild(el);
