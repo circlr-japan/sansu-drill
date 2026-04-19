@@ -812,24 +812,41 @@ function reportLine(){
   const stampData=getStampData(y,m);
   const days=Object.keys(stampData).sort();
   const daysInMonth=new Date(y,m+1,0).getDate();
-  let calText=`📅 ${y}年${m+1}月 学習カレンダー\n`;
-  calText+=`（${GRADES[grade].label} / ${{easy:'初級',normal:'中級',hard:'上級'}[diff]}）\n\n`;
-
-  // 7日ごとに改行
-  const emojis=['⬜','⭐','🌟','🏆'];
   const firstDay=new Date(y,m,1).getDay();
-  calText+='日月火水木金土\n';
-  let line='';
-  for(let pad=0;pad<firstDay;pad++) line+='　';
-  for(let d=1;d<=daysInMonth;d++){
+
+  // セル生成: 半角2文字固定で揃える
+  // 未達成 → " 1"〜"30"（1桁は先頭スペース）
+  // 達成   → "★1"〜"★3"
+  function cell(d){
     const dd=String(d).padStart(2,'0');
     const count=parseInt(stampData[dd]||'0',10);
-    line+=emojis[Math.min(count,3)];
-    if((firstDay+d)%7===0||d===daysInMonth){calText+=line+'\n';line='';}
+    if(count===0) return (d<10?' '+d:String(d));
+    return '★'+count;
   }
-  calText+=`\n達成日数: ${days.length}/${daysInMonth}日\n`;
-  calText+=`にじゅうまる。算数ドリル\nhttps://nijumaru-drill.com/daily.html`;
-  window.open(`https://line.me/R/share?text=${encodeURIComponent(calText)}`, '_blank', 'noopener,noreferrer');
+
+  const diffLabel={easy:'初級',normal:'中級',hard:'上級'}[diff];
+  let t = y+'年'+( m+1)+'月 学習カレンダー\n';
+  t += GRADES[grade].label+' / '+diffLabel+'\n';
+  t += '─────────────\n';
+  t += '日  月  火  水  木  金  土\n';
+
+  let row=[];
+  for(let i=0;i<firstDay;i++) row.push('  ');  // 前月余り：半角2スペース
+
+  for(let d=1;d<=daysInMonth;d++){
+    row.push(cell(d));
+    if(row.length===7){ t+=row.join('  ')+'\n'; row=[]; }
+  }
+  if(row.length>0){
+    while(row.length<7) row.push('  ');
+    t+=row.join('  ')+'\n';
+  }
+
+  t += '─────────────\n';
+  t += '達成: '+days.length+'日 / '+daysInMonth+'日\n';
+  t += '\nにじゅうまる。算数ドリル\nhttps://nijumaru-drill.com/daily.html';
+
+  window.open('https://line.me/R/share?text='+encodeURIComponent(t), '_blank', 'noopener,noreferrer');
 }
 
 // ============================================================
