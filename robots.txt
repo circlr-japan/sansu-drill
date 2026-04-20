@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nijumaru-drill.com/sitemap.xml
+Sitemap: https://www.nijumaru-drill.com/sitemap.xml
