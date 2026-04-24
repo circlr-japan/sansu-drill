@@ -11,14 +11,14 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --primary:#2563EB;--purple:#7C3AED;--purple-light:#F5F3FF;
+  --primary:#122A64;--purple:#7C3AED;--purple-light:#F5F3FF;
   --bg:#F8FAFC;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
   --border:#E2E8F0;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
 }
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
 @media(min-width:640px){body{max-width:680px;margin:0 auto;}}
 
-.header{background:linear-gradient(135deg,#1E40AF,#7C3AED);padding:22px 20px 26px;color:#fff;}
+.header{background:#122A64;padding:22px 20px 26px;color:#fff;}
 .header a{color:rgba(255,255,255,0.82);font-size:13px;text-decoration:none;}
 .header h1{font-size:20px;font-weight:700;margin-top:6px;line-height:1.4;}
 .header p{font-size:13px;color:rgba(255,255,255,0.86);margin-top:6px;}
@@ -33,7 +33,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .auth-input:focus{border-color:var(--purple);}
 .auth-error{font-size:12px;color:#DC2626;margin-top:6px;display:none;}
 .btn{width:100%;border:none;border-radius:var(--radius);padding:15px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;}
-.btn-purple{background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;box-shadow:0 6px 20px rgba(124,58,237,0.28);margin-top:12px;}
+.btn-purple{background:#122A64;color:#fff;box-shadow:0 6px 20px rgba(18,42,100,0.28);margin-top:12px;}
 .btn-purple:active{transform:scale(0.98);}
 .btn-purple:disabled{background:#CBD5E1;box-shadow:none;cursor:not-allowed;}
 
@@ -94,7 +94,7 @@ input:checked+.toggle-slider:before{transform:translateX(20px);}
 #btnGenerate{margin-top:4px;}
 .progress-wrap{display:none;margin-top:12px;}
 .progress-bar{height:6px;background:var(--border);border-radius:99px;overflow:hidden;}
-.progress-fill{height:100%;background:linear-gradient(90deg,#7C3AED,#9F67FA);border-radius:99px;transition:width 0.3s ease;width:0%;}
+.progress-fill{height:100%;background:#FFC800;border-radius:99px;transition:width 0.3s ease;width:0%;}
 .progress-text{font-size:12px;color:var(--text-muted);text-align:center;margin-top:6px;}
 
 /* 完了バナー */
@@ -439,7 +439,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('authGate').innerHTML = `
           <h2>⏰ 100問チャレンジの有効期限が切れました</h2>
           <p style="font-size:13px;color:var(--text-muted);margin:12px 0 16px;line-height:1.7;">100問チャレンジは購入当日のみ有効です。<br>継続してご利用いただくには再購入またはサブスクプランをご検討ください。</p>
-          <a href="/premium.html" style="display:block;padding:14px;background:linear-gradient(135deg,#7C3AED,#9F67FA);color:#fff;border-radius:12px;text-align:center;font-size:14px;font-weight:700;text-decoration:none;">プランを確認する</a>
+          <a href="/premium.html" style="display:block;padding:14px;background:#122A64;color:#fff;border-radius:12px;text-align:center;font-size:14px;font-weight:700;text-decoration:none;">プランを確認する</a>
         `;
         return;
       }
