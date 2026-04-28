@@ -1454,8 +1454,11 @@ function goTop(){
   document.getElementById('reportParentSection').style.display = 'none';
   document.getElementById('rankingEntrySection').style.display = 'none';
   document.getElementById('reviewList').innerHTML              = '';
+  clearInterval(taTimer);
+  taGameRunning = false;
   showPage('topPage');
   loadRanking(currentRankingGrade);
+  if (topRankCat !== 'drill') loadTopKukuRanking(topRankCat);
 }
 
 // ============================================================
@@ -2583,6 +2586,7 @@ let currentTaMode   = 'time'; // 'time' | 'endless'
 let taTimer         = null;
 let taCdInterval    = null;
 let taRemaining     = TA_DURATION;
+let taGameRunning   = false;
 let taCorrect       = 0;
 let taTotal         = 0;
 let taCurrentAns    = 0;
@@ -2635,6 +2639,7 @@ function taGameStart() {
   taCorrect = 0; taTotal = 0;
   taLastA = 0;   taLastB = 0;
   taRemaining = TA_DURATION;
+  taGameRunning = true;
 
   // モード別UI
   const isTime = currentTaMode === 'time';
@@ -2654,7 +2659,7 @@ function taGameStart() {
     taTimer = setInterval(() => {
       taRemaining--;
       taUpdateArc(taRemaining);
-      if (taRemaining <= 0) { clearInterval(taTimer); taFinish(); }
+      if (taRemaining <= 0) { clearInterval(taTimer); if (taGameRunning) taFinish(); }
     }, 1000);
   }
   setTimeout(() => document.getElementById('taInput')?.focus(), 200);
@@ -2690,6 +2695,7 @@ function taUpdateArc(remaining) {
 
 // 入力チェック（自動判定）
 function taCheckInput() {
+  if (!taGameRunning) return;
   const input = document.getElementById('taInput');
   const val   = input.value.trim();
   if (val === '') return;
@@ -2732,6 +2738,7 @@ function taStop() {
 // 結果表示
 function taFinish() {
   clearInterval(taTimer);
+  taGameRunning = false;
   const rate  = taTotal > 0 ? Math.round(taCorrect / taTotal * 100) : 0;
   const isTime = currentTaMode === 'time';
 
@@ -2829,7 +2836,7 @@ async function switchTaRankTab(mode) {
   const list = document.getElementById('taRankingList');
   list.innerHTML = '<div class="rank-empty">読み込み中...</div>';
 
-  if (!_fbReady()) { list.innerHTML = '<div class="rank-empty">接続中...</div>'; return; }
+  if (!_fbReady()) { setTimeout(() => { if (taCurrentRankTab === mode) switchTaRankTab(mode); }, 800); return; }
 
   try {
     const snapshot = await window._fbGet(window._fbRef(window._fbDb, taFirebasePath(mode)));
