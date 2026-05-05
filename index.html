@@ -10,7 +10,8 @@ if (location.hostname === "nijumaru-drill.com") {
   location.replace("https://www.nijumaru-drill.com" + location.pathname + location.search + location.hash);
 }
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
+<!-- AdSense審査中のため一時停止 -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script> -->
 
 <!-- ===== PWA ===== -->
 <link rel="manifest" href="/manifest.json">
@@ -570,6 +571,12 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .premium-hidden .premium-box{
   display:none !important;
 }
+
+/* ===== AdSense審査中：広告・有料部を一時非表示 ===== */
+/* 審査通過後は以下3行を削除して広告スクリプトのコメントを外す */
+.premium-hidden .ad-slot{ display:none !important; }
+.premium-hidden .pdf-section{ display:none !important; }
+.premium-hidden #pdfLimitBanner,.premium-hidden #premiumNudge{ display:none !important; }
 
 </style>
 </head>
