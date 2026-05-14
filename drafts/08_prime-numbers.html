@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y55CVCFC9P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-Y55CVCFC9P");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>素数・公倍数・公約数の覚え方【中学準備にも役立つ】 | にじゅうまる。算数ドリル</title>
+<meta name="description" content="小学生で学ぶ素数・最大公約数・最小公倍数の意味と求め方を分かりやすく解説。中学数学の準備にもなります。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.nijumaru-drill.com/08_prime-numbers.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
+<style>*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line-height:1.8;}
+@media(min-width:640px){body{max-width:680px;margin:0 auto;}}
+.header{background:#122A64;padding:20px;}
+.header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
+.header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
+.content{padding:24px 20px 48px;}
+.eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
+.eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
+h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
+h3{font-size:15px;font-weight:700;color:#1E293B;margin:22px 0 8px;}
+p{font-size:14px;color:#374151;margin-bottom:14px;}
+ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
+ul li,ol li{margin-bottom:8px;}
+.tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
+.tip-box p{margin:0;font-size:14px;color:#14532D;}
+.warn-box{background:#FEF9C3;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #EAB308;}
+.warn-box p{margin:0;font-size:14px;color:#713F12;}
+.cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
+.cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
+.cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
+footer a{color:#94A3B8;text-decoration:underline;}</style>
+<script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
+</head>
+<body>
+<div class="header">
+  <a href="/">← トップに戻る</a>
+  <h1>素数・公倍数・公約数の覚え方</h1>
+</div>
+<div class="content">
+<div class="eyecatch"><p>🔍 素数・公倍数・公約数は中学数学の土台。意味を正確に理解して、確実に計算できるようにしましょう。</p></div>
+
+<h2>素数とは何か</h2>
+<p>素数とは「1と自分自身以外に約数を持たない数」のことです。2, 3, 5, 7, 11, 13, 17, 19, 23, 29…と続きます。1は素数ではありません。2だけが偶数の素数です。</p>
+<div class="tip-box"><p>💡 100以下の素数は25個。「エラトステネスの篩（ふるい）」という方法で素数を効率よく見つけられます。1〜100を書いて、2の倍数・3の倍数…を消していく方法です。</p></div>
+
+<h2>約数の見つけ方</h2>
+<p>約数とは「割り切れる数（あまりが0になる数）」のことです。「12の約数」を求める場合：</p>
+<ol>
+  <li>1から順番に12を割ってみる</li>
+  <li>12÷1＝12 ✅ → 1と12が約数</li>
+  <li>12÷2＝6 ✅ → 2と6が約数</li>
+  <li>12÷3＝4 ✅ → 3と4が約数</li>
+  <li>12÷4＝3 ✅（既出）→ 終了</li>
+</ol>
+<p>12の約数：1, 2, 3, 4, 6, 12の6個。ペアで探す（1と12、2と6、3と4）と漏れが防げます。</p>
+
+<h2>最大公約数（GCD）の求め方</h2>
+<p>2つ以上の数に共通する約数の中で最も大きいものが最大公約数です。</p>
+<p>「12と18の最大公約数」：</p>
+<ul>
+  <li>12の約数：1, 2, 3, 4, 6, 12</li>
+  <li>18の約数：1, 2, 3, 6, 9, 18</li>
+  <li>共通の約数：1, 2, 3, 6 → 最大公約数は6</li>
+</ul>
+<div class="tip-box"><p>💡 大きな数の最大公約数はユークリッドの互除法が便利。「大÷小のあまりを求め、小とあまりで同じ計算を繰り返す」方法です。中学でも使います。</p></div>
+
+<h2>倍数と最小公倍数（LCM）</h2>
+<p>倍数とは「ある数を整数倍した数」のことです。「4の倍数」：4, 8, 12, 16, 20, 24…</p>
+<p>「4と6の最小公倍数」：</p>
+<ul>
+  <li>4の倍数：4, 8, 12, 16, 20, 24…</li>
+  <li>6の倍数：6, 12, 18, 24…</li>
+  <li>共通の倍数：12, 24, 36… → 最小公倍数は12</li>
+</ul>
+
+<h2>最大公約数・最小公倍数の使い方</h2>
+<p>実際の問題での使い方：</p>
+<ul>
+  <li><strong>分数の約分：</strong>分子と分母の最大公約数で割る（6/8 → GCD(6,8)=2 → 3/4）</li>
+  <li><strong>通分：</strong>分母の最小公倍数を新しい分母にする（1/4+1/6 → LCM(4,6)=12 → 3/12+2/12）</li>
+  <li><strong>文章問題：</strong>「2種類のものが同時に0になる時」→最小公倍数を使う</li>
+</ul>
+<div class="warn-box"><p>⚠️ 最大公約数と最小公倍数を混同するミスが多いです。「最大公約数は割り算（分数の簡略化）、最小公倍数は足し算（通分）」と覚えておきましょう。</p></div>
+
+<h2>中学数学への橋渡し</h2>
+<p>素数・公約数・公倍数は中学数学（因数分解・通分・有理化など）の基礎です。小学校のうちにしっかり理解しておくことで、中学以降の学習がスムーズになります。特に最大公約数を使った「すだれ算（連除法）」は中学受験でも頻出の技術です。</p>
+<div style="margin:24px 0;text-align:center;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
+  <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 おすすめ教材</div>
+  <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>
+      <div><div style="font-size:13px;font-weight:700;color:#0C4A6E;">Amazon Kids+</div><div style="font-size:12px;color:#0369A1;">本・動画・知育アプリ 数千点が読み放題。1か月無料体験あり。</div></div>
+    </div>
+  </a>
+  <div style="font-size:10px;color:#94A3B8;margin-top:6px;text-align:center;">※ アフィリエイトリンクを含みます</div>
+</div>
+<div class="cta"><p>無料・アプリ不要で今すぐ練習できます！</p><a href="/">にじゅうまる。算数ドリルをやってみる →</a></div>
+<div style="margin:24px 0;text-align:center;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<div class="cta" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);"><p>100問まとめドリルや苦手特化はプレミアムで。</p><a href="/premium.html" style="color:#6D28D9;">プレミアム機能を見る</a></div>
+</div>
+<footer>
+  © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
+  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
+  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
+  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
+  <a href="/about.html">サイトについて</a>
+</footer>
+</body>
+</html>

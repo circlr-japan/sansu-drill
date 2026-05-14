@@ -1,0 +1,58 @@
+name: 週次記事公開
+
+on:
+  schedule:
+    # 毎週月曜日 午前9時JST (UTC 00:00)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:  # 手動実行も可能
+
+jobs:
+  publish-article:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: 最古のドラフト記事を公開
+        run: |
+          # drafts/ 内で最も名前が若いファイルを取得
+          DRAFT=$(ls drafts/*.html 2>/dev/null | sort | head -1)
+
+          if [ -z "$DRAFT" ]; then
+            echo "✅ 公開するドラフト記事がありません"
+            exit 0
+          fi
+
+          # ファイル名から番号プレフィックスを除去して公開先ファイル名を決定
+          BASENAME=$(basename "$DRAFT")
+          PUBNAME=$(echo "$BASENAME" | sed 's/^[0-9]*_//')
+
+          echo "📝 公開: $BASENAME → $PUBNAME"
+
+          # ルートディレクトリにコピー
+          cp "$DRAFT" "$PUBNAME"
+
+          # drafts/ から削除
+          rm "$DRAFT"
+
+          # sitemap.xml に追加（既存でなければ）
+          TODAY=$(date '+%Y-%m-%d')
+          URL="https://www.nijumaru-drill.com/${PUBNAME}"
+          if ! grep -q "$URL" sitemap.xml; then
+            NEW_ENTRY="  <url><loc>${URL}</loc><lastmod>${TODAY}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>"
+            sed -i "s|</urlset>|${NEW_ENTRY}\n</urlset>|" sitemap.xml
+            echo "📍 sitemap更新: $PUBNAME"
+          fi
+
+          echo "PUBLISHED=$PUBNAME" >> $GITHUB_ENV
+
+      - name: コミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add -A
+          git diff --staged --quiet || git commit -m "週次記事公開: ${{ env.PUBLISHED }} ($(date '+%Y-%m-%d'))"
+          git push
