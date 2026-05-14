@@ -1,0 +1,31 @@
+name: 週次記事公開
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: 最古のドラフトを公開
+        run: |
+          DRAFT=$(ls drafts/*.html 2>/dev/null | sort | head -1)
+          if [ -z "$DRAFT" ]; then echo "記事なし"; exit 0; fi
+          BASENAME=$(basename "$DRAFT")
+          PUBNAME=$(echo "$BASENAME" | sed 's/^[0-9]*_//')
+          cp "$DRAFT" "$PUBNAME"
+          rm "$DRAFT"
+          TODAY=$(date '+%Y-%m-%d')
+          URL="https://www.nijumaru-drill.com/${PUBNAME}"
+          grep -q "$URL" sitemap.xml || sed -i "s|</urlset>|  <url><loc>${URL}</loc><lastmod>${TODAY}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n</urlset>|" sitemap.xml
+          echo "PUBLISHED=$PUBNAME" >> $GITHUB_ENV
+      - name: プッシュ
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          git diff --staged --quiet || git commit -m "週次公開: ${{ env.PUBLISHED }}"
+          git push
