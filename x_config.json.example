@@ -1,0 +1,6 @@
+{
+  "api_key": "ここにAPI Keyを貼り付け",
+  "api_secret": "ここにAPI Key Secretを貼り付け",
+  "access_token": "ここにAccess Tokenを貼り付け",
+  "access_token_secret": "ここにAccess Token Secretを貼り付け"
+}
