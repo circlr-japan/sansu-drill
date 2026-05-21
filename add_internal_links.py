@@ -33,6 +33,21 @@ PAGES = {
     "summer-math.html":          ("夏休みの算数学習法", "☀️"),
     "percentage-guide.html":     ("割合・百分率の攻略法", "📊"),
     "how-to-use.html":           ("ドリルの効果的な使い方", "🖊️"),
+    # 新規追加記事
+    "addition-guide.html":       ("たし算の完全ガイド", "➕"),
+    "subtraction-guide.html":    ("ひき算の完全ガイド", "➖"),
+    "multiplication-guide.html": ("かけ算・掛け算の攻略法", "✖️"),
+    "time-calculation.html":     ("時刻と時間の計算法", "⏰"),
+    "large-numbers.html":        ("大きな数の読み方・計算", "🏔️"),
+    "ratio-guide.html":          ("比の完全ガイド", "⚖️"),
+    "speed-distance.html":       ("速さ・距離・時間の攻略", "🏃"),
+    "prime-numbers.html":        ("素数・約数・倍数の学び方", "🔍"),
+    "unit-conversion.html":      ("単位変換を完全マスター", "📏"),
+    "math-game.html":            ("算数ゲームで楽しく学ぶ", "🎮"),
+    "notebook-method.html":      ("算数ノートの書き方・使い方", "📓"),
+    "review-method.html":        ("効果的な算数の復習法", "🔁"),
+    "tablet-learning.html":      ("タブレット・アプリ学習法", "📱"),
+    "parent-support.html":       ("保護者のための算数サポート", "🤝"),
 }
 
 # 関連記事マッピング: {filename: [関連ページのfilename, ...]}
@@ -63,6 +78,21 @@ RELATED = {
     "summer-math.html": ["study-routine.html", "grade-guide.html", "advance-study.html", "study-habits.html"],
     "percentage-guide.html": ["decimal-fraction-guide.html", "fractions-guide.html", "grade-5-tips.html", "word-problems.html"],
     "how-to-use.html": ["grade-guide.html", "study-habits.html", "math-anxiety.html", "teaching-tips.html"],
+    # 新規追加記事
+    "addition-guide.html":       ["subtraction-guide.html", "kuku-tips.html", "no-mistakes.html", "grade-1-tips.html"],
+    "subtraction-guide.html":    ["addition-guide.html", "no-mistakes.html", "calculation-power.html", "grade-2-tips.html"],
+    "multiplication-guide.html": ["kuku-tips.html", "division-guide.html", "calculation-power.html", "grade-3-tips.html"],
+    "time-calculation.html":     ["grade-2-tips.html", "grade-3-tips.html", "unit-conversion.html", "no-mistakes.html"],
+    "large-numbers.html":        ["grade-3-tips.html", "grade-4-tips.html", "calculation-power.html", "mental-math.html"],
+    "ratio-guide.html":          ["percentage-guide.html", "fractions-guide.html", "grade-5-tips.html", "word-problems.html"],
+    "speed-distance.html":       ["ratio-guide.html", "percentage-guide.html", "grade-5-tips.html", "word-problems.html"],
+    "prime-numbers.html":        ["fractions-guide.html", "division-guide.html", "grade-5-tips.html", "grade-4-tips.html"],
+    "unit-conversion.html":      ["grade-4-tips.html", "time-calculation.html", "large-numbers.html", "study-habits.html"],
+    "math-game.html":            ["study-habits.html", "math-anxiety.html", "kuku-tips.html", "how-to-use.html"],
+    "notebook-method.html":      ["study-habits.html", "study-routine.html", "no-mistakes.html", "how-to-use.html"],
+    "review-method.html":        ["study-habits.html", "study-routine.html", "test-prep.html", "no-mistakes.html"],
+    "tablet-learning.html":      ["how-to-use.html", "math-game.html", "study-habits.html", "math-anxiety.html"],
+    "parent-support.html":       ["teaching-tips.html", "math-anxiety.html", "study-habits.html", "grade-guide.html"],
 }
 
 def build_related_section(filename):
