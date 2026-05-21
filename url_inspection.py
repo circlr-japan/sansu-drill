@@ -35,8 +35,9 @@ SITEMAP_URL = f"{SITE_BASE}/sitemap.xml"
 # webmasters スコープ（readonlyではなくwrite込み）
 SCOPES = ["https://www.googleapis.com/auth/webmasters"]
 
-# インデックス申請優先URL（新しい記事順）
-PRIORITY_URLS = [
+# インデックス申請優先URL（バッチ管理）
+# バッチ1（2026-05-22 実施済み）: 5/22公開の10記事
+BATCH_1 = [
     "/parent-support.html",
     "/tablet-learning.html",
     "/review-method.html",
@@ -48,6 +49,23 @@ PRIORITY_URLS = [
     "/ratio-guide.html",
     "/large-numbers.html",
 ]
+
+# バッチ2（次回実施用）: 5/18〜5/21公開の4記事 + 主要記事6件
+BATCH_2 = [
+    "/addition-guide.html",
+    "/subtraction-guide.html",
+    "/multiplication-guide.html",
+    "/time-calculation.html",
+    "/geometry-guide.html",
+    "/kuku-tips.html",
+    "/percentage-guide.html",
+    "/fractions-guide.html",
+    "/word-problems.html",
+    "/mental-math.html",
+]
+
+# 現在のバッチ（切り替えて使用）
+PRIORITY_URLS = BATCH_2
 
 
 def get_credentials():
