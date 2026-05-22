@@ -64,8 +64,60 @@ BATCH_2 = [
     "/mental-math.html",
 ]
 
+# バッチ3（2026-05-23 実施予定）: addition-guide再申請 + 難易度別ページ先行9件
+BATCH_3 = [
+    "/addition-guide.html",
+    "/tasizan-kuriagari-nashi.html",
+    "/tasizan-kuriagari-ari.html",
+    "/tasizan-2keta.html",
+    "/tasizan-hissan.html",
+    "/hikizan-kurisagari-nashi.html",
+    "/hikizan-kurisagari-ari.html",
+    "/hikizan-2keta.html",
+    "/hikizan-hissan.html",
+]
+
+# バッチ4（2026-05-24 実施予定）: 九九段別
+BATCH_4 = [
+    "/kuku-1dan.html",
+    "/kuku-2dan.html",
+    "/kuku-3dan.html",
+    "/kuku-4dan.html",
+    "/kuku-5dan.html",
+    "/kuku-6dan.html",
+    "/kuku-7dan.html",
+    "/kuku-8dan.html",
+    "/kuku-9dan.html",
+]
+
+# バッチ5（2026-05-25 実施予定）: わり算・かけ算難易度別
+BATCH_5 = [
+    "/warizan-kantan.html",
+    "/warizan-amari.html",
+    "/warizan-2keta.html",
+    "/warizan-hissan-kantan.html",
+    "/warizan-hissan-2keta.html",
+    "/kakizan-2keta-1keta.html",
+    "/kakizan-hissan-kantan.html",
+    "/kakizan-hissan-2keta.html",
+    "/suken-guide.html",
+]
+
+# バッチ6（2026-05-26 実施予定）: 分数・小数難易度別
+BATCH_6 = [
+    "/bunsuu-doubunmo.html",
+    "/bunsuu-ibunmo.html",
+    "/bunsuu-taisuu.html",
+    "/bunsuu-kakizan.html",
+    "/bunsuu-warizan.html",
+    "/syousuu-tasizan.html",
+    "/syousuu-kakizan.html",
+    "/syousuu-warizan.html",
+    "/grade-6-tips.html",
+]
+
 # 現在のバッチ（切り替えて使用）
-PRIORITY_URLS = BATCH_2
+PRIORITY_URLS = BATCH_3
 
 
 def get_credentials():
