@@ -58,5 +58,113 @@
     "verdict": "NEUTRAL",
     "coverage_state": "Discovered - currently not indexed",
     "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/addition-guide.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/subtraction-guide.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-21"
+  },
+  "https://www.nijumaru-drill.com/multiplication-guide.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-21"
+  },
+  "https://www.nijumaru-drill.com/time-calculation.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-21"
+  },
+  "https://www.nijumaru-drill.com/geometry-guide.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-14"
+  },
+  "https://www.nijumaru-drill.com/kuku-tips.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-14"
+  },
+  "https://www.nijumaru-drill.com/percentage-guide.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-21"
+  },
+  "https://www.nijumaru-drill.com/fractions-guide.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-21"
+  },
+  "https://www.nijumaru-drill.com/word-problems.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-14"
+  },
+  "https://www.nijumaru-drill.com/mental-math.html": {
+    "checked": "2026-05-22",
+    "verdict": "PASS",
+    "coverage_state": "Submitted and indexed",
+    "last_crawl": "2026-05-21"
+  },
+  "https://www.nijumaru-drill.com/tasizan-kuriagari-nashi.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/tasizan-kuriagari-ari.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/tasizan-2keta.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/tasizan-hissan.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/hikizan-kurisagari-nashi.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/hikizan-kurisagari-ari.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/hikizan-2keta.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
+  },
+  "https://www.nijumaru-drill.com/hikizan-hissan.html": {
+    "checked": "2026-05-23",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawl": "未クロール"
   }
 }
