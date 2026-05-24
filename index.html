@@ -278,6 +278,10 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .hero-sub{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;}
 .hero-badge{display:inline-block;margin-top:12px;background:#FFC800;border-radius:100px;padding:5px 18px;font-size:12px;color:#122A64;font-weight:700;}
 .section-title{font-size:13px;font-weight:600;color:var(--text-muted);letter-spacing:0.8px;text-transform:uppercase;padding:20px 16px 10px;}
+details summary::-webkit-details-marker{display:none;}
+details[open] summary span:last-child{transform:rotate(180deg);}
+details summary span:last-child{display:inline-block;transition:transform .2s;}
+details[open]>summary{border-radius:12px 12px 0 0!important;}
 .grade-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px;}
 @media(min-width:480px){.grade-grid{grid-template-columns:1fr 1fr 1fr;}}
 .grade-card{background:var(--surface);border-radius:var(--radius);padding:20px 14px 16px;text-align:center;cursor:pointer;box-shadow:var(--shadow);border:2px solid transparent;transition:transform 0.15s,box-shadow 0.15s;-webkit-tap-highlight-color:transparent;user-select:none;}
@@ -687,6 +691,171 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 
+  <!-- ===== テーマ別ナビゲーション ===== -->
+  <div style="padding:20px 16px 8px;">
+    <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;">🔍 何を練習する？</div>
+    <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px;">テーマをタップして探す</div>
+
+    <!-- 四則計算 -->
+    <details style="margin-bottom:8px;">
+      <summary style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;list-style:none;-webkit-appearance:none;">
+        <span style="font-size:22px;">➕</span>
+        <div style="flex:1;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">四則計算</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:1px;">たし算・ひき算・かけ算・わり算</div>
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);">▼</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:12px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <a href="/tasizan-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➕ たし算の基本</span></a>
+          <a href="/tasizan-kuriagari.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➕ くり上がりたし算</span></a>
+          <a href="/hikizan-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➖ ひき算の基本</span></a>
+          <a href="/hikizan-kurisagari.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➖ くり下がりひき算</span></a>
+          <a href="/kakizan-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">✖️ かけ算の基本</span></a>
+          <a href="/kakizan-hissan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">✖️ かけ算の筆算</span></a>
+          <a href="/warizan-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➗ わり算の基本</span></a>
+          <a href="/warizan-hissan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➗ わり算の筆算</span></a>
+          <a href="/kakko-keisan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">( ) かっこの計算</span></a>
+          <a href="/wahiku-kongo.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔢 四則混合計算</span></a>
+          <a href="/anzan-practice.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🧠 暗算の練習</span></a>
+          <a href="/keisan-hayaku.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">⚡ 計算を速くする</span></a>
+        </div>
+      </div>
+    </details>
+
+    <!-- 分数・小数 -->
+    <details style="margin-bottom:8px;">
+      <summary style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;list-style:none;-webkit-appearance:none;">
+        <span style="font-size:22px;">½</span>
+        <div style="flex:1;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">分数・小数</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:1px;">通分・約分・分数の四則計算・小数</div>
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);">▼</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:12px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <a href="/bunsuu-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">½ 分数の基本</span></a>
+          <a href="/bunsuu-tsuubun.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">½ 通分のやり方</span></a>
+          <a href="/bunsuu-yakubun.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">½ 約分のやり方</span></a>
+          <a href="/bunsuu-tasizan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">½ 分数のたし算</span></a>
+          <a href="/bunsuu-hikizan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">½ 分数のひき算</span></a>
+          <a href="/bunsuu-kakizan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">½ 分数のかけ算</span></a>
+          <a href="/bunsuu-warizan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">½ 分数のわり算</span></a>
+          <a href="/syousuu-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔢 小数の基本</span></a>
+          <a href="/syousuu-tasizan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔢 小数のたし算</span></a>
+          <a href="/syousuu-warizan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔢 小数のわり算</span></a>
+          <a href="/shosu-to-bunsuu.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔄 小数と分数の変換</span></a>
+          <a href="/mondai-bunsuu.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📝 分数の文章題</span></a>
+        </div>
+      </div>
+    </details>
+
+    <!-- 図形・面積 -->
+    <details style="margin-bottom:8px;">
+      <summary style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;list-style:none;-webkit-appearance:none;">
+        <span style="font-size:22px;">📐</span>
+        <div style="flex:1;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">図形・面積・体積</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:1px;">三角形・四角形・円・立体・角度</div>
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);">▼</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:12px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <a href="/menseki-sankakukei.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔺 三角形の面積</span></a>
+          <a href="/menseki-heikoushikakkei.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">▭ 平行四辺形の面積</span></a>
+          <a href="/menseki-enza.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">⭕ 円の面積</span></a>
+          <a href="/menseki-fukuzatsu.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔷 複雑な図形の面積</span></a>
+          <a href="/kakudo-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📐 角度の基本</span></a>
+          <a href="/sankakkei-shurui.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔺 三角形の種類</span></a>
+          <a href="/shikakkei-seishitsu.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">◼ 四角形の性質</span></a>
+          <a href="/taiseki-kiso.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📦 体積の基本</span></a>
+          <a href="/taiseki-rittai.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🧊 いろいろな立体</span></a>
+          <a href="/mondai-menseki.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📝 面積の文章題</span></a>
+        </div>
+      </div>
+    </details>
+
+    <!-- 文章題 -->
+    <details style="margin-bottom:8px;">
+      <summary style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;list-style:none;-webkit-appearance:none;">
+        <span style="font-size:22px;">📝</span>
+        <div style="flex:1;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">文章題</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:1px;">速さ・割合・年齢算・つるかめ算など</div>
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);">▼</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:12px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <a href="/mondai-tasizan2.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➕ たし算の文章題</span></a>
+          <a href="/mondai-hikizan2.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➖ ひき算の文章題</span></a>
+          <a href="/mondai-kakizan2.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">✖️ かけ算の文章題</span></a>
+          <a href="/mondai-warizan2.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➗ わり算の文章題</span></a>
+          <a href="/mondai-sokudo.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🏃 速さの問題</span></a>
+          <a href="/mondai-sokudo2.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🏃 速さの応用</span></a>
+          <a href="/mondai-wariai.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📊 割合の問題</span></a>
+          <a href="/mondai-waribiki.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🛒 割引・売買の問題</span></a>
+          <a href="/mondai-jikan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">⏱ 時間の文章題</span></a>
+          <a href="/mondai-tsurukami.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🐢 つるかめ算</span></a>
+          <a href="/mondai-nenrei.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">👨‍👩‍👧 年齢算</span></a>
+          <a href="/mondai-ryoushin.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">➕ 和差算</span></a>
+          <a href="/mondai-bunrui.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📋 文章題の種類一覧</span></a>
+        </div>
+      </div>
+    </details>
+
+    <!-- 単位・換算 -->
+    <details style="margin-bottom:8px;">
+      <summary style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;list-style:none;-webkit-appearance:none;">
+        <span style="font-size:22px;">📏</span>
+        <div style="flex:1;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">単位・換算</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:1px;">長さ・重さ・時間・面積・体積の単位</div>
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);">▼</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:12px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <a href="/tani-nagasa.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📏 長さの単位</span></a>
+          <a href="/tani-omosa.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">⚖️ 重さの単位</span></a>
+          <a href="/tani-kaseki.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">💧 かさの単位</span></a>
+          <a href="/jikan-yomikata.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🕐 時計の読み方</span></a>
+          <a href="/jikan-keisan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">⏱ 時間の計算</span></a>
+          <a href="/jikan-henkan.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔄 時間の換算</span></a>
+          <a href="/tanihenkan-guide.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📋 単位換算まとめ</span></a>
+          <a href="/gaisuu-shishagoonyuu.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🔢 四捨五入</span></a>
+        </div>
+      </div>
+    </details>
+
+    <!-- 割合・比・速さ -->
+    <details style="margin-bottom:8px;">
+      <summary style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;list-style:none;-webkit-appearance:none;">
+        <span style="font-size:22px;">📊</span>
+        <div style="flex:1;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">割合・比・速さ</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:1px;">百分率・歩合・比の値・速さの3公式</div>
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);">▼</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:12px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <a href="/wariai-guide.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📊 割合の基本</span></a>
+          <a href="/hiritu-guide.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📊 比率・百分率</span></a>
+          <a href="/hi-guide.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📊 比の基本</span></a>
+          <a href="/sokudo-guide.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🏃 速さの基本</span></a>
+          <a href="/mondai-wariai.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📝 割合の文章題</span></a>
+          <a href="/mondai-waribiki.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">🛒 割引・売買の問題</span></a>
+          <a href="/heikin-guide.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📊 平均の求め方</span></a>
+          <a href="/hirei-hanpirei.html" style="display:block;background:var(--card);border-radius:8px;padding:9px 10px;text-decoration:none;border:1px solid var(--border);"><span style="font-size:11px;font-weight:600;color:var(--text);">📈 比例・反比例</span></a>
+        </div>
+      </div>
+    </details>
+
+  </div>
   <!-- ===== 学年別まとめセクション ===== -->
   <div style="padding:0 16px 8px;">
     <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.8px;margin-bottom:12px;">📚 学年別 全単元まとめ</div>
