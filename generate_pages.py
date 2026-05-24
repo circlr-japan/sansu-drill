@@ -33,7 +33,7 @@ TEMPLATE = """\
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | にじゅうまる。算数ドリル</title>
-<meta name="description" content="{description}">
+<meta name="description" content="{description}｜無料・印刷不要で小学生が使える算数ドリルサイト「にじゅうまる。」">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{BASE_URL}/{filename}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
