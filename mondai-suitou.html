@@ -99,6 +99,54 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p>容積 = 20×30×40 = 24000cm³ = 24L　　時間 = 24÷2 = <strong>12分</strong></p>
 <div class="tip-box"><p>💡 1cm³ = 1mL = 0.001L の換算を覚えましょう。</p></div>
 
+
+<div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
+  <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:4px;">✏️ 練習してみよう</div>
+  <div style="font-size:11px;color:#3B82F6;margin-bottom:16px;">解いたら「答えを見る」で確認しよう</div>
+  
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q1．りんごが32個あり、1箱8個ずつ入れると何箱できますか？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 32÷8＝4箱</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q2．1個120円のケーキを5個買うと合計いくら？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 120×5＝600円</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q3．兄の身長は160cm、弟は145cm。差は何cm？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 160－145＝15cm</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q4．時速50kmで1時間30分走ると何km？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 50×1.5＝75km</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q5．クラス40人のうち60%が給食を残さなかった。何人？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 40×0.6＝24人</div>
+</div>
+  <script>
+  function toggleAns(btn){
+    var box=btn.nextElementSibling;
+    if(box.style.display==='none'){box.style.display='block';btn.textContent='答えを隠す';btn.style.background='#64748B';}
+    else{box.style.display='none';btn.textContent='答えを見る';btn.style.background='#3B82F6';}
+  }
+  </script>
+</div>
+
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/taiseki-kiso.html">体積の基本を復習 →</a>

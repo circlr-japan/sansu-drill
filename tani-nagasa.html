@@ -133,6 +133,54 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </ul>
 <div class="warn-box"><p>⚠️ テストでは「単位を変換してから計算」が必要な問題が多く出ます。先に単位をそろえる習慣をつけましょう。</p></div>
 
+
+<div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
+  <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:4px;">✏️ 練習してみよう</div>
+  <div style="font-size:11px;color:#3B82F6;margin-bottom:16px;">解いたら「答えを見る」で確認しよう</div>
+  
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q1．3km＝何m？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 3000m</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q2．250cm＝何m何cm？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 2m50cm</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q3．2kg500g＝何g？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 2500g</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q4．3L500mL＝何mL？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 3500mL</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q5．1m²＝何cm²？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 10000cm²</div>
+</div>
+  <script>
+  function toggleAns(btn){
+    var box=btn.nextElementSibling;
+    if(box.style.display==='none'){box.style.display='block';btn.textContent='答えを隠す';btn.style.background='#64748B';}
+    else{box.style.display='none';btn.textContent='答えを見る';btn.style.background='#3B82F6';}
+  }
+  </script>
+</div>
+
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/grade-3.html">3年生のドリルをやってみる →</a>

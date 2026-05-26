@@ -142,6 +142,54 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </ul>
 <div class="tip-box"><p>💡 5年生でつまずいたまま6年生になると中学数学にも影響します。夏休みに割合・速さを重点的に復習しましょう。</p></div>
 
+
+<div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
+  <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:4px;">✏️ 練習してみよう</div>
+  <div style="font-size:11px;color:#3B82F6;margin-bottom:16px;">解いたら「答えを見る」で確認しよう</div>
+  
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q1．3×7＝？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 21</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q2．1/2＋1/3＝？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 5/6</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q3．三角形の面積の公式は？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 底辺×高さ÷2</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q4．時速60kmで2時間走ると何km？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 120km</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q5．80の25%は？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 20</div>
+</div>
+  <script>
+  function toggleAns(btn){
+    var box=btn.nextElementSibling;
+    if(box.style.display==='none'){box.style.display='block';btn.textContent='答えを隠す';btn.style.background='#64748B';}
+    else{box.style.display='none';btn.textContent='答えを見る';btn.style.background='#3B82F6';}
+  }
+  </script>
+</div>
+
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/grade-5.html">5年生のドリルをやってみる →</a>

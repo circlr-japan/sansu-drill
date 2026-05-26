@@ -130,6 +130,54 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p>0〜2の数直線に0.1刻みで点を打つ練習が効果的です。どこにどの小数があるかを視覚で確認しましょう。</p>
 
 
+
+<div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
+  <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:4px;">✏️ 練習してみよう</div>
+  <div style="font-size:11px;color:#3B82F6;margin-bottom:16px;">解いたら「答えを見る」で確認しよう</div>
+  
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q1．1.5 ＋ 2.3 ＝ ?</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 3.8</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q2．4.0 － 1.7 ＝ ?</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 2.3</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q3．0.5 × 4 ＝ ?</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 2.0</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q4．3.6 ÷ 0.9 ＝ ?</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 4</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q5．0.1 が 25 個あつまると？</div>
+  
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ 2.5</div>
+</div>
+  <script>
+  function toggleAns(btn){
+    var box=btn.nextElementSibling;
+    if(box.style.display==='none'){box.style.display='block';btn.textContent='答えを隠す';btn.style.background='#64748B';}
+    else{box.style.display='none';btn.textContent='答えを見る';btn.style.background='#3B82F6';}
+  }
+  </script>
+</div>
+
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/grade-3.html">3年生のドリルをやってみる →</a>

@@ -97,6 +97,8 @@ footer a{{color:#94A3B8;text-decoration:underline;}}
 
 {body_html}
 
+{problems_html}
+
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="{cta_href}">{cta_label} →</a>
@@ -8808,6 +8810,193 @@ PAGES = [
 # ヘルパー関数
 # ============================================================
 
+# ============================================================
+# カテゴリ別 デフォルト練習問題
+# ============================================================
+DEFAULT_PROBLEMS = {
+    "tasizan": [
+        {"q": "3 ＋ 5 ＝ ?", "a": "8"},
+        {"q": "7 ＋ 6 ＝ ?", "a": "13（くり上がりに注意）"},
+        {"q": "24 ＋ 38 ＝ ?", "a": "62"},
+        {"q": "りんごが12個、みかんが15個あります。合わせて何個？", "a": "12＋15＝27個"},
+        {"q": "145 ＋ 267 ＝ ?", "a": "412"},
+    ],
+    "hikizan": [
+        {"q": "9 － 4 ＝ ?", "a": "5"},
+        {"q": "13 － 7 ＝ ?", "a": "6（くり下がりに注意）"},
+        {"q": "52 － 29 ＝ ?", "a": "23"},
+        {"q": "クッキーが30枚あり、8枚食べました。残りは何枚？", "a": "30－8＝22枚"},
+        {"q": "200 － 147 ＝ ?", "a": "53"},
+    ],
+    "kakizan": [
+        {"q": "3 × 7 ＝ ?", "a": "21"},
+        {"q": "8 × 9 ＝ ?", "a": "72"},
+        {"q": "1個50円のあめを6個買うといくら？", "a": "50×6＝300円"},
+        {"q": "23 × 4 ＝ ?", "a": "92（筆算で計算しよう）"},
+        {"q": "15 × 12 ＝ ?", "a": "180"},
+    ],
+    "kakezan": [
+        {"q": "4 × 8 ＝ ?", "a": "32"},
+        {"q": "7 × 7 ＝ ?", "a": "49"},
+        {"q": "6の段の九九をすべて言えますか？6,12,18,24…", "a": "6,12,18,24,30,36,42,48,54"},
+        {"q": "25 × 4 ＝ ?（工夫して計算しよう）", "a": "100（25×4＝100と覚えると便利）"},
+        {"q": "1本80円の鉛筆を9本買うといくら？", "a": "80×9＝720円"},
+    ],
+    "warizan": [
+        {"q": "24 ÷ 6 ＝ ?", "a": "4"},
+        {"q": "35 ÷ 7 ＝ ?", "a": "5"},
+        {"q": "48 ÷ 8 ＝ ?", "a": "6"},
+        {"q": "クッキー32枚を8人で等分すると1人何枚？", "a": "32÷8＝4枚"},
+        {"q": "75 ÷ 5 ＝ ?", "a": "15"},
+    ],
+    "bunsuu": [
+        {"q": "1/2 ＋ 1/3 ＝ ?", "a": "3/6＋2/6＝5/6"},
+        {"q": "3/4 － 1/4 ＝ ?", "a": "2/4＝1/2"},
+        {"q": "2/3 × 3/4 ＝ ?", "a": "6/12＝1/2"},
+        {"q": "1/2 ÷ 3/4 ＝ ?（÷は逆数をかける）", "a": "1/2×4/3＝4/6＝2/3"},
+        {"q": "6/8 を約分すると？", "a": "3/4"},
+    ],
+    "syousuu": [
+        {"q": "1.5 ＋ 2.3 ＝ ?", "a": "3.8"},
+        {"q": "4.0 － 1.7 ＝ ?", "a": "2.3"},
+        {"q": "0.5 × 4 ＝ ?", "a": "2.0"},
+        {"q": "3.6 ÷ 0.9 ＝ ?", "a": "4"},
+        {"q": "0.1 が 25 個あつまると？", "a": "2.5"},
+    ],
+    "menseki": [
+        {"q": "縦4cm・横6cmの長方形の面積は？", "a": "4×6＝24cm²"},
+        {"q": "底辺8cm・高さ5cmの三角形の面積は？", "a": "8×5÷2＝20cm²"},
+        {"q": "半径3cmの円の面積は？（π＝3.14）", "a": "3×3×3.14＝28.26cm²"},
+        {"q": "一辺7cmの正方形の面積は？", "a": "7×7＝49cm²"},
+        {"q": "底辺6cm・高さ4cmの平行四辺形の面積は？", "a": "6×4＝24cm²"},
+    ],
+    "taiseki": [
+        {"q": "縦3cm・横4cm・高さ5cmの直方体の体積は？", "a": "3×4×5＝60cm³"},
+        {"q": "一辺6cmの立方体の体積は？", "a": "6×6×6＝216cm³"},
+        {"q": "1L＝何cm³？", "a": "1000cm³"},
+        {"q": "底面積が12cm²・高さが7cmの角柱の体積は？", "a": "12×7＝84cm³"},
+        {"q": "半径2cm・高さ10cmの円柱の体積は？（π＝3.14）", "a": "2×2×3.14×10＝125.6cm³"},
+    ],
+    "jikan": [
+        {"q": "2時間30分＝何分？", "a": "150分"},
+        {"q": "180分＝何時間何分？", "a": "3時間0分"},
+        {"q": "午前10時から午後2時まで何時間？", "a": "4時間"},
+        {"q": "1時間45分後の2時15分は何時何分？", "a": "4時00分"},
+        {"q": "1日＝何時間＝何分＝何秒？", "a": "24時間＝1440分＝86400秒"},
+    ],
+    "wariai": [
+        {"q": "80人のうち20人が参加。参加率は何%？", "a": "20÷80＝0.25＝25%"},
+        {"q": "定価1000円の20%引きは？", "a": "1000×0.8＝800円"},
+        {"q": "120は200の何%？", "a": "120÷200＝0.6＝60%"},
+        {"q": "原価500円に3割の利益を乗せた値段は？", "a": "500×1.3＝650円"},
+        {"q": "2割5分＝何%？", "a": "25%"},
+    ],
+    "sokudo": [
+        {"q": "時速60kmで3時間走ると何km？", "a": "60×3＝180km"},
+        {"q": "120kmを2時間で走ると時速何km？", "a": "120÷2＝時速60km"},
+        {"q": "時速80kmで240km走るのに何時間？", "a": "240÷80＝3時間"},
+        {"q": "分速50mで20分歩くと何m？", "a": "50×20＝1000m"},
+        {"q": "時速90kmを分速に直すと？", "a": "90÷60＝分速1.5km＝分速1500m"},
+    ],
+    "mondai": [
+        {"q": "りんごが32個あり、1箱8個ずつ入れると何箱できますか？", "a": "32÷8＝4箱"},
+        {"q": "1個120円のケーキを5個買うと合計いくら？", "a": "120×5＝600円"},
+        {"q": "兄の身長は160cm、弟は145cm。差は何cm？", "a": "160－145＝15cm"},
+        {"q": "時速50kmで1時間30分走ると何km？", "a": "50×1.5＝75km"},
+        {"q": "クラス40人のうち60%が給食を残さなかった。何人？", "a": "40×0.6＝24人"},
+    ],
+    "kakudo": [
+        {"q": "三角形の内角の和は何度？", "a": "180°"},
+        {"q": "四角形の内角の和は何度？", "a": "360°"},
+        {"q": "直角は何度？", "a": "90°"},
+        {"q": "ある三角形の2つの角が40°と70°のとき、残りの角は？", "a": "180－40－70＝70°"},
+        {"q": "正三角形の1つの角は何度？", "a": "60°"},
+    ],
+    "hi": [
+        {"q": "3:4の比の値は？", "a": "3÷4＝0.75"},
+        {"q": "2:5を簡単にすると？（もう簡単な比）", "a": "2:5（これ以上簡単にできない）"},
+        {"q": "6:9を簡単な比にすると？", "a": "2:3"},
+        {"q": "a:b＝3:4でa＝12のとき、b＝？", "a": "b＝16"},
+        {"q": "比例式 5:8＝x:24を解くと？", "a": "x＝15"},
+    ],
+    "tani": [
+        {"q": "3km＝何m？", "a": "3000m"},
+        {"q": "250cm＝何m何cm？", "a": "2m50cm"},
+        {"q": "2kg500g＝何g？", "a": "2500g"},
+        {"q": "3L500mL＝何mL？", "a": "3500mL"},
+        {"q": "1m²＝何cm²？", "a": "10000cm²"},
+    ],
+    "graph": [
+        {"q": "棒グラフで一番高い棒が表すものは？", "a": "最も数（量）が多いもの"},
+        {"q": "折れ線グラフで線が右上がりなら何を意味する？", "a": "数値が増えている（増加傾向）"},
+        {"q": "円グラフのすべての部分の%の合計は？", "a": "100%"},
+        {"q": "全体200人で35%が好きと答えた人数は？", "a": "200×0.35＝70人"},
+        {"q": "棒グラフと折れ線グラフの違いは？", "a": "棒グラフは量の比較、折れ線グラフは変化の様子を表す"},
+    ],
+    "grade": [
+        {"q": "3×7＝？", "a": "21"},
+        {"q": "1/2＋1/3＝？", "a": "5/6"},
+        {"q": "三角形の面積の公式は？", "a": "底辺×高さ÷2"},
+        {"q": "時速60kmで2時間走ると何km？", "a": "120km"},
+        {"q": "80の25%は？", "a": "20"},
+    ],
+    "drill": [
+        {"q": "6×8＝？", "a": "48"},
+        {"q": "72÷9＝？", "a": "8"},
+        {"q": "0.5＋0.7＝？", "a": "1.2"},
+        {"q": "三角形の内角の和は？", "a": "180°"},
+        {"q": "1kg＝何g？", "a": "1000g"},
+    ],
+    "default": [
+        {"q": "10＋7＝？", "a": "17"},
+        {"q": "15－8＝？", "a": "7"},
+        {"q": "3×6＝？", "a": "18"},
+        {"q": "20÷4＝？", "a": "5"},
+        {"q": "1/2＋1/4＝？", "a": "3/4"},
+    ],
+}
+
+def get_default_problems(filename):
+    """ファイル名からカテゴリを判定してデフォルト問題を返す"""
+    fn = filename.replace(".html", "")
+    for key in DEFAULT_PROBLEMS:
+        if key in fn:
+            return DEFAULT_PROBLEMS[key]
+    return DEFAULT_PROBLEMS["default"]
+
+
+def build_problems_html(problems_list):
+    """練習問題セクションのHTMLを生成"""
+    if not problems_list:
+        return ""
+    items = []
+    for i, p in enumerate(problems_list, 1):
+        hint_html = ""
+        if p.get("hint"):
+            hint_html = f'<div style="font-size:11px;color:#64748B;margin-top:4px;">💡 ヒント：{p["hint"]}</div>'
+        items.append(f"""
+<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+  <div style="font-size:13px;font-weight:700;color:#1E293B;margin-bottom:8px;">Q{i}．{p["q"]}</div>
+  {hint_html}
+  <button onclick="toggleAns(this)" style="margin-top:8px;background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer;">答えを見る</button>
+  <div class="ans-box" style="display:none;margin-top:10px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;color:#15803D;">✅ {p["a"]}</div>
+</div>""")
+    items_html = "\n".join(items)
+    return f"""
+<div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
+  <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:4px;">✏️ 練習してみよう</div>
+  <div style="font-size:11px;color:#3B82F6;margin-bottom:16px;">解いたら「答えを見る」で確認しよう</div>
+  {items_html}
+  <script>
+  function toggleAns(btn){{
+    var box=btn.nextElementSibling;
+    if(box.style.display==='none'){{box.style.display='block';btn.textContent='答えを隠す';btn.style.background='#64748B';}}
+    else{{box.style.display='none';btn.textContent='答えを見る';btn.style.background='#3B82F6';}}
+  }}
+  </script>
+</div>"""
+
+
 def build_faq_json(faq_list):
     items = []
     for item in faq_list:
@@ -8841,6 +9030,7 @@ def generate(page, force=False):
     if not force and os.path.exists(fpath):
         return False  # スキップ
 
+    problems = page.get("problems") or get_default_problems(page["filename"])
     html = TEMPLATE.format(
         BASE_URL   = BASE_URL,
         filename   = page["filename"],
@@ -8849,6 +9039,7 @@ def generate(page, force=False):
         h1         = page["h1"],
         eyecatch   = page["eyecatch"],
         body_html  = page["body_html"],
+        problems_html = build_problems_html(problems),
         faq_json   = build_faq_json(page["faq"]),
         cta_href   = page["cta_href"],
         cta_label  = page["cta_label"],
