@@ -9072,9 +9072,16 @@ DEFAULT_PROBLEMS = {
 def get_default_problems(filename):
     """ファイル名からカテゴリを判定してデフォルト問題を返す"""
     fn = filename.replace(".html", "")
+    parts = set(fn.split("-"))
     for key in DEFAULT_PROBLEMS:
-        if key in fn:
-            return DEFAULT_PROBLEMS[key]
+        # 短いキー（3文字以下）はハイフン区切りの完全一致のみ
+        # 長いキーは部分一致も許可
+        if len(key) <= 3:
+            if key in parts:
+                return DEFAULT_PROBLEMS[key]
+        else:
+            if key in fn:
+                return DEFAULT_PROBLEMS[key]
     return DEFAULT_PROBLEMS["default"]
 
 
