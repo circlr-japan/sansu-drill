@@ -64,10 +64,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "3×3魔方陣の1列の合計はなぜ15なの？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1〜9を全部足すと45で、それを3つの列に分けるので45÷3＝15になります。縦・横・斜めのどの列も合計15です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "中心のマスはなぜ5なの？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1〜9のちょうど真ん中の数が5だからです。中心は縦・横・斜めの4本の列が通る特別な場所で、バランスの中心になる5が入ります。"
+      }
+    },
+    {
+      "@type": "Question",
       "name": "4×4魔方陣も算数で出ますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "中学受験の難問として出ることがあります。基本は3×3から習得しましょう。"
+        "text": "中学受験の難問として出ることがあります。まずは3×3で『1列の合計を求める→中心を決める』という解き方の基本を身につけましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "魔方陣は何の役に立つの？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "たし算の練習と、数のバランスを考える力（論理的思考）が同時に育ちます。パズル感覚で楽しめるので、算数好きになるきっかけにもなります。"
       }
     }
   ]
@@ -89,16 +113,31 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>魔方陣とは？</h2>
-<p>縦・横・斜めのどの列も合計が同じになるように数を並べたマス目です。</p>
-<h3>3×3魔方陣（1〜9を使う場合）</h3>
-<div class="formula-box"><p>1〜9の合計 = 45　　1列の合計 = 45÷3 = 15</p></div>
-<p>中心には必ず5が入ります。</p>
-<pre style="background:#f5f5f5;padding:8px">
+<p>縦・横・斜めのどの列も合計が同じになるように数を並べたマス目です。パズルのように楽しみながら、たし算と数の感覚が身につきます。</p>
+
+<h2>3×3魔方陣の解き方</h2>
+<h3>ステップ1：1列の合計を求める</h3>
+<div class="formula-box"><p>1〜9の合計 ＝ 45　　1列の合計 ＝ 45 ÷ 3 ＝ 15</p></div>
+<p>縦・横・斜めのどの列も、合計は必ず<strong>15</strong>になります。</p>
+
+<h3>ステップ2：中心に5を入れる</h3>
+<p>中心のマスには<strong>必ず5</strong>が入ります（1〜9のちょうど真ん中の数だから）。</p>
+
+<h3>ステップ3：残りを埋める</h3>
+<pre style="background:#f5f5f5;padding:8px;border-radius:8px;">
 2 | 7 | 6
 9 | 5 | 1
 4 | 3 | 8
 </pre>
-<div class="tip-box"><p>💡 4隅と中心から埋めていくと解きやすいです。</p></div>
+<p>たとえば上の段は 2＋7＋6＝15、左の列は 2＋9＋4＝15。どの列も15になっています。</p>
+<div class="tip-box"><p>💡 偶数（2・4・6・8）を4隅に、奇数（1・3・7・9）を辺の真ん中に置くのがコツです。</p></div>
+
+<h2>魔方陣のおもしろい性質</h2>
+<ul>
+  <li>向かい合う2つの角（と中心）を足すと必ず10になる（2＋8、4＋6 など）</li>
+  <li>回転させたり鏡に映したりしても、魔方陣として成り立つ</li>
+</ul>
+<div class="warn-box"><p>⚠️ まず1列の合計（15）と中心（5）を決めるのが鉄則。やみくもに数を入れると時間がかかります。</p></div>
 
 
 <div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
@@ -155,6 +194,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>

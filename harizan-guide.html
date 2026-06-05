@@ -64,18 +64,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "円形の場合はなぜ本数=間の数？",
+      "name": "円形の場合はなぜ本数＝間の数なの？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "円形は端がないため、間の数と本数が同じになります。"
+        "text": "円形（池や時計のまわり）は始まりと終わりがつながっていて端がないため、間の数と木の本数がぴったり同じになります。"
       }
     },
     {
       "@type": "Question",
-      "name": "中学受験でも出ますか？",
+      "name": "両端に植えるかどうかの見分け方は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、中学受験の頻出問題です。"
+        "text": "問題文に『両端にも植える』『端から端まで』なら両端あり（間＋1）。『間に植える』『両端を除く』なら両端なし（間−1）です。問題文をよく読みましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "植木算は中学受験でも出ますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、中学受験の頻出パターンです。階段の段数や、のぼり旗の数など、形を変えて出題されます。3つのパターンを確実に押さえましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "間の数はどうやって求める？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "全体の長さ÷間隔で求めます。例：100mの道を10m間隔なら、100÷10＝10で間の数は10です。そこから本数を計算します。"
       }
     }
   ]
@@ -97,16 +113,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>植木算とは？</h2>
-<p>木を一定間隔で並べるとき、木の本数と間の数の関係を求める問題です。</p>
+<p>木を一定の間隔で並べるとき、<strong>木の本数</strong>と<strong>間の数</strong>の関係を求める問題です。中学受験でも頻出の重要パターンです。ポイントは「本数」と「間の数」は1つずれることがある、という点です。</p>
 <div class="formula-box">
 <p>両端に植える：本数 ＝ 間の数 ＋ 1</p>
+<p>両端に植えない：本数 ＝ 間の数 ー 1</p>
 <p>一方だけ植える：本数 ＝ 間の数</p>
-<p>円形に植える：本数 ＝ 間の数</p>
+<p>円形（池のまわり等）：本数 ＝ 間の数</p>
 </div>
-<h3>例題</h3>
-<p>100mの道に10m間隔で両端を含めて木を植えると？</p>
-<p>間の数 = 100÷10 = 10　　本数 = 10＋1 = <strong>11本</strong></p>
-<div class="tip-box"><p>💡 「両端あり・なし・円形」の3パターンを整理しましょう。</p></div>
+
+<h2>パターン①：両端に木を植える</h2>
+<p>100mの道に10m間隔で、両端を含めて木を植えると？</p>
+<p>間の数 ＝ 100÷10 ＝ 10　　本数 ＝ 10＋1 ＝ <strong>11本</strong></p>
+<div class="tip-box"><p>💡 指を3本立てて間（すきま）を数えると2つ。「本数は間より1多い」が目で見てわかります。</p></div>
+
+<h2>パターン②：両端に植えない</h2>
+<p>20mの間に5m間隔で、両端には植えずに木を植えると？</p>
+<p>間の数 ＝ 20÷5 ＝ 4　　本数 ＝ 4ー1 ＝ <strong>3本</strong></p>
+
+<h2>パターン③：円形（池のまわり）</h2>
+<p>1周60mの池のまわりに6m間隔で木を植えると？</p>
+<p>間の数 ＝ 60÷6 ＝ 10　　本数 ＝ <strong>10本</strong>（円形は端がないので本数＝間の数）</p>
+
+<h2>解くときの手順</h2>
+<ol>
+<li>「両端あり・なし・円形」のどれかを見分ける</li>
+<li>間の数を求める（全体の長さ ÷ 間隔）</li>
+<li>パターンに合わせて本数を計算する</li>
+</ol>
+<div class="warn-box"><p>⚠️ いきなり式を立てず、まず簡単な絵を描いて「間」と「木」を確認するとミスが減ります。</p></div>
 
 
 <div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
@@ -163,6 +197,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>
