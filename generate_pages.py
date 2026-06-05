@@ -106,6 +106,7 @@ footer a{{color:#94A3B8;text-decoration:underline;}}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  {risu_banner}
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>
@@ -9370,6 +9371,44 @@ def build_related_html(related_list):
     )
 
 
+# ============================================================
+# RISU算数 アフィリエイト（A8.net）
+#   提携承認後、以下のいずれかを設定して再生成すれば全ページに展開される。
+#   - RISU_AFFILIATE_LINK : A8の「リンクコード」のURL部分（https://px.a8.net/...）を貼る
+#   - RISU_AFFILIATE_RAW  : A8のバナーHTML全体（imgタグ込み）をそのまま貼る場合はこちら
+#   どちらも空の間は何も表示されない（リスクゼロ）。
+# ============================================================
+RISU_AFFILIATE_LINK = ""
+RISU_AFFILIATE_RAW = ""
+
+def build_risu_banner():
+    """RISU算数のアフィリエイトバナー。未設定時は空文字を返す。"""
+    if RISU_AFFILIATE_RAW:
+        return ('<div style="background:#fff;border:1.5px solid #14B8A6;border-radius:12px;'
+                'padding:14px 16px;margin-bottom:10px;text-align:center;">'
+                + RISU_AFFILIATE_RAW + '</div>')
+    if not RISU_AFFILIATE_LINK:
+        return ""
+    return (
+        '<a href="' + RISU_AFFILIATE_LINK + '" rel="nofollow sponsored" target="_blank" '
+        'style="display:block;background:#fff;border:1.5px solid #14B8A6;border-radius:12px;'
+        'padding:14px 16px;text-decoration:none;margin-bottom:10px;">'
+        '<div style="display:flex;align-items:center;gap:12px;">'
+        '<div style="flex-shrink:0;background:#14B8A6;border-radius:10px;width:44px;height:44px;'
+        'display:flex;align-items:center;justify-content:center;font-size:22px;">📱</div>'
+        '<div>'
+        '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">'
+        '<div style="font-size:13px;font-weight:700;color:#0F766E;">RISU算数（タブレット教材）</div>'
+        '<div style="background:#14B8A6;color:#fff;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">PR</div>'
+        '</div>'
+        '<div style="font-size:12px;color:#0D9488;font-weight:600;margin-bottom:2px;">'
+        'お子様の理解度に合わせて変化する算数特化タブレット</div>'
+        '<div style="font-size:11px;color:#14B8A6;line-height:1.6;">'
+        '無学年制で先取りも復習も自由自在。1週間のお試し体験あり。</div>'
+        '</div></div></a>'
+    )
+
+
 def generate(page, force=False):
     fpath = os.path.join(BASE_DIR, page["filename"])
     if not force and os.path.exists(fpath):
@@ -9385,6 +9424,7 @@ def generate(page, force=False):
         eyecatch   = page["eyecatch"],
         body_html  = page["body_html"],
         problems_html = build_problems_html(problems),
+        risu_banner = build_risu_banner(),
         faq_json   = build_faq_json(page["faq"]),
         cta_href   = page["cta_href"],
         cta_label  = page["cta_label"],
