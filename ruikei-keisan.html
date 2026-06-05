@@ -67,7 +67,31 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "累計と合計の違いは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "合計は全部を足した最終結果、累計は途中途中の足し算の結果をすべて示したものです。"
+        "text": "合計は全部を足した最終的な1つの結果です。累計は『その時点までの合計』をすべて並べたもので、数の増え方（変化）が見えるのが特徴です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "累計はどうやって求める？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "『前の累計＋今回の数』で次々に求められます。例えば3月の累計は、2月までの累計250に3月の120を足して370です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "累計のグラフはどんな形になる？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "累計は足し続けるので、グラフは必ず右上がり（または横ばい）になります。下がることはないので、もし下がったら計算ミスを疑いましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "累計はどんなときに使う？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "貯金の合計額の変化、読んだページ数の積み重ね、売上の推移など『今までの積み上げ』を見たいときに使います。日常やグラフの読み取りで役立ちます。"
       }
     }
   ]
@@ -89,15 +113,25 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>累計とは？</h2>
-<p>数を順番に足し合わせていったものを<strong>累計</strong>といいます。</p>
+<p>数を順番に足し合わせていった「とちゅうの合計」を<strong>累計（るいけい）</strong>といいます。今までの分を全部足した数、という意味です。</p>
+
+<h2>累計の求め方</h2>
+<p>その月までの数をすべて足します。または「前の月までの累計 ＋ 今月の数」で求められます。</p>
 <h3>例：売上の累計</h3>
-<table border="1" style="border-collapse:collapse;padding:4px">
-<tr><th>月</th><th>売上</th><th>累計</th></tr>
-<tr><td>1月</td><td>100</td><td>100</td></tr>
-<tr><td>2月</td><td>150</td><td>250</td></tr>
-<tr><td>3月</td><td>120</td><td>370</td></tr>
+<table border="1" style="border-collapse:collapse;width:100%;text-align:center;">
+<tr style="background:#EFF6FF;"><th style="padding:8px;">月</th><th style="padding:8px;">その月の売上</th><th style="padding:8px;">累計</th></tr>
+<tr><td style="padding:8px;">1月</td><td style="padding:8px;">100</td><td style="padding:8px;">100</td></tr>
+<tr><td style="padding:8px;">2月</td><td style="padding:8px;">150</td><td style="padding:8px;">100＋150＝250</td></tr>
+<tr><td style="padding:8px;">3月</td><td style="padding:8px;">120</td><td style="padding:8px;">250＋120＝370</td></tr>
 </table>
-<div class="tip-box"><p>💡 折れ線グラフや棒グラフで「累計」が出たら、前の値と今の値を足すだけです。</p></div>
+<div class="tip-box"><p>💡 累計は「前の累計＋今回の数」で次々に求められます。毎回ゼロから足し直さなくてOKです。</p></div>
+
+<h2>累計と合計のちがい</h2>
+<ul>
+<li><strong>合計</strong>：全部を足した最終結果（1つの数）</li>
+<li><strong>累計</strong>：とちゅうの合計をすべて並べたもの（変化が見える）</li>
+</ul>
+<div class="warn-box"><p>⚠️ グラフで「累計」のグラフは必ず右上がり（または平ら）になります。減ることはありません。前より小さくなったら計算ミスです。</p></div>
 
 
 <div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
@@ -154,6 +188,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>
