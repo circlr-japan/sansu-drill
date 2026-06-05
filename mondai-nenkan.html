@@ -67,7 +67,31 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "うるう年は何年ごとですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "おおよそ4年ごとです。ただし100年ごとに1回は飛び、400年ごとに1回は戻ります。"
+        "text": "基本は4年ごと（2月が29日）です。ただし100で割り切れる年は平年、400で割り切れる年はうるう年という例外があります。2000年はうるう年、2100年は平年です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "月の日数の覚え方は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "『西向く侍（に・し・む・く・さむらい＝2・4・6・9・11）』が31日でない月、という語呂が有名です。こぶしの山と谷で覚える方法もあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "○日後の曜日はどう求める？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "曜日は7日周期なので、日数を7で割った余りの分だけ曜日を進めます。例：月曜の10日後は10÷7＝余り3で、月→火→水→木の木曜です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "日数計算でミスしないコツは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一気に計算せず、『その月の残り日数』から1か月ずつ引いていくのが確実です。スタートの日を含めるか含めないかも問題文で確認しましょう。"
       }
     }
   ]
@@ -89,12 +113,28 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>月の日数を覚えよう</h2>
-<p>「30日ある月」：4・6・9・11月　「31日ある月」：1・3・5・7・8・10・12月　「2月」：28日（うるう年は29日）</p>
-<div class="formula-box"><p>うるう年：4で割り切れる年（ただし100で割り切れても400で割り切れない年は除く）</p></div>
-<h3>日数計算の例</h3>
-<p>3月15日から45日後は何月何日？<br>3月残り：31-15=16日　4月：30日　45-16-30=△　5月の△日→<strong>4月30日+(-1)=4月29日</strong></p>
-<p>→ 16+29=45日なので<strong>4月29日</strong></p>
-<div class="tip-box"><p>💡 月をまたぐ計算は「その月の残り日数」から順に引いていくのがコツです。</p></div>
+<ul>
+  <li><strong>31日ある月</strong>：1・3・5・7・8・10・12月</li>
+  <li><strong>30日ある月</strong>：4・6・9・11月</li>
+  <li><strong>2月</strong>：28日（うるう年は29日）</li>
+</ul>
+<div class="tip-box"><p>💡 こぶしの山（高い所）が31日、谷（低い所）が30日以下。「西向く侍（2・4・6・9・11）」が31日でない月、という覚え方も有名です。</p></div>
+
+<h2>うるう年の決まり</h2>
+<div class="formula-box"><p>4で割り切れる年はうるう年（2月が29日）<br>ただし100で割り切れる年は平年、さらに400で割り切れる年はうるう年</p></div>
+<p>例：2024年は4で割り切れる→うるう年。2100年は100で割り切れる→平年。2000年は400で割り切れる→うるう年。</p>
+
+<h2>日数計算のやり方（月をまたぐ場合）</h2>
+<p><strong>例題：3月15日から45日後は何月何日？</strong></p>
+<ol>
+<li>3月の残りの日数：31 − 15 ＝ 16日（これで3月31日）</li>
+<li>45日のうち残り：45 − 16 ＝ 29日</li>
+<li>4月は30日あるので、4月29日でちょうど使い切る → 答え <strong>4月29日</strong></li>
+</ol>
+<div class="warn-box"><p>⚠️ 「その月の残り日数」から順に引いていくのがコツ。一気に計算しようとするとズレやすいです。</p></div>
+
+<h2>曜日を求める（7日周期）</h2>
+<p>曜日は7日ごとに同じに戻ります。「何日後の曜日」は<strong>7で割った余り</strong>で求められます。例：今日が月曜なら、10日後は 10÷7＝1余り3 → 月曜の3つ先で<strong>木曜</strong>。</p>
 
 
 <div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
@@ -151,6 +191,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>

@@ -64,10 +64,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "方程式を使えば解けますか？",
+      "name": "つるかめ算は方程式を使えば解けますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、連立方程式でも解けますが、小学算数では仮定法（面積図）が基本です。"
+        "text": "はい、連立方程式でも解けますが、小学算数では仮定法（面積図）が基本です。まず全部を片方と仮定し、差から求める考え方を身につけましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どちらに仮定すればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "どちらに仮定してもOKです。計算しやすい方（足の少ない方など）に仮定すると差が出しやすくなります。大事なのは最後にどちらを求めたかを取り違えないことです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "つるかめ算はどんな場面で使う？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "つるとかめ以外にも、『100円玉と10円玉』『大人と子どもの入場料』など、2種類の数を合計から求める問題すべてに応用できます。中学受験では形を変えて頻出します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "面積図とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "たて＝1匹あたりの数、横＝匹数とした長方形2つで表す図です。仮定法と同じ考え方を図で見える化したもので、慣れると複雑な問題も解きやすくなります。"
       }
     }
   ]
@@ -89,15 +113,29 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>つるかめ算とは？</h2>
-<p>2種類のものの個数の合計と、ある量の合計から、それぞれの個数を求める問題です。</p>
+<p>つる（足2本）とかめ（足4本）のように、<strong>2種類のもの</strong>の合計の数と、足などの合計から、それぞれが何匹かを求める問題です。中学受験で頻出の代表的な特殊算です。</p>
 <div class="formula-box">
-<p>仮定法：全部を片方と仮定→差を利用して求める</p>
+<p>仮定法：全部を片方と仮定する → 実際との差を利用して求める</p>
 </div>
-<h3>例題</h3>
-<p>つる（足2本）とかめ（足4本）合わせて10匹、足は32本。それぞれ何匹？</p>
-<p>全部つると仮定：10×2=20本　実際より12本少ない</p>
-<p>かめ1匹でつる1匹を置き換えると2本増える→かめ = 12÷2 = 6匹、つる = 4匹</p>
-<div class="tip-box"><p>💡 仮定して差を調整する考え方は他の問題にも応用できます。</p></div>
+
+<h2>解き方の3ステップ</h2>
+<ol>
+<li><strong>全部を片方と仮定</strong>して、合計を計算する</li>
+<li>実際の数との<strong>差</strong>を出す</li>
+<li>1匹入れ替えると何本変わるかで、差を割る</li>
+</ol>
+
+<h3>例題：つるとかめ 合わせて10匹、足は32本</h3>
+<p>① 全部つる（足2本）と仮定 → 10×2 ＝ 20本</p>
+<p>② 実際は32本。差は 32−20 ＝ 12本足りない</p>
+<p>③ かめ1匹をつると入れ替えると足が2本増える → かめ ＝ 12÷2 ＝ <strong>6匹</strong>、つる ＝ 10−6 ＝ <strong>4匹</strong></p>
+<div class="tip-box"><p>💡 検算：つる4匹（8本）＋かめ6匹（24本）＝32本。合っています。</p></div>
+
+<h3>もう1問：100円玉と10円玉が合わせて8枚で350円</h3>
+<p>① 全部10円と仮定 → 8×10 ＝ 80円</p>
+<p>② 差は 350−80 ＝ 270円</p>
+<p>③ 100円に替えると90円増える → 100円玉 ＝ 270÷90 ＝ <strong>3枚</strong>、10円玉 ＝ <strong>5枚</strong></p>
+<div class="warn-box"><p>⚠️ 「どちらに仮定したか」を必ずメモしましょう。仮定した方と求めた方を取り違えるミスが多いです。</p></div>
 
 
 <div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
@@ -154,6 +192,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>
