@@ -80,6 +80,7 @@ footer a{{color:#94A3B8;text-decoration:underline;}}
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{BASE_URL}/ogp-default.png">
 {faq_json}
+{breadcrumb_json}
 </head>
 <body>
 <div class="header">
@@ -10206,6 +10207,22 @@ def build_faq_json(faq_list):
     return f'<script type="application/ld+json">\n{json_str}\n</script>'
 
 
+def build_breadcrumb_json(page):
+    """パンくずリスト構造化データ（ホーム > ページ）。検索結果にパンくず表示。"""
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "にじゅうまる。算数ドリル",
+             "item": BASE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": page["h1"],
+             "item": BASE_URL + "/" + page["filename"]},
+        ],
+    }
+    json_str = json.dumps(schema, ensure_ascii=False, indent=2)
+    return f'<script type="application/ld+json">\n{json_str}\n</script>'
+
+
 def build_related_html(related_list):
     links = "\n".join(
         f'    <a href="{r["href"]}" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">'
@@ -10276,6 +10293,7 @@ def generate(page, force=False):
         problems_html = build_problems_html(problems),
         risu_banner = build_risu_banner(),
         faq_json   = build_faq_json(page["faq"]),
+        breadcrumb_json = build_breadcrumb_json(page),
         cta_href   = page["cta_href"],
         cta_label  = page["cta_label"],
         related_html = build_related_html(page["related"]),
