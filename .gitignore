@@ -1,0 +1,11 @@
+# 機密ファイル（絶対にコミットしない）
+credentials.json
+token.json
+x_config.json
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
