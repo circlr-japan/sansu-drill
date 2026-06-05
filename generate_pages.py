@@ -9929,6 +9929,68 @@ PAGES = [
       {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
     ],
   },
+  {
+    "filename": "sansu-onayami-guide.html",
+    "title": "算数のつまずき・お悩み解決ガイド【保護者向け】",
+    "description": "「算数がわからない」「文章題が苦手」「やる気が出ない」など、小学生の算数のお悩みを原因別に解決。保護者向けの対策記事をまとめたガイド｜にじゅうまる。算数ドリル",
+    "h1": "算数のつまずき・お悩み解決ガイド",
+    "eyecatch": "「うちの子、算数で大丈夫？」そんな保護者の悩みに、原因別の解決法をまとめました。気になるテーマから読んでみてください。",
+    "body_html": """\
+<h2>算数の悩みには必ず「原因」があります</h2>
+<p>「急に算数ができなくなった」「文章題だけ苦手」「勉強しなさいと言っても机に向かわない」——どれも、よくある悩みです。そして、<strong>ほとんどの悩みには原因があり、家庭でできる対策があります</strong>。下のテーマから、お子様に当てはまるものを選んでください。</p>
+
+<h2>① つまずき・苦手の悩み</h2>
+<a href="/sansu-9sai-no-kabe.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">🧱 9歳の壁・10歳の壁とは</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">4年生ごろ急につまずくのはなぜ？ 抽象的な内容が増える時期の乗り越え方。</div></a>
+<a href="/sansu-ga-wakaranai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">💡 算数がわからない・できないときの対処法</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">原因の見つけ方と、どの学年に戻ればいいか。克服の4ステップ。</div></a>
+<a href="/bunshoudai-kokufuku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">📝 文章題が解けない・苦手な子の解き方</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">計算はできるのに文章題が苦手。読み取りから式を立てる手順。</div></a>
+<a href="/zukei-nigate-kokufuku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">📐 図形が苦手な小学生の克服法</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">図形だけ点が取れない…空間イメージを育てる家庭での工夫。</div></a>
+
+<h2>② やる気・習慣の悩み</h2>
+<a href="/sansu-suki-ni-saseru.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">💯 算数を好きにさせる方法</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">「算数きらい」が「楽しい」に変わる、家庭でできる10の工夫。</div></a>
+<a href="/benkyou-syuukan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">📅 小学生の勉強習慣のつけ方</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">「勉強しなさい」と言わなくても机に向かう、毎日続く仕組み作り。</div></a>
+
+<h2>③ 効果的な学習法</h2>
+<a href="/hyaku-masu-keisan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">🔢 百ます計算のやり方と効果</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">基礎計算のスピードと正確さを鍛える定番トレーニング。タイムの目安つき。</div></a>
+
+<h2>まず「どこでつまずいているか」を見つけよう</h2>
+<p>悩みを解決する第一歩は、<strong>つまずいている場所を特定する</strong>ことです。学年別の学習内容や、各学年の弱点対策ページも合わせてご活用ください。原因さえわかれば、対策はぐっと立てやすくなります。</p>
+<div class="tip-box"><p>💡 あせらず1つずつ。お子様の「できた！」を一緒に喜ぶことが、どんな対策よりも力になります。</p></div>""",
+    "problems": [
+      {"q": "9 ＋ 6 ＝ ?", "a": "15"},
+      {"q": "13 － 8 ＝ ?", "a": "5"},
+      {"q": "7 × 8 ＝ ?", "a": "56"},
+      {"q": "48 ÷ 6 ＝ ?", "a": "8"},
+      {"q": "1/2 ＋ 1/4 ＝ ?", "a": "3/4"},
+    ],
+    "faq": [
+      {"q": "子どもが算数でつまずいています。何から始めれば？", "a": "まず『どの単元のどこでつまずいているか』を特定しましょう。計算なのか文章題なのか、どの学年の内容かを見極め、原因の単元に戻って固め直すのが近道です。"},
+      {"q": "算数嫌いを直すにはどうすれば？", "a": "『わかる・できる』体験を増やすことが一番です。やさしい問題から成功体験を積み、責めずにほめましょう。『算数を好きにさせる方法』のページで具体的な工夫を紹介しています。"},
+      {"q": "勉強を習慣にするコツは？", "a": "時間と場所を固定し、量を減らして『必ず終わる』小さな習慣から始めます。詳しくは『勉強習慣のつけ方』のページをご覧ください。"},
+      {"q": "親はどこまで関わればいい？", "a": "つきっきりで教える必要はありません。『何を聞かれてる？』と問いかけたり、できたことを一緒に喜んだりする見守りの姿勢が、子どもの安心と意欲につながります。"},
+    ],
+    "cta_href": "/grade-guide.html",
+    "cta_label": "学年別の学習内容を見る",
+    "related": [
+      {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
+      {"href": "/taisaku-3nen.html","emoji": "📝", "text": "3年生の弱点対策"},
+      {"href": "/taisaku-5nen.html","emoji": "📝", "text": "5年生の弱点対策"},
+      {"href": "/math-game.html","emoji": "🎮", "text": "算数が楽しくなるゲーム"},
+    ],
+  },
 
 ]  # PAGES リストここまで
 
