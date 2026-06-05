@@ -10,8 +10,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>確率の基本｜算数ドリル | にじゅうまる。算数ドリル</title>
-<meta name="description" content="コインやさいころを使った確率の基本をわかりやすく解説。起こりやすさを数で表す方法を学びます。｜無料・印刷不要で小学生が使える算数ドリルサイト「にじゅうまる。」">
+<title>確率の基本【コイン・さいころ】場合の数で求め方を解説 | にじゅうまる。算数ドリル | にじゅうまる。算数ドリル</title>
+<meta name="description" content="確率の基本をコイン・さいころの例でわかりやすく解説。起こりやすさを数で表す方法、場合の数の数え方を例題で紹介｜にじゅうまる。算数ドリル｜無料・印刷不要で小学生が使える算数ドリルサイト「にじゅうまる。」">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/mondai-kakuritsu.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,15 +47,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="確率の基本｜算数ドリル">
-<meta property="og:description" content="コインやさいころを使った確率の基本をわかりやすく解説。起こりやすさを数で表す方法を学びます。">
+<meta property="og:title" content="確率の基本【コイン・さいころ】場合の数で求め方を解説 | にじゅうまる。算数ドリル">
+<meta property="og:description" content="確率の基本をコイン・さいころの例でわかりやすく解説。起こりやすさを数で表す方法、場合の数の数え方を例題で紹介｜にじゅうまる。算数ドリル">
 <meta property="og:url" content="https://www.nijumaru-drill.com/mondai-kakuritsu.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="確率の基本｜算数ドリル">
-<meta name="twitter:description" content="コインやさいころを使った確率の基本をわかりやすく解説。起こりやすさを数で表す方法を学びます。">
+<meta name="twitter:title" content="確率の基本【コイン・さいころ】場合の数で求め方を解説 | にじゅうまる。算数ドリル">
+<meta name="twitter:description" content="確率の基本をコイン・さいころの例でわかりやすく解説。起こりやすさを数で表す方法、場合の数の数え方を例題で紹介｜にじゅうまる。算数ドリル">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -67,7 +67,31 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "「確率が高い」とはどういう意味？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "1に近いほど起こりやすい（確率が高い）、0に近いほど起こりにくい（確率が低い）です。"
+        "text": "1に近いほど起こりやすく（確率が高い）、0に近いほど起こりにくい（確率が低い）です。確率1/2はちょうど半々の起こりやすさを表します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "場合の数を数え間違えないコツは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "『もれなく・重なりなく』数えるのが鉄則です。表をかいたり、樹形図（枝分かれの図）をかいたりすると、数え落としや重複を防げます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "確率は小学校で習いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本格的な確率は中学で学びますが、『起こりやすさ』や『場合の数』の考え方は小学6年生や中学受験で扱います。基礎として理解しておくと役立ちます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2つのさいころの目の和の確率は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "全体は6×6＝36通り。例えば和が7になるのは(1,6)(2,5)(3,4)(4,3)(5,2)(6,1)の6通りなので、6÷36＝1/6です。組み合わせを表にすると数えやすくなります。"
       }
     }
   ]
@@ -89,13 +113,22 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>確率とは？</h2>
-<p>あることが起こる<strong>可能性の大きさ</strong>を0〜1の数で表したものです。</p>
-<div class="formula-box"><p>確率 ＝ 求める場合の数 ÷ 全体の場合の数</p></div>
-<h3>例：コインを1回投げて表が出る確率</h3>
-<p>全体＝2通り（表・裏）　求める＝1通り（表）　確率 = 1÷2 = <strong>1/2</strong></p>
-<h3>例：さいころで3が出る確率</h3>
-<p>全体＝6通り　求める＝1通り　確率 = 1÷6 = <strong>1/6</strong></p>
-<div class="tip-box"><p>💡 確率0は「絶対に起きない」、確率1は「必ず起きる」です。</p></div>
+<p>あることが起こる<strong>可能性の大きさ</strong>を0〜1の数（または分数）で表したものです。</p>
+<div class="formula-box"><p>確率 ＝ 求めることが起こる場合の数 ÷ 全体の場合の数</p></div>
+<div class="tip-box"><p>💡 確率0は「絶対に起きない」、確率1は「必ず起きる」。0〜1の間で起こりやすさを表します。</p></div>
+
+<h3>例①：コインを1回投げて表が出る確率</h3>
+<p>全体＝2通り（表・裏）　求める＝1通り（表）　確率 ＝ 1÷2 ＝ <strong>1/2</strong></p>
+
+<h3>例②：さいころで3が出る確率</h3>
+<p>全体＝6通り　求める＝1通り　確率 ＝ 1÷6 ＝ <strong>1/6</strong></p>
+
+<h3>例③：さいころで偶数が出る確率</h3>
+<p>偶数は2・4・6の3通り　確率 ＝ 3÷6 ＝ <strong>1/2</strong></p>
+
+<h2>場合の数を正しく数えるコツ</h2>
+<p>確率を求めるには、まず「全体で何通りあるか」を正確に数えることが大切です。2枚のコインなら（表表・表裏・裏表・裏裏）の4通り、と<strong>もれなく重なりなく</strong>数えます。</p>
+<div class="warn-box"><p>⚠️ 2枚のコインで「表裏」と「裏表」は別の場合。区別して数えないと全体の数を間違えます。</p></div>
 
 
 <div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
@@ -152,6 +185,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>

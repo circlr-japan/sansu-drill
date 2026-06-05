@@ -10,8 +10,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>複合図形の面積｜算数ドリル | にじゅうまる。算数ドリル</title>
-<meta name="description" content="L字・コの字・円の一部など複合図形の面積の求め方を解説。分割・補完法で解きましょう。｜無料・印刷不要で小学生が使える算数ドリルサイト「にじゅうまる。」">
+<title>複合図形の面積の求め方【L字・コの字】分割法・補完法を図解 | にじゅうまる。算数ドリル | にじゅうまる。算数ドリル</title>
+<meta name="description" content="L字・コの字など複合図形の面積の求め方を図解。分割法と補完法の2つの考え方を例題で解説。補助線の引き方のコツも紹介｜にじゅうまる。算数ドリル｜無料・印刷不要で小学生が使える算数ドリルサイト「にじゅうまる。」">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/mondai-menseki2.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,15 +47,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="複合図形の面積｜算数ドリル">
-<meta property="og:description" content="L字・コの字・円の一部など複合図形の面積の求め方を解説。分割・補完法で解きましょう。">
+<meta property="og:title" content="複合図形の面積の求め方【L字・コの字】分割法・補完法を図解 | にじゅうまる。算数ドリル">
+<meta property="og:description" content="L字・コの字など複合図形の面積の求め方を図解。分割法と補完法の2つの考え方を例題で解説。補助線の引き方のコツも紹介｜にじゅうまる。算数ドリル">
 <meta property="og:url" content="https://www.nijumaru-drill.com/mondai-menseki2.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="複合図形の面積｜算数ドリル">
-<meta name="twitter:description" content="L字・コの字・円の一部など複合図形の面積の求め方を解説。分割・補完法で解きましょう。">
+<meta name="twitter:title" content="複合図形の面積の求め方【L字・コの字】分割法・補完法を図解 | にじゅうまる。算数ドリル">
+<meta name="twitter:description" content="L字・コの字など複合図形の面積の求め方を図解。分割法と補完法の2つの考え方を例題で解説。補助線の引き方のコツも紹介｜にじゅうまる。算数ドリル">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -67,7 +67,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "円の一部（扇形）の面積は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "扇形の面積 = 円の面積 × （中心角÷360）です。"
+        "text": "扇形の面積＝円の面積×（中心角÷360）です。半径×半径×3.14で円の面積を出し、中心角の割合をかけます。"
       }
     },
     {
@@ -75,7 +75,23 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "コの字型の求め方は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "大きな長方形から内側の長方形を引く補完法が簡単です。"
+        "text": "大きな長方形から内側にへこんだ長方形を引く補完法が簡単です。または、3つの長方形に分割して足してもOKです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "分割法と補完法どちらを使えばいい？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "図形によって計算しやすい方を選びます。へこみが1か所なら補完法、出っぱりが複数あるなら分割法が楽なことが多いです。両方試せると確実です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "わからない辺の長さはどう求める？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "向かい合う辺の長さの関係から計算します。例えばL字型なら、外側の縦の長さから内側の縦の長さを引くと、欠けた部分の縦の長さがわかります。"
       }
     }
   ]
@@ -97,16 +113,23 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>複合図形とは？</h2>
-<p>いくつかの図形を組み合わせたり、一部を切り取った形です。</p>
-<h3>基本の解き方</h3>
+<p>いくつかの基本図形（長方形・正方形・三角形など）を組み合わせたり、一部を切り取ったりした形です。L字型・コの字型などがあります。</p>
+
+<h2>2つの解き方</h2>
 <ul>
-<li><strong>分割法</strong>：図形をいくつかの基本図形に分けて面積を足す</li>
-<li><strong>補完法</strong>：大きな図形から余分な部分を引く</li>
+<li><strong>分割法</strong>：図形をいくつかの基本図形に分けて、面積を足す</li>
+<li><strong>補完法</strong>：欠けた部分を補って大きな図形にし、余分な面積を引く</li>
 </ul>
-<h3>例：L字型</h3>
-<p>縦10cm・横8cmの長方形から縦4cm・横3cmを切り取った形</p>
-<p>全体 = 10×8 = 80　　切り取り = 4×3 = 12　　面積 = <strong>68cm²</strong></p>
-<div class="tip-box"><p>💡 補助線を引いて基本図形に分けるのがコツです。</p></div>
+<div class="tip-box"><p>💡 どちらでも答えは同じ。補助線を1本引いて、計算しやすい方を選びましょう。</p></div>
+
+<h3>例題①：L字型（補完法）</h3>
+<p>縦10cm・横8cmの長方形から、縦4cm・横3cmを切り取った形。</p>
+<p>全体 ＝ 10×8 ＝ 80　　切り取り ＝ 4×3 ＝ 12　　面積 ＝ 80−12 ＝ <strong>68cm²</strong></p>
+
+<h3>例題②：階段状の図形（分割法）</h3>
+<p>2つの長方形（6×4 と 3×4）に分けられる図形。</p>
+<p>6×4 ＝ 24　　3×4 ＝ 12　　面積 ＝ 24＋12 ＝ <strong>36cm²</strong></p>
+<div class="warn-box"><p>⚠️ 分割したとき、それぞれの「縦・横の長さ」を図から正しく読み取ることが大切。わかっている長さから、わからない辺の長さを計算で求めましょう。</p></div>
 
 
 <div style="margin:32px 0;padding:20px 16px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:14px;border:1.5px solid #93C5FD;">
@@ -163,6 +186,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;border:1.5px solid #F59E0B;">
   <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:12px;">📣 この記事に関連するおすすめ教材</div>
+  
   <a href="https://amzn.to/41Avn9J" rel="nofollow" target="_blank" style="display:block;background:#fff;border:1.5px solid #38BDF8;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="flex-shrink:0;background:#0EA5E9;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:22px;">📚</div>
