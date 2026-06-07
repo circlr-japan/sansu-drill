@@ -10245,8 +10245,9 @@ def build_related_html(related_list):
 #   - RISU_AFFILIATE_RAW  : A8のバナーHTML全体（imgタグ込み）をそのまま貼る場合はこちら
 #   どちらも空の間は何も表示されない（リスクゼロ）。
 # ============================================================
-RISU_AFFILIATE_LINK = ""
+RISU_AFFILIATE_LINK = "https://px.a8.net/svt/ejp?a8mat=4B5OO2+A5K7R6+4EIO+60WN6"
 RISU_AFFILIATE_RAW = ""
+RISU_AFFILIATE_BEACON = "https://www14.a8.net/0.gif?a8mat=4B5OO2+A5K7R6+4EIO+60WN6"
 
 def build_risu_banner():
     """RISU算数のアフィリエイトバナー。未設定時は空文字を返す。"""
@@ -10273,6 +10274,7 @@ def build_risu_banner():
         '<div style="font-size:11px;color:#14B8A6;line-height:1.6;">'
         '無学年制で先取りも復習も自由自在。1週間のお試し体験あり。</div>'
         '</div></div></a>'
+        '<img border="0" width="1" height="1" src="' + RISU_AFFILIATE_BEACON + '" alt="" style="position:absolute;">'
     )
 
 
