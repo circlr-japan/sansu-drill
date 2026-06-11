@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.nijumaru-drill.com/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/grade-1.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/grade-2.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/grade-3.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/grade-4.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/grade-5.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/grade-6.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/grade-guide.html</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/</loc><lastmod>2026-06-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/grade-1.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/grade-2.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/grade-3.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/grade-4.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/grade-5.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/grade-6.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/grade-guide.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.nijumaru-drill.com/grade-1-tips.html</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.nijumaru-drill.com/grade-2-tips.html</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.nijumaru-drill.com/grade-3-tips.html</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -38,8 +38,8 @@
   <url><loc>https://www.nijumaru-drill.com/privacy.html</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.nijumaru-drill.com/geometry-guide.html</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.nijumaru-drill.com/addition-guide.html</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/subtraction-guide.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.nijumaru-drill.com/multiplication-guide.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/subtraction-guide.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.nijumaru-drill.com/multiplication-guide.html</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.nijumaru-drill.com/time-calculation.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.nijumaru-drill.com/large-numbers.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.nijumaru-drill.com/ratio-guide.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -618,12 +618,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nijumaru-drill.com/premium-pdf.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.nijumaru-drill.com/wahiku-kongo.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -642,19 +636,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nijumaru-drill.com/thanks.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.nijumaru-drill.com/tsuriawase.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.nijumaru-drill.com/daily.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
