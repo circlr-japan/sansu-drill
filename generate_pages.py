@@ -9974,6 +9974,9 @@ PAGES = [
 <a href="/hyaku-masu-keisan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">🔢 百ます計算のやり方と効果</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">基礎計算のスピードと正確さを鍛える定番トレーニング。タイムの目安つき。</div></a>
+<a href="/tablet-sansu-kyozai-hikaku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #14B8A6;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#0F766E;margin-bottom:3px;">📱 タブレット算数教材おすすめ比較</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">RISU・進研ゼミ・スマイルゼミ等を目的別に比較。教材選びに迷ったら。</div></a>
 
 <h2>まず「どこでつまずいているか」を見つけよう</h2>
 <p>悩みを解決する第一歩は、<strong>つまずいている場所を特定する</strong>ことです。学年別の学習内容や、各学年の弱点対策ページも合わせてご活用ください。原因さえわかれば、対策はぐっと立てやすくなります。</p>
@@ -9998,6 +10001,82 @@ PAGES = [
       {"href": "/taisaku-3nen.html","emoji": "📝", "text": "3年生の弱点対策"},
       {"href": "/taisaku-5nen.html","emoji": "📝", "text": "5年生の弱点対策"},
       {"href": "/math-game.html","emoji": "🎮", "text": "算数が楽しくなるゲーム"},
+    ],
+  },
+  {
+    "filename": "tablet-sansu-kyozai-hikaku.html",
+    "title": "小学生のタブレット算数教材おすすめ比較【RISU・進研ゼミ・スマイルゼミ】",
+    "description": "小学生向けタブレット算数教材を目的別に比較。RISU算数・進研ゼミ・スマイルゼミ・Z会の特徴と選び方を、算数が苦手な子・先取りしたい子・全教科派など目的別に解説｜にじゅうまる。算数ドリル",
+    "h1": "小学生のタブレット算数教材 おすすめ比較",
+    "eyecatch": "「うちの子に合うタブレット教材はどれ？」算数が苦手・先取りしたい・全教科やりたい——目的別に主要教材を正直に比較します。",
+    "body_html": """\
+<p>無料の計算ドリル（にじゅうまるドリル）で毎日の練習をしつつ、「もっと体系的に・つまずきを根本から」と考える保護者の方に向けて、人気のタブレット教材を<strong>目的別に</strong>比較しました。<strong>どれが一番ではなく、お子様のタイプで最適は変わります。</strong></p>
+<div class="warn-box"><p>⚠️ 料金・無料体験・キャンペーンは変動します。申し込み前に必ず各公式サイトで最新情報をご確認ください。本ページはアフィリエイト広告を含みます。</p></div>
+
+<h2>目的別・早わかり比較</h2>
+<table border="1" style="border-collapse:collapse;width:100%;text-align:center;font-size:12px;margin:12px 0;">
+<tr style="background:#EFF6FF;"><th style="padding:7px;">教材</th><th style="padding:7px;">タイプ</th><th style="padding:7px;">こんな子に</th></tr>
+<tr><td style="padding:7px;font-weight:700;">RISU算数</td><td style="padding:7px;">算数特化・無学年式</td><td style="padding:7px;">算数を集中的に・先取り/さかのぼり</td></tr>
+<tr><td style="padding:7px;font-weight:700;">進研ゼミ</td><td style="padding:7px;">全教科・バランス</td><td style="padding:7px;">総合的に・実績重視</td></tr>
+<tr><td style="padding:7px;font-weight:700;">スマイルゼミ</td><td style="padding:7px;">全教科・タブレット完結</td><td style="padding:7px;">1台で完結・書き取り重視</td></tr>
+<tr><td style="padding:7px;font-weight:700;">Z会</td><td style="padding:7px;">ハイレベル・思考力</td><td style="padding:7px;">学力高め・中学受験志向</td></tr>
+</table>
+
+<h2>① RISU算数 ― 算数だけを伸ばすなら</h2>
+<p><strong>算数に特化</strong>したタブレット教材です。最大の特徴は<strong>無学年式</strong>。学年にしばられず、理解度に合わせて<strong>どんどん先取り</strong>も、つまずいた単元への<strong>さかのぼり</strong>も自由。解答データから一人ひとりに合った問題が出され、つまずきには動画フォローも届きます。</p>
+<ul>
+<li>👍 算数の苦手克服・得意を伸ばす・先取りに強い</li>
+<li>👍 「学年の壁（9歳の壁）」でつまずいた子のさかのぼりに最適</li>
+<li>🤔 算数専用なので、全教科を1つでまかないたい家庭には不向き</li>
+</ul>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B5OO2+A5K7R6+4EIO+60WN6" rel="nofollow sponsored" target="_blank" style="display:block;background:#14B8A6;color:#fff;font-weight:700;text-align:center;padding:14px;border-radius:50px;text-decoration:none;margin:14px 0;box-shadow:0 4px 14px rgba(20,184,166,0.35);">RISU算数の公式サイト・お試しを見る →</a>
+<img src="https://www14.a8.net/0.gif?a8mat=4B5OO2+A5K7R6+4EIO+60WN6" width="1" height="1" alt="" style="position:absolute;">
+<div class="tip-box"><p>💡 「算数だけが苦手」「算数を得意科目にしたい」なら、まずRISU算数が候補。無学年式で、今の学年に関係なく“ちょうどいい問題”から始められます。</p></div>
+
+<h2>② 進研ゼミ小学講座 ― 全教科をバランスよく</h2>
+<p>長年の実績がある総合教材。タブレット（チャレンジタッチ）と紙から選べ、全教科を無理なく続けられる設計。赤ペン先生の添削など、続ける仕組みが充実しています。</p>
+<ul>
+<li>👍 全教科を1つで・実績と安心感・続けやすい工夫</li>
+<li>🤔 算数だけを深掘り・大幅な先取りには専用教材ほど尖っていない</li>
+</ul>
+
+<h2>③ スマイルゼミ ― タブレット1台で完結</h2>
+<p>全教科をタブレット1台で完結できるのが強み。手書き入力の精度が高く、書き取り練習に向きます。紙を増やさずスッキリ運用したい家庭に人気です。</p>
+<ul>
+<li>👍 全教科タブレット完結・書き取り評価・管理が楽</li>
+<li>🤔 専用タブレットの初期費用などは公式で要確認</li>
+</ul>
+
+<h2>④ Z会小学生コース ― ハイレベル・受験志向</h2>
+<p>良問・思考力重視で、学力が高め・中学受験を視野に入れる家庭に支持されています。難度はやや高めです。</p>
+<ul>
+<li>👍 ハイレベル・思考力・記述や応用に強い</li>
+<li>🤔 基礎固めや「まず楽しく」段階の子には難しく感じることも</li>
+</ul>
+
+<h2>失敗しない選び方</h2>
+<ul>
+<li><strong>算数だけ伸ばしたい・苦手/先取り</strong> → RISU算数</li>
+<li><strong>全教科をバランスよく</strong> → 進研ゼミ／スマイルゼミ</li>
+<li><strong>ハイレベル・中学受験</strong> → Z会</li>
+<li><strong>まずは無料で毎日の計算から</strong> → にじゅうまるドリル（当サイト）で習慣づけ → 物足りなくなったら上記へ</li>
+</ul>
+<div class="tip-box"><p>💡 いきなり有料に申し込まず、まず無料体験で「子どもが楽しく続けられるか」を見るのが失敗しないコツ。多くの教材に無料体験・お試し期間があります。</p></div>""",
+    "problems": [],
+    "faq": [
+      {"q": "タブレット教材は何歳・何年生から使える？", "a": "多くは年中〜小学生向けです。RISU算数のような無学年式は、学年に関係なく今の理解度に合った問題から始められるため、先取りしたい子にも、さかのぼって復習したい子にも向いています。"},
+      {"q": "紙のドリルとタブレット教材、どちらがいい？", "a": "それぞれ長所があります。紙は書く力・じっくり考える力に、タブレットは自動採点・動画解説・続ける工夫に強みがあります。『無料の計算練習は紙やにじゅうまるドリル、体系的な学習はタブレット教材』と併用する家庭も多いです。"},
+      {"q": "算数だけを伸ばしたい場合のおすすめは？", "a": "算数に特化したRISU算数が候補です。無学年式で、苦手な単元はさかのぼり、得意ならどんどん先取りできます。全教科をまとめたい場合は進研ゼミやスマイルゼミが向いています。"},
+      {"q": "無料で試せますか？", "a": "多くの教材に無料体験やお試し期間があります。申し込み前に、お子様が楽しく続けられそうか体験で確認するのがおすすめです。料金やキャンペーンは変動するため公式サイトで最新情報をご確認ください。"},
+      {"q": "まず何から始めればいい？", "a": "費用をかけずに始めるなら、当サイト『にじゅうまるドリル』の無料ドリルで毎日の計算習慣をつけましょう。物足りなくなったら、目的に合うタブレット教材を無料体験から検討するのがスムーズです。"},
+    ],
+    "cta_href": "/sansu-onayami-guide.html",
+    "cta_label": "算数のお悩み解決ガイドを見る",
+    "related": [
+      {"href": "/sansu-9sai-no-kabe.html","emoji": "🧱", "text": "9歳の壁とは"},
+      {"href": "/sansu-ga-wakaranai.html","emoji": "💡", "text": "算数がわからない時は"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+      {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
     ],
   },
 
@@ -10291,7 +10370,7 @@ def generate(page, force=False):
     if not force and os.path.exists(fpath):
         return False  # スキップ
 
-    problems = page.get("problems") or get_default_problems(page["filename"])
+    problems = page["problems"] if "problems" in page else get_default_problems(page["filename"])
     html = TEMPLATE.format(
         BASE_URL   = BASE_URL,
         filename   = page["filename"],
