@@ -1955,6 +1955,7 @@ PAGES = [
     "related": [
       {"href": "/ratio-guide.html",       "emoji": "📊", "text": "比・割合の完全ガイド"},
       {"href": "/bunsuu-warizan.html",    "emoji": "½", "text": "分数のわり算ドリル"},
+      {"href": "/menseki-enza.html",      "emoji": "⭕", "text": "円周の求め方"},
       {"href": "/menseki-en.html",        "emoji": "⭕", "text": "円の面積ドリル"},
       {"href": "/chuugaku-junbi.html",    "emoji": "🎒", "text": "中学入学前の算数復習"},
     ],
@@ -7749,6 +7750,7 @@ PAGES = [
     "cta_label": "6年生の勉強のコツを見る",
     "related": [
       {"href": "/grade-6-tips.html","emoji": "📚", "text": "6年生の勉強法"},
+      {"href": "/menseki-enza.html","emoji": "⭕", "text": "円周の求め方"},
       {"href": "/bunsuu-warizan.html","emoji": "➗", "text": "分数のわり算"},
       {"href": "/hi-guide.html","emoji": "📊", "text": "比の基本"},
     ],
