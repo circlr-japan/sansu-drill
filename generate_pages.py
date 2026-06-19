@@ -10046,6 +10046,9 @@ PAGES = [
 <li>👍 全教科タブレット完結・書き取り評価・管理が楽</li>
 <li>🤔 専用タブレットの初期費用などは公式で要確認</li>
 </ul>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B5YSC+1GZN5U+2P76+76WZL" rel="nofollow sponsored" target="_blank" style="display:block;background:#3B82F6;color:#fff;font-weight:700;text-align:center;padding:14px;border-radius:50px;text-decoration:none;margin:14px 0;box-shadow:0 4px 14px rgba(59,130,246,0.35);">スマイルゼミの公式サイト・資料請求を見る →</a>
+<img src="https://www19.a8.net/0.gif?a8mat=4B5YSC+1GZN5U+2P76+76WZL" width="1" height="1" alt="" style="position:absolute;">
+<div class="tip-box"><p>💡 「全教科をタブレット1台で・書き取りもしっかり」ならスマイルゼミが候補。資料請求や無料体験で、お子様に合うか試せます。</p></div>
 
 <h2>④ Z会小学生コース ― ハイレベル・受験志向</h2>
 <p>良問・思考力重視で、学力が高め・中学受験を視野に入れる家庭に支持されています。難度はやや高めです。</p>
