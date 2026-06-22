@@ -9790,7 +9790,7 @@ PAGES = [
 <li><strong>図や絵にする</strong>：場面を見える化して、どの計算かを判断する</li>
 <li><strong>式を立てて計算し、見直す</strong>：答えの単位と「だいたいの大きさ」を確認</li>
 </ol>
-<div class="tip-box"><p>💡 いきなり式を立てず、「図にする」をはさむのが最大のコツ。場面が見えると、自然と式が決まります。</p></div>
+<div class="tip-box"><p>💡 いきなり式を立てず、「図にする」をはさむのが最大のコツ。場面が見えると、自然と式が決まります。特に数の関係は<a href="/senbunzu-kakikata.html">線分図</a>にすると一目でわかります。</p></div>
 
 <h2>計算の種類を見分けるキーワード</h2>
 <ul>
@@ -9966,6 +9966,9 @@ PAGES = [
 <a href="/keisan-osoi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">⚡ 計算が遅い子の原因と対策</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">原因は才能でなく“自動化”不足。速く正確にするコツ。</div></a>
+<a href="/senbunzu-kakikata.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">📏 線分図の書き方・使い方</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">文章題・割合・速さが解けないのは“図にできない”から。書き方を解説。</div></a>
 
 <h2>② やる気・習慣の悩み</h2>
 <a href="/sansu-suki-ni-saseru.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
@@ -9977,6 +9980,12 @@ PAGES = [
 <a href="/shuuchuuryoku-benkyou.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">🎯 集中力がない子の勉強法</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">すぐ集中が切れる…叱るより“仕組み”で変わる5つの工夫。</div></a>
+<a href="/benkyou-gohoubi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">🎁 勉強のごほうびは効果ある？</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">やる気を引き出すごほうびの渡し方と、頼りすぎない移行のコツ。</div></a>
+<a href="/oya-iraira.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">😮‍💨 勉強でイライラしない関わり方</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">「なんでわからないの！」を減らす、親も子も楽になる5つのコツ。</div></a>
 
 <h2>③ 効果的な学習法</h2>
 <a href="/hyaku-masu-keisan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
@@ -10446,6 +10455,148 @@ PAGES = [
       {"href": "/tablet-sansu-kyozai-hikaku.html","emoji": "📱", "text": "タブレット教材おすすめ比較"},
       {"href": "/hyaku-masu-keisan.html","emoji": "🔢", "text": "百ます計算"},
       {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "benkyou-gohoubi.html",
+    "title": "勉強のごほうびは効果ある？【やる気を引き出す使い方】",
+    "description": "勉強のごほうびは効果があるのか、やる気を引き出す正しい使い方を解説。物より過程をほめるコツ、ごほうびに頼りすぎない方法を紹介｜にじゅうまる。算数ドリル",
+    "h1": "勉強のごほうびは効果ある？",
+    "eyecatch": "「ごほうびで釣るのは良くない？」使い方次第で、やる気のきっかけになります。効果的なごほうびの渡し方を解説します。",
+    "body_html": """\
+<h2>ごほうびは「使い方」で効果が変わる</h2>
+<p>ごほうび自体は悪いものではありません。やる気の「きっかけ」として上手に使えば、勉強習慣のスタートを後押しできます。ただし<strong>使い方を間違えると逆効果</strong>になることも。</p>
+
+<h2>効果的なごほうびの使い方</h2>
+<h3>① 「結果」より「行動」にあげる</h3>
+<p>「100点取ったら」より「毎日10分やれたら」。<strong>努力した過程</strong>をほめる方が、長く続く力になります。</p>
+<h3>② シールやスタンプなど小さく</h3>
+<p>高価な物より、カレンダーにシールを貯める方式が効果的。「続いている」が見えると、それ自体がごほうびになります。</p>
+<h3>③ 一緒に喜ぶ・認める言葉</h3>
+<p>物だけでなく「集中できたね」「がんばったね」という言葉のごほうびが、自信を育てます。</p>
+<div class="tip-box"><p>💡 最強のごほうびは「できた！」という達成感。物のごほうびは“きっかけ”、最終目標は「勉強そのものが楽しい」状態です。</p></div>
+
+<h2>ごほうびに頼りすぎないために</h2>
+<ul>
+<li>金額をエスカレートさせない（だんだん効かなくなる）</li>
+<li>少しずつ「できたら気持ちいい」の実感に移行する</li>
+<li>できなかった時に罰を与えない（やる気を奪う）</li>
+</ul>
+<div class="warn-box"><p>⚠️ 「ごほうびがないとやらない」が続くなら、量や難易度が合っていないサイン。<a href="/shuuchuuryoku-benkyou.html">無理のないレベル</a>に下げて、成功体験を増やしましょう。</p></div>""",
+    "problems": [],
+    "faq": [
+      {"q": "勉強にごほうびをあげるのは良くない？", "a": "使い方次第です。やる気のきっかけとしては有効ですが、『結果』より『毎日続けた行動』にあげること、金額をエスカレートさせないことが大切です。最終目標は勉強そのものを楽しめる状態です。"},
+      {"q": "どんなごほうびが効果的？", "a": "高価な物より、シールやスタンプを貯める方式が効果的です。『続いている』が目に見えると励みになります。『がんばったね』という言葉のごほうびも自信を育てます。"},
+      {"q": "ごほうびがないとやらなくなりました", "a": "量や難易度が合っていない可能性があります。無理のないレベルに下げて『できた』を増やし、達成感そのものが報酬になるよう少しずつ移行しましょう。"},
+      {"q": "できなかった時はどうする？", "a": "罰を与えるのは逆効果です。やる気を奪い、勉強嫌いの原因になります。できた部分に注目し、『次はここをやってみよう』と前向きに声かけしましょう。"},
+      {"q": "ごほうびはいつまで続ける？", "a": "決まりはありませんが、習慣が定着し『やると気持ちいい』を感じ始めたら、物のごほうびは自然に減らしていけます。あせらず移行しましょう。"},
+    ],
+    "cta_href": "/shuuchuuryoku-benkyou.html",
+    "cta_label": "集中力アップの工夫を見る",
+    "related": [
+      {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
+      {"href": "/benkyou-syuukan.html","emoji": "📅", "text": "勉強習慣のつけ方"},
+      {"href": "/shuuchuuryoku-benkyou.html","emoji": "🎯", "text": "集中力がない子の勉強法"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "oya-iraira.html",
+    "title": "子どもの勉強でイライラしない方法【親が楽になる関わり方】",
+    "description": "子どもの勉強を見ているとイライラする…そんな保護者へ、イライラしない関わり方を解説。教えすぎない・比べない・親も完璧を目指さないコツを紹介｜にじゅうまる。算数ドリル",
+    "h1": "子どもの勉強でイライラしない方法",
+    "eyecatch": "「なんでわからないの！」とつい言ってしまう…。親も子もつらくならない、勉強との関わり方を一緒に考えましょう。",
+    "body_html": """\
+<h2>イライラするのは「あなたが熱心」だから</h2>
+<p>子どもの勉強を見てイライラするのは、<strong>真剣に向き合っている証拠</strong>です。自分を責めないでください。その上で、親も子も楽になる関わり方を知っておきましょう。</p>
+
+<h2>イライラを減らす5つのコツ</h2>
+<h3>① 教えすぎない・先回りしない</h3>
+<p>つい答えを言いたくなりますが、待つのが大切。「どこまでわかる？」と聞いて、子どもが考える時間を確保しましょう。</p>
+<h3>② 他の子・きょうだいと比べない</h3>
+<p>比較は子どものやる気を奪い、親のイライラも増やします。「昨日のその子」と比べましょう。</p>
+<h3>③ 完璧を求めない</h3>
+<p>全部できる必要はありません。1つできたら花マル。ハードルを下げると、親子ともに気持ちが楽になります。</p>
+<h3>④ 時間と環境を仕組み化する</h3>
+<p>「いつやるか」でもめるのが一番疲れます。<a href="/benkyou-syuukan.html">時間を固定</a>して、声かけの回数自体を減らしましょう。</p>
+<h3>⑤ 親が教えなくてもいい</h3>
+<p>無理に教えると衝突しがち。自動採点のドリルや動画解説に任せ、親は「見守る・一緒に喜ぶ」役に回るのも手です。</p>
+<div class="tip-box"><p>💡 親の役割は「先生」ではなく「応援団」。教える人が別にいると、親子関係はぐっと穏やかになります。</p></div>
+
+<h2>イライラの裏に「難しすぎ」が隠れていることも</h2>
+<p>子どもが何度も間違えるのは、内容が難しすぎるサインかもしれません。<a href="/sansu-ga-wakaranai.html">どこでつまずいているか</a>を見て、レベルを合わせると、お互いのストレスが減ります。</p>""",
+    "problems": [],
+    "faq": [
+      {"q": "子どもの勉強でイライラしてしまいます", "a": "それは真剣に向き合っている証拠です。自分を責めないで。教えすぎない・比べない・完璧を求めない、を意識し、時間を固定して声かけ自体を減らすと楽になります。"},
+      {"q": "つい『なんでわからないの』と言ってしまう", "a": "わからないのは子どものせいではありません。難しすぎる可能性もあります。『どこまでわかる？』と一緒に探し、わかる所まで戻ると、親子ともに穏やかになれます。"},
+      {"q": "親が教えると喧嘩になります", "a": "無理に親が教えなくて大丈夫です。自動採点のドリルや動画解説に任せ、親は『見守る・一緒に喜ぶ』役に回ると衝突が減ります。教える人を分けるのは賢い選択です。"},
+      {"q": "他の子と比べてしまいます", "a": "比較は子どものやる気を奪い、親のイライラも増やします。比べるなら『昨日のその子』と。少しでも前に進んだ点に注目してほめましょう。"},
+      {"q": "どうしてもイライラする時は？", "a": "一度その場を離れて深呼吸を。完璧な親である必要はありません。1つできたら花マル、くらいにハードルを下げると、親子ともに気持ちが軽くなります。"},
+    ],
+    "cta_href": "/sansu-onayami-guide.html",
+    "cta_label": "算数のお悩み解決ガイドを見る",
+    "related": [
+      {"href": "/benkyou-syuukan.html","emoji": "📅", "text": "勉強習慣のつけ方"},
+      {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
+      {"href": "/sansu-ga-wakaranai.html","emoji": "💡", "text": "算数がわからない時は"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "senbunzu-kakikata.html",
+    "title": "線分図の書き方・使い方【文章題・割合・速さに強くなる】",
+    "description": "線分図の書き方と使い方を解説。文章題・割合・速さで線分図を使うと、数の関係が見えて式が立てやすくなります。例題つきで書き方のコツを紹介｜にじゅうまる。算数ドリル",
+    "h1": "線分図の書き方・使い方",
+    "eyecatch": "文章題が解けないのは「式が立てられない」から。線分図で数の関係を“見える化”すれば、式が自然に決まります。",
+    "body_html": """\
+<h2>線分図とは？なぜ役立つの？</h2>
+<p>線分図は、数の大きさや関係を<strong>1本の線で表した図</strong>です。文章題・割合・速さなど「式が立てにくい」問題で、数の関係を見える化してくれます。</p>
+<div class="tip-box"><p>💡 文章題が苦手な子の多くは「式が立てられない」だけ。線分図で関係が見えると、式は自然に決まります。</p></div>
+
+<h2>線分図の書き方（基本3ステップ）</h2>
+<ol>
+<li><strong>わかっている量を線の長さで表す</strong>（大きい数は長く）</li>
+<li><strong>求めるものに「？」を書く</strong></li>
+<li><strong>線の関係（差・何倍・合計）を書きこむ</strong></li>
+</ol>
+
+<h3>例題①：和差算</h3>
+<p>「兄と弟で合わせて1200円、兄が弟より400円多い」</p>
+<p>2本の線をかき、兄の線が弟より400円分長い、と図示。合計1200から差400を引いて2で割れば弟＝400円、兄＝800円と見えてきます。</p>
+
+<h3>例題②：割合</h3>
+<p>「定価の20%引き」なら、全体（定価）を1本の線（100%）として、その80%分を図示。線で見ると「×0.8」が納得できます。</p>
+
+<h2>割合・速さにも線分図が効く</h2>
+<ul>
+<li><strong>割合</strong>：もとにする量を1本の線（100%）にして、比べる量を図示</li>
+<li><strong>速さ</strong>：道のりを線で表し、時間や速さの関係を書きこむ</li>
+</ul>
+<div class="warn-box"><p>⚠️ きれいに描く必要はありません。○や線で「数の関係」が見えればOK。手を動かして描くことが大切です。</p></div>
+
+<h2>線分図が描けると文章題に強くなる</h2>
+<p>線分図は、<a href="/bunshoudai-kokufuku.html">文章題</a>・割合・速さなど、小学算数の「難しい」と言われる単元すべてに効く武器です。まずは簡単な問題から、図にする習慣をつけましょう。</p>""",
+    "problems": [
+      {"q": "2つの数の和は28、差は8。大きい数は？", "a": "(28＋8)÷2＝18"},
+      {"q": "兄と弟で1200円、兄が400円多い。弟は？", "a": "(1200−400)÷2＝400円"},
+      {"q": "定価500円の20%引きは？", "a": "500×0.8＝400円"},
+      {"q": "くらべる量30・もとにする量120。割合は？", "a": "30÷120＝0.25＝25%"},
+      {"q": "全体200人の35%は何人？", "a": "200×0.35＝70人"},
+    ],
+    "faq": [
+      {"q": "線分図とは何ですか？", "a": "数の大きさや関係を1本の線で表した図です。文章題・割合・速さなどで、数の関係を見える化して式を立てやすくしてくれます。"},
+      {"q": "線分図はどう書けばいい？", "a": "①わかっている量を線の長さで表す、②求めるものに『？』を書く、③差・何倍・合計などの関係を書きこむ、の3ステップです。きれいに描く必要はありません。"},
+      {"q": "文章題が苦手な子に線分図は効く？", "a": "とても効きます。文章題が解けないのは『式が立てられない』ことが多く、線分図で数の関係が見えると式が自然に決まります。簡単な問題から図にする習慣をつけましょう。"},
+      {"q": "割合や速さにも使える？", "a": "使えます。割合はもとにする量を1本の線（100%）として比べる量を図示、速さは道のりを線で表して時間や速さの関係を書きこむと、考え方が見えてきます。"},
+      {"q": "何年生から練習するといい？", "a": "和差算など簡単なものは低〜中学年から、割合・速さは5年生から本格的に使います。早めに『図にして考える』習慣をつけておくと、難しい単元で役立ちます。"},
+    ],
+    "cta_href": "/bunshoudai-kokufuku.html",
+    "cta_label": "文章題の解き方を見る",
+    "related": [
+      {"href": "/bunshoudai-kokufuku.html","emoji": "📝", "text": "文章題が苦手な時は"},
+      {"href": "/wariai-guide.html","emoji": "📊", "text": "割合の基本"},
+      {"href": "/sokudo-guide.html","emoji": "🏃", "text": "速さの基本"},
       {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
     ],
   },
