@@ -9963,6 +9963,9 @@ PAGES = [
 <a href="/zukei-nigate-kokufuku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">📐 図形が苦手な小学生の克服法</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">図形だけ点が取れない…空間イメージを育てる家庭での工夫。</div></a>
+<a href="/keisan-osoi.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">⚡ 計算が遅い子の原因と対策</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">原因は才能でなく“自動化”不足。速く正確にするコツ。</div></a>
 
 <h2>② やる気・習慣の悩み</h2>
 <a href="/sansu-suki-ni-saseru.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
@@ -9979,6 +9982,12 @@ PAGES = [
 <a href="/tablet-sansu-kyozai-hikaku.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #14B8A6;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#0F766E;margin-bottom:3px;">📱 タブレット算数教材おすすめ比較</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">RISU・進研ゼミ・スマイルゼミ等を目的別に比較。教材選びに迷ったら。</div></a>
+<a href="/sansu-tokui-ni-suru.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">💪 算数を得意にする方法</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">得意な子の共通点と、家庭でできる5つの習慣。</div></a>
+<a href="/chuujuken-itsukara.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">🎒 中学受験の算数はいつから？</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">本格対策の開始時期と、低学年でやっておきたい土台づくり。</div></a>
 
 <h2>まず「どこでつまずいているか」を見つけよう</h2>
 <p>悩みを解決する第一歩は、<strong>つまずいている場所を特定する</strong>ことです。学年別の学習内容や、各学年の弱点対策ページも合わせてご活用ください。原因さえわかれば、対策はぐっと立てやすくなります。</p>
@@ -10082,6 +10091,157 @@ PAGES = [
       {"href": "/sansu-ga-wakaranai.html","emoji": "💡", "text": "算数がわからない時は"},
       {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
       {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
+    ],
+  },
+  {
+    "filename": "keisan-osoi.html",
+    "title": "計算が遅い小学生の原因と対策【速く正確にするコツ】",
+    "description": "計算が遅い小学生の原因を3つに整理し、速く正確にするための具体的な対策を解説。百ます計算・暗算の自動化・毎日の習慣化で計算スピードを上げる方法｜にじゅうまる。算数ドリル",
+    "h1": "計算が遅い小学生の原因と対策",
+    "eyecatch": "「うちの子、計算が遅い…」原因は才能ではなく“基礎の自動化”不足。速く正確にするコツを解説します。",
+    "body_html": """\
+<h2>計算が遅い3つの原因</h2>
+<p>計算が遅いのは頭の良し悪しではありません。多くは<strong>基礎計算が「自動化」されていない</strong>ことが原因です。</p>
+<ul>
+<li><strong>① 九九・たし算ひき算が瞬時に出ない</strong>：指で数える・思い出すのに時間がかかる</li>
+<li><strong>② 一問ずつ慎重になりすぎる</strong>：見直しが多く手が止まる</li>
+<li><strong>③ 計算の工夫を知らない</strong>：きりのいい数を作るなどの近道を使えていない</li>
+</ul>
+
+<h2>速く正確にする対策</h2>
+<h3>① 基礎計算を「自動化」する</h3>
+<p>くり上がり・くり下がり・九九を、<strong>考えずに答えが出る</strong>レベルまで反復します。<a href="/hyaku-masu-keisan.html">百ます計算</a>はこの自動化に最適。タイムを計ると効果が見えます。</p>
+<div class="tip-box"><p>💡 目標は「7×8は？」に0.5秒で答えられる状態。ここまで来ると計算全体が一気に速くなります。</p></div>
+
+<h3>② 計算の工夫を覚える</h3>
+<p>「25×4＝100」「99×6＝(100−1)×6」など、きりのいい数を作る工夫で時間を短縮できます。</p>
+
+<h3>③ 毎日少しずつ・タイムを記録</h3>
+<p>1日5〜10分でも毎日続けるのが一番。タイムをカレンダーに記録すると、伸びが見えてやる気が続きます。</p>
+<div class="warn-box"><p>⚠️ 「速く！」と急かすのは逆効果。まず正確に、慣れてきたら自然と速くなります。記録が縮む過程をほめましょう。</p></div>
+
+<h2>遅さの裏に「つまずき」があることも</h2>
+<p>特定の単元だけ極端に遅い場合は、その前提でつまずいている可能性があります。九九があやふやならわり算が遅い、というように。<a href="/sansu-ga-wakaranai.html">どこでつまずいているか</a>を確認し、必要なら前の学年に戻りましょう。</p>""",
+    "problems": [
+      {"q": "7 × 8 ＝ ?", "a": "56"},
+      {"q": "9 ＋ 6 ＝ ?", "a": "15"},
+      {"q": "13 － 7 ＝ ?", "a": "6"},
+      {"q": "25 × 4 ＝ ?（工夫して）", "a": "100"},
+      {"q": "99 × 6 ＝ ?（(100−1)×6で）", "a": "594"},
+    ],
+    "faq": [
+      {"q": "計算が遅いのは生まれつき？", "a": "いいえ、ほとんどは基礎計算が自動化されていないだけです。九九やくり上がり計算を『考えずに答えられる』まで反復すれば、計算スピードは必ず上がります。"},
+      {"q": "計算を速くするのに一番効く練習は？", "a": "百ます計算など、基礎計算を短時間で繰り返す練習が効果的です。タイムを計って記録すると、伸びが見えてモチベーションも続きます。"},
+      {"q": "速くするとミスが増えませんか？", "a": "まず『正確さ』を優先しましょう。確実に正解できるようになってから少しずつ速度を上げると、ミスを増やさず速くなれます。急かすのは逆効果です。"},
+      {"q": "特定の計算だけ遅いのですが？", "a": "その単元の前提でつまずいている可能性があります。例えばわり算が遅いなら九九を、筆算が遅いならくり上がり計算を確認しましょう。前の学年に戻るのが近道です。"},
+      {"q": "1日どのくらい練習すればいい？", "a": "1日5〜10分で十分です。短くても毎日続けることが、計算の自動化には最も効果的です。"},
+    ],
+    "cta_href": "/hyaku-masu-keisan.html",
+    "cta_label": "百ます計算で計算力を鍛える",
+    "related": [
+      {"href": "/hyaku-masu-keisan.html","emoji": "🔢", "text": "百ます計算"},
+      {"href": "/keisan-machigai.html","emoji": "✏️", "text": "計算ミスをなくす"},
+      {"href": "/sansu-ga-wakaranai.html","emoji": "💡", "text": "算数がわからない時は"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "chuujuken-itsukara.html",
+    "title": "中学受験の算数はいつから始める？【学年別の準備ガイド】",
+    "description": "中学受験の算数はいつから始めるべきか、学年別の準備を解説。低学年でやること・本格的な対策の開始時期・家庭でできる土台づくりを紹介｜にじゅうまる。算数ドリル",
+    "h1": "中学受験の算数はいつから始める？",
+    "eyecatch": "「中学受験の算数、いつから始めれば？」一般的な開始時期と、低学年のうちにやっておきたい土台づくりを解説します。",
+    "body_html": """\
+<h2>本格的な対策は「小3の2月（新4年）」が一般的</h2>
+<p>中学受験の進学塾では、<strong>小学3年生の2月＝新4年生</strong>からのスタートが一般的です。受験算数は特殊算など独特の単元が多く、4・5年で範囲を学び、6年で仕上げる流れが主流です。</p>
+<div class="tip-box"><p>💡 ただし「いつから塾」より、それまでに<strong>計算力と算数への好き</strong>を育てておくことが合否を分けます。</p></div>
+
+<h2>低学年（1〜3年）でやっておきたい土台</h2>
+<ul>
+<li><strong>計算の自動化</strong>：九九・くり上がり・わり算を速く正確に（受験算数は計算量が多い）</li>
+<li><strong>算数を好きになる</strong>：嫌いになると受験勉強が苦行に。<a href="/sansu-suki-ni-saseru.html">楽しい体験</a>を積む</li>
+<li><strong>文章を読み取る力</strong>：図にして考える習慣（受験算数は文章題が中心）</li>
+</ul>
+<div class="warn-box"><p>⚠️ 低学年から詰め込みすぎて算数嫌いになるのは最悪。まずは「できる→楽しい」の好循環を作りましょう。</p></div>
+
+<h2>学年別の目安</h2>
+<table border="1" style="border-collapse:collapse;width:100%;text-align:center;font-size:13px;">
+<tr style="background:#EFF6FF;"><th style="padding:8px;">時期</th><th style="padding:8px;">やること</th></tr>
+<tr><td style="padding:8px;">〜小3</td><td style="padding:8px;">計算の自動化・算数好き・読解の土台</td></tr>
+<tr><td style="padding:8px;">新4年（小3の2月）</td><td style="padding:8px;">受験対策スタート（塾・特殊算）</td></tr>
+<tr><td style="padding:8px;">5年</td><td style="padding:8px;">範囲を一通り・割合/速さ/比を固める</td></tr>
+<tr><td style="padding:8px;">6年</td><td style="padding:8px;">過去問・総仕上げ</td></tr>
+</table>
+
+<h2>まず家庭でできること</h2>
+<p>受験を決める前でも、<strong>毎日の計算習慣</strong>と<strong>算数を楽しむ経験</strong>は無駄になりません。無料の<a href="/">にじゅうまるドリル</a>で計算の土台を、タブレット教材で体系的な学習を——と段階的に進めるのがおすすめです。</p>""",
+    "problems": [],
+    "faq": [
+      {"q": "中学受験の算数はいつから始めるべき？", "a": "進学塾では小3の2月（新4年生）からが一般的です。ただしそれまでに計算力と算数への好きを育てておくことが、その後の伸びを大きく左右します。"},
+      {"q": "低学年のうちは何をすればいい？", "a": "計算の自動化（九九・くり上がり等）、算数を好きになる体験、文章を図にして考える習慣づくりが土台になります。詰め込みより『できる→楽しい』の好循環を優先しましょう。"},
+      {"q": "塾に入れないと中学受験は無理？", "a": "受験算数は特殊で範囲も広いため、多くの家庭が塾を利用します。ただし低学年の土台づくりや日々の計算習慣は家庭でも十分にでき、塾に入ってからの伸びが変わります。"},
+      {"q": "算数が苦手でも中学受験できる？", "a": "できますが、算数は配点が大きく合否を分けやすい科目です。苦手なら早めに『どこでつまずいているか』を特定し、前の学年に戻って固めることが大切です。"},
+      {"q": "受験を決める前にやって損しないことは？", "a": "毎日の計算練習と算数を楽しむ経験は、受験してもしなくても必ず役立ちます。無料ドリルでの習慣づけから始めるのがおすすめです。"},
+    ],
+    "cta_href": "/grade-guide.html",
+    "cta_label": "学年別の学習内容を見る",
+    "related": [
+      {"href": "/tablet-sansu-kyozai-hikaku.html","emoji": "📱", "text": "タブレット教材の比較"},
+      {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
+      {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "sansu-tokui-ni-suru.html",
+    "title": "算数を得意にする方法【家庭でできる5つの習慣】",
+    "description": "算数を得意にする方法を解説。算数が得意な子に共通する『数の感覚』と『基礎計算の自動化』を、家庭でできる5つの習慣で育てるコツを紹介｜にじゅうまる。算数ドリル",
+    "h1": "算数を得意にする方法",
+    "eyecatch": "算数が得意な子には共通点があります。才能ではなく“習慣”で育つ——家庭でできる5つのコツを解説します。",
+    "body_html": """\
+<h2>算数が得意な子の2つの共通点</h2>
+<p>算数が得意な子に共通するのは、次の2つです。どちらも<strong>家庭の習慣で育てられます。</strong></p>
+<ul>
+<li><strong>① 数の感覚（数感）</strong>：数の大きさや関係を直感的にイメージできる</li>
+<li><strong>② 基礎計算の自動化</strong>：九九や暗算が考えずにできる</li>
+</ul>
+
+<h2>得意にする5つの習慣</h2>
+<h3>① 基礎計算を自動化する</h3>
+<p>九九・くり上がり計算を「考えずに答えられる」まで反復。<a href="/hyaku-masu-keisan.html">百ます計算</a>が効果的です。計算が速いと、応用問題に頭を使う余裕が生まれます。</p>
+<h3>② 毎日少しずつ続ける</h3>
+<p>1日10分でも毎日。歯磨きのように習慣化すると、無理なく力がつきます。</p>
+<h3>③ 「できた！」を増やす</h3>
+<p>少し簡単な問題から成功体験を積むと、自信がつき自分から取り組むように。得意の入り口は「できる楽しさ」です。</p>
+<h3>④ 生活の中で数に触れる</h3>
+<p>買い物の暗算、時計、料理の分量など、日常の数を一緒に楽しむと数感が育ちます。</p>
+<h3>⑤ 間違いを責めない</h3>
+<p>間違えても「どこで気づけた？」と前向きに。失敗を恐れず挑戦する子ほど伸びます。</p>
+<div class="tip-box"><p>💡 「速く・正確に・楽しく」。この3つがそろうと、算数は自然と得意科目になります。</p></div>
+
+<h2>苦手から得意へは「戻る」のが近道</h2>
+<p>今苦手でも大丈夫。つまずいた単元まで戻って土台を固めれば、得意に変えられます。<a href="/sansu-ga-wakaranai.html">わからない原因の見つけ方</a>も参考にしてください。</p>""",
+    "problems": [
+      {"q": "8 × 7 ＝ ?", "a": "56"},
+      {"q": "6 ＋ 9 ＝ ?", "a": "15"},
+      {"q": "42 ÷ 6 ＝ ?", "a": "7"},
+      {"q": "おつり：1000円で670円の買い物。おつりは？", "a": "1000−670＝330円"},
+      {"q": "25 × 8 ＝ ?（工夫して）", "a": "200"},
+    ],
+    "faq": [
+      {"q": "算数が得意な子の共通点は？", "a": "『数の感覚（数感）』と『基礎計算の自動化』の2つです。どちらも才能ではなく、毎日の練習や生活の中で数に触れる習慣で育てられます。"},
+      {"q": "算数を得意にする一番のコツは？", "a": "基礎計算を考えずにできるレベルまで自動化することです。計算に余裕ができると、応用問題に頭を使えるようになり、得点力が一気に上がります。"},
+      {"q": "今苦手でも得意になれますか？", "a": "なれます。つまずいた単元まで戻って土台を固めるのが近道です。簡単な問題から『できた！』を積み重ねると、自信とともに得意に変わっていきます。"},
+      {"q": "家庭でできることは？", "a": "毎日10分の計算練習、買い物の暗算など生活の中の数遊び、そして『できた』をほめること。間違いを責めず挑戦を応援する姿勢が、得意な子を育てます。"},
+      {"q": "ドリルは何を使えばいい？", "a": "まずは無料のにじゅうまるドリルで毎日の計算習慣を。物足りなくなったら、目的に合うタブレット教材を検討するとスムーズです。"},
+    ],
+    "cta_href": "/hyaku-masu-keisan.html",
+    "cta_label": "百ます計算で計算力を鍛える",
+    "related": [
+      {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
+      {"href": "/hyaku-masu-keisan.html","emoji": "🔢", "text": "百ます計算"},
+      {"href": "/keisan-osoi.html","emoji": "⚡", "text": "計算が遅い時の対策"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
     ],
   },
 
