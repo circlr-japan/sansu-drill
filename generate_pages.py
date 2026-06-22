@@ -9969,6 +9969,9 @@ PAGES = [
 <a href="/senbunzu-kakikata.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">📏 線分図の書き方・使い方</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">文章題・割合・速さが解けないのは“図にできない”から。書き方を解説。</div></a>
+<a href="/menseki-zu-kakikata.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:3px;">⬜ 面積図の書き方・使い方</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">平均・つるかめ算・速さに。かけ算の関係を長方形で見える化。</div></a>
 
 <h2>② やる気・習慣の悩み</h2>
 <a href="/sansu-suki-ni-saseru.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
@@ -9986,6 +9989,12 @@ PAGES = [
 <a href="/oya-iraira.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">😮‍💨 勉強でイライラしない関わり方</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">「なんでわからないの！」を減らす、親も子も楽になる5つのコツ。</div></a>
+<a href="/benkyou-shinai.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">🙅 勉強しない子への接し方</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">「勉強しなさい」が逆効果になる理由と、やる気を引き出す5つの接し方。</div></a>
+<a href="/living-gakushu.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">🛋️ リビング学習の効果とデメリット</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">成績の良い子に多いと言われる理由と、集中できる環境の作り方。</div></a>
 
 <h2>③ 効果的な学習法</h2>
 <a href="/hyaku-masu-keisan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
@@ -10009,6 +10018,12 @@ PAGES = [
 <a href="/soroban-koka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">🧮 そろばんは算数に効果ある？</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">メリットと向き不向き。家庭の計算練習との使い分け。</div></a>
+<a href="/juku-itsukara.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">🏫 塾はいつから必要？</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">家庭学習でどこまでできる？塾が向く子・不要な子の見分け方。</div></a>
+<a href="/kumon-koka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">✏️ 公文式は算数に効果ある？</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">メリット・デメリットを中立解説。家庭学習との使い分け。</div></a>
 
 <h2>まず「どこでつまずいているか」を見つけよう</h2>
 <p>悩みを解決する第一歩は、<strong>つまずいている場所を特定する</strong>ことです。学年別の学習内容や、各学年の弱点対策ページも合わせてご活用ください。原因さえわかれば、対策はぐっと立てやすくなります。</p>
@@ -10552,7 +10567,7 @@ PAGES = [
     "body_html": """\
 <h2>線分図とは？なぜ役立つの？</h2>
 <p>線分図は、数の大きさや関係を<strong>1本の線で表した図</strong>です。文章題・割合・速さなど「式が立てにくい」問題で、数の関係を見える化してくれます。</p>
-<div class="tip-box"><p>💡 文章題が苦手な子の多くは「式が立てられない」だけ。線分図で関係が見えると、式は自然に決まります。</p></div>
+<div class="tip-box"><p>💡 文章題が苦手な子の多くは「式が立てられない」だけ。線分図で関係が見えると、式は自然に決まります。なお「かけ算」の関係（単価×個数・平均など）は<a href="/menseki-zu-kakikata.html">面積図</a>の方が向いています。</p></div>
 
 <h2>線分図の書き方（基本3ステップ）</h2>
 <ol>
@@ -10595,6 +10610,249 @@ PAGES = [
     "cta_label": "文章題の解き方を見る",
     "related": [
       {"href": "/bunshoudai-kokufuku.html","emoji": "📝", "text": "文章題が苦手な時は"},
+      {"href": "/wariai-guide.html","emoji": "📊", "text": "割合の基本"},
+      {"href": "/sokudo-guide.html","emoji": "🏃", "text": "速さの基本"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "juku-itsukara.html",
+    "title": "塾はいつから必要？小学生の算数は家庭学習でどこまでできる",
+    "description": "塾はいつから必要か、小学生の算数は家庭学習でどこまでできるかを解説。塾が向く子・家庭学習で十分な子の見分け方、費用を抑える学習法を紹介｜にじゅうまる。算数ドリル",
+    "h1": "塾はいつから必要？算数は家庭学習でどこまで",
+    "eyecatch": "「そろそろ塾？」と迷う保護者へ。塾が必要なケースと、家庭学習で十分なケースを、目的別に整理します。",
+    "body_html": """\
+<h2>結論：目的しだい。全員に塾が必要なわけではない</h2>
+<p>塾は「中学受験をするか」「学校の授業についていけているか」で必要性が大きく変わります。<strong>学校の勉強の定着が目的なら、家庭学習で十分</strong>カバーできるケースが多いです。</p>
+
+<h2>塾を検討したほうがいいケース</h2>
+<ul>
+<li><strong>中学受験をする</strong>：特殊算など学校で扱わない内容が必要 → 4年生前後から</li>
+<li>家庭学習だけでは授業についていけない状態が続いている</li>
+<li>家庭で勉強を見る時間が取れない／親子だと<a href="/oya-iraira.html">どうしても衝突する</a></li>
+</ul>
+
+<h2>家庭学習で十分なケース</h2>
+<ul>
+<li>目的が「学校の授業の理解・定着」</li>
+<li>毎日の学習習慣がある、または作れる</li>
+<li>つまずきが基礎計算や特定単元に限られる（その単元を集中的に復習すればよい）</li>
+</ul>
+<div class="tip-box"><p>💡 まずは家庭学習で土台を固め、「中学受験する」「成績が伸び悩む」となった段階で塾を検討、が費用対効果の高い順番です。</p></div>
+
+<h2>塾の前に家庭でできること</h2>
+<p>塾は月数千〜数万円。その前に、<a href="/benkyou-syuukan.html">学習習慣</a>と<a href="/hyaku-masu-keisan.html">基礎計算</a>を固めるだけで、授業の理解度は大きく変わります。タブレット教材なら塾より低コストで、つまずき診断・自動採点まで任せられます。</p>
+<div class="warn-box"><p>⚠️ 「みんな行っているから」で塾を決めると、合わないまま続けて費用も時間もムダになりがち。目的（受験／補習／習慣づけ）を先に決めましょう。</p></div>
+<p>家庭学習の選択肢は<a href="/tablet-sansu-kyozai-hikaku.html">タブレット教材の比較</a>で目的別に整理しています。まずは無料の<a href="/">にじゅうまるドリル</a>で毎日の計算習慣から始めるのもおすすめです。</p>""",
+    "problems": [],
+    "faq": [
+      {"q": "塾はいつから通わせるべき？", "a": "目的によります。中学受験なら4年生前後から、学校の補習目的なら『授業についていけない状態が続いたら』が目安です。全員に塾が必要なわけではなく、まず家庭学習で土台を固めるのが費用対効果の高い順番です。"},
+      {"q": "算数は家庭学習だけで大丈夫？", "a": "学校の授業の理解・定着が目的なら、家庭学習で十分カバーできます。毎日の学習習慣と基礎計算を固め、つまずいた単元を集中復習すれば、塾なしでも力はつきます。中学受験をする場合は塾の力を借りるのが現実的です。"},
+      {"q": "塾と通信教育（タブレット）どっちがいい？", "a": "費用と目的で選びます。タブレット教材は塾より低コストで、つまずき診断・自動採点まで任せられます。手厚い指導や競争環境が欲しい・中学受験するなら塾、習慣づけと補習なら家庭学習・タブレットが向いています。"},
+      {"q": "塾に行かせるか迷っています", "a": "『みんな行っているから』で決めず、目的（受験・補習・習慣づけ）を先に決めましょう。補習や習慣づけが目的なら、まず家庭学習で十分なことが多いです。伸び悩んだ段階で塾を検討すればムダがありません。"},
+      {"q": "低学年から塾は必要？", "a": "低学年は塾より、家庭での学習習慣づくりと基礎計算の方が効果的です。毎日机に向かう習慣、計算の自動化を先に作っておくと、後の学習がぐっと楽になります。"},
+    ],
+    "cta_href": "/tablet-sansu-kyozai-hikaku.html",
+    "cta_label": "家庭学習の教材を比較する",
+    "related": [
+      {"href": "/tablet-sansu-kyozai-hikaku.html","emoji": "📱", "text": "タブレット教材おすすめ比較"},
+      {"href": "/benkyou-syuukan.html","emoji": "📅", "text": "勉強習慣のつけ方"},
+      {"href": "/chuujuken-itsukara.html","emoji": "🎒", "text": "中学受験はいつから"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "kumon-koka.html",
+    "title": "公文式（くもん）は算数に効果ある？メリット・デメリット",
+    "description": "公文式（くもん）は算数に効果があるのか、メリット・デメリットを中立的に解説。向いている子の特徴、家庭学習やタブレット教材との違いを紹介｜にじゅうまる。算数ドリル",
+    "h1": "公文式は算数に効果ある？",
+    "eyecatch": "計算力で有名な公文式。算数への効果と、向き・不向きを公平に整理し、家庭学習との使い分けを考えます。",
+    "body_html": """\
+<h2>公文式の特徴</h2>
+<p>公文式（くもん）は、<strong>計算問題を反復してスモールステップで進める</strong>学習法です。自分のペースで先取りでき、計算の速さ・正確さを鍛えるのに向いています。</p>
+
+<h2>メリット</h2>
+<ul>
+<li><strong>基礎計算力がつく</strong>：反復で計算が速く正確になる</li>
+<li><strong>学習習慣がつく</strong>：毎日プリントに取り組む習慣</li>
+<li><strong>先取りできる</strong>：理解が早い子はどんどん進める</li>
+</ul>
+
+<h2>デメリット・注意点</h2>
+<ul>
+<li><strong>文章題・図形は手薄</strong>：計算中心のため、応用・文章題は別で補う必要がある</li>
+<li>単調な反復を嫌がる子には合わないことがある</li>
+<li>月謝がかかる（教科ごと）</li>
+</ul>
+<div class="warn-box"><p>⚠️ 公文で計算は伸びても、<a href="/bunshoudai-kokufuku.html">文章題</a>や<a href="/zukei-nigate-kokufuku.html">図形</a>は別途対策が必要、という声は多いです。目的が計算力なら有効、総合力なら補強が前提です。</p></div>
+
+<h2>公文が向いている子・向かない子</h2>
+<p><strong>向いている</strong>：コツコツ反復が苦でない、計算力を集中的に伸ばしたい。<br>
+<strong>向かない</strong>：単調な作業が苦手、文章題や考える問題を伸ばしたい。</p>
+<div class="tip-box"><p>💡 「計算は公文、応用は家庭学習や他教材」と役割分担する家庭も多いです。お子さんの目的に合わせて選びましょう。</p></div>
+
+<h2>家庭学習という選択肢</h2>
+<p>計算の反復だけなら、家庭でも十分できます。無料の<a href="/hyaku-masu-keisan.html">百ます計算</a>や<a href="/">にじゅうまるドリル</a>で毎日続ければ、計算力は着実に伸びます。文章題・図形までバランスよく学びたいなら、<a href="/tablet-sansu-kyozai-hikaku.html">タブレット教材</a>も比較してみてください。</p>""",
+    "problems": [],
+    "faq": [
+      {"q": "公文式は算数に効果ありますか？", "a": "計算力（速さ・正確さ）を鍛えるのには効果的です。反復とスモールステップで基礎計算が定着します。一方で文章題や図形は手薄になりがちなので、総合的な力をつけたい場合は別途の補強が前提になります。"},
+      {"q": "公文のデメリットは？", "a": "計算中心のため文章題・図形が手薄になりやすいこと、単調な反復を嫌がる子には合わないことがあること、教科ごとに月謝がかかることです。計算力が目的なら有効ですが、応用力は別で補う必要があります。"},
+      {"q": "公文はどんな子に向いている？", "a": "コツコツ反復するのが苦でない子、計算力を集中的に伸ばしたい子に向いています。逆に単調な作業が苦手な子や、文章題・考える問題を伸ばしたい子には向きにくい面があります。"},
+      {"q": "公文と家庭学習どっちがいい？", "a": "計算の反復だけが目的なら、無料の百ます計算やドリルで家庭でも代替できます。指導や教材管理を任せたいなら公文、文章題・図形までバランスよく学びたいならタブレット教材も選択肢です。目的で選びましょう。"},
+      {"q": "公文をやめた後はどうする？", "a": "計算力が身についていれば、家庭学習で維持・発展できます。毎日の計算習慣を続けつつ、文章題・図形・割合など応用単元を順に補強していくと、総合的な算数力につながります。"},
+    ],
+    "cta_href": "/hyaku-masu-keisan.html",
+    "cta_label": "無料で計算力を鍛える（百ます計算）",
+    "related": [
+      {"href": "/hyaku-masu-keisan.html","emoji": "🔢", "text": "百ます計算のやり方"},
+      {"href": "/tablet-sansu-kyozai-hikaku.html","emoji": "📱", "text": "タブレット教材おすすめ比較"},
+      {"href": "/bunshoudai-kokufuku.html","emoji": "📝", "text": "文章題が苦手な時は"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "benkyou-shinai.html",
+    "title": "勉強しない小学生への接し方【無理なくやる気を引き出す】",
+    "description": "勉強しない小学生への接し方を解説。叱るほど逆効果になる理由と、無理なくやる気を引き出す声かけ・仕組み作りのコツを紹介｜にじゅうまる。算数ドリル",
+    "h1": "勉強しない子への接し方",
+    "eyecatch": "「勉強しなさい」と言うほどやらない…。叱る以外の、やる気を引き出す関わり方を一緒に考えましょう。",
+    "body_html": """\
+<h2>「勉強しなさい」が逆効果になる理由</h2>
+<p>言われるほどやる気をなくすのは、子どもの自然な反応です。<strong>「やらされ感」</strong>が強まると、勉強そのものが嫌いになってしまいます。まずは叱る回数を減らすことから始めましょう。</p>
+
+<h2>やる気を引き出す5つの接し方</h2>
+<h3>① ハードルを思いきり下げる</h3>
+<p>「1日1問」「3分だけ」でOK。<strong>小さく始めて成功体験を積む</strong>のが、やる気の入口です。</p>
+<h3>② 結果より過程をほめる</h3>
+<p>「机に向かえたね」「自分から始めたね」と、行動を認める。点数より努力に注目しましょう。</p>
+<h3>③ 時間と場所を仕組みにする</h3>
+<p>「いつ・どこで」を固定すると、声かけなしでも動きやすくなります。<a href="/benkyou-syuukan.html">勉強習慣</a>の作り方が参考になります。</p>
+<h3>④ 一緒に取り組む・近くにいる</h3>
+<p>「一人でやりなさい」より、最初は親がそばにいる方が動き出せます。<a href="/living-gakushu.html">リビング学習</a>も有効です。</p>
+<h3>⑤ 好き・得意から入る</h3>
+<p>嫌いな単元より、できる問題・好きな教材から。ゲーム感覚のドリルやアプリで「楽しい」を入口にしましょう。</p>
+<div class="tip-box"><p>💡 やる気は「出してから動く」のではなく「動くと出てくる」もの。まず1問やれる仕掛けを作るのが近道です。</p></div>
+
+<h2>それでも動かない時は</h2>
+<p>難しすぎて手が出ない、という可能性もあります。<a href="/sansu-ga-wakaranai.html">どこでつまずいているか</a>を確認し、わかるところまで戻ってあげましょう。親子だと衝突するなら、<a href="/oya-iraira.html">教える人を分ける</a>のも賢い選択です。</p>
+<div class="warn-box"><p>⚠️ <a href="/benkyou-gohoubi.html">ごほうび</a>は入口としては有効ですが、罰や脅しはやる気を奪います。「できたら認める」を基本にしましょう。</p></div>""",
+    "problems": [],
+    "faq": [
+      {"q": "勉強しない子にどう接すればいい？", "a": "『勉強しなさい』は言うほど逆効果です。ハードルを下げて小さく成功体験を積ませ、結果より過程をほめ、時間と場所を仕組み化しましょう。やる気は動き出すと出てくるので、まず1問やれる仕掛けを作るのが近道です。"},
+      {"q": "「勉強しなさい」と言ってはいけない？", "a": "言うほど『やらされ感』が強まり、やる気をなくしやすいです。声かけを減らす代わりに、勉強する時間と場所を固定して仕組みで動けるようにすると、ガミガミ言わずにすみます。"},
+      {"q": "叱ってもやらない時は？", "a": "難しすぎて手が出ない可能性があります。どこでつまずいているか確認し、わかるところまで戻りましょう。叱る・罰するはやる気を奪うので、できた部分を認める関わりに切り替えるのが効果的です。"},
+      {"q": "親が言うと喧嘩になります", "a": "無理に親が教えなくて大丈夫です。自動採点のドリルや動画解説に任せ、親は見守る役に回ると衝突が減ります。教える人を分けるのは賢い選択です。"},
+      {"q": "やる気を引き出すきっかけは？", "a": "好き・得意・できる問題から入るのが効果的です。ゲーム感覚のドリルやアプリで『楽しい』を入口にし、小さな成功体験を重ねると、少しずつ自分から取り組むようになります。"},
+    ],
+    "cta_href": "/sansu-onayami-guide.html",
+    "cta_label": "算数のお悩み解決ガイドを見る",
+    "related": [
+      {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
+      {"href": "/oya-iraira.html","emoji": "😮‍💨", "text": "勉強でイライラしない関わり方"},
+      {"href": "/benkyou-syuukan.html","emoji": "📅", "text": "勉強習慣のつけ方"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "living-gakushu.html",
+    "title": "リビング学習の効果とデメリット【集中できる環境の作り方】",
+    "description": "リビング学習の効果とデメリットを解説。なぜ成績の良い子に多いのか、集中できる環境の作り方、向く子・向かない子の見分け方を紹介｜にじゅうまる。算数ドリル",
+    "h1": "リビング学習の効果とデメリット",
+    "eyecatch": "「リビング学習がいいって本当？」その効果と注意点、集中できる環境づくりのコツをまとめました。",
+    "body_html": """\
+<h2>リビング学習が注目される理由</h2>
+<p>リビング学習とは、子ども部屋ではなく<strong>リビングなど家族のいる場所で勉強する</strong>スタイルです。「成績の良い子に多い」と言われ、低学年〜中学年で特に効果が期待できます。</p>
+
+<h2>リビング学習のメリット</h2>
+<ul>
+<li><strong>安心感で集中しやすい</strong>：親が近くにいると落ち着いて取り組める</li>
+<li><strong>すぐ質問できる</strong>：わからない所をその場で解消できる</li>
+<li><strong>適度な生活音が集中を助ける</strong>：完全な無音より集中できる子も多い</li>
+<li><strong>親が様子を把握できる</strong>：つまずきや習慣の乱れに早く気づける</li>
+</ul>
+
+<h2>デメリット・注意点</h2>
+<ul>
+<li>テレビ・スマホ・おもちゃが視界にあると気が散る</li>
+<li>親が口を出しすぎると<a href="/oya-iraira.html">お互いストレス</a>になる</li>
+<li>高学年になると一人で集中したい子も出てくる</li>
+</ul>
+<div class="warn-box"><p>⚠️ 「リビングに置けばOK」ではありません。テレビを消す、机の上を片づけるなど、<strong>気が散る物を減らす</strong>のが効果を出すカギです。</p></div>
+
+<h2>集中できるリビング学習のコツ</h2>
+<ol>
+<li>勉強中はテレビを消し、スマホは見えない場所へ</li>
+<li>勉強道具をまとめた「学習ボックス」を用意する</li>
+<li>親は隣で家事や読書など、静かに過ごす</li>
+<li>口を出しすぎず、聞かれたら答えるスタンス</li>
+</ol>
+<div class="tip-box"><p>💡 大事なのは場所より「集中できる環境と習慣」。リビングでも子ども部屋でも、<a href="/shuuchuuryoku-benkyou.html">気が散る物を減らす工夫</a>が共通の正解です。</p></div>""",
+    "problems": [],
+    "faq": [
+      {"q": "リビング学習は本当に効果がある？", "a": "特に低学年〜中学年では効果が期待できます。親が近くにいる安心感で集中しやすく、わからない所をすぐ質問でき、適度な生活音がかえって集中を助けることもあります。ただし気が散る物を減らす工夫が前提です。"},
+      {"q": "リビング学習のデメリットは？", "a": "テレビ・スマホ・おもちゃが視界にあると気が散ること、親が口を出しすぎるとお互いストレスになること、高学年になると一人で集中したい子も出てくることです。環境づくりと関わり方の調整が必要です。"},
+      {"q": "リビング学習で集中させるには？", "a": "勉強中はテレビを消しスマホを見えない場所へ、勉強道具をまとめた学習ボックスを用意、親は隣で静かに過ごし口を出しすぎない、が基本です。場所より『気が散る物を減らす』ことが集中のカギです。"},
+      {"q": "子ども部屋とリビングどっちがいい？", "a": "低学年はリビング、高学年で一人で集中したがるなら子ども部屋、と成長に合わせるのが自然です。大事なのは場所そのものより、集中できる環境と毎日の習慣が整っているかどうかです。"},
+      {"q": "親はどう関わればいい？", "a": "隣で家事や読書をしながら見守り、聞かれたら答えるスタンスが理想です。口を出しすぎると衝突のもとになります。様子を把握しつつ、子どもが自分で取り組む余白を残しましょう。"},
+    ],
+    "cta_href": "/shuuchuuryoku-benkyou.html",
+    "cta_label": "集中力アップの工夫を見る",
+    "related": [
+      {"href": "/shuuchuuryoku-benkyou.html","emoji": "🎯", "text": "集中力がない子の勉強法"},
+      {"href": "/benkyou-syuukan.html","emoji": "📅", "text": "勉強習慣のつけ方"},
+      {"href": "/oya-iraira.html","emoji": "😮‍💨", "text": "勉強でイライラしない関わり方"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "menseki-zu-kakikata.html",
+    "title": "面積図の書き方・使い方【割合・速さ・つるかめ算に強くなる】",
+    "description": "面積図の書き方と使い方を解説。割合・平均・速さ・つるかめ算で面積図を使うと、かけ算の関係が見えて解きやすくなります。例題つきで紹介｜にじゅうまる。算数ドリル",
+    "h1": "面積図の書き方・使い方",
+    "eyecatch": "「単価×個数」「速さ×時間」…かけ算の関係は、長方形の面積で表すと一目でわかります。面積図の使い方を解説します。",
+    "body_html": """\
+<h2>面積図とは？</h2>
+<p>面積図は、<strong>「たて × よこ = 面積」の形で数の関係を表した図</strong>です。「単価 × 個数 = 代金」「速さ × 時間 = 道のり」のように、<strong>かけ算で結ばれる3つの量</strong>を長方形で見える化します。</p>
+<div class="tip-box"><p>💡 数の関係が「たし算・差」なら<a href="/senbunzu-kakikata.html">線分図</a>、「かけ算」なら面積図。使い分けると文章題がぐっと楽になります。</p></div>
+
+<h2>面積図の書き方（基本）</h2>
+<ol>
+<li><strong>たてに1つの量、よこにもう1つの量をとる</strong>（例：たて＝単価、よこ＝個数）</li>
+<li><strong>長方形の面積が「答えの量」になる</strong>（例：面積＝代金）</li>
+<li>わからない部分を□にして、面積の関係から求める</li>
+</ol>
+
+<h2>面積図が活躍する場面</h2>
+<ul>
+<li><strong>平均</strong>：ならすと面積（合計）は変わらない、を使う</li>
+<li><strong>つるかめ算</strong>：2種類の長方形を組み合わせて差を考える（<a href="/mondai-tsurukami.html">つるかめ算</a>）</li>
+<li><strong>速さ・食塩水の濃度</strong>：かけ算の3量を面積で整理</li>
+</ul>
+
+<h3>例題：平均</h3>
+<p>「3回のテストの平均が80点。4回目で90点を取ると平均は？」合計は 80×3＝240、4回目を足して 330、330÷4＝82.5点。面積図でならすイメージを持つと、平均の問題が直感的に解けます。</p>
+<div class="warn-box"><p>⚠️ 面積図は「かけ算の関係」専用。たし算・引き算の関係は線分図の方が向いています。問題に合わせて選びましょう。</p></div>
+
+<h2>まずは身近なかけ算から</h2>
+<p>面積図は中学受験の特殊算でよく使いますが、考え方の土台は「単価×個数」など身近なかけ算です。<a href="/wariai-guide.html">割合</a>や<a href="/sokudo-guide.html">速さ</a>の基本を固めてから取り組むと、すっと理解できます。</p>""",
+    "problems": [
+      {"q": "1個120円のりんごを5個。代金は？", "a": "120×5＝600円（たて×よこ＝面積）"},
+      {"q": "時速4kmで3時間歩いた道のりは？", "a": "4×3＝12km"},
+      {"q": "3回の平均が80点。合計は何点？", "a": "80×3＝240点"},
+      {"q": "上の人が4回目に90点。4回の平均は？", "a": "(240＋90)÷4＝82.5点"},
+      {"q": "鶴と亀が合わせて8匹、足が26本。亀は何匹？", "a": "(26−8×2)÷2＝5匹（つるかめ算）"},
+    ],
+    "faq": [
+      {"q": "面積図とは何ですか？", "a": "『たて×よこ＝面積』の形で数の関係を表した図です。『単価×個数＝代金』『速さ×時間＝道のり』のように、かけ算で結ばれる3つの量を長方形で見える化でき、平均・つるかめ算・速さ・濃度などで役立ちます。"},
+      {"q": "面積図と線分図の使い分けは？", "a": "数の関係が『たし算・差』なら線分図、『かけ算』なら面積図が向いています。和差算は線分図、平均やつるかめ算は面積図、というように問題の構造で選ぶと解きやすくなります。"},
+      {"q": "面積図はどう書けばいい？", "a": "たてに1つの量、よこにもう1つの量をとり、長方形の面積が答えの量になるように描きます。わからない部分を□にして、面積の関係から求めます。きれいに描く必要はなく、関係が見えればOKです。"},
+      {"q": "面積図は何年生から？", "a": "考え方の土台（単価×個数など）は中学年のかけ算から使えます。平均は5年生、つるかめ算など特殊算は中学受験の4〜6年生でよく使います。割合・速さの基本を固めてから取り組むとスムーズです。"},
+      {"q": "つるかめ算にも面積図は使える？", "a": "使えます。2種類の長方形を組み合わせ、面積（合計）の差から個数を求めます。式だけだと難しいつるかめ算も、面積図にすると関係が見えて解きやすくなります。"},
+    ],
+    "cta_href": "/mondai-tsurukami.html",
+    "cta_label": "つるかめ算の問題に挑戦",
+    "related": [
+      {"href": "/senbunzu-kakikata.html","emoji": "📏", "text": "線分図の書き方"},
       {"href": "/wariai-guide.html","emoji": "📊", "text": "割合の基本"},
       {"href": "/sokudo-guide.html","emoji": "🏃", "text": "速さの基本"},
       {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
