@@ -9974,6 +9974,9 @@ PAGES = [
 <a href="/benkyou-syuukan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">📅 小学生の勉強習慣のつけ方</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">「勉強しなさい」と言わなくても机に向かう、毎日続く仕組み作り。</div></a>
+<a href="/shuuchuuryoku-benkyou.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #16A34A;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#15803D;margin-bottom:3px;">🎯 集中力がない子の勉強法</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">すぐ集中が切れる…叱るより“仕組み”で変わる5つの工夫。</div></a>
 
 <h2>③ 効果的な学習法</h2>
 <a href="/hyaku-masu-keisan.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
@@ -9988,6 +9991,15 @@ PAGES = [
 <a href="/chuujuken-itsukara.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
 <div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">🎒 中学受験の算数はいつから？</div>
 <div style="font-size:12px;color:#475569;line-height:1.7;">本格対策の開始時期と、低学年でやっておきたい土台づくり。</div></a>
+<a href="/tablet-gakushu-merit-demerit.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #14B8A6;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#0F766E;margin-bottom:3px;">📲 タブレット学習のメリット・デメリット</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">後悔しない選び方。向く子・向かない子の見分け方。</div></a>
+<a href="/sansu-app-osusume.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #14B8A6;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#0F766E;margin-bottom:3px;">📱 算数アプリ・無料ドリルおすすめ</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">スマホで毎日できる無料ドリルの選び方。</div></a>
+<a href="/soroban-koka.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-left:4px solid #D97706;border-radius:10px;padding:14px 16px;text-decoration:none;margin-bottom:10px;">
+<div style="font-size:14px;font-weight:700;color:#B45309;margin-bottom:3px;">🧮 そろばんは算数に効果ある？</div>
+<div style="font-size:12px;color:#475569;line-height:1.7;">メリットと向き不向き。家庭の計算練習との使い分け。</div></a>
 
 <h2>まず「どこでつまずいているか」を見つけよう</h2>
 <p>悩みを解決する第一歩は、<strong>つまずいている場所を特定する</strong>ことです。学年別の学習内容や、各学年の弱点対策ページも合わせてご活用ください。原因さえわかれば、対策はぐっと立てやすくなります。</p>
@@ -10241,6 +10253,199 @@ PAGES = [
       {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
       {"href": "/hyaku-masu-keisan.html","emoji": "🔢", "text": "百ます計算"},
       {"href": "/keisan-osoi.html","emoji": "⚡", "text": "計算が遅い時の対策"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "shuuchuuryoku-benkyou.html",
+    "title": "集中力がない小学生の勉強法【続かない子が変わる工夫】",
+    "description": "集中力がない・勉強が続かない小学生のための工夫を解説。時間を区切る・環境を整える・スモールステップなど、家庭でできる集中力アップの方法を紹介｜にじゅうまる。算数ドリル",
+    "h1": "集中力がない小学生の勉強法",
+    "eyecatch": "「うちの子、すぐ集中が切れる…」叱るより“仕組み”で変わります。家庭でできる集中力アップの工夫を解説します。",
+    "body_html": """\
+<h2>そもそも子どもの集中力は短い</h2>
+<p>小学生の集中力は「学年＋1分」とも言われ、長く続かないのが当たり前です。<strong>長時間させようとせず、短く区切る</strong>のが正解です。</p>
+
+<h2>集中力を引き出す5つの工夫</h2>
+<h3>① 時間を短く区切る</h3>
+<p>「あと5問」「タイマーで10分」など、終わりを決めてから始めます。短い目標なら集中が続きます。</p>
+<h3>② 環境を整える</h3>
+<p>机の上を片づけ、スマホ・ゲーム・おもちゃは見えない場所へ。気が散る物を減らすだけで集中力は上がります。</p>
+<h3>③ スモールステップにする</h3>
+<p>難しすぎると集中が切れます。<strong>少し簡単な問題から</strong>始め、「できた」を積むと自然に集中が続きます。</p>
+<h3>④ やる時間を固定する</h3>
+<p>「夕食前の10分」など決まった時間にすると、習慣化して取りかかりが楽になります。</p>
+<h3>⑤ できたらすぐほめる</h3>
+<p>終わった直後に「集中できたね」と声かけ。達成感が次の集中につながります。</p>
+<div class="tip-box"><p>💡 「長くやる」より「短く・毎日」。10分集中できたら大成功、と考えましょう。</p></div>
+
+<h2>集中できないのは「難しすぎ」のサインかも</h2>
+<p>内容が難しすぎると、子どもは集中できません。すぐ手が止まる単元は、前の学年でつまずいている可能性も。<a href="/sansu-ga-wakaranai.html">わからない原因</a>を確認し、レベルを合わせてあげましょう。</p>""",
+    "problems": [],
+    "faq": [
+      {"q": "子どもの集中力はどのくらい続く？", "a": "一般に『学年＋1分』程度と言われ、小1なら7〜8分ほどです。長時間を求めず、短く区切って取り組ませるのが効果的です。"},
+      {"q": "集中力を上げる一番の方法は？", "a": "『時間を短く区切る』『気が散る物を片づける』の2つが即効性があります。タイマーで10分、机の上はノートと鉛筆だけ、から始めましょう。"},
+      {"q": "すぐ集中が切れてしまいます", "a": "内容が難しすぎる可能性があります。少し簡単な問題から『できた』を積むと集中が続きます。すぐ手が止まる単元は前の学年でのつまずきを疑いましょう。"},
+      {"q": "勉強中にしてはいけないことは？", "a": "テレビやスマホをつけたまま、長時間ぶっ通し、できないことを叱る、はいずれも集中力を下げます。短時間・静かな環境・できたらほめる、を心がけましょう。"},
+      {"q": "何分くらい勉強させればいい？", "a": "低学年は5〜15分で十分です。長さより毎日続けることが大切。短くても集中して取り組めた日を、しっかりほめてあげましょう。"},
+    ],
+    "cta_href": "/benkyou-syuukan.html",
+    "cta_label": "勉強習慣のつけ方を見る",
+    "related": [
+      {"href": "/benkyou-syuukan.html","emoji": "📅", "text": "勉強習慣のつけ方"},
+      {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
+      {"href": "/sansu-ga-wakaranai.html","emoji": "💡", "text": "算数がわからない時は"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "tablet-gakushu-merit-demerit.html",
+    "title": "タブレット学習のメリット・デメリット【後悔しない選び方】",
+    "description": "小学生のタブレット学習のメリットとデメリットを正直に解説。向いている子・向かない子の見分け方と、後悔しない選び方を紹介｜にじゅうまる。算数ドリル",
+    "h1": "タブレット学習のメリット・デメリット",
+    "eyecatch": "タブレット学習って実際どう？メリットだけでなくデメリットも正直に。後悔しない選び方を解説します。",
+    "body_html": """\
+<h2>タブレット学習のメリット</h2>
+<ul>
+<li><strong>自動採点・即フィードバック</strong>：その場で○×がわかり、やり直しがスムーズ</li>
+<li><strong>動画やアニメで理解しやすい</strong>：つまずきを映像で解説</li>
+<li><strong>続ける工夫が豊富</strong>：ゲーム要素・ごほうびで飽きにくい</li>
+<li><strong>丸つけの手間がない</strong>：保護者の負担が減る</li>
+<li><strong>データで弱点がわかる</strong>：苦手を自動で見つけてくれる教材も</li>
+</ul>
+
+<h2>タブレット学習のデメリット</h2>
+<ul>
+<li><strong>書く力がつきにくい場合がある</strong>：鉛筆で書く練習は別途必要なことも</li>
+<li><strong>遊びに流れるリスク</strong>：動画やゲームに偏る子も</li>
+<li><strong>費用がかかる</strong>：月額・タブレット代など（紙や無料ドリルより高い）</li>
+<li><strong>視力・姿勢への配慮</strong>：時間を決める工夫が必要</li>
+</ul>
+<div class="warn-box"><p>⚠️ デメリットの多くは「使い方」で解決できます。時間を決める・紙の書き取りと併用する、で弱点を補えます。</p></div>
+
+<h2>向いている子・向かない子</h2>
+<ul>
+<li><strong>向いている</strong>：丸つけを嫌がる／動画解説が好き／自分で進めたい子</li>
+<li><strong>慎重に</strong>：書く力を重視したい／動画に流されやすい子（→使う時間を管理）</li>
+</ul>
+
+<h2>後悔しない選び方</h2>
+<p>まず<strong>無料体験</strong>で子どもが楽しく続けられるか確認するのが鉄則。費用をかけずに始めたいなら、無料の<a href="/">にじゅうまるドリル</a>で計算習慣をつけ、物足りなくなったらタブレット教材へ——が失敗しません。教材ごとの違いは<a href="/tablet-sansu-kyozai-hikaku.html">タブレット算数教材の比較</a>でまとめています。</p>""",
+    "problems": [],
+    "faq": [
+      {"q": "タブレット学習は紙の勉強より効果ある？", "a": "一長一短です。タブレットは自動採点・動画解説・継続の工夫に強く、紙は書く力・じっくり考える力に強みがあります。併用する家庭も多いです。"},
+      {"q": "タブレット学習のデメリットは？", "a": "書く力がつきにくい場合がある・遊びに流れるリスク・費用がかかる、などです。ただし使う時間を決める、紙の書き取りと併用する、などで多くは解決できます。"},
+      {"q": "どんな子に向いている？", "a": "丸つけを嫌がる子、動画解説が好きな子、自分のペースで進めたい子に向いています。書く力を重視したい場合は紙と併用するとよいでしょう。"},
+      {"q": "選ぶ前に確認すべきことは？", "a": "必ず無料体験で『子どもが楽しく続けられそうか』を確認しましょう。教材ごとの特徴は比較記事を参考に、目的（算数特化か全教科か）で選ぶのが失敗しないコツです。"},
+      {"q": "費用を抑えたい場合は？", "a": "まず無料の計算ドリル（にじゅうまるドリル）で毎日の習慣をつけ、必要になってからタブレット教材を検討すると無駄がありません。"},
+    ],
+    "cta_href": "/tablet-sansu-kyozai-hikaku.html",
+    "cta_label": "タブレット算数教材を比較する",
+    "related": [
+      {"href": "/tablet-sansu-kyozai-hikaku.html","emoji": "📱", "text": "タブレット教材おすすめ比較"},
+      {"href": "/sansu-suki-ni-saseru.html","emoji": "💯", "text": "算数を好きにさせる方法"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+      {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
+    ],
+  },
+  {
+    "filename": "soroban-koka.html",
+    "title": "そろばんは算数に効果ある？メリットと向き不向き",
+    "description": "そろばんは算数に効果があるのか、メリット・デメリットと向いている子を解説。暗算力・計算速度への効果と、家庭での計算練習との使い分けを紹介｜にじゅうまる。算数ドリル",
+    "h1": "そろばんは算数に効果ある？",
+    "eyecatch": "「そろばんって算数に効く？」暗算力には効果大、でも万能ではありません。メリットと向き不向きを正直に解説します。",
+    "body_html": """\
+<h2>そろばんのメリット</h2>
+<ul>
+<li><strong>暗算力が伸びる</strong>：頭の中でそろばんをイメージして計算できるように</li>
+<li><strong>計算が速く正確になる</strong>：基礎計算のスピードが上がる</li>
+<li><strong>集中力・忍耐力</strong>：地道な反復で集中が育つ</li>
+</ul>
+
+<h2>そろばんのデメリット・注意点</h2>
+<ul>
+<li><strong>文章題・図形には直接効かない</strong>：そろばんは計算特化。応用問題は別の練習が必要</li>
+<li><strong>合う・合わないがある</strong>：地道な反復が苦手な子には負担になることも</li>
+<li><strong>通う時間・費用</strong>：習い事としての継続コスト</li>
+</ul>
+<div class="warn-box"><p>⚠️ そろばんは「計算力」に効く一方、文章題・図形・割合などの思考力は別に育てる必要があります。算数全体をカバーするものではありません。</p></div>
+
+<h2>こんな子に向いている</h2>
+<p>計算を速く正確にしたい子、暗算を得意にしたい子に向いています。逆に「計算は普通だけど文章題が苦手」という子には、そろばんより<a href="/bunshoudai-kokufuku.html">文章題の練習</a>が効果的です。</p>
+
+<h2>そろばんに通わなくても計算力は伸ばせる</h2>
+<p>暗算・計算スピードは、家庭の反復練習でも十分鍛えられます。<a href="/hyaku-masu-keisan.html">百ます計算</a>や無料の<a href="/">にじゅうまるドリル</a>を毎日続ければ、そろばんに近い「計算の自動化」効果が得られます。そろばんと併用するのもおすすめです。</p>""",
+    "problems": [
+      {"q": "8 ＋ 7 ＝ ?", "a": "15"},
+      {"q": "13 － 6 ＝ ?", "a": "7"},
+      {"q": "7 × 6 ＝ ?", "a": "42"},
+      {"q": "25 ＋ 38 ＝ ?", "a": "63"},
+      {"q": "100 － 47 ＝ ?", "a": "53"},
+    ],
+    "faq": [
+      {"q": "そろばんは算数に効果ありますか？", "a": "暗算力・計算スピード・集中力には大きな効果があります。ただし文章題・図形・割合などの思考力には直接は効かないため、算数全体をカバーするものではない点に注意しましょう。"},
+      {"q": "そろばんはいつから始めるといい？", "a": "一般に年長〜小学校低学年から始める子が多いです。数の概念がある程度わかってからの方がスムーズです。合う・合わないがあるので体験から始めましょう。"},
+      {"q": "そろばんに通わないと計算力は伸びない？", "a": "いいえ。百ます計算や毎日のドリルなど、家庭の反復練習でも計算の自動化は十分鍛えられます。そろばんはその一手段で、必須ではありません。"},
+      {"q": "そろばんと算数ドリル、どちらがいい？", "a": "目的によります。暗算・計算特化ならそろばん、文章題や図形も含め幅広く鍛えるならドリルや教材が向きます。併用も効果的です。"},
+      {"q": "計算は得意だけど文章題が苦手な子には？", "a": "そろばんより文章題の練習が効果的です。問題文を読み取り図にする練習を重ねましょう。文章題の解き方ページも参考にしてください。"},
+    ],
+    "cta_href": "/hyaku-masu-keisan.html",
+    "cta_label": "百ます計算で計算力を鍛える",
+    "related": [
+      {"href": "/hyaku-masu-keisan.html","emoji": "🔢", "text": "百ます計算"},
+      {"href": "/keisan-osoi.html","emoji": "⚡", "text": "計算が遅い時の対策"},
+      {"href": "/bunshoudai-kokufuku.html","emoji": "📝", "text": "文章題が苦手な時は"},
+      {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
+    ],
+  },
+  {
+    "filename": "sansu-app-osusume.html",
+    "title": "小学生の算数アプリ・無料ドリルおすすめ【スマホで毎日】",
+    "description": "小学生向けの算数アプリ・無料ドリルの選び方とおすすめを紹介。スマホ・タブレットで毎日の計算練習ができる無料サービスと、本格学習の教材を解説｜にじゅうまる。算数ドリル",
+    "h1": "小学生の算数アプリ・無料ドリルおすすめ",
+    "eyecatch": "「スマホで手軽に算数練習させたい」——無料で毎日使える算数ドリルの選び方とおすすめを紹介します。",
+    "body_html": """\
+<h2>算数アプリ・無料ドリルの選び方</h2>
+<p>スマホやタブレットで使える算数学習は手軽で続けやすいのが魅力。選ぶときは次の点をチェックしましょう。</p>
+<ul>
+<li><strong>無料で使えるか</strong>：まずは無料で毎日続けられるものを</li>
+<li><strong>自動採点があるか</strong>：その場で○×がわかると親の負担が減る</li>
+<li><strong>学年・レベルに合うか</strong>：今の学年や苦手に合わせられるか</li>
+<li><strong>印刷不要・アプリ不要か</strong>：ブラウザで開けると手軽</li>
+</ul>
+
+<h2>無料で毎日できる「にじゅうまるドリル」</h2>
+<p>当サイト<a href="/">にじゅうまるドリル</a>は、<strong>完全無料・アプリ不要・印刷不要</strong>でスマホ・タブレットからすぐ使える算数ドリルです。</p>
+<ul>
+<li>小学1〜6年生・学年別／3段階レベル</li>
+<li>その場で<strong>自動採点</strong>・毎回ランダム出題で繰り返し使える</li>
+<li>たし算・九九・わり算・分数・小数・図形など幅広く対応</li>
+<li>PDF印刷にも対応</li>
+</ul>
+<div class="tip-box"><p>💡 まずは無料の当ドリルで「毎日の計算習慣」を。お金をかけずに今日から始められます。</p></div>
+
+<h2>本格的に学ぶなら有料教材も</h2>
+<p>「体系的に・つまずきを根本から」と考えるなら、タブレット教材も選択肢です。算数特化のRISUや全教科のスマイルゼミなど、目的別の違いは<a href="/tablet-sansu-kyozai-hikaku.html">タブレット算数教材の比較</a>でまとめています。<strong>無料ドリルで習慣づけ→必要なら有料教材</strong>がムダのない進め方です。</p>""",
+    "problems": [
+      {"q": "6 ＋ 8 ＝ ?", "a": "14"},
+      {"q": "9 × 7 ＝ ?", "a": "63"},
+      {"q": "56 ÷ 8 ＝ ?", "a": "7"},
+      {"q": "0.5 ＋ 0.7 ＝ ?", "a": "1.2"},
+      {"q": "1/3 ＋ 1/3 ＝ ?", "a": "2/3"},
+    ],
+    "faq": [
+      {"q": "無料で使える小学生の算数アプリは？", "a": "当サイト『にじゅうまるドリル』は完全無料・アプリ不要・印刷不要で、スマホやタブレットのブラウザからすぐ使えます。学年別・3段階レベルで自動採点つきです。"},
+      {"q": "アプリのインストールは必要？", "a": "にじゅうまるドリルはインストール不要。ブラウザで開くだけで使えます。ホーム画面に追加すればアプリのように起動できます。"},
+      {"q": "無料ドリルと有料教材はどう使い分ける？", "a": "まず無料ドリルで毎日の計算習慣をつけ、『体系的に学びたい・つまずきを根本から』となったら有料のタブレット教材を検討する流れがムダがありません。"},
+      {"q": "どの学年から使える？", "a": "小学1〜6年生に対応しています。学年とレベルを選べるので、先取りやさかのぼり復習にも使えます。"},
+      {"q": "毎日続けるコツは？", "a": "時間を決めて1日5〜10分から。自動採点ですぐ結果がわかるので達成感が続きます。記録をつけると伸びが見えてやる気も保てます。"},
+    ],
+    "cta_href": "/",
+    "cta_label": "無料ドリルを今すぐ使う",
+    "related": [
+      {"href": "/tablet-sansu-kyozai-hikaku.html","emoji": "📱", "text": "タブレット教材おすすめ比較"},
+      {"href": "/hyaku-masu-keisan.html","emoji": "🔢", "text": "百ます計算"},
+      {"href": "/grade-guide.html","emoji": "📋", "text": "学年別 学習内容"},
       {"href": "/sansu-onayami-guide.html","emoji": "🧭", "text": "お悩み解決ガイド"},
     ],
   },
