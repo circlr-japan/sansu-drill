@@ -11147,6 +11147,40 @@ def build_risu_banner():
     )
 
 
+# ============================================================
+# AdSense 掲載ポリシー: 編集記事(ガイド + 助言/お悩み記事)にのみ掲載。
+# 量産型ドリル/計算/トピックページ・トップからは除外（AdSense審査対策）。
+# ============================================================
+ADS_ADVICE = set((a + ".html") for a in """
+teaching-tips study-habits study-routine reduce-mistakes no-mistakes math-anxiety parent-support
+calculation-power test-strategy test-prep word-problems notebook-method mental-math review-method
+summer-math tablet-learning advance-study oyako-sansu oyako-machigai shukudai-kanri shukudai-oshiekata
+keisan-machigai sansu-benkyou-houhou sangaku-chishiki device-guide device-free-sansu keisanki-tukaikata
+sansu-ga-wakaranai sansu-9sai-no-kabe bunshoudai-kokufuku zukei-nigate-kokufuku sansu-suki-ni-saseru
+benkyou-syuukan keisan-osoi chuujuken-itsukara sansu-tokui-ni-suru shuuchuuryoku-benkyou soroban-koka
+sansu-app-osusume benkyou-gohoubi oya-iraira senbunzu-kakikata menseki-zu-kakikata juku-itsukara
+kumon-koka benkyou-shinai living-gakushu tablet-gakushu-merit-demerit tablet-sansu-kyozai-hikaku
+sansu-onayami-guide sansu-kirai slow-sansu sansu-juku-erabi math-game nyuusi-sansu chuugaku-junbi
+chuugaku-sansu-junbi nyuugaku-mae
+""".split())
+
+_RE_AD_INS  = re.compile(r'[ \t]*<ins\b[^>]*?adsbygoogle.*?</ins>[ \t]*\n?', re.S)
+_RE_AD_PUSH = re.compile(r'[ \t]*<script[^>]*>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle[^<]*?</script>[ \t]*\n?', re.S)
+_RE_AD_LOAD = re.compile(r'[ \t]*<script[^>]*pagead2\.googlesyndication\.com[^>]*>\s*</script>[ \t]*\n?', re.S)
+_RE_AD_WRAP = re.compile(r'[ \t]*<div class="ad-wrap">\s*</div>[ \t]*\n?', re.S)
+
+def page_shows_ads(filename):
+    """編集記事(ガイド + 助言記事)のみ True。量産ドリルは False。"""
+    return filename.endswith("-guide.html") or filename in ADS_ADVICE
+
+def strip_adsense(html):
+    html = _RE_AD_INS.sub('', html)
+    html = _RE_AD_PUSH.sub('', html)
+    html = _RE_AD_LOAD.sub('', html)
+    html = _RE_AD_WRAP.sub('', html)
+    return html
+
+
 def generate(page, force=False):
     fpath = os.path.join(BASE_DIR, page["filename"])
     if not force and os.path.exists(fpath):
@@ -11169,6 +11203,8 @@ def generate(page, force=False):
         cta_label  = page["cta_label"],
         related_html = build_related_html(page["related"]),
     )
+    if not page_shows_ads(page["filename"]):
+        html = strip_adsense(html)
     with open(fpath, "w", encoding="utf-8") as f:
         f.write(html)
     return True
