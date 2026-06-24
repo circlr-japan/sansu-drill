@@ -714,12 +714,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nijumaru-drill.com/suugaku-yogo.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.nijumaru-drill.com/taisaku-5nen.html</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -846,20 +840,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nijumaru-drill.com/tokui-nigete.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.nijumaru-drill.com/mondai-kakuritsu.html</loc>
     <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.nijumaru-drill.com/keisan-training.html</loc>
-    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -870,19 +852,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nijumaru-drill.com/sansu-juku-erabi.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.nijumaru-drill.com/mondai-step2.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.nijumaru-drill.com/tougou-review.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -918,18 +888,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nijumaru-drill.com/syougaku-sansu-map.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.nijumaru-drill.com/yoichi-sansu.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.nijumaru-drill.com/mondai-menseki3.html</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -942,26 +900,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nijumaru-drill.com/sansu-quiz1.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.nijumaru-drill.com/sansu-matome.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.nijumaru-drill.com/kakezan-kujira.html</loc>
     <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.nijumaru-drill.com/sansu-quiz2.html</loc>
-    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

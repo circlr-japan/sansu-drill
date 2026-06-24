@@ -11160,7 +11160,7 @@ sansu-ga-wakaranai sansu-9sai-no-kabe bunshoudai-kokufuku zukei-nigate-kokufuku 
 benkyou-syuukan keisan-osoi chuujuken-itsukara sansu-tokui-ni-suru shuuchuuryoku-benkyou soroban-koka
 sansu-app-osusume benkyou-gohoubi oya-iraira senbunzu-kakikata menseki-zu-kakikata juku-itsukara
 kumon-koka benkyou-shinai living-gakushu tablet-gakushu-merit-demerit tablet-sansu-kyozai-hikaku
-sansu-onayami-guide sansu-kirai slow-sansu sansu-juku-erabi math-game nyuusi-sansu chuugaku-junbi
+sansu-onayami-guide sansu-kirai slow-sansu math-game nyuusi-sansu chuugaku-junbi
 chuugaku-sansu-junbi nyuugaku-mae
 """.split())
 
@@ -11168,16 +11168,20 @@ _RE_AD_INS  = re.compile(r'[ \t]*<ins\b[^>]*?adsbygoogle.*?</ins>[ \t]*\n?', re.
 _RE_AD_PUSH = re.compile(r'[ \t]*<script[^>]*>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle[^<]*?</script>[ \t]*\n?', re.S)
 _RE_AD_LOAD = re.compile(r'[ \t]*<script[^>]*pagead2\.googlesyndication\.com[^>]*>\s*</script>[ \t]*\n?', re.S)
 _RE_AD_WRAP = re.compile(r'[ \t]*<div class="ad-wrap">\s*</div>[ \t]*\n?', re.S)
+_RE_AFFILIATE = re.compile(r'[ \t]*<div style="margin:32px 0 24px;padding:20px 16px;background:linear-gradient\(135deg,#FFFBEB,#FEF3C7\);border-radius:14px;border:1\.5px solid #F59E0B;">.*?※ アフィリエイトリンクを含みます</div>\s*</div>[ \t]*\n?', re.S)
 
 def page_shows_ads(filename):
-    """編集記事(ガイド + 助言記事)のみ True。量産ドリルは False。"""
+    """編集記事(ガイド + 助言記事)のみ True。量産ドリル/トピックは False。
+    True のページにのみ AdSense とアフィリエイト枠を掲載する。"""
     return filename.endswith("-guide.html") or filename in ADS_ADVICE
 
-def strip_adsense(html):
+def strip_monetization(html):
+    """非記事ページから AdSense とアフィリエイト枠を除去（AdSense審査対策）。"""
     html = _RE_AD_INS.sub('', html)
     html = _RE_AD_PUSH.sub('', html)
     html = _RE_AD_LOAD.sub('', html)
     html = _RE_AD_WRAP.sub('', html)
+    html = _RE_AFFILIATE.sub('', html)
     return html
 
 
@@ -11204,7 +11208,7 @@ def generate(page, force=False):
         related_html = build_related_html(page["related"]),
     )
     if not page_shows_ads(page["filename"]):
-        html = strip_adsense(html)
+        html = strip_monetization(html)
     with open(fpath, "w", encoding="utf-8") as f:
         f.write(html)
     return True
