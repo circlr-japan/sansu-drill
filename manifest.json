@@ -2,7 +2,7 @@
   "name": "にじゅうまる。算数ドリル",
   "short_name": "にじゅうまるドリル",
   "description": "小学1〜6年生対応の無料算数ドリル。学年別・レベル別で毎日の計算練習に。",
-  "start_url": "/?source=app",
+  "start_url": "/drill.html?source=app",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
@@ -33,12 +33,12 @@
     },
     {
       "name": "1年生ドリル",
-      "url": "/?grade=1",
+      "url": "/drill.html?grade=1",
       "description": "1年生の算数ドリルをスタート"
     },
     {
       "name": "九九チャレンジ",
-      "url": "/?mode=kuku",
+      "url": "/drill.html?mode=kuku",
       "description": "九九タイムアタック"
     },
     {
