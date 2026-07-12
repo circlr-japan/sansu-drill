@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y55CVCFC9P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-Y55CVCFC9P");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>データの活用【小学6年生】ドットプロット・平均値・中央値・最頻値・柱状グラフを解説 | にじゅうまる。</title>
+<meta name="description" content="小6「データの活用」を徹底解説。ドットプロットの書き方・読み方、平均値・中央値・最頻値（代表値）の違いと求め方、度数分布表と柱状グラフ（ヒストグラム）まで例題つきで学べます｜にじゅうまる。算数ドリル">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.nijumaru-drill.com/data-katsuyou-guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line-height:1.8;}
+@media(min-width:640px){body{max-width:680px;margin:0 auto;}}
+.header{background:#122A64;padding:20px;}
+.header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
+.header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
+.content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
+.eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
+.eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
+h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
+h3{font-size:15px;font-weight:700;color:#1E293B;margin:22px 0 8px;}
+p{font-size:14px;color:#374151;margin-bottom:14px;}
+ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
+ul li,ol li{margin-bottom:8px;}
+.tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
+.tip-box p{margin:0;font-size:14px;color:#14532D;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
+.dotplot{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px;margin:14px 0;font-family:monospace;font-size:14px;line-height:1.5;color:#1E293B;overflow-x:auto;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
+.cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
+.cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
+.cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
+footer a{color:#94A3B8;text-decoration:underline;}
+</style>
+<script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="データの活用【小学6年生】ドットプロット・平均値・中央値・最頻値・柱状グラフを解説">
+<meta property="og:description" content="ドットプロットの読み方、代表値（平均値・中央値・最頻値）の違い、度数分布表と柱状グラフまで例題つきで解説。">
+<meta property="og:url" content="https://www.nijumaru-drill.com/data-katsuyou-guide.html">
+<meta property="og:site_name" content="にじゅうまる。算数ドリル">
+<meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="データの活用【小学6年生】ドットプロット・代表値・柱状グラフ">
+<meta name="twitter:description" content="ドットプロット・代表値・度数分布表・柱状グラフを例題つきで解説。">
+<meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ドットプロットとは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "数直線の上に、データを1つずつ点（ドット）で積み上げて表した図です。データの散らばりのようすや、どの値に集まっているかがひと目でわかります。小学6年生の「データの活用」で学習します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "平均値・中央値・最頻値の違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "平均値は全部の合計をデータの個数でわった値、中央値は大きさ順に並べたときの真ん中の値、最頻値はもっとも多く現れる値です。この3つをまとめて代表値といい、データの特徴を1つの数で表すときに使います。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "柱状グラフ（ヒストグラム）と棒グラフの違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "棒グラフは種類ごとの量を比べるグラフで棒の間があいていますが、柱状グラフは「20m以上25m未満」のような区間ごとの個数（度数）を表すグラフで、柱をすき間なく並べます。横軸が連続した数の区間になっているのが柱状グラフです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "データの個数が偶数のとき、中央値はどう求めますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "真ん中の2つの値を足して2でわります。たとえば8個のデータなら、4番目と5番目の値の平均が中央値です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="header">
+  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#fff;font-size:13px;font-weight:700;">にじゅうまるドリル</span></a>
+  <h1>データの活用｜ドットプロット・代表値・柱状グラフ</h1>
+</div>
+<div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
+<div class="eyecatch">
+  <p>📈 「データの活用」は小学6年生で学ぶ、いちばん新しいタイプの算数。計算のスピードよりも「グラフや表から正しく読み取る力」が問われます。中学の統計、そして大人になってからのデータ読解に直結する単元です。</p>
+</div>
+
+<h2>何を学ぶ単元？（全体像）</h2>
+<p>6年生の「データの活用」で学ぶのは、大きく次の4つです。</p>
+<ol>
+  <li><strong>ドットプロット</strong>——データを点で並べて散らばりを見る</li>
+  <li><strong>代表値</strong>（平均値・中央値・最頻値）——データの特徴を1つの数で表す</li>
+  <li><strong>度数分布表</strong>——データを区間に区切って整理する</li>
+  <li><strong>柱状グラフ（ヒストグラム）</strong>——度数分布表をグラフにする</li>
+</ol>
+<p>どれも「たくさんのデータを、わかりやすく整理して、何かを判断する」ための道具です。テストでは「AチームとBチーム、どちらが記録がよいと言えますか。理由も書きなさい」のような記述問題が出るのが特徴です。</p>
+
+<h2>ドットプロットの読み方・書き方</h2>
+<p><strong>ドットプロット＝数直線の上にデータを1つずつ点で積んだ図</strong>です。たとえば、8人のソフトボール投げの記録（単位m）が「20、22、22、23、25、22、28、23」だったとします。</p>
+<div class="dotplot">
+      ●<br>
+      ●  ●<br>
+   ●  ●  ●     ●        ●<br>
+──┴──┴──┴──┴──┴──┴──┴──┴──<br>
+  20 21 22 23 24 25 26 27 28 (m)
+</div>
+<p>書き方は「数直線を引く→データを1つずつ、該当する値の上に点を打つ→同じ値は上に積む」だけ。読み方のポイントは次の3つです。</p>
+<ul>
+  <li><strong>どこに集まっている？</strong>（22〜23mに集中）</li>
+  <li><strong>散らばりの幅は？</strong>（いちばん小さい20m〜いちばん大きい28m）</li>
+  <li><strong>離れた値（外れ値）はある？</strong>（28mだけ離れている）</li>
+</ul>
+
+<h2>代表値：平均値・中央値・最頻値</h2>
+<p>データ全体の特徴を1つの数で表すのが<strong>代表値</strong>。3種類を正しく使い分けられるかがこの単元の核心です。</p>
+<table class="cv-table">
+  <tr><th>代表値</th><th>求め方</th><th>上の8人の例</th></tr>
+  <tr><td><strong>平均値</strong></td><td>合計 ÷ 個数</td><td>(20+22+22+23+25+22+28+23)÷8＝185÷8＝23.125m</td></tr>
+  <tr><td><strong>中央値</strong></td><td>大きさ順に並べた真ん中の値</td><td>20,22,22,<strong>22,23</strong>,23,25,28 → (22+23)÷2＝22.5m</td></tr>
+  <tr><td><strong>最頻値</strong></td><td>もっとも多く現れる値</td><td>22m（3人）</td></tr>
+</table>
+<div class="ex-box">
+  <p><strong>例題1：</strong>データが偶数個（8個）のとき、中央値はどう求める？</p>
+  <p><strong>解き方：</strong>真ん中の2つ（4番目と5番目）の平均。上の例では22と23の平均で<strong>22.5m</strong>。</p>
+</div>
+<h3>どの代表値を使えばいい？</h3>
+<p>平均値は計算しやすい反面、<strong>極端に大きい（小さい）値に引っぱられる</strong>弱点があります。上の例でも、28mの1人が平均を押し上げています。「ほとんどの人は22〜23mなのに、平均は23m以上」——こんなとき、実感に近いのは中央値や最頻値です。テストの記述問題では「外れ値があるから中央値で比べる」のような理由づけができると満点がねらえます。</p>
+
+<h2>度数分布表と柱状グラフ</h2>
+<p>データが多いときは、「20m以上25m未満」のような<strong>区間（階級）</strong>に区切って数えます。区間ごとのデータの個数を<strong>度数</strong>、その表を<strong>度数分布表</strong>といいます。</p>
+<table class="cv-table">
+  <tr><th>記録（m）</th><th>人数（度数）</th></tr>
+  <tr><td>15以上〜20未満</td><td>2</td></tr>
+  <tr><td>20以上〜25未満</td><td>9</td></tr>
+  <tr><td>25以上〜30未満</td><td>6</td></tr>
+  <tr><td>30以上〜35未満</td><td>3</td></tr>
+  <tr><td>合計</td><td>20</td></tr>
+</table>
+<p>これをグラフにしたのが<strong>柱状グラフ（ヒストグラム）</strong>です。棒グラフと違い、柱と柱の間を<strong>すき間なく</strong>並べます。横軸が「連続した数の区間」だからです。</p>
+<div class="ex-box">
+  <p><strong>例題2：</strong>上の表で、記録が25m以上の人は全体の何％？</p>
+  <p><strong>解き方：</strong>25m以上は6＋3＝9人。全体は20人。9÷20＝0.45 → <strong>45％</strong>。度数分布表と割合の複合問題は頻出です。</p>
+</div>
+<div class="tip-box">
+  <p>💡 「以上・未満」の境目に注意！「20以上25未満」に25mの人は入りません（25は「25以上30未満」へ）。4年生で学んだ以上・以下・未満がここで再登場します。</p>
+</div>
+
+<h2>棒グラフ・折れ線グラフとの違い（総整理）</h2>
+<table class="cv-table">
+  <tr><th>グラフ</th><th>使う場面</th><th>学年</th></tr>
+  <tr><td>棒グラフ</td><td>種類ごとの量を比べる（好きな給食ランキング）</td><td>3年生</td></tr>
+  <tr><td>折れ線グラフ</td><td>時間による変化を見る（1日の気温）</td><td>4年生</td></tr>
+  <tr><td>円・帯グラフ</td><td>全体に対する割合を見る（予算の内訳）</td><td>5年生</td></tr>
+  <tr><td>柱状グラフ</td><td>散らばりのようすを見る（記録の分布）</td><td>6年生</td></tr>
+</table>
+<p>「何を知りたいか」でグラフを選ぶ——これがデータ活用の考え方の中心です。テストでも「このデータを表すのにふさわしいグラフはどれか」という選択問題が出ます。</p>
+
+<h2>記述問題の答え方（テスト対策）</h2>
+<p>この単元のテストの山場は「どちらのチームの記録がよいと言えますか。わけも書きましょう」のような記述問題です。答え方には型があります。</p>
+<div class="ex-box">
+  <p><strong>型：</strong>「（代表値・グラフ）を比べると、Aは○○、Bは△△。だから□□と言える。」</p>
+  <p><strong>例：</strong>「中央値を比べると、Aチームは25m、Bチームは22mなので、Aチームの方が記録がよいと言える。」</p>
+</div>
+<p>ポイントは、<strong>感想（がんばっているから等）ではなく、数値を根拠にする</strong>こと。そして「平均値では」「中央値では」と、どの代表値で比べたかを必ず書くことです。比べる代表値によって結論が変わる問題もあり、「平均値ならA、中央値ならB」の両方に触れられれば文句なしの答案になります。</p>
+
+<h2>家庭でできるデータ活用トレーニング</h2>
+<ul>
+  <li><strong>ニュースのグラフ解説：</strong>天気予報や視聴率のグラフを見て「何がわかる？」と聞いてみる</li>
+  <li><strong>おこづかい帳の集計：</strong>1か月の支出を項目ごとに集計→棒グラフや円グラフに</li>
+  <li><strong>ゲームの記録分析：</strong>九九チャレンジのタイムを毎日記録して、1週間分をドットプロットに</li>
+  <li><strong>「平均のワナ」クイズ：</strong>「5人のテストの平均が80点。全員80点くらいと言える？」（1人が0点で他が100点の場合もある）</li>
+</ul>
+<p>データの単元は、身のまわりの数字を「読む」体験がそのまま学習になります。グラフを見て感想を言い合うだけでも、読み取りの力は伸びていきます。</p>
+
+<h2>よくある質問</h2>
+<h3>Q1. ドットプロットとは？</h3>
+<p>数直線の上にデータを点で積み上げた図です。データの集まり具合・散らばり・外れ値がひと目でわかります。</p>
+<h3>Q2. 平均値・中央値・最頻値はどう使い分ける？</h3>
+<p>ふだんは平均値、極端な値（外れ値）があるときは中央値、いちばん多い層を知りたいときは最頻値が便利です。</p>
+<h3>Q3. 柱状グラフと棒グラフの違いは？</h3>
+<p>棒グラフは種類ごとの比較（すき間あり）、柱状グラフは連続した区間ごとの度数（すき間なし）です。</p>
+<h3>Q4. 中央値はデータが偶数個のときどうする？</h3>
+<p>真ん中の2つの値の平均を取ります。8個なら4番目と5番目の平均です。</p>
+<h3>Q5. この単元は中学でどうつながる？</h3>
+<p>中学1年の「データの活用」で、度数分布表・ヒストグラム・代表値をそのまま深掘りします。さらに相対度数や確率へ発展していくので、小6での「グラフを根拠に説明する」経験が中学の土台になります。</p>
+
+<h2>まとめ</h2>
+<ul>
+  <li>データの活用＝整理して（表・グラフ）、代表値で特徴をつかみ、判断する単元</li>
+  <li>代表値は平均値・中央値・最頻値の3つ。外れ値があるときは中央値が頼りになる</li>
+  <li>柱状グラフは区間×度数。棒グラフとの違いを説明できるように</li>
+  <li>「以上・未満」の境目ミスに注意</li>
+</ul>
+
+<div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
+  <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
+  <div style="display:grid;gap:8px;">
+    <a href="/grade-6.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">6️⃣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学6年生の算数ドリル</span>
+    </a>
+    <a href="/percentage-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">％</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">割合の教え方（百分率・歩合）</span>
+    </a>
+    <a href="/menseki-enza.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">⭕</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">円周の求め方・円の面積</span>
+    </a>
+    <a href="/grade-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📋</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">学年別 学習内容まとめ</span>
+    </a>
+  </div>
+</div>
+<div class="cta">
+  <p>無料・アプリ不要で今すぐ練習できます！</p>
+  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+</div>
+</div>
+
+<footer>
+  © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
+  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
+  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
+  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
+  <a href="/about.html">サイトについて</a>
+</footer>
+</body>
+</html>

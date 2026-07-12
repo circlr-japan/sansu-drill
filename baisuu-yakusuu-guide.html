@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y55CVCFC9P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-Y55CVCFC9P");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>倍数と約数【小学5年生】最大公約数・最小公倍数の求め方と見つけ方のコツ | にじゅうまる。</title>
+<meta name="description" content="倍数・約数の意味から、公倍数・公約数、最大公約数・最小公倍数の求め方までを例題つきで解説。約数を見落とさない「ペア探し」、文章題の解き方、約分・通分とのつながりも紹介｜にじゅうまる。算数ドリル">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.nijumaru-drill.com/baisuu-yakusuu-guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line-height:1.8;}
+@media(min-width:640px){body{max-width:680px;margin:0 auto;}}
+.header{background:#122A64;padding:20px;}
+.header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
+.header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
+.content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
+.eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
+.eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
+h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
+h3{font-size:15px;font-weight:700;color:#1E293B;margin:22px 0 8px;}
+p{font-size:14px;color:#374151;margin-bottom:14px;}
+ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
+ul li,ol li{margin-bottom:8px;}
+.tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
+.tip-box p{margin:0;font-size:14px;color:#14532D;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
+.formula{background:#EEF2FF;border:2px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0;text-align:center;font-size:15px;font-weight:700;color:#3730A3;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
+.cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
+.cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
+.cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
+footer a{color:#94A3B8;text-decoration:underline;}
+</style>
+<script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="倍数と約数【小学5年生】最大公約数・最小公倍数の求め方と見つけ方のコツ">
+<meta property="og:description" content="倍数・約数の意味から最大公約数・最小公倍数の求め方まで例題つきで解説。約数を見落とさないペア探しのコツも。">
+<meta property="og:url" content="https://www.nijumaru-drill.com/baisuu-yakusuu-guide.html">
+<meta property="og:site_name" content="にじゅうまる。算数ドリル">
+<meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="倍数と約数【小学5年生】最大公約数・最小公倍数の求め方">
+<meta name="twitter:description" content="倍数・約数の意味から最大公約数・最小公倍数の求め方まで例題つきで解説。">
+<meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "倍数と約数の違いを簡単に言うと？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "倍数は「その数を何倍かした数」（3の倍数＝3、6、9、12…）、約数は「その数をわり切れる数」（12の約数＝1、2、3、4、6、12）です。倍数は無限に続き、約数は必ず個数が決まっている、というのも大きな違いです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "最小公倍数は2つの数をかければ求められますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いつも正しいとは限りません。2と3のようにかけ算（6）でよい場合もありますが、4と6の最小公倍数は4×6＝24ではなく12です。大きい方の数の倍数を順に書き出し、小さい方の数でわり切れる最初の数を探すのが確実です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "約数を見落とさずに全部見つけるコツは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "かけてその数になる2つの数の「ペア」で探します。12なら1×12、2×6、3×4。ペアで書き出せば、約数は1、2、3、4、6、12の6個と漏れなく見つかります。1とその数自身を忘れないことも大切です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "倍数・約数は何年生で習いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "小学5年生で、偶数・奇数とあわせて学習します。同じ5年生で学ぶ約分・通分（分数）で、最大公約数・最小公倍数の考え方をすぐに使うことになる、つながりの深い単元です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="header">
+  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#fff;font-size:13px;font-weight:700;">にじゅうまるドリル</span></a>
+  <h1>倍数と約数｜最大公約数・最小公倍数の求め方</h1>
+</div>
+<div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
+<div class="eyecatch">
+  <p>🔢 倍数・約数は小学5年生の単元。言葉が似ていて混同しやすいうえ、直後に学ぶ約分・通分の土台になるため、ここでのつまずきは分数のつまずきに直結します。意味→見つけ方→公倍数・公約数の順に固めましょう。</p>
+</div>
+
+<h2>倍数とは？（意味と見つけ方）</h2>
+<p><strong>倍数＝ある数を1倍、2倍、3倍…した数</strong>です。3の倍数なら 3、6、9、12、15…。九九の「3の段」をどこまでも続けていくイメージです。</p>
+<ul>
+  <li>3の倍数：3、6、9、12、15、18…（無限に続く）</li>
+  <li>7の倍数：7、14、21、28、35…</li>
+</ul>
+<p>ポイントは2つ。<strong>倍数は無限に続く</strong>こと、そして<strong>その数自身も倍数に含まれる</strong>（3×1＝3も3の倍数）こと。なお、小学校では0は倍数に含めずに考えます。</p>
+
+<h2>約数とは？（意味と「ペア探し」）</h2>
+<p><strong>約数＝ある数をわり切ることができる数</strong>です。12の約数は、12をわり切れる 1、2、3、4、6、12 の6個。</p>
+<p>約数の問題で一番多いミスは「見落とし」。防ぐには、<strong>かけてその数になるペアで探す</strong>のが鉄則です。</p>
+<div class="formula">12 ＝ 1×12 ＝ 2×6 ＝ 3×4 → 約数は 1, 2, 3, 4, 6, 12</div>
+<p>1から順に「1×□＝12になる？」「2×□は？」と確かめ、ペアの相手も同時に書き出します。ペアの数どうしが近づいてきたら（3と4など）、そこで探し終わりのサイン。<strong>1とその数自身を忘れない</strong>ことも要注意です。</p>
+<div class="tip-box">
+  <p>💡 「倍数は かけていく数（無限）、約数は わり切る数（有限）」。この対比で覚えると混同しません。</p>
+</div>
+
+<h2>公倍数と最小公倍数</h2>
+<p>2つの数に共通する倍数を<strong>公倍数</strong>、そのうち一番小さいものを<strong>最小公倍数</strong>といいます。</p>
+<div class="ex-box">
+  <p><strong>例：</strong>4と6の公倍数は？</p>
+  <p>4の倍数：4、8、<strong>12</strong>、16、20、<strong>24</strong>、28…</p>
+  <p>6の倍数：6、<strong>12</strong>、18、<strong>24</strong>、30…</p>
+  <p>共通するのは 12、24、36… → 最小公倍数は<strong>12</strong></p>
+</div>
+<p>速い見つけ方は、<strong>大きい方の数（6）の倍数を順に書き、小さい方の数（4）でわり切れるか確かめる</strong>方法です。6→×、12→○。2つ目で見つかりました。公倍数は「最小公倍数の倍数」（12、24、36…）になるので、最小公倍数さえ見つければ全部わかります。</p>
+
+<h2>公約数と最大公約数</h2>
+<p>2つの数に共通する約数を<strong>公約数</strong>、そのうち一番大きいものを<strong>最大公約数</strong>といいます。</p>
+<div class="ex-box">
+  <p><strong>例：</strong>18と24の最大公約数は？</p>
+  <p>18の約数：1、2、3、<strong>6</strong>、9、18</p>
+  <p>24の約数：1、2、3、4、<strong>6</strong>、8、12、24</p>
+  <p>共通するのは 1、2、3、6 → 最大公約数は<strong>6</strong></p>
+</div>
+<p>速い見つけ方は、<strong>小さい方の数（18）の約数を大きい順（18、9、6…）に調べ、大きい方の数（24）をわり切れる最初の数</strong>を探す方法。18→×、9→×、6→○で発見です。公約数は「最大公約数の約数」（1、2、3、6）になります。</p>
+
+<h2>例題（テストによく出るパターン）</h2>
+<div class="ex-box">
+  <p><strong>例題1：</strong>36の約数をすべて書きましょう。</p>
+  <p><strong>解き方：</strong>ペア探し。1×36、2×18、3×12、4×9、6×6 → <strong>1、2、3、4、6、9、12、18、36</strong>（9個）</p>
+</div>
+<div class="ex-box">
+  <p><strong>例題2：</strong>8と12の最小公倍数は？</p>
+  <p><strong>解き方：</strong>12の倍数を順に：12（8でわれない）→24（24÷8＝3 ○）→ <strong>24</strong></p>
+</div>
+<div class="ex-box">
+  <p><strong>例題3：</strong>たて12cm、よこ18cmの長方形の紙から、同じ大きさの正方形をあまりが出ないように切り取ります。できるだけ大きな正方形にするとき、1辺は何cm？</p>
+  <p><strong>解き方：</strong>12と18の両方をわり切れる最大の数＝最大公約数 → <strong>6cm</strong>（たて2枚×よこ3枚に分けられる）</p>
+</div>
+<div class="ex-box">
+  <p><strong>例題4：</strong>駅から、A行きのバスは8分おき、B行きのバスは12分おきに発車します。午前9時に同時に発車したあと、次に同時に発車するのは何時何分？</p>
+  <p><strong>解き方：</strong>8と12の最小公倍数＝24分後 → <strong>午前9時24分</strong></p>
+</div>
+<p>文章題の見分け方はシンプルです。<strong>「そろえる・同時に・くり返し」なら公倍数、「分ける・等しく切る・あまりなく」なら公約数</strong>。問題文のキーワードに印をつけて判断しましょう。</p>
+
+<h2>覚えておくと速い！倍数の見分け方</h2>
+<table class="cv-table">
+  <tr><th>倍数</th><th>見分け方</th><th>例</th></tr>
+  <tr><td>2の倍数</td><td>一の位が 0・2・4・6・8（偶数）</td><td>134 → 一の位4 → ○</td></tr>
+  <tr><td>5の倍数</td><td>一の位が 0 か 5</td><td>85 → ○</td></tr>
+  <tr><td>10の倍数</td><td>一の位が 0</td><td>230 → ○</td></tr>
+  <tr><td>3の倍数（発展）</td><td>各位の数字の和が3の倍数</td><td>123 → 1＋2＋3＝6 → ○</td></tr>
+  <tr><td>9の倍数（発展）</td><td>各位の数字の和が9の倍数</td><td>234 → 2＋3＋4＝9 → ○</td></tr>
+</table>
+<p>3の倍数・9の倍数の見分け方は小学校の範囲を超える発展内容ですが、知っていると約分のスピードが大きく上がります。興味のある子はぜひ。</p>
+
+<h2>いっしょに学ぶ「偶数・奇数」</h2>
+<p>倍数・約数と同じ単元で、<strong>偶数・奇数</strong>も学習します。偶数＝2の倍数（2でわり切れる整数）、奇数＝2でわり切れない整数です。見分け方は一の位を見るだけ：0・2・4・6・8なら偶数、1・3・5・7・9なら奇数。「348は偶数？」→一の位が8だから偶数、と桁数が大きくても一瞬で判定できます。なお、0は2でわり切れる（0÷2＝0）ので偶数として扱います。</p>
+<p>「偶数＋偶数は必ず偶数になる？」「奇数＋奇数は？」のようなきまり探しは、テストにも出るうえ、数の性質を考える楽しさを味わえる好問題です。おはじきを2個ずつペアにして「あまるか・あまらないか」で確かめると、低学年の子でも納得できます。</p>
+
+<h2>約分・通分とのつながり（ここで効いてくる！）</h2>
+<p>倍数・約数を学んだ直後、5年生は分数の約分・通分を学びます。実は、<strong>約分＝分母と分子を最大公約数でわること、通分＝分母を最小公倍数にそろえること</strong>。たとえば12/18の約分は、12と18の最大公約数6でわって2/3。1/4と1/6の通分は、4と6の最小公倍数12で 3/12と2/12。倍数・約数がスラスラ出てくる子ほど、分数の計算が速く正確になります。詳しくは<a href="/fractions-guide.html">分数の教え方ガイド</a>をご覧ください。</p>
+
+<h2>よくある質問</h2>
+<h3>Q1. 倍数と約数、どっちがどっちか混乱します。</h3>
+<p>「倍数＝かけていく数（無限に続く）」「約数＝わり切る数（個数が決まる）」の対比で覚えましょう。3の倍数は3の段の続き、と九九に結びつけるのも有効です。</p>
+<h3>Q2. 最小公倍数は2つの数をかければいい？</h3>
+<p>2と3→6のように正しい場合もありますが、4と6は4×6＝24ではなく12が最小公倍数。かけ算は「必ず公倍数にはなる」だけで、最小とは限りません。</p>
+<h3>Q3. 約数の見落としが多いです。</h3>
+<p>ペア探し（1×12、2×6、3×4）で書き出しましょう。ペアで書けば漏れず、個数の確認もしやすくなります。</p>
+<h3>Q4. 何年生で習いますか？</h3>
+<p>小学5年生です。偶数・奇数、公倍数・公約数まで一気に学び、そのまま約分・通分で使います。</p>
+
+<h2>まとめ</h2>
+<ul>
+  <li>倍数＝何倍かした数（無限）、約数＝わり切れる数（有限）</li>
+  <li>約数はペア探しで見落としゼロに</li>
+  <li>最小公倍数は「大きい方の倍数を並べて小さい方でわれるか」、最大公約数は「小さい方の約数を大きい順に試す」</li>
+  <li>文章題は「そろえる→公倍数、分ける→公約数」で見分ける</li>
+  <li>約分・通分に直結する単元。ここを固めると分数が得意になる</li>
+</ul>
+
+<div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
+  <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
+  <div style="display:grid;gap:8px;">
+    <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">½</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">分数の教え方（約分・通分）</span>
+    </a>
+    <a href="/multiplication-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">✖️</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">かけ算の教え方（九九から筆算まで）</span>
+    </a>
+    <a href="/grade-5.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">5️⃣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学5年生の算数ドリル</span>
+    </a>
+    <a href="/grade-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📋</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">学年別 学習内容まとめ</span>
+    </a>
+  </div>
+</div>
+<div class="cta">
+  <p>無料・アプリ不要で今すぐ練習できます！</p>
+  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+</div>
+</div>
+
+<footer>
+  © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
+  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
+  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
+  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
+  <a href="/about.html">サイトについて</a>
+</footer>
+</body>
+</html>
