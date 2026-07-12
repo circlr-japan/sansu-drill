@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ドリルの使い方ガイド | にじゅうまる。算数ドリル</title>
-<meta name="description" content="にじゅうまる。算数ドリルの使い方を詳しく解説。学年・レベルの選び方から、タイムランキング・PDF印刷まで全機能を紹介します。">
+<meta name="description" content="にじゅうまる。算数ドリル（デジタルドリル）の使い方を画面の流れに沿って解説。学年・レベルの選び方、九九チャレンジ、全国ランキング、PDF印刷、ホーム画面への追加まで全機能を紹介します。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/how-to-use.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,10 +22,11 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line-height:1.8;}
 @media(min-width:640px){body{max-width:680px;margin:0 auto;}}
-.header{background:#122A64;padding:20px;display:flex;align-items:center;gap:12px;}
-.header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;}
+.header{background:#122A64;padding:20px;}
+.header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
 .header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
 .content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
 .eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
 .eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
 h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
@@ -35,9 +36,11 @@ ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
 ul li,ol li{margin-bottom:8px;}
 .tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
-.step{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;}
-.step-num{background:#2563EB;color:#fff;font-weight:700;font-size:14px;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.step-body h3{margin-top:0;}
+.step-box{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:16px 18px;margin:12px 0;}
+.step-box p{margin-bottom:6px;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
@@ -46,15 +49,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="にじゅうまる。算数ドリルの使い方【効果的な練習法ガイド】">
-<meta property="og:description" content="にじゅうまる。算数ドリルを最大限活用する方法を解説。学年別の使い方、毎日の練習法、苦手克服への活用まで詳しく紹介します。">
+<meta property="og:title" content="ドリルの使い方ガイド | にじゅうまる。算数ドリル">
+<meta property="og:description" content="学年・レベルの選び方から九九チャレンジ・ランキング・PDF印刷まで、デジタルドリルの全機能を解説。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/how-to-use.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="にじゅうまる。算数ドリルの使い方【効果的な練習法ガイド】">
-<meta name="twitter:description" content="にじゅうまる。算数ドリルを最大限活用する方法を解説。学年別の使い方、毎日の練習法、苦手克服への活用まで詳しく紹介します。">
+<meta name="twitter:title" content="ドリルの使い方ガイド | にじゅうまる。算数ドリル">
+<meta name="twitter:description" content="デジタルドリルの全機能を画面の流れに沿って解説。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -63,34 +66,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "にじゅうまる。算数ドリルはどんなサイトですか？",
+      "name": "にじゅうまる。算数ドリルは無料で使えますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "無料・アプリ不要でブラウザから使える小学生向け算数ドリルです。1年生から6年生までの計算問題を学年・単元別に練習でき、毎日の計算練習に最適です。"
+        "text": "はい、基本機能（学年別ドリル・九九チャレンジ・ランキング・今日のドリル）はすべて無料です。アプリのインストールや会員登録も不要で、ブラウザだけで使えます。解答付きPDFや100問チャレンジなど一部の機能はプレミアム（有料）で提供しています。"
       }
     },
     {
       "@type": "Question",
-      "name": "算数ドリルを毎日使う効果的な方法は？",
+      "name": "スマホでも使えますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "毎日決まった時間に10〜15分練習するのがおすすめです。正解数より継続することを重視し、苦手な単元を繰り返し練習しましょう。タイムを計ると計算スピードの成長も確認できます。"
+        "text": "使えます。スマホ・タブレット・パソコンのブラウザに対応しています。スマホでは「ホーム画面に追加」をすると、アプリのようにワンタップで起動できて便利です。"
       }
     },
     {
       "@type": "Question",
-      "name": "どの学年の問題から始めればいいですか？",
+      "name": "学年と違う学年のドリルをやってもいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "現学年の1つ下の学年から始めるのがおすすめです。基礎が固まっていれば自信がつき、つまずきがあれば早期発見できます。簡単に感じるくらいの問題を素早く解く練習が計算力の土台になります。"
+        "text": "もちろんです。むしろ最初は1つ下の学年から始めて、全問正解の成功体験を作るのがおすすめです。逆に得意な子は上の学年に挑戦することで先取り学習になります。"
       }
     },
     {
       "@type": "Question",
-      "name": "プレミアム機能と無料版の違いは何ですか？",
+      "name": "問題を紙に印刷して使えますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "無料版では学年別の基本的な計算問題を利用できます。プレミアム版では100問まとめドリル、苦手特化ドリル、成績記録など、より詳細な練習と管理機能が利用できます。"
+        "text": "はい。PDF出力機能で初級・中級・上級から難易度を選んでプリントを作成できます。画面学習と紙学習を組み合わせると、テスト形式の練習にも対応できます。"
       }
     }
   ]
@@ -99,111 +102,148 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <div>
-    <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#fff;font-size:13px;font-weight:700;">にじゅうまるドリル</span></a>
-    <h1>ドリルの使い方ガイド</h1>
-  </div>
+  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#fff;font-size:13px;font-weight:700;">にじゅうまるドリル</span></a>
+  <h1>ドリルの使い方ガイド</h1>
 </div>
 <div class="content">
-
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
 <div class="eyecatch">
-  <p>📖 このページでは「にじゅうまる。算数ドリル」の全機能と使い方を解説します。はじめて使う方も、もっと活用したい方もぜひご覧ください。</p>
+  <p>📖 にじゅうまる。算数ドリルは、ブラウザだけで使える無料のデジタル算数ドリルです。このページでは、初めての方向けに基本の流れから、九九チャレンジ・ランキング・印刷などの全機能を解説します。</p>
 </div>
 
-<h2>① 学年とレベルを選ぶ</h2>
-<p>トップページのドリル選択エリアで、お子さんの学年（1〜6年生）とレベル（初級・中級・上級）を選びます。</p>
-<ul>
-  <li><strong>初級：</strong>基礎固めに最適。計算の手順をしっかり確認したい子向け</li>
-  <li><strong>中級：</strong>標準的な問題。学校のテスト対策に</li>
-  <li><strong>上級：</strong>応用力をつけたい子向け。少し難しい問題が出題されます</li>
-</ul>
+<h2>にじゅうまる。算数ドリルとは</h2>
+<p>小学1〜6年生の計算問題を、スマホ・タブレット・パソコンのブラウザで練習できる学習サービスです。アプリのインストールも会員登録も不要。ページを開けばすぐに問題を解き始められます。答え合わせは自動採点なので、おうちの方が丸つけをする必要はありません。</p>
+<p>「学校の宿題だけでは演習量が足りない」「市販ドリルは丸つけが大変」という家庭の声から生まれた、<strong>毎日5〜10分の習慣づくり</strong>のためのドリルです。</p>
+
+<h2>基本の使い方（3ステップ）</h2>
+<div class="step-box">
+  <p><strong>STEP 1：ドリルを開く</strong></p>
+  <p>トップページの「ドリルをはじめる」から、ドリル画面（drill.html）を開きます。</p>
+</div>
+<div class="step-box">
+  <p><strong>STEP 2：学年を選ぶ</strong></p>
+  <p>1年生から6年生までの学年ボタンから選びます。学年の中では、たし算・ひき算・九九など単元ごとに問題が用意されています。</p>
+</div>
+<div class="step-box">
+  <p><strong>STEP 3：解いて「採点する ✓」</strong></p>
+  <p>問題に答えを入力して「採点する」ボタンを押すと、その場で自動採点。間違えた問題はすぐに確認できます。全問正解ならランキング登録にも挑戦できます。</p>
+</div>
 <div class="tip-box">
-  <p>💡 まずは「初級」から始めて、全問正解できるようになったら中級・上級にステップアップするのがおすすめです。</p>
+  <p>💡 迷ったら「学年選択」ボタンでいつでも戻れます。まずは1回分を最後まで解いて、画面の流れに慣れるのがおすすめです。</p>
 </div>
 
-<h2>② ドリルをスタートする</h2>
-<div class="step">
-  <div class="step-num">1</div>
-  <div class="step-body">
-    <h3>学年・レベルを選択</h3>
-    <p>トップページで学年とレベルのボタンをタップします。</p>
-  </div>
-</div>
-<div class="step">
-  <div class="step-num">2</div>
-  <div class="step-body">
-    <h3>「スタート」をタップ</h3>
-    <p>問題が表示されたらタイマーがスタートします。集中して解きましょう。</p>
-  </div>
-</div>
-<div class="step">
-  <div class="step-num">3</div>
-  <div class="step-body">
-    <h3>答えを入力して送信</h3>
-    <p>数字キーで答えを入力し、「答える」ボタンをタップします。スマホでも入力しやすい設計になっています。</p>
-  </div>
-</div>
-<div class="step">
-  <div class="step-num">4</div>
-  <div class="step-body">
-    <h3>結果を確認</h3>
-    <p>25問すべて終わると、点数・かかった時間・正答率が表示されます。間違えた問題も確認できます。</p>
-  </div>
-</div>
-
-<h2>③ タイムランキング機能</h2>
-<p>ドリルを解いた時間は自動的に記録され、全国のユーザーとタイムを競うことができます。同じ問題を繰り返して、自分のベストタイムを更新しましょう。</p>
-<div class="tip-box">
-  <p>💡 ランキングに名前を載せるには、結果画面でニックネームを入力して「登録」ボタンをタップしてください。</p>
-</div>
-
-<h2>④ 九九チャレンジ</h2>
-<p>九九の暗記・スピードアップに特化したモードです。制限時間内にどれだけ正確に答えられるか挑戦できます。2年生の九九練習だけでなく、3〜4年生の復習にも最適です。</p>
-
-<h2>⑤ PDFダウンロード</h2>
-<p>プリントして紙で解きたい方向けに、PDF版のドリルもダウンロードできます。タブレットが使えない環境や、学校・塾での利用にどうぞ。</p>
-
-<h2>⑥ メモ・計算スペース</h2>
-<p>画面内に手書きメモができるスペースがあります。筆算が必要な問題では、このスペースに書き込みながら解くことができます。</p>
-
-<h2>こんな使い方がおすすめ</h2>
+<h2>学年・レベルの選び方のコツ</h2>
+<p>大切なのは「学年どおり」より「今スラスラ解けるレベル」から始めることです。</p>
 <ul>
-  <li>毎日1回、決まった時間にドリルを解く習慣にする</li>
-  <li>タイムを記録して、先週より速く解けるか挑戦する</li>
-  <li>テスト前日に苦手な学年のドリルを総復習する</li>
-  <li>上の学年の問題に挑戦して先取り学習に使う</li>
+  <li><strong>算数が苦手な子：</strong>1つ下の学年から。全問正解の成功体験が「またやりたい」につながります</li>
+  <li><strong>ふつうの子：</strong>今の学年の、学校で習ったばかりの単元から</li>
+  <li><strong>得意な子：</strong>今の学年を全問正解できたら、上の学年へ先取り</li>
 </ul>
+<p>デジタルドリルは紙と違って「学年を切り替えるハードル」がありません。この気軽さを活かして、その日の調子に合わせてレベルを上げ下げしてください。</p>
 
+<h2>九九チャレンジ（1分間モード・無制限モード）</h2>
+<p>2年生の最重要単元「九九」専用のタイムアタック機能です。2つのモードがあります。</p>
+<table class="cv-table">
+  <tr><th>モード</th><th>内容</th><th>おすすめの使い方</th></tr>
+  <tr><td>⏱ 1分間モード</td><td>60秒で何問解けるかに挑戦</td><td>毎日の腕試し。記録の伸びが見える</td></tr>
+  <tr><td>♾️ 無制限モード</td><td>時間を気にせずどんどん解く</td><td>覚えたての段の反復練習に</td></tr>
+</table>
+<p>九九は「見た瞬間に答えが出る」スピードまで練習してこそ、3年生以降のわり算・筆算で効いてきます。覚え方のコツは<a href="/kuku-tips.html">九九の覚え方ガイド</a>にまとめています。</p>
+
+<h2>全国ランキングに挑戦しよう</h2>
+<p>ドリルの成績は、全国のユーザーとランキングで競えます。カテゴリは3種類です。</p>
+<ul>
+  <li><strong>📐 算数ドリル：</strong>学年別ドリルの成績で競う</li>
+  <li><strong>⏱ 九九1分間：</strong>1分間モードの正解数で競う</li>
+  <li><strong>♾️ 九九無制限：</strong>無制限モードの記録で競う</li>
+</ul>
+<p>結果画面の「ランキングに登録する 🏆」ボタンから登録できます（登録するかどうかは自由です）。TOP10に名前が載ることが、毎日続ける強力なモチベーションになります。「今日はランキング何位に入れるか」を親子の合言葉にしてみてください。</p>
+
+<h2>今日のドリル（日替わり問題）</h2>
+<p><a href="/daily.html">今日のドリル</a>では、日替わりの問題に挑戦できます。「今日の分をやる」という区切りがあるため、習慣化に最適です。朝学習や帰宅後のウォーミングアップとして、毎日同じ時間にやるのがおすすめです。</p>
+
+<h2>PDF印刷（紙のプリントとして使う）</h2>
+<p>画面での学習だけでなく、問題をPDFとして出力し、紙に印刷して使うこともできます。難易度は<strong>🌱初級・⭐中級・🔥上級</strong>の3段階から選択可能。学校のテストは紙で行われるので、「画面でスラスラ解ける→紙でも解ける」の最終確認として活用してください。</p>
+<p>さらに<a href="/premium.html">プレミアム</a>では、<strong>解答付きの算数ドリルPDF</strong>や<strong>100問チャレンジ</strong>など、ボリュームのある教材を用意しています。長期休みのまとめ学習や、苦手単元の集中特訓に向いています。</p>
+
+<h2>スマホの「ホーム画面に追加」でアプリ化</h2>
+<p>毎日使うなら、スマホのホーム画面に追加しておくと便利です。ブラウザのメニューから「ホーム画面に追加」を選ぶだけで、アプリのようにワンタップで起動できるようになります。操作方法は端末によって異なるので、詳しくは<a href="/device-guide.html">端末別の使い方ガイド</a>をご覧ください。</p>
+
+<h2>続けるコツ：おすすめの学習サイクル</h2>
+<ol>
+  <li><strong>時間を固定する：</strong>「夕食前の10分」など毎日同じタイミングで</li>
+  <li><strong>1日1回でOK：</strong>量より継続。物足りないくらいでやめると翌日も続く</li>
+  <li><strong>週末に振り返り：</strong>間違えた単元を親子で確認、翌週の重点に</li>
+  <li><strong>記録を残す：</strong>ランキングやタイムの伸びを一緒に喜ぶ</li>
+</ol>
+<p>学習習慣づくりの詳しい方法は<a href="/study-habits.html">勉強習慣のつくり方</a>でも解説しています。</p>
+
+<h2>シーン別のおすすめ活用法</h2>
+<table class="cv-table">
+  <tr><th>シーン</th><th>使い方</th></tr>
+  <tr><td>朝学習（5分）</td><td>今日のドリルを1回。頭のウォーミングアップに最適</td></tr>
+  <tr><td>宿題の前（5分）</td><td>九九チャレンジ1分間モードを2〜3回。計算のエンジンをかける</td></tr>
+  <tr><td>テスト前</td><td>PDF印刷で紙のプリントに。本番と同じ「紙と鉛筆」で最終確認</td></tr>
+  <tr><td>長期休み</td><td>前学年の総復習→今学年の先取り。プレミアムの100問チャレンジも活躍</td></tr>
+  <tr><td>すきま時間</td><td>ホーム画面に追加しておけば、移動中や待ち時間にもワンタップで練習</td></tr>
+</table>
+
+<h2>保護者の方へ：見守りのコツ</h2>
+<p>デジタルドリルは自動採点なので、おうちの方の仕事は「丸つけ」から「応援」に変わります。効果的な関わり方は次の3つです。</p>
+<ul>
+  <li><strong>結果より過程を褒める：</strong>「全問正解」よりも「昨日より速くなったね」「毎日続いてるね」</li>
+  <li><strong>間違いを責めない：</strong>間違えた問題は「伸びしろが見つかった」と前向きに扱う</li>
+  <li><strong>隣で見すぎない：</strong>低学年は近くで見守り、慣れてきたら「終わったら教えて」と任せる</li>
+</ul>
+<p>毎日の様子から「くり下がりでよく止まる」「7の段が遅い」といった苦手が見えてきたら、該当する単元ガイド（<a href="/subtraction-guide.html">ひき算</a>・<a href="/kuku-tips.html">九九</a>など）を参考に、その単元だけ集中的に練習するのが効率的です。</p>
+
+<h2>よくある質問</h2>
+<h3>Q1. 無料で使えますか？</h3>
+<p>基本機能（学年別ドリル・九九チャレンジ・ランキング・今日のドリル）はすべて無料、登録も不要です。解答付きPDFなど一部機能のみプレミアム（有料）です。</p>
+<h3>Q2. スマホでも使えますか？</h3>
+<p>スマホ・タブレット・パソコンのブラウザで使えます。ホーム画面に追加すればアプリのように起動できます。</p>
+<h3>Q3. 学年と違うドリルをやってもいい？</h3>
+<p>むしろおすすめです。苦手な子は1つ下の学年で成功体験を、得意な子は上の学年で先取りを。</p>
+<h3>Q4. 紙に印刷して使えますか？</h3>
+<p>PDF出力機能で初級・中級・上級のプリントを作成できます。テスト前の紙での最終確認に便利です。</p>
+<h3>Q5. 1日どのくらいやればいいですか？</h3>
+<p>目安は1日5〜10分です。長時間の詰め込みより、短くても毎日続ける方が計算力は伸びます。「今日のドリル1回＋九九チャレンジ1回」のような固定メニューにすると習慣化しやすくなります。</p>
+
+<h2>まとめ</h2>
+<ul>
+  <li>登録不要・無料・ブラウザだけ。開いたらすぐ「学年を選んで→解いて→採点」</li>
+  <li>レベル選びは「今スラスラ解ける」が基準。下の学年から始めてOK</li>
+  <li>九九チャレンジとランキングで、練習をゲームに変える</li>
+  <li>PDF印刷・プレミアムで紙学習にも対応</li>
+</ul>
 
 <div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/device-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:18px;margin-right:8px;">📲</span><span style="font-size:13px;font-weight:600;color:#1E40AF;">端末別の使い方ガイド</span></a>
-    
-    <a href="/grade-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">📚</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">学年別・算数の学習ガイド</span>
+    <a href="/device-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📲</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">端末別の使い方ガイド（スマホ・PC・タブレット）</span>
     </a>
-    <a href="/study-habits.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">✖️</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九の覚え方・練習方法</span>
+    </a>
+    <a href="/study-habits.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">📅</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数の勉強習慣のつくり方</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">勉強習慣のつくり方</span>
     </a>
-    <a href="/math-anxiety.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">💡</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数嫌いを克服する方法</span>
-    </a>
-    <a href="/teaching-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">👨‍👩‍👧</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">子どもへの算数の教え方</span>
+    <a href="/faq.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">❓</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">よくある質問（FAQ）</span>
     </a>
   </div>
 </div>
 <div class="cta">
-  <p>無料で使える！学年別・レベル別の算数ドリル</p>
-  <a href="/">さっそくドリルをやってみる →</a>
+  <p>無料・アプリ不要で今すぐ練習できます！</p>
+  <a href="/drill.html">ドリルをはじめる →</a>
+</div>
 </div>
 
-</div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
   <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;

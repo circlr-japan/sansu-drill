@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>分数が苦手な小学生へ【わかりやすい教え方】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="分数が苦手な小学生向けに、つまずきやすいポイントと保護者向けの教え方を解説。分数の意味から同分母・異分母の計算まで、具体的な説明方法を紹介します。">
+<meta name="description" content="分数が苦手な小学生向けに、約分・通分・帯分数のやり方と教え方を学年別に解説。1/2＋1/3はなぜ2/5じゃないの？に答えられる説明方法、例題、家庭での声かけ例を紹介します。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/fractions-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
 .header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
 .content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
 .eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
 .eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
 h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
@@ -35,8 +36,12 @@ ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
 ul li,ol li{margin-bottom:8px;}
 .tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
-.example{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin:14px 0;font-size:14px;color:#1E293B;}
-.example strong{color:#2563EB;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
+.formula{background:#EEF2FF;border:2px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0;text-align:center;font-size:15px;font-weight:700;color:#3730A3;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
@@ -45,15 +50,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="分数をマスターする方法【通分・約分から計算まで】">
-<meta property="og:description" content="分数が苦手な子へのわかりやすい教え方。通分・約分のコツ、分数のたし算・ひき算・かけ算・わり算まで段階的に解説します。">
+<meta property="og:title" content="分数が苦手な小学生へ【わかりやすい教え方】">
+<meta property="og:description" content="約分・通分・帯分数のやり方と教え方を学年別に解説。例題と家庭での声かけ例つき。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/fractions-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="分数をマスターする方法【通分・約分から計算まで】">
-<meta name="twitter:description" content="分数が苦手な子へのわかりやすい教え方。通分・約分のコツ、分数のたし算・ひき算・かけ算・わり算まで段階的に解説します。">
+<meta name="twitter:title" content="分数が苦手な小学生へ【わかりやすい教え方】">
+<meta name="twitter:description" content="約分・通分・帯分数のやり方と教え方を学年別に解説。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -62,34 +67,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "通分のやり方を簡単に教えてください",
+      "name": "分数は何年生で習いますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "2つの分母の最小公倍数を求め、それを新しい分母にします。1/3と1/4を通分する場合、3と4の最小公倍数は12なので1/3＝4/12、1/4＝3/12になります。最小公倍数が難しければ、分母をかけ算した数を使っても計算できます。"
+        "text": "2年生で「半分＝2分の1」のような素地を学び、3年生で分数の意味と簡単なたし算・ひき算、4年生で帯分数・仮分数と同分母の計算、5年生で約分・通分と異分母の計算、6年生で分数のかけ算・わり算を学習します。"
       }
     },
     {
       "@type": "Question",
-      "name": "約分を忘れてしまう子にはどう対処しますか？",
+      "name": "約分と通分の違いは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "計算後に必ず「約分できるか確認する」ステップを習慣化しましょう。分子と分母の最大公約数で割るのが正式な方法ですが、2で割れるか、3で割れるかを順番に試す方法も有効です。"
+        "text": "約分は1つの分数を簡単にすること（分母と分子を同じ数でわる。例：12/18→2/3）、通分は2つ以上の分数の分母をそろえること（例：1/2と1/3→3/6と2/6）です。約分は答えを整えるとき、通分は分母が違う分数を足し引きするときに使います。"
       }
     },
     {
       "@type": "Question",
-      "name": "分数のわり算で「ひっくり返してかける」理由は？",
+      "name": "1/2＋1/3が2/5にならないのはなぜですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "a÷(b/c)はa×(c/b)と同じになるためです。「3/4のいくつ分か」を求めるために逆数をかける操作です。理由より先に方法を覚えさせ、慣れてきたら理由を説明すると理解しやすいです。"
+        "text": "分母は「何等分したか」を表す単位のようなもので、大きさの違う1/2と1/3はそのままでは足せないからです。ピザの図で見ると、半分と3分の1を合わせても5分の2にならないことが一目でわかります。分母を6にそろえて3/6＋2/6＝5/6と計算します。"
       }
     },
     {
       "@type": "Question",
-      "name": "帯分数と仮分数の変換方法は？",
+      "name": "帯分数と仮分数はどう変換しますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "帯分数2と1/3は「2×3＋1＝7で7/3」になります。逆に7/3は「7÷3＝2あまり1で2と1/3」です。計算するときは仮分数に直してから行うと間違いが少なくなります。"
+        "text": "仮分数→帯分数は、分子÷分母の商が整数部分、あまりが分子になります（7/3→7÷3＝2あまり1→2と1/3）。帯分数→仮分数は、整数×分母＋分子が新しい分子です（2と1/3→2×3＋1＝7→7/3）。"
       }
     }
   ]
@@ -102,107 +107,146 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>分数が苦手な小学生へ</h1>
 </div>
 <div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
 <div class="eyecatch">
-  <p>🍕 分数は小学算数の中でも「理解できた瞬間」が最も嬉しい単元のひとつ。正しいアプローチで確実に理解できます。</p>
+  <p>½ 分数は小学算数の中で最も「苦手」が生まれやすい単元です。原因のほとんどは、計算のやり方より前の「分数の意味」のつまずき。このページでは意味の教え方から、約分・通分・帯分数・四則計算まで順番に解説します。</p>
 </div>
 
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-<h2>分数が難しい理由を理解する</h2>
-<p>分数は多くの子どもがつまずく単元です。その理由は「整数のルールとは異なる」からです。例えば、整数では「大きい数字＝大きい値」ですが、分数では「1/5と1/3では1/3の方が大きい」という逆の関係になります。このような「整数の常識が通じない」場面が分数への苦手意識を生みます。</p>
-<div class="tip-box">
-  <p>💡 分数学習の鉄則：「整数のルールを一旦忘れて、分数のルールを新しく覚える」という意識で取り組みましょう。分母が大きいほど「小さく分けた」ということです。</p>
-</div>
+<h2>分数はいつ・何を習う？（学年別カリキュラム）</h2>
+<table class="cv-table">
+  <tr><th>学年</th><th>学ぶ内容</th></tr>
+  <tr><td>小学2年生</td><td>「半分＝1/2」「そのまた半分＝1/4」など分数の素地</td></tr>
+  <tr><td>小学3年生</td><td>分数の意味（1/5が3こで3/5）、簡単な同分母のたし算・ひき算</td></tr>
+  <tr><td>小学4年生</td><td>真分数・仮分数・帯分数、同分母のたし算・ひき算</td></tr>
+  <tr><td>小学5年生</td><td>約分・通分、異分母のたし算・ひき算、分数と小数の関係</td></tr>
+  <tr><td>小学6年生</td><td>分数×分数、分数÷分数、逆数</td></tr>
+</table>
+<p>このように分数は<strong>5学年にまたがる長い単元</strong>です。5年生で「約分・通分がわからない」という場合、実は3年生の「分数の意味」からあいまいなことが少なくありません。苦手の学年より前に戻って確認するのが、遠回りに見えて一番の近道です。</p>
 
-<h2>分数の概念を正確に理解する</h2>
-<h3>分母と分子の意味</h3>
-<p>分数の「分母」と「分子」の意味を正確に理解することが第一歩です。</p>
+<h2>すべての土台：「分数の意味」の教え方</h2>
+<p>分数嫌いの子の多くは、「3/5」を「3と5という2つの数字」として見ています。まず伝えたいのは、<strong>分数は「1つの大きさ」を表す1つの数</strong>だということです。</p>
 <ul>
-  <li><strong>分母（下の数）：</strong>全体を何等分したかを表す</li>
-  <li><strong>分子（上の数）：</strong>そのうち何個分かを表す</li>
+  <li><strong>分母＝1をいくつに等しく分けたか</strong>（5等分）</li>
+  <li><strong>分子＝それがいくつ分あるか</strong>（3つ分）</li>
 </ul>
-<p>「3/5」は「全体を5等分して、そのうち3個分」という意味です。ピザの例で言うと「5切れに切ったピザのうち3切れ分」です。</p>
-
-<h3>折り紙で体験する</h3>
-<p>折り紙を使った体験が分数理解に最も効果的です。</p>
-<ol>
-  <li>折り紙を半分に折る → 1/2の完成</li>
-  <li>さらに半分に折る → 1/4の完成（1/2 = 2/4 が体験で分かる）</li>
-  <li>もう半分に折る → 1/8の完成</li>
-</ol>
-<p>「折り重ねたほうが（分母が大きいほうが）1つ分が小さくなる」という感覚が身につきます。</p>
-
-<h2>分数のたし算・ひき算</h2>
-<h3>同分母の場合（3年生）</h3>
-<p>「1/4 ＋ 2/4 ＝ 3/4」のように、同じ分母同士の計算は「分子だけを計算する」という単純なルールです。なぜ分母を足してはいけないかは、ピザのイメージで理解させます。「4切れのうち1切れ ＋ 4切れのうち2切れ ＝ 4切れのうち3切れ（分母は変わらない）」</p>
-<div class="warn-box">
-  <p>⚠️ 「1/4 ＋ 2/4 ＝ 3/8」という分母も足してしまうミスが多発します。「分母は変わらない」を何度も確認しましょう。</p>
-</div>
-
-<h3>異分母の場合（5年生以降）</h3>
-<p>「1/3 ＋ 1/4」のような異分母の計算では「通分」が必要です。3と4の最小公倍数は12なので、「4/12 ＋ 3/12 ＝ 7/12」と計算します。</p>
-<p>通分のステップ：</p>
-<ol>
-  <li>2つの分母の最小公倍数を求める（3と4の最小公倍数＝12）</li>
-  <li>各分数を同じ分母に変換（1/3 → 4/12、1/4 → 3/12）</li>
-  <li>分子を計算（4＋3＝7 → 7/12）</li>
-</ol>
-
-<h2>分数の約分</h2>
-<p>「6/8 ＝ 3/4」のように、分子と分母を同じ数で割って簡単にすることを「約分」といいます。約分は「最大公約数で割る」のが基本ですが、何回かに分けて約分してもOKです。</p>
+<p>教えるときは、ピザ・チョコレート・折り紙など「等しく分けられる実物」を使いましょう。「1枚のピザを5等分した1切れが1/5。その3切れ分が3/5」と、<strong>「1/5がいくつ分」という言い方</strong>を徹底すると、後の計算すべてがこのイメージにつながります。</p>
 <div class="tip-box">
-  <p>💡 約分のコツ：2で割れる（偶数）→ まず2で割る。5で終わる・0で終わる → 5で割る。という順番で試すと最大公約数が見つかりやすいです。</p>
+  <p>💡 声かけ例：「3/5ってどういう意味？」→「5個に分けた3個分！」が即答できれば意味の理解はOK。計算練習に進みましょう。</p>
 </div>
 
-<h2>仮分数と帯分数の変換</h2>
-<p>「5/3（仮分数）」と「1と2/3（帯分数）」は同じ値です。この変換を確実にできることが、分数計算の基礎です。</p>
+<h2>約分のやり方（5年生）</h2>
+<p><strong>約分＝分母と分子を同じ数でわって、分数を簡単にすること</strong>です。大きさは変わらず、表し方だけがシンプルになります。</p>
+<div class="formula">12/18 → （6でわる）→ 2/3</div>
+<ol>
+  <li>分母と分子の両方をわれる数（公約数）を探す</li>
+  <li>われるだけわる（最大公約数で1回でわると速い）</li>
+  <li>これ以上われなくなったら完成（既約分数）</li>
+</ol>
+<div class="ex-box">
+  <p><strong>例題1：</strong>8/12を約分しましょう。</p>
+  <p><strong>解き方：</strong>8と12は4でわれる。8÷4＝2、12÷4＝3 → <strong>2/3</strong></p>
+</div>
+<p>コツは「2・3・5でわれるか順番に試す」こと。偶数どうしならまず2、それでもだめなら3…と機械的に確かめれば、公約数を見落としません。答えは必ず約分してから書く習慣をつけると、テストでの減点がなくなります。</p>
+
+<h2>通分のやり方（5年生）</h2>
+<p><strong>通分＝分母の違う分数の、分母をそろえること</strong>です。分母の最小公倍数を新しい分母にします。</p>
+<div class="formula">1/2 と 1/3 → （分母を6に）→ 3/6 と 2/6</div>
+<ol>
+  <li>2つの分母の最小公倍数を見つける（2と3なら6）</li>
+  <li>それぞれの分数の分母がその数になるよう、分母・分子に同じ数をかける</li>
+  <li>分母がそろったら、たし算・ひき算ができる</li>
+</ol>
+<div class="ex-box">
+  <p><strong>例題2：</strong>1/2＋1/3は？</p>
+  <p><strong>解き方：</strong>分母を6にそろえる。1/2＝3/6、1/3＝2/6。3/6＋2/6＝<strong>5/6</strong></p>
+</div>
+<h3>「なんで2/5じゃないの？」への答え方</h3>
+<p>分母どうし・分子どうしを足して「1/2＋1/3＝2/5」としてしまうのは、分数あるあるの筆頭です。このとき「やり方が違う」と手順だけ直すのではなく、図で見せましょう。ピザ半分（1/2）と3分の1（1/3）を合わせたら、明らかに半分より大きいのに、2/5は半分より小さい——絵にすると「おかしい」と子ども自身が気づきます。<strong>分母は「切り方（単位）」なので、切り方をそろえないと足せない</strong>。これが通分の意味です。</p>
+
+<h2>帯分数と仮分数（4年生）</h2>
+<table class="cv-table">
+  <tr><th>種類</th><th>意味</th><th>例</th></tr>
+  <tr><td>真分数</td><td>分子＜分母（1より小さい）</td><td>2/3</td></tr>
+  <tr><td>仮分数</td><td>分子≧分母（1以上）</td><td>7/3</td></tr>
+  <tr><td>帯分数</td><td>整数＋真分数の形</td><td>2と1/3</td></tr>
+</table>
+<div class="ex-box">
+  <p><strong>例題3：</strong>7/3を帯分数に直しましょう。</p>
+  <p><strong>解き方：</strong>7÷3＝2あまり1 → 商2が整数部分、あまり1が分子 → <strong>2と1/3</strong></p>
+</div>
+<div class="ex-box">
+  <p><strong>例題4：</strong>3と2/5を仮分数に直しましょう。</p>
+  <p><strong>解き方：</strong>整数×分母＋分子＝3×5＋2＝17 → <strong>17/5</strong></p>
+</div>
+<p>「1つ分（3/3）が2セットとあと1/3」のように、<strong>「1」が分母いくつ分でできているか</strong>を意識させると、機械的な変換が意味とつながります。</p>
+
+<h2>分数の計算 早見表</h2>
+<table class="cv-table">
+  <tr><th>計算</th><th>やり方</th><th>例</th></tr>
+  <tr><td>同分母のたし算</td><td>分子だけ足す</td><td>2/7＋3/7＝5/7</td></tr>
+  <tr><td>異分母のたし算</td><td>通分してから足す</td><td>1/2＋1/3＝5/6</td></tr>
+  <tr><td>かけ算（6年）</td><td>分母どうし・分子どうしをかける</td><td>2/3×4/5＝8/15</td></tr>
+  <tr><td>わり算（6年）</td><td>わる数を逆数にしてかける</td><td>2/3÷4/5＝2/3×5/4＝5/6</td></tr>
+</table>
+<p>「たし算は分母をそろえる、かけ算はそのままかける」——ルールが逆に感じられて混乱しやすいポイントです。たし算は「同じ切り方のピースじゃないと数えられない」、かけ算は「〜の〜倍を求めている」と、意味に立ち返って区別させましょう。</p>
+
+<h2>発展：分数と小数の関係（5年生）</h2>
+<p>5年生では、分数と小数が「同じ数の別の表し方」であることも学びます。<strong>分子÷分母を計算すると小数になります</strong>。1/2＝1÷2＝0.5、1/4＝0.25、3/5＝0.6。よく使うこの3つは、暗記してしまうと割合や百分率の学習でとても役立ちます。逆に0.7を分数にすると7/10。「小数第一位＝10分の1の位」という位の意味がここでつながります。</p>
+
+<h2>家庭でのサポートのコツ</h2>
 <ul>
-  <li>仮分数→帯分数：5÷3＝1あまり2 → 1と2/3</li>
-  <li>帯分数→仮分数：1と2/3 → (1×3＋2)/3 ＝ 5/3</li>
+  <li><strong>実物で分ける体験：</strong>ピザ・ようかん・折り紙。「4等分して」「そのうち3つで3/4だね」</li>
+  <li><strong>料理で分数：</strong>「大さじ1/2」「このレシピの半分の量で作ろう」は最高の教材</li>
+  <li><strong>間違いを図で確認：</strong>計算ミスを見つけたら、手順ではなくまず図に描かせる</li>
+  <li><strong>約分・通分は九九とセット：</strong>公約数・公倍数探しは九九の逆引き。九九が怪しければ先にそちらを復習</li>
 </ul>
 
-<h2>分数のかけ算・わり算（6年生）</h2>
-<p>分数のかけ算は「分子同士×分子、分母同士×分母」という計算です。「2/3 × 3/4 ＝ (2×3)/(3×4) ＝ 6/12 ＝ 1/2」と計算します。途中で約分できる場合は約分してから計算すると楽になります。</p>
-<p>分数のわり算は「割る分数の逆数をかける」計算です。「2/3 ÷ 4/5 ＝ 2/3 × 5/4 ＝ 10/12 ＝ 5/6」のように計算します。「なぜ逆数をかけるのか」が分からない場合は「÷4は×1/4と同じ」という整数で理解してから分数に適用します。</p>
+<h2>よくある質問</h2>
+<h3>Q1. 分数は何年生で習いますか？</h3>
+<p>素地は2年生、意味の学習は3年生、帯分数・仮分数は4年生、約分・通分は5年生、かけ算・わり算は6年生です。つまずいたら1つ前の学年の内容に戻るのが基本です。</p>
+<h3>Q2. 約分と通分の違いは？</h3>
+<p>約分は1つの分数を簡単にすること、通分は複数の分数の分母をそろえることです。「約分＝整理整頓」「通分＝単位あわせ」とイメージすると覚えやすいです。</p>
+<h3>Q3. 1/2＋1/3＝2/5としてしまいます。</h3>
+<p>図で「半分＋3分の1が、半分より小さい2/5になるのはおかしい」と気づかせてから、通分の手順を教えましょう。意味→手順の順番が定着への近道です。</p>
+<h3>Q4. 分数のわり算はなぜひっくり返してかけるの？</h3>
+<p>「÷2/5」は「2/5個分で1つ」を求めることで、÷2/5＝×5/2になることは、わり算の性質（わる数とわられる数に同じ数をかけても商は同じ）から説明できます。小学生には「わる数を1にするためにひっくり返した数をかける」と伝えるのがわかりやすいです。</p>
 
-
+<h2>まとめ</h2>
+<ul>
+  <li>分数のつまずきは「意味」から。「分母＝切り方、分子＝いくつ分」を実物で</li>
+  <li>約分＝同じ数でわって簡単に。通分＝分母（切り方）をそろえる</li>
+  <li>帯分数⇔仮分数は「わり算の商とあまり」「整数×分母＋分子」で機械的に変換できる</li>
+  <li>たし算は通分、かけ算はそのまま。混乱したら意味に立ち返る</li>
+</ul>
+<p>分数は毎日の少しずつの練習で必ず得意になります。にじゅうまる。算数ドリルの学年別ドリルで、お子さんの学年に合った問題から始めてみてください。</p>
 
 <div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/decimal-fraction-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/decimal-fraction-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">🔢</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小数・分数の完全ガイド</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小数の教え方ガイド</span>
     </a>
-    <a href="/percentage-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">📊</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">割合・百分率の攻略法</span>
+    <a href="/grade-5.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">5️⃣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学5年生の算数ドリル</span>
     </a>
-    <a href="/division-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">➗</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">割り算・わり算の教え方</span>
+    <a href="/percentage-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">％</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">割合の教え方（百分率・歩合）</span>
     </a>
-    <a href="/grade-4-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">4️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">4年生の算数攻略ガイド</span>
+    <a href="/sansu-onayami-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📖</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数の学習お悩みガイド</span>
     </a>
-    
   </div>
 </div>
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
 </div>
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<div class="cta" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);">
-  <p>100問まとめドリルや苦手特化はプレミアムで。</p>
-  <a href="/premium.html" style="color:#6D28D9;">プレミアム機能を見る</a>
-</div></div>
+
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
   <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
