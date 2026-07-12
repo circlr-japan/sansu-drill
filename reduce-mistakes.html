@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>計算ミスをなくす5つの方法【小学生向け】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="テストで計算ミスが多い小学生のための改善方法を解説。ケアレスミスの原因と、見直しの習慣づけ・筆算の書き方など具体的な対策を紹介します。">
+<meta name="description" content="計算ミスは「不注意」ではなく型がある。①ミスの分類②途中式を書く③答えの見当④検算⑤ノートの使い方——5つの方法で計算ミスを仕組みから減らすやり方を、ミス記録表の作り方つきで解説｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/reduce-mistakes.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
 .header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
 .content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
 .eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
 .eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
 h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
@@ -35,12 +36,11 @@ ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
 ul li,ol li{margin-bottom:8px;}
 .tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
-.warn-box{background:#FFFBEB;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #F59E0B;}
-.warn-box p{margin:0;font-size:14px;color:#78350F;}
-.method-card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,0.07);display:flex;gap:14px;}
-.method-num{background:#2563EB;color:#fff;font-weight:700;font-size:16px;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.method-body h3{margin:0 0 6px;font-size:15px;}
-.method-body p{margin:0;font-size:13px;color:#374151;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
@@ -49,15 +49,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="ケアレスミスを減らすコツ【テストで点を落とさない方法】">
-<meta property="og:description" content="算数テストのケアレスミスを根本から減らす方法を解説。ミスのパターン分析、見直し習慣の作り方、本番での対策を紹介します。">
+<meta property="og:title" content="計算ミスをなくす5つの方法【小学生向け】">
+<meta property="og:description" content="ミスの分類・途中式・見当・検算・ノート術。計算ミスを仕組みから減らす5つの方法。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/reduce-mistakes.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ケアレスミスを減らすコツ【テストで点を落とさない方法】">
-<meta name="twitter:description" content="算数テストのケアレスミスを根本から減らす方法を解説。ミスのパターン分析、見直し習慣の作り方、本番での対策を紹介します。">
+<meta name="twitter:title" content="計算ミスをなくす5つの方法【小学生向け】">
+<meta name="twitter:description" content="ミスの分類・途中式・見当・検算・ノート術で仕組みから減らす。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -66,34 +66,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "ケアレスミスはなぜなくならないのですか？",
+      "name": "計算ミスが多い子には何をさせればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "集中力の低下・焦り・習慣の問題が主な原因です。「わかっているのにミスする」のは確認習慣が身についていないサインです。意識だけでは改善せず、具体的な確認手順を決めることが重要です。"
+        "text": "まず間違えた問題を集めて「ミスの種類」を分類しましょう。写し間違い・くり上がり忘れ・九九の間違い・位のずれ・問題の読み違い——種類がわかれば対策は自動的に決まります。「気をつけなさい」という注意だけでは、ミスは減りません。"
       }
     },
     {
       "@type": "Question",
-      "name": "ケアレスミスのパターンを把握するにはどうすればいいですか？",
+      "name": "途中式を書きたがりません。どうすれば？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "間違えた問題に付箋を貼り、1ヶ月分を分類してみましょう。「転記ミス」「符号ミス」「計算ミス」「読み取りミス」などパターンがわかれば対策が立てやすくなります。"
+        "text": "「書いた方が速くて得」という体験を作るのが一番です。途中式ありなしで正答率を比べて見せる、書いた式のおかげで見直しが一瞬で終わる体験をさせる、などが有効です。頭ごなしに「書きなさい」と言うより、書く価値を実感させましょう。"
       }
     },
     {
       "@type": "Question",
-      "name": "テスト前にできるケアレスミス対策は？",
+      "name": "見直しをしてもミスを見つけられません。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「自分がよくやるミスのチェックリスト」を作っておき、テスト見直し時に使いましょう。例えば「単位を書いたか」「符号は合っているか」など個人のミス傾向に合わせたリストが効果的です。"
+        "text": "「最初から解き直す」見直しは同じ思い込みで同じミスを見逃します。効果的なのは、答えの見当と比べる（桁が合っているか）、逆の計算で検算する（たし算はひき算で）、自分がよくやるミスの種類だけ狙って点検する、の3つです。"
       }
     },
     {
       "@type": "Question",
-      "name": "急いで解くとミスが増えるのを防ぐには？",
+      "name": "テストの時だけミスが増えます。なぜですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「速く解く」練習と「正確に解く」練習を分けて行いましょう。普段の練習では正確さ優先、時間内に解く練習は週1回程度で十分です。本番では「80%の時間で解いて20%で見直す」を目標にします。"
+        "text": "時間のプレッシャーで、普段は書いている途中式を省略したり、字が乱れたりするためです。対策は、家庭練習でも時間を計って「急いでいる状態」に慣れること、そして時間が余ったときの見直し手順をあらかじめ決めておくことです。"
       }
     }
   ]
@@ -106,95 +106,126 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>計算ミスをなくす5つの方法</h1>
 </div>
 <div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
 <div class="eyecatch">
-  <p>✏️ 「分かっているのにミスした」をゼロにする方法。ミスには必ず原因があります。原因を理解して、ミスを防ぐ習慣を身につけましょう。</p>
+  <p>✏️ 「もったいないミスばかり…」——でも、計算ミスは「不注意」や「性格」ではありません。ミスには必ず型があり、型には必ず対策があります。今日から使える5つの方法を紹介します。</p>
 </div>
 
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<h2>方法①：まず「ミスの種類」を分類する</h2>
+<p>いちばん大切で、いちばん飛ばされがちなステップです。間違えた問題を1週間分集めて、種類ごとに正の字を書いてみてください。</p>
+<table class="cv-table">
+  <tr><th>ミスの型</th><th>例</th><th>対策</th></tr>
+  <tr><td>写し間違い</td><td>問題の38を83と書く</td><td>数字を指さし確認してから計算</td></tr>
+  <tr><td>くり上がり・くり下がり</td><td>筆算で1を足し忘れ</td><td>くり上がりの1を必ず書く</td></tr>
+  <tr><td>九九・基礎計算</td><td>7×8＝54</td><td>その段だけ集中練習（自動化不足）</td></tr>
+  <tr><td>位のずれ</td><td>筆算の桁がななめに</td><td>マス目ノートに変える</td></tr>
+  <tr><td>問題の読み違い</td><td>「大きい方」を「小さい方」と読む</td><td>聞かれていることに波線を引く</td></tr>
+  <tr><td>単位・答え方</td><td>単位を書き忘れる</td><td>答えの欄を書いてから提出前チェック</td></tr>
+</table>
+<p>分類すると、たいてい<strong>1〜2種類のミスが全体の大半</strong>を占めていることがわかります。「全部気をつける」のは不可能でも、「くり上がりだけ気をつける」ならできる——これが分類の力です。</p>
+
+<h2>方法②：途中式を書く（頭の中でやらない）</h2>
+<p>ミスの多い子ほど、暗算で済ませようとします。書くことには2つの効果があります。①頭のメモリを節約してミス自体を減らす、②間違えたときに<strong>どこで間違えたか特定できる</strong>。</p>
+<p>「書きなさい」と言うだけでは動かないので、<strong>書いた方が得だと実感させる</strong>のがコツです。たとえば、途中式ありなしで10問ずつ解かせて正答率を比べる。たいてい「あり」が勝ちます。「書く＝面倒」から「書く＝武器」への転換が起きれば、あとは自分から書くようになります。</p>
+
+<h2>方法③：答えの「見当」を先に立てる</h2>
+<div class="ex-box">
+  <p><strong>例：</strong>498×3を計算する前に——「500×3＝1500くらいのはず」</p>
+  <p>計算結果が14994になったら「桁が違う、どこかおかしい」と自分で気づけます。</p>
 </div>
-<h2>計算ミスの5つのタイプ</h2>
-<p>「ケアレスミス」とひと言で言っても、実は種類があります。自分がどのタイプのミスを多くするか知ることが、対策の第一歩です。</p>
+<p>見当（概算）は、ミスを「起きたあとに見つける」ための網です。<a href="/gaisuu-shishagoonyuu-guide.html">がい数</a>で学ぶ「上から1桁のがい数にして計算」がそのまま使えます。特に小数のかけ算・わり算では、小数点の位置ミスを見当で発見できるため、高学年ほど効果が大きくなります。</p>
+
+<h2>方法④：検算のしかたを教える</h2>
+<p>「見直ししなさい」が効かないのは、見直しのやり方を知らないからです。最初から解き直す方法は、同じ思い込みで同じミスを見逃します。教えるべきは<strong>逆の計算での検算</strong>です。</p>
 <ul>
-  <li><strong>①見間違いミス：</strong>8を3に、6を0に見間違える</li>
-  <li><strong>②書き間違いミス：</strong>頭の中では正しくても、書いた数字が違う</li>
-  <li><strong>③繰り上がり・繰り下がりミス：</strong>進位の処理を忘れる・間違える</li>
-  <li><strong>④符号ミス：</strong>＋と−を取り違える</li>
-  <li><strong>⑤単位ミス：</strong>単位を付け忘れる・単位が違う</li>
+  <li><strong>ひき算 → たし算で：</strong>52−17＝35 → 35＋17＝52 ✓</li>
+  <li><strong>わり算 → かけ算で：</strong>72÷3＝24 → 24×3＝72 ✓（あまりがあれば「わる数×商＋あまり」）</li>
+  <li><strong>たし算 → 順番を変えて：</strong>38＋25 → 25＋38でもう一度</li>
 </ul>
+<p>逆算の検算は「別ルートで同じ答えに着くか」を確かめるので、思い込みをすり抜けたミスも捕まえられます。1日1問でいいので、検算までをセットにした練習を習慣にしましょう。</p>
 
-<h2>ミスが多い根本的な原因</h2>
-<h3>①字が雑（数字の形が不正確）</h3>
-<p>急いで書いた「1」が「7」に見える、「4」が「9」に見えるなど、自分が書いた数字を自分で読み間違えるケースが多いです。特に「4と9」「1と7」「6と0」の区別が付かない書き方になっている子は要注意です。</p>
+<h2>方法⑤：ノートの使い方を変える</h2>
+<p>ミスの3割は、ノートの使い方だけで消えると言われるほど、書く環境は重要です。</p>
+<ul>
+  <li><strong>マス目ノートを使う：</strong>1マス1数字。位のずれが物理的に起きなくなる</li>
+  <li><strong>余白をケチらない：</strong>詰めて書くと写し間違い・見間違いが急増。1問ごとにゆったり</li>
+  <li><strong>筆算は消さずに残す：</strong>間違い探しの証拠になる。書き直すときは横に</li>
+  <li><strong>0と6、1と7、4と9：</strong>紛らわしい数字だけ、丁寧に書く練習を</li>
+</ul>
 <div class="tip-box">
-  <p>💡 対策：マス目のあるノートを使い、1マスに1桁を書く習慣をつける。数字を書く時間を意識的に増やし、「読みやすい字」を書く練習をしましょう。</p>
+  <p>💡 ミスを叱らないことも「方法」のうちです。叱られると子どもは間違いを隠し、雑に急いで終わらせようとして、さらにミスが増えます。「ミスは対策の材料。見つかってラッキー」の空気を家庭に作りましょう。</p>
 </div>
 
-<h3>②計算過程を書かない</h3>
-<p>「頭の中でやった方が速い」と考えて計算過程を省略する子は、ミスが増えます。紙に書くことでワーキングメモリの負荷が減り、ミスが防げます。特に繰り上がりの小さな数字を書かずに計算すると、進位を忘れるミスが頻発します。</p>
+<h2>ミス記録表を作ろう（1週間で効果が見える）</h2>
+<p>ノートの最後のページに、簡単な表を作るだけです。</p>
+<table class="cv-table">
+  <tr><th>日付</th><th>ミスの種類</th><th>正の字</th></tr>
+  <tr><td>7/13</td><td>くり上がり忘れ</td><td>正</td></tr>
+  <tr><td>7/13</td><td>写し間違い</td><td>一</td></tr>
+</table>
+<p>1週間つけると、自分の「ミスのクセ」が本人の目に見えます。「ぼくはくり上がりでミスするんだ」と自覚した子は、その瞬間から自分でチェックを始めます。<strong>ミス対策のゴールは、親が注意することではなく、本人が自分のクセを知って自分で点検すること</strong>です。</p>
 
-<h3>③急いで解こうとする</h3>
-<p>テストの制限時間を過度に意識して急ぐと、ミスが増えます。「速く正確に」ではなく「まず正確に、そして速く」という順番で練習します。</p>
+<h2>テスト本番での見直し手順（時間配分つき）</h2>
+<p>テストで時間が余ったときの「見直し手順」を、あらかじめ決めておきましょう。手順がないと、なんとなく眺めて終わります。</p>
+<ol>
+  <li><strong>名前・答えの書き忘れチェック</strong>（30秒）——空欄が一番もったいない</li>
+  <li><strong>単位チェック</strong>（30秒）——cm？cm²？人？こ？</li>
+  <li><strong>自分のクセの点検</strong>（2分）——ミス記録表で分かった「自分の型」だけを狙って確認</li>
+  <li><strong>時間が残れば逆算検算</strong>——ひき算はたし算で、わり算はかけ算で</li>
+</ol>
+<p>ポイントは③です。全部を見直す時間はないので、<strong>自分がやりがちなミスだけをピンポイントで探す</strong>。これが「見直しが効く子」の共通点です。</p>
+<p>なお、低学年と高学年ではミスの主戦場が違います。低学年は「くり上がり・写し間違い」、高学年は「小数点の位置・単位・問題の読み違い」が中心。学年が上がったら、記録表の分類項目も見直しましょう。</p>
 
-<h2>ミスを防ぐ具体的な5つの習慣</h2>
-<h3>習慣①：問題を読む前に「何を求めるか」を確認する</h3>
-<p>問題の最後の行「〜を求めなさい」を先に読む習慣をつけます。これにより、求めるものを意識しながら計算でき、答えの単位ミスや問い違いを防げます。</p>
+<h2>それでも減らないときは：基礎計算の自動化不足かも</h2>
+<p>5つの方法を続けてもミスが減らない場合、原因は「注意力」ではなく<strong>基礎計算がまだ自動化されていない</strong>可能性が高いです。九九や1桁の計算に頭を使っている状態では、注意を配る余力が残りません。<a href="/calculation-power.html">計算力を上げる方法</a>で、基礎計算のタイムアタックを並行してください。土台が速くなると、ミスは自然に減っていきます。</p>
 
-<h3>習慣②：筆算は必ず縦に揃えて書く</h3>
-<p>位を揃えずに書いた筆算はミスの温床です。0の位が空欄になりやすく、繰り上がりの処理も混乱します。列を意識して整然と書く習慣が、計算の正確さを高めます。</p>
+<h2>よくある質問</h2>
+<h3>Q1. ミスが多い子にまず何をさせる？</h3>
+<p>間違いを集めて種類を分類することです。種類がわかれば対策は自動的に決まります。</p>
+<h3>Q2. 途中式を書きたがりません。</h3>
+<p>「書いた方が得」を体験させましょう。ありなしで正答率を比べるのが効きます。</p>
+<h3>Q3. 見直ししてもミスを見つけられません。</h3>
+<p>解き直しではなく、見当との比較・逆算での検算・自分のクセ狙いの点検に変えましょう。</p>
+<h3>Q4. テストの時だけミスが増えます。</h3>
+<p>時間プレッシャーで途中式を省くためです。家でも時間を計った練習で「急ぐ状態」に慣らしましょう。</p>
+<h3>Q5. 何歳ごろからミスは減っていきますか？</h3>
+<p>注意を配る力は発達とともに伸びますが、「待てば減る」ものではありません。低学年からミスの分類と検算の習慣をつけた子は、学年が上がるにつれてはっきり差がつきます。習慣は早いほど効きますが、高学年から始めても数か月で効果が出ます。</p>
 
-<h3>習慣③：繰り上がりの数を必ず書く</h3>
-<p>筆算で繰り上がりが生じた場合、その数字（1）を小さく書く習慣をつけます。「頭の中で覚えておけばいい」という考えが、繰り上がりの忘れミスを生みます。</p>
-
-<h3>習慣④：答えを確かめる（逆算する）</h3>
-<p>加算したら引き算で確認、掛け算したら割り算で確認という逆算の確かめ算を習慣にします。「12×4＝48」なら「48÷4＝12」で確認です。</p>
-
-<h3>習慣⑤：ミスノートを作る</h3>
-<p>間違えた問題をノートに書き写し、「なぜ間違えたか」のコメントを付けます。テスト前にこのノートを見返すと、自分のミスのパターンが把握でき、意識的に注意できるようになります。</p>
-<div class="tip-box">
-  <p>💡 ミスノートの作り方：問題と間違えた答え → 正しい答えと解説 → 「ミスのタイプ（見間違い・繰り上がり忘れなど）」の3段構成が理想です。</p>
-</div>
-
-<h2>テスト本番でのミス防止戦略</h2>
-<p>テスト中のミス防止には「解き終わった問題にチェックマークを入れる」習慣が有効です。見直しの際に「チェックがない問題＝未確認」と一目で分かります。</p>
-<p>また、見直しは「自信がない問題」を優先します。自信がある問題を繰り返し確認するより、不安な問題に時間を使う方が点数向上に直結します。</p>
-
-<h2>ミスが減ると算数が楽しくなる</h2>
-<p>ミスが減ると「分かっているのに点数が取れない」という悔しさがなくなり、努力が点数に直結するようになります。正しい習慣を身につけることが、算数を楽しむ近道です。毎日のドリル練習でミスのパターンを把握し、意識的に改善していきましょう。</p>
-
-
+<h2>まとめ</h2>
+<p>計算ミスは「性格」ではなく「技術」の問題です。分類→仕組みで防ぐ→検算で捕まえる、という流れを親子で共有すれば、テストの点は今の実力のままでも確実に上がります。まずは今週の宿題から、ミスの分類を始めてみてください。</p>
+<ul>
+  <li>ミスは不注意ではなく型。まず分類、対策はそれから</li>
+  <li>途中式・見当・検算の3点セットを習慣に</li>
+  <li>マス目ノートと余白で、環境からミスを減らす</li>
+  <li>ゴールは本人が自分のクセを知り、自分で点検できること。それは中学以降も一生使える力になる</li>
+</ul>
 
 <div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/no-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">✅</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算ミスをなくす方法</span>
+    <a href="/no-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">🎯</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">ケアレスミス撲滅ガイド</span>
     </a>
-    <a href="/test-prep.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">📋</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">テスト対策の完全ガイド</span>
+    <a href="/calculation-power.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">💪</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算力を上げる方法（自動化）</span>
     </a>
-    <a href="/study-habits.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">📅</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数の勉強習慣のつくり方</span>
+    <a href="/test-prep.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📝</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">テスト前日・当日の対策法</span>
     </a>
-    
+    <a href="/gaisuu-shishagoonyuu-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📊</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">がい数と四捨五入（見当の立て方）</span>
+    </a>
   </div>
 </div>
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
 </div>
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<div class="cta" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);">
-  <p>100問まとめドリルや苦手特化はプレミアムで。</p>
-  <a href="/premium.html" style="color:#6D28D9;">プレミアム機能を見る</a>
-</div></div>
 
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>

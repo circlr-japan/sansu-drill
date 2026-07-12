@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小学生の計算力を上げる方法【速く正確に解くために】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="小学生の計算スピードと正確さを上げるための練習方法を解説。計算力が伸びる仕組みと、効果的なドリルの使い方・継続のコツをご紹介します。">
+<meta name="description" content="計算力＝正確さ×速さ×工夫。学年別に「即答レベルにすべき基礎計算」の一覧と、タイムアタック練習のやり方、暗算の工夫、続けるための仕組みを解説。1日5分で計算力は必ず伸びます｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/calculation-power.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
 .header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
 .content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
 .eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
 .eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
 h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
@@ -35,9 +36,11 @@ ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
 ul li,ol li{margin-bottom:8px;}
 .tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
-.phase-card{background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,0.07);border-left:4px solid #2563EB;}
-.phase-card h3{margin:0 0 6px;font-size:14px;color:#2563EB;}
-.phase-card p{margin:0;font-size:13px;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
@@ -46,15 +49,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="計算力アップの秘訣【小学生の計算を速く正確にする方法】">
-<meta property="og:description" content="計算力を効率的に上げる方法を解説。計算ミスを減らす工夫、速く解くテクニック、毎日の練習法まで詳しく紹介します。">
+<meta property="og:title" content="小学生の計算力を上げる方法【速く正確に解くために】">
+<meta property="og:description" content="計算力＝正確さ×速さ×工夫。学年別の基礎計算リストとタイムアタック練習法を解説。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/calculation-power.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="計算力アップの秘訣【小学生の計算を速く正確にする方法】">
-<meta name="twitter:description" content="計算力を効率的に上げる方法を解説。計算ミスを減らす工夫、速く解くテクニック、毎日の練習法まで詳しく紹介します。">
+<meta name="twitter:title" content="小学生の計算力を上げる方法">
+<meta name="twitter:description" content="学年別の基礎計算リストとタイムアタック練習法を解説。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -63,34 +66,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "計算力を上げる一番効果的な方法は何ですか？",
+      "name": "計算が遅い子は、どうすれば速くなりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "毎日決まった時間に計算練習を続けることです。1日10〜15分の継続が最も効果的で、難しい問題より基礎的な計算を速く正確にこなす練習が計算力の土台になります。"
+        "text": "学年ごとの「基礎計算」（10の合成分解・1桁のたし算ひき算・九九）が即答できるかを確認し、遅いものを毎日5分のタイムアタックで自動化するのが最短ルートです。複雑な計算は基礎計算の組み合わせなので、部品を速くすれば全体が速くなります。"
       }
     },
     {
       "@type": "Question",
-      "name": "計算が遅い子の原因は何ですか？",
+      "name": "速さと正確さ、どちらを優先すべきですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "主な原因は①九九が完全に定着していない、②計算の手順が不確か、③指で数えるクセが残っている、の3つです。どれが原因かを特定して対策を取ると効率的に改善できます。"
+        "text": "順番は正確さ→速さです。まず丁寧に解いて正答率9割を安定させ、そのうえでタイムを縮めます。ただし最終的には速さも必要です。基礎計算が自動化されると考える余力が生まれ、結果的にミスも減るからです。"
       }
     },
     {
       "@type": "Question",
-      "name": "計算ドリルは何をやればいいですか？",
+      "name": "計算練習は1日どのくらいやればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "学年相当の内容を繰り返すのが基本です。市販のドリルなら「毎日のドリル（学研）」「陰山メソッド」などが定評あります。無料のオンラインドリルも活用できます。"
+        "text": "1日5分で十分です。計算力は「量×一気に」より「少量×毎日」で伸びます。毎日同じ時間帯に、タイムを記録しながら行うと、伸びが見えて続きます。"
       }
     },
     {
       "@type": "Question",
-      "name": "計算ミスを完全になくすことはできますか？",
+      "name": "100マス計算のような反復練習は効果がありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "完全になくすのは難しいですが、見直しの習慣と「確かめ算」を徹底することでミスを大幅に減らせます。特に繰り上がり・繰り下がりのある計算は要注意です。"
+        "text": "基礎計算の自動化には効果的です。ポイントは毎回タイムを計って記録すること、そして満点が続くようになったら次の種類に進むこと。同じものを漫然と続けるより、「今の自分に少し易しい〜ちょうど」の負荷を保つことが大切です。"
       }
     }
   ]
@@ -103,100 +106,137 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>計算力を上げる方法</h1>
 </div>
 <div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
 <div class="eyecatch">
-  <p>💪 計算力は算数・数学全体の「体力」。計算が速く正確になると、思考に集中できるようになります。</p>
+  <p>💪 計算力は才能ではなく、トレーニングで確実に伸びる力です。鍵は「何を・どの順番で・どう練習するか」。このページでは、計算力の正体と、1日5分で伸ばす具体的な方法を解説します。</p>
 </div>
 
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-<h2>計算力とは何か</h2>
-<p>計算力とは「正確に・素早く計算できる力」のことです。計算力が高い子は、文章問題や応用問題に取り組む時に、計算の部分で脳のリソースを使わずに済むため、問題の本質的な理解に集中できます。</p>
-<p>計算力の高い子の特徴：</p>
+<h2>計算力の正体：「正確さ × 速さ × 工夫」</h2>
+<p>計算力は、3つの要素のかけ算です。</p>
 <ul>
-  <li>テストで時間が余る</li>
-  <li>ミスが少ない（計算ミスでなく内容を理解できているかどうかが問われる）</li>
-  <li>算数・数学全般に自信がある</li>
-  <li>中学以降の数学でも困らない</li>
+  <li><strong>正確さ：</strong>ミスなく解ける（土台）</li>
+  <li><strong>速さ：</strong>考えずに手が動く（自動化）</li>
+  <li><strong>工夫：</strong>楽な解き方を選べる（数のセンス)</li>
 </ul>
+<p>優先順位はこの順番です。まず正確に、次に速く、最後に工夫。速さを飛ばして工夫に進んでも、工夫する余力が生まれません。逆に、基礎計算が自動化されると<strong>頭のメモリに余裕ができて、文章題や応用問題を「考える」ことに集中できる</strong>ようになります。計算力は、思考力の土台でもあるのです。</p>
 
-<h2>計算力を構成する3要素</h2>
-<h3>①計算の自動化</h3>
-<p>「考えなくても答えが出る」状態が「計算の自動化」です。九九が自動化されている子は、かけ算を処理するエネルギーがほぼゼロです。自動化のためには同じ計算を何度も反復することが必要です。</p>
+<h2>学年別・「即答レベル」にすべき基礎計算</h2>
+<p>すべての計算は、少数の「部品」の組み合わせでできています。学年ごとに、即答レベル（2秒以内）にしておきたい部品はこれだけです。</p>
+<table class="cv-table">
+  <tr><th>学年</th><th>即答にすべき基礎計算</th><th>これが部品になる計算</th></tr>
+  <tr><td>1年生</td><td>10の合成分解／1桁＋1桁／1桁−1桁</td><td>すべての筆算</td></tr>
+  <tr><td>2年生</td><td>九九81問（ランダムで）</td><td>わり算・かけ算の筆算・約分</td></tr>
+  <tr><td>3年生</td><td>2桁±1桁の暗算／九九の逆（わり算）</td><td>わり算の筆算・あまりの計算</td></tr>
+  <tr><td>4年生以上</td><td>上記の維持＋小数・分数の基本変換（0.5＝1/2など）</td><td>割合・速さ・比</td></tr>
+</table>
+<p>高学年で計算が遅い場合も、対策はこの表のどれかに戻ることです。「5年生なのに九九？」とためらう必要はありません。<strong>部品が遅ければ、組み立ても遅い</strong>——それだけの話です。</p>
 
-<h3>②数感覚（ナンバーセンス）</h3>
-<p>「47に53を足すと100になる」「156の半分は78」などを素早く見抜く力が数感覚です。数感覚は計算の効率化に大きく貢献します。</p>
-
-<h3>③計算の工夫力</h3>
-<p>「998×5 ＝ (1000-2)×5 ＝ 5000-10 ＝ 4990」のように、工夫して計算する力です。高学年では計算の工夫が大切になります。</p>
-
-<h2>計算力を鍛える具体的な練習法</h2>
-<h3>①百マス計算</h3>
-<p>縦と横に数字が並んだ表を使い、交差する部分の計算（足し算・かけ算など）を行う百マス計算は、計算の自動化に非常に効果的です。最初は時間がかかっても、毎日続けると劇的にスピードアップします。</p>
+<h2>最強の練習法：毎日5分のタイムアタック</h2>
+<p>基礎計算を自動化する方法は、昔からひとつ——<strong>時間を計った反復</strong>です。ただし、やり方に4つのコツがあります。</p>
+<ol>
+  <li><strong>毎日同じ時間帯に：</strong>夕食前・朝食後など固定。「いつやるか」を迷わない</li>
+  <li><strong>5分で切り上げる：</strong>長くやるより毎日。物足りないくらいがちょうどいい</li>
+  <li><strong>タイムを記録する：</strong>昨日の自分がライバル。伸びが見えるとやる気が続く</li>
+  <li><strong>正答率9割を保つ：</strong>ミスが増えたら1段階やさしいレベルに戻す</li>
+</ol>
+<p>にじゅうまる。算数ドリルの<strong>九九チャレンジ（1分間モード）</strong>と<strong>全国ランキング</strong>は、まさにこの練習のための機能です。タイムが自動で計られ、記録が残り、全国の子と競える——「練習」が「ゲーム」に変わります。</p>
 <div class="tip-box">
-  <p>💡 百マス計算のコツ：毎日同じ問題セットを繰り返すのではなく、数字をランダムに変えて毎日新鮮な問題に取り組みましょう。にじゅうまる。算数ドリルの「毎日ドリル」は毎日問題が変わるので最適です。</p>
+  <p>💡 記録が伸びなくなったら停滞ではなく卒業のサイン。次の種類（たし算→ひき算→九九→わり算）に進みましょう。</p>
 </div>
 
-<h3>②繰り上がり・繰り下がりの徹底練習</h3>
-<p>計算ミスの多くは繰り上がり・繰り下がりの処理ミスです。この部分を徹底的に練習することが計算力向上の近道です。特に2桁の加減算（23＋47、51−28など）を即答できるレベルまで練習します。</p>
-
-<h3>③10の合成・分解の完全習得</h3>
-<p>「3と7」「4と6」「8と2」など、合わせて10になる組み合わせを完全に暗記することが、繰り上がり計算の基盤になります。</p>
-
-<h3>④計算の工夫を学ぶ</h3>
-<p>高学年向けの計算の工夫例：</p>
+<h2>「速い子はミスも少ない」のはなぜ？</h2>
+<p>「速く解くとミスが増えるのでは？」と心配する保護者は多いのですが、実際は逆で、<strong>基礎計算が速い子ほどミスが少ない</strong>傾向があります。理由は2つ。</p>
 <ul>
-  <li>「25×4＝100」という特殊なかけ算の活用</li>
-  <li>「99×8＝(100-1)×8＝800-8＝792」という分配法則</li>
-  <li>「105÷5＝(100÷5)＋(5÷5)＝20＋1＝21」という分割計算</li>
+  <li>自動化された計算は「思い出す」工程がないので、思い出しミスが起きない</li>
+  <li>計算に頭を使わない分、「写し間違い」「問題の読み違い」に注意を回せる</li>
 </ul>
+<p>ミスが多い子に「ゆっくり丁寧に」だけを求めると、実は解決しないことがあります。丁寧さの指導（<a href="/reduce-mistakes.html">計算ミスを減らす方法</a>）と並行して、基礎計算の自動化を進めるのが本筋です。</p>
 
-<h2>計算力向上の目安タイム</h2>
-<p>学年ごとの計算スピードの目安を示します。</p>
-<ul>
-  <li><strong>1年生：</strong>20以内のたし算・ひき算 各1問2秒以内</li>
-  <li><strong>2年生：</strong>九九 全81問3分以内 / 2桁のたし算 1問5秒以内</li>
-  <li><strong>3年生：</strong>3桁のたし算・ひき算 1問10秒以内</li>
-  <li><strong>4年生：</strong>4桁÷1桁の筆算 1問20秒以内</li>
-  <li><strong>5・6年生：</strong>分数の四則計算 1問30秒以内</li>
-</ul>
-<div class="warn-box">
-  <p>⚠️ タイムはあくまで目安です。スピードより正確さを優先して練習し、正解率が安定したらスピードを意識しましょう。</p>
+<h2>仕上げの「工夫」：数を操作する楽しさ</h2>
+<p>正確さと速さが育ったら、計算の工夫を紹介してあげましょう。</p>
+<div class="ex-box">
+  <p><strong>例：</strong>25×16 ＝ 25×4×4 ＝ 100×4 ＝ <strong>400</strong>（25×4＝100を作る）</p>
+  <p><strong>例：</strong>98＋57 ＝ 100＋57−2 ＝ <strong>155</strong>（100を借りて返す）</p>
+  <p><strong>例：</strong>7＋8＋3＋2 ＝ (7＋3)＋(8＋2) ＝ <strong>20</strong>（10のペアを先に）</p>
 </div>
+<p>工夫の本質は「計算のきまり（交換・結合・分配）を使って、自分が楽になる形に変えること」。これは中学の文字式・因数分解の考え方そのものです。ドリルの問題でも「もっと楽なやり方ない？」と聞いてみると、数への感度がぐんと育ちます。</p>
 
-<h2>毎日の練習が最も重要</h2>
-<p>計算力は「一気に上げよう」と思っても上がりません。毎日少しずつの積み重ねが最も効果的です。にじゅうまる。算数ドリルの「毎日ドリル」を使えば、毎日40問の計算練習が手軽にできます。継続することで、3ヶ月後には別人のように計算が速くなります。</p>
+<h2>学年別・タイムアタックメニュー例</h2>
+<table class="cv-table">
+  <tr><th>学年</th><th>メニュー（毎日5分）</th><th>目標の目安</th></tr>
+  <tr><td>1年生</td><td>10の合成分解→1桁のたし算ひき算</td><td>1問2秒以内</td></tr>
+  <tr><td>2年生</td><td>九九チャレンジ1分間モード</td><td>毎日記録更新をねらう</td></tr>
+  <tr><td>3年生</td><td>九九1分間＋わり算（九九の逆）</td><td>九九全81問を2分以内</td></tr>
+  <tr><td>4年生</td><td>2桁±1桁の暗算＋学年別ドリル</td><td>正答率9割で速度アップ</td></tr>
+  <tr><td>5・6年生</td><td>学年別ドリル＋小数分数の変換即答</td><td>0.5＝1/2などを1秒で</td></tr>
+</table>
+<p>迷ったら「1つ下の学年のメニューでタイムを計る」から始めてください。余裕で満点が取れるレベルで速さを磨くのが、正しい負荷設定です。週の終わりには、1週間のベストタイムを親子で振り返り、伸びたところをカレンダーやノートに残しておくと、次の週のモチベーションになります。</p>
 
+<h2>暗算と筆算の使い分け</h2>
+<p>「全部筆算で解く子」と「全部暗算でやろうとする子」、どちらもミスが増えます。目安を教えてあげましょう。</p>
+<ul>
+  <li><strong>暗算でOK：</strong>2桁±1桁、九九の範囲、キリのいい数の計算（30＋40など）</li>
+  <li><strong>筆算にする：</strong>くり上がり・くり下がりが2回以上ありそうな計算、小数点が絡む計算</li>
+  <li><strong>迷ったら筆算：</strong>テストでは確実さが最優先</li>
+</ul>
+<p>高学年になると「暗算にこだわって時間切れ」「全部筆算で時間切れ」の両パターンが出てきます。使い分けの判断も含めて計算力です。</p>
+<p>「この問題、暗算でいける？筆算がいい？」と判断させるクイズ自体が、数の大きさを見積もる良いトレーニングになります。</p>
 
+<h2>計算力アップを妨げる3つの落とし穴</h2>
+<ul>
+  <li><strong>難しすぎる問題での練習：</strong>正答率5割の問題では自動化は進みません。9割解けるレベルで速度を上げるのが正解</li>
+  <li><strong>週末にまとめてやる：</strong>計算の自動化は睡眠を挟んだ反復で進みます。週1回60分より毎日5分</li>
+  <li><strong>ミスを叱る：</strong>叱られると子どもは「解かない」方向に逃げます。ミスは分類して対策する材料（<a href="/no-mistakes.html">ケアレスミス対策</a>）</li>
+</ul>
+
+<h2>よくある質問</h2>
+<h3>Q1. 計算が遅い子はどうすれば速くなる？</h3>
+<p>学年別の基礎計算（10の合成分解・九九など）に戻って、毎日5分のタイムアタックで自動化するのが最短です。</p>
+<h3>Q2. 速さと正確さ、どちらが先？</h3>
+<p>正確さが先。正答率9割を安定させてから、タイムを縮めます。</p>
+<h3>Q3. 1日どのくらい練習すべき？</h3>
+<p>5分で十分。量より毎日の頻度が効きます。</p>
+<h3>Q4. 100マス計算は効果ある？</h3>
+<p>自動化には効果的です。タイムを記録し、満点が続いたら次の種類へ進むのがコツです。</p>
+<h3>Q5. 計算は速いのに文章題ができません。</h3>
+<p>計算力と読解・立式の力は別物です。計算の自動化は完成しているので、次は図をかいて場面を式にする練習（<a href="/bunshoudai-guide.html">文章題の解き方</a>）に時間を配分しましょう。計算が速い子は文章題の練習に集中できる、という意味で有利な位置にいます。</p>
+
+<h2>まとめ</h2>
+<p>計算力づくりに特別な教材や長い時間は要りません。必要なのは「正しい部品を、毎日5分、タイムを計って」の3点だけ。1か月後のタイムの伸びが、お子さんの自信そのものになります。今日の記録を、ぜひ残すところから始めてください。</p>
+<ul>
+  <li>計算力＝正確さ×速さ×工夫。この順番で鍛える</li>
+  <li>学年別の「即答にすべき部品」を特定し、そこだけ集中練習</li>
+  <li>毎日5分・タイム記録・正答率9割キープが黄金ルール</li>
+  <li>基礎の自動化は、ミス減少と思考力の土台になる</li>
+</ul>
 
 <div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    
-    <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">✖️</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九をマスターするコツ</span>
+    <a href="/reduce-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">✏️</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算ミスをなくす5つの方法</span>
     </a>
-    
-    <a href="/no-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">✅</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算ミスをなくす方法</span>
+    <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">✖️</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九の覚え方・練習方法</span>
+    </a>
+    <a href="/study-habits.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📅</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">家庭学習を続けるコツ</span>
+    </a>
+    <a href="/how-to-use.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📖</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">ドリルの使い方（タイムアタック機能）</span>
     </a>
   </div>
 </div>
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+  <a href="/drill.html?mode=kuku">九九チャレンジでタイムを計ってみる →</a>
 </div>
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<div class="cta" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);">
-  <p>100問まとめドリルや苦手特化はプレミアムで。</p>
-  <a href="/premium.html" style="color:#6D28D9;">プレミアム機能を見る</a>
-</div></div>
+
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
   <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;

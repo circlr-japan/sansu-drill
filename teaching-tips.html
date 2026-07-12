@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>算数が苦手な子への教え方【保護者向け】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="算数が苦手な小学生への教え方を保護者向けに解説。つまずきやすいポイント・声かけの工夫・家庭学習で効果的な習慣づくりのコツをお伝えします。">
+<meta name="description" content="算数が苦手な子に家庭でどう教える？「具体物→図→式」の3段階、ヒントの出し方3レベル、言ってはいけないNGワード、単元別さかのぼり早見表まで。教えるより「見つける」サポート法を解説｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/teaching-tips.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
 .header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
 .content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
 .eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
 .eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
 h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
@@ -35,9 +36,11 @@ ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
 ul li,ol li{margin-bottom:8px;}
 .tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
-.warn-box{background:#FFFBEB;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #F59E0B;}
-.warn-box p{margin:0;font-size:14px;color:#78350F;}
-.voice{background:#F1F5F9;border-radius:10px;padding:14px 16px;margin:12px 0;font-size:13px;color:#475569;font-style:italic;}
+.ng-box{background:#FEF2F2;border-left:4px solid #EF4444;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ng-box p{margin-bottom:6px;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
@@ -46,15 +49,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="子どもへの算数の教え方【保護者向け完全ガイド】">
-<meta property="og:description" content="算数が苦手な子への効果的な教え方を保護者向けに解説。やる気を引き出すコツ、つまずきの見つけ方、家庭でできるサポート法を紹介します。">
+<meta property="og:title" content="算数が苦手な子への教え方【保護者向け】">
+<meta property="og:description" content="「具体物→図→式」の3段階、ヒントの出し方、NGワード、単元別さかのぼり早見表を解説。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/teaching-tips.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="子どもへの算数の教え方【保護者向け完全ガイド】">
-<meta name="twitter:description" content="算数が苦手な子への効果的な教え方を保護者向けに解説。やる気を引き出すコツ、つまずきの見つけ方、家庭でできるサポート法を紹介します。">
+<meta name="twitter:title" content="算数が苦手な子への教え方【保護者向け】">
+<meta name="twitter:description" content="3段階の教え方とヒントの出し方、NGワードを解説。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -63,34 +66,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "子どもに算数を教えるとき怒ってしまいます。どうすればいいですか？",
+      "name": "算数が苦手な子には何から教えればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「なぜわからないの」という言葉は子どもの自信を傷つけ、算数嫌いにつながります。「どこまでわかる？」と聞いてわかる部分から褒め、わからない箇所だけ一緒に考えましょう。親の焦りが子どもに伝わるため、まず親が落ち着くことが大切です。"
+        "text": "教える前に「どこまでは解けるか」を見つけることが先です。今の単元ではなく、1学期前・1学年前まで戻って、スラスラ解ける地点から再スタートしましょう。算数は積み上げ教科なので、土台の穴を埋めるのが一番の近道です。"
       }
     },
     {
       "@type": "Question",
-      "name": "家庭でどのくらい算数を教えればいいですか？",
+      "name": "教えるとすぐケンカになります。どうすれば？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "毎日15〜20分程度が理想です。長時間の詰め込みより、短時間の継続の方が効果的です。特に低学年では「勉強の習慣づくり」が目的であり、内容より取り組む姿勢を育てることを優先しましょう。"
+        "text": "「答えを教える係」から「一緒に考える係・褒める係」への役割変更がおすすめです。説明したくなったら、代わりに「どこまでわかった？」「図にするとどうなる？」と質問に置き換えましょう。丸つけは自動採点のドリルに任せると衝突が激減します。"
       }
     },
     {
       "@type": "Question",
-      "name": "子どもが算数を理解できているか確認する方法は？",
+      "name": "何度教えても同じところを間違えます。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「説明してみて」と言わせましょう。自分の言葉で説明できれば本当に理解しています。参考書の解説を読んで「わかった」と言っても、実際には理解できていないケースが多いです。"
+        "text": "説明の回数を増やすより、具体物（おはじき・お金）や図に一度戻る方が効果的です。言葉の説明で伝わらないのは、頭の中にイメージの土台がないサイン。「具体物→図→式」の順にやり直すと、急に通じることが多いです。"
       }
     },
     {
       "@type": "Question",
-      "name": "塾と家庭学習どちらが算数に効果的ですか？",
+      "name": "親が算数を苦手でも教えられますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "子どもの性格・つまずきの程度・親のサポート力によって異なります。自分でコツコツできる子は家庭学習、友達と競うことでやる気が出る子や親が教えにくい場合は塾が向いています。まずは家庭学習を試して、限界を感じたら塾を検討するのが費用対効果が高いです。"
+        "text": "教えられます。むしろ「お母さんもわからないから一緒に考えよう」という姿勢は、子どもの安心感と主体性を引き出します。解説役はドリルや教科書に任せ、親は環境づくり・習慣づくり・応援に徹するのが効果的です。"
       }
     }
   ]
@@ -103,102 +106,139 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>算数が苦手な子への教え方</h1>
 </div>
 <div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
 <div class="eyecatch">
-  <p>👩‍👧 算数が苦手な子への教え方には、効果的なアプローチがあります。叱らず、焦らず、子どものペースに合わせた指導法を解説します。</p>
+  <p>👨‍👩‍👧 「教えているのに伝わらない」「最後はケンカになる」——家庭学習の一番の悩みは、実は算数そのものではなく<strong>教え方</strong>です。このページでは、苦手な子に効く教え方の原則と、今日から使える声かけを紹介します。</p>
 </div>
 
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-<h2>算数を教える前に知っておきたいこと</h2>
-<p>子どもに算数を教える時、多くの保護者が「なぜこんな簡単なことが分からないの？」と感じる瞬間があります。しかし、大人にとって「簡単」なことが、子どもにとっては全く「簡単」ではないことがほとんどです。</p>
-<p>子どもの算数理解のペースは個人差が大きく、同じ教え方が全員に効くわけではありません。「この子には何が合っているか」を探るプロセスが、家庭での算数指導の本質です。</p>
-<div class="tip-box">
-  <p>💡 大切な心構え：「教えてあげる」より「一緒に考える」というスタンスが、子どもの主体性を育てます。すぐに答えを教えるのではなく、「どこまで分かった？」と確認しながら進みましょう。</p>
-</div>
+<h2>原則①：教える前に「どこまで戻るか」を見つける</h2>
+<p>算数は積み上げ教科です。今日の宿題がわからない原因は、今日の内容ではなく<strong>数週間前・数学年前の穴</strong>にあることがほとんど。だから最初にやるべきは説明ではなく<strong>診断</strong>です。</p>
+<table class="cv-table">
+  <tr><th>今つまずいている単元</th><th>さかのぼり先</th></tr>
+  <tr><td>わり算</td><td>九九（特に6〜8の段）</td></tr>
+  <tr><td>筆算全般</td><td>1桁のたし算・ひき算の即答</td></tr>
+  <tr><td>約分・通分</td><td>倍数・約数 → 九九</td></tr>
+  <tr><td>割合</td><td>小数のかけ算・わり算 →「倍」の意味</td></tr>
+  <tr><td>文章題</td><td>図（テープ図・線分図）をかく練習</td></tr>
+</table>
+<p>「1学年下のドリルをやらせるなんてかわいそう」と思う必要はありません。<strong>スラスラ解ける場所から始めるのは、治療であり貯金</strong>です。「復習は実力の貯金だよ」と前向きな言葉で誘いましょう。</p>
 
-<h2>学年別の教え方のポイント</h2>
-<h3>1〜2年生：具体物を使う</h3>
-<p>低学年の子どもは「抽象的な数の操作」より「具体物の操作」で理解します。たし算・ひき算を教える時は、おはじき・豆・みかんなどを実際に数えながら計算させましょう。</p>
+<h2>原則②：「具体物 → 図 → 式」の3段階で教える</h2>
+<p>算数の理解には順序があります。言葉と式の説明で伝わらないときは、段階を下げましょう。</p>
+<ol>
+  <li><strong>具体物：</strong>おはじき・ブロック・お金・お菓子で実際に動かす</li>
+  <li><strong>図（半具体物）：</strong>○を並べた絵、テープ図、線分図</li>
+  <li><strong>式：</strong>数字と記号</li>
+</ol>
+<p>たとえば「12÷3」がわからない子に式の説明を繰り返すより、あめ12こを3人に配らせる方が一度で伝わります。<strong>「何度言ってもわからない」は、言い方の問題ではなく段階の問題</strong>。1段下がれば通じます。逆に、具体物でできたら図で、図でできたら式で——と1段ずつ上がっていけば、確実に抽象化できます。</p>
+
+<h2>原則③：ヒントは3段階で小出しにする</h2>
+<p>すぐ答えや解き方を言ってしまうと、子どもは「待てば教えてもらえる」と学習します。ヒントはレベル分けして、小さい方から出しましょう。</p>
+<table class="cv-table">
+  <tr><th>レベル</th><th>ヒントの例</th></tr>
+  <tr><td>Lv1（方向づけ）</td><td>「問題文をもう1回声に出して読んでみて」</td></tr>
+  <tr><td>Lv2（道具の提案）</td><td>「図にするとどうなりそう？」「前にやった似た問題なかった？」</td></tr>
+  <tr><td>Lv3（最初の一歩）</td><td>「まず、わかっている数に○をつけてみよう」</td></tr>
+</table>
+<p>Lv1で解けたら「自分で解けた」という最高の成功体験になります。<strong>教えることのゴールは、教えなくても解ける状態</strong>。もどかしくても、答えまでの距離を子どもに歩かせてあげてください。</p>
+
+<h2>言ってはいけないNGワードと言いかえ</h2>
+<div class="ng-box">
+  <p>❌「なんでこれがわからないの？」→ ⭕「どこまではわかってる？」</p>
+  <p>❌「さっき教えたでしょ」→ ⭕「もう1回、違うやり方で見てみよう」</p>
+  <p>❌「そうじゃない！」→ ⭕「お、おしい。ここまでは合ってるよ」</p>
+  <p>❌「お兄ちゃんはできたのに」→ ⭕「昨日の自分より進んでるね」</p>
+  <p>❌「早くしなさい」→ ⭕「ゆっくりでいいから、確実にいこう」</p>
+</div>
+<p>共通するのは、<strong>比較と否定をやめて、現在地の確認と部分肯定に変える</strong>こと。算数の苦手意識は「算数がわからない」より「算数の時間が嫌い」から始まります。感情の安全が確保されて初めて、頭は算数に向かえるのです。</p>
+
+<h2>「わからない」の解像度を上げる質問</h2>
+<p>子どもの「わからない」は情報がゼロです。次の質問で、どこでつまずいているかを特定しましょう。</p>
 <ul>
-  <li>「3個と4個を合わせると何個？」→ 実際に物を並べて数える</li>
-  <li>「7個から3個取ると何個残る？」→ 実際に取って残りを数える</li>
-  <li>数字の式は「体験の後」に書く</li>
+  <li>「問題文で、意味のわからない言葉はある？」（読みのつまずき）</li>
+  <li>「この問題、絵にかける？」（イメージのつまずき）</li>
+  <li>「式はわかる？計算がむずかしい？」（式化と計算の切り分け）</li>
+  <li>「どこまでは自信ある？」（現在地の確認）</li>
 </ul>
+<p>切り分けができれば、対策は<a href="/sansu-onayami-guide.html">お悩み別ガイド</a>の該当ページでピンポイントに打てます。</p>
 
-<h3>3〜4年生：図や表を活用する</h3>
-<p>中学年になると、テープ図・線分図などの図を使って問題を整理する力が重要になります。文章問題を図に直す練習を積み重ねましょう。</p>
+<h2>教える時間は「1回15分まで」と決める</h2>
+<p>家庭で教える時間は、短いほどうまくいきます。理由は単純で、<strong>15分を超えると教える側の忍耐が切れ、子どもの集中も切れる</strong>から。ケンカになるのはたいてい20分を過ぎたあたりです。</p>
 <ul>
-  <li>問題文の数量関係を図に表す習慣をつける</li>
-  <li>式を立てる前に図を描くルーティンを作る</li>
-  <li>図を描くことを「面倒」と感じさせない（正確さより習慣化を優先）</li>
+  <li>タイマーで15分を計り、時間が来たら「続きは明日」と気持ちよく切り上げる</li>
+  <li>15分で終わらない量は、そもそも1日分として多すぎるサイン。量を減らす</li>
+  <li>「解決しないまま終わる」ことを恐れない——寝て起きたら解けた、は子どもの学習ではよく起きます</li>
 </ul>
+<p>また、きょうだいがいる家庭では<strong>比較を徹底的に避ける</strong>ことも大切です。「お姉ちゃんは九九すぐ覚えたよ」の一言は、本人のやる気を数週間分削ります。比べる相手は常に「昨日のその子」だけです。</p>
 
-<h3>5〜6年生：概念の理解を重視する</h3>
-<p>高学年では、公式の暗記より「なぜその公式になるのか」の理解が重要です。割合・速さ・比などの抽象的な概念は、日常生活との関連で説明すると理解しやすいです。</p>
+<h2>うまくいく声かけ 実例集</h2>
+<table class="cv-table">
+  <tr><th>場面</th><th>声かけ</th></tr>
+  <tr><td>始める前</td><td>「今日は1問だけやってみよう」（ハードルを極限まで下げる）</td></tr>
+  <tr><td>解いている途中</td><td>「お、いい姿勢」「字がていねいだね」（内容以外も褒める）</td></tr>
+  <tr><td>正解したとき</td><td>「どうやって解いたの？」（説明させる＝最高の復習）</td></tr>
+  <tr><td>間違えたとき</td><td>「ここまでは合ってる。おしい！」（部分肯定→どこからか一緒に探す）</td></tr>
+  <tr><td>終わったあと</td><td>「昨日より1分速かったね」（過去の本人と比較）</td></tr>
+</table>
+<p>特に効果が大きいのは「どうやって解いたの？」です。人に説明すると理解が整理され、定着率が大きく上がります。親は答えを知らないふりをして、子ども先生に教えてもらいましょう。</p>
 
-<h2>よくある「教え方のNG」</h2>
-<h3>NG①：「なんでこんな問題が解けないの」</h3>
-<p>この言葉は算数嫌いを加速させる最大の原因の一つです。子どもが「解けない」のは努力が足りないからではなく、「まだ理解が届いていない」からです。叱責は問題を解決せず、自信を傷つけるだけです。</p>
-
-<h3>NG②：急いで答えを教える</h3>
-<p>子どもが考えている途中で答えを言ってしまうと、考える力が育ちません。「あと少しで分かりそう？」「どこで詰まっている？」と問いかけて、できるだけ自力で気づかせましょう。</p>
-
-<h3>NG③：一度に多くのことを教えすぎる</h3>
-<p>「今日は繰り上がりを完璧にしよう」と欲張らず、1つのポイントをしっかり理解させることが大切。理解が浅いまま次に進むと、積み上げが崩れてしまいます。</p>
-
-<h2>「分かった！」を引き出す質問の仕方</h2>
-<p>子どもの理解を深めるために効果的な質問例を紹介します。</p>
+<h2>教えない時間をつくる：環境と習慣</h2>
+<p>実は、家庭でできる最大の学力サポートは「教えること」ではなく<strong>「毎日短時間、机に向かう仕組み」</strong>です。</p>
 <ul>
-  <li>「どうやって考えた？」（思考プロセスを言語化させる）</li>
-  <li>「他のやり方はある？」（多様な解き方を引き出す）</li>
-  <li>「なんでそうなるの？」（理由を考えさせる）</li>
-  <li>「もし〜だったら？」（概念の応用を促す）</li>
+  <li><strong>時間と場所の固定：</strong>「夕食前にリビングで10分」——迷いをなくす</li>
+  <li><strong>自動採点に任せる：</strong>丸つけバトルをなくし、親は結果を一緒に見て褒めるだけ</li>
+  <li><strong>記録を見える化：</strong>タイム・連続日数・ランキング。伸びが見えるとやる気は続く</li>
+  <li><strong>親は隣で自分の作業：</strong>「監視」ではなく「一緒に頑張る時間」に</li>
 </ul>
-<div class="tip-box">
-  <p>💡 子どもが「分かった！」と言っても、本当に理解しているか確認しましょう。「じゃあ先生になって私に教えて」と言わせるのが最も確実な確認方法です。説明できれば本当に分かった証拠です。</p>
-</div>
+<p>習慣づくりの詳細は<a href="/study-habits.html">家庭学習を続けるコツ</a>で解説しています。</p>
 
-<h2>算数が苦手な子のモチベーション維持</h2>
-<p>苦手意識のある子には「できた体験」の積み重ねが重要です。少し簡単すぎるかなと思うレベルの問題から始め、確実に正解させてから徐々に難易度を上げます。</p>
-<p>「昨日の自分より少しだけ上手くなった」という実感が、継続の原動力になります。他の子と比較するのは禁物です。</p>
+<h2>よくある質問</h2>
+<h3>Q1. 何から教えればいい？</h3>
+<p>教える前に診断を。1学期前・1学年前に戻り、スラスラ解ける地点から再スタートしましょう。</p>
+<h3>Q2. すぐケンカになります。</h3>
+<p>「教える係」をやめて「質問する係・褒める係」へ。丸つけは自動採点に任せましょう。</p>
+<h3>Q3. 何度教えても同じ間違いをします。</h3>
+<p>説明の回数ではなく段階を変えましょう。具体物→図→式の順にやり直すと通じます。</p>
+<h3>Q4. 親自身が算数が苦手です。</h3>
+<p>問題ありません。解説はドリルに任せ、親は環境・習慣・応援の担当に。「一緒に考えよう」は最高の声かけです。</p>
+<h3>Q5. 学校と家庭で教え方（解き方）が違って混乱しています。</h3>
+<p>学習中の単元は学校のやり方に合わせるのが原則です。さくらんぼ計算や筆算の書き方は教科書・ノートで確認してから教えましょう。別の解き方は「そういうやり方もあるんだね」と紹介にとどめ、テスト期間が過ぎてから広げると混乱しません。</p>
 
-<h2>にじゅうまる。算数ドリルの活用法</h2>
-<p>保護者が毎日子どもに付き合うのが難しい時間帯にも、にじゅうまる。算数ドリルなら自分で問題を解いて自動採点までできます。毎日ドリルを日課にして、保護者は「今日の結果」を見て褒めてあげるだけでOKです。</p>
-
-
+<h2>まとめ</h2>
+<p>教え方の技術は一朝一夕には身につきませんが、「診断→段階を下げる→質問で導く→部分肯定」の流れさえ覚えておけば、今日から家庭学習の空気は変わります。完璧な先生になる必要はありません。子どもの一番の応援団でいることが、何よりのサポートです。</p>
+<ul>
+  <li>教える前に診断。さかのぼって「スラスラ解ける地点」から</li>
+  <li>伝わらないときは「具体物→図→式」と段階を下げる</li>
+  <li>ヒントは3段階で小出しに。ゴールは「教えなくても解ける」</li>
+  <li>比較と否定をやめ、部分肯定に。感情の安全が学びの土台</li>
+</ul>
 
 <div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/math-anxiety.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">💡</span>
+    <a href="/sansu-onayami-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📖</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数のお悩み解決ガイド（お悩み別）</span>
+    </a>
+    <a href="/math-anxiety.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">💗</span>
       <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数嫌いを克服する方法</span>
     </a>
-    <a href="/study-habits.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/parent-support.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">🍀</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">親が算数が苦手でもできるサポート</span>
+    </a>
+    <a href="/study-habits.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">📅</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数の勉強習慣のつくり方</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">家庭学習を続けるコツ</span>
     </a>
-    <a href="/grade-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">📚</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">学年別・算数の学習ガイド</span>
-    </a>
-    
   </div>
 </div>
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
 </div>
-<div style="margin:24px 0;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<div class="cta" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);">
-  <p>100問まとめドリルや苦手特化はプレミアムで。</p>
-  <a href="/premium.html" style="color:#6D28D9;">プレミアム機能を見る</a>
-</div></div>
 
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
