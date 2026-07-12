@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>わり算の教え方・つまずきポイント完全解説 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="小学3年生から始まるわり算のつまずきポイントと、家庭でできる教え方を詳しく解説。あまりのあるわり算・筆算まで対応しています。">
+<meta name="description" content="わり算の2つの意味（等分除・包含除）、あまりのあるわり算のチェック法、筆算「たてる→かける→ひく→おろす」の手順、検算のやり方まで学年別に解説。つまずき別の対策と例題つき｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/division-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
 .header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
 .content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
 .eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
 .eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
 h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
@@ -34,26 +35,29 @@ ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
 ul li,ol li{margin-bottom:8px;}
 .tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
-.warn-box{background:#FEF9C3;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #EAB308;}
-.warn-box p{margin:0;font-size:14px;color:#713F12;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
+.formula{background:#EEF2FF;border:2px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0;text-align:center;font-size:15px;font-weight:700;color:#3730A3;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
-.ad-wrap{margin:24px 0;text-align:center;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="わり算・割り算の教え方【つまずきポイントと克服法】">
-<meta property="og:description" content="わり算が苦手な子へのわかりやすい教え方を解説。あまりのある割り算、筆算、文章題のコツまで学年別に紹介します。">
+<meta property="og:title" content="わり算の教え方・つまずきポイント完全解説">
+<meta property="og:description" content="わり算の2つの意味、あまりのチェック法、筆算の手順、検算まで学年別に解説。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/division-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="わり算・割り算の教え方【つまずきポイントと克服法】">
-<meta name="twitter:description" content="わり算が苦手な子へのわかりやすい教え方を解説。あまりのある割り算、筆算、文章題のコツまで学年別に紹介します。">
+<meta name="twitter:title" content="わり算の教え方・つまずきポイント完全解説">
+<meta name="twitter:description" content="2つの意味・あまり・筆算・検算まで学年別に解説。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -62,34 +66,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "わり算が苦手な子にはどう教えればいいですか？",
+      "name": "わり算はどう教えればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "まず「分ける」という概念を実物（おはじきやクッキーなど）で体験させましょう。12個のおはじきを3人で分けると1人何個？という具体的な場面からスタートすると理解しやすいです。"
+        "text": "わり算には「同じ数ずつ分ける（12こを3人で＝1人4こ）」と「同じ数ずつ取る（12こを3こずつ＝4人分）」の2つの意味があります。実物を分ける体験とセットで意味を教え、計算自体は九九の逆（3×□＝12）で求めることを伝えましょう。"
       }
     },
     {
       "@type": "Question",
-      "name": "あまりのあるわり算のコツは？",
+      "name": "あまりのあるわり算で気をつけることは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「商×除数＋余り＝被除数」の確かめ算を必ず行う習慣をつけましょう。例えば17÷5＝3あまり2なら、5×3＋2＝17で確認できます。このチェックが身につくとミスが激減します。"
+        "text": "「あまりは、わる数より必ず小さい」を毎回チェックすることです。17÷5＝2あまり7のような誤答は、あまり（7）がわる数（5）より大きい時点で間違いだと自分で気づけます。検算（わる数×商＋あまり＝わられる数）も習慣にしましょう。"
       }
     },
     {
       "@type": "Question",
-      "name": "わり算の筆算はどう教えますか？",
+      "name": "わり算の筆算の手順を教えてください。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「立てる→かける→ひく→おろす」の4ステップを唱えながら練習します。最初は2桁÷1桁から始め、商の見当をつける練習を繰り返しましょう。九九が完璧に定着していることが前提条件です。"
+        "text": "「たてる→かける→ひく→おろす」の4拍子の繰り返しです。商の見当をたてて、わる数とかけて、引いて、次の位をおろす。この4語を声に出しながら練習すると手順が安定します。"
       }
     },
     {
       "@type": "Question",
-      "name": "わり算と掛け算の関係を子どもに説明するには？",
+      "name": "わり算は何年生で習いますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「3×4＝12だからば12÷3＝4、12÷4＝3」という逆の関係を教えます。掛け算カードを使って「逆から読むとわり算になる」と体験させると理解が深まります。"
+        "text": "わり算の意味と九九で解ける計算は3年生、あまりのあるわり算も3年生、筆算（2〜3桁÷1桁）は4年生、÷2桁の筆算も4年生、小数のわり算は5年生、分数のわり算は6年生です。"
       }
     }
   ]
@@ -102,105 +106,129 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>わり算の教え方・つまずきポイント完全解説</h1>
 </div>
 <div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
 <div class="eyecatch">
-  <p>➗ わり算は「九九の逆」です。九九が不完全だとわり算でつまずきます。理解の手順を丁寧に解説します。</p>
-</div>
-<div class="ad-wrap">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-<h2>わり算とは何か</h2>
-<p>わり算は「等しく分ける」操作を表す計算です。「12個のおかしを4人で等しく分けると1人何個？」という問いがわり算で表されます。</p>
-<p>わり算の2つの意味：</p>
-<ul>
-  <li><strong>等分除：</strong>12÷4＝3（12個を4人で分けると1人3個）</li>
-  <li><strong>包含除：</strong>12÷4＝3（12個を4個ずつ配ると3グループ）</li>
-</ul>
-<p>どちらの意味でも計算の答えは同じですが、文章問題を解くときはどちらの意味かを意識することが重要です。</p>
-
-<h2>わり算を学ぶ前に必要なこと</h2>
-<p>わり算は「九九の逆算」です。「56÷7＝？」は「7×□＝56の□を求める」問題です。九九が不完全な状態でわり算を学んでも、二重の負荷がかかって理解が深まりません。</p>
-<div class="warn-box">
-  <p>⚠️ まず確認：全段の九九をランダムに問われても即答できるかテストしてください。答えが出るまでに3秒以上かかる段がある場合は、九九の復習を優先させましょう。</p>
+  <p>➗ わり算は「九九の逆」。つまり、わり算のつまずきの半分は九九のつまずきです。残りの半分は「意味」と「筆算の手順」。このページでは3つの角度から、わり算を得意にする方法を解説します。</p>
 </div>
 
-<h2>わり算の教え方ステップ</h2>
-<h3>ステップ①：具体物で「等分」を体験させる</h3>
-<p>おはじき12個を用意し「4人で同じ数ずつ分けてみよう」と実際に分ける体験をさせます。「1人3個になった」→「12÷4＝3」という式と結びつけます。</p>
+<h2>わり算には2つの意味がある</h2>
+<p>12÷3という同じ式でも、表す場面は2種類あります。ここを丁寧に扱うと、文章題に強くなります。</p>
+<table class="cv-table">
+  <tr><th>意味</th><th>場面の例</th><th>聞かれていること</th></tr>
+  <tr><td><strong>等しく分ける</strong>（等分除）</td><td>12このあめを3人で同じ数ずつ分ける</td><td>1人分は何こ？→4こ</td></tr>
+  <tr><td><strong>同じ数ずつ取る</strong>（包含除）</td><td>12このあめを3こずつふくろに入れる</td><td>何ふくろできる？→4ふくろ</td></tr>
+</table>
+<p>どちらも式は12÷3＝4ですが、場面がちがいます。おやつやおはじきで<strong>両方の分け方を実際にやってみる</strong>のが、最高の導入です。「3人で分けて」と「3こずつ分けて」を体験の中で区別できれば、わり算の意味は身についています。</p>
 
-<h3>ステップ②：かけ算との関係を理解させる</h3>
-<p>「4×3＝12だから、12÷4＝3」という逆算の関係を確認します。「□×4＝12の□を求める」という書き方も練習します。</p>
+<h2>計算は「九九の逆」</h2>
+<div class="formula">12 ÷ 3 ＝ □ は、 3 × □ ＝ 12 の □ を探すこと</div>
+<p>3年生のわり算は、新しい計算方法を覚えるのではなく「3の段で12になるのは？」と<strong>九九を逆から使う</strong>だけです。だからこそ、九九がランダムに即答できない子はわり算で必ず苦労します。わり算が遅い場合は、わり算の練習より<a href="/kuku-tips.html">九九の総点検</a>が先です。特に6〜8の段のわり算（42÷7など）が遅い子は、その段の九九から復習しましょう。</p>
 
-<h3>ステップ③：0のわり算・1のわり算</h3>
-<p>「0÷5＝0」（0を何等分しても0）と「10÷1＝10」（1人で分けると全部）は特別なケースとして理解させます。</p>
-
-<h2>あまりのあるわり算のポイント</h2>
-<p>「13÷4＝3あまり1」のような「あまりのあるわり算」は、「割り切れない」わり算です。</p>
-<p>教え方のポイント：</p>
+<h2>あまりのあるわり算（3年生の山場）</h2>
+<div class="ex-box">
+  <p><strong>例題1：</strong>17÷5</p>
+  <p><strong>解き方：</strong>5の段で17をこえない一番大きい数 → 5×3＝15。17−15＝2 → <strong>3あまり2</strong></p>
+</div>
+<p>あまりのあるわり算では、2つの鉄則を教えましょう。</p>
 <ol>
-  <li>「4×3＝12、4×4＝16。13は12と16の間だから、4×3＝12で残り1」</li>
-  <li>「あまりは必ず割る数より小さい」という確認の習慣をつける</li>
-  <li>「13＝4×3＋1」という形で確かめ算を行う</li>
+  <li><strong>あまりは、わる数より必ず小さい</strong>——「あまり7」で わる数が5なら、その時点で間違い（もう1回分けられる）</li>
+  <li><strong>検算：わる数×商＋あまり＝わられる数</strong>——5×3＋2＝17 ✓</li>
 </ol>
-<div class="tip-box">
-  <p>💡 あまりの確認：「あまり＜割る数」になっているか必ず確認。「13÷4＝2あまり5」は誤り（あまり5が割る数4より大きい）。この確認の癖が正確さを高めます。</p>
+<p>この2つのチェックを習慣にすると、あまりのわり算はほぼ失点しなくなります。また、文章題では「あまりをどうするか」の判断（<a href="/gaisuu-shishagoonyuu-guide.html">切り上げ・切り捨て</a>）が問われます。「13人が4人乗りの車で行く→車は何台？」は3あまり1だから4台。あまった1人を乗せる車が必要だからです。</p>
+
+<h2>筆算は「たてる→かける→ひく→おろす」（4年生）</h2>
+<div class="ex-box">
+  <p><strong>例題2：</strong>72÷3の筆算</p>
+  <p>①<strong>たてる</strong>：7÷3で商2を十の位にたてる</p>
+  <p>②<strong>かける</strong>：3×2＝6</p>
+  <p>③<strong>ひく</strong>：7−6＝1</p>
+  <p>④<strong>おろす</strong>：一の位の2をおろして12</p>
+  <p>くり返し：12÷3で4をたてる → 3×4＝12 → 12−12＝0 → 答え<strong>24</strong></p>
 </div>
+<p>わり算の筆算は、算数で初めての「長い手順の繰り返し」です。<strong>「たてる・かける・ひく・おろす」を呪文のように声に出す</strong>のが定着の近道。この4拍子はどんなに桁が増えても変わらないので、一度身につけば3桁÷2桁でも同じように解けます。</p>
+<h3>÷2桁の「商の見当」</h3>
+<p>4年生後半の「÷2桁」（例：91÷23）では、商の見当をたてる練習が必要です。コツは<strong>わる数をがい数にして考える</strong>こと。「23はだいたい20。91の中に20は4つくらい」→4をたてて確かめる。見当がはずれて商を修正するのは失敗ではなく正しい手順だと伝え、消して直すことを嫌がらないようにしてあげましょう。</p>
 
-<h2>わり算の筆算（4年生以降）</h2>
-<p>3〜4桁÷1〜2桁の筆算は、次の手順で行います。</p>
-<ol>
-  <li>「立てる」：割られる数の上位桁から割る数で割り、商の見当をつける</li>
-  <li>「かける」：商×割る数を計算する</li>
-  <li>「引く」：割られる数から引く</li>
-  <li>「下ろす」：次の位の数字を下ろす</li>
-  <li>繰り返す</li>
-</ol>
-<p>この「立てる・かける・引く・下ろす」の手順を言葉で言いながら練習すると定着しやすいです。</p>
-
-<h2>文章問題でのわり算の使い方</h2>
-<p>文章問題でわり算を使うかどうかの判断は「等しく分ける」「何個ずつかを求める」「何グループに分けるか」などのキーワードで判断します。</p>
+<h2>0と1のわり算・わり算のきまり</h2>
 <ul>
-  <li>「同じ数ずつ分ける → わり算」</li>
-  <li>「1つ分を求める → わり算」</li>
-  <li>「何人に配れる → わり算（あまりに注意）」</li>
+  <li><strong>0÷どんな数＝0</strong>（0こを何人で分けても0こ）。ただし<strong>0でわることはできない</strong></li>
+  <li><strong>どんな数÷1＝その数</strong>（1人で全部もらう）</li>
+  <li><strong>わられる数とわる数に同じ数をかけても（わっても）商は同じ</strong>：600÷200＝6÷2＝3——5年生の小数のわり算で大活躍するきまり</li>
 </ul>
 
+<h2>文章題：どちらの意味か見分ける練習</h2>
+<div class="ex-box">
+  <p><strong>問題A：</strong>24このクッキーを、4人で同じ数ずつ分けます。1人分は何こ？</p>
+  <p><strong>問題B：</strong>24このクッキーを、1人に4こずつ配ります。何人に配れる？</p>
+  <p>どちらも式は24÷4＝6。でもAは「1人分の数」（等分除）、Bは「人数」（包含除）を求めています。</p>
+</div>
+<p>2つの問題を並べて「同じところ・違うところ」を話し合うのは、教科書でも使われる効果的な方法です。「答えの6には、どんな言葉（単位）がつく？」と聞くと、Aは「6こ」、Bは「6人」——単位の違いで意味の違いが見えます。文章題の答えに単位を書く習慣が、意味理解のチェックにもなるのです。</p>
+
+<h2>高学年への接続：1あたり量・小数・分数のわり算</h2>
+<ul>
+  <li><strong>単位量あたり（5年）：</strong>「3mで240円のリボン、1mあたり何円？」→240÷3。わり算は「1あたりを求める道具」として速さ・密度の学習で主役になります</li>
+  <li><strong>小数のわり算（5年）：</strong>わる数を整数に直してから計算（7.2÷2.4→72÷24）。根拠は「同じ数をかけても商は同じ」のきまり</li>
+  <li><strong>分数のわり算（6年）：</strong>わる数の逆数をかける（2/3÷4/5＝2/3×5/4）</li>
+</ul>
+<p>どの学年でも、土台は3・4年生の「わり算の意味と手順」です。今のつまずきを放置せず、ここで固めておくことが高学年への一番の準備になります。</p>
+
+<h2>家庭でできる練習メニュー</h2>
+<table class="cv-table">
+  <tr><th>つまずき</th><th>メニュー（1日5分）</th></tr>
+  <tr><td>わり算が遅い</td><td>九九のランダム即答練習に戻る（特に6〜8の段）</td></tr>
+  <tr><td>意味があいまい</td><td>おやつの分配係。「3人で分けて」「3こずつ袋に入れて」の両方</td></tr>
+  <tr><td>あまりのミス</td><td>「あまり＜わる数」チェックと検算をセットで3問</td></tr>
+  <tr><td>筆算の手順が乱れる</td><td>「たてる・かける・ひく・おろす」を声に出して1日2問</td></tr>
+</table>
+
+<h2>よくある質問</h2>
+<h3>Q1. わり算の教え方の基本は？</h3>
+<p>実物で「分ける」体験（2つの意味）→計算は九九の逆、の2段構えです。</p>
+<h3>Q2. あまりのあるわり算の注意点は？</h3>
+<p>「あまり＜わる数」のチェックと、検算（わる数×商＋あまり）の2つを習慣に。</p>
+<h3>Q3. 筆算の手順は？</h3>
+<p>「たてる→かける→ひく→おろす」の4拍子。声に出して繰り返すのが定着の近道です。</p>
+<h3>Q4. 何年生で習う？</h3>
+<p>意味とあまりは3年生、筆算は4年生、小数のわり算は5年生、分数のわり算は6年生です。</p>
+<h3>Q5. 電卓があるのに筆算の練習は必要ですか？</h3>
+<p>必要です。筆算の価値は答えを出すことより、「大きな問題を小さな手順に分解して解く」経験にあります。また、商の見当をたてる練習は概算の力そのもので、電卓の打ち間違いに気づく力にもなります。「だいたい25くらいのはず」と見当を立ててから計算する習慣は、道具が何であれ一生使えます。</p>
+
+<h2>まとめ</h2>
+<p>わり算は「意味・九九・手順」の3本柱がそろえば必ず得意になります。毎日の練習は少しずつで大丈夫。にじゅうまる。算数ドリルの3・4年生ドリルで、あまりのチェックと検算まで含めた練習を習慣にしてみてください。</p>
+<ul>
+  <li>わり算のつまずきの半分は九九。遅ければ九九の総点検が先</li>
+  <li>「等しく分ける」「同じ数ずつ取る」の2つの意味を実物で体験</li>
+  <li>あまりは「わる数より小さい」チェック＋検算をセットで</li>
+  <li>筆算は「たてる・かける・ひく・おろす」の4拍子を声に出す</li>
+</ul>
 
 <div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">✖️</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九をマスターするコツ</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九の覚え方・練習方法</span>
     </a>
-    <a href="/decimal-fraction-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">🔢</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小数・分数の完全ガイド</span>
+    <a href="/multiplication-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">✖️</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">かけ算をマスターする方法</span>
     </a>
-    <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">½</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">分数をマスターする方法</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">分数の教え方（6年のわり算へ）</span>
     </a>
-    <a href="/grade-4-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/grade-4.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">4️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">4年生の算数攻略ガイド</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学4年生の算数ドリル</span>
     </a>
-    
   </div>
 </div>
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
 </div>
-<div class="ad-wrap">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<div class="cta" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);">
-  <p>100問まとめドリルや苦手特化はプレミアムで。</p>
-  <a href="/premium.html" style="color:#6D28D9;">プレミアム機能を見る</a>
-</div>
-</div>
+
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
   <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;

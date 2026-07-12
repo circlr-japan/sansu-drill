@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小数・分数が苦手な子への教え方【完全攻略ガイド】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="小数・分数が苦手な子どもへの分かりやすい教え方を解説。なぜ難しいのか、どう教えれば理解できるかを具体的に紹介します。">
+<meta name="description" content="小数の意味（0.1は1を10等分した1つ分）、小数のたし算ひき算・かけ算わり算の小数点の位置、小数と分数の変換までわかりやすく解説。学年別のつまずきポイントと家庭での教え方を例題つきで紹介｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/decimal-fraction-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#F8FAFC;color:#1E293B;line
 .header a{color:rgba(255,255,255,0.8);font-size:13px;text-decoration:none;display:block;}
 .header h1{color:#fff;font-size:18px;font-weight:700;margin-top:4px;}
 .content{padding:24px 20px 48px;}
+.byline{font-size:12px;color:#94A3B8;margin-bottom:16px;}
 .eyecatch{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;margin-bottom:28px;border-left:4px solid #2563EB;}
 .eyecatch p{font-size:14px;color:#1E3A8A;margin:0;}
 h2{font-size:17px;font-weight:700;color:#1E293B;margin:32px 0 12px;padding-left:10px;border-left:4px solid #2563EB;}
@@ -34,26 +35,28 @@ ul,ol{font-size:14px;color:#374151;padding-left:22px;margin-bottom:14px;}
 ul li,ol li{margin-bottom:8px;}
 .tip-box{background:#F0FDF4;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #22C55E;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
-.warn-box{background:#FEF9C3;border-radius:10px;padding:16px 18px;margin:16px 0;border-left:4px solid #EAB308;}
-.warn-box p{margin:0;font-size:14px;color:#713F12;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
+.cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
+.cv-table th{background:#EFF6FF;color:#1E3A8A;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
-.ad-wrap{margin:24px 0;text-align:center;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="小数・分数の完全ガイド【計算のコツと教え方】">
-<meta property="og:description" content="小数と分数の計算方法をわかりやすく解説。つまずきポイントの克服法、小数と分数の変換、家庭での教え方まで詳しく紹介します。">
+<meta property="og:title" content="小数・分数が苦手な子への教え方【完全攻略ガイド】">
+<meta property="og:description" content="小数の意味、小数点の位置のルール、小数と分数の変換まで学年別に解説。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/decimal-fraction-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="小数・分数の完全ガイド【計算のコツと教え方】">
-<meta name="twitter:description" content="小数と分数の計算方法をわかりやすく解説。つまずきポイントの克服法、小数と分数の変換、家庭での教え方まで詳しく紹介します。">
+<meta name="twitter:title" content="小数・分数が苦手な子への教え方【完全攻略ガイド】">
+<meta name="twitter:description" content="小数の意味・小数点のルール・分数との変換を学年別に解説。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -62,34 +65,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "小数のたし算・ひき算で間違えやすい点は？",
+      "name": "小数はどう教えればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "小数点の位置をそろえないまま計算するミスが最多です。筆算では必ず小数点の位置を縦にそろえて書く習慣をつけましょう。0.3＋1.25の場合、0.30として位をそろえると間違いが減ります。"
+        "text": "「0.1は、1を10等分した1つ分」という意味から入りましょう。1Lますに0.1Lの目もりを書いたり、1cmと1mmの関係（1mm＝0.1cm）を使ったりすると、量として実感できます。位の表（一の位・小数第一位…）で整数と同じ十進法の仕組みだと見せることも大切です。"
       }
     },
     {
       "@type": "Question",
-      "name": "分数の意味を子どもにわかりやすく説明するには？",
+      "name": "小数のたし算・ひき算で気をつけることは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ピザや折り紙を使って視覚的に教えましょう。「1枚のピザを4等分した1切れが1/4」という具体例から始め、「分母は何等分したか、分子はその何個分か」を繰り返し確認します。"
+        "text": "筆算で「小数点の位置をそろえて書く」ことです。2.5＋0.34を右端でそろえると間違えます。位をそろえる＝小数点をそろえる、と覚えましょう。答えの小数点も真下におろします。"
       }
     },
     {
       "@type": "Question",
-      "name": "小数を分数に直す方法を教えてください",
+      "name": "小数のかけ算はなぜ右端をそろえて書くのですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "0.1＝1/10、0.01＝1/100が基本です。0.3なら3/10、0.25なら25/100＝1/4になります。分母を10・100・1000にして、分子に小数の数字を置き、約分できれば約分します。"
+        "text": "かけ算は整数として計算してから、あとで小数点を打つからです。2.3×1.5なら23×15＝345を計算し、かけられる数とかける数の小数点以下の桁数の合計（1＋1＝2桁）だけ、答えの右から小数点を移動して3.45とします。"
       }
     },
     {
       "@type": "Question",
-      "name": "分数のかけ算・わり算はいつ習いますか？",
+      "name": "小数と分数はどちらが先ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "分数のかけ算・わり算は小学6年生で学習します。それまでに分数の意味、たし算・ひき算、通分・約分をしっかりマスターしておくことが重要です。"
+        "text": "3年生でどちらも登場し、並行して学んでいきます。5年生で「小数と分数は同じ数の別の表し方」（0.5＝1/2）と統合されます。どちらも「1より小さい数を表す方法」だと最初に伝えておくと混乱しません。"
       }
     }
   ]
@@ -102,99 +105,126 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>小数・分数が苦手な子への教え方</h1>
 </div>
 <div class="content">
+<p class="byline">最終更新: 2026年7月13日｜執筆: にじゅうまるドリル編集部</p>
 <div class="eyecatch">
-  <p>🔢 小数と分数は多くの子がつまずく単元。でも正しいアプローチで教えれば、必ず理解できます。つまずきの原因から解説します。</p>
+  <p>🔢 3年生から始まる「小数・分数」は、初めて出会う「1より小さい数」。整数の感覚のまま計算すると必ずつまずきます。このページでは小数を中心に、意味の教え方から小数点の位置のルール、分数との変換までを解説します。</p>
 </div>
-<div class="ad-wrap">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-<h2>なぜ小数・分数が難しいのか</h2>
-<p>整数の計算を難なくこなせる子でも、小数・分数で急につまずくことがあります。理由は「数の概念が抽象的になる」からです。</p>
+
+<h2>小数・分数はいつ習う？（学年別マップ）</h2>
+<table class="cv-table">
+  <tr><th>学年</th><th>小数</th><th>分数</th></tr>
+  <tr><td>3年生</td><td>小数の意味（0.1）、簡単なたし算ひき算</td><td>分数の意味、簡単なたし算ひき算</td></tr>
+  <tr><td>4年生</td><td>小数のしくみ（0.01・0.001）、たし算ひき算の筆算、×整数・÷整数</td><td>帯分数・仮分数、同分母の計算</td></tr>
+  <tr><td>5年生</td><td>小数×小数、小数÷小数</td><td>約分・通分、異分母の計算、小数との関係</td></tr>
+  <tr><td>6年生</td><td>—（活用）</td><td>分数×分数、分数÷分数</td></tr>
+</table>
+<p>小数と分数は「1より小さい数を表す2つの方法」として並行して進み、5年生で1つにつながります。この記事では主に小数を扱い、分数の詳細は<a href="/fractions-guide.html">分数の教え方ガイド</a>で解説しています。</p>
+
+<h2>小数の意味：「0.1は、1を10等分した1つ分」</h2>
+<p>小数のつまずきの根っこは、0.1を「なんとなく小さい数」としか捉えていないことです。正確な意味は<strong>「1を10等分した1つ分」</strong>。これを量で実感させましょう。</p>
 <ul>
-  <li><strong>整数：</strong>1個、2個と具体的に数えられる（具体的）</li>
-  <li><strong>小数：</strong>0.5個、1.3mなど、「半端な数」（半抽象的）</li>
-  <li><strong>分数：</strong>「全体を等分した時のいくつ分」（抽象的）</li>
+  <li><strong>1Lます：</strong>1Lを10等分した1目もりが0.1L。「0.3Lはどこ？」と指ささせる</li>
+  <li><strong>ものさし：</strong>1cmを10等分した1mmが0.1cm。「3.4cmを測って」が最高の練習</li>
+  <li><strong>お金：</strong>100円を1とすると10円が0.1（10円10こで100円）</li>
 </ul>
-<p>概念が抽象的になるほど、具体物での体験が必要です。</p>
-
-<h2>小数の教え方</h2>
-<h3>ステップ①：0.1の概念から入る</h3>
-<p>「1Lのジュースを10等分した1つ分が0.1L」という具体的な場面から導入します。メモリ付きの計量カップや温度計を使うと、小数の感覚をつかみやすいです。</p>
+<p>そして位の表で、<strong>小数は整数と同じ十進法の続き</strong>だと見せます。「10集まると1つ上の位、10等分すると1つ下の位」——一・十・百と同じルールが、小数第一位・第二位にも続いているだけなのです。</p>
 <div class="tip-box">
-  <p>💡 教材のアイデア：方眼紙の1行を「1」として、そのうち3マス分を塗る＝「0.3」という視覚化が効果的。数直線も使いやすいです。</p>
+  <p>💡 「0.10と0.1は同じ？」と聞いてみましょう。位の意味がわかっていれば「同じ」と答えられます。「2.5と2.50が同じ大きさ」に納得できたら、意味の理解は合格です。</p>
 </div>
 
-<h3>ステップ②：位取りの確認</h3>
-<p>小数でも整数と同様の「位（くらい）」の概念があります。「1.35」は「1の位が1、0.1の位が3、0.01の位が5」という理解が必要です。縦に位を揃えた計算（筆算）の前に、位の概念をしっかり確認します。</p>
-
-<h3>ステップ③：小数のたし算・ひき算の筆算</h3>
-<p>小数の筆算で最も多いミスは「小数点を揃えずに書く」ことです。「2.5＋1.3」を「25＋13」のように小数点を無視して計算してしまうケースがあります。</p>
-<div class="warn-box">
-  <p>⚠️ 小数の筆算は「小数点の位置を揃えて書く」ことを最優先。問題を筆算に書き直す段階で、小数点の縦の位置を揃えることを徹底させましょう。</p>
+<h2>たし算・ひき算：小数点をそろえる</h2>
+<div class="ex-box">
+  <p><strong>例題1：</strong>2.5＋0.34</p>
+  <p><strong>解き方：</strong>筆算で<strong>小数点の位置をそろえて</strong>書く（右端そろえではない！）。2.50＋0.34と考えて計算し、答えは<strong>2.84</strong>。小数点は真下におろす。</p>
 </div>
+<p>整数の筆算は右端をそろえるので、その癖のまま小数を右端でそろえるミスが頻発します。合言葉は<strong>「位をそろえる＝小数点をそろえる」</strong>。空いた位には0を書いてよい（2.5→2.50）と教えると、位の対応が目で見えるようになります。</p>
 
-<h2>分数の教え方</h2>
-<h3>ステップ①：折り紙での体験</h3>
-<p>折り紙を使った体験が最も効果的です。「半分に折る＝1/2」「さらに半分＝1/4」「もう半分＝1/8」と体験させます。「1/2 ＝ 2/4 ＝ 4/8」が同じ大きさであることも視覚的に確認できます。</p>
-
-<h3>ステップ②：数直線上に分数を書く</h3>
-<p>0から1の間の数直線を書いて、「1/2はちょうど真ん中」「1/3は3等分の1つ目」と確認します。これにより分数の大小感覚がつかめます。</p>
-
-<h3>ステップ③：同分母の計算から始める</h3>
-<p>「1/5 ＋ 2/5 ＝ 3/5（分母はそのまま、分子だけ足す）」という同分母の計算から始めます。「なぜ分母を足してはいけないか」は、「ピザ5切れのうち1切れ＋2切れ＝3切れ（5切れ中）」というイメージで理解させます。</p>
-<div class="tip-box">
-  <p>💡 「分母はピザの切れ数（何等分）、分子はその中の何切れ」というイメージが定着すると、分母を足すことが「おかしい」と直感的に分かるようになります。</p>
+<h2>かけ算：整数として計算→小数点を移動</h2>
+<div class="ex-box">
+  <p><strong>例題2：</strong>2.3×1.5</p>
+  <p><strong>解き方：</strong>①小数点を無視して 23×15＝345 ②小数点以下の桁数を数える：2.3が1桁＋1.5が1桁＝<strong>合計2桁</strong> ③345の右から2桁のところに小数点 → <strong>3.45</strong></p>
 </div>
+<p>かけ算の筆算はたし算と逆で<strong>右端をそろえて</strong>書きます。「整数のかけ算をしてから、あとで小数点を打つ」方式だからです。たし算・ひき算の「小数点をそろえる」と混同するのが定番のつまずきなので、「たすときはそろえる、かけるときは右寄せ」と対比で覚えさせましょう。</p>
+<p>もう1つ大切なのが<strong>答えの見当</strong>です。2.3×1.5は「2×1.5＝3くらい」のはず。34.5や0.345と書いたら見当とずれている、と自分で気づけます。小数点の位置ミスは、見当の習慣でほぼ防げます。</p>
 
-<h3>ステップ④：通分（異分母の計算）</h3>
-<p>5年生以降で学ぶ通分（異分母の計算）は、最小公倍数の理解が前提です。「1/3 ＋ 1/4」を計算するには、3と4の最小公倍数12を求めて「4/12 ＋ 3/12 ＝ 7/12」と変換します。</p>
-<p>通分のステップ：</p>
-<ol>
-  <li>2つの分母の最小公倍数を求める</li>
-  <li>各分数を同分母に変換する（分子と分母に同じ数をかける）</li>
-  <li>分子同士を計算する</li>
-</ol>
+<h2>わり算：わる数を整数にしてから</h2>
+<div class="ex-box">
+  <p><strong>例題3：</strong>7.2÷2.4</p>
+  <p><strong>解き方：</strong>わる数2.4を10倍して24に。わられる数も10倍して72。<strong>72÷24＝3</strong>。</p>
+</div>
+<p>小数のわり算は、「わられる数とわる数に同じ数をかけても商は変わらない」というわり算のきまりを使って、<strong>わる数を整数に直してから</strong>計算します。筆算では両方の小数点を同じ数だけ右に動かします。「なぜ動かしていいの？」には「600÷200と6÷2が同じ答えなのと同じだよ」と、整数の例で納得させるのが効果的です。</p>
 
-<h2>家庭での練習のコツ</h2>
-<p>小数・分数は「日常生活に出てくる場面を意識する」ことで理解が深まります。料理での計量（0.5カップ、1/3カップ）、スポーツの記録（100mを12.3秒）など、日常の数字を算数と結びつけると実感を伴った理解になります。</p>
+<h2>小数⇔分数の変換（5年生で統合）</h2>
+<table class="cv-table">
+  <tr><th>方向</th><th>やり方</th><th>例</th></tr>
+  <tr><td>分数→小数</td><td>分子÷分母を計算</td><td>3/4＝3÷4＝0.75</td></tr>
+  <tr><td>小数→分数</td><td>10、100を分母にして約分</td><td>0.6＝6/10＝3/5</td></tr>
+</table>
+<p>よく使う変換（1/2＝0.5、1/4＝0.25、3/4＝0.75、1/5＝0.2）は暗記してしまうと、割合・百分率の学習で大きな武器になります。「0.5と1/2はどちらも半分」——同じ数の別の表し方だとつながった瞬間、小数と分数の両方への理解が一段深まります。</p>
 
+<h2>大小比較は数直線で（定番のひっかけ問題）</h2>
+<div class="ex-box">
+  <p><strong>例題4：</strong>0.9と0.28、どちらが大きい？</p>
+  <p><strong>解き方：</strong>「桁が多い方が大きい」と思い込むと0.28を選んでしまいます。位をそろえて0.90と0.28で比べれば、<strong>0.9の方が大きい</strong>とわかります。</p>
+</div>
+<p>整数では「桁数が多い＝大きい」だったので、その感覚のまま小数を比べるのが定番のつまずきです。対策は2つ。①<strong>位をそろえて（0を補って）比べる</strong> ②<strong>数直線に置いてみる</strong>。0と1の間を10等分した数直線に0.9と0.28を置けば、位置関係が一目瞭然です。数直線は小数・分数の量感を育てる最強の道具なので、ノートの端にさっとかける習慣をつけましょう。</p>
+
+<h2>家庭でできる練習メニュー</h2>
+<ul>
+  <li><strong>買い物で小数：</strong>「1.5Lのペットボトル」「0.3kgのお肉」——ラベルは小数だらけ</li>
+  <li><strong>料理ではかる：</strong>計量カップ・キッチンスケールで「0.4Lはかって」</li>
+  <li><strong>見当クイズ：</strong>「2.9×3.1はだいたいいくつ？」（3×3＝9くらい）</li>
+  <li><strong>ドリルで反復：</strong>学年別ドリルで小数の計算を1日5問。位そろえ・小数点の位置を確認しながら</li>
+</ul>
+
+<h2>よくある質問</h2>
+<h3>Q1. 小数の意味はどう教える？</h3>
+<p>「0.1は1を10等分した1つ分」を、1Lます・ものさし・お金で量として体感させましょう。</p>
+<h3>Q2. たし算で気をつけることは？</h3>
+<p>筆算は右端ではなく「小数点をそろえて」書くこと。空位に0を書くと位の対応が見えます。</p>
+<h3>Q3. かけ算の小数点の位置は？</h3>
+<p>整数として計算してから、両方の小数点以下の桁数の合計だけ右から小数点を打ちます。見当（およその答え）とセットで確認を。</p>
+<h3>Q4. 小数と分数、どちらが先？</h3>
+<p>3年生から並行して学び、5年生で「同じ数の別の表し方」として統合されます。</p>
+<h3>Q5. 「0.9と0.28はどちらが大きい？」を間違えます。</h3>
+<p>「桁が多い＝大きい」という整数の感覚が原因です。位をそろえて0.90と0.28で比べる、または数直線に置いて位置で比べる練習をしましょう。数直線がかけるようになると、小数の量感そのものが育ちます。</p>
+
+<h2>まとめ</h2>
+<p>小数・分数は「1より小さい数」という新しい世界への入り口です。焦らず、量の実感→計算ルール→見当の習慣の順に積み上げれば、必ず乗り越えられます。</p>
+<ul>
+  <li>小数の核は「0.1＝1を10等分した1つ分」。量で実感させる</li>
+  <li>たし算ひき算は「小数点をそろえる」、かけ算は「右寄せ→あとで小数点」</li>
+  <li>わり算は「わる数を整数に直す」。わり算のきまりが根拠</li>
+  <li>答えの見当を立てる習慣が、小数点ミスの最強の保険</li>
+</ul>
 
 <div style="margin:32px 0;padding:20px 16px;background:#F8FAFC;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">½</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">分数をマスターする方法</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">分数の教え方（約分・通分）</span>
     </a>
-    <a href="/division-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
-      <span style="font-size:18px;margin-right:8px;">➗</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">割り算・わり算の教え方</span>
+    <a href="/percentage-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">％</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">割合の教え方（小数が土台）</span>
     </a>
-    <a href="/percentage-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/gaisuu-shishagoonyuu-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">📊</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">割合・百分率の攻略法</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">がい数と四捨五入（見当の力）</span>
     </a>
-    <a href="/grade-5-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;transition:box-shadow .2s;">
+    <a href="/grade-5.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">5️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">5年生の算数攻略ガイド</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学5年生の算数ドリル</span>
     </a>
-    
   </div>
 </div>
 <div class="cta">
   <p>無料・アプリ不要で今すぐ練習できます！</p>
   <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
 </div>
-<div class="ad-wrap">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3034271297570921" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<div class="cta" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);">
-  <p>100問まとめドリルや苦手特化はプレミアムで。</p>
-  <a href="/premium.html" style="color:#6D28D9;">プレミアム機能を見る</a>
-</div>
-</div>
+
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
   <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
