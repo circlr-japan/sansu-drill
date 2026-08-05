@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nijumaru-v3';
+const CACHE_NAME = 'nijumaru-v4';
 const ASSETS = [
   '/',
   '/index.html',
