@@ -12,7 +12,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --primary:#122A64;--purple:#7C3AED;--purple-light:#F5F3FF;
-  --bg:#FFFBF2;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
+  --bg:#FFFFFF;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
   --border:#E2E8F0;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
 }
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
@@ -844,7 +844,7 @@ function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg,
       const qy    = cy + row * rowH;
       const cardH = rowH - s(0.8);
 
-      ctx.fillStyle = row%2===0 ? '#FFFBF2' : '#fff';
+      ctx.fillStyle = row%2===0 ? '#FFFFFF' : '#fff';
       _rr2p(ctx,qx,qy,colW-s(4),cardH,s(1.5)); ctx.fill();
       ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.2);
       _rr2p(ctx,qx,qy,colW-s(4),cardH,s(1.5)); ctx.stroke();
