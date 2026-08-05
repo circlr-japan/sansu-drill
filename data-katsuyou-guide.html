@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>データの活用【小学6年生】ドットプロット・平均値・中央値・最頻値・柱状グラフを解説 | にじゅうまる。</title>
-<meta name="description" content="小6「データの活用」を徹底解説。ドットプロットの書き方・読み方、平均値・中央値・最頻値（代表値）の違いと求め方、度数分布表と柱状グラフ（ヒストグラム）まで例題つきで学べます｜にじゅうまる。算数ドリル">
+<meta name="description" content="小6「データの活用」を徹底解説。ドットプロットから平均値・中央値・最頻値を求める方法、代表値の違いと使い分け、度数分布表と柱状グラフ（ヒストグラム）まで例題つきで学べます｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/data-katsuyou-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,8 @@ ul li,ol li{margin-bottom:8px;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
 .ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
 .ex-box p{margin-bottom:6px;}
+.answer-box{background:#FEF2F2;border:2px solid #FCA5A5;border-radius:12px;padding:16px 18px;margin:16px 0;}
+.answer-box p{margin-bottom:8px;}
 .dotplot{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px;margin:14px 0;font-family:monospace;font-size:14px;line-height:1.5;color:#1E293B;overflow-x:auto;}
 .cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
 .cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
@@ -71,6 +73,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "数直線の上に、データを1つずつ点（ドット）で積み上げて表した図です。データの散らばりのようすや、どの値に集まっているかがひと目でわかります。小学6年生の「データの活用」で学習します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ドットプロットから平均値を求めるには？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "点が乗っている値をすべてたして、点の数（データの個数）でわります。たとえば20, 22, 22, 22, 23, 23, 25, 28の8個なら、合計185÷8＝23.125mが平均値です。中央値は小さい順に並べた真ん中（8個なら4番目と5番目の平均）、最頻値はいちばん高く積み上がった値で求められます。"
       }
     },
     {
@@ -138,6 +148,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <li><strong>離れた値（外れ値）はある？</strong>（28mだけ離れている）</li>
 </ul>
 
+<h2>ドットプロットから平均値・中央値・最頻値を求める方法</h2>
+<p>「ドットプロットから平均値を求めなさい」という問題はテストでよく出ます。上の8個のデータ（20, 22, 22, 22, 23, 23, 25, 28）を使って、3つの代表値の求め方を確認しましょう。</p>
+<div class="answer-box">
+  <p><strong>平均値 ＝ すべての値の合計 ÷ 個数</strong><br>（20＋22＋22＋23＋25＋22＋28＋23）÷8 ＝ 185÷8 ＝ <strong>23.125m</strong>。ドットプロットでは「点が乗っている値を全部たして、点の数でわる」と考えます。</p>
+  <p><strong>中央値 ＝ 小さい順に並べた真ん中の値</strong><br>8個なので4番目と5番目（22と23）の平均で <strong>22.5m</strong>。ドットプロットは左から数えるだけで並べ替え不要です。</p>
+  <p><strong>最頻値 ＝ いちばん高く積み上がった値</strong><br>22mが3つで最多なので <strong>22m</strong>。</p>
+</div>
+<p>ポイントは、ドットプロットは<strong>すでに小さい順に並んでいる</strong>ため、中央値と最頻値が目で見つけやすいこと。平均値だけは、値の合計を個数でわる計算が必要です。それぞれの意味と使い分けを、次でくわしく整理します。</p>
+
 <h2>代表値：平均値・中央値・最頻値</h2>
 <p>データ全体の特徴を1つの数で表すのが<strong>代表値</strong>。3種類を正しく使い分けられるかがこの単元の核心です。</p>
 <table class="cv-table">
@@ -202,13 +221,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <h2>よくある質問</h2>
 <h3>Q1. ドットプロットとは？</h3>
 <p>数直線の上にデータを点で積み上げた図です。データの集まり具合・散らばり・外れ値がひと目でわかります。</p>
-<h3>Q2. 平均値・中央値・最頻値はどう使い分ける？</h3>
+<h3>Q2. ドットプロットから平均値を求めるには？</h3>
+<p>点が乗っている値をすべてたして、点の数（データの個数）でわります。たとえば20, 22, 22, 22, 23, 23, 25, 28 の8個なら、合計185÷8＝23.125mが平均値です。中央値は左から数えた真ん中（4番目と5番目の平均）、最頻値はいちばん高く積み上がった値で求められます。</p>
+<h3>Q3. 平均値・中央値・最頻値はどう使い分ける？</h3>
 <p>ふだんは平均値、極端な値（外れ値）があるときは中央値、いちばん多い層を知りたいときは最頻値が便利です。</p>
-<h3>Q3. 柱状グラフと棒グラフの違いは？</h3>
+<h3>Q4. 柱状グラフと棒グラフの違いは？</h3>
 <p>棒グラフは種類ごとの比較（すき間あり）、柱状グラフは連続した区間ごとの度数（すき間なし）です。</p>
-<h3>Q4. 中央値はデータが偶数個のときどうする？</h3>
+<h3>Q5. 中央値はデータが偶数個のときどうする？</h3>
 <p>真ん中の2つの値の平均を取ります。8個なら4番目と5番目の平均です。</p>
-<h3>Q5. この単元は中学でどうつながる？</h3>
+<h3>Q6. この単元は中学でどうつながる？</h3>
 <p>中学1年の「データの活用」で、度数分布表・ヒストグラム・代表値をそのまま深掘りします。さらに相対度数や確率へ発展していくので、小6での「グラフを根拠に説明する」経験が中学の土台になります。</p>
 
 <h2>まとめ</h2>
