@@ -30,7 +30,7 @@
   --primary:#122A64;--primary-light:#FFFBE0;
   --success:#16A34A;--success-light:#F0FDF4;
   --danger:#DC2626;--danger-light:#FEF2F2;
-  --warning:#D97706;--bg:#F8FAFC;--surface:#FFFFFF;
+  --warning:#D97706;--bg:#FFFBF2;--surface:#FFFFFF;
   --border:rgba(0,0,0,0.10);--text:#1E293B;
   --text-muted:#64748B;--text-faint:#94A3B8;
   --radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
@@ -57,7 +57,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 /* ── 設定ページ ── */
 .setup-content{padding:14px 16px 60px;animation:fadeIn 0.3s ease;}
 .plan-chip{display:inline-block;border-radius:999px;padding:4px 14px;font-size:11px;font-weight:700;margin-bottom:12px;}
-.chip-free{background:#F1F5F9;color:#475569;}
+.chip-free{background:#FBF3E4;color:#475569;}
 .chip-sub{background:#122A64;color:#fff;}
 
 .setup-card{background:var(--surface);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);margin-bottom:12px;}
@@ -183,20 +183,20 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .q-text{font-size:19px;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:14px;}
 .q-hint{font-size:11px;color:var(--text-faint);margin-top:4px;}
 /* 通常入力 */
-.answer-input{width:100%;border:2px solid #E2E8F0;border-radius:10px;padding:13px;font-size:22px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#F8FAFC;text-align:center;outline:none;transition:border-color 0.15s,background 0.15s;-webkit-appearance:none;appearance:none;}
+.answer-input{width:100%;border:2px solid #E2E8F0;border-radius:10px;padding:13px;font-size:22px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#FFFBF2;text-align:center;outline:none;transition:border-color 0.15s,background 0.15s;-webkit-appearance:none;appearance:none;}
 .answer-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
 .answer-input::placeholder{font-size:13px;font-weight:400;color:#CBD5E1;}
 /* 分数入力 */
 .frac-input-wrap{display:flex;align-items:center;justify-content:center;gap:8px;}
 .frac-box{display:flex;flex-direction:column;align-items:center;gap:4px;}
-.frac-input{width:80px;border:2px solid #E2E8F0;border-radius:10px;padding:10px 6px;font-size:20px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#F8FAFC;text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color 0.15s,background 0.15s;}
+.frac-input{width:80px;border:2px solid #E2E8F0;border-radius:10px;padding:10px 6px;font-size:20px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#FFFBF2;text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color 0.15s,background 0.15s;}
 .frac-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
 .frac-label{font-size:10px;color:var(--text-faint);font-weight:500;}
 .frac-divider{font-size:28px;font-weight:700;color:var(--text-muted);line-height:1;padding-top:8px;}
 .frac-hint,.ratio-hint{font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px;}
 /* 比入力 */
 .ratio-input-wrap{display:flex;align-items:center;justify-content:center;gap:10px;}
-.ratio-input{width:80px;border:2px solid #E2E8F0;border-radius:10px;padding:10px 6px;font-size:20px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#F8FAFC;text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color 0.15s,background 0.15s;}
+.ratio-input{width:80px;border:2px solid #E2E8F0;border-radius:10px;padding:10px 6px;font-size:20px;font-weight:600;font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#FFFBF2;text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color 0.15s,background 0.15s;}
 .ratio-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
 .ratio-colon{font-size:28px;font-weight:700;color:var(--text);line-height:1;}
 .ratio-box{display:flex;flex-direction:column;align-items:center;gap:4px;}
@@ -256,11 +256,11 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .rank-badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;}
 .rank-s{background:#FEF9C3;color:#CA8A04;}
 .rank-a{background:#DCFCE7;color:#16A34A;}
-.rank-b{background:#DBEAFE;color:#2563EB;}
+.rank-b{background:#FBEAC2;color:#2563EB;}
 .rank-c{background:#F3F4F6;color:#6B7280;}
 
 /* ── 履歴ビュー専用ボタン ── */
-.btn-hist-back{width:100%;padding:13px;background:#F8FAFC;color:#475569;border:1.5px solid #E2E8F0;border-radius:var(--radius);font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.btn-hist-back{width:100%;padding:13px;background:#FFFBF2;color:#475569;border:1.5px solid #E2E8F0;border-radius:var(--radius);font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 
 /* ── トースト通知 ── */
 #toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(10px);background:#1E293B;color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:999px;pointer-events:none;opacity:0;transition:opacity 0.25s,transform 0.25s;z-index:500;white-space:nowrap;}

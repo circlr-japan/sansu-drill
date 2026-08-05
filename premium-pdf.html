@@ -12,7 +12,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --primary:#122A64;--purple:#7C3AED;--purple-light:#F5F3FF;
-  --bg:#F8FAFC;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
+  --bg:#FFFBF2;--surface:#fff;--text:#1E293B;--text-muted:#64748B;
   --border:#E2E8F0;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,0.08);
 }
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
@@ -620,7 +620,7 @@ const GRADES={
 
 const DIFF_LABEL  = { easy:'🌱 初級', normal:'⭐ 中級', hard:'🔥 上級' };
 const DIFF_COLORS = { easy:'#059669', normal:'#2563EB', hard:'#DC2626' };
-const DIFF_BG     = { easy:'#F0FDF4', normal:'#EFF6FF', hard:'#FEF2F2' };
+const DIFF_BG     = { easy:'#F0FDF4', normal:'#FFF7E6', hard:'#FEF2F2' };
 
 // ============================================================
 // UI 状態
@@ -810,7 +810,7 @@ function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg,
       ctx.strokeStyle='#1E293B';
       ctx.beginPath(); ctx.moveTo(s(118),cy+s(5)); ctx.lineTo(s(168),cy+s(5)); ctx.stroke();
       if (opts.withScore) {
-        ctx.fillStyle='#EFF6FF'; _rr2p(ctx,s(171),cy-s(1),s(24),s(10),s(2)); ctx.fill();
+        ctx.fillStyle='#FFF7E6'; _rr2p(ctx,s(171),cy-s(1),s(24),s(10),s(2)); ctx.fill();
         ctx.strokeStyle='#BFDBFE'; ctx.lineWidth=s(0.35); _rr2p(ctx,s(171),cy-s(1),s(24),s(10),s(2)); ctx.stroke();
         ctx.fillStyle='#2563EB'; ctx.font=`700 ${s(3.5)}px ${F}`; ctx.textAlign='left';
         ctx.fillText('得点', s(173), cy+s(3.5)); ctx.font=`700 ${s(5)}px ${F}`;
@@ -844,7 +844,7 @@ function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg,
       const qy    = cy + row * rowH;
       const cardH = rowH - s(0.8);
 
-      ctx.fillStyle = row%2===0 ? '#F8FAFC' : '#fff';
+      ctx.fillStyle = row%2===0 ? '#FFFBF2' : '#fff';
       _rr2p(ctx,qx,qy,colW-s(4),cardH,s(1.5)); ctx.fill();
       ctx.strokeStyle='#E2E8F0'; ctx.lineWidth=s(0.2);
       _rr2p(ctx,qx,qy,colW-s(4),cardH,s(1.5)); ctx.stroke();
