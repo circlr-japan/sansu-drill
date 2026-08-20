@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>がい数と四捨五入【小学4年生】切り上げ・切り捨て・以上以下未満をわかりやすく解説 | にじゅうまる。</title>
-<meta name="description" content="四捨五入のやり方、切り上げ・切り捨てとの使い分け、「千の位までのがい数」と「上から2桁」の違い、以上・以下・未満の範囲まで例題つきで解説。買い物での概算のコツも紹介｜にじゅうまる。算数ドリル">
+<meta name="description" content="繰り上げと切り上げの違いは？四捨五入のやり方、切り上げ・切り捨ての使い分け、「千の位までのがい数」と「上から2桁」の違い、以上・以下・未満の範囲まで例題つきで解説。買い物での概算のコツも紹介｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/gaisuu-shishagoonyuu-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,8 @@ ul li,ol li{margin-bottom:8px;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
 .ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
 .ex-box p{margin-bottom:6px;}
+.answer-box{background:#FEF2F2;border:2px solid #FCA5A5;border-radius:12px;padding:16px 18px;margin:16px 0;}
+.answer-box p{margin-bottom:6px;}
 .formula{background:#EEF2FF;border:2px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0;text-align:center;font-size:15px;font-weight:700;color:#3730A3;}
 .cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
 .cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
@@ -71,6 +73,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "目的の位の1つ下の位の数字を見て、0〜4ならそのまま切り捨て、5〜9なら1くり上げます。たとえば3872を千の位までのがい数にするなら、百の位の8を見て切り上げ、4000になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "繰り上げと切り上げの違いは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "繰り上げ（くり上がり）は8＋5＝13のように10のまとまりを上の位へ送る計算の操作で、答えは正確な数のままです。切り上げは3872→4000のように端数を上の位へ上げて下の位を0にする、がい数の作り方のひとつで、答えはおよその数になります。四捨五入の説明に出てくる「1くり上げる」は切り上げと同じ操作を指すため混同しやすいですが、くり上がりのたし算は小学1年生、切り上げは小学4年生の内容です。"
       }
     },
     {
@@ -109,8 +119,24 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="content">
 <p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>📊 がい数（およその数）は小学4年生の単元。四捨五入そのものより、「どの位を四捨五入するのか」という日本語の読み取りでつまずく子が大半です。言い方のパターンを整理して攻略しましょう。</p>
+  <p>📊 がい数（およその数）は小学4年生の単元。四捨五入そのものより、「どの位を四捨五入するのか」という日本語の読み取りでつまずく子が大半です。まず混同しやすい「繰り上げ」と「切り上げ」の違いをはっきりさせてから、言い方のパターンを整理して攻略しましょう。</p>
 </div>
+
+<h2>【直答】「繰り上げ」と「切り上げ」の違いは？</h2>
+<div class="answer-box">
+  <p><strong>繰り上げ＝計算の途中で位を上げること。切り上げ＝およその数にするために端数を上の位へ上げること。</strong></p>
+  <p><strong>繰り上げ（くり上がり）</strong>は、8＋5＝13 のように10のまとまりができたとき、上の位へ1を送る<strong>計算の操作</strong>。答えは正確な数のままです。</p>
+  <p><strong>切り上げ</strong>は、3872→4000 のように<strong>がい数の作り方</strong>のひとつ。下の位を0にするので、答えはおよその数になります。</p>
+</div>
+<p>混同する原因は、四捨五入の説明に「1くり上げる」という言い方が出てくることです。ここでの「くり上げる」は<strong>切り上げと同じ操作</strong>を指しています。ちがいを表で整理しましょう。</p>
+<table class="cv-table">
+  <tr><th></th><th>繰り上げ（くり上がり）</th><th>切り上げ</th></tr>
+  <tr><td><strong>すること</strong></td><td>10のまとまりを上の位へ送る</td><td>端数を上の位へ上げ、下の位は0にする</td></tr>
+  <tr><td><strong>答え</strong></td><td>正確な数のまま</td><td>およその数（がい数）になる</td></tr>
+  <tr><td><strong>例</strong></td><td>8＋5＝13（一の位から十の位へ1）</td><td>3872→4000（百の位以下を上げて0に）</td></tr>
+  <tr><td><strong>習う学年</strong></td><td>小学1年生（たし算）</td><td>小学4年生（がい数）</td></tr>
+</table>
+<p>「上げる」という言葉は同じでも、<a href="/tasizan-kuriagari.html">くり上がりのたし算</a>は1年生、切り上げは4年生の別の単元です。「繰り上げは正確な計算の途中、切り上げはおよその数を作る方法」と分けて覚えれば混同しません。切り上げ・切り捨て・四捨五入の使い分けは<a href="#tsukaiwake">後半でくわしく解説</a>します。</p>
 
 <h2>がい数とは？なぜ使うの？</h2>
 <p><strong>がい数＝およその数</strong>です。「市の人口は約38万人」「買い物の合計はだいたい800円」のように、正確な数がわからなくても、およその大きさがわかれば十分な場面で使います。</p>
@@ -147,7 +173,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </table>
 <p>「〜の位まで」は<strong>位の名前</strong>で、「上から〜桁」は<strong>桁数</strong>で指定しています。同じ3872でも、言い方によって4000にも3900にもなる——この表を自分で再現できるようになれば、がい数は卒業です。</p>
 
-<h2>切り上げ・切り捨てとの使い分け</h2>
+<h2 id="tsukaiwake">切り上げ・切り捨てとの使い分け</h2>
 <p>がい数の作り方は四捨五入だけではありません。目的によって3つを使い分けます。</p>
 <table class="cv-table">
   <tr><th>方法</th><th>ルール</th><th>使う場面の例</th></tr>
@@ -172,7 +198,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <p><strong>例題4：</strong>一の位を四捨五入すると250になる整数は、いくつからいくつまで？</p>
   <p><strong>解き方：</strong>切り上げで250になるのは245〜249、切り捨てで250のままなのは250〜254。あわせて<strong>245以上254以下</strong>（245から254まで）。</p>
 </div>
-<p>「250になる範囲の<strong>いちばん小さい数は245</strong>（ぎりぎり切り上げ）、<strong>いちばん大きい数は254</strong>（ぎりぎり切り捨て）」と、両端から考えるのがコツです。テストでは「以上・未満で答えなさい」（245以上255未満）という形式もあるので、「未満は含まない」を確実に。</p>
+<p>「250になる範囲の<strong>いちばん小さい数は245</strong>（ぎりぎり切り上げ）、<strong>いちばん大きい数は254</strong>（ぎりぎり切り捨て）」と、両端から考えるのがコツです。テストでは「以上・未満で答えなさい」（245以上255未満）という形式もあるので、「未満は含まない」をおさえておきましょう。</p>
 
 <h2>がい数の活躍どころ：見積もり（概算）</h2>
 <p>がい数の最大の実用場面が、計算の前の<strong>見積もり</strong>です。</p>
@@ -194,15 +220,18 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <h2>よくある質問</h2>
 <h3>Q1. 四捨五入のやり方は？</h3>
 <p>残す位の1つ下の数字を見て、0〜4なら切り捨て、5〜9なら1くり上げます。見る位に○をつけてから判断するのがコツです。</p>
-<h3>Q2. 「千の位まで」と「上から2桁」の違いは？</h3>
+<h3>Q2. 繰り上げと切り上げの違いは？</h3>
+<p>繰り上げは10のまとまりを上の位へ送る計算の操作で、答えは正確なまま（8＋5＝13）。切り上げは端数を上げて下の位を0にするがい数の作り方で、答えはおよその数になります（3872→4000）。くり上がりは1年生、切り上げは4年生の内容です。</p>
+<h3>Q3. 「千の位まで」と「上から2桁」の違いは？</h3>
 <p>「千の位まで」は位の名前、「上から2桁」は桁数の指定です。3872なら前者は4000、後者は3900と、答えが変わることがあります。</p>
-<h3>Q3. なぜ5は切り上げるの？</h3>
+<h3>Q4. なぜ5は切り上げるの？</h3>
 <p>0〜9の10個の数字のうち、0〜4の5個を捨て、5〜9の5個を上げると、ちょうど半分ずつになって公平だからです。</p>
-<h3>Q4. がい数は何年生で習う？</h3>
+<h3>Q5. がい数は何年生で習う？</h3>
 <p>小学4年生です。四捨五入・切り上げ・切り捨て・以上以下未満・概算までをまとめて学習します。</p>
 
 <h2>まとめ</h2>
 <ul>
+  <li>繰り上げは正確な計算の途中の操作、切り上げはおよその数を作る方法</li>
   <li>がい数＝およその数。「わかりやすさが大事な場面」で使う</li>
   <li>四捨五入は「残す位の1つ下」を見る。見る位に○をつける</li>
   <li>「〜の位まで」と「上から〜桁」の違いが最大の山場</li>
