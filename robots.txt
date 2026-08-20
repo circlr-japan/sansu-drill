@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /google4da7168775a54d86.html
-Disallow: /thanks.html
-Disallow: /premium-pdf.html
+
+# 検索対象外にしたいページ（購入完了・PDF認証・移転スタブ等）は
+# 各ページの <meta name="robots" content="noindex,follow"> で制御しています。
+# robots.txt でクロールを止めると noindex が読まれないため、Disallow は使いません。
 
 Sitemap: https://www.nijumaru-drill.com/sitemap.xml
