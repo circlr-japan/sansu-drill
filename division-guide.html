@@ -44,6 +44,9 @@ ul li,ol li{margin-bottom:8px;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -135,6 +138,47 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <li><strong>検算：わる数×商＋あまり＝わられる数</strong>——5×3＋2＝17 ✓</li>
 </ol>
 <p>この2つのチェックを習慣にすると、あまりのわり算はほぼ失点しなくなります。また、文章題では「あまりをどうするか」の判断（<a href="/gaisuu-shishagoonyuu-guide.html">切り上げ・切り捨て</a>）が問われます。「13人が4人乗りの車で行く→車は何台？」は3あまり1だから4台。あまった1人を乗せる車が必要だからです。</p>
+
+<figure class="fig" data-fig="amari">
+<svg viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figDivT figDivD">
+  <title id="figDivT">17÷5で商3あまり2になる仕組みの図</title>
+  <desc id="figDivD">17個を5個ずつ分けると3グループできて2個余ることを示し、あまりはわる数より小さくなることを表しています。</desc>
+  <rect x="0" y="0" width="420" height="330" fill="#FFFDF5" rx="12"/>
+  <text x="210" y="34" font-size="19" font-weight="700" fill="#122A64" text-anchor="middle">17 ÷ 5 ＝ 3 あまり 2</text>
+  <text x="210" y="58" font-size="12" fill="#64748B" text-anchor="middle">17個を、5個ずつのグループに分けていく</text>
+  <circle cx="46" cy="92" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="82" cy="92" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="118" cy="92" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="154" cy="92" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="190" cy="92" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="46" cy="128" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="82" cy="128" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="118" cy="128" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="154" cy="128" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="190" cy="128" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="46" cy="164" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="82" cy="164" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="118" cy="164" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="154" cy="164" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="190" cy="164" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="46" cy="200" r="13" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <circle cx="82" cy="200" r="13" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <rect x="26" y="73" width="180" height="38" rx="9" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="218" y="97" font-size="12" fill="#1E3A8A">5個で1グループ</text>
+  <rect x="26" y="109" width="180" height="38" rx="9" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="218" y="133" font-size="12" fill="#1E3A8A">5個で1グループ</text>
+  <rect x="26" y="145" width="180" height="38" rx="9" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="218" y="169" font-size="12" fill="#1E3A8A">5個で1グループ</text>
+  <rect x="26" y="181" width="72" height="38" rx="9" fill="none" stroke="#EF4444" stroke-width="2"/>
+  <text x="110" y="205" font-size="12" fill="#991B1B">5個に足りない</text>
+  <text x="218" y="232" font-size="13" font-weight="700" fill="#1E3A8A">→ 3グループ（商＝3）</text>
+  <text x="218" y="252" font-size="13" font-weight="700" fill="#991B1B">→ 2個のこり（あまり＝2）</text>
+  <rect x="26" y="266" width="368" height="48" rx="10" fill="#FFF7E6" stroke="#F59E0B" stroke-width="2"/>
+  <text x="210" y="288" font-size="13" font-weight="700" fill="#92400E" text-anchor="middle">あまりは、わる数（5）より小さくなる</text>
+  <text x="210" y="306" font-size="12" fill="#B45309" text-anchor="middle">「あまり5」や「あまり7」が出たら、まだ分けられる証拠</text>
+</svg>
+<figcaption>図：17÷5＝3あまり2。1行が1グループ（5個）です。あまりが5以上になったら、まだグループを作れるということ。検算は「5×3＋2＝17」。</figcaption>
+</figure>
 
 <h2>筆算は「たてる→かける→ひく→おろす」（4年生）</h2>
 <div class="ex-box">
