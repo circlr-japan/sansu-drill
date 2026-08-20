@@ -42,6 +42,31 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .mistake-box{background:#FEF2F2;border-left:4px solid #EF4444;border-radius:0 12px 12px 0;padding:14px;}
 .mistake-box h3{font-size:13px;font-weight:700;color:#B91C1C;margin-bottom:6px;}
 .mistake-box p{font-size:13px;color:#991B1B;line-height:1.7;}
+.answer-box{background:#FEF2F2;border:2px solid #FCA5A5;border-radius:12px;padding:16px 18px;margin:4px 0 12px;}
+.answer-box p{font-size:13px;color:#334155;line-height:1.8;margin-bottom:6px;}
+.answer-box p:last-child{margin-bottom:0;}
+.cur-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:4px 0 12px;font-size:12px;}
+.cur-table th,.cur-table td{border:1px solid var(--border);padding:8px 9px;text-align:left;vertical-align:top;background:#fff;line-height:1.7;}
+.cur-table th{background:var(--bg-light);color:var(--color);font-weight:700;}
+.cur-table tr>*:nth-child(1){width:19%;}
+.cur-table tr>*:nth-child(2){width:48%;}
+.cur-table tr>*:nth-child(3){width:33%;}
+.check-item{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--border);}
+.check-item:last-child{border-bottom:none;}
+.check-box{flex-shrink:0;width:17px;height:17px;border:2px solid var(--color);border-radius:4px;margin-top:3px;}
+.check-text{font-size:13px;color:#334155;line-height:1.7;}
+.check-text b{color:var(--color);}
+.check-link{display:inline-block;font-size:11px;color:#1D4ED8;text-decoration:none;margin-left:2px;white-space:nowrap;}
+.cur-table a{color:#1D4ED8;text-decoration:none;border-bottom:1px dotted #93C5FD;}
+.note{font-size:12px;color:var(--text-muted);line-height:1.75;}
+.guide-card{display:block;background:linear-gradient(135deg,#FFFDF5,#FFF1CE);border:1.5px solid var(--border-c);border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;}
+.guide-card .gc-title{display:block;font-size:14px;font-weight:700;color:var(--color);margin-bottom:4px;}
+.guide-card .gc-desc{display:block;font-size:12px;color:#475569;line-height:1.7;}
+.link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.link-row a{flex:1 1 auto;text-align:center;padding:10px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:10px;font-size:12px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
+.grade-nav a{padding:11px 6px;text-align:center;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav a.current{background:var(--color);border-color:var(--color);color:#fff;}
 .next-box{background:var(--bg-light);border:1.5px solid var(--border-c);border-radius:12px;padding:14px;}
 .next-box h3{font-size:13px;font-weight:700;color:var(--color);margin-bottom:6px;}
 .next-box p{font-size:13px;color:#334155;line-height:1.7;}
@@ -89,6 +114,30 @@ footer a{color:#94A3B8;text-decoration:underline;}
         "@type": "Answer",
         "text": "わり算と、かけ算・わり算の筆算です。これらは九九が土台になるため、2年生の九九が不安な場合は先に復習を。分数・小数は4年生以降も続く重要単元なので、意味の理解を大切にしましょう。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "3年生でわり算の筆算は習いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3年生で扱うのは、九九を1回使って解けるわり算と、あまりのあるわり算までです。「たてる・かける・ひく・おろす」を繰り返す筆算形式のわり算は4年生から始まります。3年生のうちは、九九の逆引きをすらすらにしておくことが何よりの準備になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小数と分数はどちらでつまずきやすいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "分数です。小数は「0.1が10こで1」と位取りの延長で理解できますが、分数は1を等分するという新しい見方が必要になります。ケーキや折り紙を等分する、数直線に印をつけるなど、量として見せる場面を増やしましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3年生から算数が急に難しくなったと感じます。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "わり算・分数・小数・重さと、新しい概念が一度に増える学年だからです。ここでのつまずきは、九九の定着不足にさかのぼることが多いです。3年生の内容を追いかける前に、九九をランダムで即答できるか確認してみてください。"
+      }
     }
   ]
 }
@@ -104,12 +153,32 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <div class="content">
 <div class="section"><p style="font-size:14px;color:#334155;line-height:1.9;">小学3年生の算数は、学ぶ範囲が一気に広がる学年です。わり算が登場し、かけ算・わり算の筆算、大きい数、そして分数・小数といった新しい数の世界に踏み込みます。円や重さ、秒を使った時間の計算も始まります。九九の完成度がそのまま計算力に直結します。</p></div>
+<div class="section"><h2>🎯 【直答】小学3年生の算数では何を習う？</h2>
+<div class="answer-box">
+  <p><strong>わり算・かけ算の筆算・分数・小数</strong>が新しく登場します。ほかに大きい数（万〜千万）、円と球、重さ（g・kg）、秒を使った時間、棒グラフと表、二等辺三角形・正三角形を学びます。</p>
+  <p>3年生は<strong>計算の種類が一気に増える学年</strong>。とくにわり算は九九を逆から使うため、<strong>「42は何×何？」がすぐ出るか</strong>で差がつきます。分数・小数は計算より先に「どれくらいの大きさか」のイメージを固めるのが先決です。</p>
+</div>
+<p class="note">下の「学習内容」で単元ごとの中身を、「学期別カリキュラム」でいつ習うかを確認できます。</p>
+</div>
 <div class="section"><h2>📚 学習内容</h2>
 <div class="topic-card"><h3>わり算</h3><p>「12÷3」のように、九九を逆に使って商を求めます。あまりのあるわり算も登場。九九が瞬時に出ることが前提になります。</p></div>
 <div class="topic-card"><h3>かけ算・わり算の筆算</h3><p>2桁×1桁、3桁×1桁などの筆算を学びます。位ごとに計算して繰り上がりを処理する手順を、ていねいに身につけましょう。</p></div>
 <div class="topic-card"><h3>分数・小数の基礎</h3><p>1/2、1/3といった分数と、0.1などの小数が初めて登場します。「1を等分した大きさ」という意味の理解が最重要です。</p></div>
 <div class="topic-card"><h3>大きい数</h3><p>一万をこえる数（十万・百万）の読み書きや、数の仕組みを学びます。</p></div>
 <div class="topic-card"><h3>円と球・重さ・時間</h3><p>円と球の基礎、重さの単位（g・kg）、秒を使った時間の計算など、身のまわりの量を数で表す学習が進みます。</p></div>
+<div class="topic-card"><h3>あまりのあるわり算</h3><p>13÷4＝3あまり1のように、わり切れない計算を学びます。<strong>あまりは割る数より小さい</strong>というルールの確認が必須。文章題では「あまりをどうするか」の判断（切り上げ・切り捨て）まで問われます（<a href="/division-guide.html">わり算の教え方</a>）。</p></div>
+<div class="topic-card"><h3>表と棒グラフ</h3><p>集めたデータを表に整理し、棒グラフに表す学習です。目もり1つ分がいくつかを読み取る力は、4年生の折れ線グラフ、6年生のヒストグラムへとつながります（<a href="/data-katsuyou-guide.html">データの活用</a>）。</p></div>
+<div class="topic-card"><h3>二等辺三角形・正三角形と角</h3><p>コンパスを使って三角形をかき、辺の長さや角の大きさで分類します。3年生の図形は「作図」が入るのが特徴で、4年生の角度・垂直平行の下地になります（<a href="/geometry-guide.html">図形の基礎</a>）。</p></div>
+<div class="topic-card"><h3>□を使った式</h3><p>わからない数を□とおいて式に表す学習です。□＋5＝12 の□を求める考え方は、6年生の「文字と式」、中学の方程式へまっすぐつながります。</p></div>
+</div>
+<div class="section"><h2>🗓️ 学期別カリキュラム（いつ何を習う？）</h2>
+<table class="cur-table">
+  <tr><th>時期</th><th>おもな単元</th><th>家庭で見ておくこと</th></tr>
+  <tr><th>1学期<br>4〜7月</th><td>かけ算のきまり／<a href="/time-calculation.html">時こくと時間（秒）</a>／<a href="/division-guide.html">わり算</a>／たし算とひき算の筆算（3桁）／長さ（km）／あまりのあるわり算</td><td>九九の逆引き（「42は何×何」）が即答できるか</td></tr>
+  <tr><th>2学期<br>9〜12月</th><td>大きい数（万・千万）／<a href="/multiplication-guide.html">かけ算の筆算（2〜3桁×1桁）</a>／円と球／<a href="/decimal-fraction-guide.html">小数</a>／重さ（g・kg・t）</td><td>筆算のくり上がりの書き忘れ、小数点の位置</td></tr>
+  <tr><th>3学期<br>1〜3月</th><td><a href="/fractions-guide.html">分数</a>／□を使った式／かけ算の筆算（2桁×2桁）／三角形と角／表と棒グラフ</td><td>分数を「量」としてイメージできているか</td></tr>
+</table>
+<p class="note">※単元の順序と名称は教科書会社によって多少前後します。目安としてご覧ください。</p>
 </div>
 <div class="section"><h2>⚠️ つまずきやすいポイントと対策</h2>
 <div class="mistake-box" style="margin-bottom:10px;"><h3>あまりのあるわり算で混乱する</h3><p>「あまりは割る数より小さい」というルールを忘れがちです。具体物を分ける操作で「余り」の意味を体感させましょう。</p></div>
@@ -120,7 +189,23 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="tip-item"><div class="tip-num">2</div><div><div class="tip-title">分数・小数は「量」で教える</div><div class="tip-body">数字だけでなく、折り紙や液体で「半分」「0.1」を体感させると理解が深まります。</div></div></div>
 <div class="tip-item"><div class="tip-num">3</div><div><div class="tip-title">筆算は手順を声に出す</div><div class="tip-body">「まず一の位、次に十の位」と手順を口に出しながら解くと、抜けやミスが減ります。</div></div></div>
 </div>
+<div class="section"><h2>✅ 3年生修了チェックリスト</h2>
+<p class="note" style="margin-bottom:8px;">4年生に上がる前に、次の8項目を確認しましょう。4年生のわり算の筆算・がい数は、ここが土台になります。各項目の青いリンクが、つまずいたときの戻り先です。</p>
+<div class="check-item"><div class="check-box"></div><div class="check-text">九九の<b>逆引き</b>（「42÷6は？」）が即答できる<a class="check-link" href="/division-guide.html">→ わり算の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">あまりのあるわり算で「あまり＜割る数」を確認できる<a class="check-link" href="/daily.html">→ 今日のドリルで練習</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">3桁のたし算・ひき算の筆算ができる<a class="check-link" href="/addition-guide.html">→ たし算の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">2桁×2桁のかけ算の筆算ができる<a class="check-link" href="/multiplication-guide.html">→ かけ算の筆算</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">小数（0.1がいくつ分）を数直線で説明できる<a class="check-link" href="/decimal-fraction-guide.html">→ 小数の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">分数（1/4はどれくらい）を図で説明できる<a class="check-link" href="/fractions-guide.html">→ 分数の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">1km＝1000m、1kg＝1000g が言える<a class="check-link" href="/tanni-kanzan-guide.html">→ 単位のしくみ</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">秒を使った時間の計算ができる<a class="check-link" href="/time-calculation.html">→ 時こくと時間</a></div></div>
+</div>
 <div class="section"><h2>👨‍👩‍👧 保護者の関わり方</h2><p style="font-size:13px;color:#334155;line-height:1.85;">3年生は抽象度が上がり、算数が「難しい」と感じ始める子が増える時期です。分からなくなったら前の学年に戻ることをためらわないでください。特に分数・小数は、身近なものを分ける体験と結びつけると一気に理解が進みます。</p></div>
+<div class="section"><h2>📗 もっとくわしく知りたい方へ</h2>
+<a class="guide-card" href="/grade-3-tips.html"><span class="gc-title">小学3年生の算数 完全ガイド →</span><span class="gc-desc">わり算・分数・小数のつまずきサイン早見表、時期別の見取り図、親のNG対応と言いかえまで解説しています。</span></a>
+<a class="guide-card" href="/sansu-onayami-guide.html"><span class="gc-title">算数のお悩み別ガイド →</span><span class="gc-desc">「文章題が苦手」「計算は速いのにミスが多い」など、症状から原因と対処法を探せます。</span></a>
+<a class="guide-card" href="/grade-guide.html"><span class="gc-title">1〜6年生の学習内容まとめ →</span><span class="gc-desc">6年間のつながりマップつき。どこまでさかのぼればよいかの道順がわかります。</span></a>
+</div>
 <div class="section"><h2>📖 関連する解説ガイド</h2><p style="font-size:12px;color:#64748B;margin-bottom:12px;">つまずきやすい単元は、教え方・練習のコツを解説記事でくわしく紹介しています。</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
 <a href="/division-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➗ わり算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">あまり・筆算のコツ</span></a>
 <a href="/multiplication-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">✖️ かけ算の筆算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">2桁×1桁から</span></a>
@@ -128,14 +213,41 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <a href="/decimal-fraction-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">0.1 小数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">小数点の考え方</span></a>
 <a href="/tanni-kanzan-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📏 重さ・単位</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">g・kgの換算</span></a>
 <a href="/time-calculation.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🕐 時間と秒</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">60進法の計算</span></a>
+<a href="/bunshoudai-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📝 文章題</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">式の立て方</span></a>
+<a href="/geometry-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📐 図形</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">三角形と角</span></a>
+<a href="/reduce-mistakes.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🔍 計算ミス</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">筆算のミスを減らす</span></a>
+<a href="/calculation-power.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">⚡ 計算力</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">速く正確に解く</span></a>
 </div></div>
-<div class="section"><h2>🖊️ 小学3年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学3年生のドリルを始める</a></div>
+<div class="section"><h2>🖊️ 小学3年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学3年生のドリルを始める</a>
+<div class="link-row">
+  <a href="/daily.html">📅 今日のドリル</a>
+  <a href="/how-to-use.html">📘 使い方ガイド</a>
+  <a href="/premium.html">🖨️ 印刷用PDF</a>
+</div></div>
 <div class="section"><h2>❓ よくある質問</h2>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q1. わり算が苦手な3年生にはどう教えればいいですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">わり算は九九を逆に使う計算です。「24は何の段？」という逆引き練習で九九の定着を確認しましょう。あまりのあるわり算は、おはじきを実際に分ける操作で「余り」の意味を体感させると理解が進みます。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q2. 3年生で分数・小数につまずくのはなぜですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">計算のやり方より前に「1/4や0.1がどれくらいの大きさか」というイメージが持てないことが原因です。折り紙を分ける、水のかさを計るなど、量として体験させることが理解の近道です。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q3. 3年生の算数で特に大事な単元はどれですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">わり算と、かけ算・わり算の筆算です。これらは九九が土台になるため、2年生の九九が不安な場合は先に復習を。分数・小数は4年生以降も続く重要単元なので、意味の理解を大切にしましょう。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q4. 3年生でわり算の筆算は習いますか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">3年生で扱うのは、九九を1回使って解けるわり算と、あまりのあるわり算までです。「たてる・かける・ひく・おろす」を繰り返す筆算形式のわり算は4年生から始まります。3年生のうちは、九九の逆引きをすらすらにしておくことが何よりの準備になります。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q5. 小数と分数はどちらでつまずきやすいですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">分数です。小数は「0.1が10こで1」と位取りの延長で理解できますが、分数は1を等分するという新しい見方が必要になります。ケーキや折り紙を等分する、数直線に印をつけるなど、量として見せる場面を増やしましょう。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q6. 3年生から算数が急に難しくなったと感じます。</div><p style="font-size:13px;color:#334155;line-height:1.85;">わり算・分数・小数・重さと、新しい概念が一度に増える学年だからです。ここでのつまずきは、九九の定着不足にさかのぼることが多いです。3年生の内容を追いかける前に、九九をランダムで即答できるか確認してみてください。</p></div>
 </div>
 <div class="section"><h2>🚀 次の学年への準備</h2><div class="next-box"><p>4年生では大きな数（億・兆）、がい数、わり算の筆算、面積などへ進みます。3年生のわり算と分数・小数の基礎を固めておくことが、スムーズな進級につながります。</p></div></div>
+<div class="section"><h2>🔢 ほかの学年を見る</h2>
+<div class="grade-nav">
+  <a href="/grade-1.html">1年生</a>
+  <a href="/grade-2.html">2年生</a>
+  <a href="/grade-3.html" class="current">3年生</a>
+  <a href="/grade-4.html">4年生</a>
+  <a href="/grade-5.html">5年生</a>
+  <a href="/grade-6.html">6年生</a>
+</div>
+<div class="link-row">
+  <a href="/grade-guide.html">📋 学年別まとめ</a>
+  <a href="/sansu-onayami-guide.html">💬 算数のお悩み別</a>
+  <a href="/">🏠 トップへ</a>
+</div>
+</div>
 <div class="nav-row"><a href="/grade-2.html" class="nav-btn">← 2年生</a><a href="/grade-guide.html" class="nav-btn" style="color:var(--text-muted);">一覧へ</a><a href="/grade-4.html" class="nav-btn">→ 4年生</a></div>
 </div>
 <footer>
