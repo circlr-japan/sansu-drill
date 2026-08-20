@@ -42,6 +42,31 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .mistake-box{background:#FEF2F2;border-left:4px solid #EF4444;border-radius:0 12px 12px 0;padding:14px;}
 .mistake-box h3{font-size:13px;font-weight:700;color:#B91C1C;margin-bottom:6px;}
 .mistake-box p{font-size:13px;color:#991B1B;line-height:1.7;}
+.answer-box{background:#FEF2F2;border:2px solid #FCA5A5;border-radius:12px;padding:16px 18px;margin:4px 0 12px;}
+.answer-box p{font-size:13px;color:#334155;line-height:1.8;margin-bottom:6px;}
+.answer-box p:last-child{margin-bottom:0;}
+.cur-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:4px 0 12px;font-size:12px;}
+.cur-table th,.cur-table td{border:1px solid var(--border);padding:8px 9px;text-align:left;vertical-align:top;background:#fff;line-height:1.7;}
+.cur-table th{background:var(--bg-light);color:var(--color);font-weight:700;}
+.cur-table tr>*:nth-child(1){width:19%;}
+.cur-table tr>*:nth-child(2){width:48%;}
+.cur-table tr>*:nth-child(3){width:33%;}
+.check-item{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--border);}
+.check-item:last-child{border-bottom:none;}
+.check-box{flex-shrink:0;width:17px;height:17px;border:2px solid var(--color);border-radius:4px;margin-top:3px;}
+.check-text{font-size:13px;color:#334155;line-height:1.7;}
+.check-text b{color:var(--color);}
+.check-link{display:inline-block;font-size:11px;color:#1D4ED8;text-decoration:none;margin-left:2px;white-space:nowrap;}
+.cur-table a{color:#1D4ED8;text-decoration:none;border-bottom:1px dotted #93C5FD;}
+.note{font-size:12px;color:var(--text-muted);line-height:1.75;}
+.guide-card{display:block;background:linear-gradient(135deg,#FFFDF5,#FFF1CE);border:1.5px solid var(--border-c);border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;}
+.guide-card .gc-title{display:block;font-size:14px;font-weight:700;color:var(--color);margin-bottom:4px;}
+.guide-card .gc-desc{display:block;font-size:12px;color:#475569;line-height:1.7;}
+.link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.link-row a{flex:1 1 auto;text-align:center;padding:10px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:10px;font-size:12px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
+.grade-nav a{padding:11px 6px;text-align:center;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav a.current{background:var(--color);border-color:var(--color);color:#fff;}
 .next-box{background:var(--bg-light);border:1.5px solid var(--border-c);border-radius:12px;padding:14px;}
 .next-box h3{font-size:13px;font-weight:700;color:var(--color);margin-bottom:6px;}
 .next-box p{font-size:13px;color:#334155;line-height:1.7;}
@@ -89,6 +114,30 @@ footer a{color:#94A3B8;text-decoration:underline;}
         "@type": "Answer",
         "text": "「割合」と「分数の計算」です。どちらも中学数学に直結する重要単元。特に割合は6年生の比、中学の関数へとつながるため、5年生のうちに意味からしっかり理解しておくことが大切です。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "割合はいつ習いますか？なぜあれほど難しいのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3学期に学習します。難しいのは、長さや重さのような目に見える量ではなく「量と量の関係」を扱うからです。線分図や数直線で「もとにする量＝1」を固定して見せると、くらべる量との関係がつかみやすくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "速さの公式（み・は・じ）を覚えさせるべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "公式の暗記に頼ると、少しひねられた問題で崩れます。速さは「1時間あたりに進む道のり」という単位量あたりの考え方そのものなので、そちらで統一して教えるほうが、5年生の他の単元とも一貫し応用も利きます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5年生でつまずいたら、どこまで戻ればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "割合でつまずいたなら4年生の小数のかけ算・わり算と、3年生のわり算の意味まで戻ります。分数の計算でつまずいたなら4年生の分数（仮分数・帯分数）です。5年生の内容を追いかけるより、原因の学年に戻るほうが結果的に早く回復します。"
+      }
     }
   ]
 }
@@ -104,12 +153,32 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <div class="content">
 <div class="section"><p style="font-size:14px;color:#334155;line-height:1.9;">小学5年生の算数は、多くの子が「難しくなった」と感じる学年です。異分母の分数の計算、通分・約分、小数のかけ算わり算、そして最難関の「割合」が登場します。倍数・約数、面積、体積、平均、速さなど、中学へつながる重要単元が目白押しです。</p></div>
+<div class="section"><h2>🎯 【直答】小学5年生の算数では何を習う？</h2>
+<div class="answer-box">
+  <p><strong>割合・分数のたし算ひき算（異分母）・小数のかけ算わり算</strong>が中心です。ほかに倍数と約数、平均、単位量あたりの大きさ、速さ、三角形や台形の面積、体積、円周、合同、正多角形、帯グラフ・円グラフを学びます。</p>
+  <p>5年生は<strong>小学算数で最も難度が高い学年</strong>。最大の山場は3学期の<strong>割合</strong>で、「くらべる量・もとにする量・割合」の区別がつかないまま進むと、6年生の比・中学の関数まで影響します。</p>
+</div>
+<p class="note">下の「学習内容」で単元ごとの中身を、「学期別カリキュラム」でいつ習うかを確認できます。</p>
+</div>
 <div class="section"><h2>📚 学習内容</h2>
 <div class="topic-card"><h3>分数のたし算ひき算（異分母）</h3><p>分母のちがう分数の計算です。通分してから計算するのが基本。約分・通分が正確にできることが前提になります。</p></div>
 <div class="topic-card"><h3>倍数・約数</h3><p>公倍数・公約数、最小公倍数・最大公約数を学びます。通分・約分の土台であり、分数計算の理解に直結します。</p></div>
 <div class="topic-card"><h3>割合・百分率</h3><p>5年生最難関の単元。「くらべる量・もとにする量・割合」の関係をつかむのがカギ。百分率（％）や歩合とあわせて学びます。</p></div>
-<div class="topic-card"><h3>小数のかけ算・わり算</h3><p>小数点の位置を正しく処理する計算です。「かけ算は小数点以下の桁数の合計」などのルールを確実に身につけます。</p></div>
+<div class="topic-card"><h3>小数のかけ算・わり算</h3><p>小数点の位置を正しく処理する計算です。「かけ算は小数点以下の桁数の合計」などのルールをここで身につけます。</p></div>
 <div class="topic-card"><h3>面積・体積・平均・速さ</h3><p>三角形や平行四辺形の面積、立体の体積、平均の求め方、速さ（速さ＝道のり÷時間）など、公式を使いこなす学習が増えます。</p></div>
+<div class="topic-card"><h3>単位量あたりの大きさ</h3><p>人口密度や「1Lあたり何km走るか」のように、<strong>そろえて比べる</strong>考え方です。速さもこの一種で、割合と並ぶ5年生の重要単元。「1あたり」に直すという発想がすべての基本になります。</p></div>
+<div class="topic-card"><h3>合同な図形と図形の角</h3><p>ぴったり重なる図形（合同）の性質と、三角形・多角形の内角の和を学びます。三角形の内角の和が180°であることは、中学の図形証明の出発点です（<a href="/geometry-guide.html">図形の基礎</a>）。</p></div>
+<div class="topic-card"><h3>正多角形と円周</h3><p>正多角形の性質と、円周＝直径×3.14を学びます。6年生の円の面積へつながる単元で、<strong>円周は直径から</strong>という点を押さえておくと、6年生で公式を取り違えません（<a href="/menseki-enza.html">円周と円の面積</a>）。</p></div>
+<div class="topic-card"><h3>帯グラフ・円グラフ</h3><p>割合を目で見て比べるグラフです。割合の理解が曖昧だと目もりが読めないため、パーセントの計算とセットで練習しましょう（<a href="/percentage-guide.html">割合と百分率</a>）。</p></div>
+</div>
+<div class="section"><h2>🗓️ 学期別カリキュラム（いつ何を習う？）</h2>
+<table class="cur-table">
+  <tr><th>時期</th><th>おもな単元</th><th>家庭で見ておくこと</th></tr>
+  <tr><th>1学期<br>4〜7月</th><td>整数と小数／体積／比例／<strong><a href="/decimal-fraction-guide.html">小数のかけ算・わり算</a></strong>／合同な図形</td><td>×0.8で答えが小さくなる理由を説明できるか</td></tr>
+  <tr><th>2学期<br>9〜12月</th><td>図形の角／<a href="/baisuu-yakusuu-guide.html">偶数と奇数・倍数と約数</a>／分数と小数／<strong><a href="/fractions-guide.html">分数のたし算ひき算（通分）</a></strong>／平均／単位量あたりの大きさ</td><td>約分・通分のミス、最小公倍数の求め方</td></tr>
+  <tr><th>3学期<br>1〜3月</th><td>図形の面積（三角形・平行四辺形・台形）／<strong><a href="/percentage-guide.html">割合・百分率とグラフ</a></strong>／正多角形と円周／角柱と円柱／速さ</td><td>「もとにする量」がどれかを言えるか</td></tr>
+</table>
+<p class="note">※単元の順序と名称は教科書会社によって多少前後します。目安としてご覧ください。</p>
 </div>
 <div class="section"><h2>⚠️ つまずきやすいポイントと対策</h2>
 <div class="mistake-box" style="margin-bottom:10px;"><h3>割合が全く分からなくなる</h3><p>「もとにする量」がどれかを見つけられないと解けません。「〜の何%」「〜に対して」がヒント。線分図や表に整理してから式を立てましょう。</p></div>
@@ -120,21 +189,64 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="tip-item"><div class="tip-num">2</div><div><div class="tip-title">通分・約数はセットで練習</div><div class="tip-body">分数計算の前に、倍数・約数をしっかり固めておくと計算がぐっと安定します。</div></div></div>
 <div class="tip-item"><div class="tip-num">3</div><div><div class="tip-title">日常の割合に触れる</div><div class="tip-body">セールの「30%OFF」など、生活の中の割合を一緒に計算すると実感が持てます。</div></div></div>
 </div>
+<div class="section"><h2>✅ 5年生修了チェックリスト</h2>
+<p class="note" style="margin-bottom:8px;">6年生に上がる前に、次の8項目を確認しましょう。6年生の分数のかけ算わり算・比は、ここが土台になります。各項目の青いリンクが、つまずいたときの戻り先です。</p>
+<div class="check-item"><div class="check-box"></div><div class="check-text">通分・約分が正確にできる<a class="check-link" href="/fractions-guide.html">→ 分数の計算</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">最小公倍数・最大公約数を求められる<a class="check-link" href="/baisuu-yakusuu-guide.html">→ 倍数と約数</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">小数のかけ算・わり算で小数点の位置を間違えない<a class="check-link" href="/decimal-fraction-guide.html">→ 小数の計算</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">「くらべる量・もとにする量・割合」を式で言える<a class="check-link" href="/percentage-guide.html">→ 割合の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">百分率⇔小数の変換（0.35＝35%）ができる<a class="check-link" href="/grade-5-tips.html">→ 5年生 完全ガイド</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">三角形・平行四辺形・台形の面積公式を使い分けられる<a class="check-link" href="/geometry-guide.html">→ 面積の公式</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">速さ・道のり・時間の関係を式にできる<a class="check-link" href="/bunshoudai-guide.html">→ 文章題の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">単位量あたりの大きさ（人口密度など）で比べられる<a class="check-link" href="/grade-5-tips.html">→ 単位量あたり</a></div></div>
+</div>
 <div class="section"><h2>👨‍👩‍👧 保護者の関わり方</h2><p style="font-size:13px;color:#334155;line-height:1.85;">5年生は算数の得意・苦手が分かれやすい学年です。特に割合でつまずく子が多いので、「もとにする量は何か」を一緒に探す関わりが効果的です。分からなくなったら倍数・約数や4年生の小数計算まで戻ることをためらわないでください。</p></div>
+<div class="section"><h2>📗 もっとくわしく知りたい方へ</h2>
+<a class="guide-card" href="/grade-5-tips.html"><span class="gc-title">小学5年生の算数 完全ガイド →</span><span class="gc-desc">割合の教え方、通分・約分のつまずきサイン早見表、時期別の見取り図まで解説しています。</span></a>
+<a class="guide-card" href="/percentage-guide.html"><span class="gc-title">割合・百分率の解説 →</span><span class="gc-desc">5年生最大の山場。「くらべる量・もとにする量」の見分け方を、線分図と例題で整理しています。</span></a>
+<a class="guide-card" href="/sansu-onayami-guide.html"><span class="gc-title">算数のお悩み別ガイド →</span><span class="gc-desc">「文章題が苦手」「割合だけ極端にできない」など、症状から原因と対処法を探せます。</span></a>
+</div>
 <div class="section"><h2>📖 関連する解説ガイド</h2><p style="font-size:12px;color:#64748B;margin-bottom:12px;">つまずきやすい単元は、教え方・練習のコツを解説記事でくわしく紹介しています。</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
 <a href="/percentage-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">％ 割合</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くらべる量・もとにする量</span></a>
 <a href="/fractions-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">½ 分数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">通分・約分・計算</span></a>
 <a href="/baisuu-yakusuu-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🔢 倍数・約数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">最大公約数・最小公倍数</span></a>
 <a href="/decimal-fraction-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">0.1 小数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">かけ算・わり算</span></a>
 <a href="/geometry-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📐 面積・体積</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">三角形・立体の公式</span></a>
+<a href="/bunshoudai-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📝 文章題</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">速さ・割合の式</span></a>
+<a href="/reduce-mistakes.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🔍 計算ミス</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">通分・約分のミス</span></a>
+<a href="/tanni-kanzan-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📏 単位換算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">面積・体積の単位</span></a>
+<a href="/test-prep.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📊 テスト対策</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">単元テストの準備</span></a>
 </div></div>
-<div class="section"><h2>🖊️ 小学5年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学5年生のドリルを始める</a></div>
+<div class="section"><h2>🖊️ 小学5年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学5年生のドリルを始める</a>
+<div class="link-row">
+  <a href="/daily.html">📅 今日のドリル</a>
+  <a href="/how-to-use.html">📘 使い方ガイド</a>
+  <a href="/premium.html">🖨️ 印刷用PDF</a>
+</div></div>
 <div class="section"><h2>❓ よくある質問</h2>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q1. 5年生の割合がどうしても理解できません。</div><p style="font-size:13px;color:#334155;line-height:1.85;">まず「もとにする量」がどれかを見つけることが最重要です。「〜の何%」「〜に対して」という表現がヒント。公式を暗記する前に、線分図でもとにする量を1（100%）として見せると、量の関係がつかめます。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q2. 異分母の分数計算でつまずくのはなぜですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">通分（分母をそろえる）が正確にできないことが主な原因です。通分には最小公倍数、約分には最大公約数が必要なので、倍数・約数の単元に戻って基礎を固めると計算が安定します。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q3. 5年生の算数で最も重要な単元はどれですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">「割合」と「分数の計算」です。どちらも中学数学に直結する重要単元。特に割合は6年生の比、中学の関数へとつながるため、5年生のうちに意味からしっかり理解しておくことが大切です。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q4. 割合はいつ習いますか？なぜあれほど難しいのですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">3学期に学習します。難しいのは、長さや重さのような目に見える量ではなく「量と量の関係」を扱うからです。線分図や数直線で「もとにする量＝1」を固定して見せると、くらべる量との関係がつかみやすくなります。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q5. 速さの公式（み・は・じ）を覚えさせるべきですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">公式の暗記に頼ると、少しひねられた問題で崩れます。速さは「1時間あたりに進む道のり」という単位量あたりの考え方そのものなので、そちらで統一して教えるほうが、5年生の他の単元とも一貫し応用も利きます。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q6. 5年生でつまずいたら、どこまで戻ればいいですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">割合でつまずいたなら4年生の小数のかけ算・わり算と、3年生のわり算の意味まで戻ります。分数の計算でつまずいたなら4年生の分数（仮分数・帯分数）です。5年生の内容を追いかけるより、原因の学年に戻るほうが結果的に早く回復します。</p></div>
 </div>
 <div class="section"><h2>🚀 次の学年への準備</h2><div class="next-box"><p>6年生では分数のかけ算わり算、比、比例・反比例、円の面積、立体の体積、データの活用へ進みます。5年生の割合と分数計算が土台になるため、ここを固めておくことが重要です。</p></div></div>
+<div class="section"><h2>🔢 ほかの学年を見る</h2>
+<div class="grade-nav">
+  <a href="/grade-1.html">1年生</a>
+  <a href="/grade-2.html">2年生</a>
+  <a href="/grade-3.html">3年生</a>
+  <a href="/grade-4.html">4年生</a>
+  <a href="/grade-5.html" class="current">5年生</a>
+  <a href="/grade-6.html">6年生</a>
+</div>
+<div class="link-row">
+  <a href="/grade-guide.html">📋 学年別まとめ</a>
+  <a href="/sansu-onayami-guide.html">💬 算数のお悩み別</a>
+  <a href="/">🏠 トップへ</a>
+</div>
+</div>
 <div class="nav-row"><a href="/grade-4.html" class="nav-btn">← 4年生</a><a href="/grade-guide.html" class="nav-btn" style="color:var(--text-muted);">一覧へ</a><a href="/grade-6.html" class="nav-btn">→ 6年生</a></div>
 </div>
 <footer>
