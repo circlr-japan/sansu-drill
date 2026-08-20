@@ -613,12 +613,8 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       <div class="pdf-section-sub" style="margin-bottom:0;">学年・難易度・問題数を選んで「PDF保存」を押すと、<strong>問題ページのみ</strong>がダウンロードされます。<br><span style="color:#7C3AED;font-size:11px;">💡 <a href="/premium.html" style="color:#7C3AED;font-weight:700;">解答付き・名前欄・日付入り（100問）</a>は100問チャレンジで。</span></div>
       <div id="pdfCountBadge" style="font-size:11px;font-weight:700;color:#64748B;background:#FBF3E4;border-radius:99px;padding:3px 10px;white-space:nowrap;flex-shrink:0;">本日 残り 3/3 回</div>
     </div>
-    <div id="pdfLimitBanner" style="display:none;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FCD34D;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:4px;">⚠️ 本日の無料PDF生成（3回）を使い切りました</div>
-      <div style="font-size:12px;color:#A16207;line-height:1.7;">明日0時にリセットされます。<br>
-        <a href="/premium.html" style="color:#D97706;font-weight:700;">100問チャレンジ（¥100）</a>なら回数制限なしで何度でも生成できます。</div>
-      <a href="/premium.html" style="display:block;margin-top:8px;padding:10px;background:linear-gradient(135deg,#F59E0B,#FBBF24);color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;">100問チャレンジを見る →</a>
-    </div>
+    <!-- PDF回数制限バナー：中身はJS側で生成する（初期HTMLに状態表示を出さないため） -->
+    <div id="pdfLimitBanner" style="display:none;background:linear-gradient(135deg,#FFF7ED,#FFFBEB);border:1.5px solid #FCD34D;border-radius:12px;padding:12px 14px;margin-bottom:10px;"></div>
 
     <!-- 学年 -->
     <div class="pdf-row-label">① 学年</div>
@@ -692,7 +688,21 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">出題される内容は、たし算・ひき算・くり上がり／くり下がり・九九・わり算・分数・小数・割合など、学年ごとの指導内容に対応しています。たとえば1年生では10までのたし算から、6年生では分数の計算や割合まで、それぞれの学年でつまずきやすいポイントを含めて出題します。</p>
     <h3 style="font-size:15px;font-weight:700;color:#1E293B;margin:18px 0 8px;">タイムアタックや九九チャレンジも</h3>
     <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">通常のドリルに加えて、制限時間内に何問解けるかを競う「九九チャレンジ」や、解いた記録を全国ランキングに登録する機能もあります。ゲーム感覚で取り組めるので、「算数はつまらない」と感じているお子さんの入り口としてもおすすめです。紙で練習したいときは、問題プリントをPDFで保存することもできます。</p>
-    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:8px;">「どう教えたらいいか分からない」という保護者の方は、<a href="/sansu-onayami-guide.html" style="color:#2563EB;">算数のお悩み解決ガイド</a>や各単元の<a href="/index.html" style="color:#2563EB;">解説記事</a>もあわせてご覧ください。つまずきの原因と、家庭でできる具体的な対策をまとめています。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:8px;">「どう教えたらいいか分からない」という保護者の方は、<a href="/sansu-onayami-guide.html" style="color:#2563EB;">算数のお悩み解決ガイド</a>や<a href="/grade-guide.html" style="color:#2563EB;">学年別の学習内容ガイド</a>もあわせてご覧ください。つまずきの原因と、家庭でできる具体的な対策をまとめています。</p>
+  </section>
+
+  <!-- 関連する学習記事（初期HTMLに含める） -->
+  <section style="padding:8px 16px 20px;">
+    <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:6px;">つまずいたときに読む解説記事</h2>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">ドリルで間違いが続いた単元は、解説記事で考え方を確認してから、もう一度ドリルに戻ると取り組みやすくなります。</p>
+    <div style="display:grid;gap:8px;">
+      <a href="/tasizan-kuriagari.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">➕ くり上がりのあるたし算（1・2年生）</span></a>
+      <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">✖️ 九九の覚え方とつまずきどころ（2年生）</span></a>
+      <a href="/division-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">➗ わり算の考え方と筆算（3・4年生）</span></a>
+      <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">🍰 分数の計算（4〜6年生）</span></a>
+      <a href="/percentage-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">📊 割合・百分率（5年生）</span></a>
+      <a href="/reduce-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">✏️ 計算ミスをなくす5つの方法（1週間ミス記録表つき）</span></a>
+    </div>
   </section>
 
   <footer>
@@ -704,6 +714,10 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 </footer>
 </div>
 
+<!-- 操作後に生成する画面（カウントダウン／出題／採点／成績／ランキング登録）。
+     初期HTMLには出力せず、スクリプト側で必要になった時点でDOMへ展開します。 -->
+<div id="appStates"></div>
+<template id="tpl-appStates">
 <!-- ========== 九九カウントダウン ========== -->
 <div id="taCountdownPage" class="page">
   <div class="countdown-wrap">
@@ -1007,6 +1021,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   <a href="/about.html">サイトについて</a>
 </footer>
 </div>
+</template>
 
 <script>
 // ============================================================
@@ -1279,6 +1294,18 @@ function getOverallRank(sr,tr){
   const r = o[Math.max(0,idx)];
   return{rank:r, cls:RANK_META[r].cls, msg:RANK_META[r].overallMsg};
 }
+
+// ============================================================
+// 操作後に生成する画面の展開
+//   結果画面・出題画面などは初期HTMLに含めず <template> で保持している。
+//   このスクリプトはDOM解析後・すべての機能コードより前に実行されるため、
+//   以降のコードから見た要素の有無・順序は展開前と同一になる。
+// ============================================================
+(function materializeAppStates(){
+  var tpl = document.getElementById('tpl-appStates');
+  var slot = document.getElementById('appStates');
+  if(tpl && slot){ slot.replaceWith(tpl.content.cloneNode(true)); }
+})();
 
 // ============================================================
 // ページ遷移
@@ -1966,7 +1993,14 @@ function _updatePdfBtn() {
     btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-5-5m5 5l5-5M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> 本日の無料PDF生成回数（${PDF_DAILY_LIMIT}回）に達しました`;
     // 制限バナーを表示
     const limitEl = document.getElementById('pdfLimitBanner');
-    if (limitEl) limitEl.style.display = 'block';
+    if (limitEl) {
+      limitEl.innerHTML =
+        `<div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:4px;">⚠️ 本日の無料PDF生成（${PDF_DAILY_LIMIT}回）を使い切りました</div>`
+        + `<div style="font-size:12px;color:#A16207;line-height:1.7;">明日0時にリセットされます。<br>`
+        + `<a href="/premium.html" style="color:#D97706;font-weight:700;">100問チャレンジ（¥100）</a>なら回数制限なしで何度でも生成できます。</div>`
+        + `<a href="/premium.html" style="display:block;margin-top:8px;padding:10px;background:linear-gradient(135deg,#F59E0B,#FBBF24);color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;">100問チャレンジを見る →</a>`;
+      limitEl.style.display = 'block';
+    }
     return;
   }
   if (!selectedPdfGrade) {

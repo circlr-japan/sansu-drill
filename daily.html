@@ -324,7 +324,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   <div class="header">
   <a href="/" style="display:flex;align-items:center;gap:7px;text-decoration:none;margin-bottom:12px;width:fit-content;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
     <div class="header-row">
-      <a href="/index.html">← トップ</a>
+      <a href="/">← トップ</a>
       <span class="header-title">📅 今日のドリル</span>
       <span class="header-date" id="headerDate"></span>
     </div>
@@ -337,9 +337,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <!-- 今日の完了バナー -->
     <div id="doneBanner" class="done-today" style="display:none;">
       <div class="dicon">🎉</div>
-      <h3 id="doneTitle">今日のドリル完了！</h3>
+      <h3 id="doneTitle"></h3>
       <p id="doneMsg"></p>
     </div>
+
+    <!-- 今日のドリルとは -->
+    <section style="background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:16px 18px;margin-bottom:14px;">
+      <h2 style="font-size:16px;font-weight:700;color:#122A64;margin-bottom:8px;">今日のドリルとは</h2>
+      <p style="font-size:13.5px;color:#334155;line-height:1.9;margin-bottom:10px;">「今日のドリル」は、その日の分の計算問題40問を1セットにした、毎日続けるための無料ドリルです。学年と難易度を選んで始めると、その学年の学習内容に沿った問題が出題され、解き終わるとその場で採点されます。問題は日ごとに作られるので、同じ問題の繰り返しにはなりません。</p>
+      <p style="font-size:13.5px;color:#334155;line-height:1.9;margin:0;">取り組んだ日はカレンダーにスタンプがつきます。印刷もアプリのインストールも不要で、スマホ・タブレット・パソコンのブラウザだけで使えます。</p>
+    </section>
 
     <!-- 設定カード -->
     <div class="setup-card">
@@ -409,9 +416,25 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
       <h3>📈 最近の学習履歴</h3>
       <div id="histList"></div>
     </div>
+
+    <!-- 毎日続けるメリット -->
+    <section style="background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:16px 18px;margin-top:14px;">
+      <h2 style="font-size:16px;font-weight:700;color:#122A64;margin-bottom:8px;">毎日続けるメリット</h2>
+      <ul style="font-size:13.5px;color:#334155;line-height:1.9;padding-left:20px;margin-bottom:10px;">
+        <li><strong>量より頻度：</strong>1回40問なら10分前後。長時間まとめて解くより、短い時間を毎日のほうが取りかかりやすくなります</li>
+        <li><strong>基礎計算が手に慣れる：</strong>九九や1桁の計算を考えずに出せるようになると、文章題や筆算に使える余力が増えます</li>
+        <li><strong>苦手が見つかる：</strong>毎日同じ形式で解くと、間違いが出る単元が偏って見えてきます。そこだけ<a href="/reduce-mistakes.html" style="color:#2563EB;">ミス記録表</a>で追いかけると絞り込めます</li>
+        <li><strong>続いたことが目に見える：</strong>カレンダーのスタンプが並ぶこと自体が、次の日に取りかかる理由になることがあります</li>
+      </ul>
+      <p style="font-size:13.5px;color:#334155;line-height:1.9;margin:0;">続かない日があっても、翌日また始めれば大丈夫です。学年の学習内容は<a href="/grade-guide.html" style="color:#2563EB;">学年別ガイド</a>で確認できます。</p>
+    </section>
   </div>
 </div>
 
+<!-- 操作後に生成する画面（出題・採点・成績・解答一覧）。
+     初期HTMLには出力せず、スクリプト側でDOMへ展開します。 -->
+<div id="appStates"></div>
+<template id="tpl-appStates">
 <!-- ══════════════ ドリルページ ══════════════ -->
 <div class="page" id="drillPage">
   <div class="drill-header">
@@ -487,14 +510,27 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     </button>
     <button class="btn-hist-back" id="btnHistBack" style="display:none;" onclick="closeHistoryView()">← カレンダーに戻る</button>
     <button class="btn-back" id="btnBack" onclick="showPage('setupPage')">設定・カレンダーに戻る</button>
-    <a href="/index.html" id="btnTop" style="display:block;text-align:center;padding:14px;color:var(--text-muted);font-size:13px;font-weight:600;text-decoration:none;">トップへ戻る</a>
+    <a href="/" id="btnTop" style="display:block;text-align:center;padding:14px;color:var(--text-muted);font-size:13px;font-weight:600;text-decoration:none;">トップへ戻る</a>
   </div>
 </div>
+</template>
 
 <!-- トースト通知 -->
 <div id="toast"></div>
 
 <script>
+// ============================================================
+// 操作後に生成する画面の展開
+//   出題・採点・成績画面は初期HTMLに含めず <template> で保持している。
+//   DOM解析後・機能コードより前に実行するため、以降のコードから見た
+//   要素の有無・順序は展開前と同一。
+// ============================================================
+(function materializeAppStates(){
+  var tpl = document.getElementById('tpl-appStates');
+  var slot = document.getElementById('appStates');
+  if(tpl && slot){ slot.replaceWith(tpl.content.cloneNode(true)); }
+})();
+
 // ============================================================
 // 問題生成
 // ============================================================
@@ -1198,9 +1234,8 @@ async function loadHistory(containerId){
 </script>
 
 <section style="max-width:680px;margin:0 auto;padding:24px 18px 8px;">
-  <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:12px;">「毎日ドリル」とは — 続けることを仕組みにする無料の計算習慣</h2>
-  <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">毎日ドリルは、その日ごとに用意された算数40問に挑戦できる無料の学習ページです。学年（小学1〜6年生）と難易度を選ぶと、たし算・ひき算・九九・わり算・分数・小数などから、その学年の範囲に合わせた問題が自動で出題されます。答えを入力するとその場で採点され、終わったあとに解答を確認できます。</p>
-  <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">算数の力は、長い時間まとめて練習するより、<strong>毎日5〜10分を続けること</strong>で伸びやすいと言われています。そこで毎日ドリルでは、取り組んだ日にカレンダーへスタンプがたまる仕組みを用意しました。「今日もできた」という達成感が目に見えることで、お子さん自身が続けたくなることを目指しています。カレンダーはこの端末に記録されるため、何日連続で取り組めたかもひと目で分かります。</p>
+  <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:12px;">毎日ドリルの続け方と、家庭での使い方</h2>
+  <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">計算の力は、長い時間まとめて練習するより、<strong>毎日5〜10分を続けるほう</strong>が取りかかりやすい、という声をよく聞きます。そこで毎日ドリルでは、取り組んだ日にカレンダーへスタンプがたまる仕組みを用意しました。「今日もできた」という達成感が目に見えることで、お子さん自身が続けたくなることを目指しています。カレンダーはこの端末に記録されるため、何日連続で取り組めたかもひと目で分かります。</p>
   <h3 style="font-size:15px;font-weight:700;color:#1E293B;margin:18px 0 8px;">こんな使い方がおすすめです</h3>
   <ul style="font-size:14px;color:#334155;line-height:1.9;margin:0 0 12px;padding-left:1.2em;">
     <li>朝の支度前や夕食後など、<strong>時間を決めて習慣化する</strong></li>
