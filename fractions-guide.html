@@ -45,6 +45,9 @@ ul li,ol li{margin-bottom:8px;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -162,6 +165,52 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <h3>「なんで2/5じゃないの？」への答え方</h3>
 <p>分母どうし・分子どうしを足して「1/2＋1/3＝2/5」としてしまうのは、分数あるあるの筆頭です。このとき「やり方が違う」と手順だけ直すのではなく、図で見せましょう。ピザ半分（1/2）と3分の1（1/3）を合わせたら、明らかに半分より大きいのに、2/5は半分より小さい——絵にすると「おかしい」と子ども自身が気づきます。<strong>分母は「切り方（単位）」なので、切り方をそろえないと足せない</strong>。これが通分の意味です。</p>
+
+<figure class="fig" data-fig="tsuubun">
+<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figFracT figFracD">
+  <title id="figFracT">2分の1と3分の1を通分して6分の5を求める図</title>
+  <desc id="figFracD">同じ長さのテープを2等分・3等分・6等分し、分母をそろえると足せるようになることを示しています。</desc>
+  <rect x="0" y="0" width="420" height="300" fill="#FFFDF5" rx="12"/>
+  <text x="210" y="30" font-size="16" font-weight="700" fill="#122A64" text-anchor="middle">分母がちがうと、そのままでは足せない</text>
+  <text x="34" y="66" font-size="15" font-weight="700" fill="#1E3A8A">1/2</text>
+  <rect x="84" y="50" width="300" height="26" rx="4" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="84.0" y="50" width="150.0" height="26" fill="#DBEAFE"/>
+  <line x1="234.0" y1="50" x2="234.0" y2="76" stroke="#93C5FD" stroke-width="1.2"/>
+  <rect x="84" y="50" width="300" height="26" rx="4" fill="none" stroke="#475569" stroke-width="1.8"/>
+  <text x="34" y="112" font-size="15" font-weight="700" fill="#B45309">1/3</text>
+  <rect x="84" y="96" width="300" height="26" rx="4" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="84.0" y="96" width="100.0" height="26" fill="#FEF3C7"/>
+  <line x1="184.0" y1="96" x2="184.0" y2="122" stroke="#FCD34D" stroke-width="1.2"/>
+  <line x1="284.0" y1="96" x2="284.0" y2="122" stroke="#FCD34D" stroke-width="1.2"/>
+  <rect x="84" y="96" width="300" height="26" rx="4" fill="none" stroke="#475569" stroke-width="1.8"/>
+  <text x="210" y="150" font-size="13" fill="#64748B" text-anchor="middle">▼ どちらも6等分にそろえる（通分）</text>
+  <text x="34" y="186" font-size="15" font-weight="700" fill="#1E3A8A">3/6</text>
+  <rect x="84" y="170" width="300" height="26" rx="4" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="84.0" y="170" width="50.0" height="26" fill="#DBEAFE"/>
+  <rect x="134.0" y="170" width="50.0" height="26" fill="#DBEAFE"/>
+  <rect x="184.0" y="170" width="50.0" height="26" fill="#DBEAFE"/>
+  <line x1="134.0" y1="170" x2="134.0" y2="196" stroke="#93C5FD" stroke-width="1.2"/>
+  <line x1="184.0" y1="170" x2="184.0" y2="196" stroke="#93C5FD" stroke-width="1.2"/>
+  <line x1="234.0" y1="170" x2="234.0" y2="196" stroke="#93C5FD" stroke-width="1.2"/>
+  <line x1="284.0" y1="170" x2="284.0" y2="196" stroke="#93C5FD" stroke-width="1.2"/>
+  <line x1="334.0" y1="170" x2="334.0" y2="196" stroke="#93C5FD" stroke-width="1.2"/>
+  <rect x="84" y="170" width="300" height="26" rx="4" fill="none" stroke="#475569" stroke-width="1.8"/>
+  <text x="34" y="232" font-size="15" font-weight="700" fill="#B45309">2/6</text>
+  <rect x="84" y="216" width="300" height="26" rx="4" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="84.0" y="216" width="50.0" height="26" fill="#FEF3C7"/>
+  <rect x="134.0" y="216" width="50.0" height="26" fill="#FEF3C7"/>
+  <line x1="134.0" y1="216" x2="134.0" y2="242" stroke="#FCD34D" stroke-width="1.2"/>
+  <line x1="184.0" y1="216" x2="184.0" y2="242" stroke="#FCD34D" stroke-width="1.2"/>
+  <line x1="234.0" y1="216" x2="234.0" y2="242" stroke="#FCD34D" stroke-width="1.2"/>
+  <line x1="284.0" y1="216" x2="284.0" y2="242" stroke="#FCD34D" stroke-width="1.2"/>
+  <line x1="334.0" y1="216" x2="334.0" y2="242" stroke="#FCD34D" stroke-width="1.2"/>
+  <rect x="84" y="216" width="300" height="26" rx="4" fill="none" stroke="#475569" stroke-width="1.8"/>
+  <rect x="84" y="256" width="300" height="34" rx="9" fill="#F0FDF4" stroke="#22C55E" stroke-width="2"/>
+  <text x="234" y="279" font-size="16" font-weight="700" fill="#14532D" text-anchor="middle">3/6 ＋ 2/6 ＝ 5/6</text>
+  <text x="34" y="279" font-size="13" fill="#475569">合計</text>
+</svg>
+<figcaption>図：1/2＋1/3の通分。1マスの大きさがそろって初めて足せる、というのが通分の理由です。</figcaption>
+</figure>
 
 <h2>帯分数と仮分数（4年生）</h2>
 <table class="cv-table">
