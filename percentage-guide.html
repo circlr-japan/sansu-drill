@@ -48,6 +48,12 @@ ul li,ol li{margin-bottom:8px;}
 .fig{margin:20px 0;}
 .fig svg{width:100%;height:auto;display:block;}
 .fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -161,6 +167,59 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </svg>
 <figcaption>図：割合の線分図。右端に「もと＝1（100％）」と書いてから、左側にくらべる量を取ると、かけるかわるかで迷いにくくなります。</figcaption>
 </figure>
+
+<h2>％の量感を育てる——身のまわりを0〜100で言ってみる</h2>
+<p>％の計算でつまずく前に、そもそも<strong>「40％ってどれくらい？」という感覚</strong>がない子がいます。これは計算練習では育ちません。育つのは、身のまわりのものを0〜100の目もりにのせて言葉にしたときです。</p>
+<figure class="fig" data-fig="pct-monosashi">
+<svg viewBox="0 0 420 336" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figPct2T figPct2D">
+  <title id="figPct2T">0％から100％のものさしを日常の場面で表した図</title>
+  <desc id="figPct2D">おなかの空きぐあいと月の見えている部分を、0％から100％のものさしの上で表しています。</desc>
+  <rect x="0" y="0" width="420" height="336" fill="#FFFDF5" rx="12"/>
+  <text x="40" y="42" font-size="13" font-weight="700" fill="#122A64">おなかの空きぐあい</text>
+  <rect x="40" y="68" width="340" height="26" rx="6" fill="#fff" stroke="#475569" stroke-width="2"/>
+  <line x1="40" y1="68" x2="40" y2="94" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="40" y="112" font-size="11" fill="#64748B" text-anchor="middle">0％</text>
+  <line x1="125" y1="68" x2="125" y2="94" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="125" y="112" font-size="11" fill="#64748B" text-anchor="middle">25％</text>
+  <line x1="210" y1="68" x2="210" y2="94" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="210" y="112" font-size="11" fill="#64748B" text-anchor="middle">50％</text>
+  <line x1="295" y1="68" x2="295" y2="94" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="295" y="112" font-size="11" fill="#64748B" text-anchor="middle">75％</text>
+  <line x1="380" y1="68" x2="380" y2="94" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="380" y="112" font-size="11" fill="#64748B" text-anchor="middle">100％</text>
+  <rect x="40" y="68" width="102" height="26" rx="6" fill="#FDE68A"/>
+  <rect x="40" y="68" width="340" height="26" rx="6" fill="none" stroke="#475569" stroke-width="2"/>
+  <text x="44" y="130" font-size="11" font-weight="700" fill="#B45309">ぺこぺこ</text>
+  <text x="376" y="130" font-size="11" font-weight="700" fill="#B45309" text-anchor="end">満腹</text>
+  <text x="142" y="62" font-size="11" font-weight="700" fill="#B45309" text-anchor="middle">▼いま30％</text>
+  <text x="40" y="176" font-size="13" font-weight="700" fill="#122A64">月の見えている部分</text>
+  <circle cx="96" cy="224" r="30" fill="#334155" stroke="#475569" stroke-width="1.5"/>
+  <text x="96" y="276" font-size="13" font-weight="700" fill="#122A64" text-anchor="middle">0％</text>
+  <text x="96" y="294" font-size="11" fill="#64748B" text-anchor="middle">新月</text>
+  <circle cx="210" cy="224" r="30" fill="#334155" stroke="#475569" stroke-width="1.5"/>
+  <path d="M210 194 A30 30 0 0 1 210 254 Z" fill="#FDE68A"/>
+  <circle cx="210" cy="224" r="30" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <text x="210" y="276" font-size="13" font-weight="700" fill="#122A64" text-anchor="middle">50％</text>
+  <text x="210" y="294" font-size="11" fill="#64748B" text-anchor="middle">半月</text>
+  <circle cx="324" cy="224" r="30" fill="#334155" stroke="#475569" stroke-width="1.5"/>
+  <circle cx="324" cy="224" r="30" fill="#FDE68A" stroke="#475569" stroke-width="1.5"/>
+  <text x="324" y="276" font-size="13" font-weight="700" fill="#122A64" text-anchor="middle">100％</text>
+  <text x="324" y="294" font-size="11" fill="#64748B" text-anchor="middle">満月</text>
+  <text x="210" y="318" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">満月を100％とすると、半月は「50％足りない」</text>
+</svg>
+<figcaption>図：％は「0から100までのものさしのどこか」を表す言葉です。おなかの空きぐあいも、月の見えている部分も、同じものさしにのせられます。</figcaption>
+</figure>
+<p>やり方は簡単で、答えのない質問をするだけです。<strong>「いま、おなかの空きぐあいは何％？　0％がぺこぺこ、100％が満腹ね」</strong>——この一問で、0と100の両端がどこかが決まり、そのあいだのどこにいるかを自分で決めることになります。これが割合の「もとにする量を1（100％）とみる」考え方そのものです。</p>
+<p>月も使えます。<strong>「満月を100％とすると、今日の月は何％？」「満月から何％足りない？」</strong>。半月なら50％、三日月なら20％くらい。ぴったり合っている必要はありません。<strong>「100％から今の分を引くと、足りない分」</strong>という補い合いの関係が、目で見えるのがこの題材の良いところです。</p>
+<div class="memo-box">
+  <div class="memo-title">🏠 家庭での試し方</div>
+  <p><strong>正解を用意しないでください。</strong>「40％くらいかな」と言われて「本当は35％」と返す必要はありません。数字を出すこと自体が練習です。</p>
+  <p><strong>大人も自分の数字を言ってください。</strong>「お母さんは70％かな」と言うと、子どもは自分の数字と比べ始めます。比べるとものさしの感覚が細かくなります。</p>
+  <div class="memo-real">
+    <span class="memo-tag">にじゅうまる。家庭実践メモ</span>
+    <p>月を見て「満月から何％少ない？」と聞いていました。あわせて、食事の前に「お腹の空き具合は何％？　0％ぺこぺこ、100％満腹で」と聞くようにしています。</p>
+  </div>
+</div>
 
 <h2>百分率（％）・歩合との変換</h2>
 <p>割合は3つの表し方があり、自由に行き来できることが必要です。</p>
