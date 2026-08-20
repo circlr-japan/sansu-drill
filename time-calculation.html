@@ -45,6 +45,9 @@ ul li,ol li{margin-bottom:8px;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -221,6 +224,33 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <li><strong>ひき算：</strong>分が足りなければ、1時間を60分にくずして繰り下げる</li>
 </ul>
 <p>これは筆算の繰り上がり・繰り下がりと同じ考え方で、「まとまりの大きさが10ではなく60」なだけです。この一言を伝えるだけで、スッと理解できる子が多いです。</p>
+
+<figure class="fig" data-fig="60shinhou">
+<svg viewBox="0 0 420 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figTimeT figTimeD">
+  <title id="figTimeT">時間の繰り下がりが60で起こることを示す図</title>
+  <desc id="figTimeD">1時間15分から40分を引く場面で、1時間を60分に両替してから計算する流れを示しています。</desc>
+  <rect x="0" y="0" width="420" height="270" fill="#FFFDF5" rx="12"/>
+  <text x="210" y="30" font-size="16" font-weight="700" fill="#122A64" text-anchor="middle">1時間15分 − 40分 ＝ ?</text>
+  <rect x="30" y="52" width="170" height="52" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+  <text x="115" y="76" font-size="14" font-weight="700" fill="#1E3A8A" text-anchor="middle">1時間</text>
+  <text x="115" y="95" font-size="12" fill="#64748B" text-anchor="middle">（時のへや）</text>
+  <rect x="220" y="52" width="170" height="52" rx="10" fill="#FFF7E6" stroke="#F59E0B" stroke-width="2"/>
+  <text x="305" y="76" font-size="14" font-weight="700" fill="#92400E" text-anchor="middle">15分</text>
+  <text x="305" y="95" font-size="12" fill="#64748B" text-anchor="middle">（分のへや）</text>
+  <text x="205" y="83" font-size="18" fill="#64748B" text-anchor="middle">|</text>
+  <path d="M115 108 L115 128 L290 128 L290 144" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <polygon points="290,152 285,142 295,142" fill="#DC2626"/>
+  <text x="200" y="124" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">1時間を60分に両替する</text>
+  <rect x="30" y="156" width="170" height="46" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="115" y="184" font-size="14" fill="#94A3B8" text-anchor="middle">0時間</text>
+  <rect x="220" y="156" width="170" height="46" rx="10" fill="#FFF7E6" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="305" y="177" font-size="14" font-weight="700" fill="#92400E" text-anchor="middle">60 ＋ 15 ＝ 75分</text>
+  <text x="305" y="195" font-size="11" fill="#B45309" text-anchor="middle">10ではなく60くり下がる</text>
+  <rect x="30" y="214" width="360" height="42" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="2"/>
+  <text x="210" y="241" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">75 − 40 ＝ 35分</text>
+</svg>
+<figcaption>図：時間の繰り下がりは10ではなく60。ふだんの筆算と違うのはここだけなので、「60で両替する」と覚えるとまぎれません。</figcaption>
+</figure>
 
 <h2>何年生で習う？（学習指導要領での位置づけ）</h2>
 <table class="cv-table">
