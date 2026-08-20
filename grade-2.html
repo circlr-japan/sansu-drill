@@ -42,6 +42,31 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .mistake-box{background:#FEF2F2;border-left:4px solid #EF4444;border-radius:0 12px 12px 0;padding:14px;}
 .mistake-box h3{font-size:13px;font-weight:700;color:#B91C1C;margin-bottom:6px;}
 .mistake-box p{font-size:13px;color:#991B1B;line-height:1.7;}
+.answer-box{background:#FEF2F2;border:2px solid #FCA5A5;border-radius:12px;padding:16px 18px;margin:4px 0 12px;}
+.answer-box p{font-size:13px;color:#334155;line-height:1.8;margin-bottom:6px;}
+.answer-box p:last-child{margin-bottom:0;}
+.cur-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:4px 0 12px;font-size:12px;}
+.cur-table th,.cur-table td{border:1px solid var(--border);padding:8px 9px;text-align:left;vertical-align:top;background:#fff;line-height:1.7;}
+.cur-table th{background:var(--bg-light);color:var(--color);font-weight:700;}
+.cur-table tr>*:nth-child(1){width:19%;}
+.cur-table tr>*:nth-child(2){width:48%;}
+.cur-table tr>*:nth-child(3){width:33%;}
+.check-item{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--border);}
+.check-item:last-child{border-bottom:none;}
+.check-box{flex-shrink:0;width:17px;height:17px;border:2px solid var(--color);border-radius:4px;margin-top:3px;}
+.check-text{font-size:13px;color:#334155;line-height:1.7;}
+.check-text b{color:var(--color);}
+.check-link{display:inline-block;font-size:11px;color:#1D4ED8;text-decoration:none;margin-left:2px;white-space:nowrap;}
+.cur-table a{color:#1D4ED8;text-decoration:none;border-bottom:1px dotted #93C5FD;}
+.note{font-size:12px;color:var(--text-muted);line-height:1.75;}
+.guide-card{display:block;background:linear-gradient(135deg,#FFFDF5,#FFF1CE);border:1.5px solid var(--border-c);border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;}
+.guide-card .gc-title{display:block;font-size:14px;font-weight:700;color:var(--color);margin-bottom:4px;}
+.guide-card .gc-desc{display:block;font-size:12px;color:#475569;line-height:1.7;}
+.link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.link-row a{flex:1 1 auto;text-align:center;padding:10px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:10px;font-size:12px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
+.grade-nav a{padding:11px 6px;text-align:center;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav a.current{background:var(--color);border-color:var(--color);color:#fff;}
 .next-box{background:var(--bg-light);border:1.5px solid var(--border-c);border-radius:12px;padding:14px;}
 .next-box h3{font-size:13px;font-weight:700;color:var(--color);margin-bottom:6px;}
 .next-box p{font-size:13px;color:#334155;line-height:1.7;}
@@ -87,7 +112,31 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "九九は何年生までに完璧にすべきですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "2年生のうちに全段を確実に覚えることが目標です。3年生のわり算・かけ算の筆算は九九が土台になるため、ここで完成させておくと後がスムーズです。"
+        "text": "2年生のうちに全段を身につけておくことが目標です。3年生のわり算・かけ算の筆算は九九が土台になるため、ここで完成させておくと後がスムーズです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "九九はいつ習いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2学期です。10月ごろに5・2・3・4の段から始まり、11〜12月に6〜9・1の段へ進みます。3学期は定着の期間なので、夏休みのうちに「1つ分×いくつ分」の意味だけ押さえておくと、2学期がぐっと楽になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "くり下がりが2回ある筆算（302－158）でつまずきます。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "十の位が0で「借りられない」ところが原因です。百の位から十の位へ、十の位から一の位へと順に借りる手順を、声に出しながら1問ずつ確認しましょう。マス目のノートで位をそろえて書くだけでもミスは大きく減ります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2年生でも分数を習うのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "習います。ただし計算ではなく、「もとの大きさを2つに等分した1つ分が1/2」という意味を図で学ぶ段階です。折り紙を半分に折る、ケーキを4等分するといった体験が、3年生以降の分数の土台になります。"
       }
     }
   ]
@@ -103,13 +152,33 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <p>九九・2桁の加減算・長さの単位</p>
 </div>
 <div class="content">
-<div class="section"><p style="font-size:14px;color:#334155;line-height:1.9;">小学2年生の算数は、「九九（かけ算）」という大きな武器を手に入れる1年です。あわせて2桁・3桁のたし算ひき算の筆算、長さやかさの単位、時こくと時間へと世界が広がります。九九を確実に覚えることが、3年生以降のわり算・筆算の土台になります。</p></div>
+<div class="section"><p style="font-size:14px;color:#334155;line-height:1.9;">小学2年生の算数は、「九九（かけ算）」という大きな武器を手に入れる1年です。あわせて2桁・3桁のたし算ひき算の筆算、長さやかさの単位、時こくと時間へと世界が広がります。九九をしっかり身につけることが、3年生以降のわり算・筆算の土台になります。</p></div>
+<div class="section"><h2>🎯 【直答】小学2年生の算数では何を習う？</h2>
+<div class="answer-box">
+  <p><strong>最大のテーマは九九（かけ算）</strong>。ほかに2〜3桁のたし算・ひき算の筆算、1000より大きい数、長さ（cm・mm・m）とかさ（L・dL・mL）、時こくと時間、三角形・四角形を学びます。</p>
+  <p>九九が始まるのは<strong>2学期の10月ごろ</strong>。5・2・3・4の段 → 6〜9・1の段の順に進みます。3年生のわり算とかけ算の筆算は九九が土台になるため、<strong>2年生のうちにランダム出題で即答できる状態</strong>まで仕上げるのが目標です。</p>
+</div>
+<p class="note">下の「学習内容」で単元ごとの中身を、「学期別カリキュラム」でいつ習うかを確認できます。</p>
+</div>
 <div class="section"><h2>📚 学習内容</h2>
 <div class="topic-card"><h3>九九（かけ算）</h3><p>2年生最大のテーマ。1の段から9の段まで、意味（1つ分×いくつ分）を理解したうえで暗記します。上がり・下がりの両方向でスラスラ言えるまで練習しましょう。</p></div>
-<div class="topic-card"><h3>2桁・3桁のたし算ひき算（筆算）</h3><p>位をそろえて書く筆算の作法を身につけます。繰り上がり・繰り下がりのある計算も、手順どおりに進めれば確実に解けます。</p></div>
+<div class="topic-card"><h3>2桁・3桁のたし算ひき算（筆算）</h3><p>位をそろえて書く筆算の作法を身につけます。繰り上がり・繰り下がりのある計算も、手順どおりに進めれば解けるようになります。</p></div>
 <div class="topic-card"><h3>長さ・かさの単位</h3><p>cm・mm・m、L・dL・mLといった単位が登場します。「1m＝100cm」など単位の関係を、実際にものさしやカップで測りながら覚えます。</p></div>
 <div class="topic-card"><h3>時こくと時間</h3><p>「9時20分の30分後は？」のような時刻と時間の計算が始まります。60でくり上がる時間の感覚を、時計を使ってつかみましょう。</p></div>
 <div class="topic-card"><h3>1000までの数・三角形と四角形</h3><p>1000までの数の読み書きや、三角形・四角形といった図形の基礎も学びます。</p></div>
+<div class="topic-card"><h3>かけ算の意味（1つ分×いくつ分）</h3><p>九九を覚える前に「4個入りのパックが3つで4×3」という意味の理解が必要です。ここが曖昧なまま暗記に入ると、文章題で式が立てられなくなります。<a href="/multiplication-guide.html">かけ算の教え方</a>もあわせてどうぞ。</p></div>
+<div class="topic-card"><h3>10000までの数（万の位）</h3><p>1000より大きい数へ進み、万の位までの読み書きを学びます。「1000が10こで10000」という<strong>十進位取りの拡張</strong>で、3年生の大きい数につながります。</p></div>
+<div class="topic-card"><h3>かんたんな分数（1/2・1/4）</h3><p>もとの大きさを等分した1つ分として、1/2や1/4を図で学びます。計算はまだ出てきませんが、ここでの「等分」のイメージが3年生以降の分数を左右します（<a href="/fractions-guide.html">分数の教え方</a>）。</p></div>
+<div class="topic-card"><h3>図をつかって考える（テープ図）</h3><p>文章題を図に表して式を立てる学習です。計算はできるのに文章題でつまずく場合、この図に表す段階が抜けていることが多いです（<a href="/bunshoudai-guide.html">文章題の教え方</a>）。</p></div>
+</div>
+<div class="section"><h2>🗓️ 学期別カリキュラム（いつ何を習う？）</h2>
+<table class="cur-table">
+  <tr><th>時期</th><th>おもな単元</th><th>家庭で見ておくこと</th></tr>
+  <tr><th>1学期<br>4〜7月</th><td>表とグラフ／<a href="/addition-guide.html">たし算・ひき算のひっ算（2桁）</a>／長さ（cm・mm）／1000までの数／水のかさ（L・dL・mL）</td><td>筆算で位をそろえて書けているか</td></tr>
+  <tr><th>2学期<br>9〜12月</th><td>時こくと時間／三角形と四角形／<strong><a href="/kuku-tips.html">かけ算(1) 5・2・3・4の段</a></strong>／<strong><a href="/kuku-tips.html">かけ算(2) 6〜9・1の段</a></strong>／九九の表</td><td>九九の山場。7・8の段でつまずいたら即補強</td></tr>
+  <tr><th>3学期<br>1〜3月</th><td>100cmをこえる長さ（m）／10000までの数／<a href="/bunshoudai-guide.html">図をつかって考える</a>／はこの形／分数のはじまり</td><td>九九をランダム・下がりで即答できるか</td></tr>
+</table>
+<p class="note">※単元の順序と名称は教科書会社によって多少前後します。目安としてご覧ください。</p>
 </div>
 <div class="section"><h2>⚠️ つまずきやすいポイントと対策</h2>
 <div class="mistake-box" style="margin-bottom:10px;"><h3>九九の「7・8の段」でつまずく</h3><p>7の段・8の段は語呂が覚えにくく、多くの子が苦戦します。覚える順番を工夫し、語呂合わせやゲームで楽しく反復するのが効果的です。</p></div>
@@ -120,7 +189,23 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="tip-item"><div class="tip-num">2</div><div><div class="tip-title">苦手な段を集中的に</div><div class="tip-body">全体をまんべんなくより、つまずく段（特に7・8の段）を重点的に。1日1段を目標にすると続けやすいです。</div></div></div>
 <div class="tip-item"><div class="tip-num">3</div><div><div class="tip-title">生活の中で単位を使う</div><div class="tip-body">料理で「200mL」を計る、身長を測るなど、実生活で単位に触れると定着します。</div></div></div>
 </div>
-<div class="section"><h2>👨‍👩‍👧 保護者の関わり方</h2><p style="font-size:13px;color:#334155;line-height:1.85;">九九は「毎日ちょっとずつ」が鉄則です。お風呂や送り迎えの車の中など、すきま時間に口に出す習慣をつけると自然に身につきます。まちがえても急かさず、言えた段をカレンダーに記録して達成感を見える化してあげましょう。</p></div>
+<div class="section"><h2>✅ 2年生修了チェックリスト</h2>
+<p class="note" style="margin-bottom:8px;">3年生に上がる前に、次の8項目を確認しましょう。とくに九九は、3年生のわり算がすべてここに乗るため最優先です。各項目の青いリンクが、つまずいたときの戻り先です。</p>
+<div class="check-item"><div class="check-box"></div><div class="check-text">九九を全段、上がりでつまらずに言える<a class="check-link" href="/kuku-tips.html">→ 九九の覚え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">九九を<b>ランダム出題</b>で即答できる（8×6、3×7 など）<a class="check-link" href="/multiplication-guide.html">→ かけ算の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">九九を下がり（9×9→9×1）でも言える<a class="check-link" href="/daily.html">→ 今日のドリルで練習</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">2桁のたし算・ひき算の筆算を位をそろえて書ける<a class="check-link" href="/addition-guide.html">→ たし算の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">くり下がりが2回ある筆算（302－158）ができる<a class="check-link" href="/subtraction-guide.html">→ ひき算の攻略</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">1m＝100cm、1L＝10dL＝1000mL が言える<a class="check-link" href="/tanni-kanzan-guide.html">→ 単位のしくみ</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">「9時20分の30分後」のような時こくの計算ができる<a class="check-link" href="/time-calculation.html">→ 時こくと時間</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">三角形・四角形・直角を図で見分けられる<a class="check-link" href="/geometry-guide.html">→ 図形の基礎</a></div></div>
+</div>
+<div class="section"><h2>👨‍👩‍👧 保護者の関わり方</h2><p style="font-size:13px;color:#334155;line-height:1.85;">九九は「毎日ちょっとずつ」が基本です。お風呂や送り迎えの車の中など、すきま時間に口に出す習慣をつけると自然に身につきます。まちがえても急かさず、言えた段をカレンダーに記録して達成感を見える化してあげましょう。</p></div>
+<div class="section"><h2>📗 もっとくわしく知りたい方へ</h2>
+<a class="guide-card" href="/grade-2-tips.html"><span class="gc-title">小学2年生の算数 完全ガイド →</span><span class="gc-desc">九九の覚える順番、つまずきサイン早見表、親のNG対応と言いかえまで。このページより一段くわしい保護者向けガイドです。</span></a>
+<a class="guide-card" href="/kuku-tips.html"><span class="gc-title">九九の覚え方・練習のコツ →</span><span class="gc-desc">覚えにくい7・8の段の攻略法や、上がり・下がり・ランダムと進める練習手順をくわしく解説しています。</span></a>
+<a class="guide-card" href="/grade-guide.html"><span class="gc-title">1〜6年生の学習内容まとめ →</span><span class="gc-desc">6年間のつながりマップつき。九九がこの先どの単元につながるかがわかります。</span></a>
+</div>
 <div class="section"><h2>📖 関連する解説ガイド</h2><p style="font-size:12px;color:#64748B;margin-bottom:12px;">つまずきやすい単元は、教え方・練習のコツを解説記事でくわしく紹介しています。</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
 <a href="/kuku-tips.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">✖️ 九九の覚え方</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">段別の語呂合わせ</span></a>
 <a href="/multiplication-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">✖️ かけ算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">意味から筆算まで</span></a>
@@ -128,14 +213,41 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <a href="/subtraction-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➖ ひき算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くり下がりの筆算</span></a>
 <a href="/tanni-kanzan-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📏 単位</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">長さ・かさの換算</span></a>
 <a href="/time-calculation.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🕐 時こくと時間</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">60進法の計算</span></a>
+<a href="/bunshoudai-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📝 文章題</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">テープ図で考える</span></a>
+<a href="/geometry-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📐 図形</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">三角形と四角形</span></a>
+<a href="/reduce-mistakes.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🔍 計算ミス</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">筆算のミスを減らす</span></a>
+<a href="/math-game.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🎲 算数ゲーム</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">遊びながら九九</span></a>
 </div></div>
-<div class="section"><h2>🖊️ 小学2年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学2年生のドリルを始める</a></div>
+<div class="section"><h2>🖊️ 小学2年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学2年生のドリルを始める</a>
+<div class="link-row">
+  <a href="/daily.html">📅 今日のドリル</a>
+  <a href="/how-to-use.html">📘 使い方ガイド</a>
+  <a href="/premium.html">🖨️ 印刷用PDF</a>
+</div></div>
 <div class="section"><h2>❓ よくある質問</h2>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q1. 九九がなかなか覚えられません。どうすればいいですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">まず「1つ分×いくつ分」という意味を理解させ、そのうえで覚える順番を工夫します。7の段・8の段など苦手な段は語呂合わせやゲームで反復を。毎日すきま時間に口に出すのが最も効果的です。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q2. 2年生の筆算でミスが多いのはなぜですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">位がずれて書いてしまうのが主な原因です。マス目のノートを使い、位をそろえて書く習慣をつけましょう。繰り上がりの「1」を小さくメモするとミスが減ります。</p></div>
-<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q3. 九九は何年生までに完璧にすべきですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">2年生のうちに全段を確実に覚えることが目標です。3年生のわり算・かけ算の筆算は九九が土台になるため、ここで完成させておくと後がスムーズです。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q3. 九九は何年生までに完璧にすべきですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">2年生のうちに全段を身につけておくことが目標です。3年生のわり算・かけ算の筆算は九九が土台になるため、ここで完成させておくと後がスムーズです。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q4. 九九はいつ習いますか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">2学期です。10月ごろに5・2・3・4の段から始まり、11〜12月に6〜9・1の段へ進みます。3学期は定着の期間なので、夏休みのうちに「1つ分×いくつ分」の意味だけ押さえておくと、2学期がぐっと楽になります。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q5. くり下がりが2回ある筆算（302－158）でつまずきます。</div><p style="font-size:13px;color:#334155;line-height:1.85;">十の位が0で「借りられない」ところが原因です。百の位から十の位へ、十の位から一の位へと順に借りる手順を、声に出しながら1問ずつ確認しましょう。マス目のノートで位をそろえて書くだけでもミスは大きく減ります。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q6. 2年生でも分数を習うのですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">習います。ただし計算ではなく、「もとの大きさを2つに等分した1つ分が1/2」という意味を図で学ぶ段階です。折り紙を半分に折る、ケーキを4等分するといった体験が、3年生以降の分数の土台になります。</p></div>
 </div>
 <div class="section"><h2>🚀 次の学年への準備</h2><div class="next-box"><p>3年生ではわり算と、かけ算・わり算の筆算が始まります。2年生の九九が不完全だと3年生でつまずくため、九九を完璧にしておくことが最大の準備です。</p></div></div>
+<div class="section"><h2>🔢 ほかの学年を見る</h2>
+<div class="grade-nav">
+  <a href="/grade-1.html">1年生</a>
+  <a href="/grade-2.html" class="current">2年生</a>
+  <a href="/grade-3.html">3年生</a>
+  <a href="/grade-4.html">4年生</a>
+  <a href="/grade-5.html">5年生</a>
+  <a href="/grade-6.html">6年生</a>
+</div>
+<div class="link-row">
+  <a href="/grade-guide.html">📋 学年別まとめ</a>
+  <a href="/sansu-onayami-guide.html">💬 算数のお悩み別</a>
+  <a href="/">🏠 トップへ</a>
+</div>
+</div>
 <div class="nav-row"><a href="/grade-1.html" class="nav-btn">← 1年生</a><a href="/grade-guide.html" class="nav-btn" style="color:var(--text-muted);">一覧へ</a><a href="/grade-3.html" class="nav-btn">→ 3年生</a></div>
 </div>
 <footer>
