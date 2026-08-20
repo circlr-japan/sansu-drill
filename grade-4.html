@@ -42,6 +42,31 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .mistake-box{background:#FEF2F2;border-left:4px solid #EF4444;border-radius:0 12px 12px 0;padding:14px;}
 .mistake-box h3{font-size:13px;font-weight:700;color:#B91C1C;margin-bottom:6px;}
 .mistake-box p{font-size:13px;color:#991B1B;line-height:1.7;}
+.answer-box{background:#FEF2F2;border:2px solid #FCA5A5;border-radius:12px;padding:16px 18px;margin:4px 0 12px;}
+.answer-box p{font-size:13px;color:#334155;line-height:1.8;margin-bottom:6px;}
+.answer-box p:last-child{margin-bottom:0;}
+.cur-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:4px 0 12px;font-size:12px;}
+.cur-table th,.cur-table td{border:1px solid var(--border);padding:8px 9px;text-align:left;vertical-align:top;background:#fff;line-height:1.7;}
+.cur-table th{background:var(--bg-light);color:var(--color);font-weight:700;}
+.cur-table tr>*:nth-child(1){width:19%;}
+.cur-table tr>*:nth-child(2){width:48%;}
+.cur-table tr>*:nth-child(3){width:33%;}
+.check-item{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--border);}
+.check-item:last-child{border-bottom:none;}
+.check-box{flex-shrink:0;width:17px;height:17px;border:2px solid var(--color);border-radius:4px;margin-top:3px;}
+.check-text{font-size:13px;color:#334155;line-height:1.7;}
+.check-text b{color:var(--color);}
+.check-link{display:inline-block;font-size:11px;color:#1D4ED8;text-decoration:none;margin-left:2px;white-space:nowrap;}
+.cur-table a{color:#1D4ED8;text-decoration:none;border-bottom:1px dotted #93C5FD;}
+.note{font-size:12px;color:var(--text-muted);line-height:1.75;}
+.guide-card{display:block;background:linear-gradient(135deg,#FFFDF5,#FFF1CE);border:1.5px solid var(--border-c);border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;}
+.guide-card .gc-title{display:block;font-size:14px;font-weight:700;color:var(--color);margin-bottom:4px;}
+.guide-card .gc-desc{display:block;font-size:12px;color:#475569;line-height:1.7;}
+.link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.link-row a{flex:1 1 auto;text-align:center;padding:10px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:10px;font-size:12px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
+.grade-nav a{padding:11px 6px;text-align:center;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav a.current{background:var(--color);border-color:var(--color);color:#fff;}
 .next-box{background:var(--bg-light);border:1.5px solid var(--border-c);border-radius:12px;padding:14px;}
 .next-box h3{font-size:13px;font-weight:700;color:var(--color);margin-bottom:6px;}
 .next-box p{font-size:13px;color:#334155;line-height:1.7;}
@@ -71,7 +96,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "4年生のわり算の筆算がうまくできません。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「たてる・かける・ひく・おろす」の4手順のどれかが抜けているケースがほとんどです。手順を声に出しながら、1つずつ確実に進める練習をしましょう。どこで詰まるかを一緒に特定するのが解決の近道です。"
+        "text": "「たてる・かける・ひく・おろす」の4手順のどれかが抜けているケースが多いです。手順を声に出しながら、1つずつ進める練習をしましょう。どこで詰まるかを一緒に特定するのが解決の近道です。"
       }
     },
     {
@@ -89,6 +114,30 @@ footer a{color:#94A3B8;text-decoration:underline;}
         "@type": "Answer",
         "text": "わり算の筆算と、大きな数・小数の位取りです。どちらも「位をそろえる」ことが共通のポイント。マス目のノートを使い、位を意識して書く習慣が有効です。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "「小4の壁」とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4年生で内容の抽象度が上がり、算数が急に難しく感じられる現象を指します。がい数・面積・分数など、おはじきなど具体物で確かめにくい単元が増え、わり算の筆算のように手順の長い計算も登場するためです。つまずきの原因は3年生までの九九・筆算の定着不足にあることが多く、さかのぼって確認するのが近道です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "わり算の筆算で商が立てられません。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "÷2桁では、割る数と割られる数を概数にして見当をつける練習が有効です。たとえば86÷21なら「およそ90÷20だから4くらい」と見当をつけてから確かめます。がい数の学習が、そのまま筆算の武器になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "面積の単位（cm²・m²・a・ha）が覚えられません。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1辺の長さから作り直すと覚えやすくなります。1m²は1辺1m＝100cmの正方形なので100×100＝10000cm²。1aは1辺10m、1haは1辺100mの正方形です。単位を暗記するのではなく、正方形の1辺の長さで整理しましょう。"
+      }
     }
   ]
 }
@@ -104,15 +153,35 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <div class="content">
 <div class="section"><p style="font-size:14px;color:#334155;line-height:1.9;">小学4年生の算数は、数の世界がさらに大きく・細かくなる学年です。億・兆といった大きな数、がい数（およその数）、わり算の筆算、分数・小数の計算、そして面積や角度、折れ線グラフへと広がります。抽象的な思考が本格的に求められ始めます。</p></div>
+<div class="section"><h2>🎯 【直答】小学4年生の算数では何を習う？</h2>
+<div class="answer-box">
+  <p><strong>わり算の筆算・がい数（四捨五入）・面積・角度</strong>が中心です。ほかに大きな数（億・兆）、小数のかけ算わり算、分数（仮分数・帯分数）、垂直と平行、立方体と直方体、折れ線グラフを学びます。</p>
+  <p>4年生は<strong>「小4の壁」</strong>と呼ばれる抽象化の入り口。目に見える物で確かめにくい内容が増え、手順の長い計算も登場します。山場は<strong>わり算の筆算（たてる→かける→ひく→おろす）</strong>と、日本語の読み取りでつまずく<strong>がい数</strong>です。</p>
+</div>
+<p class="note">下の「学習内容」で単元ごとの中身を、「学期別カリキュラム」でいつ習うかを確認できます。</p>
+</div>
 <div class="section"><h2>📚 学習内容</h2>
 <div class="topic-card"><h3>大きな数（億・兆）</h3><p>一万の一万倍が一億、その一万倍が一兆。4桁ごとに区切る位取りの仕組みを理解します。0の数を数えまちがえないことがポイントです。</p></div>
 <div class="topic-card"><h3>がい数・四捨五入</h3><p>「およそ何万」と概数で表す力です。四捨五入・切り上げ・切り捨てを、目的に応じて使い分けられるようにします。</p></div>
 <div class="topic-card"><h3>わり算の筆算</h3><p>2桁3桁でわる筆算を学びます。「たてる・かける・ひく・おろす」の手順を繰り返す、4年生の大きな山場です。</p></div>
 <div class="topic-card"><h3>分数・小数の計算</h3><p>帯分数・仮分数、小数のたし算ひき算・かけ算わり算へ。位や小数点の処理をていねいに行います。</p></div>
 <div class="topic-card"><h3>面積・角度・折れ線グラフ</h3><p>長方形・正方形の面積（たて×よこ）、角度の測り方、変化を表す折れ線グラフなど、図やグラフを扱う学習が増えます。</p></div>
+<div class="topic-card"><h3>垂直・平行と四角形</h3><p>三角定規を使って垂直・平行を調べ、台形・平行四辺形・ひし形を性質で分類します。ここでの「性質で図形を見る」経験が、5年生の面積公式、6年生の対称な図形につながります（<a href="/geometry-guide.html">図形の基礎</a>）。</p></div>
+<div class="topic-card"><h3>計算のきまり（式と計算の順序）</h3><p>（　）のある式、×÷を先に計算するきまり、交換・分配のきまりを学びます。中学の文字式の計算ルールと同じ土台なので、ここを曖昧にしないことが大切です。</p></div>
+<div class="topic-card"><h3>立方体と直方体（見取図・展開図）</h3><p>面・辺・頂点の数、展開図、位置の表し方を学びます。頭の中で立体を組み立てる力は、5年生の体積、6年生の角柱・円柱へ直結します。</p></div>
+<div class="topic-card"><h3>変わり方（ともなって変わる2つの量）</h3><p>一方が増えるともう一方がどう変わるかを表に整理し、式に表す学習です。5年生の比例、6年生の比例・反比例、中学の関数の入り口になります。</p></div>
+</div>
+<div class="section"><h2>🗓️ 学期別カリキュラム（いつ何を習う？）</h2>
+<table class="cur-table">
+  <tr><th>時期</th><th>おもな単元</th><th>家庭で見ておくこと</th></tr>
+  <tr><th>1学期<br>4〜7月</th><td>大きな数（億・兆）／<a href="/data-katsuyou-guide.html">折れ線グラフ</a>／<strong><a href="/division-guide.html">わり算の筆算（÷1桁）</a></strong>／角の大きさ（分度器）／<a href="/decimal-fraction-guide.html">小数</a></td><td>「たてる・かける・ひく・おろす」を口に出せているか</td></tr>
+  <tr><th>2学期<br>9〜12月</th><td><strong><a href="/division-guide.html">わり算の筆算（÷2桁）</a></strong>／<strong><a href="/gaisuu-shishagoonyuu-guide.html">がい数・四捨五入</a></strong>／計算のきまり／垂直・平行と四角形／面積</td><td>商の見当をつけられるか／「どの位まで」の読み取り</td></tr>
+  <tr><th>3学期<br>1〜3月</th><td>小数×整数・小数÷整数／<a href="/fractions-guide.html">分数（仮分数・帯分数）</a>／変わり方／立方体と直方体</td><td>分数の大きさを数直線で言えるか</td></tr>
+</table>
+<p class="note">※単元の順序と名称は教科書会社によって多少前後します。目安としてご覧ください。</p>
 </div>
 <div class="section"><h2>⚠️ つまずきやすいポイントと対策</h2>
-<div class="mistake-box" style="margin-bottom:10px;"><h3>わり算の筆算で手順が抜ける</h3><p>「たてる・かける・ひく・おろす」のどれかが抜けるとまちがえます。4つの手順を声に出しながら、1つずつ確実に進めましょう。</p></div>
+<div class="mistake-box" style="margin-bottom:10px;"><h3>わり算の筆算で手順が抜ける</h3><p>「たてる・かける・ひく・おろす」のどれかが抜けるとまちがえます。4つの手順を声に出しながら、1つずつ進めていきましょう。</p></div>
 <div class="mistake-box" style="margin-bottom:10px;"><h3>大きな数・小数で位を数えまちがえる</h3><p>0の個数や小数点の位置でミスが多発します。マス目のノートで位をそろえ、指で位を数える習慣をつけると防げます。</p></div>
 </div>
 <div class="section"><h2>💡 家庭学習のコツ</h2>
@@ -120,22 +189,65 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="tip-item"><div class="tip-num">2</div><div><div class="tip-title">がい数は「何のため」を意識</div><div class="tip-body">四捨五入か切り上げ・切り捨てかは目的で決まります。「買い物で足りるように多めに」など場面と結びつけましょう。</div></div></div>
 <div class="tip-item"><div class="tip-num">3</div><div><div class="tip-title">面積は公式より意味を</div><div class="tip-body">「1cm²のマスがいくつ分」という考えから入ると、公式を忘れても求められます。</div></div></div>
 </div>
+<div class="section"><h2>✅ 4年生修了チェックリスト</h2>
+<p class="note" style="margin-bottom:8px;">5年生に上がる前に、次の8項目を確認しましょう。5年生の割合・分数計算は、ここが土台になります。各項目の青いリンクが、つまずいたときの戻り先です。</p>
+<div class="check-item"><div class="check-box"></div><div class="check-text">わり算の筆算（÷2桁）を手順どおり解ける<a class="check-link" href="/division-guide.html">→ わり算の筆算</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">億・兆までの数を読み書きできる<a class="check-link" href="/grade-4-tips.html">→ 4年生 完全ガイド</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">がい数で「上から2桁」と「千の位まで」を区別できる<a class="check-link" href="/gaisuu-shishagoonyuu-guide.html">→ がい数と四捨五入</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">分度器で角度をはかれる（180°をこえる角も）<a class="check-link" href="/geometry-guide.html">→ 図形と角度</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">長方形・正方形と、複合図形の面積を求められる<a class="check-link" href="/grade-4-tips.html">→ 面積の考え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">仮分数⇔帯分数の変換ができる<a class="check-link" href="/fractions-guide.html">→ 分数の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">小数×整数・小数÷整数の筆算ができる<a class="check-link" href="/decimal-fraction-guide.html">→ 小数の計算</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">折れ線グラフから変化の様子を説明できる<a class="check-link" href="/data-katsuyou-guide.html">→ データの活用</a></div></div>
+</div>
 <div class="section"><h2>👨‍👩‍👧 保護者の関わり方</h2><p style="font-size:13px;color:#334155;line-height:1.85;">4年生は「算数の壁」と言われることもある学年です。わり算の筆算でつまずく子が多いので、できない手順を一緒に特定してあげてください。抽象的な内容が増えるからこそ、身近な例や図で「イメージ」とつなげる関わりが効きます。</p></div>
+<div class="section"><h2>📗 もっとくわしく知りたい方へ</h2>
+<a class="guide-card" href="/grade-4-tips.html"><span class="gc-title">小学4年生の算数 完全ガイド →</span><span class="gc-desc">「小4の壁」の正体、わり算の筆算とがい数の攻略手順、つまずきサイン早見表まで解説しています。</span></a>
+<a class="guide-card" href="/gaisuu-shishagoonyuu-guide.html"><span class="gc-title">がい数と四捨五入の解説 →</span><span class="gc-desc">4年生最大の混乱ポイント「〜の位まで」と「上から〜桁」の違いを、例題つきで整理しています。</span></a>
+<a class="guide-card" href="/sansu-onayami-guide.html"><span class="gc-title">算数のお悩み別ガイド →</span><span class="gc-desc">「文章題が苦手」「計算ミスが多い」など、症状から原因と対処法を探せます。</span></a>
+</div>
 <div class="section"><h2>📖 関連する解説ガイド</h2><p style="font-size:12px;color:#64748B;margin-bottom:12px;">つまずきやすい単元は、教え方・練習のコツを解説記事でくわしく紹介しています。</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-<a href="/division-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➗ わり算の筆算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">手順を確実に</span></a>
+<a href="/division-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➗ わり算の筆算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">手順を固める</span></a>
 <a href="/gaisuu-shishagoonyuu-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📊 がい数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">四捨五入・切り上げ</span></a>
 <a href="/fractions-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">½ 分数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">帯分数・仮分数</span></a>
 <a href="/decimal-fraction-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">0.1 小数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">かけ算・わり算</span></a>
 <a href="/geometry-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📐 面積・角度</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">公式と測り方</span></a>
 <a href="/data-katsuyou-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📈 折れ線グラフ</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">変化の読み取り</span></a>
+<a href="/bunshoudai-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📝 文章題</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">式の立て方</span></a>
+<a href="/reduce-mistakes.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🔍 計算ミス</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">筆算のミスを減らす</span></a>
+<a href="/tanni-kanzan-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📏 単位換算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">面積・長さの単位</span></a>
+<a href="/calculation-power.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">⚡ 計算力</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">速く正確に解く</span></a>
 </div></div>
-<div class="section"><h2>🖊️ 小学4年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学4年生のドリルを始める</a></div>
+<div class="section"><h2>🖊️ 小学4年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学4年生のドリルを始める</a>
+<div class="link-row">
+  <a href="/daily.html">📅 今日のドリル</a>
+  <a href="/how-to-use.html">📘 使い方ガイド</a>
+  <a href="/premium.html">🖨️ 印刷用PDF</a>
+</div></div>
 <div class="section"><h2>❓ よくある質問</h2>
-<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q1. 4年生のわり算の筆算がうまくできません。</div><p style="font-size:13px;color:#334155;line-height:1.85;">「たてる・かける・ひく・おろす」の4手順のどれかが抜けているケースがほとんどです。手順を声に出しながら、1つずつ確実に進める練習をしましょう。どこで詰まるかを一緒に特定するのが解決の近道です。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q1. 4年生のわり算の筆算がうまくできません。</div><p style="font-size:13px;color:#334155;line-height:1.85;">「たてる・かける・ひく・おろす」の4手順のどれかが抜けているケースが多いです。手順を声に出しながら、1つずつ進める練習をしましょう。どこで詰まるかを一緒に特定するのが解決の近道です。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q2. がい数（四捨五入）の使い分けが分かりません。</div><p style="font-size:13px;color:#334155;line-height:1.85;">四捨五入・切り上げ・切り捨ては「何のために概数にするか」で決まります。「代金が足りるように多めに見積もる（切り上げ）」など、具体的な場面と結びつけると理解しやすくなります。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q3. 4年生の算数でつまずきやすい単元はどこですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">わり算の筆算と、大きな数・小数の位取りです。どちらも「位をそろえる」ことが共通のポイント。マス目のノートを使い、位を意識して書く習慣が有効です。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q4. 「小4の壁」とは何ですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">4年生で内容の抽象度が上がり、算数が急に難しく感じられる現象を指します。がい数・面積・分数など、おはじきなど具体物で確かめにくい単元が増え、わり算の筆算のように手順の長い計算も登場するためです。つまずきの原因は3年生までの九九・筆算の定着不足にあることが多く、さかのぼって確認するのが近道です。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q5. わり算の筆算で商が立てられません。</div><p style="font-size:13px;color:#334155;line-height:1.85;">÷2桁では、割る数と割られる数を概数にして見当をつける練習が有効です。たとえば86÷21なら「およそ90÷20だから4くらい」と見当をつけてから確かめます。がい数の学習が、そのまま筆算の武器になります。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q6. 面積の単位（cm²・m²・a・ha）が覚えられません。</div><p style="font-size:13px;color:#334155;line-height:1.85;">1辺の長さから作り直すと覚えやすくなります。1m²は1辺1m＝100cmの正方形なので100×100＝10000cm²。1aは1辺10m、1haは1辺100mの正方形です。単位を暗記するのではなく、正方形の1辺の長さで整理しましょう。</p></div>
 </div>
-<div class="section"><h2>🚀 次の学年への準備</h2><div class="next-box"><p>5年生では分数のたし算ひき算（異分母）、割合、体積、平均、速さなど、思考力を要する単元が増えます。4年生のわり算の筆算と小数計算を確実にしておきましょう。</p></div></div>
+<div class="section"><h2>🚀 次の学年への準備</h2><div class="next-box"><p>5年生では分数のたし算ひき算（異分母）、割合、体積、平均、速さなど、思考力を要する単元が増えます。4年生のわり算の筆算と小数計算を、ここでしっかり固めておきましょう。</p></div></div>
+<div class="section"><h2>🔢 ほかの学年を見る</h2>
+<div class="grade-nav">
+  <a href="/grade-1.html">1年生</a>
+  <a href="/grade-2.html">2年生</a>
+  <a href="/grade-3.html">3年生</a>
+  <a href="/grade-4.html" class="current">4年生</a>
+  <a href="/grade-5.html">5年生</a>
+  <a href="/grade-6.html">6年生</a>
+</div>
+<div class="link-row">
+  <a href="/grade-guide.html">📋 学年別まとめ</a>
+  <a href="/sansu-onayami-guide.html">💬 算数のお悩み別</a>
+  <a href="/">🏠 トップへ</a>
+</div>
+</div>
 <div class="nav-row"><a href="/grade-3.html" class="nav-btn">← 3年生</a><a href="/grade-guide.html" class="nav-btn" style="color:var(--text-muted);">一覧へ</a><a href="/grade-5.html" class="nav-btn">→ 5年生</a></div>
 </div>
 <footer>
