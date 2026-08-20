@@ -49,6 +49,31 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .mistake-box{background:#FEF2F2;border-left:4px solid #EF4444;border-radius:0 12px 12px 0;padding:14px;}
 .mistake-box h3{font-size:13px;font-weight:700;color:#B91C1C;margin-bottom:6px;}
 .mistake-box p{font-size:13px;color:#991B1B;line-height:1.7;}
+.answer-box{background:#FEF2F2;border:2px solid #FCA5A5;border-radius:12px;padding:16px 18px;margin:4px 0 12px;}
+.answer-box p{font-size:13px;color:#334155;line-height:1.8;margin-bottom:6px;}
+.answer-box p:last-child{margin-bottom:0;}
+.cur-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:4px 0 12px;font-size:12px;}
+.cur-table th,.cur-table td{border:1px solid var(--border);padding:8px 9px;text-align:left;vertical-align:top;background:#fff;line-height:1.7;}
+.cur-table th{background:var(--bg-light);color:var(--color);font-weight:700;}
+.cur-table tr>*:nth-child(1){width:19%;}
+.cur-table tr>*:nth-child(2){width:48%;}
+.cur-table tr>*:nth-child(3){width:33%;}
+.check-item{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--border);}
+.check-item:last-child{border-bottom:none;}
+.check-box{flex-shrink:0;width:17px;height:17px;border:2px solid var(--color);border-radius:4px;margin-top:3px;}
+.check-text{font-size:13px;color:#334155;line-height:1.7;}
+.check-text b{color:var(--color);}
+.check-link{display:inline-block;font-size:11px;color:#1D4ED8;text-decoration:none;margin-left:2px;white-space:nowrap;}
+.cur-table a{color:#1D4ED8;text-decoration:none;border-bottom:1px dotted #93C5FD;}
+.note{font-size:12px;color:var(--text-muted);line-height:1.75;}
+.guide-card{display:block;background:linear-gradient(135deg,#FFFDF5,#FFF1CE);border:1.5px solid var(--border-c);border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:10px;}
+.guide-card .gc-title{display:block;font-size:14px;font-weight:700;color:var(--color);margin-bottom:4px;}
+.guide-card .gc-desc{display:block;font-size:12px;color:#475569;line-height:1.7;}
+.link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.link-row a{flex:1 1 auto;text-align:center;padding:10px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:10px;font-size:12px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
+.grade-nav a{padding:11px 6px;text-align:center;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--color);text-decoration:none;}
+.grade-nav a.current{background:var(--color);border-color:var(--color);color:#fff;}
 .next-box{background:var(--bg-light);border:1.5px solid var(--border-c);border-radius:12px;padding:14px;}
 .next-box h3{font-size:13px;font-weight:700;color:var(--color);margin-bottom:6px;}
 .next-box p{font-size:13px;color:#334155;line-height:1.7;}
@@ -112,6 +137,30 @@ footer a{color:#94A3B8;text-decoration:underline;}
         "@type": "Answer",
         "text": "1日5〜10分で十分です。長時間より、毎日短く続けることが定着につながります。生活の中で数を使う声かけも効果的です。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "1年生の算数はいつから難しくなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2学期です。10より大きい数に入り、くり上がりのあるたし算・くり下がりのあるひき算が続けて登場します。1学期は順調でも2学期に急に宿題が終わらなくなる子が多いので、9月以降は毎日の宿題にかかる時間を見ておくと早く気づけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "指を使って計算するのはやめさせるべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1学期のうちは問題ありません。指は数を量として実感するための道具です。ただしくり上がりに入る2学期までに、10の補数だけは指なしで即答できる状態にしておきましょう。指で1つずつ数える方法のままだと、8＋6のような計算で1ずれミスが起こりやすくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "さくらんぼ計算は必ずやらないといけませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最終的に速く正確に解ければ方法は問われません。さくらんぼ計算は「10のまとまりを作る」考え方を目に見える形にしたもので、つまずいている子ほど有効です。すでに暗算で正しく解ける子に無理に書かせる必要はありませんが、学校のテストで式の書き方を指定される場合はそれに合わせましょう。"
+      }
     }
   ]
 }
@@ -127,12 +176,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <div class="content">
 <div class="section"><p style="font-size:14px;color:#334155;line-height:1.9;">小学1年生の算数は、これからの学習すべての「土台」をつくる大切な1年です。数を数えることから始まり、たし算・ひき算、そして繰り上がり・繰り下がりへと進みます。ここでつまずきをなくしておくと、2年生以降の九九や筆算がぐっと楽になります。</p></div>
+<div class="section"><h2>🎯 【直答】小学1年生の算数では何を習う？</h2>
+<div class="answer-box">
+  <p><strong>「10までの数」→「たし算・ひき算」→「くり上がり・くり下がり」→「100までの数」</strong>の順に進みます。あわせて、長さ・かさのくらべ方、かたち、とけい（なんじ・なんじはん）を学びます。</p>
+  <p><strong>山場は2学期後半のくり上がり・くり下がり</strong>。ここでつまずくと2年生の筆算まで影響するため、1年生で最優先に固めるのは<strong>10の補数（7と3で10）</strong>です。</p>
+</div>
+<p class="note">下の「学習内容」で単元ごとの中身を、「学期別カリキュラム」でいつ習うかを確認できます。</p>
+</div>
 <div class="section"><h2>📚 学習内容</h2>
-<div class="topic-card"><h3>10までの数の合成・分解</h3><p>「5は3と2」「8は6と2」のように、数をいろいろな形で分けたり合わせたりする力です。これが計算のすべての基礎になります。おはじきや指を使って、直感的にできるまで繰り返しましょう。</p></div>
-<div class="topic-card"><h3>繰り上がりのあるたし算</h3><p>8＋6のように答えが10を超えるたし算です。「10のまとまりを作る」考え方（8＋6→8に2をたして10、残り4で14）が基本。10の補数がすらすら言えることが前提になります。</p></div>
-<div class="topic-card"><h3>繰り下がりのあるひき算</h3><p>13－8のように10を超える数からのひき算です。「10からひく」方法（13を10と3に分け、10－8＝2、2＋3＝5）で解くと確実です。1年生最大の山場のひとつです。</p></div>
-<div class="topic-card"><h3>長さ・かさ・かたちの比較</h3><p>「どちらが長い？」「どちらが多い？」を直接くらべる経験を通して量の感覚を育てます。まる・さんかく・しかくといった形の学習も始まります。</p></div>
-<div class="topic-card"><h3>とけいの読み方</h3><p>「なんじ」「なんじはん」から始まり、生活の中で時刻を読む練習をします。デジタルとアナログの両方に触れておくと安心です。</p></div>
+<div class="topic-card"><h3>10までの数・なんばんめ</h3><p>数を正しく数え、読み、書くところから始まります。「前から3番目」「右から2番目」のような順序の言い方（じょすう）も学習。数字が書けても順番の言葉でつまずく子は珍しくありません。</p></div>
+<div class="topic-card"><h3>10までの数の合成・分解（いくつといくつ）</h3><p>「5は3と2」「8は6と2」のように、数をいろいろな形で分けたり合わせたりする力です。これが計算のすべての基礎になります。おはじきや指を使って、直感的にできるまで繰り返しましょう。</p></div>
+<div class="topic-card"><h3>くり上がりのないたし算・ひき算</h3><p>3＋4、7－2など答えが10までの計算です。ここは合成・分解がそのまま使えるので、「数えて出す」のではなく「思い出して出す」状態を目指します。<a href="/addition-guide.html">たし算の教え方</a>もあわせてどうぞ。</p></div>
+<div class="topic-card"><h3>20までの数・3つの数の計算</h3><p>10より大きい数を「10といくつ」でとらえます。5＋3＋2のような3つの数の計算も登場し、<strong>前から順に計算する</strong>という手順の感覚が身につきます。</p></div>
+<div class="topic-card"><h3>くり上がりのあるたし算</h3><p>8＋6のように答えが10を超えるたし算です。「10のまとまりを作る」考え方（8＋6→8に2をたして10、残り4で14）が基本。10の補数がすらすら言えることが前提になります。くわしくは<a href="/tasizan-kuriagari.html">くり上がりのたし算のコツ</a>へ。</p></div>
+<div class="topic-card"><h3>くり下がりのあるひき算</h3><p>13－8のように10を超える数からのひき算です。「10からひく」方法（13を10と3に分け、10－8＝2、2＋3＝5）で解くと確実です。1年生最大の山場のひとつで、<a href="/subtraction-guide.html">ひき算の攻略法</a>で手順をくわしく解説しています。</p></div>
+<div class="topic-card"><h3>大きいかず（100までの数）</h3><p>3学期に100までの数の読み書きと並び方を学びます。「10が6つで60」という<strong>十進位取りの入り口</strong>で、2年生の筆算に直結する重要単元です。</p></div>
+<div class="topic-card"><h3>長さ・かさ・広さのくらべ方</h3><p>「どちらが長い？」「どちらが多い？」を直接くらべる経験を通して量の感覚を育てます。マス目やコップ何杯分といった「いくつ分」でくらべる方法まで進みます（<a href="/tanni-kanzan-guide.html">単位のくらべ方</a>）。</p></div>
+<div class="topic-card"><h3>かたち・かたちづくり</h3><p>まる・さんかく・しかく、箱の形といった立体・平面の学習です。色板を並べて形を作る活動もあり、3年生以降の図形の下地になります。</p></div>
+<div class="topic-card"><h3>とけいの読み方（なんじ・なんじはん）</h3><p>「なんじ」「なんじはん」から始まり、生活の中で時刻を読む練習をします。デジタルとアナログの両方に触れておくと安心です（<a href="/time-calculation.html">時こくと時間</a>）。</p></div>
+<div class="topic-card"><h3>ずをつかってかんがえる（文章題）</h3><p>「たすのかな、ひくのかな」を図に表して判断する学習です。計算はできるのに文章題でつまずく子の多くは、この<strong>場面を図にする</strong>段階が抜けています（<a href="/bunshoudai-guide.html">文章題の教え方</a>）。</p></div>
+</div>
+<div class="section"><h2>🗓️ 学期別カリキュラム（いつ何を習う？）</h2>
+<table class="cur-table">
+  <tr><th>時期</th><th>おもな単元</th><th>家庭で見ておくこと</th></tr>
+  <tr><th>1学期<br>4〜7月</th><td>10までの数／なんばんめ／いくつといくつ／<a href="/addition-guide.html">くり上がりのないたし算・ひき算</a>／<a href="/tanni-kanzan-guide.html">どちらがながい</a></td><td>「6は4と□」が指を使わず即答できるか</td></tr>
+  <tr><th>2学期<br>9〜12月</th><td>20までの数／3つの数の計算／どちらがおおい（かさ）／<strong><a href="/tasizan-kuriagari.html">くり上がりのあるたし算</a></strong>／かたちあそび／<strong><a href="/subtraction-guide.html">くり下がりのあるひき算</a></strong></td><td>1年最大の山場。宿題に時間がかかり始めたらすぐ補習</td></tr>
+  <tr><th>3学期<br>1〜3月</th><td>大きいかず（100まで）／<a href="/time-calculation.html">なんじなんじはん</a>／<a href="/bunshoudai-guide.html">ずをつかってかんがえよう</a>／かたちづくり</td><td>くり上がり・くり下がりの取りこぼしを2年生までに回収</td></tr>
+</table>
+<p class="note">※単元の順序と名称は教科書会社によって多少前後します。目安としてご覧ください。</p>
 </div>
 <div class="section"><h2>⚠️ つまずきやすいポイントと対策</h2>
 <div class="mistake-box" style="margin-bottom:10px;"><h3>「8＋5＝12」のような1ずれミス</h3><p>指で1つずつ数える習慣が残っていると起こりがちです。「10のまとまりを作る」思考に切り替え、計算ブロックやおはじきで視覚的に練習しましょう。</p></div>
@@ -143,21 +214,65 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="tip-item"><div class="tip-num">2</div><div><div class="tip-title">具体物で体感させる</div><div class="tip-body">おはじき・ブロック・指を使った「10のまとまり作り」が効果的。抽象的な数字の前に、実物で感覚を育てましょう。</div></div></div>
 <div class="tip-item"><div class="tip-num">3</div><div><div class="tip-title">毎日5分の反復</div><div class="tip-body">繰り上がりの計算を1日10問、毎日続けるだけで大きく変わります。量より継続が大切です。</div></div></div>
 </div>
+<div class="section"><h2>✅ 1年生修了チェックリスト</h2>
+<p class="note" style="margin-bottom:8px;">2年生に上がる前に、次の8項目ができているか確認しましょう。1つでも×があれば、その単元だけ戻って練習すれば十分です。各項目の青いリンクが、つまずいたときの戻り先です。</p>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>10の補数</b>が即答できる（「7といくつで10？」→「3」）<a class="check-link" href="/addition-guide.html">→ たし算の教え方</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>10までのたし算・ひき算</b>を指を使わずに答えられる<a class="check-link" href="/daily.html">→ 今日のドリルで毎日練習</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>くり上がりのたし算</b>（8＋6など）が1問5秒以内で解ける<a class="check-link" href="/tasizan-kuriagari.html">→ くり上がりのコツ</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>くり下がりのひき算</b>（13－8など）が1問5秒以内で解ける<a class="check-link" href="/subtraction-guide.html">→ くり下がりの攻略</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>100までの数</b>を読み書きでき、「10が6つで60」と説明できる<a class="check-link" href="/grade-1-tips.html">→ 1年生 完全ガイド</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>3つの数の計算</b>（5＋3＋2）を前から順に計算できる<a class="check-link" href="/reduce-mistakes.html">→ 計算ミスを減らす</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>とけい</b>の「なんじ」「なんじはん」が読める<a class="check-link" href="/time-calculation.html">→ 時こくと時間</a></div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text"><b>文章題</b>で「たすのか、ひくのか」を自分で判断できる<a class="check-link" href="/bunshoudai-guide.html">→ 文章題の教え方</a></div></div>
+</div>
 <div class="section"><h2>👨‍👩‍👧 保護者の関わり方</h2><p style="font-size:13px;color:#334155;line-height:1.85;">1年生のうちは「できた！」という成功体験を積ませることが何より大切です。まちがえても叱らず、一緒におはじきを動かしながら「どうしてそうなるか」を確かめてあげてください。生活の中で「りんごが3個、2個もらったら何個？」と自然に数を使う場面をつくると、算数が身近になります。</p></div>
+<div class="section"><h2>📗 もっとくわしく知りたい方へ</h2>
+<a class="guide-card" href="/grade-1-tips.html"><span class="gc-title">小学1年生の算数 完全ガイド →</span><span class="gc-desc">時期別の見取り図、つまずきサイン早見表、親のNG対応と言いかえ、学期ごとのサポートカレンダーまで。このページより一段くわしい保護者向けガイドです。</span></a>
+<a class="guide-card" href="/grade-guide.html"><span class="gc-title">1〜6年生の学習内容まとめ →</span><span class="gc-desc">6年間のつながりマップつき。「どこでつまずいたら、どこまでさかのぼるか」の道順がわかります。</span></a>
+<a class="guide-card" href="/nyuugaku-junbi-guide.html"><span class="gc-title">入学前のさんすう準備（年長向け）→</span><span class="gc-desc">これから1年生になるお子さん向け。数・かたちに親しむ家庭での遊び方を紹介しています。</span></a>
+</div>
 <div class="section"><h2>📖 関連する解説ガイド</h2><p style="font-size:12px;color:#64748B;margin-bottom:12px;">つまずきやすい単元は、教え方・練習のコツを解説記事でくわしく紹介しています。</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
 <a href="/addition-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➕ たし算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くり上がりの教え方</span></a>
 <a href="/subtraction-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➖ ひき算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くり下がりの攻略</span></a>
 <a href="/tanni-kanzan-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📏 長さ・かさ</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くらべ方と単位</span></a>
 <a href="/time-calculation.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🕐 とけい</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">時こくの読み方</span></a>
+<a href="/tasizan-kuriagari.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🍒 くり上がり</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">さくらんぼ計算のやり方</span></a>
+<a href="/bunshoudai-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📝 文章題</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">たすのかひくのか</span></a>
 <a href="/nyuugaku-junbi-guide.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🎒 入学準備</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">数・かたちに親しむ</span></a>
+<a href="/math-game.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🎲 算数ゲーム</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">遊びながら数に慣れる</span></a>
+<a href="/parent-support.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">👨‍👩‍👧 親のサポート</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">算数が苦手な親でも</span></a>
+<a href="/study-habits.html" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;display:block;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📅 学習習慣</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">毎日5分を続けるコツ</span></a>
 </div></div>
-<div class="section"><h2>🖊️ 小学1年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学1年生のドリルを始める</a></div>
+<div class="section"><h2>🖊️ 小学1年生の算数ドリルに挑戦</h2><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">学んだ内容を、実際に問題を解いて確かめましょう。学年・難易度を選んで、その場で採点できます。</p><a class="drill-btn" href="/drill.html?grade=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>小学1年生のドリルを始める</a>
+<div class="link-row">
+  <a href="/daily.html">📅 今日のドリル</a>
+  <a href="/how-to-use.html">📘 使い方ガイド</a>
+  <a href="/premium.html">🖨️ 印刷用PDF</a>
+</div></div>
 <div class="section"><h2>❓ よくある質問</h2>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q1. 小学1年生の算数でつまずきやすいのはどこですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">最大の山場は「繰り上がりのあるたし算」と「繰り下がりのあるひき算」です。どちらも「10のまとまり」を作れるかがカギで、その土台となる10の補数（7と3で10など）を即答できるようにしておくことが重要です。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q2. 計算が遅い1年生にはどうすればいいですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">まずは指で数えるのを卒業し、「10のまとまり」で考える練習に切り替えましょう。おはじきやブロックで10を作る体験を重ね、毎日5〜10問の反復を続けると、少しずつ速く正確になります。</p></div>
 <div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q3. 1年生の家庭学習は1日どれくらいが目安ですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">1日5〜10分で十分です。長時間より、毎日短く続けることが定着につながります。生活の中で数を使う声かけも効果的です。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q4. 1年生の算数はいつから難しくなりますか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">2学期です。10より大きい数に入り、くり上がりのあるたし算・くり下がりのあるひき算が続けて登場します。1学期は順調でも2学期に急に宿題が終わらなくなる子が多いので、9月以降は毎日の宿題にかかる時間を見ておくと早く気づけます。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q5. 指を使って計算するのはやめさせるべきですか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">1学期のうちは問題ありません。指は「数を量として実感する」ための道具です。ただしくり上がりに入る2学期までに、10の補数だけは指なしで即答できる状態にしておきましょう。指で1つずつ数える方法のままだと、8＋6のような計算で1ずれミスが起こりやすくなります。</p></div>
+<div style="margin-bottom:14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">Q6. さくらんぼ計算は必ずやらないといけませんか？</div><p style="font-size:13px;color:#334155;line-height:1.85;">最終的に速く正確に解ければ、方法は問われません。さくらんぼ計算は「10のまとまりを作る」考え方を目に見える形にしたもので、つまずいている子ほど有効です。すでに暗算で正しく解ける子に無理に書かせる必要はありませんが、学校のテストで式の書き方を指定される場合はそれに合わせましょう。</p></div>
 </div>
-<div class="section"><h2>🚀 次の学年への準備</h2><div class="next-box"><p>2年生では九九（かけ算）が始まります。1年生のうちに繰り上がり・繰り下がりを完全に習得しておくと、2桁の計算や九九の学習にスムーズに移行できます。</p></div></div>
+<div class="section"><h2>🚀 次の学年への準備</h2><div class="next-box"><p>2年生では<a href="/kuku-tips.html" style="color:#1D4ED8;">九九（かけ算）</a>が始まります。1年生のうちに繰り上がり・繰り下がりを完全に習得しておくと、2桁の計算や九九の学習にスムーズに移行できます。くわしくは<a href="/grade-2.html" style="color:#1D4ED8;">小学2年生の算数</a>へ。</p></div></div>
+<div class="section"><h2>🔢 ほかの学年を見る</h2>
+<div class="grade-nav">
+  <a href="/grade-1.html" class="current">1年生</a>
+  <a href="/grade-2.html">2年生</a>
+  <a href="/grade-3.html">3年生</a>
+  <a href="/grade-4.html">4年生</a>
+  <a href="/grade-5.html">5年生</a>
+  <a href="/grade-6.html">6年生</a>
+</div>
+<div class="link-row">
+  <a href="/grade-guide.html">📋 学年別まとめ</a>
+  <a href="/sansu-onayami-guide.html">💬 算数のお悩み別</a>
+  <a href="/">🏠 トップへ</a>
+</div>
+</div>
 <div class="nav-row"><span></span><a href="/grade-guide.html" class="nav-btn" style="color:var(--text-muted);">一覧へ</a><a href="/grade-2.html" class="nav-btn">→ 2年生</a></div>
 </div>
 <footer>
