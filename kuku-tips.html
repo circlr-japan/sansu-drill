@@ -51,6 +51,12 @@ ul li,ol li{margin-bottom:8px;}
 .fig{margin:20px 0;}
 .fig svg{width:100%;height:auto;display:block;}
 .fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -160,6 +166,214 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </svg>
 <figcaption>図：九九を覚える順番の目安。1の段から順に進めるのではなく、答えが規則的で覚えやすい段から取り組むと成功体験を積みやすくなります。</figcaption>
 </figure>
+
+<h2>覚えるのは81問ではなく45問——先に「同じ答え」を教える</h2>
+<p>九九は1の段から9の段まで、全部で81通りあります。ただし<strong>1×9と9×1は答えが同じ</strong>です。かけ算にはこの<strong>交換のきまり（1つ分×いくつ分を入れかえても答えは変わらない）</strong>があるので、実際に新しく覚える組み合わせは<strong>45通り</strong>です。残りの36通りは、覚えた45通りの裏返しにすぎません。</p>
+<figure class="fig" data-fig="kuku-taisho">
+<svg viewBox="0 0 420 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figKk2T figKk2D">
+  <title id="figKk2T">九九表が対角線で対称になっていることを示す図</title>
+  <desc id="figKk2D">9かける9の表で、対角線より下の45マスを覚えれば、上の36マスは同じ答えになることを色分けで示しています。</desc>
+  <rect x="0" y="0" width="420" height="452" fill="#FFFDF5" rx="12"/>
+  <text x="210" y="28" font-size="14" font-weight="700" fill="#122A64" text-anchor="middle">九九は81問。でも覚えるのは45問でいい</text>
+  <text x="63" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">1</text>
+  <text x="34" y="79" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">1</text>
+  <text x="101" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">2</text>
+  <text x="34" y="113" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">2</text>
+  <text x="139" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">3</text>
+  <text x="34" y="147" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">3</text>
+  <text x="177" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">4</text>
+  <text x="34" y="181" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">4</text>
+  <text x="215" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">5</text>
+  <text x="34" y="215" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">5</text>
+  <text x="253" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">6</text>
+  <text x="34" y="249" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">6</text>
+  <text x="291" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">7</text>
+  <text x="34" y="283" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">7</text>
+  <text x="329" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">8</text>
+  <text x="34" y="317" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">8</text>
+  <text x="367" y="50" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">9</text>
+  <text x="34" y="351" font-size="12" font-weight="700" fill="#B45309" text-anchor="end">9</text>
+  <rect x="44" y="58" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="120" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="158" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="196" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="234" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="272" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="310" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="348" y="58" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="92" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="92" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="92" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="158" y="92" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="196" y="92" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="234" y="92" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="272" y="92" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="310" y="92" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="348" y="92" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="126" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="126" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="126" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="158" y="126" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="196" y="126" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="234" y="126" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="272" y="126" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="310" y="126" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="348" y="126" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="160" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="160" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="160" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="158" y="160" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="196" y="160" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="234" y="160" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="272" y="160" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="310" y="160" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="348" y="160" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="194" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="194" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="194" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="158" y="194" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="196" y="194" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="234" y="194" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="272" y="194" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="310" y="194" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="348" y="194" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="228" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="228" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="228" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="158" y="228" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="196" y="228" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="234" y="228" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="272" y="228" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="310" y="228" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="348" y="228" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="262" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="262" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="262" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="158" y="262" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="196" y="262" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="234" y="262" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="272" y="262" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="310" y="262" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="348" y="262" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="158" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="196" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="234" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="272" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="310" y="296" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="348" y="296" width="38" height="34" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="44" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="82" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="120" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="158" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="196" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="234" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="272" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="310" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <rect x="348" y="330" width="38" height="34" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <line x1="44" y1="58" x2="386" y2="364" stroke="#EF4444" stroke-width="2.5" opacity="0.55"/>
+  <text x="63" y="79" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">1</text>
+  <text x="101" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">2</text>
+  <text x="139" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">3</text>
+  <text x="177" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">4</text>
+  <text x="215" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">5</text>
+  <text x="253" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">6</text>
+  <text x="291" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">7</text>
+  <text x="329" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">8</text>
+  <text x="367" y="79" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">9</text>
+  <text x="63" y="113" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">2</text>
+  <text x="101" y="113" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">4</text>
+  <text x="139" y="113" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">6</text>
+  <text x="177" y="113" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">8</text>
+  <text x="215" y="113" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">10</text>
+  <text x="253" y="113" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">12</text>
+  <text x="291" y="113" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">14</text>
+  <text x="329" y="113" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">16</text>
+  <text x="367" y="113" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">18</text>
+  <text x="63" y="147" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">3</text>
+  <text x="101" y="147" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">6</text>
+  <text x="139" y="147" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">9</text>
+  <text x="177" y="147" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">12</text>
+  <text x="215" y="147" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">15</text>
+  <text x="253" y="147" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">18</text>
+  <text x="291" y="147" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">21</text>
+  <text x="329" y="147" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">24</text>
+  <text x="367" y="147" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">27</text>
+  <text x="63" y="181" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">4</text>
+  <text x="101" y="181" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">8</text>
+  <text x="139" y="181" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">12</text>
+  <text x="177" y="181" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">16</text>
+  <text x="215" y="181" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">20</text>
+  <text x="253" y="181" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">24</text>
+  <text x="291" y="181" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">28</text>
+  <text x="329" y="181" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">32</text>
+  <text x="367" y="181" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">36</text>
+  <text x="63" y="215" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">5</text>
+  <text x="101" y="215" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">10</text>
+  <text x="139" y="215" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">15</text>
+  <text x="177" y="215" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">20</text>
+  <text x="215" y="215" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">25</text>
+  <text x="253" y="215" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">30</text>
+  <text x="291" y="215" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">35</text>
+  <text x="329" y="215" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">40</text>
+  <text x="367" y="215" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">45</text>
+  <text x="63" y="249" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">6</text>
+  <text x="101" y="249" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">12</text>
+  <text x="139" y="249" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">18</text>
+  <text x="177" y="249" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">24</text>
+  <text x="215" y="249" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">30</text>
+  <text x="253" y="249" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">36</text>
+  <text x="291" y="249" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">42</text>
+  <text x="329" y="249" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">48</text>
+  <text x="367" y="249" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">54</text>
+  <text x="63" y="283" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">7</text>
+  <text x="101" y="283" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">14</text>
+  <text x="139" y="283" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">21</text>
+  <text x="177" y="283" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">28</text>
+  <text x="215" y="283" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">35</text>
+  <text x="253" y="283" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">42</text>
+  <text x="291" y="283" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">49</text>
+  <text x="329" y="283" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">56</text>
+  <text x="367" y="283" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">63</text>
+  <text x="63" y="317" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">8</text>
+  <text x="101" y="317" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">16</text>
+  <text x="139" y="317" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">24</text>
+  <text x="177" y="317" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">32</text>
+  <text x="215" y="317" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">40</text>
+  <text x="253" y="317" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">48</text>
+  <text x="291" y="317" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">56</text>
+  <text x="329" y="317" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">64</text>
+  <text x="367" y="317" font-size="11" font-weight="400" fill="#CBD5E1" text-anchor="middle">72</text>
+  <text x="63" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">9</text>
+  <text x="101" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">18</text>
+  <text x="139" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">27</text>
+  <text x="177" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">36</text>
+  <text x="215" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">45</text>
+  <text x="253" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">54</text>
+  <text x="291" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">63</text>
+  <text x="329" y="351" font-size="11" font-weight="400" fill="#1E3A8A" text-anchor="middle">72</text>
+  <text x="367" y="351" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">81</text>
+  <rect x="44" y="380" width="16" height="12" rx="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="68" y="391" font-size="12" fill="#475569">覚える 45マス（対角線をふくむ下側）</text>
+  <rect x="44" y="400" width="16" height="12" rx="3" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="68" y="411" font-size="12" fill="#475569">覚えなくていい 36マス（下側と同じ答え）</text>
+  <text x="210" y="436" font-size="12" font-weight="700" fill="#991B1B" text-anchor="middle">赤い線で折り返すと、同じ答えのマスが重なる</text>
+</svg>
+<figcaption>図：九九表は対角線で対称です。1×9と9×1のように、折り返した位置のマスは同じ答え。新しく覚えるのは45通りだけで済みます。</figcaption>
+</figure>
+<p>ここで大事なのは、この事実を<strong>覚え終わってからではなく、始める前に伝える</strong>ことです。「81個も覚えるのか」と身構えている子にとって、覚える数が半分近くまで減ると分かることは、それだけで取りかかりやすさが変わります。とくに後半の6・7・8の段は、前半で覚えた段の裏返しが多く含まれています。</p>
+<div class="memo-box">
+  <div class="memo-title">🏠 家庭での試し方</div>
+  <p><strong>口で説明するより、九九表を見せてください。</strong>「1×9と9×1」の2マスを指でさして、折り返すと重なることを目で確認させると、言葉だけよりも伝わります。上の図をそのまま見せてもかまいません。</p>
+  <p><strong>先に伝える場面は、8の段に入る前がひとつの目安です。</strong>8の段には8×1〜8×5のように、1・2・3・4・5の段ですでに出てきた組み合わせが多く含まれています。</p>
+  <div class="memo-real">
+    <span class="memo-tag">にじゅうまる。家庭実践メモ</span>
+    <p>上の子が2年生の冬、九九表を見ながら「1×9と9×1は同じでしょう。半分だけ覚えたら、あとは同じだよ」と教えました。表を横に置いて、実際に同じ答えのマスを見せながら話した形です。</p>
+  </div>
+</div>
 
 <h2>効果的な練習方法</h2>
 <h3>①声に出して唱える（音読法）</h3>
