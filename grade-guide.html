@@ -44,6 +44,22 @@ ul li,ol li{margin-bottom:8px;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
+.check-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;table-layout:fixed;}
+.check-table th,.check-table td{border:1px solid #E2E8F0;padding:8px 6px;text-align:center;background:#fff;}
+.check-table th{background:#EFF6FF;color:#1E3A8A;font-size:12px;}
+.check-table td:first-child,.check-table th:first-child{text-align:left;width:46%;font-size:12px;}
+.ref-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin:24px 0;}
+.ref-box .ref-title{font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;}
+.ref-box ul{font-size:12px;color:#64748B;margin-bottom:0;padding-left:18px;}
+.ref-box li{margin-bottom:5px;}
+.ref-box a{color:#2563EB;}
+.try-box{background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.try-box .try-title{font-size:13px;font-weight:700;color:#1E3A8A;margin-bottom:6px;}
+.try-box p{font-size:13px;color:#1E3A8A;margin-bottom:10px;}
+.try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -147,6 +163,58 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <h2>6年間の「つながりマップ」——さかのぼりの道順</h2>
 <p>つまずきの原因は前の学年にあります。よくある「さかのぼりの道順」を知っておくと、対策が速くなります。</p>
+<figure class="fig" data-fig="tsunagari">
+<svg viewBox="0 0 420 702" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figTsuT figTsuD">
+  <title id="figTsuT">小学6年間の計算のつながりを示した図</title>
+  <desc id="figTsuD">数の合成分解から、くり上がり、九九、わり算、小数、割合、分数の乗除と比へと積み上がる順序を、学年とともに縦に並べています。</desc>
+  <rect x="0" y="0" width="420" height="702" fill="#FFFDF5" rx="12"/>
+  <text x="210" y="30" font-size="14" font-weight="700" fill="#122A64" text-anchor="middle">計算の「幹」は1本。下が弱いと上で止まる</text>
+    <text x="76" y="84" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">1年</text>
+  <rect x="86" y="56" width="300" height="46" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="236" y="84" font-size="14" font-weight="700" fill="#14532D" text-anchor="middle">数の合成・分解（10をつくる）</text>
+  <line x1="236" y1="102" x2="236" y2="116" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="236,124 230,115 242,115" fill="#94A3B8"/>
+  <text x="76" y="152" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">1・2年</text>
+  <rect x="86" y="124" width="300" height="46" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="236" y="152" font-size="14" font-weight="700" fill="#14532D" text-anchor="middle">くり上がり・くり下がり</text>
+  <line x1="236" y1="170" x2="236" y2="184" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="236,192 230,183 242,183" fill="#94A3B8"/>
+  <text x="76" y="220" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">2年</text>
+  <rect x="86" y="192" width="300" height="46" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="236" y="220" font-size="14" font-weight="700" fill="#14532D" text-anchor="middle">九九</text>
+  <line x1="236" y1="238" x2="236" y2="252" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="236,260 230,251 242,251" fill="#94A3B8"/>
+  <text x="76" y="288" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">3年</text>
+  <rect x="86" y="260" width="300" height="46" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="236" y="288" font-size="14" font-weight="700" fill="#92400E" text-anchor="middle">わり算（九九の逆）</text>
+  <line x1="236" y1="306" x2="236" y2="320" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="236,328 230,319 242,319" fill="#94A3B8"/>
+  <text x="76" y="356" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">4年</text>
+  <rect x="86" y="328" width="300" height="46" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="236" y="356" font-size="14" font-weight="700" fill="#92400E" text-anchor="middle">わり算の筆算・小数</text>
+  <line x1="236" y1="374" x2="236" y2="388" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="236,396 230,387 242,387" fill="#94A3B8"/>
+  <text x="76" y="424" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">5年</text>
+  <rect x="86" y="396" width="300" height="46" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="236" y="424" font-size="14" font-weight="700" fill="#991B1B" text-anchor="middle">小数のかけ算・わり算</text>
+  <line x1="236" y1="442" x2="236" y2="456" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="236,464 230,455 242,455" fill="#94A3B8"/>
+  <text x="76" y="492" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">5年</text>
+  <rect x="86" y="464" width="300" height="46" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="236" y="492" font-size="14" font-weight="700" fill="#991B1B" text-anchor="middle">割合</text>
+  <line x1="236" y1="510" x2="236" y2="524" stroke="#94A3B8" stroke-width="2.5"/>
+  <polygon points="236,532 230,523 242,523" fill="#94A3B8"/>
+  <text x="76" y="560" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">6年</text>
+  <rect x="86" y="532" width="300" height="46" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <text x="236" y="560" font-size="14" font-weight="700" fill="#1E3A8A" text-anchor="middle">分数の乗除・比</text>
+  <rect x="20" y="614" width="380" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+  <text x="210" y="638" font-size="12.5" font-weight="700" fill="#1E3A8A" text-anchor="middle">上でつまずいたら、下へさかのぼる</text>
+  <text x="210" y="658" font-size="12" fill="#1E3A8A" text-anchor="middle">「割合が分からない」の原因が、九九にあることもあります</text>
+  <text x="210" y="676" font-size="11.5" fill="#64748B" text-anchor="middle">※ 文章題（図をかく力）は、この幹とは別に全学年で育てます</text>
+</svg>
+<figcaption>図：小学校の計算は1本の幹でつながっています。学年をさかのぼるのは遅れではなく、上に積むための最短ルートです。</figcaption>
+</figure>
+
 <table class="cv-table">
   <tr><th>症状（高学年）</th><th>さかのぼる先</th></tr>
   <tr><td>割合ができない（5年）</td><td>小数の乗除（5年前半）→「倍」の意味（3年）</td></tr>
@@ -182,6 +250,35 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <li><strong>過程を褒める：</strong>点数より「続けたこと」「昨日より速くなったこと」</li>
 </ol>
 
+<h2>学年をまたぐ前のチェック表</h2>
+<p>進級の前に、幹の部分だけ確認しておくと、次の学年の入りが変わります。学年に関係なく「まだ難しい」が付いた行が、いま戻る場所です。</p>
+<table class="check-table">
+  <tr><th>チェック項目</th><th>できる</th><th>少し迷う</th><th>まだ難しい</th></tr>
+  <tr><td>10の合成分解が即答できる</td><td></td><td></td><td></td></tr>
+  <tr><td>くり上がり・くり下がりが安定している</td><td></td><td></td><td></td></tr>
+  <tr><td>九九をランダムに聞かれて答えられる</td><td></td><td></td><td></td></tr>
+  <tr><td>あまりのあるわり算ができる</td><td></td><td></td><td></td></tr>
+  <tr><td>わり算の筆算の手順が言える</td><td></td><td></td><td></td></tr>
+  <tr><td>小数点の位置を正しく処理できる</td><td></td><td></td><td></td></tr>
+  <tr><td>「もとにする量」を問題文から見つけられる</td><td></td><td></td><td></td></tr>
+</table>
+<p>上から順に並んでいます。<strong>いちばん上の「まだ難しい」から手をつける</strong>のが原則です。下の項目を先に練習しても、土台が揺れたままだと戻ってきます。</p>
+
+<div class="try-box">
+  <div class="try-title">✏️ さかのぼり先が決まったら、その学年で解いてみる</div>
+  <p>にじゅうまる。のドリルは学年を自由に行き来できます。「5年生だけど3年生の問題」も、登録なしでその場で解いて採点まで進みます。戻ることに時間がかからないのが、Webドリルの利点です。</p>
+  <a href="/drill.html">学年を選んでドリルをやってみる →</a>
+</div>
+
+<div class="ref-box">
+  <div class="ref-title">📚 参考資料</div>
+  <ul>
+    <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
+    <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
+  </ul>
+  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。各学年の配当単元は上記資料をもとに確認しています。つながりマップとチェック表は、にじゅうまる。運営者による整理です。</p>
+</div>
+
 <h2>よくある質問</h2>
 <h3>Q1. 一番つまずきやすい学年は？</h3>
 <p>山は3回：1年生のくり上がり、2年生の九九、そして最大の山が5年生の割合です。5年生の前に4年生までの計算を固めておくのが理想です。</p>
@@ -192,7 +289,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <h3>Q4. 学校の教科書が変わっても、この内容は同じですか？</h3>
 <p>学習する学年・単元は学習指導要領で定められているため、教科書会社が違っても大枠は共通です。単元の登場順が多少前後することはあるので、細かい進度はお子さんの教科書の目次で確認してください。</p>
 <h3>Q5. 授業についていけているか、どう確認すればいい？</h3>
-<p>カラーテスト（単元テスト）が85点を下回る単元が続いたら要注意のサインです。宿題にかかる時間が急に伸びた、算数の話を嫌がる、も早期のシグナル。気づいたら「つながりマップ」でさかのぼり先を確認しましょう。</p>
+<p>単元テストで同じ種類の間違いが続く、宿題にかかる時間が急に伸びた、算数の話を嫌がる——このあたりが早めのシグナルです。点数そのものより、<strong>どこで詰まっているか</strong>を手がかりに、上の「つながりマップ」でさかのぼり先を確認しましょう。</p>
 
 <h2>まとめ</h2>
 <p>6年間の全体地図を持っていると、「今のつまずきがどこから来て、放置するとどこに響くか」が見えるようになります。このページをブックマークして、学期の変わり目ごとに現在地を確認する使い方がおすすめです。</p>
