@@ -179,6 +179,13 @@ for p in PAGES:
         check("S11 数値断定", not hit, f"{p} に {hit}")
 
 
+# ── 想定外の文字種が混入していない（日本語サイトなので） ──
+STRAY = re.compile(r"[Ѐ-ӿԀ-ԯ가-힯฀-๿]")
+for p in PAGES:
+    hit = STRAY.findall(read(p))
+    check("文字種", not hit, f"{p} にキリル文字/ハングル/タイ文字 {hit[:5]}")
+
+
 # ── 404リンクなし（サイト内リンクの実在確認） ──
 for p in PAGES:
     src = read(p)
