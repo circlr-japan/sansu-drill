@@ -40,6 +40,25 @@ ul li,ol li{margin-bottom:8px;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+.theme-box{background:linear-gradient(135deg,#122A64,#1E3A8A);border-radius:14px;padding:18px 20px;margin:0 0 22px;}
+.theme-box .th-label{font-size:11px;font-weight:700;color:#FFC800;letter-spacing:.08em;margin-bottom:6px;}
+.theme-box .th-title{font-size:19px;font-weight:700;color:#fff;line-height:1.5;margin-bottom:10px;}
+.theme-box .th-lead{font-size:13px;color:rgba(255,255,255,0.88);line-height:1.85;margin-bottom:12px;}
+.theme-box ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px;}
+.theme-box li{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:5px 12px;font-size:12px;font-weight:700;color:#fff;}
+.check-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;table-layout:fixed;}
+.check-table th,.check-table td{border:1px solid #E2E8F0;padding:8px 6px;text-align:center;background:#fff;}
+.check-table th{background:#EFF6FF;color:#1E3A8A;font-size:12px;}
+.check-table td:first-child,.check-table th:first-child{text-align:left;width:46%;font-size:12px;}
+.ref-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin:24px 0;}
+.ref-box .ref-title{font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;}
+.ref-box ul{font-size:12px;color:#64748B;margin-bottom:0;padding-left:18px;}
+.ref-box li{margin-bottom:5px;}
+.ref-box a{color:#2563EB;}
+.try-box{background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.try-box .try-title{font-size:13px;font-weight:700;color:#1E3A8A;margin-bottom:6px;}
+.try-box p{font-size:13px;color:#1E3A8A;margin-bottom:10px;}
+.try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -107,6 +126,12 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="eyecatch">
   <p>5️⃣ 5年生は、小学算数の最高難度ゾーン。「算数嫌い」が最も生まれる学年ですが、つまずきポイントは決まっています。最難関の割合を中心に、単元別の攻略法をまとめました。</p>
 </div>
+<div class="theme-box">
+  <div class="th-label">この学年の役割</div>
+  <div class="th-title">割合・分数・小数の壁</div>
+  <p class="th-lead">小学校の算数でいちばん険しい学年です。役割は<strong>「もとにする量を1とみる」という見方を身につけること</strong>。割合・単位量あたり・速さは、すべてこの見方の言いかえです。ここを越えると6年生は下り坂になります。</p>
+  <ul><li>割合</li><li>小数</li><li>分数</li><li>面積</li><li>体積</li></ul>
+</div>
 <h2>5年生で学ぶこと（時期別の見取り図）</h2>
 <table class="cv-table">
   <tr><th>時期</th><th>主な単元</th><th>つまずき度</th></tr>
@@ -118,6 +143,21 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <h2>最難関：割合は「線分図」と「の」で攻める</h2>
 <p>割合＝くらべる量÷もとにする量。つまずきの正体はほぼ1つ、「<strong>どっちが『もと』かわからない</strong>」です。ルールは「〜<strong>の</strong>40％」の「の」の直前が、もとにする量。問題文の「の」に○をつけ、線分図の右端に「もと＝1（100％）」と書く——この2動作を型にすると、割合は手が動くようになります（<a href="/percentage-guide.html">割合の教え方ガイド</a>）。</p>
 <p>「30％引き＝×0.7」「税込＝×1.1」など、生活の題材が豊富なのも割合の特徴。スーパーの値引きシールを毎週の教材にしてください。</p>
+<h2>この学年の目玉：文の中から「もとにする量」を抜き出す</h2>
+<p>割合の問題で最初に決めるのは、計算ではなく<strong>どれが「もとにする量」か</strong>です。手がかりは、問題文の<strong>「の」の直前</strong>にあります。</p>
+<table class="cv-table">
+  <tr><th>問題文</th><th>もとにする量</th></tr>
+  <tr><td>定員40人<strong>の</strong>40％が参加した</td><td>40人（定員）</td></tr>
+  <tr><td>定価2000円<strong>の</strong>3割引き</td><td>2000円（定価）</td></tr>
+  <tr><td>去年の入場者数<strong>の</strong>1.2倍</td><td>去年の入場者数</td></tr>
+</table>
+<p>問題文の「の」に○をつけ、その直前の数を線分図の全体（＝1、100％）として右端に書く。この2動作を型にしてしまえば、あとは<strong>もと×割合＝くらべる量</strong>の1本から逆算するだけです。</p>
+<div class="try-box">
+  <div class="try-title">✏️ 線分図をかいてから解いてみる</div>
+  <p>5年生ドリルには割合の問題が含まれています。<strong>1日1問でかまわないので、図をかいてから解く</strong>——量より図の質のほうが、この単元では効きます。</p>
+  <a href="/percentage-guide.html">割合の教え方を詳しく見る →</a>
+</div>
+
 <h2>約分・通分は「倍数・約数」とセット</h2>
 <p>約分＝最大公約数でわる、通分＝最小公倍数にそろえる。つまり<strong>分数の計算力は倍数・約数の力</strong>です。約分を忘れる・通分に時間がかかる子は、分数より先に<a href="/baisuu-yakusuu-guide.html">倍数・約数</a>（さらに根本は九九）の点検を。ここがスラスラなら異分母のたし算ひき算は作業になります（<a href="/fractions-guide.html">分数ガイド</a>）。</p>
 <h2>単位量あたり・速さ：「1あたり」に立ち返る</h2>
@@ -152,6 +192,21 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p><strong>3学期：</strong>いよいよ割合。1日1問、線分図をかいて解くことに集中します。量は要りません、図の質がすべて。春休みの割合総復習まで含めて「割合シーズン」と考えてください。</p>
 <div class="tip-box"><p>💡 声かけ例：割合の問題を見たら「もとはどれ？」——この一言だけで正答率が変わります。教えるより、問いかける伴走を。</p></div>
 <p>最後にもうひとつ。5年生は学習内容だけでなく、塾や習い事で生活も忙しくなる学年です。忙しい日も「計算5分だけはゼロにしない」——このミニマムラインを親子で合意しておくと、多忙期でも学力の土台が守れます。量の増減は自由、ゼロの日だけ作らない。これが5年生の家庭学習の生命線です。</p>
+<div class="try-box">
+  <div class="try-title">✏️ 読んだあと、その場で確かめる</div>
+  <p>5年生ドリルで割合の問題に挑戦できます。線分図をかいてから解く練習にどうぞ。無料・登録不要で、間違えた問題は解答まで確認できます。</p>
+  <a href="/drill.html">5年生のドリルをやってみる →</a>
+</div>
+
+<div class="ref-box">
+  <div class="ref-title">📚 参考資料</div>
+  <ul>
+    <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
+    <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
+  </ul>
+  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。5年生の配当単元と時期は上記資料をもとに確認しています。家庭での進め方は、にじゅうまる。運営者による提案です。</p>
+</div>
+
 <h2>よくある質問</h2>
 <h3>Q1. 割合がまったくわかっていないようです。</h3>
 <p>まず「もとにする量」の特定だけを練習しましょう。問題文の「の」に○をつけ、線分図の右端に書く——式を立てるのはその後です。土台として小数のかけ算・わり算の点検も忘れずに。</p>
