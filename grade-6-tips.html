@@ -40,6 +40,25 @@ ul li,ol li{margin-bottom:8px;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+.theme-box{background:linear-gradient(135deg,#122A64,#1E3A8A);border-radius:14px;padding:18px 20px;margin:0 0 22px;}
+.theme-box .th-label{font-size:11px;font-weight:700;color:#FFC800;letter-spacing:.08em;margin-bottom:6px;}
+.theme-box .th-title{font-size:19px;font-weight:700;color:#fff;line-height:1.5;margin-bottom:10px;}
+.theme-box .th-lead{font-size:13px;color:rgba(255,255,255,0.88);line-height:1.85;margin-bottom:12px;}
+.theme-box ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px;}
+.theme-box li{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:5px 12px;font-size:12px;font-weight:700;color:#fff;}
+.check-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;table-layout:fixed;}
+.check-table th,.check-table td{border:1px solid #E2E8F0;padding:8px 6px;text-align:center;background:#fff;}
+.check-table th{background:#EFF6FF;color:#1E3A8A;font-size:12px;}
+.check-table td:first-child,.check-table th:first-child{text-align:left;width:46%;font-size:12px;}
+.ref-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin:24px 0;}
+.ref-box .ref-title{font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;}
+.ref-box ul{font-size:12px;color:#64748B;margin-bottom:0;padding-left:18px;}
+.ref-box li{margin-bottom:5px;}
+.ref-box a{color:#2563EB;}
+.try-box{background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.try-box .try-title{font-size:13px;font-weight:700;color:#1E3A8A;margin-bottom:6px;}
+.try-box p{font-size:13px;color:#1E3A8A;margin-bottom:10px;}
+.try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -107,6 +126,12 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="eyecatch">
   <p>6️⃣ 6年生は小学算数の集大成にして、中学数学への助走の1年。新しい単元の攻略と並行して、「6年間の穴の総点検」が最大のミッションです。単元別ポイントと卒業前チェックをまとめました。</p>
 </div>
+<div class="theme-box">
+  <div class="th-label">この学年の役割</div>
+  <div class="th-title">中学数学への準備</div>
+  <p class="th-lead">6年間の伏線を回収する年です。役割は新しいことを増やすより<strong>穴をゼロにして中学へ渡すこと</strong>。比や文字を使った考え方は、中学の方程式にそのままつながります。</p>
+  <ul><li>比</li><li>分数計算</li><li>円</li><li>文字につながる考え方</li></ul>
+</div>
 <h2>6年生で学ぶこと（時期別の見取り図）</h2>
 <table class="cv-table">
   <tr><th>時期</th><th>主な単元</th><th>つまずき度</th></tr>
@@ -119,6 +144,17 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p>計算手順（かけ算は分母どうし分子どうし、わり算は逆数をかける）はシンプルですが、<strong>約分してから計算する</strong>習慣の有無で速さと正確さが激変します。2/3×9/4なら、先に約分して(2×9)/(3×4)＝3/2。約分が遅い子は5年生の倍数・約数へさかのぼりを（<a href="/fractions-guide.html">分数ガイド</a>）。</p>
 <h2>最重要単元②：円の面積と複合図形</h2>
 <p>半径×半径×3.14の公式運用に加え、「円周から半径を逆算→面積」の3ステップ、3.14の計算の工夫（×3.14は最後に1回）がテストの得点差になります。詳しくは<a href="/menseki-enza.html">円周・円の面積ガイド</a>で例題つきで解説しています。</p>
+<h2>この学年の目玉：中学の「文字」につながる見方に慣れる</h2>
+<p>6年生で扱う比や比例は、中学の文字式・方程式の入り口です。新しい単元として覚えるより、<strong>これまでの計算を別の言い方で書いているだけ</strong>と分かると、中学で戸惑いにくくなります。</p>
+<table class="cv-table">
+  <tr><th>小学校での言い方</th><th>中学での言い方</th></tr>
+  <tr><td>□にあてはまる数を求める</td><td>xを求める（方程式）</td></tr>
+  <tr><td>2つの数の比が等しい</td><td>比例式・比の値</td></tr>
+  <tr><td>ともなって変わる2つの量</td><td>関数（y＝ax）</td></tr>
+  <tr><td>もとにする量を1とみる</td><td>割合・比の基準</td></tr>
+</table>
+<p>いま□で書いているところが、中学ではxになるだけ——このつながりを一度伝えておくと、中学入学後の「急に難しくなった」という感覚が和らぎます。</p>
+
 <h2>比例・比・データの活用：中学への3本の橋</h2>
 <ul>
   <li><strong>比：</strong>「2:3＝4:□」の計算より、「同じ味のめんつゆを倍量作る」など比の場面の実感が先</li>
@@ -157,6 +193,21 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p><strong>3学期：</strong>データの活用と6年間の総まとめ。卒業前の総点検（分数小数→割合→速さ）を家庭の一大プロジェクトに。「穴ゼロで中学へ」を合言葉にしましょう。</p>
 <div class="tip-box"><p>💡 声かけ例：「それ、中学でも使うらしいよ」——6年生には「今の学びが先につながる」情報が効きます。勉強の意味を未来と接続してあげてください。</p></div>
 <p>そして6年生の1年間は、親子で算数に向き合える最後の学年でもあります。中学に入ると、学習はぐっと本人の領域になります。「一緒にチェックリストを埋めた」「春休みに総点検をやり切った」という共同作業の記憶は、学力以上に、その後の親子の信頼関係の土台になってくれるはずです。</p>
+<div class="try-box">
+  <div class="try-title">✏️ 読んだあと、その場で確かめる</div>
+  <p>6年生ドリルで分数の計算を通しで確認できます。詰まったら学年を下げて戻れます。無料・登録不要で、間違えた問題は解答まで確認できます。</p>
+  <a href="/drill.html">6年生のドリルをやってみる →</a>
+</div>
+
+<div class="ref-box">
+  <div class="ref-title">📚 参考資料</div>
+  <ul>
+    <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
+    <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
+  </ul>
+  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。6年生の配当単元と時期は上記資料をもとに確認しています。家庭での進め方は、にじゅうまる。運営者による提案です。</p>
+</div>
+
 <h2>よくある質問</h2>
 <h3>Q1. 分数のわり算はなぜひっくり返してかけるのですか？</h3>
 <p>「÷2/3」は「2/3で1つ分」を求めることで、わる数を1にするために逆数をかけると説明できます。理由を1度納得しておくと、中学で分数係数の方程式が出ても迷いません。</p>
