@@ -40,6 +40,28 @@ ul li,ol li{margin-bottom:8px;}
 .cta{background:#122A64;border-radius:14px;padding:22px 20px;margin:32px 0;text-align:center;}
 .cta p{color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:12px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
+.theme-box{background:linear-gradient(135deg,#122A64,#1E3A8A);border-radius:14px;padding:18px 20px;margin:0 0 22px;}
+.theme-box .th-label{font-size:11px;font-weight:700;color:#FFC800;letter-spacing:.08em;margin-bottom:6px;}
+.theme-box .th-title{font-size:19px;font-weight:700;color:#fff;line-height:1.5;margin-bottom:10px;}
+.theme-box .th-lead{font-size:13px;color:rgba(255,255,255,0.88);line-height:1.85;margin-bottom:12px;}
+.theme-box ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px;}
+.theme-box li{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:5px 12px;font-size:12px;font-weight:700;color:#fff;}
+.check-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;table-layout:fixed;}
+.check-table th,.check-table td{border:1px solid #E2E8F0;padding:8px 6px;text-align:center;background:#fff;}
+.check-table th{background:#EFF6FF;color:#1E3A8A;font-size:12px;}
+.check-table td:first-child,.check-table th:first-child{text-align:left;width:46%;font-size:12px;}
+.ref-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin:24px 0;}
+.ref-box .ref-title{font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;}
+.ref-box ul{font-size:12px;color:#64748B;margin-bottom:0;padding-left:18px;}
+.ref-box li{margin-bottom:5px;}
+.ref-box a{color:#2563EB;}
+.try-box{background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.try-box .try-title{font-size:13px;font-weight:700;color:#1E3A8A;margin-bottom:6px;}
+.try-box p{font-size:13px;color:#1E3A8A;margin-bottom:10px;}
+.try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
 </style>
@@ -107,6 +129,12 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="eyecatch">
   <p>1️⃣ 1年生の算数は「数って楽しい」の土台を作る1年。前半はゆっくり進みますが、2学期の「くり上がり」で最初の山が来ます。1年間の見取り図と、山の越え方をまとめました。</p>
 </div>
+<div class="theme-box">
+  <div class="th-label">この学年の役割</div>
+  <div class="th-title">初めての算数学習</div>
+  <p class="th-lead">算数という教科に出会う1年です。計算の速さより、<strong>「数はいくつといくつでできている」という感覚</strong>を作ることが、この学年の役割です。ここが土台になり、2学期のくり上がり・くり下がりに直結します。</p>
+  <ul><li>数の理解</li><li>10の分解</li><li>くり上がり</li><li>くり下がり</li></ul>
+</div>
 <h2>1年生で学ぶこと（時期別の見取り図）</h2>
 <table class="cv-table">
   <tr><th>時期</th><th>主な単元</th><th>つまずき度</th></tr>
@@ -118,6 +146,44 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <h2>最重要単元：くり上がり・くり下がり</h2>
 <p>8＋5や13−8のような計算は、「10のまとまりを作る／くずす」という考え方の飛躍が必要です。攻略の鍵は計算練習の前にある<strong>「10の合成分解」の即答化</strong>。「10は7と3」「6は2と4」が2秒で言えるようになってから、さくらんぼ計算に進むのが正しい順番です。</p>
 <p>おすすめは1学期のうちから、お風呂やトランプで10づくり遊びを始めておくこと。2学期の授業が始まる頃には土台ができていて、「くり上がり？かんたん！」と山を山と感じずに越えられます。詳しい手順は<a href="/tasizan-kuriagari.html">くり上がりのたし算のコツ</a>で解説しています。</p>
+<h2>この学年の目玉：10の合成分解を9通りで確認する</h2>
+<p>1年生でいちばん確認しておきたいのは、この9通りだけです。くり上がりも、くり下がりも、さくらんぼ計算も、すべてここから作られます。</p>
+<figure class="fig" data-fig="ju-bunkai">
+<svg viewBox="0 0 420 288" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figJbT figJbD">
+  <title id="figJbT">10の合成分解の全パターンを示した表</title>
+  <desc id="figJbD">10は1と9、2と8というように9通りの組み合わせでできていることを一覧で示しています。</desc>
+  <rect x="0" y="0" width="420" height="288" fill="#FFFDF5" rx="12"/>
+  <text x="210" y="34" font-size="15" font-weight="700" fill="#122A64" text-anchor="middle">10になる組み合わせは、この9通りだけ</text>
+  <rect x="32" y="64" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="85" y="95" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">1 と 9</text>
+  <rect x="152" y="64" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="205" y="95" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">2 と 8</text>
+  <rect x="272" y="64" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="325" y="95" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">3 と 7</text>
+  <rect x="32" y="126" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="85" y="157" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">4 と 6</text>
+  <rect x="152" y="126" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="205" y="157" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">5 と 5</text>
+  <rect x="272" y="126" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="325" y="157" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">6 と 4</text>
+  <rect x="32" y="188" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="85" y="219" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">7 と 3</text>
+  <rect x="152" y="188" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="205" y="219" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">8 と 2</text>
+  <rect x="272" y="188" width="106" height="48" rx="10" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="325" y="219" font-size="17" font-weight="700" fill="#14532D" text-anchor="middle">9 と 1</text>
+  <rect x="32" y="248" width="356" height="30" rx="8" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8"/>
+  <text x="210" y="268" font-size="12.5" font-weight="700" fill="#1E3A8A" text-anchor="middle">「10は7と？」に2秒で答えられたら合格</text>
+</svg>
+<figcaption>図：10の合成分解は全部で9通り。くり上がり・くり下がりは、この9通りが即答できるかで決まります。</figcaption>
+</figure>
+<p>順番に言えるかではなく、<strong>バラバラに聞いて答えられるか</strong>を見てください。「10は3と？」「10は8と？」と、順不同で3つほど聞くだけで判定できます。詰まる組み合わせがあれば、そこだけおはじきやブロックで作ってみます。</p>
+<div class="try-box">
+  <div class="try-title">🖍 印刷せずに使う手</div>
+  <p>この表は、指で隠しながら使えます。右側の数を手で隠して「10は4と？」と聞き、答えたら手をどける——それだけで9問のドリルになります。お風呂の壁でも、車の中でも同じことができます。</p>
+  <a href="/tasizan-kuriagari.html">くり上がりのたし算の教え方を見る →</a>
+</div>
+
 <h2>見落としがちなつまずきポイント</h2>
 <ul>
   <li><strong>「前から3番目」（順序数）：</strong>数には「量」と「順番」の2つの顔があります。列に並ぶ場面などで意識的に使いましょう</li>
@@ -151,6 +217,21 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p><strong>3学期：</strong>時計と大きい数。生活の中で「いま何時？」「あと何分？」を合言葉に。学年末には20までのたし算ひき算のタイムアタックで、2年生への助走をつけましょう。</p>
 <div class="tip-box"><p>💡 声かけ例：「まちがえた」→「おしい！どこまで合ってた？」／できた日→「カレンダーにシール貼ろう！」。1年生は算数の中身より、机に向かう体験の心地よさを育てる時期です。</p></div>
 <p>なお、学校の授業でさくらんぼ計算の書き方などが指定されている場合は、家庭でも同じ方法にそろえてあげてください。学校と家庭でやり方が違うと、1年生は簡単に混乱します。教科書とノートを月に1度ながめるだけで、進度もやり方も把握できます。</p>
+<div class="try-box">
+  <div class="try-title">✏️ 読んだあと、その場で確かめる</div>
+  <p>まずは10までのたし算・ひき算から。1年生ドリルは、10の合成分解が身についているかを確かめる材料になります。無料・登録不要で、間違えた問題は解答まで確認できます。</p>
+  <a href="/drill.html">1年生のドリルをやってみる →</a>
+</div>
+
+<div class="ref-box">
+  <div class="ref-title">📚 参考資料</div>
+  <ul>
+    <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
+    <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
+  </ul>
+  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。1年生の配当単元と時期は上記資料をもとに確認しています。家庭での進め方は、にじゅうまる。運営者による提案です。</p>
+</div>
+
 <h2>よくある質問</h2>
 <h3>Q1. 1年生の算数で一番大切な単元は？</h3>
 <p>2学期のくり上がり・くり下がりです。その土台となる「10の合成分解」（10は7と3、など）を1学期から遊びで即答レベルにしておくと、山場をスムーズに越えられます。</p>
