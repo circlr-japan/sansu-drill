@@ -618,7 +618,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   </div>
 
   <!-- ===== 段別トレーニング ===== -->
-  <div class="ta-section dan">
+  <div class="ta-section dan" id="dan">
     <div class="ta-section-title">📗 段別トレーニング</div>
     <div class="ta-section-sub">段をえらんで9問に挑戦！ ×1〜×9 がランダムな順で1回ずつ出ます。苦手な段の集中練習に。</div>
     <div class="ta-dan-grid">
@@ -2939,6 +2939,14 @@ function taReportToLine() {
 // ============================================================
 initRankingTabs();
 renderDanBadges();
+
+// 他ページから #dan などで来たとき、その位置までスクロールする
+(function scrollToHashSection(){
+  const id = location.hash.slice(1);
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (el) setTimeout(() => el.scrollIntoView({ block: 'start' }), 80);
+})();
 loadRanking(1);
 
 // TOPページ ランキングカテゴリ切り替え
