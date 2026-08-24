@@ -463,6 +463,15 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-ta-mode .tm-icon{font-size:22px;display:block;margin-bottom:4px;}
 .btn-ta-mode .tm-name{display:block;font-size:14px;}
 .btn-ta-mode .tm-desc{display:block;font-size:10px;color:rgba(255,255,255,0.75);margin-top:2px;}
+/* 段別トレーニング */
+.ta-section.dan{background:#7C3AED;}
+.ta-dan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.btn-ta-dan{padding:12px 4px;background:rgba(255,255,255,0.12);border:2px solid rgba(255,255,255,0.5);border-radius:12px;color:#fff;font-family:'Noto Sans JP',sans-serif;cursor:pointer;text-align:center;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-ta-dan:active{background:rgba(255,255,255,0.28);}
+.btn-ta-dan .dan-name{display:block;font-size:15px;font-weight:700;}
+.btn-ta-dan .dan-best{display:block;font-size:10px;color:rgba(255,255,255,0.78);margin-top:2px;font-variant-numeric:tabular-nums;}
+.btn-ta-dan.dan-clear{background:rgba(255,255,255,0.26);border-color:#FDE68A;}
+.btn-ta-dan.dan-clear .dan-best{color:#FDE68A;font-weight:700;}
 #taCountdownPage{animation:fadeIn 0.2s ease;}
 #taPage{animation:fadeIn 0.3s ease;}
 .ta-header{background:#122A64;padding:18px 16px 14px;text-align:center;}
@@ -607,6 +616,23 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       </button>
     </div>
   </div>
+
+  <!-- ===== 段別トレーニング ===== -->
+  <div class="ta-section dan">
+    <div class="ta-section-title">📗 段別トレーニング</div>
+    <div class="ta-section-sub">段をえらんで9問に挑戦！ ×1〜×9 がランダムな順で1回ずつ出ます。苦手な段の集中練習に。</div>
+    <div class="ta-dan-grid">
+      <button class="btn-ta-dan" id="danBtn1" onclick="startDanTraining(1)"><span class="dan-name">1の段</span><span class="dan-best" id="danBest1">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn2" onclick="startDanTraining(2)"><span class="dan-name">2の段</span><span class="dan-best" id="danBest2">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn3" onclick="startDanTraining(3)"><span class="dan-name">3の段</span><span class="dan-best" id="danBest3">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn4" onclick="startDanTraining(4)"><span class="dan-name">4の段</span><span class="dan-best" id="danBest4">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn5" onclick="startDanTraining(5)"><span class="dan-name">5の段</span><span class="dan-best" id="danBest5">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn6" onclick="startDanTraining(6)"><span class="dan-name">6の段</span><span class="dan-best" id="danBest6">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn7" onclick="startDanTraining(7)"><span class="dan-name">7の段</span><span class="dan-best" id="danBest7">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn8" onclick="startDanTraining(8)"><span class="dan-name">8の段</span><span class="dan-best" id="danBest8">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn9" onclick="startDanTraining(9)"><span class="dan-name">9の段</span><span class="dan-best" id="danBest9">未挑戦</span></button>
+    </div>
+  </div>
   <div class="pdf-section" id="pdf">
     <div class="pdf-section-title">📄 にじゅうまる。算数ドリル PDF ダウンロード</div>
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;">
@@ -749,7 +775,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
         <div class="ta-count-val" id="taCorrectCount">0</div>
       </div>
       <div class="ta-count-box">
-        <div class="ta-count-label">回答数</div>
+        <div class="ta-count-label" id="taCountLabel2">回答数</div>
         <div class="ta-count-val" id="taTotalCount">0</div>
       </div>
     </div>
@@ -829,7 +855,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
       LINEでパパ・ママに報告
     </button>
-    <button class="btn-ta-other" onclick="selectTaMode(currentTaMode === 'time' ? 'endless' : 'time')">
+    <button class="btn-ta-other" onclick="taOtherMode()">
       <span id="btnTaOtherLabel">♾️ 無制限モードも挑戦！</span>
     </button>
     <button class="btn-ta-top" onclick="goTop()">← トップに戻る</button>
@@ -2480,6 +2506,40 @@ let taLastA         = 0;
 let taLastB         = 0;
 let taRankingPosted = false;
 let taCurrentRankTab= 'time';
+let taDan           = 0;    // 段別トレーニング中の段（1〜9）
+let taQueue         = [];   // 段別トレーニングの残り問題
+
+const DAN_TOTAL = 9;
+
+// 履歴の保存キー（段別は段ごとに分ける）
+function taHistKey() {
+  return currentTaMode === 'dan' ? `dan${taDan}` : currentTaMode;
+}
+
+// 段別トレーニング開始（1〜9）
+function startDanTraining(dan) {
+  taDan = dan;
+  selectTaMode('dan');
+}
+
+// TOPの段別ボタンに自己ベストを表示
+function renderDanBadges() {
+  for (let d = 1; d <= DAN_TOTAL; d++) {
+    const el  = document.getElementById(`danBest${d}`);
+    const btn = document.getElementById(`danBtn${d}`);
+    if (!el || !btn) continue;
+    let hist = [];
+    try { hist = JSON.parse(localStorage.getItem(`nijumaru_ta_dan${d}`) || '[]'); } catch {}
+    if (!hist.length) {
+      el.textContent = '未挑戦';
+      btn.classList.remove('dan-clear');
+      continue;
+    }
+    const best = hist.reduce((m, r) => Math.max(m, r.correct), 0);
+    el.textContent = `最高 ${best}/${DAN_TOTAL}`;
+    btn.classList.toggle('dan-clear', best === DAN_TOTAL);
+  }
+}
 
 // モード選択 → カウントダウン
 function selectTaMode(mode) {
@@ -2487,7 +2547,9 @@ function selectTaMode(mode) {
   taRankingPosted = false;
   clearInterval(taCdInterval);
 
-  const label = mode === 'time' ? '⏱ 1分間モード' : '♾️ 無制限モード';
+  const label = mode === 'dan'  ? `📗 ${taDan}の段トレーニング`
+              : mode === 'time' ? '⏱ 1分間モード'
+              : '♾️ 無制限モード';
   document.getElementById('taCountdownMode').textContent = label;
 
   let count = 3;
@@ -2529,12 +2591,29 @@ function taGameStart() {
 
   // モード別UI
   const isTime = currentTaMode === 'time';
-  document.getElementById('taModeBadge').textContent    = isTime ? '⏱ 1分間モード' : '♾️ 無制限モード';
+  const isDan  = currentTaMode === 'dan';
+
+  // 段別は ×1〜×9 をシャッフルして各1回ずつ出題
+  if (isDan) {
+    taQueue = [1,2,3,4,5,6,7,8,9];
+    for (let i = taQueue.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [taQueue[i], taQueue[j]] = [taQueue[j], taQueue[i]];
+    }
+  } else {
+    taQueue = [];
+  }
+
+  document.getElementById('taModeBadge').textContent    = isDan  ? `📗 ${taDan}の段トレーニング`
+                                                        : isTime ? '⏱ 1分間モード' : '♾️ 無制限モード';
   document.getElementById('taTimerRingWrap').style.display = isTime ? '' : 'none';
-  document.getElementById('taStopBtn').textContent      = isTime ? '■ STOP して結果を見る' : '■ STOP して結果を見る';
+  document.getElementById('taStopBtn').textContent      = isDan ? '■ やめて結果を見る' : '■ STOP して結果を見る';
+  document.getElementById('taCountLabel2').textContent  = isDan ? '進み' : '回答数';
   document.getElementById('taCorrectCount').textContent = '0';
-  document.getElementById('taTotalCount').textContent   = '0';
-  document.getElementById('taHint').textContent         = '数字を入力すると自動で次へ進みます';
+  document.getElementById('taTotalCount').textContent   = isDan ? `0/${DAN_TOTAL}` : '0';
+  document.getElementById('taHint').textContent         = isDan
+    ? `${taDan}の段を9問！数字を入力すると自動で次へ進みます`
+    : '数字を入力すると自動で次へ進みます';
 
   if (isTime) taUpdateArc(TA_DURATION);
   taNextQuestion();
@@ -2554,10 +2633,16 @@ function taGameStart() {
 // 問題生成
 function taNextQuestion() {
   let a, b;
-  do {
-    a = Math.floor(Math.random() * 9) + 1;
-    b = Math.floor(Math.random() * 9) + 1;
-  } while (a === taLastA && b === taLastB);
+  if (currentTaMode === 'dan') {
+    if (!taQueue.length) { taFinish(); return; }   // 9問終了
+    a = taDan;
+    b = taQueue.shift();
+  } else {
+    do {
+      a = Math.floor(Math.random() * 9) + 1;
+      b = Math.floor(Math.random() * 9) + 1;
+    } while (a === taLastA && b === taLastB);
+  }
   taLastA = a; taLastB = b;
   taCurrentAns = a * b;
   document.getElementById('taQText').textContent = `${a} × ${b} ＝`;
@@ -2579,6 +2664,13 @@ function taUpdateArc(remaining) {
   arc.style.stroke  = remaining <= 10 ? '#FCA5A5' : '#fff';
 }
 
+// カウンタ表示更新
+function taUpdateCounts() {
+  document.getElementById('taCorrectCount').textContent = taCorrect;
+  document.getElementById('taTotalCount').textContent   =
+    currentTaMode === 'dan' ? `${taTotal}/${DAN_TOTAL}` : taTotal;
+}
+
 // 入力チェック（自動判定）
 function taCheckInput() {
   if (!taGameRunning) return;
@@ -2596,15 +2688,13 @@ function taCheckInput() {
     card.classList.remove('ta-wrong', 'ta-shake');
     card.classList.add('ta-correct');
     document.getElementById('taHint').textContent = '⭕ 正解！';
-    document.getElementById('taCorrectCount').textContent = taCorrect;
-    document.getElementById('taTotalCount').textContent   = taTotal;
+    taUpdateCounts();
     setTimeout(() => taNextQuestion(), 350);
   } else {
     card.classList.remove('ta-correct');
     card.classList.add('ta-wrong', 'ta-shake');
     document.getElementById('taHint').textContent = `✕ 正解は ${taCurrentAns}`;
-    document.getElementById('taCorrectCount').textContent = taCorrect;
-    document.getElementById('taTotalCount').textContent   = taTotal;
+    taUpdateCounts();
     // 無制限モードは不正解でゲームオーバー
     if (currentTaMode === 'endless') {
       clearInterval(taTimer);
@@ -2627,41 +2717,57 @@ function taFinish() {
   taGameRunning = false;
   const rate  = taTotal > 0 ? Math.round(taCorrect / taTotal * 100) : 0;
   const isTime = currentTaMode === 'time';
+  const isDan  = currentTaMode === 'dan';
 
-  const emoji = taCorrect >= 40 ? '🏆' : taCorrect >= 25 ? '🎉' : taCorrect >= 15 ? '😊' : '💪';
-  const sub   = isTime
-    ? (taCorrect >= 40 ? '九九マスター！' : taCorrect >= 25 ? 'よくできました！' : 'もう一度チャレンジ！')
-    : `${taCorrect}問連続正解！`;
+  const emoji = isDan
+    ? (taCorrect === DAN_TOTAL ? '🏆' : taCorrect >= 7 ? '🎉' : taCorrect >= 5 ? '😊' : '💪')
+    : (taCorrect >= 40 ? '🏆' : taCorrect >= 25 ? '🎉' : taCorrect >= 15 ? '😊' : '💪');
+  const sub   = isDan
+    ? (taCorrect === DAN_TOTAL ? `${taDan}の段パーフェクト！` : `あと${DAN_TOTAL - taCorrect}問で全問正解！`)
+    : isTime
+      ? (taCorrect >= 40 ? '九九マスター！' : taCorrect >= 25 ? 'よくできました！' : 'もう一度チャレンジ！')
+      : `${taCorrect}問連続正解！`;
 
-  document.getElementById('taResultModeBadge').textContent = isTime ? '⏱ 1分間モード' : '♾️ 無制限モード';
+  document.getElementById('taResultModeBadge').textContent = isDan  ? `📗 ${taDan}の段トレーニング`
+                                                           : isTime ? '⏱ 1分間モード' : '♾️ 無制限モード';
   document.getElementById('taResultEmoji').textContent     = emoji;
   document.getElementById('taResultCount').textContent     = taCorrect;
-  document.getElementById('taResultUnit').textContent      = isTime ? '問 正解！' : '問 連続正解！';
+  document.getElementById('taResultUnit').textContent      = isDan  ? `問 / ${DAN_TOTAL}問 正解！`
+                                                           : isTime ? '問 正解！' : '問 連続正解！';
   document.getElementById('taResultSub').textContent       = sub;
   document.getElementById('taResTotal').textContent        = taTotal;
   document.getElementById('taResRate').textContent         = rate + '%';
 
-  // 別モードボタン更新
-  const otherMode = isTime ? 'endless' : 'time';
+  // 次に進むボタンの表示
   document.getElementById('btnTaOtherLabel').textContent =
+    isDan  ? `📗 ${taDan % DAN_TOTAL + 1}の段に進む` :
     isTime ? '♾️ 無制限モードも挑戦！' : '⏱ 1分間モードに挑戦！';
 
   // 記録保存
-  taSaveRecord(currentTaMode, taCorrect, taTotal, rate);
+  taSaveRecord(taHistKey(), taCorrect, taTotal, rate);
   taRenderHistory();
+  renderDanBadges();
 
-  // ランキング登録欄表示
-  taShowRankEntry();
-
-  // ランキング表示
-  taCurrentRankTab = currentTaMode;
-  switchTaRankTab(currentTaMode);
+  // 全国ランキングは九九チャレンジのみ（段別トレーニングは対象外）
+  const rankSection = document.querySelector('.ta-ranking-section');
+  if (rankSection) rankSection.style.display = isDan ? 'none' : '';
+  if (!isDan) {
+    taShowRankEntry();
+    taCurrentRankTab = currentTaMode;
+    switchTaRankTab(currentTaMode);
+  }
 
   showPage('taResultPage');
 }
 
 // リトライ
 function taRetry() { selectTaMode(currentTaMode); }
+
+// 結果画面の「次へ」ボタン
+function taOtherMode() {
+  if (currentTaMode === 'dan') { startDanTraining(taDan % DAN_TOTAL + 1); return; }
+  selectTaMode(currentTaMode === 'time' ? 'endless' : 'time');
+}
 
 // ────────────────────────────────────────────
 // Firebase 全国ランキング（九九）
@@ -2765,7 +2871,7 @@ function taSaveRecord(mode, correct, total, rate) {
 }
 
 function taRenderHistory() {
-  const KEY = `nijumaru_ta_${currentTaMode}`;
+  const KEY = `nijumaru_ta_${taHistKey()}`;
   let hist = [];
   try { hist = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch {}
   const el = document.getElementById('taHistoryList');
@@ -2785,8 +2891,15 @@ function taRenderHistory() {
 // ────────────────────────────────────────────
 function taPostToX() {
   const isTime = currentTaMode === 'time';
+  const isDan  = currentTaMode === 'dan';
   const rate   = taTotal > 0 ? Math.round(taCorrect / taTotal * 100) : 0;
-  const text =
+  const text = isDan ?
+    `📗 ${taDan}の段トレーニングに挑戦！\n\n` +
+    `🏆 ${taCorrect}問正解 / ${DAN_TOTAL}問 (${rate}%)\n\n` +
+    `にじゅうまる。算数ドリルで挑戦👇\n` +
+    `https://www.nijumaru-drill.com/\n\n` +
+    `#にじゅうまる算数ドリル #九九 #小学生`
+  :
     `${isTime ? '⏱ 1分間' : '♾️ 無制限'}九九チャレンジに挑戦！\n\n` +
     `${isTime ? `🏆 ${taCorrect}問正解 / ${taTotal}問 (${rate}%)` : `🏆 ${taCorrect}問連続正解！`}\n\n` +
     `にじゅうまる。算数ドリルで挑戦👇\n` +
@@ -2797,18 +2910,21 @@ function taPostToX() {
 
 function taReportToLine() {
   const isTime = currentTaMode === 'time';
+  const isDan  = currentTaMode === 'dan';
   const rate   = taTotal > 0 ? Math.round(taCorrect / taTotal * 100) : 0;
   const today  = new Date().toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' });
   let best = taCorrect;
   try {
-    const hist = JSON.parse(localStorage.getItem(`nijumaru_ta_${currentTaMode}`) || '[]');
+    const hist = JSON.parse(localStorage.getItem(`nijumaru_ta_${taHistKey()}`) || '[]');
     hist.forEach(r => { if (r.correct > best) best = r.correct; });
   } catch {}
   const msg =
-    `⚡ ${today} 九九チャレンジ結果\n` +
+    (isDan ? `📗 ${today} 段別トレーニング結果\n` : `⚡ ${today} 九九チャレンジ結果\n`) +
     `━━━━━━━━━━━━━━\n` +
-    `モード：${isTime ? '1分間' : '無制限'}\n` +
-    (isTime
+    `モード：${isDan ? `${taDan}の段（9問）` : isTime ? '1分間' : '無制限'}\n` +
+    (isDan
+      ? `🏆 正解数：${taCorrect}問 / ${DAN_TOTAL}問\n✅ 正解率：${rate}%\n`
+      : isTime
       ? `🏆 正解数：${taCorrect}問\n📝 回答数：${taTotal}問\n✅ 正解率：${rate}%\n`
       : `🏆 連続正解：${taCorrect}問\n`) +
     `⭐ 過去最高：${best}問\n` +
@@ -2822,6 +2938,7 @@ function taReportToLine() {
 // 初期化
 // ============================================================
 initRankingTabs();
+renderDanBadges();
 loadRanking(1);
 
 // TOPページ ランキングカテゴリ切り替え
