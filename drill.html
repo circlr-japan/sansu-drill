@@ -466,7 +466,10 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 /* 段別トレーニング */
 .ta-section.dan{background:#7C3AED;}
 .ta-dan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.btn-ta-dan{padding:12px 4px;background:rgba(255,255,255,0.12);border:2px solid rgba(255,255,255,0.5);border-radius:12px;color:#fff;font-family:'Noto Sans JP',sans-serif;cursor:pointer;text-align:center;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
+.btn-ta-dan{position:relative;padding:12px 4px;background:rgba(255,255,255,0.12);border:2px solid rgba(255,255,255,0.5);border-radius:12px;color:#fff;font-family:'Noto Sans JP',sans-serif;cursor:pointer;text-align:center;transition:background 0.15s;-webkit-tap-highlight-color:transparent;}
+/* 段ボタンの合格印（全問正解した段だけ表示） */
+.dan-mini-stamp{position:absolute;top:-11px;right:-12px;width:30px;height:30px;border:2px double #DC2626;border-radius:50%;background:#fff;color:#DC2626;font-size:10.5px;font-weight:700;line-height:1;display:none;align-items:center;justify-content:center;transform:rotate(-14deg);box-shadow:0 1px 5px rgba(0,0,0,0.25);pointer-events:none;}
+.btn-ta-dan.dan-clear .dan-mini-stamp{display:flex;}
 .btn-ta-dan:active{background:rgba(255,255,255,0.28);}
 .btn-ta-dan .dan-name{display:block;font-size:15px;font-weight:700;}
 .btn-ta-dan .dan-best{display:block;font-size:10px;color:rgba(255,255,255,0.78);margin-top:2px;font-variant-numeric:tabular-nums;}
@@ -498,7 +501,16 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-ta-stop{width:100%;padding:15px;background:linear-gradient(135deg,#DC2626,#EF4444);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(220,38,38,0.3);-webkit-tap-highlight-color:transparent;}
 .btn-ta-abandon{width:100%;padding:12px;background:var(--surface);color:var(--text-muted);border:1.5px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:'Noto Sans JP',sans-serif;cursor:pointer;}
 #taResultPage{animation:fadeIn 0.3s ease;}
-.ta-result-hero{background:#122A64;padding:36px 20px 28px;text-align:center;}
+.ta-result-hero{background:#122A64;padding:36px 20px 28px;text-align:center;position:relative;overflow:hidden;}
+/* 段別トレーニング 全問正解の合格印 */
+.dan-stamp{position:absolute;top:50%;right:12px;transform:translateY(-50%);display:none;}
+.dan-stamp.show{display:block;}
+.dan-stamp .stamp-inner{width:88px;height:88px;border:4px double #DC2626;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#DC2626;background:rgba(255,255,255,0.94);box-shadow:0 2px 10px rgba(0,0,0,0.2);transform:rotate(-14deg);}
+.dan-stamp.show .stamp-inner{animation:stampIn 0.45s cubic-bezier(0.2,1.4,0.4,1);}
+.dan-stamp .stamp-title{font-size:24px;font-weight:700;letter-spacing:3px;line-height:1.1;}
+.dan-stamp .stamp-sub{font-size:10px;font-weight:700;letter-spacing:1px;margin-top:3px;}
+@keyframes stampIn{0%{opacity:0;transform:rotate(-14deg) scale(2.4);}60%{opacity:1;transform:rotate(-14deg) scale(0.92);}100%{opacity:1;transform:rotate(-14deg) scale(1);}}
+@media(max-width:359px){.dan-stamp .stamp-inner{width:74px;height:74px;}.dan-stamp .stamp-title{font-size:20px;}}
 .ta-result-mode-badge{display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);border-radius:100px;padding:3px 14px;font-size:11px;font-weight:700;color:#fff;margin-bottom:10px;}
 .ta-result-emoji{font-size:52px;display:block;margin-bottom:8px;}
 .ta-result-count{font-size:70px;font-weight:700;color:#fff;line-height:1;}
@@ -622,15 +634,15 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="ta-section-title">📗 段別トレーニング</div>
     <div class="ta-section-sub">段をえらんで9問に挑戦！ ×1〜×9 がランダムな順で1回ずつ出ます。苦手な段の集中練習に。</div>
     <div class="ta-dan-grid">
-      <button class="btn-ta-dan" id="danBtn1" onclick="startDanTraining(1)"><span class="dan-name">1の段</span><span class="dan-best" id="danBest1">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn2" onclick="startDanTraining(2)"><span class="dan-name">2の段</span><span class="dan-best" id="danBest2">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn3" onclick="startDanTraining(3)"><span class="dan-name">3の段</span><span class="dan-best" id="danBest3">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn4" onclick="startDanTraining(4)"><span class="dan-name">4の段</span><span class="dan-best" id="danBest4">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn5" onclick="startDanTraining(5)"><span class="dan-name">5の段</span><span class="dan-best" id="danBest5">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn6" onclick="startDanTraining(6)"><span class="dan-name">6の段</span><span class="dan-best" id="danBest6">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn7" onclick="startDanTraining(7)"><span class="dan-name">7の段</span><span class="dan-best" id="danBest7">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn8" onclick="startDanTraining(8)"><span class="dan-name">8の段</span><span class="dan-best" id="danBest8">未挑戦</span></button>
-      <button class="btn-ta-dan" id="danBtn9" onclick="startDanTraining(9)"><span class="dan-name">9の段</span><span class="dan-best" id="danBest9">未挑戦</span></button>
+      <button class="btn-ta-dan" id="danBtn1" onclick="startDanTraining(1)"><span class="dan-name">1の段</span><span class="dan-best" id="danBest1">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn2" onclick="startDanTraining(2)"><span class="dan-name">2の段</span><span class="dan-best" id="danBest2">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn3" onclick="startDanTraining(3)"><span class="dan-name">3の段</span><span class="dan-best" id="danBest3">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn4" onclick="startDanTraining(4)"><span class="dan-name">4の段</span><span class="dan-best" id="danBest4">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn5" onclick="startDanTraining(5)"><span class="dan-name">5の段</span><span class="dan-best" id="danBest5">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn6" onclick="startDanTraining(6)"><span class="dan-name">6の段</span><span class="dan-best" id="danBest6">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn7" onclick="startDanTraining(7)"><span class="dan-name">7の段</span><span class="dan-best" id="danBest7">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn8" onclick="startDanTraining(8)"><span class="dan-name">8の段</span><span class="dan-best" id="danBest8">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+      <button class="btn-ta-dan" id="danBtn9" onclick="startDanTraining(9)"><span class="dan-name">9の段</span><span class="dan-best" id="danBest9">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
     </div>
   </div>
   <div class="pdf-section" id="pdf">
@@ -799,6 +811,12 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 <!-- ========== 九九結果ページ ========== -->
 <div id="taResultPage" class="page">
   <div class="ta-result-hero">
+    <div class="dan-stamp" id="danStamp" aria-hidden="true">
+      <div class="stamp-inner">
+        <span class="stamp-title">合格</span>
+        <span class="stamp-sub" id="danStampSub">1の段</span>
+      </div>
+    </div>
     <div class="ta-result-mode-badge" id="taResultModeBadge">⏱ 1分間モード</div>
     <span class="ta-result-emoji" id="taResultEmoji">🎉</span>
     <div class="ta-result-count" id="taResultCount">0</div>
@@ -2536,7 +2554,7 @@ function renderDanBadges() {
       continue;
     }
     const best = hist.reduce((m, r) => Math.max(m, r.correct), 0);
-    el.textContent = `最高 ${best}/${DAN_TOTAL}`;
+    el.textContent = best === DAN_TOTAL ? `${best}/${DAN_TOTAL}` : `最高 ${best}/${DAN_TOTAL}`;
     btn.classList.toggle('dan-clear', best === DAN_TOTAL);
   }
 }
@@ -2737,6 +2755,21 @@ function taFinish() {
   document.getElementById('taResultSub').textContent       = sub;
   document.getElementById('taResTotal').textContent        = taTotal;
   document.getElementById('taResRate').textContent         = rate + '%';
+
+  // 段別トレーニングで全問正解なら合格印を押す
+  const stamp = document.getElementById('danStamp');
+  if (stamp) {
+    const perfect = isDan && taCorrect === DAN_TOTAL;
+    stamp.classList.remove('show');
+    if (perfect) {
+      document.getElementById('danStampSub').textContent = `${taDan}の段`;
+      void stamp.offsetWidth;          // アニメーションを毎回やり直す
+      stamp.classList.add('show');
+      stamp.setAttribute('aria-hidden', 'false');
+    } else {
+      stamp.setAttribute('aria-hidden', 'true');
+    }
+  }
 
   // 次に進むボタンの表示
   document.getElementById('btnTaOtherLabel').textContent =
