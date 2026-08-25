@@ -686,14 +686,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       学年を選んでください
     </button>
     <div class="pdf-note">※ 印刷はA4・縦・余白なし推奨　※ 問題はランダム生成で毎回異なります</div>
-    <div id="premiumNudge" style="display:none;margin-top:14px;background:linear-gradient(135deg,#F5F3FF,#EEF2FF);border:1.5px solid #DDD6FE;border-radius:14px;padding:14px 16px;">
-      <div style="font-size:13px;font-weight:700;color:#5B21B6;margin-bottom:6px;">📄 ダウンロードできました！</div>
-      <div style="font-size:12px;color:#6D28D9;line-height:1.7;">
-        <b>解答付き・名前欄・日付入り・最大100問</b>のPDFは<br>
-        <a href="/premium.html" style="color:#7C3AED;font-weight:700;">100問チャレンジ（¥100）</a>をご利用ください。
-      </div>
-      <a href="/premium.html" style="display:block;margin-top:10px;padding:11px;background:#122A64;color:#fff;border-radius:12px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;">100問チャレンジを見る →</a>
-    </div>
+    <div id="premiumNudge" style="display:none;margin-top:14px;background:linear-gradient(135deg,#F5F3FF,#EEF2FF);border:1.5px solid #DDD6FE;border-radius:14px;padding:14px 16px;"></div>
   </div>
 
   <!-- 全国ランキング -->
@@ -710,11 +703,11 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <!-- 算数ドリル：学年タブ -->
     <div id="topRankDrillArea">
       <div class="grade-tabs" id="rankingTabs"></div>
-      <div class="ranking-list" id="rankingList"><div class="rank-empty">読み込み中...</div></div>
+      <div class="ranking-list" id="rankingList"></div>
     </div>
     <!-- 九九ランキング -->
     <div id="topRankKukuArea" style="display:none;">
-      <div class="ranking-list" id="topKukuRankingList"><div class="rank-empty">読み込み中...</div></div>
+      <div class="ranking-list" id="topKukuRankingList"></div>
     </div>
   </div>
 
@@ -2228,7 +2221,16 @@ function _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isA
 
 function _showPremiumNudge() {
   const el = document.getElementById('premiumNudge');
-  if (el) { el.style.display = 'block'; el.scrollIntoView({behavior:'smooth', block:'nearest'}); }
+  if (!el) return;
+  // PDF生成の完了メッセージは、初期HTMLに置かず操作後にここで組み立てる
+  el.innerHTML = `<div style="font-size:13px;font-weight:700;color:#5B21B6;margin-bottom:6px;">📄 ダウンロードできました！</div>
+      <div style="font-size:12px;color:#6D28D9;line-height:1.7;">
+        <b>解答付き・名前欄・日付入り・最大100問</b>のPDFは<br>
+        <a href="/premium.html" style="color:#7C3AED;font-weight:700;">100問チャレンジ（¥100）</a>をご利用ください。
+      </div>
+      <a href="/premium.html" style="display:block;margin-top:10px;padding:11px;background:#122A64;color:#fff;border-radius:12px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;">100問チャレンジを見る →</a>`;
+  el.style.display = 'block';
+  el.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
 function _rr2(ctx,x,y,w,h,r){
