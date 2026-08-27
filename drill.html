@@ -475,6 +475,22 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .btn-ta-dan .dan-best{display:block;font-size:10px;color:rgba(255,255,255,0.78);margin-top:2px;font-variant-numeric:tabular-nums;}
 .btn-ta-dan.dan-clear{background:rgba(255,255,255,0.26);border-color:#FDE68A;}
 .btn-ta-dan.dan-clear .dan-best{color:#FDE68A;font-weight:700;}
+/* 夏休みの振り返り */
+.ta-section.review{background:linear-gradient(160deg,#0E7490,#0891B2);}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.btn-review{padding:12px 4px;background:rgba(255,255,255,0.12);border:2px solid rgba(255,255,255,0.5);border-radius:12px;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:15px;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.btn-review:active{background:rgba(255,255,255,0.28);}
+/* 結果画面：単元別の内訳と自由研究シート */
+.rv-section{margin:16px;background:var(--surface);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);}
+.rv-title{font-size:15px;font-weight:700;color:#0E7490;margin-bottom:4px;}
+.rv-sub{font-size:12px;color:var(--text-muted);margin-bottom:12px;line-height:1.7;}
+.rv-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;}
+.rv-name{flex:0 0 34%;font-size:12px;font-weight:700;color:var(--text);}
+.rv-bar{display:block;flex:1;height:14px;background:#E2E8F0;border-radius:99px;overflow:hidden;}
+.rv-fill{display:block;height:100%;min-width:3px;border-radius:99px;background:#0891B2;}
+.rv-val{flex:0 0 62px;text-align:right;font-size:12px;font-weight:700;color:var(--text-muted);font-variant-numeric:tabular-nums;}
+.rv-sheet{width:100%;min-height:190px;border:1.5px solid var(--border);border-radius:12px;padding:12px;font-family:'Noto Sans JP',sans-serif;font-size:12px;line-height:1.9;color:var(--text);background:#F8FAFC;resize:vertical;}
+.rv-btn{width:100%;margin-top:10px;padding:13px;background:#0E7490;color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;}
 #taCountdownPage{animation:fadeIn 0.2s ease;}
 #taPage{animation:fadeIn 0.3s ease;}
 .ta-header{background:#122A64;padding:18px 16px 14px;text-align:center;}
@@ -643,6 +659,20 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       <button class="btn-ta-dan" id="danBtn7" onclick="startDanTraining(7)"><span class="dan-name">7の段</span><span class="dan-best" id="danBest7">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
       <button class="btn-ta-dan" id="danBtn8" onclick="startDanTraining(8)"><span class="dan-name">8の段</span><span class="dan-best" id="danBest8">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
       <button class="btn-ta-dan" id="danBtn9" onclick="startDanTraining(9)"><span class="dan-name">9の段</span><span class="dan-best" id="danBest9">未挑戦</span><span class="dan-mini-stamp">合格</span></button>
+    </div>
+  </div>
+
+  <!-- ===== 夏休みの振り返り ===== -->
+  <div class="ta-section review" id="review">
+    <div class="ta-section-title">☀️ 夏休みの振り返り</div>
+    <div class="ta-section-sub">学年をえらぶと、その学年の内容を<strong>やさしい問題から難しい問題までまぜて25問</strong>出題します。終わったあとに<strong>単元べつのできぐあい</strong>が出るので、夏休みの宿題の総点検や自由研究のネタ集めに使えます。</div>
+    <div class="review-grid">
+      <button class="btn-review" onclick="startSummerReview(1)">1年生</button>
+      <button class="btn-review" onclick="startSummerReview(2)">2年生</button>
+      <button class="btn-review" onclick="startSummerReview(3)">3年生</button>
+      <button class="btn-review" onclick="startSummerReview(4)">4年生</button>
+      <button class="btn-review" onclick="startSummerReview(5)">5年生</button>
+      <button class="btn-review" onclick="startSummerReview(6)">6年生</button>
     </div>
   </div>
   <div class="pdf-section" id="pdf">
@@ -974,6 +1004,21 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       <div class="eval-card" id="evalTime"><div class="e-rank" id="evalTimeRank">S</div><div class="e-label">回答時間</div><div class="e-desc" id="evalTimeDesc">0:00</div></div>
       <div class="eval-card" id="evalOverallCard"><div class="e-rank" id="evalOverallRank">S</div><div class="e-label">総合評価</div><div class="e-desc" id="evalOverallDesc">すばらしい</div></div>
     </div>
+  </div>
+
+  <!-- 夏休みの振り返り：単元別の内訳（振り返りモードのみ） -->
+  <div class="rv-section" id="reviewBreakdown" style="display:none;">
+    <div class="rv-title">📊 単元べつのできぐあい</div>
+    <div class="rv-sub">25問を単元ごとに集計しました。正答率の低い単元が、夏休みのうちに見直しておきたいところです。</div>
+    <div id="reviewBars"></div>
+  </div>
+
+  <!-- 夏休みの振り返り：自由研究シート（振り返りモードのみ） -->
+  <div class="rv-section" id="reviewSheet" style="display:none;">
+    <div class="rv-title">🔬 自由研究シート</div>
+    <div class="rv-sub">今回の結果を、自由研究にそのまま使える形にまとめました。コピーして模造紙やノートに書き写し、「気づいたこと」を自分のことばで足せば完成です。日を変えて何回かやると、変化を比べる研究になります。</div>
+    <textarea class="rv-sheet" id="reviewSheetText" readonly></textarea>
+    <button class="rv-btn" onclick="copyReviewSheet()" id="reviewCopyBtn">📋 シートをコピーする</button>
   </div>
 
   <!-- 個人記録 -->
@@ -1420,7 +1465,35 @@ function startDrillFromSelector() {
 // ============================================================
 // カウントダウン
 // ============================================================
+// 夏休みの振り返り：やさしい〜難しいをまぜて25問出題する
+let reviewMode=false;
+
+function generateReviewQuestions(grade){
+  const g=GRADES[grade].generators;
+  const gens=[...g.easy,...g.normal,...g.hard];
+  const qs=[],seen=new Set();
+  let retry=0;
+  while(qs.length<25&&retry<300){
+    const q=gens[Math.floor(Math.random()*gens.length)]();
+    if(!seen.has(q.q)){seen.add(q.q);qs.push(q);}
+    retry++;
+  }
+  while(qs.length<25){qs.push(gens[Math.floor(Math.random()*gens.length)]());}
+  for(let i=qs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qs[i],qs[j]]=[qs[j],qs[i]];}
+  return qs;
+}
+
+function startSummerReview(grade){
+  reviewMode=true;
+  currentGrade=grade;
+  questions=generateReviewQuestions(grade);
+  document.getElementById('countdownGrade').textContent=GRADES[grade].label+'・夏休みの振り返り';
+  showPage('countdownPage');
+  startCountdown();
+}
+
 function selectGrade(grade){
+  reviewMode=false;
   currentGrade=grade;
   questions=generateQuestions(grade, currentDifficulty);
   document.getElementById('countdownGrade').textContent=GRADES[grade].label;
@@ -1659,15 +1732,98 @@ function submitQuiz(){
     }
     const isOk=checkAnswer(userAns,String(q.a));
     if(isOk)correct++;else wrong++;
-    results.push({q:q.q,user:userAns,correct:String(q.a),isCorrect:isOk});
+    results.push({q:q.q,user:userAns,correct:String(q.a),isCorrect:isOk,type:q.type||'そのほか'});
   });
   showResult(correct*4,correct,wrong,results,finalTime);
+}
+
+// ============================================================
+// 夏休みの振り返り：単元別の集計と自由研究シート
+// ============================================================
+function renderReviewResult(correct,results,finalTime){
+  const bd=document.getElementById('reviewBreakdown');
+  const sh=document.getElementById('reviewSheet');
+  if(!bd||!sh) return;
+  if(!reviewMode){ bd.style.display='none'; sh.style.display='none'; return; }
+
+  // 単元ごとに正解数を集計
+  const map=new Map();
+  results.forEach(r=>{
+    const k=r.type||'そのほか';
+    if(!map.has(k)) map.set(k,{ok:0,total:0});
+    const v=map.get(k); v.total++; if(r.isCorrect) v.ok++;
+  });
+  const rows=[...map.entries()]
+    .map(([name,v])=>({name,ok:v.ok,total:v.total,rate:Math.round(v.ok/v.total*100)}))
+    .sort((a,b)=>a.rate-b.rate||b.total-a.total);
+
+  document.getElementById('reviewBars').innerHTML=rows.map(r=>{
+    const color=r.rate>=80?'#16A34A':r.rate>=50?'#0891B2':'#DC2626';
+    return `<div class="rv-row">
+      <span class="rv-name">${_escHtml(r.name)}</span>
+      <span class="rv-bar"><span class="rv-fill" style="width:${r.rate}%;background:${color}"></span></span>
+      <span class="rv-val">${r.ok}/${r.total}（${r.rate}%）</span>
+    </div>`;
+  }).join('');
+
+  // 自由研究シート
+  const d=new Date();
+  const date=`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+  const weak=rows.filter(r=>r.rate<100).slice(0,3).map(r=>`${r.name}（${r.rate}%）`);
+  const strong=rows.filter(r=>r.rate===100).map(r=>r.name);
+  const lines=[
+    '【算数の自由研究シート】',
+    '',
+    `しらべた日：${date}`,
+    `学年：${GRADES[currentGrade].label}`,
+    'やったこと：にじゅうまる。算数ドリルの「夏休みの振り返り」25問に挑戦し、単元ごとの正解数を記録した。',
+    '',
+    '■ 結果',
+    `正解：${correct}／25問（${Math.round(correct/25*100)}%）`,
+    `かかった時間：${formatTime(finalTime)}`,
+    '',
+    '■ 単元べつの正解数',
+    ...rows.map(r=>`・${r.name}：${r.ok}／${r.total}問（${r.rate}%）`),
+    '',
+    '■ わかったこと',
+    strong.length?`・全問正解できた単元：${strong.join('、')}`:'・全問正解できた単元：なし',
+    weak.length?`・まちがいが多かった単元：${weak.join('、')}`:'・まちがいはなかった',
+    '',
+    '■ 気づいたこと（自分のことばで書く）',
+    '・',
+    '',
+    '■ つぎにやること（自分のことばで書く）',
+    '・',
+    '',
+    '※ 日をかえてもう一度やると、前回とくらべる研究になります。',
+    'https://www.nijumaru-drill.com/drill.html'
+  ];
+  document.getElementById('reviewSheetText').value=lines.join('\n');
+  const btn=document.getElementById('reviewCopyBtn');
+  if(btn) btn.textContent='📋 シートをコピーする';
+  bd.style.display='';
+  sh.style.display='';
+}
+
+function copyReviewSheet(){
+  const ta=document.getElementById('reviewSheetText');
+  const btn=document.getElementById('reviewCopyBtn');
+  if(!ta) return;
+  const done=()=>{ if(btn) btn.textContent='✅ コピーしました！'; };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(ta.value).then(done).catch(()=>{ta.select();done();});
+  } else {
+    ta.removeAttribute('readonly'); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    ta.setAttribute('readonly','readonly'); done();
+  }
 }
 
 // ============================================================
 // 結果表示
 // ============================================================
 function showResult(score,correct,wrong,results,finalTime){
+  renderReviewResult(correct,results,finalTime);
   document.getElementById('scoreNum').textContent=score;
   document.getElementById('statCorrect').textContent=correct;
   document.getElementById('statWrong').textContent=wrong;
