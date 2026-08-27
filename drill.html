@@ -489,6 +489,17 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .rv-bar{display:block;flex:1;height:14px;background:#E2E8F0;border-radius:99px;overflow:hidden;}
 .rv-fill{display:block;height:100%;min-width:3px;border-radius:99px;background:#0891B2;}
 .rv-val{flex:0 0 62px;text-align:right;font-size:12px;font-weight:700;color:var(--text-muted);font-variant-numeric:tabular-nums;}
+.rv-peek{width:100%;margin-top:10px;padding:12px;background:rgba(255,255,255,0.14);border:2px solid rgba(255,255,255,0.5);border-radius:12px;color:#fff;font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.rv-peek:active{background:rgba(255,255,255,0.28);}
+.rv-list{margin-top:10px;display:none;}
+.rv-list.open{display:block;}
+.rv-item{background:rgba(255,255,255,0.94);border-radius:12px;padding:12px 14px;margin-bottom:8px;}
+.rv-item .ri-name{font-size:13px;font-weight:700;color:#0E7490;margin-bottom:3px;}
+.rv-item .ri-note{font-size:12px;color:#475569;line-height:1.7;}
+.rv-item .ri-meta{font-size:11px;color:#64748B;margin-top:4px;}
+.rv-item .ri-btn{margin-top:8px;padding:8px 14px;background:#0E7490;color:#fff;border:none;border-radius:99px;font-size:12px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;}
+#themePreview{display:none;margin-top:10px;background:rgba(255,255,255,0.94);border-radius:12px;padding:12px 14px;}
+#themePreview.open{display:block;}
 .rv-themes{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
 .rv-theme{padding:8px 12px;background:#F1F5F9;border:1.5px solid var(--border);border-radius:99px;font-size:12px;font-weight:700;color:#0E7490;font-family:'Noto Sans JP',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .rv-theme.active{background:#0E7490;border-color:#0E7490;color:#fff;}
@@ -676,6 +687,13 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
       <button class="btn-review" onclick="startSummerReview(4)">4年生</button>
       <button class="btn-review" onclick="startSummerReview(5)">5年生</button>
       <button class="btn-review" onclick="startSummerReview(6)">6年生</button>
+    </div>
+    <button class="rv-peek" id="themePeekBtn" onclick="toggleThemeList()">🔬 どんな自由研究ができる？（テーマを見る）</button>
+    <div class="rv-list" id="themeList"></div>
+    <div id="themePreview">
+      <div style="font-size:12px;font-weight:700;color:#0E7490;margin-bottom:6px;" id="themePreviewTitle"></div>
+      <textarea class="rv-sheet" id="themePreviewText" readonly style="min-height:150px;"></textarea>
+      <button class="rv-btn" onclick="copyThemePreview()" id="themePreviewCopyBtn">📋 シートをコピーする</button>
     </div>
   </div>
   <div class="pdf-section" id="pdf">
@@ -1748,6 +1766,7 @@ function submitQuiz(){
 const REVIEW_THEMES=[
   {id:0,chip:'今回の結果'},
   {id:1,chip:'時間帯',
+   note:'朝・夕方・夜で計算のタイムをくらべる。同じドリルを時間帯を変えてやるだけ。',days:'2〜3日',forGrade:'3年生〜',
    title:'時間帯で計算の速さは変わるのか',
    ask:'朝・夕方・夜で、計算にかかる時間は変わるのか。',
    guess:'（例）朝がいちばん速いと思う。頭がすっきりしているから。',
@@ -1758,6 +1777,7 @@ const REVIEW_THEMES=[
    head:['時間帯','1日目 点/タイム','2日目 点/タイム','平均タイム'],
    rows:['朝','夕方','夜']},
   {id:2,chip:'九九の段',
+   note:'1〜9の段のタイムをくらべて、いちばん時間がかかる段を見つける。',days:'1日でできる',forGrade:'2年生〜',
    title:'九九でいちばん時間がかかる段はどれか',
    ask:'1〜9の段のうち、答えるのに時間がかかるのはどの段か。',
    guess:'（例）7の段がいちばん時間がかかると思う。ごろが言いにくいから。',
@@ -1768,6 +1788,7 @@ const REVIEW_THEMES=[
    head:['段','1回目 タイム','2回目 タイム','平均','まちがえた数'],
    rows:['1の段','2の段','3の段','4の段','5の段','6の段','7の段','8の段','9の段']},
   {id:3,chip:'毎日つづける',
+   note:'同じドリルを毎日やって、点数とタイムがどう変わるかを折れ線グラフにする。',days:'5〜7日',forGrade:'2年生〜',
    title:'毎日練習すると、本当に速くなるのか',
    ask:'同じドリルを毎日つづけると、点数とタイムはどう変わるか。',
    guess:'（例）5日でタイムが30秒くらい縮むと思う。',
@@ -1778,6 +1799,7 @@ const REVIEW_THEMES=[
    head:['日づけ','点数','タイム','その日のようす'],
    rows:['1日目','2日目','3日目','4日目','5日目','6日目','7日目']},
   {id:4,chip:'まちがいの共通点',
+   note:'まちがえた問題を書き出して種類に分け、多い順にならべる。',days:'1〜2日',forGrade:'3年生〜',
    title:'まちがえる問題に共通点はあるのか',
    ask:'まちがえた問題には、どんな種類が多いのか。',
    guess:'（例）くり上がりのある問題でまちがえることが多いと思う。',
@@ -1788,6 +1810,7 @@ const REVIEW_THEMES=[
    head:['まちがいの種類','回数','どんな問題だったか'],
    rows:['','','','','']},
   {id:5,chip:'家族でくらべる',
+   note:'家族それぞれが九九チャレンジをやって、正解数をくらべる。',days:'1日でできる',forGrade:'1年生〜',
    title:'家族でくらべると、九九は誰がいちばん速いか',
    ask:'年れいがちがうと、九九を答える速さはちがうのか。',
    guess:'（例）大人がいちばん速いと思う。',
@@ -1798,6 +1821,7 @@ const REVIEW_THEMES=[
    head:['やった人','1回目 正解数','2回目 正解数','平均'],
    rows:['じぶん','','','']},
   {id:6,chip:'休けいの効果',
+   note:'続けて解いた日と、休けいを入れた日で点数がちがうかを調べる。',days:'2日',forGrade:'4年生〜',
    title:'休けいを入れると成績は上がるのか',
    ask:'続けて解くのと、あいだに休けいを入れるのとで、点数は変わるか。',
    guess:'（例）休けいを入れたほうが点数が上がると思う。',
@@ -1867,10 +1891,19 @@ function _reviewTable(head,rows){
 function buildReviewSheet(){
   const ta=document.getElementById('reviewSheetText');
   if(!ta||!reviewLast) return;
-  const {correct,rows,finalTime,grade}=reviewLast;
+  ta.value=themeSheetText(reviewThemeId,reviewLast);
+}
+
+// テーマ別シートの本文を作る（data が null なら振り返り結果なしの版）
+function themeSheetText(themeId,data){
+  const correct=data?data.correct:null;
+  const rows=data?data.rows:[];
+  const finalTime=data?data.finalTime:null;
+  const grade=data?data.grade:null;
   const d=new Date();
   const date=`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
-  const theme=REVIEW_THEMES.find(t=>t.id===reviewThemeId)||REVIEW_THEMES[0];
+  let theme=REVIEW_THEMES.find(t=>t.id===themeId)||REVIEW_THEMES[0];
+  if(theme.id===0&&!data) theme=REVIEW_THEMES[1];   // 結果がないときは「今回の結果」版は作れない
   let lines;
 
   if(theme.id===0){
@@ -1896,7 +1929,7 @@ function buildReviewSheet(){
   } else {
     lines=[
       `【算数の自由研究シート】${theme.title}`,'',
-      `学年：${GRADES[grade].label}`,
+      `学年：${grade?GRADES[grade].label:'＿＿＿＿'}`,
       `はじめた日：${date}`,'',
       '■ しらべること',
       `・${theme.ask}`,'',
@@ -1911,16 +1944,51 @@ function buildReviewSheet(){
       '■ 結果からわかったこと','・','',
       '■ 予想と合っていたか／なぜそうなったと思うか','・','',
       '■ つぎにやってみたいこと','・','',
-      `※ 参考：${date}の振り返りでは 25問中${correct}問正解（${formatTime(finalTime)}）でした。`
+      correct!==null?`※ 参考：${date}の振り返りでは 25問中${correct}問正解（${formatTime(finalTime)}）でした。`:'※ ドリルの「夏休みの振り返り」をやると、単元べつのできぐあいも記録に足せます。'
     ];
   }
   lines.push('https://www.nijumaru-drill.com/drill.html');
-  ta.value=lines.join('\n');
+  return lines.join('\n');
 }
 
-function copyReviewSheet(){
-  const ta=document.getElementById('reviewSheetText');
-  const btn=document.getElementById('reviewCopyBtn');
+// トップ：自由研究のテーマ一覧（ドリルをやる前でも見られる）
+function toggleThemeList(){
+  const list=document.getElementById('themeList');
+  const btn=document.getElementById('themePeekBtn');
+  if(!list) return;
+  const open=list.classList.toggle('open');
+  btn.textContent=open?'🔬 テーマをとじる':'🔬 どんな自由研究ができる？（テーマを見る）';
+  if(open && !list.dataset.filled){
+    list.innerHTML=REVIEW_THEMES.filter(t=>t.id!==0).map(t=>`
+      <div class="rv-item">
+        <div class="ri-name">${_escHtml(t.title)}</div>
+        <div class="ri-note">${_escHtml(t.note)}</div>
+        <div class="ri-meta">かかる日数：${_escHtml(t.days)}　／　学年の目安：${_escHtml(t.forGrade)}</div>
+        <button class="ri-btn" onclick="showThemePreview(${t.id})">このテーマのシートを見る</button>
+      </div>`).join('');
+    list.dataset.filled='1';
+  }
+  if(!open){ document.getElementById('themePreview').classList.remove('open'); }
+}
+
+function showThemePreview(id){
+  const t=REVIEW_THEMES.find(x=>x.id===id);
+  if(!t) return;
+  const box=document.getElementById('themePreview');
+  document.getElementById('themePreviewTitle').textContent=t.title;
+  document.getElementById('themePreviewText').value=themeSheetText(id,null);
+  document.getElementById('themePreviewCopyBtn').textContent='📋 シートをコピーする';
+  box.classList.add('open');
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function copyThemePreview(){
+  _copyTextarea('themePreviewText','themePreviewCopyBtn');
+}
+
+function _copyTextarea(taId,btnId){
+  const ta=document.getElementById(taId);
+  const btn=document.getElementById(btnId);
   if(!ta) return;
   const done=()=>{ if(btn) btn.textContent='✅ コピーしました！'; };
   if(navigator.clipboard&&navigator.clipboard.writeText){
@@ -1930,6 +1998,10 @@ function copyReviewSheet(){
     try{ document.execCommand('copy'); }catch(e){}
     ta.setAttribute('readonly','readonly'); done();
   }
+}
+
+function copyReviewSheet(){
+  _copyTextarea('reviewSheetText','reviewCopyBtn');
 }
 
 // ============================================================
