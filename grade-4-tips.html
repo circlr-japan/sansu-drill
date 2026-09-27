@@ -10,8 +10,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小学4年生の算数 完全ガイド｜つまずきポイントと勉強法 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="小学4年生の算数を時期別に整理。わり算の筆算（÷1桁・÷2桁）、がい数と四捨五入、小数のしくみ、面積、角度など、抽象化が本格化する4年生のつまずき対策と家庭学習法を解説します。">
+<title>小学4年生の算数 家庭ガイド【筆算の手順とミス・見当の習慣・がい数】 | にじゅうまる。算数ドリル</title>
+<meta name="description" content="4年生の筆算のミスを「見当→計算→比べる」で見つける家庭ガイド。わり算の筆算の4手順、がい数の読み分けを数直線で、小数×整数の小数点、面積とまわりの長さ、修了チェック問題7問と誤答例4つ｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/grade-4-tips.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,18 +61,41 @@ ul li,ol li{margin-bottom:8px;}
 .try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="小学4年生の算数 完全ガイド｜つまずきポイントと勉強法">
-<meta property="og:description" content="小学4年生の算数を時期別に整理。わり算の筆算（÷1桁・÷2桁）、がい数と四捨五入、小数のしくみ、面積、角度など、抽象化が本格化する4年生のつまずき対策と家庭学習法を解説します。">
+<meta property="og:title" content="小学4年生の算数 家庭ガイド【筆算の手順とミス・見当の習慣・がい数】">
+<meta property="og:description" content="4年生の筆算ミスは手順の抜けから。見当→計算→比べるで見つける家庭ガイド。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/grade-4-tips.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="小学4年生の算数 完全ガイド｜つまずきポイントと勉強法">
-<meta name="twitter:description" content="小学4年生の算数を時期別に整理。わり算の筆算（÷1桁・÷2桁）、がい数と四捨五入、小数のしくみ、面積、角度など、抽象化が本格化する4年生のつまずき対策と家庭学習法を解説します。">
+<meta name="twitter:title" content="小学4年生の算数：筆算の手順とミス">
+<meta name="twitter:description" content="4年生：筆算の手順とミスを、見当の習慣で見つける。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -81,34 +104,42 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "わり算の筆算で手が止まります。",
+      "name": "わり算の筆算でまちがえます。どこを見ればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「たてる→かける→ひく→おろす」を声に出しながら解く練習を。商の見当はがい数の考え方（91÷23→90÷20で4くらい）を使い、はずれたら書き直せばOKと伝えましょう。"
+        "text": "1問だけ「たてる・かける・ひく・おろす」を声に出しながら解いてもらうと、抜けている手順が見つけやすくなります。答えのけたが見当より少ないときは、「おろす」の抜けがよくあります。"
       }
     },
     {
       "@type": "Question",
-      "name": "がい数の問題文の意味がわかっていないようです。",
+      "name": "見当はどうやって立てればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「〜の位まで」と「上から〜桁」の違いを、同じ数（3872など）で両方作らせて比べるのが効果的です。違いが説明できたら卒業です。"
+        "text": "キリのいい数にしてから計算します。386÷4なら400÷4で100くらい、91÷23なら90÷20で4くらい。計算のあとに見当と比べると、けたのまちがいに気づけます。"
       }
     },
     {
       "@type": "Question",
-      "name": "分度器がうまく使えません。",
+      "name": "がい数の「千の位まで」と「上から2けた」がわかりません。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "中心合わせ・0°合わせ・内外の目もりの3点を1つずつ確認。測る前に「だいたい何度？」の見当を言わせると、読み間違いに自分で気づけます。"
+        "text": "同じ数で両方を作って比べる方法があります。3862なら、千の位までは百の位を四捨五入して4000、上から2けたは上から3けためを四捨五入して3900です。"
       }
     },
     {
       "@type": "Question",
-      "name": "4年生から算数の点数が下がってきました。",
+      "name": "面積とまわりの長さを取り違えます。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "抽象化の壁で、よくある現象です。どの単元から下がったかを単元テストで特定し、その1つ前の内容からさかのぼる方法があります。放置したまま5年生に入ると、つまずきが広がることがあります。"
+        "text": "方眼紙に図形をかき、「中をぬったマスの数が面積、ふちをなぞった長さがまわりの長さ」と両方を数えてみてください。面積の単位はcm²になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5年生に向けて、春休みに何をすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "わり算の筆算、小数のしくみ（0.01が10こで0.1）、がい数で見当を立てること、の3つを確かめておくのがおすすめです。5年生の割合や小数のかけ算・わり算の土台になります。"
       }
     }
   ]
@@ -119,141 +150,250 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <body>
 <div class="header">
   <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
-  <h1>小学4年生の算数 完全ガイド｜つまずきポイントと勉強法</h1>
+  <h1>小学4年生の算数：筆算の手順とミス</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>4️⃣ 4年生は「手順の長い計算」と「抽象的な考え方」が本格化する学年。わり算の筆算・がい数・面積と、5年生の最難関（割合）に向けた土台づくりの1年です。重点ポイントを整理しました。</p>
+  <p>4️⃣ 4年生は、わり算の筆算・がい数・小数の計算と、手順の長い計算が本格的に登場する学年です。このページでは、筆算のミスがどの手順で起きるかを見分ける方法と、計算の前に見当を立てて、あとで比べる習慣を中心にまとめました。</p>
 </div>
+
 <div class="theme-box">
   <div class="th-label">この学年の役割</div>
-  <div class="th-title">複雑な計算手順の定着</div>
-  <p class="th-lead">手順の長い計算が登場する学年です。<strong>「たてる・かける・ひく・おろす」を、途中で飛ばさずに最後まで回せるか</strong>——理解より、手順を体に入れることが役割になります。がい数・面積も、決まった手順で処理する単元です。</p>
-  <ul><li>わり算の筆算</li><li>がい数</li><li>面積</li><li>図形</li></ul>
+  <div class="th-title">筆算の手順と、見当の習慣</div>
+  <p class="th-lead">手順の長い計算が本格的に登場する学年です。<strong>「たてる・かける・ひく・おろす」を途中で飛ばさずに最後まで回せるか</strong>と、<strong>計算の前に見当を立て、あとで比べる習慣</strong>がこの学年の役割です。このページでは、4年生の筆算で起きるミスを、見当でどう見つけるかを中心にまとめました。</p>
+  <ul><li>わり算の筆算</li><li>がい数・見当</li><li>小数×÷整数</li><li>面積</li></ul>
 </div>
-<h2>4年生で学ぶこと（時期別の見取り図）</h2>
+
+<h2>4年生の1年間（学期ごとの見取り図）</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 220" role="img" aria-label="4年生の1年間を3つの学期に分けたタイムライン。1学期はわり算の筆算（1けたでわる）と角度、2学期は2けたでわる筆算とがい数と面積、3学期は小数と整数の計算と分数。1学期と2学期がこの学年の山">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="230" y="22" font-size="13" font-weight="700" fill="#122A64" text-anchor="middle">4年生の1年間</text>
+      <line x1="20" y1="44" x2="450" y2="44" stroke="#94A3B8" stroke-width="2"/>
+      <path d="M450 38 L460 44 L450 50" fill="#94A3B8"/>
+      <circle cx="90.0" cy="44" r="6" fill="#EF4444"/>
+      <rect x="20" y="60" width="140" height="124" rx="10" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+      <text x="90.0" y="82" font-size="13" font-weight="700" fill="#991B1B" text-anchor="middle">1学期</text>
+      <text x="90.0" y="106" font-size="12" fill="#374151" text-anchor="middle">大きな数（億・兆）</text>
+      <text x="90.0" y="128" font-size="12" fill="#374151" text-anchor="middle">わり算の筆算（÷1けた）</text>
+      <text x="90.0" y="150" font-size="12" fill="#374151" text-anchor="middle">角度</text>
+      <text x="90.0" y="172" font-size="12" fill="#374151" text-anchor="middle">折れ線グラフ</text>
+      <text x="90.0" y="204" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">▲ この学年の山</text>
+      <circle cx="235.0" cy="44" r="6" fill="#EF4444"/>
+      <rect x="165" y="60" width="140" height="124" rx="10" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+      <text x="235.0" y="82" font-size="13" font-weight="700" fill="#991B1B" text-anchor="middle">2学期</text>
+      <text x="235.0" y="106" font-size="12" fill="#374151" text-anchor="middle">÷2けたの筆算</text>
+      <text x="235.0" y="128" font-size="12" fill="#374151" text-anchor="middle">がい数</text>
+      <text x="235.0" y="150" font-size="12" fill="#374151" text-anchor="middle">計算のきまり</text>
+      <text x="235.0" y="172" font-size="12" fill="#374151" text-anchor="middle">面積</text>
+      <text x="235.0" y="204" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">▲ この学年の山</text>
+      <circle cx="380.0" cy="44" r="6" fill="#CBD5E1"/>
+      <rect x="310" y="60" width="140" height="102" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="380.0" y="82" font-size="13" font-weight="700" fill="#1E3A8A" text-anchor="middle">3学期</text>
+      <text x="380.0" y="106" font-size="12" fill="#374151" text-anchor="middle">小数×整数・小数÷整数</text>
+      <text x="380.0" y="128" font-size="12" fill="#374151" text-anchor="middle">分数（帯分数・仮分数）</text>
+      <text x="380.0" y="150" font-size="12" fill="#374151" text-anchor="middle">直方体と立方体</text>
+    </g>
+  </svg>
+  <figcaption>図：4年生の1年間。わり算の筆算が1学期から2学期まで続き、2学期にがい数が重なる。がい数の「見当」が筆算の確かめにも使える</figcaption>
+</figure>
+
+<h2>ミスを見つける道具：見当→計算→比べる</h2>
+<p>4年生の筆算のミスは、計算力より<strong>手順の抜け</strong>で起きることがよくあります。手順の抜けは、けたが大きく変わる誤り（おろし忘れ、商の0の抜け、小数点の打ち忘れ）になりやすいので、計算の前に<strong>見当</strong>を立てておくと、あとで比べて気づけます。</p>
+<figure class="fig">
+<svg viewBox="0 0 460 230" role="img" aria-label="386÷4を例にした3段階の図。①見当：400÷4で100くらい。②計算：筆算で96あまり2。③比べる：100くらいと96は近いので、けたの誤りはないと確かめられる">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="10" y="30" width="136" height="130" rx="12" fill="#EFF6FF" stroke="#2563EB"/>
+      <text x="78" y="56" font-size="14" font-weight="700" fill="#1E3A8A">① 見当</text>
+      <text x="78" y="90" font-size="14" fill="#122A64">386 → 400</text>
+      <text x="78" y="114" font-size="14" fill="#122A64">400 ÷ 4</text>
+      <text x="78" y="140" font-size="14" font-weight="700" fill="#1E3A8A">100くらい</text>
+      <text x="162" y="100" font-size="20" fill="#94A3B8">→</text>
+      <rect x="178" y="30" width="136" height="130" rx="12" fill="#fff" stroke="#122A64"/>
+      <text x="246" y="56" font-size="14" font-weight="700" fill="#122A64">② 計算</text>
+      <text x="246" y="96" font-size="14" fill="#122A64">386 ÷ 4</text>
+      <text x="246" y="124" font-size="14" font-weight="700" fill="#15803D">96 あまり 2</text>
+      <text x="330" y="100" font-size="20" fill="#94A3B8">→</text>
+      <rect x="346" y="30" width="104" height="130" rx="12" fill="#F0FDF4" stroke="#22C55E"/>
+      <text x="398" y="56" font-size="14" font-weight="700" fill="#166534">③ 比べる</text>
+      <text x="398" y="92" font-size="13" fill="#14532D">100くらい</text>
+      <text x="398" y="112" font-size="13" fill="#14532D">と 96</text>
+      <text x="398" y="138" font-size="13" font-weight="700" fill="#15803D">近い ✓</text>
+      <text x="230" y="192" font-size="12" fill="#475569">もし「9あまり2」なら、100くらいとけたがちがう → おろし忘れに気づける</text>
+      <text x="230" y="214" font-size="12" fill="#475569">検算 4×96＋2＝386</text>
+    </g>
+  </svg>
+  <figcaption>図：計算の前に見当を立て、計算のあとに比べる。けたのまちがい（おろし忘れ・商の0の抜け・小数点の打ち忘れ）は、この比べる段階で見つけやすい</figcaption>
+</figure>
+<p>見当は「だいたい」で十分です。386→400、23→20のように、キリのいい数にしてから計算します。この見当の立て方は、2学期のがい数の単元とそのままつながっています。</p>
+
+<h2>わり算の筆算：4つの手順を、声に出してたどる</h2>
+<p>「たてる・かける・ひく・おろす」のどれが抜けているかは、黙って解いていると本人にもわかりにくいものです。1問だけ<strong>声に出しながら</strong>解いてもらうと、抜けた手順は声に出ないので見つけやすくなります。</p>
 <table class="cv-table">
-  <tr><th>時期</th><th>主な単元</th><th>つまずき度</th></tr>
-  <tr><td>1学期</td><td>大きな数（億・兆）、折れ線グラフ、<strong>わり算の筆算（÷1桁）</strong>、角度</td><td>🔴</td></tr>
-  <tr><td>2学期</td><td><strong>÷2桁の筆算</strong>、<strong>がい数</strong>、計算のきまり、垂直・平行と四角形、面積</td><td>🔴</td></tr>
-  <tr><td>3学期</td><td>小数のかけ算わり算（×÷整数）、分数（帯分数・仮分数）、立体、変わり方</td><td>🟡</td></tr>
-</table>
-<p>4年生は学習量・難度とも一段ギアが上がります。ただし攻略の筋は明確で、<strong>「手順の固定」と「見当の習慣」</strong>の2本柱です。</p>
-<h2>最重要単元①：わり算の筆算</h2>
-<p>「たてる→かける→ひく→おろす」の4拍子を、呪文のように声に出して固定しましょう。÷2桁では商の見当がはずれて書き直すのが正常な手順です——「消して直すのは失敗じゃない」と伝えて、修正をためらわない子に育てるのがコツ。商に0がたつ筆算（624÷6＝104）はミス多発地帯なので、重点練習を（<a href="/division-guide.html">わり算ガイド</a>）。</p>
-<h2>この学年の目玉：筆算の4手順を、声に出してトレースする</h2>
-<p>わり算の筆算のミスは、計算力ではなく<strong>手順の抜け</strong>で起きます。「たてる・かける・ひく・おろす」のどれが抜けているかは、黙って解いていると本人にも分かりません。</p>
-<p>そこで、1問だけ<strong>声に出しながら</strong>解かせてみてください。抜けた手順は、声に出ないので一目で分かります。</p>
-<table class="cv-table">
-  <tr><th>手順</th><th>声に出す言葉</th><th>抜けたときに起きること</th></tr>
+  <tr><th>手順</th><th>声に出す言葉（72÷3）</th><th>抜けたときに起きやすいこと</th></tr>
   <tr><td>① たてる</td><td>「7÷3で、2がたつ」</td><td>商の位がずれる</td></tr>
   <tr><td>② かける</td><td>「3×2は6」</td><td>次のひき算ができない</td></tr>
   <tr><td>③ ひく</td><td>「7ひく6は1」</td><td>あまりが合わなくなる</td></tr>
-  <tr><td>④ おろす</td><td>「2をおろして12」</td><td>桁が足りず答えが短くなる</td></tr>
+  <tr><td>④ おろす</td><td>「2をおろして12」</td><td>けたが足りず、答えが短くなる</td></tr>
 </table>
-<p>4つのうち、抜けやすいのは<strong>④おろす</strong>です。答えの桁数が問題より短くなっていたら、ほぼここです。詳しくは<a href="/division-guide.html">わり算の教え方ガイド</a>を参照してください。</p>
+<p>4つのうち抜けやすいのは<strong>④おろす</strong>です。答えのけた数が見当より少なければ、ここを確かめます。÷2けたでは、商の見当がはずれて書き直すのは正しい手順だと伝えてください。工程を1つずつ分けた図は<a href="/division-guide.html">わり算の教え方</a>にあります。</p>
 
-<h2>最重要単元②：がい数（言葉の読み取りが勝負）</h2>
-<p>四捨五入そのものは簡単。難しいのは「<strong>千の位までのがい数</strong>」（→4000）と「<strong>上から2桁のがい数</strong>」（→3900）という指示の読み分けです。ここは表を書いて整理するのが一番。がい数は5年生以降の「見当を立てる力」の源になる、実は超重要単元です（<a href="/gaisuu-shishagoonyuu-guide.html">がい数ガイド</a>）。</p>
-<h2>図形：角度と面積は「道具」と「意味」</h2>
-<ul>
-  <li><strong>角度：</strong>分度器のつまずきは「中心合わせ・0°合わせ・内外の目もり」の3点。測る前に「90°より大きい？」と見当をつける習慣で読み間違いが激減します</li>
-  <li><strong>面積：</strong>公式（たて×よこ）の前に「1cm²のタイルが何枚分」という意味を。ここの意味理解が5年生の三角形・平行四辺形の面積につながります（<a href="/geometry-guide.html">図形ガイド</a>）</li>
-</ul>
-<h2>5年生への備え：ここだけは固めて進級したい</h2>
-<p>5年生の割合・小数の乗除は、4年生の内容を直接の土台にします。進級前チェックは3つ——①わり算の筆算がスラスラ ②小数の位のしくみ（0.01の10こ分は0.1）③がい数で見当を立てられる。春休みにこの3点を総点検しておくと、5年生の立ち上がりがまったく変わります。</p>
-<div class="tip-box"><p>💡 4年生は学習内容だけでなく「授業を聞いてわかったつもり」が増える学年。家庭では「今日の算数、何やった？教えて」と説明させるのは、定着を確かめる手軽な方法です。</p></div>
-<h2>4年生の親がやりがちなNG対応と言いかえ</h2>
-<p>内容が難しくなり、親が教えられない場面も増える学年。関わりの質を変えましょう。</p>
-<ul>
-  <li>❌「なんでこんな問題ができないの」→ ⭕「どの手順で止まった？」（4拍子のどこかを特定）</li>
-  <li>❌「消しゴムで消してばかり」→ ⭕「商の書き直しは正しい手順だよ」（試行錯誤の承認）</li>
-  <li>❌ 教えられなくて気まずい → ⭕「いい問題だね、一緒に教科書見よう」（共同学習者へ）</li>
-  <li>❌ 点数だけ見て一喜一憂 → ⭕「どの単元で落とした？」（診断ツールとして使う）</li>
-</ul>
-<p>4年生の穴は5年生で倍の利子がついて返ってきます。テストを「診断」として使い、穴の即修復を家庭の文化にしましょう。</p>
-<h2>つまずきサイン早見表（気づいたら即対応）</h2>
+<h2>がい数：どの位を見るかを読み取る</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 260" role="img" aria-label="3862を2本の数直線で表した図。上は3000から5000の数直線で、千の位までのがい数にすると百の位の8を四捨五入して4000。下は3800から4000の数直線で、上から2けたのがい数にすると上から3けための6を四捨五入して3900">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="40" y="36" font-size="13" font-weight="700" fill="#1E3A8A">千の位までのがい数（百の位を四捨五入）</text><line x1="40" y1="70" x2="420" y2="70" stroke="#122A64" stroke-width="2"/><line x1="40.0" y1="62" x2="40.0" y2="78" stroke="#122A64" stroke-width="2"/><text x="40.0" y="94" font-size="12" text-anchor="middle" fill="#122A64">3000</text><line x1="59.0" y1="66" x2="59.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="78.0" y1="66" x2="78.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="97.0" y1="66" x2="97.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="116.0" y1="66" x2="116.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="135.0" y1="66" x2="135.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="154.0" y1="66" x2="154.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="173.0" y1="66" x2="173.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="192.0" y1="66" x2="192.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="211.0" y1="66" x2="211.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="230.0" y1="62" x2="230.0" y2="78" stroke="#122A64" stroke-width="2"/><text x="230.0" y="94" font-size="12" text-anchor="middle" fill="#122A64">4000</text><line x1="249.00000000000003" y1="66" x2="249.00000000000003" y2="74" stroke="#122A64" stroke-width="1"/><line x1="268.0" y1="66" x2="268.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="287.0" y1="66" x2="287.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="306.0" y1="66" x2="306.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="325.0" y1="66" x2="325.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="344.0" y1="66" x2="344.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="363.0" y1="66" x2="363.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="382.0" y1="66" x2="382.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="401.0" y1="66" x2="401.0" y2="74" stroke="#122A64" stroke-width="1"/><line x1="420.0" y1="62" x2="420.0" y2="78" stroke="#122A64" stroke-width="2"/><text x="420.0" y="94" font-size="12" text-anchor="middle" fill="#122A64">5000</text><circle cx="203.78" cy="70" r="6" fill="#DC2626"/><text x="203.78" y="56" font-size="12" font-weight="700" text-anchor="middle" fill="#DC2626">3862</text><path d="M211.78 72 Q216.89 100 226.0 80" fill="none" stroke="#1E3A8A" stroke-width="2.5"/><text x="230.0" y="114" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">→ 4000</text>
+      <text x="40" y="156" font-size="13" font-weight="700" fill="#B45309">上から2けたのがい数（上から3けためを四捨五入）</text><line x1="40" y1="190" x2="420" y2="190" stroke="#122A64" stroke-width="2"/><line x1="40.0" y1="182" x2="40.0" y2="198" stroke="#122A64" stroke-width="2"/><text x="40.0" y="214" font-size="12" text-anchor="middle" fill="#122A64">3800</text><line x1="59.0" y1="186" x2="59.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="78.0" y1="186" x2="78.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="97.0" y1="186" x2="97.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="116.0" y1="186" x2="116.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="135.0" y1="186" x2="135.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="154.0" y1="186" x2="154.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="173.0" y1="186" x2="173.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="192.0" y1="186" x2="192.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="211.0" y1="186" x2="211.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="230.0" y1="182" x2="230.0" y2="198" stroke="#122A64" stroke-width="2"/><text x="230.0" y="214" font-size="12" text-anchor="middle" fill="#122A64">3900</text><line x1="249.00000000000003" y1="186" x2="249.00000000000003" y2="194" stroke="#122A64" stroke-width="1"/><line x1="268.0" y1="186" x2="268.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="287.0" y1="186" x2="287.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="306.0" y1="186" x2="306.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="325.0" y1="186" x2="325.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="344.0" y1="186" x2="344.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="363.0" y1="186" x2="363.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="382.0" y1="186" x2="382.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="401.0" y1="186" x2="401.0" y2="194" stroke="#122A64" stroke-width="1"/><line x1="420.0" y1="182" x2="420.0" y2="198" stroke="#122A64" stroke-width="2"/><text x="420.0" y="214" font-size="12" text-anchor="middle" fill="#122A64">4000</text><circle cx="157.8" cy="190" r="6" fill="#DC2626"/><text x="157.8" y="176" font-size="12" font-weight="700" text-anchor="middle" fill="#DC2626">3862</text><path d="M165.8 192 Q193.9 220 226.0 200" fill="none" stroke="#B45309" stroke-width="2.5"/><text x="230.0" y="234" font-size="13" font-weight="700" text-anchor="middle" fill="#B45309">→ 3900</text>
+    </g>
+  </svg>
+  <figcaption>図：同じ3862でも、指示の言い方で答えが変わる。がい数のつまずきは、四捨五入より「どの位を見るか」の読み取りで起きやすい</figcaption>
+</figure>
+<p>四捨五入そのものより、「千の位までのがい数」と「上から2けたのがい数」の読み分けで迷うことがよくあります。同じ数で両方を作って比べる練習が、家庭で試しやすい方法です。詳しくは<a href="/gaisuu-shishagoonyuu-guide.html">がい数・四捨五入ガイド</a>で。</p>
+
+<h2>小数×整数・小数÷整数（3学期）</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 220" role="img" aria-label="1.26×4の筆算。右にそろえて書き、整数と同じように126×4＝504と計算してから、かけられる数の小数点の位置にあわせて小数点をおろし、5.04とする">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="0" y="0" width="460" height="220" rx="12" fill="#FFFDF5"/>
+      <g font-size="28" fill="#122A64">
+        <text x="110" y="60">1</text><text x="126" y="60">.</text><text x="144" y="60">2</text><text x="176" y="60">6</text>
+        <text x="70" y="104" fill="#64748B">×</text><text x="176" y="104">4</text>
+      </g>
+      <line x1="60" y1="118" x2="196" y2="118" stroke="#122A64" stroke-width="2"/>
+      <g font-size="28" font-weight="700" fill="#15803D">
+        <text x="110" y="162">5</text><text x="126" y="162" fill="#DC2626">.</text><text x="144" y="162">0</text><text x="176" y="162">4</text>
+      </g>
+      <path d="M126 70 V138" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <g text-anchor="start" font-size="13">
+        <text x="222" y="56" fill="#374151">① 右にそろえて書く</text>
+        <text x="222" y="84" fill="#374151">② 126×4＝504 と計算</text>
+        <text x="222" y="112" fill="#DC2626" font-weight="700">③ 小数点をそのままおろす</text>
+        <text x="222" y="146" fill="#1E3A8A">見当：1.26は1ちょっと</text>
+        <text x="222" y="166" fill="#1E3A8A">→ ×4で4ちょっと → 5.04 ✓</text>
+      </g>
+    </g>
+  </svg>
+  <figcaption>図：小数×整数の筆算。整数と同じように計算してから、小数点をまっすぐおろす。「504」と答えてしまっても、見当（4ちょっと）と比べれば気づける</figcaption>
+</figure>
+<p>小数のかけ算・わり算（整数との計算）は、整数の筆算と同じ手順に「小数点の位置」が加わるだけです。小数点の打ち忘れも、見当（1.26は1ちょっと→×4で4ちょっと）と比べれば気づけます。5年生の小数×小数・割合は、この単元の上に積み上がります。</p>
+
+<h2>面積：公式の前に「1cm²が何こ分」</h2>
+<p>面積の公式（たて×よこ）の前に、「1cm²のタイルが何枚分」という意味を確かめます。面積とまわりの長さを取り違える誤りもよく見られるので、「中をぬる」のか「ふちをなぞる」のかを言葉にして区別します（<a href="/menseki-enza.html">面積の教え方</a>）。</p>
+
+<h2>4年生修了チェック問題</h2>
+<ol class="q-set">
+  <li class="q"><span class="q-text">386÷4</span><details><summary>答えと考え方</summary><p>96あまり2。見当は400÷4で100くらい。38÷4で9→36→2→6をおろして26÷4で6→24→2。検算 4×96＋2＝386。</p></details></li>
+  <li class="q"><span class="q-text">91÷23</span><details><summary>答えと考え方</summary><p>3あまり22。見当は90÷20で4くらい。4をたてると23×4＝92で91より大きいので3に直す。23×3＝69、91−69＝22。</p></details></li>
+  <li class="q"><span class="q-text">624÷6</span><details><summary>答えと考え方</summary><p>104。十の位は2÷6がわれないので商に0をたてる。見当は600÷6で100くらい。</p></details></li>
+  <li class="q"><span class="q-text">3862を、千の位までのがい数に</span><details><summary>答えと考え方</summary><p>4000。百の位の8を四捨五入（5以上なので切り上げ）。</p></details></li>
+  <li class="q"><span class="q-text">3862を、上から2けたのがい数に</span><details><summary>答えと考え方</summary><p>3900。上から3けための6を四捨五入（切り上げ）。</p></details></li>
+  <li class="q"><span class="q-text">1.26×4</span><details><summary>答えと考え方</summary><p>5.04。126×4＝504を計算して、小数点をそのままおろす。見当は4ちょっと。</p></details></li>
+  <li class="q"><span class="q-text">たて6cm、よこ8cmの長方形の面積は？</span><details><summary>答えと考え方</summary><p>48cm²。1cm²のタイルが6×8＝48枚分。</p></details></li>
+</ol>
+
+<h2>よくある誤答例と、家庭での直し方</h2>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>386÷4＝9あまり2</div>
+  <p><strong>何が起きたか：</strong>38÷4で9をたて、38−36＝2まで計算したところで、一の位の6をおろしていません。答えのけたが1つ足りません。</p>
+  <p><strong>家庭での直し方：</strong>見当（100くらい）と比べると、9はけたが足りないとわかります。「ひいたら、おろす」を声に出して、おろす数が残っていないかを確かめてから答えを書く手順にします。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>3862を上から2けたのがい数に → 4000</div>
+  <p><strong>何が起きたか：</strong>「上から2けた」を「千の位まで」と同じにしています。どの位を四捨五入するかの読み取りで迷っています。</p>
+  <p><strong>家庭での直し方：</strong>上の数直線のように、同じ数で「千の位まで」と「上から2けた」を両方作って比べます。上から2けたなら、上から3けための数字に○をつけてから四捨五入します。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>1.26×4＝504</div>
+  <p><strong>何が起きたか：</strong>126×4の計算は正しいのですが、小数点を打ち忘れています。</p>
+  <p><strong>家庭での直し方：</strong>見当（1.26は1ちょっと→×4で4ちょっと）と比べて、504は大きすぎると気づけるようにします。かけられる数の小数点に線を引き、そのまま下におろす手順にします。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>たて6cm、よこ8cmの長方形の面積 → 28cm</div>
+  <p><strong>何が起きたか：</strong>6＋8＋6＋8＝28 と、まわりの長さを計算しています。面積とまわりの長さが区別できていません。</p>
+  <p><strong>家庭での直し方：</strong>方眼紙に長方形をかき、「中をぬったマスの数が面積、ふちをなぞった長さがまわりの長さ」と両方を数えてみます。面積の単位はcm²になることも確かめます。</p>
+</div>
+
+<div class="memo-box">
+  <div class="memo-title">🏠 ミスは「起こるもの」と説明するより、体験で</div>
+  <p>4年生になると、手順の長い計算で「わかっているのにまちがえる」ことが増えます。「気をつけなさい」と言うより、数字を取り違えると自分が困る場面を体験するほうが、確かめる理由が伝わりやすくなります。</p>
+  <p>答えを出したら「見当とくらべてどう？」と聞く習慣も、同じ考え方です。確かめるのは親ではなく、本人が自分で気づけるようにします。</p>
+  <div class="memo-real">
+    <span class="memo-tag">にじゅうまる。家庭実践メモ</span>
+    <p>計算ミスは「起こるものだ」と説明するより、実際に体験させるようにしています。お腹が空いているのに逆に答えると食べるものが少なく、満腹に近いのに少なく答えるとたくさん出てくる——数字を取り違えると自分が困る、という形にしています。</p>
+  </div>
+</div>
+
+<h2>つまずきサインと、戻る場所</h2>
 <table class="cv-table">
-  <tr><th>サイン</th><th>意味すること</th><th>即対応</th></tr>
-  <tr><td>筆算の商をなかなか「たてられない」</td><td>見当の力が弱い</td><td>がい数で「だいたい何倍？」練習</td></tr>
-  <tr><td>104と書くべき商を14と書く</td><td>商の0の欠落</td><td>「割れないときは0」＋桁数の見当</td></tr>
-  <tr><td>「千の位まで」と「上から2桁」を混同</td><td>言葉の読み分け未整理</td><td>同じ数で両方作って比較</td></tr>
-  <tr><td>面積の単位を書き忘れる・混同する</td><td>cm²の意味が未定着</td><td>「1cm²のタイル何枚分？」に戻る</td></tr>
+  <tr><th>サイン</th><th>考えられること</th><th>家庭での対応</th></tr>
+  <tr><td>筆算の商がなかなかたてられない</td><td>見当の力がまだ</td><td>キリのいい数で「だいたい何こ分？」</td></tr>
+  <tr><td>104と書くべき商を14と書く</td><td>商の0が抜ける</td><td>「われないときは0」＋けた数の見当</td></tr>
+  <tr><td>答えのけたが見当より少ない</td><td>おろし忘れ</td><td>4手順を声に出して1問</td></tr>
+  <tr><td>「千の位まで」と「上から2けた」を混同</td><td>言葉の読み分けがまだ</td><td>同じ数で両方作って比べる</td></tr>
+  <tr><td>面積の答えにcmと書く</td><td>まわりの長さと混ざっている</td><td>方眼で「ぬる」と「なぞる」を比べる</td></tr>
 </table>
-<h2>学期ごとの家庭サポートカレンダー</h2>
-<p><strong>1学期：</strong>わり算の筆算のフォーム固め。「たてる→かける→ひく→おろす」の声出しに、1日2問だけ丁寧に付き合ってください。角度は分度器の3点セット確認を1回やれば十分立ち上がります。</p>
-<p><strong>2学期：</strong>÷2桁とがい数の同時期は、4年生の正念場。筆算は書き直しを歓迎する空気を、がい数は言い方の読み分け表を一緒に作るのが効きます。</p>
-<p><strong>3学期：</strong>小数の計算と分数の種類。春休みには「筆算・小数のしくみ・がい数」の3点セットを総点検して、最難関の5年生へ送り出しましょう。</p>
-<div class="tip-box"><p>💡 声かけ例：「見当だとだいたいいくつ？」を計算前の口癖に。見当→計算→見当と比較、のサイクルが4年生以降のミスを激減させます。</p></div>
-<p>加えて、4年生は「そろそろ一人で勉強してほしい」と手を離したくなる学年ですが、完全放任はまだ早めです。おすすめは「取りかかりは本人・終わったら報告」の報告制。学習の中身は任せつつ、毎日の実施だけは家庭の仕組みで支える——このバランスが4年生にはちょうどよく効きます。</p>
+
 <div class="try-box">
-  <div class="try-title">✏️ 読んだあと、その場で確かめる</div>
-  <p>4年生ドリルで筆算を続けて解くと、どの手順で抜けるかが見えてきます。無料・登録不要で、間違えた問題は解答まで確認できます。</p>
-  <a href="/drill.html">4年生のドリルをやってみる →</a>
+  <div class="try-title">✏️ 4年生の筆算で、どの手順で抜けるかを確かめる</div>
+  <p>4年生のドリルでは、わり算の筆算やがい数、小数×整数を含む問題が出ます。計算の前に見当を声に出してから解いてみてください。</p>
+  <a href="/drill.html?grade=4">4年生のドリルを開く →</a>
 </div>
 
 <div class="ref-box">
-  <div class="ref-title">📚 参考資料</div>
+  <div class="ref-title">📚 参考資料と、家庭での使い方</div>
   <ul>
     <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
     <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
   </ul>
-  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。4年生の配当単元と時期は上記資料をもとに確認しています。家庭での進め方は、にじゅうまる。運営者による提案です。</p>
+  <p style="font-size:11.5px;color:#64748B;margin:8px 0 0;line-height:1.8;">確認日: 2026年9月27日。学習指導要領では、第4学年で除数が1位数・2位数の除法とその筆算、概数と四捨五入（「見積もり」を含む）、小数×整数・小数÷整数、面積（cm²・m²）、角の大きさを扱います。「見積もり」は計算の結果の見通しをもつことにも使われます。家庭では、この見積もりを「見当→計算→比べる」の習慣として使う方法があります。図解と誤答例は、にじゅうまる。運営者による整理です。</p>
 </div>
 
-<h2>よくある質問</h2>
-<h3>Q1. わり算の筆算で手が止まります。</h3>
-<p>「たてる→かける→ひく→おろす」を声に出しながら解く練習を。商の見当はがい数の考え方（91÷23→90÷20で4くらい）を使い、はずれたら書き直せばOKと伝えましょう。</p>
-<h3>Q2. がい数の問題文の意味がわかっていないようです。</h3>
-<p>「〜の位まで」と「上から〜桁」の違いを、同じ数（3872など）で両方作らせて比べるのが効果的です。違いが説明できたら卒業です。</p>
-<h3>Q3. 分度器がうまく使えません。</h3>
-<p>中心合わせ・0°合わせ・内外の目もりの3点を1つずつ確認。測る前に「だいたい何度？」の見当を言わせると、読み間違いに自分で気づけます。</p>
-<h3>Q4. 4年生から算数の点数が下がってきました。</h3>
-<p>抽象化の壁で、よくある現象です。どの単元から下がったかを単元テストで特定し、その1つ前の内容からさかのぼる方法があります。放置したまま5年生に入ると、つまずきが広がることがあります。</p>
-<h3>Q5. 5年生に向けて、春休みに何をすればいいですか？</h3>
-<p>「わり算の筆算・小数のしくみ・がい数」の3点総点検です。5年生の幹（小数の乗除→単位量→割合）は、すべてこの3つの上に建ちます。ここに穴を残して進級すると、5年生でつまずきが広がることがあります。</p>
-<h2>4年生修了の「合格ライン」チェックリスト</h2>
-<p>進級前に、次の5つができるか確認してみてください。全部○なら、最難関の5年生に立ち向かえます。</p>
-<ol>
-  <li>÷2桁のわり算の筆算を、商の見当をたてながら解ける</li>
-  <li>「千の位までのがい数」と「上から2桁のがい数」を正しく作り分けられる</li>
-  <li>2.5＋0.34のような小数のたし算で小数点をそろえられる</li>
-  <li>長方形と正方形の面積を単位（cm²）つきで求められる</li>
-  <li>計算の前に「答えはだいたいいくつ」と見当を言える</li>
-</ol>
-<p>⑤の見当の習慣は、5年生の小数の乗除で小数点ミスを防ぐ生命線になります。</p>
 <h2>まとめ</h2>
-<p>4年生は、5年生の最難関ゾーンに向けた「土台工事の年」です。手順の固定と見当の習慣、そして説明させる定着チェック——地味な積み重ねが、1年後に大差になって返ってきます。</p>
 <ul>
-  <li>筆算は4拍子の声出しで固定。書き直しは正常な手順</li>
-  <li>がい数は言葉の読み分けが勝負。「見当の力」の源として大切に</li>
-  <li>進級前チェックは「筆算・小数のしくみ・がい数」の3点</li>
+  <li>4年生の筆算ミスは手順の抜けから。見当→計算→比べるで見つける</li>
+  <li>わり算の筆算は4手順を声に出してたどる。抜けやすいのは「おろす」</li>
+  <li>がい数は「どの位を見るか」の読み取り。同じ数で両方作って比べる</li>
+  <li>小数×整数は小数点をそのままおろす。見当で打ち忘れに気づける</li>
+  <li>面積は「1cm²が何こ分」。まわりの長さと区別する</li>
 </ul>
+
+<h2>よくある質問</h2>
+<h3>Q1. わり算の筆算でまちがえます。どこを見ればいいですか？</h3>
+<p>1問だけ「たてる・かける・ひく・おろす」を声に出しながら解いてもらうと、抜けている手順が見つけやすくなります。答えのけたが見当より少ないときは、「おろす」の抜けがよくあります。</p>
+<h3>Q2. 見当はどうやって立てればいいですか？</h3>
+<p>キリのいい数にしてから計算します。386÷4なら400÷4で100くらい、91÷23なら90÷20で4くらい。計算のあとに見当と比べると、けたのまちがいに気づけます。</p>
+<h3>Q3. がい数の「千の位まで」と「上から2けた」がわかりません。</h3>
+<p>同じ数で両方を作って比べる方法があります。3862なら、千の位までは百の位を四捨五入して4000、上から2けたは上から3けためを四捨五入して3900です。</p>
+<h3>Q4. 面積とまわりの長さを取り違えます。</h3>
+<p>方眼紙に図形をかき、「中をぬったマスの数が面積、ふちをなぞった長さがまわりの長さ」と両方を数えてみてください。面積の単位はcm²になります。</p>
+<h3>Q5. 5年生に向けて、春休みに何をすればいいですか？</h3>
+<p>わり算の筆算、小数のしくみ（0.01が10こで0.1）、がい数で見当を立てること、の3つを確かめておくのがおすすめです。5年生の割合や小数のかけ算・わり算の土台になります。</p>
+
 <div style="margin:32px 0;padding:20px 16px;background:#FFFFFF;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/grade-4.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">4️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学4年生の算数ドリル</span>
+    <a href="/division-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">➗</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">わり算の教え方：筆算を1工程ずつ分解</span>
     </a>
     <a href="/gaisuu-shishagoonyuu-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">📊</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">がい数と四捨五入ガイド</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">がい数・四捨五入ガイド</span>
     </a>
-    <a href="/geometry-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">📐</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">図形の攻略ガイド（角度・面積）</span>
+    <a href="/reduce-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">✏️</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算ミスを減らす方法</span>
     </a>
     <a href="/grade-5-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">5️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">5年生の算数攻略ガイド</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">5年生：割合・小数・分数のつながり</span>
     </a>
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/grade-4.html">4年生のドリルをやってみる →</a>
+  <p>4年生の問題を、その場で採点しながら練習できます</p>
+  <a href="/drill.html?grade=4">4年生のドリルをやってみる →</a>
 </div>
 </div>
 
