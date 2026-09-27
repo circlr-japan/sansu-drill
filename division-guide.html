@@ -10,8 +10,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>わり算の教え方・つまずきポイント完全解説 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="わり算の2つの意味（等分除・包含除）、あまりのあるわり算のチェック法、筆算「たてる→かける→ひく→おろす」の手順、検算のやり方まで学年別に解説。つまずき別の対策と例題つき｜にじゅうまる。算数ドリル">
+<title>わり算の教え方【筆算を1工程ずつ分解・九九・意味・誤答例】 | にじゅうまる。算数ドリル</title>
+<meta name="description" content="わり算を「九九・意味・筆算の手順」の3要素で整理した家庭向け解説。72÷3を「たてる・かける・ひく・おろす」の4工程に分けた図、商に0がたつ624÷6、あまりのチェックと検算、例題7問と誤答例5つの直し方｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/division-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,18 +60,38 @@ footer a{color:#94A3B8;text-decoration:underline;}
 .ref-box ul{font-size:12px;color:#64748B;margin-bottom:0;padding-left:18px;}
 .ref-box li{margin-bottom:5px;}
 .ref-box a{color:#2563EB;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
+.try-box{background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.try-box .try-title{font-size:13px;font-weight:700;color:#1E3A8A;margin-bottom:6px;}
+.try-box p{font-size:13px;color:#1E3A8A;margin-bottom:10px;}
+.try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
+.check-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;table-layout:fixed;}
+.check-table th,.check-table td{border:1px solid #E2E8F0;padding:8px 6px;text-align:center;background:#fff;}
+.check-table th{background:#EFF6FF;color:#1E3A8A;font-size:12px;}
+.check-table td:first-child,.check-table th:first-child{text-align:left;width:46%;font-size:12px;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="わり算の教え方・つまずきポイント完全解説">
-<meta property="og:description" content="わり算の2つの意味、あまりのチェック法、筆算の手順、検算まで学年別に解説。">
+<meta property="og:title" content="わり算の教え方【筆算を1工程ずつ分解・九九・意味・誤答例】">
+<meta property="og:description" content="わり算の筆算を4工程に分解した図と、九九・意味・手順のどこで止まっているかを見分ける誤答例。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/division-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="わり算の教え方・つまずきポイント完全解説">
-<meta name="twitter:description" content="2つの意味・あまり・筆算・検算まで学年別に解説。">
+<meta name="twitter:title" content="わり算の教え方：筆算を1工程ずつ分解する">
+<meta name="twitter:description" content="わり算の筆算を1工程ずつ。3要素で誤答を切り分ける。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -80,10 +100,10 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "わり算はどう教えればいいですか？",
+      "name": "わり算の教え方の基本は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "わり算には「同じ数ずつ分ける（12こを3人で＝1人4こ）」と「同じ数ずつ取る（12こを3こずつ＝4人分）」の2つの意味があります。実物を分ける体験とセットで意味を教え、計算自体は九九の逆（3×□＝12）で求めることを伝えましょう。"
+        "text": "わり算は「九九（かけ算の逆）」「意味（等しく分ける・同じ数ずつ取る）」「筆算の手順」の3つで成り立ちます。実物で分ける体験をしてから、計算は九九を逆から使う、と進めます。誤答が出たら、3つのどこで止まっているかを確かめます。"
       }
     },
     {
@@ -91,7 +111,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "あまりのあるわり算で気をつけることは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「あまりは、わる数より必ず小さい」を毎回チェックすることです。17÷5＝2あまり7のような誤答は、あまり（7）がわる数（5）より大きい時点で間違いだと自分で気づけます。検算（わる数×商＋あまり＝わられる数）も習慣にしましょう。"
+        "text": "「あまりは、わる数より必ず小さい」を毎回チェックすることです。17÷5＝2あまり7のような誤答は、あまり（7）がわる数（5）より大きい時点で気づけます。検算（わる数×商＋あまり＝わられる数）も習慣にしましょう。"
       }
     },
     {
@@ -99,7 +119,15 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "わり算の筆算の手順を教えてください。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「たてる→かける→ひく→おろす」の4拍子の繰り返しです。商の見当をたてて、わる数とかけて、引いて、次の位をおろす。この4語を声に出しながら練習すると手順が安定します。"
+        "text": "「たてる→かける→ひく→おろす」の4工程の繰り返しです。おろしたら、また「たてる」に戻ります。ひいた答えがわる数より小さいかを確かめると、たてた数の誤りに気づけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "624÷6を14と答えてしまいます。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "十の位で2÷6がわれないとき、商に0を書かずに飛ばしている誤答です。「われないときは0を書く」をルールにし、先に答えの見当（600÷6＝100くらい）を立てると気づきやすくなります。"
       }
     },
     {
@@ -107,7 +135,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "わり算は何年生で習いますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "わり算の意味と九九で解ける計算は3年生、あまりのあるわり算も3年生、筆算（2〜3桁÷1桁）は4年生、÷2桁の筆算も4年生、小数のわり算は5年生、分数のわり算は6年生です。"
+        "text": "わり算の意味と九九で解ける計算、あまりのあるわり算は3年生、筆算は4年生、小数のわり算は5年生、分数のわり算は6年生で扱います。"
       }
     }
   ]
@@ -117,39 +145,59 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <body>
 <div class="header">
   <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
-  <h1>わり算の教え方・つまずきポイント完全解説</h1>
+  <h1>わり算の教え方：筆算を1工程ずつ分解する</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>➗ わり算は「九九の逆」。わり算でつまずく原因の一つに、九九が十分に定着していないことがあります。また、「分ける」という意味の理解や、筆算の手順で迷う場合もあります。このページでは3つの角度から、わり算に取り組みやすくする方法を紹介します。</p>
+  <p>➗ わり算は「九九の逆」。わり算でつまずく原因の一つに、九九が十分に定着していないことがあります。また、「分ける」という意味の理解や、筆算の手順で迷う場合もあります。このページでは、わり算を3つの要素に分け、筆算を1工程ずつ図で分解しました。誤答がどこで起きているかを見分ける例もあります。</p>
 </div>
 
-<h2>わり算には2つの意味がある</h2>
-<p>12÷3という同じ式でも、表す場面は2種類あります。ここを丁寧に扱うと、文章題に強くなります。</p>
+<h2>わり算は3つの要素でできている</h2>
+<p>わり算でつまずく原因の一つに、九九が十分に定着していないことがあります。また、「分ける」という意味の理解や、筆算の手順で迷う場合もあります。誤答が出たときは、3つのうちどこで止まっているかを切り分けると、戻る場所が決まります。</p>
+<figure class="fig">
+<svg viewBox="0 0 460 190" role="img" aria-label="わり算を支える3つの要素を横に並べた図。1つ目は九九（12÷3は3×□＝12の□）、2つ目は意味（等しく分ける・同じ数ずつ取る）、3つ目は筆算の手順（たてる・かける・ひく・おろす）">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="10" y="20" width="140" height="130" rx="12" fill="#EFF6FF" stroke="#2563EB"/>
+      <text x="80" y="48" font-size="14" font-weight="700" fill="#1E3A8A">① 九九</text>
+      <text x="80" y="82" font-size="15" fill="#122A64">12 ÷ 3 ＝ □</text>
+      <text x="80" y="106" font-size="12" fill="#475569">3 × □ ＝ 12</text>
+      <text x="80" y="128" font-size="12" fill="#475569">の□をさがす</text>
+      <rect x="160" y="20" width="140" height="130" rx="12" fill="#FFF7ED" stroke="#F59E0B"/>
+      <text x="230" y="48" font-size="14" font-weight="700" fill="#92400E">② 意味</text>
+      <text x="230" y="82" font-size="12" fill="#78350F">等しく分ける</text>
+      <text x="230" y="100" font-size="11" fill="#78350F">（1人分はいくつ）</text>
+      <text x="230" y="122" font-size="12" fill="#78350F">同じ数ずつ取る</text>
+      <text x="230" y="140" font-size="11" fill="#78350F">（いくつ分とれる）</text>
+      <rect x="310" y="20" width="140" height="130" rx="12" fill="#F0FDF4" stroke="#22C55E"/>
+      <text x="380" y="48" font-size="14" font-weight="700" fill="#166534">③ 手順</text>
+      <text x="380" y="80" font-size="13" fill="#14532D">たてる</text>
+      <text x="380" y="98" font-size="13" fill="#14532D">かける</text>
+      <text x="380" y="116" font-size="13" fill="#14532D">ひく</text>
+      <text x="380" y="134" font-size="13" fill="#14532D">おろす</text>
+      <text x="230" y="178" font-size="12" fill="#475569">誤答が出たら、3つのどれで止まっているかを見る</text>
+    </g>
+  </svg>
+  <figcaption>図：わり算は「九九」「意味」「筆算の手順」の3つで成り立つ。つまずいたら、どこで止まっているかを切り分ける</figcaption>
+</figure>
+
+<h2>要素②：わり算の2つの意味</h2>
 <table class="cv-table">
   <tr><th>意味</th><th>場面の例</th><th>聞かれていること</th></tr>
   <tr><td><strong>等しく分ける</strong>（等分除）</td><td>12このあめを3人で同じ数ずつ分ける</td><td>1人分は何こ？→4こ</td></tr>
   <tr><td><strong>同じ数ずつ取る</strong>（包含除）</td><td>12このあめを3こずつふくろに入れる</td><td>何ふくろできる？→4ふくろ</td></tr>
 </table>
-<p>どちらも式は12÷3＝4ですが、場面がちがいます。おやつやおはじきで<strong>両方の分け方を実際にやってみる</strong>のは、導入として試しやすい方法です。「3人で分けて」と「3こずつ分けて」を体験の中で区別できれば、わり算の意味は身についています。</p>
+<p>どちらも式は12÷3＝4ですが、場面がちがいます。おやつやおはじきで<strong>両方の分け方を実際にやってみる</strong>のは、導入として試しやすい方法です。答えに「こ」がつくか「ふくろ」がつくかで、どちらの意味かを確かめられます。</p>
 
-<h2>計算は「九九の逆」</h2>
+<h2>要素①：計算は「九九の逆」</h2>
 <div class="formula">12 ÷ 3 ＝ □ は、 3 × □ ＝ 12 の □ を探すこと</div>
-<p>3年生のわり算は、新しい計算方法を覚えるのではなく「3の段で12になるのは？」と<strong>九九を逆から使う</strong>だけです。だからこそ、九九がランダムに即答できない状態だと、わり算でつまずきやすくなります。わり算が遅い場合は、わり算の練習より<a href="/kuku-tips.html">九九の総点検</a>が先です。特に6〜8の段のわり算（42÷7など）が遅い子は、その段の九九から復習しましょう。</p>
+<p>3年生のわり算は、新しい計算方法を覚えるのではなく「3の段で12になるのは？」と<strong>九九を逆から使う</strong>計算です。わり算に時間がかかる場合は、わり算の練習より<a href="/kuku-tips.html">九九の総点検</a>から始めてみてください。特に6〜8の段のわり算（42÷7など）に時間がかかるときは、その段の九九に戻ります。</p>
 
-<h2>あまりのあるわり算（3年生の山場）</h2>
+<h2>あまりのあるわり算（3年生）</h2>
 <div class="ex-box">
-  <p><strong>例題1：</strong>17÷5</p>
-  <p><strong>解き方：</strong>5の段で17をこえない一番大きい数 → 5×3＝15。17−15＝2 → <strong>3あまり2</strong></p>
+  <p><strong>例題：</strong>17÷5</p>
+  <p>5の段で17をこえない一番大きい数 → 5×3＝15。17−15＝2 → <strong>3あまり2</strong></p>
 </div>
-<p>あまりのあるわり算では、次の2つを教えましょう。</p>
-<ol>
-  <li><strong>あまりは、わる数より必ず小さい</strong>——「あまり7」で わる数が5なら、その時点で間違い（もう1回分けられる）</li>
-  <li><strong>検算：わる数×商＋あまり＝わられる数</strong>——5×3＋2＝17 ✓</li>
-</ol>
-<p>この2つのチェックを習慣にすると、あまりのわり算のミスを減らしやすくなります。また、文章題では「あまりをどうするか」の判断（<a href="/gaisuu-shishagoonyuu-guide.html">切り上げ・切り捨て</a>）が問われます。「13人が4人乗りの車で行く→車は何台？」は3あまり1だから4台。あまった1人を乗せる車が必要だからです。</p>
-
 <figure class="fig" data-fig="amari">
 <svg viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figDivT figDivD">
   <title id="figDivT">17÷5で商3あまり2になる仕組みの図</title>
@@ -190,57 +238,119 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </svg>
 <figcaption>図：17÷5＝3あまり2。1行が1グループ（5個）です。あまりが5以上になったら、まだグループを作れるということ。検算は「5×3＋2＝17」。</figcaption>
 </figure>
+<ol>
+  <li><strong>あまりは、わる数より必ず小さい</strong>——あまりがわる数以上なら、もう1回分けられる</li>
+  <li><strong>検算：わる数×商＋あまり＝わられる数</strong>——5×3＋2＝17 ✓</li>
+</ol>
+<p>文章題では「あまりをどうするか」も問われます。「13人が4人乗りの車で行く→車は何台？」は3あまり1だから4台。あまった1人を乗せる車が必要だからです（<a href="/gaisuu-shishagoonyuu-guide.html">切り上げ・切り捨て</a>）。</p>
 
-<h2>筆算は「たてる→かける→ひく→おろす」（4年生）</h2>
-<div class="ex-box">
-  <p><strong>例題2：</strong>72÷3の筆算</p>
-  <p>①<strong>たてる</strong>：7÷3で商2を十の位にたてる</p>
-  <p>②<strong>かける</strong>：3×2＝6</p>
-  <p>③<strong>ひく</strong>：7−6＝1</p>
-  <p>④<strong>おろす</strong>：一の位の2をおろして12</p>
-  <p>くり返し：12÷3で4をたてる → 3×4＝12 → 12−12＝0 → 答え<strong>24</strong></p>
-</div>
-<p>わり算の筆算は、算数で初めての「長い手順の繰り返し」です。<strong>「たてる・かける・ひく・おろす」を呪文のように声に出す</strong>のは、定着を助ける方法の一つです。この4拍子はどんなに桁が増えても変わらないので、一度身につけば3桁÷2桁でも同じように解けます。</p>
-<h3>÷2桁の「商の見当」</h3>
-<p>4年生後半の「÷2桁」（例：91÷23）では、商の見当をたてる練習が必要です。コツは<strong>わる数をがい数にして考える</strong>こと。「23はだいたい20。91の中に20は4つくらい」→4をたてて確かめる。見当がはずれて商を修正するのは失敗ではなく正しい手順だと伝え、消して直すことを嫌がらないようにしてあげましょう。</p>
+<h2>要素③：筆算を1工程ずつ分解する（4年生）</h2>
+<p>わり算の筆算は、算数で初めての「長い手順の繰り返し」です。まとめて覚えようとせず、<strong>たてる→かける→ひく→おろす</strong>の4工程に分けて、1工程ずつ確かめます。</p>
+<figure class="fig">
+<svg viewBox="0 0 462 240" role="img" aria-label="72÷3の筆算の1周目を4つの工程に分けた図。①たてる：7÷3で十の位に2。②かける：3×2＝6を7の下に書く。③ひく：7−6＝1。④おろす：一の位の2をおろして12。2周目は12÷3で4をたて、答えは24">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <rect x="10" y="36" width="106" height="170" rx="10" fill="#fff" stroke="#15803D" stroke-width="2"/><text x="63" y="26" font-size="13" font-weight="700" fill="#15803D" text-anchor="middle">① たてる</text><path d="M40 64 q8 20 0 42 " fill="none" stroke="#122A64" stroke-width="2"/><line x1="40" y1="64" x2="106" y2="64" stroke="#122A64" stroke-width="2"/><text x="28" y="90" font-size="18" text-anchor="middle" fill="#122A64">3</text><text x="62" y="90" font-size="18" text-anchor="middle" fill="#122A64">7</text><text x="86" y="90" font-size="18" text-anchor="middle" fill="#122A64">2</text><text x="62" y="56" font-size="18" text-anchor="middle" fill="#15803D">2</text><text x="63" y="228" font-size="11" fill="#475569" text-anchor="middle">7÷3 → 十の位に2</text><rect x="122" y="36" width="106" height="170" rx="10" fill="#fff" stroke="#B45309" stroke-width="2"/><text x="175" y="26" font-size="13" font-weight="700" fill="#B45309" text-anchor="middle">② かける</text><path d="M152 64 q8 20 0 42 " fill="none" stroke="#122A64" stroke-width="2"/><line x1="152" y1="64" x2="218" y2="64" stroke="#122A64" stroke-width="2"/><text x="140" y="90" font-size="18" text-anchor="middle" fill="#122A64">3</text><text x="174" y="90" font-size="18" text-anchor="middle" fill="#122A64">7</text><text x="198" y="90" font-size="18" text-anchor="middle" fill="#122A64">2</text><text x="174" y="56" font-size="18" text-anchor="middle" fill="#122A64">2</text><text x="174" y="118" font-size="18" text-anchor="middle" fill="#B45309">6</text><text x="175" y="228" font-size="11" fill="#475569" text-anchor="middle">3×2＝6 を7の下に</text><rect x="234" y="36" width="106" height="170" rx="10" fill="#fff" stroke="#1E3A8A" stroke-width="2"/><text x="287" y="26" font-size="13" font-weight="700" fill="#1E3A8A" text-anchor="middle">③ ひく</text><path d="M264 64 q8 20 0 42 " fill="none" stroke="#122A64" stroke-width="2"/><line x1="264" y1="64" x2="330" y2="64" stroke="#122A64" stroke-width="2"/><text x="252" y="90" font-size="18" text-anchor="middle" fill="#122A64">3</text><text x="286" y="90" font-size="18" text-anchor="middle" fill="#122A64">7</text><text x="310" y="90" font-size="18" text-anchor="middle" fill="#122A64">2</text><text x="286" y="56" font-size="18" text-anchor="middle" fill="#122A64">2</text><text x="286" y="118" font-size="18" text-anchor="middle" fill="#122A64">6</text><text x="286" y="150" font-size="18" text-anchor="middle" fill="#1E3A8A">1</text><text x="287" y="228" font-size="11" fill="#475569" text-anchor="middle">7−6＝1</text><rect x="346" y="36" width="106" height="170" rx="10" fill="#fff" stroke="#7C3AED" stroke-width="2"/><text x="399" y="26" font-size="13" font-weight="700" fill="#7C3AED" text-anchor="middle">④ おろす</text><path d="M376 64 q8 20 0 42 " fill="none" stroke="#122A64" stroke-width="2"/><line x1="376" y1="64" x2="442" y2="64" stroke="#122A64" stroke-width="2"/><text x="364" y="90" font-size="18" text-anchor="middle" fill="#122A64">3</text><text x="398" y="90" font-size="18" text-anchor="middle" fill="#122A64">7</text><text x="422" y="90" font-size="18" text-anchor="middle" fill="#122A64">2</text><text x="398" y="56" font-size="18" text-anchor="middle" fill="#122A64">2</text><text x="398" y="118" font-size="18" text-anchor="middle" fill="#122A64">6</text><text x="398" y="150" font-size="18" text-anchor="middle" fill="#122A64">1</text><text x="422" y="150" font-size="18" text-anchor="middle" fill="#7C3AED">2</text><text x="399" y="228" font-size="11" fill="#475569" text-anchor="middle">2をおろして12</text><line x1="160" y1="126" x2="212" y2="126" stroke="#122A64" stroke-width="1.5"/><line x1="272" y1="126" x2="324" y2="126" stroke="#122A64" stroke-width="1.5"/><line x1="384" y1="126" x2="436" y2="126" stroke="#122A64" stroke-width="1.5"/>
+    </g>
+  </svg>
+  <figcaption>図：72÷3の1周目を4つの工程に分けたもの。2周目も同じ4工程（12÷3で4をたてる→3×4＝12→12−12＝0→おろす数なし）で、答えは24</figcaption>
+</figure>
+<table class="cv-table">
+  <tr><th>工程</th><th>72÷3 の1周目</th><th>家庭での確かめ方</th></tr>
+  <tr><td>① たてる</td><td>7÷3 → 十の位に2</td><td>「7の中に3はいくつ？」と聞く</td></tr>
+  <tr><td>② かける</td><td>3×2＝6</td><td>たてた数とわる数をかけたか</td></tr>
+  <tr><td>③ ひく</td><td>7−6＝1</td><td>ひいた答えが、わる数より小さいか</td></tr>
+  <tr><td>④ おろす</td><td>2をおろして12</td><td>おろしたら①に戻る</td></tr>
+</table>
+<p>③で「ひいた答えがわる数より小さいか」を確かめるのがポイントです。小さくなければ、①でたてた数が小さすぎます。4工程は、けたが増えても変わりません。声に出して繰り返すのは、手順を身につける方法の一つです。</p>
+<h3>÷2けたの「商の見当」</h3>
+<p>91÷23のような÷2けたでは、<strong>わる数をがい数にして</strong>見当をたてます。「23はだいたい20。91の中に20は4つくらい」→4をたてて確かめる（23×4＝92は91より大きいので、3に直す）。見当がはずれて直すのは失敗ではなく正しい手順だと伝え、消して直すことを嫌がらないようにします。</p>
 
-<h2>「商に0がたつ」筆算に注意（4年生のミス多発地帯）</h2>
-<div class="ex-box">
-  <p><strong>例題3：</strong>624÷6の筆算</p>
-  <p>百の位：6÷6＝1をたてる → 十の位：2÷6は割れないので<strong>商に0をたてて</strong>2をおろす → 一の位：24÷6＝4 → 答え<strong>104</strong></p>
-</div>
-<p>「104」と書くべきところを「14」としてしまう——商の途中に0がたつ筆算は、4年生で最もミスが出るパターンのひとつです。「割れないときは0を書く。飛ばさない」をルール化し、答えの桁数を最初に見当（600÷6＝100くらい→3桁のはず）しておくと、自分で気づけるようになります。</p>
+<h2>商に0がたつ筆算（4年生）</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 250" role="img" aria-label="624÷6の筆算。百の位は6÷6で1、十の位は2÷6がわれないので商に0をたて、2をおろして24、24÷6で4。答えは104。答えの見当は600÷6で100くらい">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="0" y="0" width="460" height="250" rx="12" fill="#FFFDF5"/>
+      <text x="110" y="46" font-size="24" fill="#15803D" font-weight="700">1</text>
+      <text x="140" y="46" font-size="24" fill="#DC2626" font-weight="700">0</text>
+      <text x="170" y="46" font-size="24" fill="#15803D" font-weight="700">4</text>
+      <circle cx="140" cy="38" r="17" fill="none" stroke="#DC2626" stroke-width="2"/>
+      <path d="M92 58 q9 22 0 46" fill="none" stroke="#122A64" stroke-width="2"/>
+      <line x1="92" y1="58" x2="186" y2="58" stroke="#122A64" stroke-width="2"/>
+      <text x="72" y="88" font-size="24" fill="#122A64">6</text>
+      <text x="110" y="88" font-size="24" fill="#122A64">6</text><text x="140" y="88" font-size="24" fill="#122A64">2</text><text x="170" y="88" font-size="24" fill="#122A64">4</text>
+      <text x="110" y="120" font-size="22" fill="#64748B">6</text>
+      <line x1="96" y1="128" x2="124" y2="128" stroke="#122A64" stroke-width="1.5"/>
+      <text x="140" y="156" font-size="22" fill="#64748B">2</text><text x="170" y="156" font-size="22" fill="#64748B">4</text>
+      <text x="140" y="188" font-size="22" fill="#64748B">2</text><text x="170" y="188" font-size="22" fill="#64748B">4</text>
+      <line x1="126" y1="196" x2="184" y2="196" stroke="#122A64" stroke-width="1.5"/>
+      <text x="170" y="222" font-size="22" fill="#64748B">0</text>
+      <g text-anchor="start" font-size="13">
+        <text x="222" y="44" fill="#DC2626" font-weight="700">2÷6 はわれない → 0 をたてる</text>
+        <text x="222" y="66" fill="#374151">（飛ばすと「14」になる）</text>
+        <text x="222" y="120" fill="#1E3A8A" font-weight="700">先に答えの見当</text>
+        <text x="222" y="142" fill="#374151">600 ÷ 6 ＝ 100 くらい</text>
+        <text x="222" y="162" fill="#374151">→ 答えは3けたのはず</text>
+      </g>
+    </g>
+  </svg>
+  <figcaption>図：624÷6。十の位は2÷6がわれないので、商に0を書いてから2をおろす。見当（100くらい）と比べると、「14」はけたが足りないとわかる</figcaption>
+</figure>
+<p>「104」と書くべきところを「14」としてしまうのは、商の途中に0がたつ筆算でよく見られる誤答です。「われないときは0を書く。飛ばさない」をルールにし、答えのけた数を先に見当しておくと、自分で気づけるようになります。</p>
 
-<h2>0と1のわり算・わり算のきまり</h2>
+<h2>わり算のきまりと、高学年への接続</h2>
 <ul>
-  <li><strong>0÷どんな数＝0</strong>（0こを何人で分けても0こ）。ただし<strong>0でわることはできない</strong></li>
-  <li><strong>どんな数÷1＝その数</strong>（1人で全部もらう）</li>
-  <li><strong>わられる数とわる数に同じ数をかけても（わっても）商は同じ</strong>：600÷200＝6÷2＝3——5年生の小数のわり算で大活躍するきまり</li>
-</ul>
-
-<h2>文章題：どちらの意味か見分ける練習</h2>
-<div class="ex-box">
-  <p><strong>問題A：</strong>24このクッキーを、4人で同じ数ずつ分けます。1人分は何こ？</p>
-  <p><strong>問題B：</strong>24このクッキーを、1人に4こずつ配ります。何人に配れる？</p>
-  <p>どちらも式は24÷4＝6。でもAは「1人分の数」（等分除）、Bは「人数」（包含除）を求めています。</p>
-</div>
-<p>2つの問題を並べて「同じところ・違うところ」を話し合うのは、教科書でも使われる効果的な方法です。「答えの6には、どんな言葉（単位）がつく？」と聞くと、Aは「6こ」、Bは「6人」——単位の違いで意味の違いが見えます。文章題の答えに単位を書く習慣が、意味理解のチェックにもなるのです。</p>
-
-<h2>高学年への接続：1あたり量・小数・分数のわり算</h2>
-<ul>
-  <li><strong>単位量あたり（5年）：</strong>「3mで240円のリボン、1mあたり何円？」→240÷3。わり算は「1あたりを求める道具」として速さ・密度の学習で主役になります</li>
-  <li><strong>小数のわり算（5年）：</strong>わる数を整数に直してから計算（7.2÷2.4→72÷24）。根拠は「同じ数をかけても商は同じ」のきまり</li>
+  <li><strong>0÷どんな数＝0</strong>。ただし<strong>0でわることはできない</strong></li>
+  <li><strong>わられる数とわる数に同じ数をかけても（わっても）商は同じ</strong>：600÷200＝6÷2＝3——5年生の小数のわり算（7.2÷2.4→72÷24）の根拠になる</li>
+  <li><strong>単位量あたり（5年）：</strong>「3mで240円のリボン、1mあたり何円？」→240÷3＝80円</li>
   <li><strong>分数のわり算（6年）：</strong>わる数の逆数をかける（2/3÷4/5＝2/3×5/4）</li>
 </ul>
-<p>どの学年でも、土台は3・4年生の「わり算の意味と手順」です。今のつまずきを放置せず、ここで固めておくことが、高学年の学習につながる準備になります。</p>
+
+<h2>家庭でためす例題</h2>
+<ol class="q-set">
+  <li class="q"><span class="q-text">12このあめを3人で同じ数ずつ分けます。1人分は何こ？</span><details><summary>答えと考え方</summary><p>4こ。「等しく分ける」場面。3×□＝12 の□をさがして 12÷3＝4。</p></details></li>
+  <li class="q"><span class="q-text">12このあめを3こずつふくろに入れます。何ふくろできる？</span><details><summary>答えと考え方</summary><p>4ふくろ。「同じ数ずつ取る」場面。式は同じ 12÷3＝4 だが、答えの単位がちがう。</p></details></li>
+  <li class="q"><span class="q-text">42÷7</span><details><summary>答えと考え方</summary><p>6。7の段で42になるのは 7×6＝42。</p></details></li>
+  <li class="q"><span class="q-text">17÷5</span><details><summary>答えと考え方</summary><p>3あまり2。5×3＝15、17−15＝2。あまり2はわる数5より小さい。検算 5×3＋2＝17。</p></details></li>
+  <li class="q"><span class="q-text">72÷3（筆算）</span><details><summary>答えと考え方</summary><p>24。7÷3で2をたてる→3×2＝6→7−6＝1→2をおろして12→12÷3で4をたてる→3×4＝12→12−12＝0。</p></details></li>
+  <li class="q"><span class="q-text">624÷6（筆算）</span><details><summary>答えと考え方</summary><p>104。6÷6で1、2÷6はわれないので0をたてて2をおろし、24÷6で4。見当は600÷6＝100くらい。</p></details></li>
+  <li class="q"><span class="q-text">13人が4人乗りの車で出かけます。車は何台いりますか。</span><details><summary>答えと考え方</summary><p>4台。13÷4＝3あまり1。あまった1人も乗せる車が必要なので、3＋1＝4台。</p></details></li>
+</ol>
+
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>誤答がどの要素（九九・意味・手順）で起きているかを見ると、直し方が決まります。</p>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>42÷7＝5</div>
+  <p><strong>何が起きたか：</strong>7の段の九九が逆から出てこず、近い数で答えています。わり算そのものより、九九の段階で止まっています。</p>
+  <p><strong>家庭での直し方：</strong>わり算の練習をいったん止めて、7の段をランダムに聞く練習に戻ります。「7×□＝42」の□をさがす形で聞くと、わり算とつながります。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>17÷5＝2あまり7</div>
+  <p><strong>何が起きたか：</strong>5×2＝10、17−10＝7と計算しています。あまり7は、わる数5より大きいので、まだもう1回分けられます。</p>
+  <p><strong>家庭での直し方：</strong>「あまりは、わる数より小さい」を毎回チェックします。17このおはじきを5こずつ並べると、3列できて2こ残ることが目で見えます。検算 5×3＋2＝17。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>72÷3＝2あまり12（筆算）</div>
+  <p><strong>何が起きたか：</strong>1周目の「たてる・かける・ひく」までで止まり、「おろす」のあとの2周目をしていません。手順の4工程が1周で終わると思っています。</p>
+  <p><strong>家庭での直し方：</strong>おろしたら、また「たてる」に戻る、と声に出して2周目に入ります。答えの見当（60÷3＝20くらい）と比べると、2は小さすぎるとわかります。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>624÷6＝14</div>
+  <p><strong>何が起きたか：</strong>十の位で2÷6がわれないとき、商に0を書かずに飛ばしています。</p>
+  <p><strong>家庭での直し方：</strong>「われないときは0を書く。飛ばさない」をルールにします。先に見当（600÷6＝100くらい）を立てて、答えが3けたになるはずだと確かめます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例5</span>「24こを1人に4こずつ配る。何人？」→ 24÷4＝6こ</div>
+  <p><strong>何が起きたか：</strong>計算は合っていますが、単位を「こ」にしています。「同じ数ずつ取る」場面で、答えが「人数」になることがつながっていません。</p>
+  <p><strong>家庭での直し方：</strong>答えの6に何がつくかを声に出して確かめます。1人分の数を聞いているのか（こ）、人数を聞いているのか（人）を、問題文に線を引いて見分けます。</p>
+</div>
 
 <h2>家庭でできる練習メニュー</h2>
 <table class="cv-table">
-  <tr><th>つまずき</th><th>メニュー（1日5分）</th></tr>
-  <tr><td>わり算が遅い</td><td>九九のランダム即答練習に戻る（特に6〜8の段）</td></tr>
-  <tr><td>意味があいまい</td><td>おやつの分配係。「3人で分けて」「3こずつ袋に入れて」の両方</td></tr>
-  <tr><td>あまりのミス</td><td>「あまり＜わる数」チェックと検算をセットで3問</td></tr>
-  <tr><td>筆算の手順が乱れる</td><td>「たてる・かける・ひく・おろす」を声に出して1日2問</td></tr>
+  <tr><th>止まっている要素</th><th>メニュー（1日5分ほど）</th></tr>
+  <tr><td>① 九九</td><td>九九のランダム練習に戻る（特に6〜8の段）</td></tr>
+  <tr><td>② 意味</td><td>おやつの分配係。「3人で分けて」「3こずつ袋に入れて」の両方</td></tr>
+  <tr><td>あまり</td><td>「あまり＜わる数」チェックと検算をセットで3問</td></tr>
+  <tr><td>③ 手順</td><td>4工程を声に出して1日2問。③で「わる数より小さいか」を確かめる</td></tr>
 </table>
 
 <div class="memo-box">
@@ -254,59 +364,66 @@ footer a{color:#94A3B8;text-decoration:underline;}
   </div>
 </div>
 
-<h2>よくある質問</h2>
-<h3>Q1. わり算の教え方の基本は？</h3>
-<p>実物で「分ける」体験（2つの意味）→計算は九九の逆、の2段構えです。</p>
-<h3>Q2. あまりのあるわり算の注意点は？</h3>
-<p>「あまり＜わる数」のチェックと、検算（わる数×商＋あまり）の2つを習慣に。</p>
-<h3>Q3. 筆算の手順は？</h3>
-<p>「たてる→かける→ひく→おろす」の4拍子。声に出して繰り返すことが、定着を助ける方法の一つです。</p>
-<h3>Q4. 何年生で習う？</h3>
-<p>意味とあまりは3年生、筆算は4年生、小数のわり算は5年生、分数のわり算は6年生です。</p>
-<h3>Q5. 電卓があるのに筆算の練習は必要ですか？</h3>
-<p>必要です。筆算の価値は答えを出すことより、「大きな問題を小さな手順に分解して解く」経験にあります。また、商の見当をたてる練習は概算の力そのもので、電卓の打ち間違いに気づく力にもなります。「だいたい25くらいのはず」と見当を立ててから計算する習慣は、道具が何であれ一生使えます。</p>
-
-<h2>まとめ</h2>
-<p>わり算は「意味・九九・手順」の3本柱がそろうと、ぐっと進めやすくなります。毎日の練習は少しずつで大丈夫。にじゅうまる。算数ドリルの3・4年生ドリルで、あまりのチェックと検算まで含めた練習を習慣にしてみてください。</p>
-<ul>
-  <li>わり算では、九九・意味の理解・筆算の手順を順番に確認してみましょう</li>
-  <li>「等しく分ける」「同じ数ずつ取る」の2つの意味を実物で体験</li>
-  <li>あまりは「わる数より小さい」チェック＋検算をセットで</li>
-  <li>筆算は「たてる・かける・ひく・おろす」の4拍子を声に出す</li>
-</ul>
+<div class="try-box">
+  <div class="try-title">✏️ わり算を、その場で採点しながら練習する</div>
+  <p>3年生のドリルではあまりのあるわり算、4年生のドリルでは筆算を含む問題が出ます。誤答が出たら、上の3要素のどこかを確かめてから次に進んでください。</p>
+  <a href="/drill.html?grade=3">3年生のドリルを開く →</a>
+</div>
 
 <div class="ref-box">
-  <div class="ref-title">📚 参考資料</div>
+  <div class="ref-title">📚 参考資料と、家庭での使い方</div>
   <ul>
     <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
     <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
   </ul>
-  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月25日。本ページで扱うわり算の学習内容・学年配当は、上記資料をもとに確認しています。教え方・練習のコツは、にじゅうまる。運営者による提案です。</p>
+  <p style="font-size:11.5px;color:#64748B;margin:8px 0 0;line-height:1.8;">確認日: 2026年9月27日。学習指導要領では、第3学年で除法の意味（等分除・包含除にあたる2つの場面）と、除法が乗法の逆算であること、あまりのある除法を扱い、第4学年で除数が1位数や2位数の除法の筆算を扱います。家庭では「九九（乗法の逆）」「意味（2つの場面）」「手順（筆算）」の3要素に分けて、どこで止まっているかを確かめる手がかりとして使えます。工程の分解図と誤答例は、にじゅうまる。運営者による整理です。</p>
 </div>
+
+<h2>まとめ</h2>
+<ul>
+  <li>わり算は「九九・意味・手順」の3要素。誤答はどこで止まっているかを切り分ける</li>
+  <li>「等しく分ける」「同じ数ずつ取る」の2つの意味を実物で体験。答えの単位で見分ける</li>
+  <li>あまりは「わる数より小さい」チェック＋検算をセットで</li>
+  <li>筆算は4工程に分けて1つずつ。ひいた答えがわる数より小さいかを確かめる</li>
+  <li>商に0がたつときは飛ばさない。見当でけた数を確かめる</li>
+</ul>
+
+<h2>よくある質問</h2>
+<h3>Q1. わり算の教え方の基本は？</h3>
+<p>わり算は「九九（かけ算の逆）」「意味（等しく分ける・同じ数ずつ取る）」「筆算の手順」の3つで成り立ちます。実物で分ける体験をしてから、計算は九九を逆から使う、と進めます。誤答が出たら、3つのどこで止まっているかを確かめます。</p>
+<h3>Q2. あまりのあるわり算で気をつけることは？</h3>
+<p>「あまりは、わる数より必ず小さい」を毎回チェックすることです。17÷5＝2あまり7のような誤答は、あまり（7）がわる数（5）より大きい時点で気づけます。検算（わる数×商＋あまり＝わられる数）も習慣にしましょう。</p>
+<h3>Q3. わり算の筆算の手順を教えてください。</h3>
+<p>「たてる→かける→ひく→おろす」の4工程の繰り返しです。おろしたら、また「たてる」に戻ります。ひいた答えがわる数より小さいかを確かめると、たてた数の誤りに気づけます。</p>
+<h3>Q4. 624÷6を14と答えてしまいます。</h3>
+<p>十の位で2÷6がわれないとき、商に0を書かずに飛ばしている誤答です。「われないときは0を書く」をルールにし、先に答えの見当（600÷6＝100くらい）を立てると気づきやすくなります。</p>
+<h3>Q5. わり算は何年生で習いますか？</h3>
+<p>わり算の意味と九九で解ける計算、あまりのあるわり算は3年生、筆算は4年生、小数のわり算は5年生、分数のわり算は6年生で扱います。</p>
+
 <div style="margin:32px 0;padding:20px 16px;background:#FFFFFF;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">✖️</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九の覚え方・練習方法</span>
-    </a>
     <a href="/multiplication-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">✖️</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">かけ算をマスターする方法</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">かけ算の教え方：九九・筆算・家庭での記録</span>
     </a>
-    <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">½</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">分数の教え方（6年のわり算へ）</span>
+    <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">🧮</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九の覚え方ガイド</span>
     </a>
-    <a href="/grade-4.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+    <a href="/grade-3-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">3️⃣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">3年生：九九からわり算へ</span>
+    </a>
+    <a href="/grade-4-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">4️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学4年生の算数ドリル</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">4年生：筆算の手順とミス</span>
     </a>
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+  <p>学年を選んで、その場で採点しながら練習できます</p>
+  <a href="/drill.html?grade=4">4年生のわり算の筆算をやってみる →</a>
 </div>
 </div>
 
