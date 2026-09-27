@@ -10,8 +10,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>たし算が得意になる方法【1〜3年生完全ガイド】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="たし算の学年別ステップ（10までの合成→くり上がり→筆算→暗算）と、つまずき別の教え方を解説。さくらんぼ計算のやり方、筆算のくり上がりミス対策、家庭での練習法まで例題つきで紹介｜にじゅうまる。算数ドリル">
+<title>たし算の教え方【10の分解・くり上がり36問・筆算を図で解説】 | にじゅうまる。算数ドリル</title>
+<meta name="description" content="たし算を「10の分解」から図で理解する家庭向け教材。10のわくで見る合成分解、さくらんぼ計算、くり上がり全36問の表、筆算の手順、例題7問と答え、よくある誤答例4つと直し方｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/addition-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,18 +48,49 @@ ul li,ol li{margin-bottom:8px;}
 .fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
+.try-box{background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.try-box .try-title{font-size:13px;font-weight:700;color:#1E3A8A;margin-bottom:6px;}
+.try-box p{font-size:13px;color:#1E3A8A;margin-bottom:10px;}
+.try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
+.ref-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin:24px 0;}
+.ref-box .ref-title{font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;}
+.ref-box ul{font-size:12px;color:#64748B;margin-bottom:0;padding-left:18px;}
+.ref-box li{margin-bottom:5px;}
+.ref-box a{color:#2563EB;}
+.check-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;table-layout:fixed;}
+.check-table th,.check-table td{border:1px solid #E2E8F0;padding:8px 6px;text-align:center;background:#fff;}
+.check-table th{background:#EFF6FF;color:#1E3A8A;font-size:12px;}
+.check-table td:first-child,.check-table th:first-child{text-align:left;width:46%;font-size:12px;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="たし算が得意になる方法【1〜3年生完全ガイド】">
-<meta property="og:description" content="10までの合成→くり上がり→筆算→暗算の学年別ステップと、つまずき別の教え方を例題つきで解説。">
+<meta property="og:title" content="たし算の教え方【10の分解・くり上がり36問・筆算を図で解説】">
+<meta property="og:description" content="10のわくで見る合成分解、さくらんぼ計算、くり上がり36問の表、筆算の手順と誤答例。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/addition-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="たし算が得意になる方法【1〜3年生完全ガイド】">
-<meta name="twitter:description" content="学年別ステップとつまずき別の教え方を例題つきで解説。">
+<meta name="twitter:title" content="たし算の教え方：10の分解を図で理解する">
+<meta name="twitter:description" content="10の分解を図で理解する。くり上がり36問の表と誤答例つき。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -71,23 +102,31 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "くり上がりのたし算はどう教えればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「10のまとまりを作る」さくらんぼ計算が基本です。8＋5なら、5を2と3に分けて、8＋2＝10、10＋3＝13。前提として「10は8と2」のような10の合成分解が瞬時に言えることが必要なので、つまずいたらまず10づくりの練習に戻りましょう。"
+        "text": "「10のまとまりを作る」さくらんぼ計算が基本です。8＋5なら、「8はあといくつで10？」と聞いてから5を2と3に分け、8＋2＝10、10＋3＝13。その前に、10の合成分解（10は8と2など）を10のわくで確かめておくと進めやすくなります。"
       }
     },
     {
       "@type": "Question",
-      "name": "たし算の筆算でくり上がりを忘れます。",
+      "name": "くり上がりのたし算は全部で何問ありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "くり上がりの「1」を必ず小さく書く習慣をつけましょう。頭の中で覚えておく方式はミスのもとです。書く場所（次の位の上）を固定し、「書いた1も足す」ところまでを手順として声に出しながら練習すると定着します。"
+        "text": "1けたどうしのたし算で答えが11以上になるものは36問です。9＋□が8問、8＋□が7問…1＋□は0問で、8＋7＋6＋5＋4＋3＋2＋1＝36。順番を入れかえても答えは同じなので、表にすると右上と左下が同じ形になります。"
       }
     },
     {
       "@type": "Question",
-      "name": "たし算はいつまでに速くできればいいですか？",
+      "name": "「5＋8」のように小さい数が先だと解けなくなります。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "1桁＋1桁（くり上がり含む）は、2年生になるまでに「考えずに答えが出る」レベルが理想です。2年生の筆算、3年生の大きな数の計算は、すべて1桁のたし算の組み合わせだからです。"
+        "text": "「大きい方を10にする」と伝える方法があります。5＋8なら8の方が10に近いので、5を2と3に分けて8＋2＝10、10＋3＝13。おはじきを左右入れかえて、答えが変わらないことを見せると納得しやすくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "筆算でくり上がりを忘れます。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "くり上がりの1は頭で覚えずに、十の位の上に小さく書くと決めます。「書いた1から足す」を声に出す手順にすると、忘れにくくなります。"
       }
     },
     {
@@ -95,7 +134,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "指を使って計算するのはやめさせるべきですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "無理にやめさせる必要はありません。指は具体物の代わりで、理解の途中段階として自然なものです。10の合成分解の練習を重ねれば自然に指を使わなくなります。「指を禁止」より「10づくり遊びを増やす」ほうがおすすめです。"
+        "text": "無理にやめさせる必要はありません。指は具体物の代わりで、理解の途中段階として自然なものです。10のわく遊びを重ねると、指を使わずに済む場面が増えていきます。"
       }
     }
   ]
@@ -105,38 +144,153 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <body>
 <div class="header">
   <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
-  <h1>たし算が得意になる方法</h1>
+  <h1>たし算の教え方：10の分解を図で理解する</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>➕ たし算は算数のすべての土台。ここでのつまずきは、ひき算・かけ算・筆算へと連鎖します。逆に言えば、たし算を「速く・正確に」しておけば、その後の算数はぐっと楽になります。学年別のステップとつまずき対策をまとめました。</p>
+  <p>➕ 「8＋5」で手が止まる——くり上がりのたし算は、1年生の算数の大きな山場です。このページでは、その手前にある「10の分解」を図で目に見える形にし、さくらんぼ計算、くり上がり36問の全体像、筆算の手順まで順番にまとめました。例題と、よくある誤答例の直し方もあります。</p>
 </div>
 
 <h2>たし算の学年別ステップ</h2>
 <table class="cv-table">
-  <tr><th>学年</th><th>学ぶ内容</th><th>ゴール</th></tr>
-  <tr><td>1年生 前半</td><td>10までのたし算（あわせていくつ）</td><td>3＋4が指なしで出る</td></tr>
-  <tr><td>1年生 後半</td><td>くり上がりのたし算（8＋5など）</td><td>さくらんぼ計算で手順を固める</td></tr>
-  <tr><td>2年生</td><td>2桁の筆算（くり上がりあり）</td><td>位をそろえて手順どおりに</td></tr>
-  <tr><td>3年生</td><td>3桁・4桁の筆算、暗算</td><td>大きな数でも同じ手順で</td></tr>
+  <tr><th>学年</th><th>学ぶ内容</th><th>家庭での目標</th></tr>
+  <tr><td>1年生 前半</td><td>10までのたし算（あわせていくつ）</td><td>3＋4が指を使わずに出る</td></tr>
+  <tr><td>1年生 後半</td><td>くり上がりのたし算（8＋5など）</td><td>さくらんぼ計算の手順を説明できる</td></tr>
+  <tr><td>2年生</td><td>2けたの筆算（くり上がりあり）</td><td>位をそろえ、手順どおりに書ける</td></tr>
+  <tr><td>3年生</td><td>3けた・4けたの筆算、暗算</td><td>大きな数でも同じ手順で解ける</td></tr>
 </table>
-<p>重要なのは、<strong>各段階が前の段階の上に積み上がっている</strong>こと。筆算が苦手な3年生の原因が「1桁のたし算の遅さ」にある、というケースは非常に多いです。つまずいたら1つ前の段階に戻ってみるのが近道です。</p>
+<p>各段階は前の段階の上に積み上がっています。3年生の筆算でつまずいている原因が、1けたのたし算に時間がかかることにある場合もあります。つまずいたら1つ前の段階に戻って確かめてみてください。</p>
 
-<h2>土台の土台：「10の合成分解」</h2>
-<p>たし算最大の山場「くり上がり」を支えるのが、<strong>10の合成分解</strong>（10は1と9、2と8、3と7…）です。これが瞬時に出るかどうかで、くり上がりの習得スピードがまったく変わります。</p>
+<h2>土台：「10の合成分解」を図で見る</h2>
+<p>くり上がりのたし算を支えるのが、<strong>10の合成分解</strong>（10は1と9、2と8、3と7…）です。下の図は「10のわく」に、青と橙の丸を入れて9通りを並べたものです。上から順に青が1つずつ増え、橙が1つずつ減っていきます。</p>
+<figure class="fig">
+<svg viewBox="0 0 430 290" role="img" aria-label="10のわくを使った10の合成分解の図。1と9、2と8、3と7、4と6、5と5、6と4、7と3、8と2、9と1の9通りを、青と橙の丸で塗り分けている">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="20" y="30" font-size="14" font-weight="700" fill="#1E3A8A">1 と 9</text>
+      <rect x="150" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="25.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="200" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="225" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="250" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="283" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="308" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="333" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="358" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="14" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="25.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="60" font-size="14" font-weight="700" fill="#1E3A8A">2 と 8</text>
+      <rect x="150" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="55.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="55.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <rect x="225" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <rect x="250" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <rect x="283" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <rect x="308" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <rect x="333" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <rect x="358" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="44" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="55.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="90" font-size="14" font-weight="700" fill="#1E3A8A">3 と 7</text>
+      <rect x="150" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="85.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="85.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="85.0" r="8" fill="#2563EB"/>
+      <rect x="225" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="85.0" r="8" fill="#F59E0B"/>
+      <rect x="250" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="85.0" r="8" fill="#F59E0B"/>
+      <rect x="283" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="85.0" r="8" fill="#F59E0B"/>
+      <rect x="308" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="85.0" r="8" fill="#F59E0B"/>
+      <rect x="333" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="85.0" r="8" fill="#F59E0B"/>
+      <rect x="358" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="85.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="74" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="85.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="120" font-size="14" font-weight="700" fill="#1E3A8A">4 と 6</text>
+      <rect x="150" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="115.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="115.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="115.0" r="8" fill="#2563EB"/>
+      <rect x="225" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="115.0" r="8" fill="#2563EB"/>
+      <rect x="250" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="115.0" r="8" fill="#F59E0B"/>
+      <rect x="283" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="115.0" r="8" fill="#F59E0B"/>
+      <rect x="308" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="115.0" r="8" fill="#F59E0B"/>
+      <rect x="333" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="115.0" r="8" fill="#F59E0B"/>
+      <rect x="358" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="115.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="104" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="115.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="150" font-size="14" font-weight="700" fill="#1E3A8A">5 と 5</text>
+      <rect x="150" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="145.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="145.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="145.0" r="8" fill="#2563EB"/>
+      <rect x="225" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="145.0" r="8" fill="#2563EB"/>
+      <rect x="250" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="145.0" r="8" fill="#2563EB"/>
+      <rect x="283" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="145.0" r="8" fill="#F59E0B"/>
+      <rect x="308" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="145.0" r="8" fill="#F59E0B"/>
+      <rect x="333" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="145.0" r="8" fill="#F59E0B"/>
+      <rect x="358" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="145.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="134" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="145.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="180" font-size="14" font-weight="700" fill="#1E3A8A">6 と 4</text>
+      <rect x="150" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="175.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="175.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="175.0" r="8" fill="#2563EB"/>
+      <rect x="225" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="175.0" r="8" fill="#2563EB"/>
+      <rect x="250" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="175.0" r="8" fill="#2563EB"/>
+      <rect x="283" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="175.0" r="8" fill="#2563EB"/>
+      <rect x="308" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="175.0" r="8" fill="#F59E0B"/>
+      <rect x="333" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="175.0" r="8" fill="#F59E0B"/>
+      <rect x="358" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="175.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="164" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="175.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="210" font-size="14" font-weight="700" fill="#1E3A8A">7 と 3</text>
+      <rect x="150" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="205.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="205.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="205.0" r="8" fill="#2563EB"/>
+      <rect x="225" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="205.0" r="8" fill="#2563EB"/>
+      <rect x="250" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="205.0" r="8" fill="#2563EB"/>
+      <rect x="283" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="205.0" r="8" fill="#2563EB"/>
+      <rect x="308" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="205.0" r="8" fill="#2563EB"/>
+      <rect x="333" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="205.0" r="8" fill="#F59E0B"/>
+      <rect x="358" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="205.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="194" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="205.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="240" font-size="14" font-weight="700" fill="#1E3A8A">8 と 2</text>
+      <rect x="150" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="225" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="250" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="283" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="308" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="333" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="235.0" r="8" fill="#2563EB"/>
+      <rect x="358" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="235.0" r="8" fill="#F59E0B"/>
+      <rect x="383" y="224" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="235.0" r="8" fill="#F59E0B"/>
+      <text x="20" y="270" font-size="14" font-weight="700" fill="#1E3A8A">9 と 1</text>
+      <rect x="150" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="161.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="175" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="186.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="200" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="211.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="225" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="236.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="250" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="261.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="283" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="294.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="308" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="319.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="333" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="344.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="358" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="369.0" cy="265.0" r="8" fill="#2563EB"/>
+      <rect x="383" y="254" width="22" height="22" rx="4" fill="#fff" stroke="#CBD5E1"/><circle cx="394.0" cy="265.0" r="8" fill="#F59E0B"/>
+    </g>
+  </svg>
+  <figcaption>図：10のわくで見る10の合成分解。5ずつの区切りがあるので、「7は5と2」「あと3で10」が目で数えなくてもわかる</figcaption>
+</figure>
+<p>このわくをノートに1枚かいておき、おはじきを並べて「青が7こなら、橙はいくつ？」と聞くのが、家庭で試しやすい遊び方です。慣れてきたら、図を見ずに答えられるかを確かめます。</p>
+<table class="cv-table">
+  <tr><th>確かめたい力</th><th>聞き方の例</th><th>にじゅうまる。の目安</th></tr>
+  <tr><td>10の合成</td><td>「8はあといくつで10？」</td><td>考えこまずに「2」</td></tr>
+  <tr><td>数の分解</td><td>「5は2といくつ？」</td><td>考えこまずに「3」</td></tr>
+</table>
 <ul>
-  <li><strong>10づくりカード：</strong>「7！」と言ったら「3！」と即答するゲーム</li>
-  <li><strong>おはじき隠し：</strong>10個のうち何個か隠して「いくつ隠れてる？」</li>
-  <li><strong>トランプで10さがし：</strong>合わせて10になる2枚のペアを取り合う</li>
+  <li><strong>10づくりカード：</strong>「7！」と言ったら「3！」と返す</li>
+  <li><strong>おはじき隠し：</strong>10個のうち何個か手で隠して「いくつ隠れてる？」</li>
+  <li><strong>トランプ10さがし：</strong>1〜9のカードで、合わせて10になるペアを取り合う</li>
+  <li><strong>お風呂で分解：</strong>「6は1と？」「2と？」「3と？」と、1つの数を全部分けてみる</li>
 </ul>
-<p>1日3分で十分です。「考えれば言える」ではなく「即答できる」まで遊びで繰り返しましょう。</p>
+<p>どちらかに時間がかかるうちは、さくらんぼ計算の練習はいったん置いて、こちらを遊びで続けてみてください。にじゅうまる。では1日3分ほどを目安にしています。</p>
 
-<h2>くり上がりは「さくらんぼ計算」で</h2>
-<p>8＋5のようなくり上がりのたし算は、<strong>10のまとまりを作る</strong>のが基本戦略です。</p>
+<h2 id="kuriagari">くり上がりのたし算：さくらんぼ計算</h2>
+<p>8＋5のように答えが10をこえるたし算は、<strong>10のまとまりを作る</strong>のが基本の考え方です。1年生の2学期ごろに学習します。</p>
 <div class="ex-box">
   <p><strong>例：</strong>8＋5の解き方（さくらんぼ計算）</p>
-  <p>①8はあと<strong>2</strong>で10 → ②5を<strong>2と3</strong>に分ける（さくらんぼ）→ ③8＋2＝10 → ④10＋3＝<strong>13</strong></p>
+  <p>①「8はあと<strong>2</strong>で10」——大きい方の数を見て、10まであといくつか考える</p>
+  <p>②5を<strong>2と3</strong>に分ける——さくらんぼのように丸をかいて書く</p>
+  <p>③8＋2＝<strong>10</strong> → ④10＋3＝<strong>13</strong></p>
 </div>
 <figure class="fig" data-fig="sakuranbo">
 <svg viewBox="0 0 420 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figAddT figAddD">
@@ -165,110 +319,306 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </svg>
 <figcaption>図：8＋5をさくらんぼ計算で解く流れ。5を「8を10にするための2」と「のこり3」に分けるのがポイント。丸と同じ色の式に進みます。</figcaption>
 </figure>
-<p>「なぜ分けるの？」と聞かれたら、「10のまとまりを作ると、10といくつで答えがすぐわかるから」。10円玉と1円玉、卵の10個パックなど、10のまとまりが便利な実例で納得させましょう。さくらんぼ計算の詳しい教え方は<a href="/tasizan-kuriagari.html">くり上がりのたし算のコツ</a>で解説しています。</p>
-<div class="tip-box">
-  <p>💡 さくらんぼの書き方（分け方の図）は学校によって指導が異なることがあります。学校のやり方を確認して、家庭でも同じ方法でそろえてあげると子どもが混乱しません。</p>
-</div>
+<p>声かけでは、いきなり「5を2と3に分けて」と言わないのがポイントです。<strong>「8は、あといくつで10になる？」から始める</strong>と、なぜ2と3に分けるのかが子どもの中でつながります。「なぜ10を作るの？」と聞かれたら、卵の10個パックや10円玉を見せて「10のまとまりがあると『10と3で13』ってすぐわかるから」と伝えます。</p>
+<h3>練習は3ステップで</h3>
+<ol>
+  <li><strong>ブロック・おはじきで：</strong>8個と5個を並べ、5個の側から2個を動かして10のかたまりを作る</li>
+  <li><strong>さくらんぼの図をかいて：</strong>ノートに図をかきながら解く</li>
+  <li><strong>図なしで：</strong>頭の中でさくらんぼ。「8＋5」を見て、少し考えれば13と言える</li>
+</ol>
+<p>にじゅうまる。では、各ステップで8〜9割ほど正解できるようになったら次へ進むのを目安にしています。さくらんぼは自転車の補助輪のようなもので、乗れるようになったら外してかまいません（学校で書くよう指示がある時期は合わせます）。</p>
+<h3>9＋□から始める</h3>
+<p>9＋4、9＋7…は「1だけもらって10」なので、さくらんぼの成功体験を作りやすい問題です。<strong>9＋□→8＋□→7＋□</strong>と、10を作りやすい順に進めると、無理なく全パターンに広がります。教科書も同じように、10を作りやすいものから扱っています。</p>
 
-<h2>筆算のコツ（2・3年生）</h2>
-<p>2年生からの筆算は、手順を固定することがすべてです。</p>
+<h2>くり上がりのたし算は、全部で36問</h2>
+<p>1けたどうしのたし算を表にすると、答えが10をこえる（11以上になる）マスは<strong>36個</strong>です。9＋2〜9＋9の8問、8＋3〜8＋9の7問、7＋4〜7＋9の6問…と数えると、8＋7＋6＋5＋4＋3＋2＋1＝36になります。</p>
+<figure class="fig">
+<svg viewBox="0 0 440 330" role="img" aria-label="1から9どうしのたし算81マスの表。答えが11以上になるくり上がりのマス36個を黄色、答えがちょうど10になるマスを水色で塗っている。表は右上と左下で対称">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="195.0" y="22" font-size="13" text-anchor="middle" fill="#475569">たす数 →</text>
+      <text x="16" y="185.0" font-size="13" text-anchor="middle" fill="#475569" transform="rotate(-90 16 185.0)">たされる数 →</text>
+      <text x="75.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">1</text>
+      <text x="48" y="70.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">1</text>
+      <text x="105.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">2</text>
+      <text x="48" y="100.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">2</text>
+      <text x="135.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">3</text>
+      <text x="48" y="130.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">3</text>
+      <text x="165.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">4</text>
+      <text x="48" y="160.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">4</text>
+      <text x="195.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">5</text>
+      <text x="48" y="190.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">5</text>
+      <text x="225.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">6</text>
+      <text x="48" y="220.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">6</text>
+      <text x="255.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">7</text>
+      <text x="48" y="250.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">7</text>
+      <text x="285.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">8</text>
+      <text x="48" y="280.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">8</text>
+      <text x="315.0" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">9</text>
+      <text x="48" y="310.0" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A8A">9</text>
+      <rect x="60" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">2</text>
+      <rect x="90" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="105.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">3</text>
+      <rect x="120" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="135.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">4</text>
+      <rect x="150" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="165.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">5</text>
+      <rect x="180" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="195.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">6</text>
+      <rect x="210" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="225.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">7</text>
+      <rect x="240" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="255.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">8</text>
+      <rect x="270" y="50" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="285.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="300" y="50" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="315.0" y="70.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="60" y="80" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">3</text>
+      <rect x="90" y="80" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="105.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">4</text>
+      <rect x="120" y="80" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="135.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">5</text>
+      <rect x="150" y="80" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="165.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">6</text>
+      <rect x="180" y="80" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="195.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">7</text>
+      <rect x="210" y="80" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="225.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">8</text>
+      <rect x="240" y="80" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="255.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="270" y="80" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="285.0" y="100.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="300" y="80" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="100.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="60" y="110" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="130.0" font-size="12" text-anchor="middle" fill="#64748B">4</text>
+      <rect x="90" y="110" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="105.0" y="130.0" font-size="12" text-anchor="middle" fill="#64748B">5</text>
+      <rect x="120" y="110" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="135.0" y="130.0" font-size="12" text-anchor="middle" fill="#64748B">6</text>
+      <rect x="150" y="110" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="165.0" y="130.0" font-size="12" text-anchor="middle" fill="#64748B">7</text>
+      <rect x="180" y="110" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="195.0" y="130.0" font-size="12" text-anchor="middle" fill="#64748B">8</text>
+      <rect x="210" y="110" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="225.0" y="130.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="240" y="110" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="255.0" y="130.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="270" y="110" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="285.0" y="130.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="300" y="110" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="130.0" font-size="12" text-anchor="middle" fill="#92400E">12</text>
+      <rect x="60" y="140" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="160.0" font-size="12" text-anchor="middle" fill="#64748B">5</text>
+      <rect x="90" y="140" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="105.0" y="160.0" font-size="12" text-anchor="middle" fill="#64748B">6</text>
+      <rect x="120" y="140" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="135.0" y="160.0" font-size="12" text-anchor="middle" fill="#64748B">7</text>
+      <rect x="150" y="140" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="165.0" y="160.0" font-size="12" text-anchor="middle" fill="#64748B">8</text>
+      <rect x="180" y="140" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="195.0" y="160.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="210" y="140" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="225.0" y="160.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="240" y="140" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="255.0" y="160.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="270" y="140" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="285.0" y="160.0" font-size="12" text-anchor="middle" fill="#92400E">12</text>
+      <rect x="300" y="140" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="160.0" font-size="12" text-anchor="middle" fill="#92400E">13</text>
+      <rect x="60" y="170" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="190.0" font-size="12" text-anchor="middle" fill="#64748B">6</text>
+      <rect x="90" y="170" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="105.0" y="190.0" font-size="12" text-anchor="middle" fill="#64748B">7</text>
+      <rect x="120" y="170" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="135.0" y="190.0" font-size="12" text-anchor="middle" fill="#64748B">8</text>
+      <rect x="150" y="170" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="165.0" y="190.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="180" y="170" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="195.0" y="190.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="210" y="170" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="225.0" y="190.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="240" y="170" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="255.0" y="190.0" font-size="12" text-anchor="middle" fill="#92400E">12</text>
+      <rect x="270" y="170" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="285.0" y="190.0" font-size="12" text-anchor="middle" fill="#92400E">13</text>
+      <rect x="300" y="170" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="190.0" font-size="12" text-anchor="middle" fill="#92400E">14</text>
+      <rect x="60" y="200" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="220.0" font-size="12" text-anchor="middle" fill="#64748B">7</text>
+      <rect x="90" y="200" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="105.0" y="220.0" font-size="12" text-anchor="middle" fill="#64748B">8</text>
+      <rect x="120" y="200" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="135.0" y="220.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="150" y="200" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="165.0" y="220.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="180" y="200" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="195.0" y="220.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="210" y="200" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="225.0" y="220.0" font-size="12" text-anchor="middle" fill="#92400E">12</text>
+      <rect x="240" y="200" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="255.0" y="220.0" font-size="12" text-anchor="middle" fill="#92400E">13</text>
+      <rect x="270" y="200" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="285.0" y="220.0" font-size="12" text-anchor="middle" fill="#92400E">14</text>
+      <rect x="300" y="200" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="220.0" font-size="12" text-anchor="middle" fill="#92400E">15</text>
+      <rect x="60" y="230" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="250.0" font-size="12" text-anchor="middle" fill="#64748B">8</text>
+      <rect x="90" y="230" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="105.0" y="250.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="120" y="230" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="135.0" y="250.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="150" y="230" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="165.0" y="250.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="180" y="230" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="195.0" y="250.0" font-size="12" text-anchor="middle" fill="#92400E">12</text>
+      <rect x="210" y="230" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="225.0" y="250.0" font-size="12" text-anchor="middle" fill="#92400E">13</text>
+      <rect x="240" y="230" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="255.0" y="250.0" font-size="12" text-anchor="middle" fill="#92400E">14</text>
+      <rect x="270" y="230" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="285.0" y="250.0" font-size="12" text-anchor="middle" fill="#92400E">15</text>
+      <rect x="300" y="230" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="250.0" font-size="12" text-anchor="middle" fill="#92400E">16</text>
+      <rect x="60" y="260" width="30" height="30" fill="#fff" stroke="#CBD5E1"/><text x="75.0" y="280.0" font-size="12" text-anchor="middle" fill="#64748B">9</text>
+      <rect x="90" y="260" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="105.0" y="280.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="120" y="260" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="135.0" y="280.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="150" y="260" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="165.0" y="280.0" font-size="12" text-anchor="middle" fill="#92400E">12</text>
+      <rect x="180" y="260" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="195.0" y="280.0" font-size="12" text-anchor="middle" fill="#92400E">13</text>
+      <rect x="210" y="260" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="225.0" y="280.0" font-size="12" text-anchor="middle" fill="#92400E">14</text>
+      <rect x="240" y="260" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="255.0" y="280.0" font-size="12" text-anchor="middle" fill="#92400E">15</text>
+      <rect x="270" y="260" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="285.0" y="280.0" font-size="12" text-anchor="middle" fill="#92400E">16</text>
+      <rect x="300" y="260" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="280.0" font-size="12" text-anchor="middle" fill="#92400E">17</text>
+      <rect x="60" y="290" width="30" height="30" fill="#DBEAFE" stroke="#CBD5E1"/><text x="75.0" y="310.0" font-size="12" text-anchor="middle" fill="#64748B">10</text>
+      <rect x="90" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="105.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">11</text>
+      <rect x="120" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="135.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">12</text>
+      <rect x="150" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="165.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">13</text>
+      <rect x="180" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="195.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">14</text>
+      <rect x="210" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="225.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">15</text>
+      <rect x="240" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="255.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">16</text>
+      <rect x="270" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="285.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">17</text>
+      <rect x="300" y="290" width="30" height="30" fill="#FDE68A" stroke="#CBD5E1"/><text x="315.0" y="310.0" font-size="12" text-anchor="middle" fill="#92400E">18</text>
+      <rect x="350" y="60" width="16" height="16" fill="#FDE68A" stroke="#CBD5E1"/>
+      <text x="372" y="73" font-size="12" fill="#475569">くり上がり</text>
+      <text x="372" y="90" font-size="12" fill="#475569">36マス</text>
+      <rect x="350" y="106" width="16" height="16" fill="#DBEAFE" stroke="#CBD5E1"/>
+      <text x="372" y="119" font-size="12" fill="#475569">ちょうど10</text>
+    </g>
+  </svg>
+  <figcaption>図：1〜9どうしのたし算81マス。黄色がくり上がりの36マス、水色がちょうど10。表は右上と左下が同じ形</figcaption>
+</figure>
+<p>「無限にあるように見えて、実は36問」と知るだけで、親子とも気が楽になります。しかも、たし算は順番を入れかえても答えが同じ（3＋9＝9＋3）なので、表の右上と左下は同じ形です。1日5問ずつなら、1週間で36問すべてに触れられます。ドリルでランダムに出題して、どのマスに時間がかかるかを確かめてみてください。「7＋□」「6＋□」は10まで遠いぶん、手順が長くなる組です。</p>
+
+<h2>筆算（2・3年生）</h2>
+<p>2年生からの筆算は、手順を固定することが中心になります。</p>
 <ol>
   <li><strong>位をそろえて書く</strong>——一の位は一の位の下に。マス目ノートを使う</li>
-  <li><strong>一の位から計算する</strong>——左からやりたがる子は要注意</li>
-  <li><strong>くり上がりの1を小さく書く</strong>——頭で覚えず、必ず書く</li>
-  <li><strong>書いた1を忘れず足す</strong>——「1たす…」と声に出す</li>
+  <li><strong>一の位から計算する</strong>——左から計算しようとする場合は、ここを確認</li>
+  <li><strong>くり上がりの1を小さく書く</strong>——頭で覚えずに、書く</li>
+  <li><strong>書いた1も足す</strong>——「1たす…」と声に出す</li>
 </ol>
-<div class="ex-box">
-  <p><strong>例題：</strong>47＋38</p>
-  <p>一の位：7＋8＝15 → 5を書いて、<strong>1を十の位の上に小さく書く</strong></p>
-  <p>十の位：1＋4＋3＝8 → 答え<strong>85</strong></p>
-</div>
-<p>筆算のミスは「位のずれ」と「くり上がり忘れ」の2つに分かれることが多いです。間違えた筆算を見て、どちらのタイプかを確認すれば、対策がピンポイントで打てます。3桁・4桁になっても手順は同じなので、2桁で手順を完璧にすることが先決です。</p>
+<figure class="fig">
+<svg viewBox="0 0 460 230" role="img" aria-label="47＋38の筆算。一の位の7＋8＝15の5を書き、くり上がりの1を十の位の上に小さく書く。十の位は1＋4＋3＝8で、答えは85">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="0" y="0" width="460" height="230" rx="12" fill="#FFFDF5"/>
+      <rect x="92" y="18" width="44" height="190" rx="6" fill="#EFF6FF"/>
+      <rect x="136" y="18" width="44" height="190" rx="6" fill="#F0FDF4"/>
+      <text x="114" y="36" font-size="11" fill="#1E3A8A">十の位</text>
+      <text x="158" y="36" font-size="11" fill="#166534">一の位</text>
+      <text x="114" y="58" font-size="16" font-weight="700" fill="#F59E0B">1</text>
+      <text x="114" y="96" font-size="32" fill="#122A64">4</text>
+      <text x="158" y="96" font-size="32" fill="#122A64">7</text>
+      <text x="64" y="140" font-size="28" fill="#64748B">＋</text>
+      <text x="114" y="140" font-size="32" fill="#122A64">3</text>
+      <text x="158" y="140" font-size="32" fill="#122A64">8</text>
+      <line x1="44" y1="154" x2="186" y2="154" stroke="#122A64" stroke-width="2.5"/>
+      <text x="114" y="196" font-size="32" font-weight="700" fill="#15803D">8</text>
+      <text x="158" y="196" font-size="32" font-weight="700" fill="#15803D">5</text>
+      <g text-anchor="start" font-size="13">
+        <text x="210" y="70" fill="#166534" font-weight="700">① 一の位から</text>
+        <text x="210" y="90" fill="#374151">7＋8＝15</text>
+        <text x="210" y="110" fill="#374151">5を書いて、1を十の位の</text>
+        <text x="210" y="128" fill="#374151">上に<tspan fill="#B45309" font-weight="700">小さく書く</tspan></text>
+        <text x="210" y="164" fill="#1E3A8A" font-weight="700">② 十の位</text>
+        <text x="210" y="184" fill="#374151">書いた1も足して 1＋4＋3＝8</text>
+      </g>
+    </g>
+  </svg>
+  <figcaption>図：47＋38の筆算。くり上がりの1は頭で覚えず、十の位の上に書いてから足す</figcaption>
+</figure>
+<p>3けた・4けたになっても手順は同じです。2けたで手順が安定してから、けたを増やします。</p>
 
-<h2>暗算のテクニック（3年生〜）</h2>
-<p>筆算が安定したら、暗算のテクニックも紹介してあげましょう。数を「操作できるもの」として見る感覚が育ちます。</p>
+<h2>暗算の工夫（3年生〜）</h2>
 <ul>
   <li><strong>キリのいい数を借りる：</strong>99＋47 → 100＋47−1＝146</li>
   <li><strong>位ごとに足す：</strong>34＋52 → 30＋50＝80、4＋2＝6、あわせて86</li>
-  <li><strong>10のまとまりを先に：</strong>8＋7＋2 → 8＋2＝10を先に作って10＋7＝17</li>
+  <li><strong>10のまとまりを先に：</strong>8＋7＋2 → 8＋2＝10を先に作って、10＋7＝17</li>
 </ul>
-<p>「どの順番で足しても答えは同じ」（たし算のきまり）を使いこなせると、計算の工夫が楽しくなり、算数への自信につながります。</p>
+<p>「どの順番で足しても答えは同じ」（たし算のきまり）を使えると、計算の工夫が楽しくなります。</p>
 
-<h2>たし算の文章題：3つの場面を知る</h2>
-<p>1年生のたし算の文章題には、3つの場面があります。式は同じでも意味が違うことを、おはじきなどの実物で体験させましょう。</p>
+<h2>たし算の文章題：場面を絵にしてから式に</h2>
 <ul>
   <li><strong>あわせていくつ（合併）：</strong>「赤い花3本と白い花4本、あわせて何本？」——2つを一緒にする</li>
   <li><strong>ふえるといくつ（増加）：</strong>「3人で遊んでいたら4人来た。みんなで何人？」——あとから増える</li>
-  <li><strong>じゅんばんの数：</strong>「前から3番目の次は？」——順序の場面</li>
 </ul>
-<p>「あわせて」「ぜんぶで」「みんなで」という言葉が出てきたらたし算——というキーワード頼みではなく、<strong>場面を絵や図にしてから式を立てる</strong>習慣を最初につけておくと、2年生以降の複雑な文章題（<a href="/bunshoudai-guide.html">文章題の解き方</a>）で大きな差になります。</p>
+<p>「あわせて」「ぜんぶで」という言葉だけで式を決めるのではなく、<strong>場面を絵や図にしてから式を立てる</strong>習慣を早めにつけておくと、2年生以降の文章題（<a href="/bunshoudai-guide.html">文章題の解き方</a>）で役に立ちます。</p>
 
-<h2>よくあるミスと対策</h2>
-<table class="cv-table">
-  <tr><th>ミスの型</th><th>原因</th><th>対策</th></tr>
-  <tr><td>7＋5＝11（1ずれる）</td><td>指や数え足しの数えミス</td><td>10の合成分解に戻る</td></tr>
-  <tr><td>くり上がりを忘れる</td><td>頭の中で処理している</td><td>くり上がりの1を必ず書く</td></tr>
-  <tr><td>位がずれる</td><td>ノートのマスを使っていない</td><td>マス目ノート＋位に線を引く</td></tr>
-  <tr><td>字が雑で読み間違い</td><td>0と6、1と7の書き分け</td><td>数字だけ丁寧に書く練習</td></tr>
-</table>
-<p>ミスは「不注意」で片づけず、型として見ると対策が絞りやすくなります。間違えた問題を捨てずに、どの型かを親子で分類してみると、対策が一気に絞れます。詳しくは<a href="/reduce-mistakes.html">計算ミスを減らす方法</a>もどうぞ。</p>
+<h2>家庭でためす例題</h2>
+<p>答えは折りたたんであります。お子さんが解いたあとに開いて、考え方まで一緒に確かめてください。</p>
+<ol class="q-set">
+  <li class="q"><span class="q-text">「6は、あといくつで10？」</span><details><summary>答えと考え方</summary><p>4。10のわくに青を6こ並べると、空いているマスが4つ。</p></details></li>
+  <li class="q"><span class="q-text">9＋4</span><details><summary>答えと考え方</summary><p>13。9はあと1で10。4を1と3に分けて、9＋1＝10、10＋3＝13。</p></details></li>
+  <li class="q"><span class="q-text">5＋8</span><details><summary>答えと考え方</summary><p>13。大きい方の8を10にする。8はあと2で10なので、5を2と3に分けて、8＋2＝10、10＋3＝13。</p></details></li>
+  <li class="q"><span class="q-text">7＋6</span><details><summary>答えと考え方</summary><p>13。7はあと3で10。6を3と3に分けて、7＋3＝10、10＋3＝13。</p></details></li>
+  <li class="q"><span class="q-text">47＋38（筆算）</span><details><summary>答えと考え方</summary><p>85。一の位 7＋8＝15 → 5を書き、1を十の位の上に。十の位 1＋4＋3＝8。</p></details></li>
+  <li class="q"><span class="q-text">99＋47（暗算）</span><details><summary>答えと考え方</summary><p>146。99を100とみて 100＋47＝147、借りた1を返して 147−1＝146。</p></details></li>
+  <li class="q"><span class="q-text">赤い花が6本、白い花が7本あります。あわせて何本？</span><details><summary>答えと考え方</summary><p>13本。式 6＋7＝13。7はあと3で10なので、6を3と3に分けて 7＋3＝10、10＋3＝13。</p></details></li>
+</ol>
+
+<h2>よくある誤答例と、家庭での直し方</h2>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>7＋5＝11</div>
+  <p><strong>何が起きたか：</strong>7から「7、8、9、10、11」と、最初の7も数えに入れてしまい、答えが1ずれています。指や数え足しで計算しているときに起きやすい誤りです。</p>
+  <p><strong>家庭での直し方：</strong>数え足しをやめさせるより、10のわくで「7はあと3で10」を目で確かめる練習に戻ります。7＋5なら、5を3と2に分けて 7＋3＝10、10＋2＝12。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>8＋5のさくらんぼで、5を「3と2」に分けて 8＋3＝11</div>
+  <p><strong>何が起きたか：</strong>分ける数は合っていますが、どちらを8に足すかが逆になっています。「10を作るために分ける」という目的が抜けて、手順だけを覚えている状態です。</p>
+  <p><strong>家庭での直し方：</strong>分ける前に「8は、あといくつで10？」と聞きます。答え（2）が出てから5を分けると、2を先に使う理由がつながります。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>47＋38＝715</div>
+  <p><strong>何が起きたか：</strong>一の位の 7＋8＝15 を、そのまま「15」と書いてしまっています。くり上がりを十の位に送る手順が抜けています。</p>
+  <p><strong>家庭での直し方：</strong>一の位の答えのマスには数字を1つしか書かない、とルールを決めます。15なら5だけを書き、1は十の位の上に小さく書く。マス目ノートを使うと、はみ出しに気づきやすくなります。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>47＋38＝75</div>
+  <p><strong>何が起きたか：</strong>くり上がりの1を書かずに頭で覚えようとして、十の位で足し忘れています。</p>
+  <p><strong>家庭での直し方：</strong>くり上がりの1は書く、書いた1から先に足す（「1たす4たす3」）と、声に出す手順にします。答えの見当（40＋40で80くらい）を先に立てると、75の不自然さに自分で気づけます。</p>
+</div>
+
+<div class="memo-box">
+  <div class="memo-title">🏠 おはじき10こと、紙1枚で「10のわく」を作る</div>
+  <p>画用紙に2段×5列のマスをかくだけで、10のわくができます。おはじきやボタンを並べて「いま何こ？」「あといくつで10？」と聞くと、10の合成分解を目で確かめられます。</p>
+  <p>くり上がりのたし算に入ったら、同じわくを2枚並べます。8＋5なら、1枚目に8こ、2枚目に5こ置き、2枚目から2こを1枚目に移すと、1枚目がちょうど10こになります。さくらんぼ計算でやっていることが、そのまま手の動きになります。</p>
+</div>
 
 <h2>家庭でできる練習メニュー</h2>
 <table class="cv-table">
-  <tr><th>レベル</th><th>メニュー（1日5分）</th></tr>
-  <tr><td>10までのたし算</td><td>おはじき・ブロックで「あわせていくつ」→ドリルで反復</td></tr>
-  <tr><td>くり上がり前</td><td>10の合成分解ゲーム（即答できるまで）</td></tr>
+  <tr><th>いまの段階</th><th>メニュー（1日5分ほど）</th></tr>
+  <tr><td>10までのたし算</td><td>おはじきで「あわせていくつ」→ドリルで反復</td></tr>
+  <tr><td>くり上がり前</td><td>10のわく遊び・10づくりカード</td></tr>
   <tr><td>くり上がり練習中</td><td>さくらんぼを書いて解く→慣れたら書かずに解く</td></tr>
-  <tr><td>筆算練習中</td><td>1日3問でOK。手順を声に出しながら</td></tr>
-  <tr><td>仕上げ</td><td>タイムアタックで「速さ」を記録。昨日の自分と競う</td></tr>
+  <tr><td>筆算練習中</td><td>1日3問ほど。手順を声に出しながら</td></tr>
+  <tr><td>仕上げ</td><td>タイムを記録して、昨日の自分と比べる</td></tr>
 </table>
-<p>にじゅうまる。算数ドリルなら学年別のたし算を自動採点で練習できます。「1日1回、タイムを記録する」だけで、練習が習慣とゲームに変わります。</p>
 
-<h2>よくある質問</h2>
-<h3>Q1. くり上がりはどう教える？</h3>
-<p>さくらんぼ計算（10づくり）が基本です。その前提の10の合成分解が即答できるかを先に確認しましょう。</p>
-<h3>Q2. 筆算のくり上がりを忘れます。</h3>
-<p>くり上がりの1を「必ず書く」ルールに。書く場所を固定し、声に出して手順化すると落ち着いてくることがあります。</p>
-<h3>Q3. いつまでに速くできればいい？</h3>
-<p>1桁＋1桁は2年生までに即答レベルが理想。以降の筆算すべての部品になるからです。</p>
-<h3>Q4. 指を使うのをやめさせるべき？</h3>
-<p>禁止は不要です。10の合成分解が育てば自然に卒業します。「禁止」より「10づくり遊び」を。</p>
-<h3>Q5. さくらんぼ計算は、ずっと書かないとだめですか？</h3>
-<p>いいえ。さくらんぼは補助輪のようなもので、10づくりの考え方が身についたら書かずに解いてかまいません。目安は「8＋5を2秒で13と言える」こと。ただし、学校のテストで「さくらんぼを書きなさい」と指定される時期は、指示に従って書きましょう。考え方を説明できることも学習のねらいだからです。</p>
+<h2>1年生のたし算、ここまでできれば次へ</h2>
+<ul>
+  <li>くり上がりの36問を、ランダムに出されても少し考えれば答えられる</li>
+  <li>「どうやって考えたの？」に「8に2をあげて10、あと3で13」と説明できる</li>
+  <li>9＋□、8＋□、7＋□…のどの組でも安定している</li>
+</ul>
+<p>ここまで来たら、くり下がりのひき算（<a href="/subtraction-guide.html">ひき算の誤答パターン集</a>）へ進む準備ができています。くり下がりも「10のまとまり」を使う点は同じです。</p>
+
+<div class="try-box">
+  <div class="try-title">✏️ 1年生のたし算を、その場で採点しながら解く</div>
+  <p>学年を選んだ状態で開きます。くり上がりを含む問題が毎回ちがう組み合わせで出るので、36問のどこに時間がかかるかを確かめるのに使えます。</p>
+  <a href="/drill.html?grade=1">1年生のドリルを開く →</a>
+</div>
+
+<div class="ref-box">
+  <div class="ref-title">📚 参考資料と、家庭での使い方</div>
+  <ul>
+    <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
+    <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
+  </ul>
+  <p style="font-size:11.5px;color:#64748B;margin:8px 0 0;line-height:1.8;">確認日: 2026年9月27日。学習指導要領では、第1学年で「1位数と1位数との加法及びその逆の減法の計算が確実にできること」が示されています。このページの「くり上がり36問」と、ひき算のページの「くり下がり」を合わせたものが、この「確実に」の中身だと考えると、家庭で練習する範囲がはっきりします。第2学年では2位数の加法とその筆算を扱います。10のわくの図と誤答例は、にじゅうまる。運営者による整理です。</p>
+</div>
 
 <h2>まとめ</h2>
-<p>たし算は毎日の5分練習が最も効く単元です。にじゅうまる。算数ドリルの学年別ドリルとタイムアタックを組み合わせて、「正確に→速く」の順で仕上げていきましょう。</p>
 <ul>
   <li>たし算は「10までの計算→くり上がり→筆算→暗算」の積み上げ。つまずいたら1つ戻る</li>
-  <li>くり上がりの鍵は10の合成分解の即答化。遊びで鍛える</li>
-  <li>筆算は手順の固定＋くり上がりの1を必ず書く</li>
-  <li>仕上げはタイムアタック。速さは正確さの証明</li>
+  <li>土台は10の合成分解。10のわくで目に見える形にしてから、図なしへ</li>
+  <li>さくらんぼは「あといくつで10？」から。9＋□から始めると成功体験を作りやすい</li>
+  <li>くり上がりは全部で36問。表で見ると、終わりが見える</li>
+  <li>筆算はくり上がりの1を書く。答えの見当で、自分で誤りに気づける</li>
 </ul>
+
+<h2>よくある質問</h2>
+<h3>Q1. くり上がりのたし算はどう教えればいいですか？</h3>
+<p>「10のまとまりを作る」さくらんぼ計算が基本です。8＋5なら、「8はあといくつで10？」と聞いてから5を2と3に分け、8＋2＝10、10＋3＝13。その前に、10の合成分解（10は8と2など）を10のわくで確かめておくと進めやすくなります。</p>
+<h3>Q2. くり上がりのたし算は全部で何問ありますか？</h3>
+<p>1けたどうしのたし算で答えが11以上になるものは36問です。9＋□が8問、8＋□が7問…1＋□は0問で、8＋7＋6＋5＋4＋3＋2＋1＝36。順番を入れかえても答えは同じなので、表にすると右上と左下が同じ形になります。</p>
+<h3>Q3. 「5＋8」のように小さい数が先だと解けなくなります。</h3>
+<p>「大きい方を10にする」と伝える方法があります。5＋8なら8の方が10に近いので、5を2と3に分けて8＋2＝10、10＋3＝13。おはじきを左右入れかえて、答えが変わらないことを見せると納得しやすくなります。</p>
+<h3>Q4. 筆算でくり上がりを忘れます。</h3>
+<p>くり上がりの1は頭で覚えずに、十の位の上に小さく書くと決めます。「書いた1から足す」を声に出す手順にすると、忘れにくくなります。</p>
+<h3>Q5. 指を使って計算するのはやめさせるべきですか？</h3>
+<p>無理にやめさせる必要はありません。指は具体物の代わりで、理解の途中段階として自然なものです。10のわく遊びを重ねると、指を使わずに済む場面が増えていきます。</p>
 
 <div style="margin:32px 0;padding:20px 16px;background:#FFFFFF;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/tasizan-kuriagari.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">🍒</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">くり上がりのたし算のコツ（さくらんぼ計算）</span>
-    </a>
     <a href="/subtraction-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">➖</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">ひき算のつまずきと克服法</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">ひき算の誤答パターン集</span>
+    </a>
+    <a href="/grade-1-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">1️⃣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">1年生の家庭チェックリスト</span>
     </a>
     <a href="/calculation-power.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">💪</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算力アップの秘訣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算の速さを育てる練習</span>
     </a>
-    <a href="/grade-1.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">1️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学1年生の算数ドリル</span>
+    <a href="/reduce-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">✏️</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">計算ミスを減らす方法</span>
     </a>
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+  <p>学年を選んで、その場で採点しながら練習できます</p>
+  <a href="/drill.html?grade=1">1年生のたし算ドリルをやってみる →</a>
 </div>
 </div>
 
