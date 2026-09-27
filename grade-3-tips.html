@@ -10,8 +10,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小学3年生の算数 完全ガイド｜つまずきポイントと勉強法 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="小学3年生の算数を時期別に整理。わり算・あまりのあるわり算の攻略、時間の計算、小数・分数の入門、大きな数の筆算まで。計算の種類が一気に増える3年生の乗り切り方を解説します。">
+<title>小学3年生の算数 家庭ガイド【九九からわり算へ・時間・小数と分数】 | にじゅうまる。算数ドリル</title>
+<meta name="description" content="3年生の算数を家庭で進めるガイド。九九を逆から読むとわり算になる図、あまりの確かめ方、時間の計算をちょうどの時刻で区切る図、0.1Lと1/10Lの図、修了チェック問題7問と誤答例4つ｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/grade-3-tips.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,18 +61,41 @@ ul li,ol li{margin-bottom:8px;}
 .try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="小学3年生の算数 完全ガイド｜つまずきポイントと勉強法">
-<meta property="og:description" content="小学3年生の算数を時期別に整理。わり算・あまりのあるわり算の攻略、時間の計算、小数・分数の入門、大きな数の筆算まで。計算の種類が一気に増える3年生の乗り切り方を解説します。">
+<meta property="og:title" content="小学3年生の算数 家庭ガイド【九九からわり算へ・時間・小数と分数】">
+<meta property="og:description" content="九九を逆から読むとわり算になる。3年生のわり算・時間・小数と分数を図で確かめるガイド。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/grade-3-tips.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="小学3年生の算数 完全ガイド｜つまずきポイントと勉強法">
-<meta name="twitter:description" content="小学3年生の算数を時期別に整理。わり算・あまりのあるわり算の攻略、時間の計算、小数・分数の入門、大きな数の筆算まで。計算の種類が一気に増える3年生の乗り切り方を解説します。">
+<meta name="twitter:title" content="小学3年生の算数：九九からわり算へ">
+<meta name="twitter:description" content="3年生：九九からわり算へ。図と誤答例つき。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -84,7 +107,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "わり算が遅いのですが、わり算の練習を増やすべき？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "先に九九のランダム即答を点検してください。わり算の遅さの原因はほぼ九九です。特に6〜8の段の逆引き（42÷7など）を重点的に。"
+        "text": "先に九九を逆から答えられるかを確かめてみてください。わり算に時間がかかる原因が、その段の九九にあることがあります。特に6〜8の段（42÷7など）を「7の段で42は？」の形で練習します。"
       }
     },
     {
@@ -92,7 +115,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "あまりのあるわり算でよく間違えます。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "「あまり＜わる数」のチェックと検算（わる数×商＋あまり）を毎回セットにしましょう。この2つの習慣で、失点はぐっと減らせます。"
+        "text": "「あまり＜わる数」の確かめと、検算（わる数×商＋あまり＝わられる数）を毎回セットにする方法があります。"
       }
     },
     {
@@ -100,15 +123,23 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "時間の計算を嫌がります。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "机上より生活で。「あと何分で出発？」「この番組は何分間？」と毎日の会話に混ぜると、抵抗なく練習量が積めます。"
+        "text": "ちょうどの時刻で区切って考えると、60分で繰り上がる計算をしなくてすみます。生活の中で「あと何分で出発？」と聞くと、机に向かわずに練習の回数を増やせます。"
       }
     },
     {
       "@type": "Question",
-      "name": "小数と分数、どちらを先に固めるべき？",
+      "name": "0.1と1/10は同じですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "3年生ではどちらも「意味の理解」が目的なので優劣はありません。1Lます・ピザの絵など実物で「1より小さい数」のイメージを作ることが共通の土台です。"
+        "text": "同じ大きさです。1Lを10等分した1目盛りを、小数では0.1L、分数では1/10Lと書きます。1Lますの図で両方を指さすと、つながりが見えます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4年生に向けて、春休みに何をすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "あまりのあるわり算を検算まで含めて確かめておくのがおすすめです。4年生のわり算の筆算は「九九の逆引き＋ひき算」のくり返しです。"
       }
     }
   ]
@@ -119,147 +150,229 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <body>
 <div class="header">
   <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
-  <h1>小学3年生の算数 完全ガイド｜つまずきポイントと勉強法</h1>
+  <h1>小学3年生の算数：九九からわり算へ</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>3️⃣ 3年生は「計算の種類が一気に増える」学年。わり算・小数・分数と新顔が続々登場しますが、実はすべて2年生までの貯金（九九・筆算）で戦えます。1年間の見取り図と重点対策をどうぞ。</p>
+  <p>3️⃣ 3年生は、わり算・小数・分数と新しい単元が続く学年です。中心になるのは、2年生で覚えた九九を「逆から使う」こと。このページでは、九九からわり算へのつながりを図で見ながら、時間の計算、小数と分数の意味まで、家庭で確かめる方法をまとめました。</p>
 </div>
+
 <div class="theme-box">
   <div class="th-label">この学年の役割</div>
   <div class="th-title">九九からわり算へ</div>
-  <p class="th-lead">2年生で覚えた九九を、<strong>逆から使えるようにする</strong>のが3年生です。「3の段で12になるのは？」——この問いに即答できることが、わり算の正体。あわせて大きな数・小数・分数と、扱う数の種類が一気に広がります。</p>
-  <ul><li>わり算</li><li>大きな数</li><li>小数</li><li>分数</li></ul>
+  <p class="th-lead">2年生で覚えた九九を、<strong>逆から使えるようにする</strong>のが3年生です。「3の段で12になるのは？」——この問いに答えられることが、わり算の入り口になります。あわせて大きな数・小数・分数と、扱う数の種類が広がります。</p>
+  <ul><li>わり算</li><li>時刻と時間</li><li>小数・分数</li><li>km・kg</li></ul>
 </div>
-<h2>3年生で学ぶこと（時期別の見取り図）</h2>
-<table class="cv-table">
-  <tr><th>時期</th><th>主な単元</th><th>つまずき度</th></tr>
-  <tr><td>1学期</td><td><strong>わり算</strong>、時刻と時間、3桁のたし算ひき算の筆算、長い長さ（km）</td><td>🔴</td></tr>
-  <tr><td>2学期</td><td>あまりのあるわり算、大きな数、かけ算の筆算（2桁×1桁）、円と球、小数</td><td>🔴</td></tr>
-  <tr><td>3学期</td><td>分数、□を使った式、そろばん・2桁のかけ算、重さ（g・kg）</td><td>🟡</td></tr>
-</table>
-<p>新単元ラッシュに見えますが、核心はひとつ。<strong>わり算＝九九の逆</strong>です。九九が即答できる子にとって、3年生は「新しいことを次々マスターできる楽しい学年」になります。</p>
-<h2>最重要単元：わり算とあまり</h2>
-<p>12÷3は「3の段で12になるのは？」と九九を逆引きするだけ。わり算が遅い場合、原因はほぼ九九（特に6〜8の段）です。わり算の練習を増やす前に、九九のランダム即答を総点検しましょう。</p>
-<p>あまりのあるわり算では、①<strong>あまりは、わる数より必ず小さい</strong> ②<strong>検算：わる数×商＋あまり＝わられる数</strong>、の2つをセットで習慣に。この2つで、あまりの単元の失点はぐっと減らせます（<a href="/division-guide.html">わり算の教え方ガイド</a>）。</p>
-<h2>この学年の目玉：九九を「逆から」使えるようにする</h2>
-<p>3年生のわり算は、新しい計算を覚えるのではありません。<strong>九九を逆から引くだけ</strong>です。この一点が腑に落ちると、わり算は急に軽くなります。</p>
+
+<h2>3年生の1年間（学期ごとの見取り図）</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 220" role="img" aria-label="3年生の1年間を3つの学期に分けたタイムライン。1学期はわり算と時刻と時間、2学期はあまりのあるわり算とかけ算の筆算と小数、3学期は分数と重さ。1学期と2学期がこの学年の山">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="230" y="22" font-size="13" font-weight="700" fill="#122A64" text-anchor="middle">3年生の1年間</text>
+      <line x1="20" y1="44" x2="450" y2="44" stroke="#94A3B8" stroke-width="2"/>
+      <path d="M450 38 L460 44 L450 50" fill="#94A3B8"/>
+      <circle cx="90.0" cy="44" r="6" fill="#EF4444"/>
+      <rect x="20" y="60" width="140" height="124" rx="10" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+      <text x="90.0" y="82" font-size="13" font-weight="700" fill="#991B1B" text-anchor="middle">1学期</text>
+      <text x="90.0" y="106" font-size="12" fill="#374151" text-anchor="middle">わり算</text>
+      <text x="90.0" y="128" font-size="12" fill="#374151" text-anchor="middle">時刻と時間</text>
+      <text x="90.0" y="150" font-size="12" fill="#374151" text-anchor="middle">3けたの筆算</text>
+      <text x="90.0" y="172" font-size="12" fill="#374151" text-anchor="middle">長さ（km）</text>
+      <text x="90.0" y="204" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">▲ この学年の山</text>
+      <circle cx="235.0" cy="44" r="6" fill="#EF4444"/>
+      <rect x="165" y="60" width="140" height="124" rx="10" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+      <text x="235.0" y="82" font-size="13" font-weight="700" fill="#991B1B" text-anchor="middle">2学期</text>
+      <text x="235.0" y="106" font-size="12" fill="#374151" text-anchor="middle">あまりのあるわり算</text>
+      <text x="235.0" y="128" font-size="12" fill="#374151" text-anchor="middle">大きな数</text>
+      <text x="235.0" y="150" font-size="12" fill="#374151" text-anchor="middle">かけ算の筆算</text>
+      <text x="235.0" y="172" font-size="12" fill="#374151" text-anchor="middle">小数</text>
+      <text x="235.0" y="204" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">▲ この学年の山</text>
+      <circle cx="380.0" cy="44" r="6" fill="#CBD5E1"/>
+      <rect x="310" y="60" width="140" height="102" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="380.0" y="82" font-size="13" font-weight="700" fill="#1E3A8A" text-anchor="middle">3学期</text>
+      <text x="380.0" y="106" font-size="12" fill="#374151" text-anchor="middle">分数</text>
+      <text x="380.0" y="128" font-size="12" fill="#374151" text-anchor="middle">□を使った式</text>
+      <text x="380.0" y="150" font-size="12" fill="#374151" text-anchor="middle">重さ（g・kg）</text>
+    </g>
+  </svg>
+  <figcaption>図：3年生の1年間。わり算が1学期に始まり、2学期のあまりのあるわり算まで続く。小数・分数は「意味」の入り口</figcaption>
+</figure>
+<p>新しい単元が続きますが、中心は<strong>わり算＝九九の逆</strong>です。九九をバラバラに・逆から答えられる状態で3年生に入ると、わり算の単元に入りやすくなります。</p>
+
+<h2>九九を「逆から」読むと、わり算になる</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 200" role="img" aria-label="7の段の九九を横に並べた図。7、14、21、28、35、42、49、56、63のうち42に色がついていて、その上の「×6」を読むと42÷7＝6とわかる">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="30" y="30" font-size="13" font-weight="700" fill="#122A64">7の段</text>
+      <rect x="30" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="52" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">7</text><text x="52" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×1</text><rect x="74" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="96" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">14</text><text x="96" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×2</text><rect x="118" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="140" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">21</text><text x="140" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×3</text><rect x="162" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="184" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">28</text><text x="184" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×4</text><rect x="206" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="228" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">35</text><text x="228" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×5</text><rect x="250" y="70" width="44" height="40" fill="#FDE68A" stroke="#CBD5E1"/><text x="272" y="96" font-size="15" font-weight="700" fill="#92400E" text-anchor="middle">42</text><text x="272" y="60" font-size="11" fill="#B45309" text-anchor="middle">×6</text><rect x="294" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="316" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">49</text><text x="316" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×7</text><rect x="338" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="360" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">56</text><text x="360" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×8</text><rect x="382" y="70" width="44" height="40" fill="#fff" stroke="#CBD5E1"/><text x="404" y="96" font-size="15" font-weight="400" fill="#1E293B" text-anchor="middle">63</text><text x="404" y="60" font-size="11" fill="#94A3B8" text-anchor="middle">×9</text>
+      <path d="M272 122 V140" stroke="#B45309" stroke-width="2"/>
+      <text x="230" y="162" font-size="15" font-weight="700" fill="#122A64" text-anchor="middle">42 ÷ 7 ＝ 6</text>
+      <text x="230" y="186" font-size="12" fill="#475569" text-anchor="middle">「7の段で42になるのは？」→ 7×6＝42 の「6」が答え</text>
+    </g>
+  </svg>
+  <figcaption>図：わり算は九九を逆から読む計算。7の段の中から42をさがし、上の「×6」を読む</figcaption>
+</figure>
 <table class="cv-table">
   <tr><th>わり算</th><th>頭の中でやっていること</th><th>使う九九</th></tr>
   <tr><td>12 ÷ 3</td><td>3の段で12になるのは？</td><td>3×4＝12</td></tr>
   <tr><td>42 ÷ 7</td><td>7の段で42になるのは？</td><td>7×6＝42</td></tr>
   <tr><td>56 ÷ 8</td><td>8の段で56になるのは？</td><td>8×7＝56</td></tr>
 </table>
-<p>わり算が遅い場合、原因はわり算ではなく<strong>その段の九九</strong>にあります。42÷7で止まるなら、7の段が完成していないということ。わり算の練習を増やす前に、そこだけ戻るほうが速く進みます。</p>
-<div class="try-box">
-  <div class="try-title">✏️ 逆引きが安定しているか試す</div>
-  <p>3年生ドリルのわり算を続けて解くと、どの段で手が止まるかが見えます。止まった段が分かったら、九九チャレンジでその段だけ練習できます。</p>
-  <a href="/drill.html">3年生のドリルで確かめる →</a>
+<p>わり算に時間がかかる場合、原因はわり算ではなく<strong>その段の九九</strong>にあることがあります。42÷7で止まるなら、7の段を逆から聞く練習（「7の段で42は？」）に戻ります。止まる九九の見つけ方は<a href="/grade-2-tips.html">2年生の家庭ガイド</a>に、わり算の意味・筆算の手順は<a href="/division-guide.html">わり算の教え方</a>に図で書いています。</p>
+
+<h2>あまりのあるわり算は、2つの確かめをセットで</h2>
+<ol>
+  <li><strong>あまりは、わる数より必ず小さい</strong>——あまりがわる数以上なら、もう1回分けられる</li>
+  <li><strong>検算：わる数×商＋あまり＝わられる数</strong>——4×7＋1＝29 ✓</li>
+</ol>
+<p>文章題では「わる数」と「わられる数」を逆にして式を書く誤りもよく見られます。「全体÷分ける数」の順で書く、を声に出して確かめます。</p>
+
+<h2>時刻と時間は「キリのいい時刻」で区切る</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 170" role="img" aria-label="午前10時40分から午後1時までの時間を線で表した図。10時40分から11時までが20分、11時から午後1時までが2時間、合わせて2時間20分">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <line x1="30" y1="80" x2="430" y2="80" stroke="#122A64" stroke-width="2"/>
+      <line x1="40" y1="70" x2="40" y2="90" stroke="#122A64" stroke-width="2"/><text x="40" y="112" font-size="12" fill="#122A64">午前10時40分</text>
+      <line x1="130" y1="70" x2="130" y2="90" stroke="#122A64" stroke-width="2"/><text x="130" y="112" font-size="12" fill="#122A64">11時</text>
+      <line x1="420" y1="70" x2="420" y2="90" stroke="#122A64" stroke-width="2"/><text x="420" y="112" font-size="12" fill="#122A64">午後1時</text>
+      <path d="M40 64 Q85 30 130 64" fill="none" stroke="#F59E0B" stroke-width="2.5"/><text x="85" y="36" font-size="13" font-weight="700" fill="#B45309">20分</text>
+      <path d="M130 64 Q275 10 420 64" fill="none" stroke="#2563EB" stroke-width="2.5"/><text x="275" y="28" font-size="13" font-weight="700" fill="#1E3A8A">2時間</text>
+      <text x="230" y="150" font-size="14" font-weight="700" fill="#122A64">20分 ＋ 2時間 ＝ 2時間20分</text>
+    </g>
+  </svg>
+  <figcaption>図：時間の計算は「キリのいい時刻」で区切る。10時40分から11時までと、11時から午後1時までに分けると、60分で繰り上がる計算をしなくてすむ</figcaption>
+</figure>
+<p>60分で1時間に繰り上がる計算は、10ずつで繰り上がる筆算とちがうので迷いやすいところです。ちょうどの時刻（11時、12時）で区切ると、繰り上がりを考えずに済みます。詳しくは<a href="/time-calculation.html">時間の計算のコツ</a>で。</p>
+
+<h2>小数・分数は「1を等分した大きさ」から</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 220" role="img" aria-label="1Lのますを10等分した図。下から3目盛り分に水が入っている。1目盛りは0.1Lで、1/10Lとも書ける。水は0.3L、つまり3/10L">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="195" y="22" font-size="13" font-weight="700" fill="#1E3A8A" text-anchor="middle">1L</text>
+      <rect x="150" y="30" width="90" height="16" fill="#fff" stroke="#2563EB"/><rect x="150" y="46" width="90" height="16" fill="#fff" stroke="#2563EB"/><rect x="150" y="62" width="90" height="16" fill="#fff" stroke="#2563EB"/><rect x="150" y="78" width="90" height="16" fill="#fff" stroke="#2563EB"/><rect x="150" y="94" width="90" height="16" fill="#fff" stroke="#2563EB"/><rect x="150" y="110" width="90" height="16" fill="#fff" stroke="#2563EB"/><rect x="150" y="126" width="90" height="16" fill="#fff" stroke="#2563EB"/><rect x="150" y="142" width="90" height="16" fill="#93C5FD" stroke="#2563EB"/><rect x="150" y="158" width="90" height="16" fill="#93C5FD" stroke="#2563EB"/><rect x="150" y="174" width="90" height="16" fill="#93C5FD" stroke="#2563EB"/>
+      <rect x="150" y="30" width="90" height="160" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+      <path d="M244 174 H262" stroke="#2563EB"/><text x="268" y="178" font-size="13" fill="#1E3A8A">1目盛り ＝ 0.1L ＝ 1/10L</text>
+      <text x="268" y="138" font-size="13" fill="#122A64" font-weight="700">水は 0.3L</text>
+      <text x="268" y="158" font-size="12" fill="#475569">（1/10Lが3こ ＝ 3/10L）</text>
+      <text x="268" y="60" font-size="12" fill="#475569">0.1Lが10こで 1L</text>
+    </g>
+  </svg>
+  <figcaption>図：1Lを10等分した1目盛りが0.1L。同じ量を分数では1/10Lと書く。3年生の小数と分数は、この「1を等分した大きさ」から始まる</figcaption>
+</figure>
+<p>3年生の小数（0.1）・分数（1/10、1/3）は、計算より<strong>意味の理解</strong>が中心です。1Lますの目盛りやピザの絵で「1を10等分した1つ分」「3等分した1つ分」を量として見ておくと、4〜6年生の小数・分数の計算につながります（<a href="/fractions-guide.html">分数の教え方</a>）。</p>
+
+<h2>3年生修了チェック問題</h2>
+<ol class="q-set">
+  <li class="q"><span class="q-text">56÷8</span><details><summary>答えと考え方</summary><p>7。8の段で56になるのは 8×7＝56。</p></details></li>
+  <li class="q"><span class="q-text">29÷4</span><details><summary>答えと考え方</summary><p>7あまり1。4×7＝28、29−28＝1。あまり1はわる数4より小さい。検算 4×7＋1＝29。</p></details></li>
+  <li class="q"><span class="q-text">24×3（筆算）</span><details><summary>答えと考え方</summary><p>72。一の位 4×3＝12 → 2を書いて1をくり上げ、十の位 2×3＝6 に1を足して7。</p></details></li>
+  <li class="q"><span class="q-text">午前10時40分から午後1時までは、何時間何分？</span><details><summary>答えと考え方</summary><p>2時間20分。10時40分から11時までが20分、11時から午後1時までが2時間。</p></details></li>
+  <li class="q"><span class="q-text">0.1Lが7こで何L？</span><details><summary>答えと考え方</summary><p>0.7L。0.1が7こで0.7。1Lますの目盛り7つ分。</p></details></li>
+  <li class="q"><span class="q-text">1km200mは何m？</span><details><summary>答えと考え方</summary><p>1200m。1km＝1000mなので、1000m＋200m＝1200m。</p></details></li>
+  <li class="q"><span class="q-text">1/4と1/3、どちらが大きい？</span><details><summary>答えと考え方</summary><p>1/3。同じものを3つに分けた1つ分のほうが、4つに分けた1つ分より大きい。</p></details></li>
+</ol>
+
+<h2>よくある誤答例と、家庭での直し方</h2>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>29÷4＝6あまり5</div>
+  <p><strong>何が起きたか：</strong>4×6＝24、29−24＝5 と計算しています。あまり5は、わる数4より大きいので、まだもう1回分けられます。</p>
+  <p><strong>家庭での直し方：</strong>答えを書く前に「あまりは4より小さい？」を毎回確かめます。検算 4×7＋1＝29 まで書く習慣にすると、商を1つ増やすことに自分で気づけます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>「12このあめを3人で分ける。1人分は？」→ 式 3÷12</div>
+  <p><strong>何が起きたか：</strong>数字の出てきた順に式を書いています。わり算は「全体÷分ける数」の順で書くことが、まだつながっていません。</p>
+  <p><strong>家庭での直し方：</strong>テープ図で全体の12を先にかき、3つに分けます。「全体を、3つに分ける」と声に出してから 12÷3＝4 と書きます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>午前10時40分から午後1時まで → 2時間60分</div>
+  <p><strong>何が起きたか：</strong>13時00分−10時40分 を、ふつうのひき算のように100からくり下げて 100−40＝60 としています。1時間は60分であることが抜けています。</p>
+  <p><strong>家庭での直し方：</strong>上の図のように、ちょうどの時刻（11時）で区切って考えます。家の時計の長いはりを実際に回して、60分で1周することを確かめるのも一つの方法です。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>0.1が10こで 0.10</div>
+  <p><strong>何が起きたか：</strong>0.1の「1」を10こ集めて、小数点の後ろに10と書いています。0.1が10こ集まると1になることが、まだつながっていません。</p>
+  <p><strong>家庭での直し方：</strong>1Lますの図で、0.1Lの目盛りを10こ数えると、ちょうど1Lになることを確かめます。「0.1が10こで1」を声に出して言います。</p>
 </div>
 
-<h2>もうひとつの山：時刻と時間の計算</h2>
-<p>「8時50分の40分後は？」「200秒は何分？」——60進法の計算は、多くの3年生が「なんかイヤ」と感じる単元です。攻略の合言葉は「<strong>60のかたまりを探す</strong>」と「<strong>キリのいい時刻で区切る</strong>」。毎朝の「出発まであと何分？」が最高の練習になります。詳しくは<a href="/time-calculation.html">時間の計算のコツ</a>へ。</p>
-<h2>小数・分数は「意味」の入り口</h2>
-<p>3年生の小数（0.1）・分数（1/3）は、計算より<strong>意味の理解</strong>が主役です。「0.1は1を10等分した1つ分」「1/3は3等分した1つ分」——1Lますやピザの絵で、量として実感させてください。ここでの意味づくりが、4〜6年生の小数・分数計算の土台になります。</p>
-<h2>家庭学習の重点メニュー</h2>
-<ul>
-  <li><strong>毎日：</strong>九九ランダム1分間（維持）＋学年ドリル5分</li>
-  <li><strong>わり算期：</strong>あまりチェックと検算をセットで1日3問</li>
-  <li><strong>生活の中で：</strong>時間の計算（時計）、重さ（キッチンスケール）、km（散歩の距離）</li>
-</ul>
-<div class="tip-box"><p>💡 3年生は「9歳の壁」と呼ばれる抽象化の入り口。つまずいたら叱らず、2年生の内容に戻る勇気を。さかのぼりは遅れではなく最短ルートです。</p></div>
-<h2>3年生の親がやりがちなNG対応と言いかえ</h2>
-<p>「9歳の壁」の入り口で、親の関わり方も切り替え時です。</p>
-<ul>
-  <li>❌「わり算もできないの？」→ ⭕「九九の6〜8の段、一緒に点検しよう」（原因へさかのぼる）</li>
-  <li>❌「あまりくらい確かめなさい」→ ⭕「あまりチェックと検算、セットが習慣ね」（手順として教える）</li>
-  <li>❌「時間の計算、なんで間違えるの」→ ⭕「時間は60でまとまる特別ルールだもんね」（難しさへの共感）</li>
-  <li>❌ 全部隣で管理 → ⭕「終わったら見せて」（少しずつ報告制へ）</li>
-</ul>
-<p>3年生は自立の練習開始の学年でもあります。手は少しずつ離し、目は離さない——距離の調整が親の腕の見せどころです。</p>
-<h2>つまずきサイン早見表（気づいたら即対応）</h2>
+<div class="memo-box">
+  <div class="memo-title">🏠 時間の計算は、出かける前の「あと何分？」で</div>
+  <p>3年生の時刻と時間の単元は、机の上より生活の中のほうが練習の機会があります。「何時に出発するから、あと何分？」と聞くと、キリのいい時刻で区切る考え方をそのまま使います。</p>
+  <p>キッチンタイマーを使うと、「何分後に何時になるか」を実際に確かめられます。答えが合っているかは時計が教えてくれるので、親が丸をつける必要もありません。</p>
+  <div class="memo-real">
+    <span class="memo-tag">にじゅうまる。家庭実践メモ</span>
+    <p>幼稚園のころから、会話の中で計算を出すようにしていました。「何時に出発するから、残り何分？」という聞き方もしています。出発までの残り時間でキッチンタイマーをかけ、自分の準備にかかる時間を逆算させるようにしていました。</p>
+  </div>
+</div>
+
+<h2>つまずきサインと、戻る場所</h2>
 <table class="cv-table">
-  <tr><th>サイン</th><th>意味すること</th><th>即対応</th></tr>
-  <tr><td>わり算で九九を1の段から唱え直す</td><td>九九の逆引きが未熟</td><td>「□×3＝12の□は？」形式の練習</td></tr>
-  <tr><td>あまりがわる数より大きい答えを書く</td><td>チェック習慣がない</td><td>「あまり＜わる数」を毎回確認</td></tr>
-  <tr><td>時間の計算だけ極端に嫌がる</td><td>60進法の混乱</td><td>生活の時計クイズで慣らす</td></tr>
-  <tr><td>0.1と1/10が別物だと思っている</td><td>意味の未接続</td><td>1Lますの図で両方を指さす</td></tr>
+  <tr><th>サイン</th><th>考えられること</th><th>家庭での対応</th></tr>
+  <tr><td>わり算で九九を1の段から唱え直す</td><td>九九を逆から読むのがまだ</td><td>「7の段で42は？」形式の練習</td></tr>
+  <tr><td>あまりがわる数より大きい答えを書く</td><td>確かめの習慣がまだ</td><td>「あまり＜わる数」と検算をセットで</td></tr>
+  <tr><td>時間の計算だけ嫌がる</td><td>60で繰り上がるところで迷う</td><td>ちょうどの時刻で区切る</td></tr>
+  <tr><td>0.1と1/10が別物だと思っている</td><td>1を等分した大きさとしてまだつながっていない</td><td>1Lますの図で両方を指さす</td></tr>
 </table>
-<h2>学期ごとの家庭サポートカレンダー</h2>
-<p><strong>1学期：</strong>わり算の導入期。おやつの分配係で「等しく分ける」「同じ数ずつ取る」の両方を体験させ、計算は九九の逆引き練習で支えます。時刻と時間は毎朝の「あと何分？」で。</p>
-<p><strong>2学期：</strong>あまりのあるわり算とかけ算の筆算。検算の習慣（わる数×商＋あまり）をここで一生ものにします。夏休みに九九の総点検を済ませておくと、この時期が楽になります。</p>
-<p><strong>3学期：</strong>分数と重さ。ピザ・ようかんの等分で分数の意味を、キッチンスケールで重さの量感を。春休みは3年生の計算総復習＋4年生のわり算筆算の予習が黄金メニューです。</p>
-<div class="tip-box"><p>💡 声かけ例：「12÷3は？」→答えたら「どうして4なの？」——「3×4が12だから」と言えたら、わり算の理解は本物です。</p></div>
-<p>もうひとつ、3年生からはコンパス・定規など道具の単元も増えます。道具の扱いは器用さより経験量。家でも自由に円を描いて遊ばせておくと、作図の授業で困りません。文房具を「自分専用のいい道具」にしてあげると、扱いも丁寧になります。</p>
-<p>3年生の文章題は「何算を使うか」を選ぶ場面が一気に増えます。式の前に絵や図をかく習慣（テープ図の入り口）をここで作っておくと、高学年の文章題への最高の備えになります。</p>
+
 <div class="try-box">
-  <div class="try-title">✏️ 読んだあと、その場で確かめる</div>
-  <p>3年生ドリルであまりのあるわり算を試すと、九九の逆引きが安定しているかがすぐ分かります。無料・登録不要で、間違えた問題は解答まで確認できます。</p>
-  <a href="/drill.html">3年生のドリルをやってみる →</a>
+  <div class="try-title">✏️ 3年生のわり算で、九九の逆引きを確かめる</div>
+  <p>わり算を続けて解くと、どの段で手が止まるかが見えます。止まった段がわかったら、九九チャレンジでその段を練習できます。</p>
+  <a href="/drill.html?grade=3">3年生のドリルを開く →</a>
 </div>
 
 <div class="ref-box">
-  <div class="ref-title">📚 参考資料</div>
+  <div class="ref-title">📚 参考資料と、家庭での使い方</div>
   <ul>
     <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
     <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
   </ul>
-  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。3年生の配当単元と時期は上記資料をもとに確認しています。家庭での進め方は、にじゅうまる。運営者による提案です。</p>
+  <p style="font-size:11.5px;color:#64748B;margin:8px 0 0;line-height:1.8;">確認日: 2026年9月27日。学習指導要領では、第3学年で除法の意味と「除法と乗法との関係」、あまりのある除法、時刻と時間の求め方、小数（1/10の位）と分数の意味、長さ（km）と重さ（g・kg）の単位を扱います。家庭では「除法と乗法との関係」を、九九を逆から読む練習として具体的に使えます。図解と誤答例は、にじゅうまる。運営者による整理です。</p>
 </div>
+
+<h2>まとめ</h2>
+<ul>
+  <li>3年生の中心は「わり算＝九九の逆」。止まったら、その段の九九に戻る</li>
+  <li>あまりは「わる数より小さい」確かめと検算をセットで</li>
+  <li>時間の計算は、ちょうどの時刻で区切る</li>
+  <li>小数・分数は「1を等分した大きさ」から。0.1と1/10は同じ量</li>
+</ul>
 
 <h2>よくある質問</h2>
 <h3>Q1. わり算が遅いのですが、わり算の練習を増やすべき？</h3>
-<p>先に九九のランダム即答を点検してください。わり算の遅さの原因はほぼ九九です。特に6〜8の段の逆引き（42÷7など）を重点的に。</p>
+<p>先に九九を逆から答えられるかを確かめてみてください。わり算に時間がかかる原因が、その段の九九にあることがあります。特に6〜8の段（42÷7など）を「7の段で42は？」の形で練習します。</p>
 <h3>Q2. あまりのあるわり算でよく間違えます。</h3>
-<p>「あまり＜わる数」のチェックと検算（わる数×商＋あまり）を毎回セットにしましょう。この2つの習慣で、失点はぐっと減らせます。</p>
+<p>「あまり＜わる数」の確かめと、検算（わる数×商＋あまり＝わられる数）を毎回セットにする方法があります。</p>
 <h3>Q3. 時間の計算を嫌がります。</h3>
-<p>机上より生活で。「あと何分で出発？」「この番組は何分間？」と毎日の会話に混ぜると、抵抗なく練習量が積めます。</p>
-<h3>Q4. 小数と分数、どちらを先に固めるべき？</h3>
-<p>3年生ではどちらも「意味の理解」が目的なので優劣はありません。1Lます・ピザの絵など実物で「1より小さい数」のイメージを作ることが共通の土台です。</p>
+<p>ちょうどの時刻で区切って考えると、60分で繰り上がる計算をしなくてすみます。生活の中で「あと何分で出発？」と聞くと、机に向かわずに練習の回数を増やせます。</p>
+<h3>Q4. 0.1と1/10は同じですか？</h3>
+<p>同じ大きさです。1Lを10等分した1目盛りを、小数では0.1L、分数では1/10Lと書きます。1Lますの図で両方を指さすと、つながりが見えます。</p>
 <h3>Q5. 4年生に向けて、春休みに何をすればいいですか？</h3>
-<p>わり算（あまり付き含む）の総仕上げと、九九・筆算のスピード維持です。4年生のわり算の筆算は「九九の逆引き＋ひき算」の連続技なので、部品を磨いておくのが最高の予習です。</p>
-<h2>3年生修了の「合格ライン」チェックリスト</h2>
-<p>進級前に、次の5つができるか確認してみてください。全部○なら、4年生の準備は万全です。</p>
-<ol>
-  <li>あまりのあるわり算を、検算までセットで解ける</li>
-  <li>3桁×1桁のかけ算の筆算がスラスラ解ける</li>
-  <li>「午前10時40分から午後1時までは何時間何分？」に答えられる</li>
-  <li>0.1が10こで1、1/4が「4等分した1つ分」だと説明できる</li>
-  <li>1km＝1000m、1kg＝1000gが即答できる</li>
-</ol>
-<p>③の時間計算はテストに出続けます。生活の中の時計クイズを春休みも継続しましょう。</p>
-<h2>まとめ</h2>
-<p>3年生は、2年生までの貯金を「使う」学年です。九九と筆算が固まっていれば新単元は怖くありません。逆に貯金が心もとなければ、今が最後の埋め時。焦らずさかのぼって、4年生からの抽象化ゾーンに備えましょう。</p>
-<ul>
-  <li>核心は「わり算＝九九の逆」。九九の総点検が最優先</li>
-  <li>あまりは「＜わる数」チェック＋検算のセットで</li>
-  <li>時間の計算は生活の中で。小数・分数は意味づくりが主役</li>
-</ul>
+<p>あまりのあるわり算を検算まで含めて確かめておくのがおすすめです。4年生のわり算の筆算は「九九の逆引き＋ひき算」のくり返しです。</p>
+
 <div style="margin:32px 0;padding:20px 16px;background:#FFFFFF;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
-    <a href="/grade-3.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">3️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学3年生の算数ドリル</span>
-    </a>
     <a href="/division-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">➗</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">わり算の教え方・つまずき解説</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">わり算の教え方：筆算を1工程ずつ分解</span>
     </a>
     <a href="/time-calculation.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">🕐</span>
       <span style="font-size:13px;font-weight:600;color:#1E40AF;">時間の計算のコツ</span>
     </a>
+    <a href="/grade-2-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">2️⃣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">2年生：九九を家庭で仕上げる</span>
+    </a>
     <a href="/grade-4-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">4️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">4年生の算数攻略ガイド</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">4年生：筆算の手順とミス</span>
     </a>
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/grade-3.html">3年生のドリルをやってみる →</a>
+  <p>3年生の問題を、その場で採点しながら練習できます</p>
+  <a href="/drill.html?grade=3">3年生のドリルをやってみる →</a>
 </div>
 </div>
 
