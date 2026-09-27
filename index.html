@@ -36,16 +36,16 @@ if('serviceWorker' in navigator){
 </script>
 
 <!-- ===== 基本SEOタグ ===== -->
-<title>算数プリント・ドリル【無料】小学1〜6年生｜たし算・九九・わり算の計算練習 | にじゅうまる。</title>
-<meta name="description" content="小学1〜6年生の算数ドリルが印刷不要・Webドリルは無料。スマホ・タブレットでその場で採点できます。たし算・九九・わり算・分数・小数など学年別・3段階難易度。毎回ランダム生成で繰り返し使える。PDF印刷にも対応。">
+<title>小学生の算数を家庭で「わかる→できる」へ｜図で学ぶ解説と無料Webドリル | にじゅうまる。</title>
+<meta name="description" content="小学生の算数を、家庭で「わかる→できる」へ。学年別の家庭ガイド、10の分解・九九・わり算・分数・割合を図で理解する単元別教材、誤答パターンと直し方、その場で採点できる無料Webドリル（小学1〜6年生）。">
 <meta name="keywords" content="算数ドリル,小学生,無料,印刷,PDF,1年生,2年生,3年生,4年生,5年生,6年生,たし算,ひき算,かけ算,わり算,九九,分数,小数,計算練習,算数プリント,にじゅうまる">
 <meta name="author" content="にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 
 <!-- ===== OGP（SNSシェア用） ===== -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="算数プリント・ドリル【無料】小学1〜6年生｜たし算・九九・わり算の計算練習">
-<meta property="og:description" content="印刷不要・スマホで即採点できる無料算数ドリル。小学1〜6年生対応。たし算・九九・わり算・分数・小数など学年別・3段階難易度。毎回ランダム生成で繰り返し使えます。">
+<meta property="og:title" content="小学生の算数を家庭で「わかる→できる」へ｜にじゅうまる。">
+<meta property="og:description" content="図で理解する単元別教材・学年別の家庭ガイド・誤答パターン集と、その場で採点できる無料Webドリル。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:locale" content="ja_JP">
@@ -55,8 +55,8 @@ if('serviceWorker' in navigator){
 
 <!-- ===== Twitter Card ===== -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="算数プリント・ドリル【無料】小学1〜6年生｜たし算・九九・わり算の計算練習">
-<meta name="twitter:description" content="印刷不要・スマホで即採点できる無料算数ドリル。小学1〜6年生対応。たし算・九九・わり算・分数・小数など学年別・3段階難易度。毎回ランダム生成で繰り返し使えます。">
+<meta name="twitter:title" content="小学生の算数を家庭で「わかる→できる」へ">
+<meta name="twitter:description" content="図で理解する教材と家庭ガイド、無料Webドリル。小学1〜6年生。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 
 <!-- ===== 構造化データ（FAQPage） ===== -->
@@ -537,6 +537,27 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 .premium-hidden .cd-ad-bar{ display:none !important; }
 .premium-hidden #premiumNudge{ display:none !important; }
 
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3034271297570921" crossorigin="anonymous"></script>
 </head>
@@ -561,9 +582,10 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
         <img class="hero-mascot" src="/mascot.png" alt="にじゅうまるドリルのマスコット" width="104">
       </div>
       <div class="hero-copy">
-        <div class="hero-pop"><span class="c-red">100点満点</span>の<br><span class="c-yellow">学習ドリル</span><span class="c-blue">！</span></div>
-        <p class="hero-sub">にじゅうまるドリルで、<br>さんすうを楽しく、とくいになろう！</p>
-        <a class="hero-cta" href="/drill.html">今すぐ学習をはじめる</a>
+        <div class="hero-pop"><span class="c-red">わかる</span><span class="c-yellow">→</span><span class="c-blue">できる</span></div>
+        <p class="hero-sub">小学生の算数を、家庭で。<br>図で理解する解説と、<br>その場で採点できるWebドリル</p>
+        <a class="hero-cta" href="#learn">学年・単元から読む</a>
+        <div style="margin-top:10px;"><a href="/drill.html" style="font-size:13px;font-weight:700;color:#122A64;">すぐにドリルで練習する →</a></div>
         <div><span class="hero-badge">小学1〜6年生対応・Webドリルは無料</span></div>
       </div>
     </div>
@@ -571,41 +593,113 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <!-- ===== 導入エディトリアル ===== -->
   <div class="readable" style="padding:20px 16px 4px;">
-    <h1 style="font-size:19px;font-weight:700;color:#122A64;line-height:1.5;margin-bottom:12px;">ブラウザでその場で解ける、小学1〜6年生の無料算数ドリル</h1>
-    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;"><strong>にじゅうまる。算数ドリル</strong>は、小学1〜6年生とその保護者のための、無料の算数学習サイトです。ブラウザですぐに解けるドリルと、つまずきやすい単元の「教え方」をまとめた解説記事の2本立てで、お子さんの「わからない」を家庭で解消することを目指しています。</p>
-    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">「くり上がりでつまずく」「九九が覚えられない」「割合が苦手」——算数のつまずきには、よく見られるパターンがあります。原因を整理することで、家庭で試す学習方法を選びやすくなります。当サイトの解説記事は、いずれも文部科学省の学習指導要領に沿って学年ごとの範囲を確認し、例題の計算は一つひとつ検算した上で公開しています。指導のプロではなく「家庭の目線」で、今日から使える声かけや練習方法までふみ込んで書いているのが特徴です。</p>
-    <p style="font-size:14px;color:#334155;line-height:1.9;">ドリルは会員登録もアプリのインストールも不要。学年と難易度を選ぶだけで、毎回ちがう問題がその場で採点されます。紙に印刷したい方向けにPDF出力にも対応しています。</p>
+    <h1 style="font-size:19px;font-weight:700;color:#122A64;line-height:1.5;margin-bottom:12px;">小学生の算数を、家庭で「わかる→できる」へ</h1>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;"><strong>にじゅうまる。算数ドリル</strong>は、小学1〜6年生の保護者とお子さんのための算数学習サイトです。つまずきやすい単元を<strong>図で理解する解説</strong>と、<strong>その場で採点できる無料のWebドリル</strong>をつないで、家庭で「わかる」から「できる」まで進めることを目指しています。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">「くり上がりでつまずく」「九九が覚えられない」「割合が苦手」——算数のつまずきには、よく見られるパターンがあります。原因を整理することで、家庭で試す学習方法を選びやすくなります。解説記事は、文部科学省の学習指導要領で学年ごとの範囲を確認し、例題を一つひとつ検算してから公開しています。</p>
+<figure class="fig">
+<svg viewBox="0 0 460 190" role="img" aria-label="にじゅうまる。の使い方を3つのステップで示した図。1 わかる：図で理解する解説を読む。2 できる：Webドリルでその場で採点しながら練習する。3 たしかめる：誤答の型と戻る場所を確かめる。3から1へ矢印が戻る">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="10" y="30" width="130" height="100" rx="14" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <text x="75" y="62" font-size="15" font-weight="700" fill="#1E3A8A">① わかる</text>
+      <text x="75" y="88" font-size="12" fill="#374151">図で理解する</text><text x="75" y="106" font-size="12" fill="#374151">解説を読む</text>
+      <text x="158" y="86" font-size="20" fill="#94A3B8">→</text>
+      <rect x="176" y="30" width="130" height="100" rx="14" fill="#FFF7ED" stroke="#F59E0B" stroke-width="2"/>
+      <text x="241" y="62" font-size="15" font-weight="700" fill="#92400E">② できる</text>
+      <text x="241" y="88" font-size="12" fill="#374151">ドリルで採点</text><text x="241" y="106" font-size="12" fill="#374151">しながら練習</text>
+      <text x="324" y="86" font-size="20" fill="#94A3B8">→</text>
+      <rect x="342" y="30" width="110" height="100" rx="14" fill="#F0FDF4" stroke="#22C55E" stroke-width="2"/>
+      <text x="397" y="62" font-size="15" font-weight="700" fill="#166534">③ たしかめる</text>
+      <text x="397" y="88" font-size="12" fill="#374151">誤答の型と</text><text x="397" y="106" font-size="12" fill="#374151">戻る場所</text>
+      <path d="M397 136 Q397 170 241 170 Q75 170 75 136" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M69 144 L75 134 L81 144" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <text x="241" y="184" font-size="11" fill="#64748B">止まったら、前の単元・前の学年に戻る</text>
+    </g>
+  </svg>
+  <figcaption>図：このサイトの使い方。解説で「わかる」、ドリルで「できる」、誤答の型で「たしかめる」。止まったら戻る場所がわかるように、記事とドリルをつないでいます</figcaption>
+</figure>
   </div>
 
-  <!-- ===== このサイトでできること ===== -->
-  <div class="readable" style="padding:16px 16px 4px;">
-    <h2 style="font-size:16px;font-weight:700;color:#1E293B;margin-bottom:10px;">このサイトでできること</h2>
-    <div style="display:grid;gap:8px;">
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:13px 14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:4px;">📝 小学1〜6年生の算数問題</div><div style="font-size:12.5px;color:#475569;line-height:1.75;">学年を選ぶと、その学年の学習範囲に沿った問題が出ます</div></div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:13px 14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:4px;">✅ その場で採点</div><div style="font-size:12.5px;color:#475569;line-height:1.75;">答えを入力すると自動で丸つけ。解答も確認できます</div></div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:13px 14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:4px;">🎚 難易度別の出題</div><div style="font-size:12.5px;color:#475569;line-height:1.75;">初級・中級・上級の3段階。今のレベルに合わせられます</div></div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:13px 14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:4px;">🖨 印刷用PDF</div><div style="font-size:12.5px;color:#475569;line-height:1.75;">紙で解きたいときは問題プリントを生成できます</div></div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:13px 14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:4px;">⏱ 九九タイムアタック</div><div style="font-size:12.5px;color:#475569;line-height:1.75;">1分間モードと無制限モード。全国ランキングつき</div></div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:13px 14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:4px;">📅 毎日の反復学習</div><div style="font-size:12.5px;color:#475569;line-height:1.75;">その日の40問に挑戦。取り組んだ日はカレンダーに記録されます</div></div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:13px 14px;"><div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:4px;">📖 保護者向け学習ガイド</div><div style="font-size:12.5px;color:#475569;line-height:1.75;">つまずきの原因と家庭での教え方を単元ごとに解説しています</div></div>
+  <!-- ===== ① 家庭で学ぶ ===== -->
+  <section id="learn" class="readable" style="padding:22px 16px 4px;">
+    <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:6px;">① 家庭で学ぶ</h2>
+    <p style="font-size:13px;color:#475569;line-height:1.8;margin-bottom:10px;">学年ごとの家庭ガイドと、単元ごとの図解教材です。どのページにも、例題と答え、よくある誤答例と直し方、家庭での確かめ方をまとめています。</p>
+    <h3 style="font-size:14px;font-weight:700;color:#1E293B;margin:16px 0 8px;">学年別ガイド</h3>
+<figure class="fig">
+<svg viewBox="0 0 460 170" role="img" aria-label="1年から6年までの各学年の中心になる単元を棒で並べた図。1年くり上がり、2年九九、3年わり算、4年筆算とがい数、5年割合と分数、6年比と比例">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <line x1="6" y1="130" x2="454" y2="130" stroke="#94A3B8"/>
+      <rect x="10" y="96" width="66" height="34" rx="6" fill="#FECACA"/><text x="43" y="88" font-size="11" text-anchor="middle" fill="#374151">くり上がり</text><text x="43" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">1年</text><rect x="84" y="86" width="66" height="44" rx="6" fill="#FED7AA"/><text x="117" y="78" font-size="11" text-anchor="middle" fill="#374151">九九</text><text x="117" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">2年</text><rect x="158" y="90" width="66" height="40" rx="6" fill="#BBF7D0"/><text x="191" y="82" font-size="11" text-anchor="middle" fill="#374151">わり算</text><text x="191" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">3年</text><rect x="232" y="78" width="66" height="52" rx="6" fill="#BFDBFE"/><text x="265" y="70" font-size="11" text-anchor="middle" fill="#374151">筆算・がい数</text><text x="265" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">4年</text><rect x="306" y="60" width="66" height="70" rx="6" fill="#DDD6FE"/><text x="339" y="52" font-size="11" text-anchor="middle" fill="#374151">割合・分数</text><text x="339" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">5年</text><rect x="380" y="70" width="66" height="60" rx="6" fill="#FBCFE8"/><text x="413" y="62" font-size="11" text-anchor="middle" fill="#374151">比・比例</text><text x="413" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">6年</text>
+    </g>
+  </svg>
+  <figcaption>図：各学年の中心になる単元（棒の高さはイメージ）。どの学年の単元も、前の学年の内容を土台にしている。学年ごとの家庭ガイドで、確かめ方と戻る場所をまとめています</figcaption>
+</figure>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+      <a href="/grade-1-tips.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">1年生</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くり上がり</span></a>
+      <a href="/grade-2-tips.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">2年生</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">九九</span></a>
+      <a href="/grade-3-tips.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">3年生</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">わり算</span></a>
+      <a href="/grade-4-tips.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">4年生</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">筆算・がい数</span></a>
+      <a href="/grade-5-tips.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">5年生</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">割合・分数</span></a>
+      <a href="/grade-6-tips.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">6年生</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">比・比例</span></a>
     </div>
-  </div>
+    <p style="font-size:12.5px;margin-top:10px;"><a href="/grade-guide.html" style="color:#2563EB;font-weight:700;">6年間のつながりマップとさかのぼりの道順 →</a></p>
+    <h3 style="font-size:14px;font-weight:700;color:#1E293B;margin:16px 0 8px;">単元別教材</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <a href="/addition-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➕ たし算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">10の分解を図で・くり上がり36問</span></a>
+      <a href="/subtraction-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➖ ひき算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">誤答パターン集</span></a>
+      <a href="/multiplication-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">✖️ かけ算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">九九表・筆算・家庭での記録</span></a>
+      <a href="/division-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➗ わり算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">筆算を1工程ずつ分解</span></a>
+      <a href="/fractions-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">½ 分数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">数直線と面積図で</span></a>
+      <a href="/percentage-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">％ 割合</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">テープ図と買い物の例で</span></a>
+      <a href="/bunshoudai-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📝 文章題</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">式を作る過程を見える化</span></a>
+      <a href="/kuku-tips.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🧮 九九の覚え方</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">覚える順番と語呂合わせ</span></a>
+      <a href="/decimal-fraction-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">0.1 小数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">小数と分数のつながり</span></a>
+      <a href="/time-calculation.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🕐 時間の計算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">ちょうどの時刻で区切る</span></a>
+      <a href="/tanni-kanzan-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📏 単位の換算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">長さ・かさ・重さ</span></a>
+      <a href="/gaisuu-shishagoonyuu-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📊 がい数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">どの位を見るか</span></a>
+      <a href="/baisuu-yakusuu-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🔢 倍数・約数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">約分・通分の土台</span></a>
+      <a href="/menseki-enza.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">⭕ 円周・円の面積</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">逆算問題まで</span></a>
+      <a href="/geometry-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📐 図形</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">面積・角度・作図</span></a>
+      <a href="/data-katsuyou-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📈 データの活用</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">代表値とグラフ</span></a>
+    </div>
+    <h3 style="font-size:14px;font-weight:700;color:#1E293B;margin:16px 0 8px;">家庭学習の進め方</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <a href="/study-habits.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📅 家庭学習を続ける仕組み</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">時間・記録・ごほうび</span></a>
+      <a href="/reduce-mistakes.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">✏️ 計算ミスを減らす</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">1週間ミス記録表</span></a>
+      <a href="/calculation-power.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">💪 計算の速さを育てる</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">毎日5分の中身</span></a>
+      <a href="/nyuugaku-junbi-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🎒 入学前の算数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">数・かたち・くらべる</span></a>
+    </div>
+  </section>
 
-  <!-- ===== 制作方針 ===== -->
-  <div class="readable" style="padding:20px 16px 4px;">
-    <h2 style="font-size:16px;font-weight:700;color:#1E293B;margin-bottom:4px;">問題と記事の作り方</h2>
-    <p style="font-size:13px;color:#64748B;line-height:1.8;margin-bottom:14px;">個人で運営しているサイトです。どうやって作っているかを公開しておきます。</p>
-      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">学習指導要領を確認して作成</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">その学年で何をどこまで扱うかを、文部科学省の学習指導要領と同解説 算数編で確認してから問題と記事を作っています</div></div></div>
-      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">問題内容を確認・検算</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">出題される計算は生成ロジックを含めて確認し、記事の例題は一つひとつ手で検算しています</div></div></div>
-      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">家庭学習で実際に利用</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">公開したものは、まず運営者自身の家庭で使っています。記事に載せている声かけや練習方法も同じです</div></div></div>
-      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">4</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">必要に応じて問題を修正</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">使ってみて分かりにくかった問題や表現は、公開後でも直しています。誤りのご指摘も歓迎しています</div></div></div>
-    <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-top:6px;">
-      <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;">📚 参考資料</div>
-      <ul style="font-size:12px;color:#64748B;line-height:1.8;padding-left:18px;margin:0;">
-        <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener" style="color:#2563EB;">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
-        <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener" style="color:#2563EB;">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
-      </ul>
-      <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。運営者については<a href="/about.html" style="color:#2563EB;">サイトについて</a>をご覧ください。</p>
+  <!-- ===== 家庭で30秒チェック（例題） ===== -->
+  <section class="readable" style="padding:20px 16px 4px;">
+    <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:6px;">家庭で30秒チェック</h2>
+    <p style="font-size:13px;color:#475569;line-height:1.8;margin-bottom:10px;">学年をまたいで、各単元の入り口の問題を1問ずつ選びました。答えは折りたたんであります。まちがえたら、答えの下のリンクが戻る場所の目安です。</p>
+<ol class="q-set">
+  <li class="q"><span class="q-text">【1年】8＋5</span><details><summary>答えと考え方</summary><p>13。8はあと2で10、5を2と3に分けて 10＋3＝13。→ <a href="/addition-guide.html#kuriagari">たし算の教え方</a></p></details></li>
+  <li class="q"><span class="q-text">【2年】7の段で56になるのは、7×いくつ？</span><details><summary>答えと考え方</summary><p>8。7×8＝56。→ <a href="/grade-2-tips.html">2年生：九九を家庭で仕上げる</a></p></details></li>
+  <li class="q"><span class="q-text">【3年】17÷5</span><details><summary>答えと考え方</summary><p>3あまり2。あまりはわる数5より小さい。検算 5×3＋2＝17。→ <a href="/division-guide.html">わり算の教え方</a></p></details></li>
+  <li class="q"><span class="q-text">【5年】1/2＋1/3</span><details><summary>答えと考え方</summary><p>5/6。分母を6にそろえて 3/6＋2/6。→ <a href="/fractions-guide.html">分数の教え方</a></p></details></li>
+  <li class="q"><span class="q-text">【5年】定価800円の30％引きは何円？</span><details><summary>答えと考え方</summary><p>560円。残り70％を払うので 800×0.7。→ <a href="/percentage-guide.html">割合の教え方</a></p></details></li>
+</ol>
+  </section>
+
+  <!-- ===== ② 練習する ===== -->
+  <section id="practice" style="padding:20px 0 4px;">
+    <div class="readable" style="padding:0 16px;">
+      <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:6px;">② 練習する</h2>
+      <p style="font-size:13px;color:#475569;line-height:1.8;margin-bottom:10px;">読んだら、その場で解いて確かめます。Webドリルは会員登録もアプリのインストールも不要で、学年と難易度を選ぶと毎回ちがう問題が出て、その場で採点されます。紙で解きたい方向けに問題PDFも作れます。</p>
+    </div>
+  <!-- ===== 学年直行 ===== -->
+  <div class="drill-select-section">
+    <div class="drill-select-title">✏️ 算数ドリルをスタート</div>
+    <div class="drill-select-sub">がくねんをタップすると、すぐにはじまるよ！</div>
+    <div class="g-grade" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+      <a href="/drill.html?grade=1" style="background:#fff;border:2px solid #FECACA;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#DC2626;">1年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学1年生</span></a>
+      <a href="/drill.html?grade=2" style="background:#fff;border:2px solid #FED7AA;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#EA580C;">2年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学2年生</span></a>
+      <a href="/drill.html?grade=3" style="background:#fff;border:2px solid #BBF7D0;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#16A34A;">3年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学3年生</span></a>
+      <a href="/drill.html?grade=4" style="background:#fff;border:2px solid #BFDBFE;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#2563EB;">4年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学4年生</span></a>
+      <a href="/drill.html?grade=5" style="background:#fff;border:2px solid #DDD6FE;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#7C3AED;">5年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学5年生</span></a>
+      <a href="/drill.html?grade=6" style="background:#fff;border:2px solid #FBCFE8;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#DB2777;">6年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学6年生</span></a>
     </div>
   </div>
 
@@ -622,130 +716,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   </div>
 
   
-
-  <!-- ===== 差別化バナー ===== -->
-  <div style="padding:14px 16px 0;">
-    <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:14px;padding:14px 16px;">
-      <div style="font-size:13px;font-weight:700;color:#15803D;margin-bottom:8px;">✅ にじゅうまる。が選ばれる理由</div>
-      <div class="g-4" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:#fff;border-radius:10px;padding:10px 12px;border:1px solid #BBF7D0;">
-          <div style="font-size:15px;margin-bottom:4px;">📱</div>
-          <div style="font-size:12px;font-weight:700;color:#166534;margin-bottom:2px;">印刷不要</div>
-          <div style="font-size:11px;color:#4B5563;line-height:1.5;">プリントアウト不要。スマホ・タブレットでその場で練習できる</div>
-        </div>
-        <div style="background:#fff;border-radius:10px;padding:10px 12px;border:1px solid #BBF7D0;">
-          <div style="font-size:15px;margin-bottom:4px;">⚡</div>
-          <div style="font-size:12px;font-weight:700;color:#166534;margin-bottom:2px;">即採点・解説つき</div>
-          <div style="font-size:11px;color:#4B5563;line-height:1.5;">答え合わせも自動。間違えた問題の解説をその場で確認</div>
-        </div>
-        <div style="background:#fff;border-radius:10px;padding:10px 12px;border:1px solid #BBF7D0;">
-          <div style="font-size:15px;margin-bottom:4px;">🔀</div>
-          <div style="font-size:12px;font-weight:700;color:#166534;margin-bottom:2px;">毎回違う問題</div>
-          <div style="font-size:11px;color:#4B5563;line-height:1.5;">ランダム生成で何度でも新しい問題で練習できる</div>
-        </div>
-        <div style="background:#fff;border-radius:10px;padding:10px 12px;border:1px solid #BBF7D0;">
-          <div style="font-size:15px;margin-bottom:4px;">🎯</div>
-          <div style="font-size:12px;font-weight:700;color:#166534;margin-bottom:2px;">3段階難易度</div>
-          <div style="font-size:11px;color:#4B5563;line-height:1.5;">初級〜上級で子どものレベルにぴったり合わせられる</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== 学年直行 ===== -->
-  <div class="drill-select-section">
-    <div class="drill-select-title">✏️ 算数ドリルをスタート</div>
-    <div class="drill-select-sub">がくねんをタップすると、すぐにはじまるよ！</div>
-    <div class="g-grade" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
-      <a href="/drill.html?grade=1" style="background:#fff;border:2px solid #FECACA;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#DC2626;">1年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学1年生</span></a>
-      <a href="/drill.html?grade=2" style="background:#fff;border:2px solid #FED7AA;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#EA580C;">2年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学2年生</span></a>
-      <a href="/drill.html?grade=3" style="background:#fff;border:2px solid #BBF7D0;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#16A34A;">3年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学3年生</span></a>
-      <a href="/drill.html?grade=4" style="background:#fff;border:2px solid #BFDBFE;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#2563EB;">4年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学4年生</span></a>
-      <a href="/drill.html?grade=5" style="background:#fff;border:2px solid #DDD6FE;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#7C3AED;">5年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学5年生</span></a>
-      <a href="/drill.html?grade=6" style="background:#fff;border:2px solid #FBCFE8;border-radius:14px;padding:14px 4px;text-align:center;text-decoration:none;"><span style="display:block;font-size:20px;font-weight:700;color:#DB2777;">6年</span><span style="display:block;font-size:10px;color:#64748B;margin-top:2px;">小学6年生</span></a>
-    </div>
-  </div>
-
-  <!-- ===== 2枚のドア ===== -->
-  <div style="padding:14px 16px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-    <a href="/drill.html" style="background:linear-gradient(135deg,#FFF7ED,#FFFBE0);border:2px solid #FFC800;border-radius:16px;padding:18px 10px;text-align:center;text-decoration:none;">
-      <div style="font-size:26px;margin-bottom:6px;">🎮</div>
-      <div style="font-size:14px;font-weight:700;color:#92400E;">ドリルで<br>れんしゅう</div>
-      <div style="font-size:11px;color:#A16207;margin-top:4px;">こども向け・即採点</div>
-    </a>
-    <a href="/sansu-onayami-guide.html" style="background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:2px solid #86EFAC;border-radius:16px;padding:18px 10px;text-align:center;text-decoration:none;">
-      <div style="font-size:26px;margin-bottom:6px;">📖</div>
-      <div style="font-size:14px;font-weight:700;color:#166534;">学ぶ・<br>サポート</div>
-      <div style="font-size:11px;color:#15803D;margin-top:4px;">保護者向けガイド</div>
-    </a>
-  </div>
-
-  <!-- ===== 単元ガイドセクション ===== -->
-  <div style="padding:18px 16px 0;">
-    <div style="font-size:15px;font-weight:700;color:#1E293B;margin-bottom:4px;">📚 単元別ガイド</div>
-    <div style="font-size:12px;color:#64748B;margin-bottom:10px;">つまずきやすい単元の教え方・練習のコツを解説</div>
-    <div class="g-units" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-      <a href="/addition-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➕ たし算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くり上がりの教え方</span></a>
-      <a href="/subtraction-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➖ ひき算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">くり下がりの攻略</span></a>
-      <a href="/multiplication-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">✖️ かけ算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">九九から筆算まで</span></a>
-      <a href="/division-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">➗ わり算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">あまり・筆算のコツ</span></a>
-      <a href="/fractions-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">½ 分数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">通分・約分・計算</span></a>
-      <a href="/decimal-fraction-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">0.1 小数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">小数点の計算</span></a>
-      <a href="/percentage-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">％ 割合</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">百分率・歩合</span></a>
-      <a href="/geometry-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📐 図形</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">面積・円周・角度</span></a>
-      <a href="/menseki-enza.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">⭕ 円周の求め方</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">公式と練習問題</span></a>
-      <a href="/time-calculation.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🕐 時間の計算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">時こく・単位換算</span></a>
-      <a href="/tanni-kanzan-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📏 単位の換算</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">長さ・かさ・重さ</span></a>
-      <a href="/baisuu-yakusuu-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🔢 倍数・約数</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">最大公約数・最小公倍数</span></a>
-      <a href="/gaisuu-shishagoonyuu-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📊 がい数・四捨五入</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">切り上げ・切り捨て</span></a>
-      <a href="/data-katsuyou-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📈 データの活用</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">代表値・柱状グラフ</span></a>
-      <a href="/bunshoudai-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📝 文章題の解き方</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">図のかき方・学年別</span></a>
-      <a href="/nyuugaku-junbi-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">🎒 入学前の準備</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">数・かたちに親しむ</span></a>
-    </div>
-  </div>
-
-  <!-- ===== 記事リンクセクション ===== -->
-  <div style="padding:20px 16px 8px;">
-    <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.8px;margin-bottom:12px;">📚 算数学習のヒント</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
-      <a href="/how-to-use.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
-        <div style="font-size:18px;margin-bottom:4px;">📖</div>
-        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">ドリルの使い方</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">全機能を解説</div>
-      </a>
-      <a href="/math-anxiety.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
-        <div style="font-size:18px;margin-bottom:4px;">👨‍👩‍👧</div>
-        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">苦手な子への教え方</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">保護者向け</div>
-      </a>
-      <a href="/kuku-tips.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
-        <div style="font-size:18px;margin-bottom:4px;">✖️</div>
-        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">九九の覚え方</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">段別攻略法</div>
-      </a>
-      <a href="/grade-guide.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
-        <div style="font-size:18px;margin-bottom:4px;">📋</div>
-        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">学年別 学習内容</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">1〜6年生まとめ</div>
-      </a>
-      
-      
-      
-      <a href="/faq.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
-        <div style="font-size:18px;margin-bottom:4px;">❓</div>
-        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">よくある質問</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">FAQ</div>
-      </a>
-      
-      
-      
-      <a href="/device-guide.html" style="display:block;background:var(--card);border-radius:10px;padding:12px;text-decoration:none;border:1px solid var(--border);">
-        <div style="font-size:18px;margin-bottom:4px;">📲</div>
-        <div style="font-size:12px;font-weight:700;color:var(--text);line-height:1.4;">端末別の使い方ガイド</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">スマホ・PC・タブレット</div>
-      </a>
-    </div>
-  </div>
 
   <!-- ===== ドリルアプリの機能 ===== -->
   <div style="padding:14px 16px 0;">
@@ -774,6 +744,54 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     </div>
   </div>
 
+  </section>
+
+  <!-- ===== ③ 保護者向け ===== -->
+  <section id="parents" class="readable" style="padding:22px 16px 4px;">
+    <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:6px;">③ 保護者向け</h2>
+    <p style="font-size:13px;color:#475569;line-height:1.8;margin-bottom:10px;">算数のつまずき、声かけ、家庭学習、算数嫌い——単元の外側にある悩みをまとめています。</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <a href="/sansu-onayami-guide.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📖 算数のつまずき</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">6つのタイプ別に原因と対策</span></a>
+      <a href="/benkyou-shinai.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">😮‍💨 声かけ</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">勉強しない子への接し方</span></a>
+      <a href="/study-habits.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">📅 家庭学習</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">続ける仕組みづくり</span></a>
+      <a href="/math-anxiety.html" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:12px;text-decoration:none;"><span style="display:block;font-size:13px;font-weight:700;color:#1E293B;">💗 算数嫌い</span><span style="display:block;font-size:11px;color:#64748B;margin-top:2px;">嫌がる子への家庭サポート</span></a>
+    </div>
+    <h3 style="font-size:14px;font-weight:700;color:#1E293B;margin:16px 0 8px;">よくある誤答から、直す場所を見つける</h3>
+<figure class="fig">
+<svg viewBox="0 0 460 170" role="img" aria-label="誤答の一例。13−8＝2という答えは、10−8＝2まで計算して、13を分けたときの3を足し忘れた誤り。正しくは2＋3＝5">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <rect x="10" y="20" width="180" height="120" rx="12" fill="#FEF2F2" stroke="#FCA5A5"/>
+      <text x="100" y="48" font-size="13" font-weight="700" text-anchor="middle" fill="#991B1B">お子さんの答え</text>
+      <text x="100" y="96" font-size="30" font-weight="700" text-anchor="middle" fill="#DC2626">13−8＝2</text>
+      <text x="100" y="124" font-size="11" text-anchor="middle" fill="#7F1D1D">「まちがい」で終わらせない</text>
+      <text x="210" y="86" font-size="20" fill="#94A3B8">→</text>
+      <rect x="232" y="20" width="218" height="120" rx="12" fill="#F0FDF4" stroke="#86EFAC"/>
+      <text x="341" y="46" font-size="13" font-weight="700" text-anchor="middle" fill="#166534">どこで止まった？</text>
+      <text x="341" y="72" font-size="13" text-anchor="middle" fill="#14532D">13 → 10 と 3</text>
+      <text x="341" y="94" font-size="13" text-anchor="middle" fill="#14532D">10−8＝2 まではできている</text>
+      <text x="341" y="116" font-size="13" font-weight="700" text-anchor="middle" fill="#15803D">3を足し忘れ → 2＋3＝5</text>
+      <text x="230" y="164" font-size="11" text-anchor="middle" fill="#64748B">誤答の型がわかると、練習する場所が1つに絞れる</text>
+    </g>
+  </svg>
+  <figcaption>図：誤答の一例（13−8＝2）。答えだけを見ると「まちがい」ですが、途中までは正しくできています。どこで止まったかを見ると、直す場所が決まります</figcaption>
+</figure>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>13−8＝2（1年）</div>
+  <p><strong>何が起きたか：</strong>10−8＝2まで計算して、分けた3を足し忘れています。</p>
+  <p><strong>家庭での直し方：</strong>さくらんぼで分けた3に○をつけて「あとで足す」。→ <a href="/subtraction-guide.html">ひき算の誤答パターン集</a></p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>624÷6＝14（4年）</div>
+  <p><strong>何が起きたか：</strong>十の位で2÷6がわれないとき、商に0を書かずに飛ばしています。</p>
+  <p><strong>家庭での直し方：</strong>先に見当（600÷6で100くらい）を立て、けた数を比べる。→ <a href="/grade-4-tips.html">4年生：筆算の手順とミス</a></p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>1/2＋1/3＝2/5（5年）</div>
+  <p><strong>何が起きたか：</strong>分母どうし・分子どうしを足しています。</p>
+  <p><strong>家庭での直し方：</strong>テープ図で、半分より大きいはずなのに2/5は半分より小さい、と確かめる。→ <a href="/fractions-guide.html">分数の教え方</a></p>
+</div>
+  </section>
+
   <!-- ===== 人気の解説記事（実抜粋） ===== -->
   <div style="padding:22px 16px 0;">
     <h2 style="font-size:16px;font-weight:700;color:#1E293B;margin-bottom:4px;">📖 よく読まれている解説記事</h2>
@@ -781,28 +799,56 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="g-articles" style="display:grid;gap:12px;">
       <a href="/sansu-onayami-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:15px 16px;text-decoration:none;">
         <div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">算数のお悩み解決ガイド｜6つのパターン別</div>
-        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">家庭でご相談の多い算数の悩みを、6つのタイプに整理しました。タイプ別に「考えられる原因」と「今日から家庭で試せる対策」を整理しました。当てはまるところから読んでください。</p>
+        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">家庭でよく聞く算数の悩みを、6つのタイプに整理しました。タイプ別に「考えられる原因」と「今日から家庭で試せる対策」をまとめています。当てはまるところから読んでください。</p>
       </a>
       <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:15px 16px;text-decoration:none;">
         <div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">九九の覚え方コツ｜順番・段別の語呂合わせ</div>
         <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">小学2年生の大きなヤマ場「九九」。楽しく・効率よく覚えるための方法を、覚える順番・段別の語呂合わせ・家庭でのゲームまでまとめて解説します。</p>
       </a>
       <a href="/fractions-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:15px 16px;text-decoration:none;">
-        <div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">分数の教え方｜意味・約分・通分・帯分数</div>
-        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">分数は小学算数で最も「苦手」が生まれやすい単元です。つまずきの多くは計算のやり方より前の「分数の意味」の段階にあります。意味の教え方から四則計算まで順番に解説します。</p>
+        <div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">分数の教え方｜数直線と面積図で理解する</div>
+        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">分数は2年生から6年生まで続く単元です。つまずきの多くは、計算のやり方より前の「分数の意味」の段階にあります。数直線と面積図で、意味から約分・通分・かけ算まで順番に見ていきます。</p>
       </a>
       <a href="/reduce-mistakes.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:15px 16px;text-decoration:none;">
         <div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">計算ミスを減らす5つの方法</div>
-        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">「もったいないミスばかり…」——でも、計算ミスは不注意や性格ではありません。ミスには型があり、型ごとに対策があります。今日から使える5つの方法を紹介します。</p>
+        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">「もったいないミスばかり…」——計算ミスは、不注意や性格だけでは説明できないことがあります。ミスには型があり、型ごとに対策があります。今日から使える5つの方法を紹介します。</p>
       </a>
       <a href="/tanni-kanzan-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:15px 16px;text-decoration:none;">
         <div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">単位の換算ガイド｜長さ・かさ・重さ</div>
-        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">「1mは何cm？」「3Lは何dL？」——単位の換算は、小学2〜3年生の多くの子がつまずく単元です。換算表・覚え方のコツ・例題をまとめて解説します。</p>
+        <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">「1mは何cm？」「3Lは何dL？」——単位の換算は、小学2〜3年生でつまずきやすい単元です。換算表・覚え方のコツ・例題をまとめて解説します。</p>
       </a>
       <a href="/menseki-enza.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:15px 16px;text-decoration:none;">
         <div style="font-size:14px;font-weight:700;color:#122A64;margin-bottom:5px;">円周・円の面積の求め方｜逆算問題まで</div>
         <p style="font-size:12.5px;color:#475569;line-height:1.8;margin:0;">円周と円の面積は、公式を覚えるだけでなく使い分けるのがポイント。テストによく出る「円周から半径・面積を逆算する問題」まで、例題つきでていねいに解説します。</p>
       </a>
+    </div>
+  </div>
+
+
+<div class="memo-box">
+  <div class="memo-title">🏠 「勉強の時間」の外にも、算数はある</div>
+  <p>このサイトの記事には、運営者の家庭で実際に行ったことを「家庭実践メモ」として載せています。提案（家庭での試し方）とは枠を分けているので、どこまでが実際の記録かがわかるようにしています。</p>
+  <p>机に向かう時間だけでなく、買い物・時計・おやつの分け方など、ふだんの会話の中にも算数の入り口があります。</p>
+  <div class="memo-real">
+    <span class="memo-tag">にじゅうまる。家庭実践メモ</span>
+    <p>幼稚園のころから、会話の中で計算を出すようにしていました。買い物中は「1000円出すとお釣りはいくら？」、出かける前は「何時に出発するから、残り何分？」、おやつは「4人家族で分けると1人どれだけ？」と聞いていました。</p>
+  </div>
+</div>
+  <!-- ===== 制作方針 ===== -->
+  <div class="readable" style="padding:20px 16px 4px;">
+    <h2 style="font-size:16px;font-weight:700;color:#1E293B;margin-bottom:4px;">問題と記事の作り方</h2>
+    <p style="font-size:13px;color:#64748B;line-height:1.8;margin-bottom:14px;">個人で運営しているサイトです。どうやって作っているかを公開しておきます。</p>
+      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">学習指導要領を確認して作成</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">その学年で何をどこまで扱うかを、文部科学省の学習指導要領と同解説 算数編で確認してから問題と記事を作っています</div></div></div>
+      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">問題内容を確認・検算</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">出題される計算は生成ロジックを含めて確認し、記事の例題は一つひとつ手で検算しています</div></div></div>
+      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">家庭学習で実際に利用</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">公開したものは、まず運営者自身の家庭で使っています。記事では、実際に家庭で行ったことを「家庭実践メモ」として、提案（家庭での試し方）と分けて書いています</div></div></div>
+      <div style="display:flex;gap:12px;margin-bottom:12px;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#122A64;color:#FFC800;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">4</div><div><div style="font-size:14px;font-weight:700;color:#1E293B;margin-bottom:2px;">必要に応じて問題を修正</div><div style="font-size:12.5px;color:#475569;line-height:1.8;">使ってみて分かりにくかった問題や表現は、公開後でも直しています。誤りのご指摘も歓迎しています</div></div></div>
+    <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;margin-top:6px;">
+      <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;">📚 参考資料</div>
+      <ul style="font-size:12px;color:#64748B;line-height:1.8;padding-left:18px;margin:0;">
+        <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener" style="color:#2563EB;">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
+        <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener" style="color:#2563EB;">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
+      </ul>
+      <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年9月27日。運営者については<a href="/about.html" style="color:#2563EB;">サイトについて</a>をご覧ください。</p>
     </div>
   </div>
 
