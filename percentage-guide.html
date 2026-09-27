@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>割合・%（パーセント）のわかりやすい教え方【5年生】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="割合＝くらべる量÷もとにする量。5年生最大の難所「割合」を、線分図・百分率の変換表・3つの求め方（割合・くらべる量・もとにする量）・30%引きの計算まで例題つきで解説｜にじゅうまる。算数ドリル">
+<meta name="description" content="割合＝くらべる量÷もとにする量。5年生でつまずきやすい「割合」を、線分図・百分率の変換表・3つの求め方（割合・くらべる量・もとにする量）・30%引きの計算まで例題つきで解説｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/percentage-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,18 +69,30 @@ ul li,ol li{margin-bottom:8px;}
 .try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
 <meta property="og:title" content="割合・%（パーセント）のわかりやすい教え方【5年生】">
-<meta property="og:description" content="割合＝くらべる量÷もとにする量。線分図と例題で5年生最大の難所を攻略。">
+<meta property="og:description" content="割合＝くらべる量÷もとにする量。線分図・テープ図と買い物の例で、5年生の割合を解説。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/percentage-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="割合・%（パーセント）のわかりやすい教え方【5年生】">
-<meta name="twitter:description" content="線分図と例題で5年生最大の難所「割合」を攻略。">
+<meta name="twitter:description" content="線分図・テープ図と買い物の例で「割合」を解説。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -92,7 +104,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "割合の求め方の公式は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "割合＝くらべる量÷もとにする量です。「20人のクラスで8人がメガネ」なら、8÷20＝0.4（40％）。どちらを「もと」にするかを見極めることが最重要で、問題文の「〜の」「〜をもとにして」の直前の量が「もとにする量」です。"
+        "text": "割合＝くらべる量÷もとにする量です。「20人のクラスで8人がメガネ」なら、8÷20＝0.4（40％）。どちらを「もと」にするかを見極めることが大切で、問題文の「〜の」「〜をもとにして」の直前の量が「もとにする量」です。"
       }
     },
     {
@@ -129,9 +141,9 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>割合・%のわかりやすい教え方</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>％ 「割合」は小学5年生最大の難所と言われる単元。でも、つまずきの原因はほぼ1つ——「もとにする量」を見失うこと。線分図と3つの求め方を武器に、順番に攻略しましょう。</p>
+  <p>％ 「割合」は5年生でつまずきやすい単元です。つまずきの原因として多いのが、「もとにする量」を見失うこと。このページでは、線分図とテープ図、そしてスーパーの値引きシールのような買い物の例で、「もと」を目に見える形にしながら進めます。</p>
 </div>
 
 <h2>割合とは？——「もとにする量を1とみたとき、いくつ分か」</h2>
@@ -146,14 +158,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 
 <h2>「もとにする量」の見つけ方</h2>
-<p>割合の式が立てられない子は、ほぼ全員「どっちがもとか」で迷っています。見つけ方のルールは1つ。</p>
+<p>割合の式が立てられないときは、「どっちがもとか」で迷っていることがよくあります。見つけ方の目安は1つです。</p>
 <div class="formula">「〜の」「〜をもとにして」の「〜」が、もとにする量</div>
 <ul>
   <li>「クラス<strong>の</strong>40％」→ もとはクラス</li>
   <li>「定価<strong>の</strong>30％引き」→ もとは定価</li>
   <li>「昨年<strong>の</strong>1.2倍」→ もとは昨年</li>
 </ul>
-<p>問題文の「の」に○をつけて、その直前の量を線分図の右端（＝1）に書く。この作業を毎回やるだけで、正答率は大きく変わります。</p>
+<p>問題文の「の」に○をつけて、その直前の量を線分図の右端（＝1）に書く。この作業を毎回くり返すと、もとを取り違える誤答を減らしやすくなります。</p>
 
 <figure class="fig" data-fig="wariai-senbun">
 <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figPctT figPctD">
@@ -244,7 +256,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <tr><td>0.07</td><td>7％</td><td>7分</td></tr>
   <tr><td>0.32</td><td>32％</td><td>3割2分（野球の打率でおなじみ）</td></tr>
 </table>
-<p><strong>％→小数は÷100、小数→％は×100</strong>。計算に使うときは必ず小数（0.4）に直してから使います。「40％をそのまま×40してしまう」のが定番ミスなので、「式に入れる前に小数化」を徹底しましょう。歩合は野球の打率（3割2分＝0.32）が身近な例です。</p>
+<p><strong>％→小数は÷100、小数→％は×100</strong>。計算に使うときは必ず小数（0.4）に直してから使います。「40％をそのまま×40してしまう」誤答がよく見られるので、「式に入れる前に小数にする」を手順にしておきます。歩合は野球の打率（3割2分＝0.32）が身近な例です。</p>
 
 <h2>3つの求め方（割合の3用法）</h2>
 <p>割合の問題は、何を聞かれているかで3パターンに分かれます。線分図をかけば、どれもかけ算・わり算の関係で整理できます。</p>
@@ -261,28 +273,96 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="ex-box">
   <p><strong>例題3（もとにする量）：</strong>ある学校の女子は120人で、全体の40％にあたる。全体は何人？</p>
   <p><strong>解き方：</strong>もと（全体）＝？、くらべる量＝120人、割合＝0.4。120÷0.4＝<strong>300人</strong></p>
-  <p>検算：300×0.4＝120 ✓。「もとを求めるときは÷割合」が3用法の最難関です。</p>
+  <p>検算：300×0.4＝120 ✓。「もとを求めるときは÷割合」は、3つの中で迷いやすいところです。</p>
 </div>
+<figure class="fig">
+<svg viewBox="0 0 460 210" role="img" aria-label="全体を10マスに分けたテープ図。4マス（40％）が女子120人にあたるので、1マス（10％）は30人、10マス（100％）は300人">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <text x="230" y="30" font-size="13" fill="#475569">全体（もとにする量）＝ ？人 ＝ 100％</text>
+      <rect x="40.0" y="60" width="38.0" height="40" fill="#93C5FD" stroke="#94A3B8"/><rect x="78.0" y="60" width="38.0" height="40" fill="#93C5FD" stroke="#94A3B8"/><rect x="116.0" y="60" width="38.0" height="40" fill="#93C5FD" stroke="#94A3B8"/><rect x="154.0" y="60" width="38.0" height="40" fill="#93C5FD" stroke="#94A3B8"/><rect x="192.0" y="60" width="38.0" height="40" fill="#fff" stroke="#94A3B8"/><rect x="230.0" y="60" width="38.0" height="40" fill="#fff" stroke="#94A3B8"/><rect x="268.0" y="60" width="38.0" height="40" fill="#fff" stroke="#94A3B8"/><rect x="306.0" y="60" width="38.0" height="40" fill="#fff" stroke="#94A3B8"/><rect x="344.0" y="60" width="38.0" height="40" fill="#fff" stroke="#94A3B8"/><rect x="382.0" y="60" width="38.0" height="40" fill="#fff" stroke="#94A3B8"/>
+      <rect x="40" y="60" width="380" height="40" fill="none" stroke="#122A64" stroke-width="2"/>
+      <path d="M40 110 V118 H192.0 V110" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <text x="116.0" y="138" font-size="13" font-weight="700" fill="#1E3A8A">40％ ＝ 女子120人</text>
+      <text x="211.0" y="86" font-size="11" fill="#475569">10％</text>
+      <text x="230" y="170" font-size="13" fill="#374151">1マス（10％）＝ 120 ÷ 4 ＝ 30人 → 10マス ＝ 300人</text>
+      <text x="230" y="194" font-size="13" font-weight="700" fill="#122A64">式にすると 120 ÷ 0.4 ＝ 300</text>
+    </g>
+  </svg>
+  <figcaption>図：「もとにする量」を求める問題は、テープを10％ずつに区切ると見通しが立つ。1マスの人数を出してから10マス分にする考え方は、120÷0.4 と同じ</figcaption>
+</figure>
 <p>公式を3つ暗記させるより、<strong>「もと×割合＝くらべる量」の1本</strong>を線分図とセットで固め、残り2つは逆算（□を求めるわり算）として導く方が、忘れにくく応用も利きます。</p>
 
 <h2>「1をこえる割合」もある（120％・1.5倍）</h2>
 <p>割合は1（100％）をこえることもあります。「昨年120人だった部員が、今年は昨年の150％」なら、120×1.5＝180人。<strong>「割合が1より大きい＝もとより増えている」</strong>という感覚を持てると、答えの見当がすぐ立ちます。ニュースの「前年比130％」「1.2倍に増加」はすべてこの形。「もとはどれ？増えてる？減ってる？」と会話するだけで、立派な割合の学習になります。</p>
 
-<h2>実生活の定番：「30％引き」の計算</h2>
+<h2>買い物で考える：「30％引き」をテープ図で</h2>
 <div class="ex-box">
   <p><strong>例題4：</strong>定価800円の品物が30％引き。代金は？</p>
   <p><strong>方法①：</strong>引く分＝800×0.3＝240円 → 800−240＝<strong>560円</strong></p>
   <p><strong>方法②：</strong>30％引き＝残り70％ → 800×0.7＝<strong>560円</strong>（1回の計算で済む！）</p>
 </div>
+<figure class="fig">
+<svg viewBox="0 0 460 220" role="img" aria-label="定価800円を100％とするテープ図。左の30％が値引き分の240円、右の70％が代金の560円。800×0.7で代金が1回で求まる">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <text x="230.0" y="26" font-size="13" fill="#475569">定価 800円 ＝ もとにする量（100％）</text>
+      <path d="M40 36 V44 H420 V36" fill="none" stroke="#94A3B8"/>
+      <rect x="40" y="54" width="114.0" height="44" fill="#FCA5A5"/>
+      <rect x="154.0" y="54" width="266.0" height="44" fill="#86EFAC"/>
+      <rect x="40" y="54" width="380" height="44" fill="none" stroke="#122A64" stroke-width="2"/>
+      <text x="97.0" y="82" font-size="15" font-weight="700" fill="#991B1B">30％</text>
+      <text x="287.0" y="82" font-size="15" font-weight="700" fill="#14532D">70％</text>
+      <text x="40" y="118" font-size="12" fill="#64748B">0％</text><text x="420" y="118" font-size="12" fill="#64748B">100％</text>
+      <text x="97.0" y="146" font-size="13" fill="#991B1B">値引き 240円</text>
+      <text x="97.0" y="164" font-size="12" fill="#991B1B">800×0.3</text>
+      <text x="287.0" y="146" font-size="13" font-weight="700" fill="#14532D">払う代金 560円</text>
+      <text x="287.0" y="164" font-size="12" fill="#14532D">800×0.7</text>
+      <text x="230.0" y="204" font-size="12" fill="#1E3A8A">「30％引き」は「残り70％を払う」と同じ</text>
+    </g>
+  </svg>
+  <figcaption>図：買い物の「30％引き」をテープ図で。もと（定価）を100％として、値引き分と払う分に分ける。払う分だけなら 800×0.7 の1回で求まる</figcaption>
+</figure>
 <p>方法②の「残りの割合でかける」考え方は、慣れると速く、間違いが少なくなる場合があります。「消費税10％を足す＝×1.1」も同じ発想。スーパーの値引きシールは、この単元の身近な教材になります。買い物のたびに「これ、いくらになる？」と聞いてみてください。</p>
 
 <h2>円グラフ・帯グラフとの合わせ技</h2>
 <p>5年生では、割合を<strong>円グラフ・帯グラフ</strong>で表す学習もセットで行います。「全体＝100％」を円や帯の長さで表し、各部分の割合を面積・長さで見る——割合が「目に見える」瞬間です。</p>
 <div class="ex-box">
   <p><strong>例題5：</strong>クラス40人の通学方法は、徒歩60％、自転車30％、その他10％。自転車の人は何人？</p>
-  <p><strong>解き方：</strong>もと＝40人、割合＝0.3。40×0.3＝<strong>12人</strong>。グラフの読み取り＋3用法の複合問題は、テストの定番です。</p>
+  <p><strong>解き方：</strong>もと＝40人、割合＝0.3。40×0.3＝<strong>12人</strong>。グラフの読み取りと3つの求め方を組み合わせた問題は、テストでもよく出ます。</p>
 </div>
 <p>新聞やニュースの円グラフを見ながら「これ、実際は何人くらい？」と逆算してみるのも、良い練習になります。グラフの読み取りは6年生の<a href="/data-katsuyou-guide.html">データの活用</a>へ、そして中学の資料の活用へつながります。</p>
+
+<h2>家庭でためす例題</h2>
+<p>答えは折りたたんであります。解いたあとに、線分図かテープ図をかいて確かめてみてください。</p>
+<ol class="q-set">
+  <li class="q"><span class="q-text">30人のクラスで、自転車通学は12人。自転車通学の人の割合は？（小数と％で）</span><details><summary>答えと考え方</summary><p>0.4、40％。もと＝クラス全体30人、くらべる量＝12人。12÷30＝0.4、0.4×100＝40％。</p></details></li>
+  <li class="q"><span class="q-text">1200円の25％は何円？</span><details><summary>答えと考え方</summary><p>300円。25％＝0.25。1200×0.25＝300。テープを4つに分けた1つ分とも考えられる。</p></details></li>
+  <li class="q"><span class="q-text">定価2000円のくつが20％引き。代金は？</span><details><summary>答えと考え方</summary><p>1600円。20％引き＝残り80％。2000×0.8＝1600。</p></details></li>
+  <li class="q"><span class="q-text">ある本の45ページを読みました。これは全体の30％にあたります。本は全部で何ページ？</span><details><summary>答えと考え方</summary><p>150ページ。もとを求めるので 45÷0.3＝150。検算 150×0.3＝45。10％が15ページ、100％が150ページ、とテープで考えてもよい。</p></details></li>
+  <li class="q"><span class="q-text">去年80人だった参加者が、今年は去年の125％になりました。今年は何人？</span><details><summary>答えと考え方</summary><p>100人。125％＝1.25。80×1.25＝100。1より大きい割合なので、もとより増える。</p></details></li>
+  <li class="q"><span class="q-text">0.07 を百分率と歩合で</span><details><summary>答えと考え方</summary><p>7％、7分。小数→％は×100。歩合は 0.1＝1割、0.01＝1分。</p></details></li>
+</ol>
+
+<h2>よくある誤答例と、家庭での直し方</h2>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>「500円の40％は？」→ 500×40＝20000円</div>
+  <p><strong>何が起きたか：</strong>％をそのまま数として計算に入れています。答えがもとの500円よりずっと大きくなっても、おかしさに気づけていません。</p>
+  <p><strong>家庭での直し方：</strong>式に入れる前に「40％＝0.4」と小数にする手順にします。「40％は半分より少し少ない」と見当を立てておくと、20000円の不自然さに気づけます。正しくは 500×0.4＝200円。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>「女子120人は全体の40％。全体は？」→ 120×0.4＝48人</div>
+  <p><strong>何が起きたか：</strong>もとにする量（全体）を求める問題なのに、くらべる量を求めるときの式（もと×割合）を使っています。全体が女子より少なくなっています。</p>
+  <p><strong>家庭での直し方：</strong>テープ図の右端に「全体＝？」と書き、40％が120人と書き込みます。1マス10％が30人なので、全体は300人。式は 120÷0.4。答えが「もとより大きい？小さい？」を先に確かめます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>「800円の30％引き。代金は？」→ 240円</div>
+  <p><strong>何が起きたか：</strong>値引きの額（800×0.3）を代金として答えています。問題が「引いたあとの代金」を聞いていることを読み落としています。</p>
+  <p><strong>家庭での直し方：</strong>テープ図で、値引き分と払う分を色分けします。聞かれているのがどちらの部分かに○をつけてから式を立てます。代金は 800×0.7＝560円。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>「20人中8人の割合は？」→ 20÷8＝2.5</div>
+  <p><strong>何が起きたか：</strong>もとにする量とくらべる量を逆にしてわっています。割合が1より大きくなり、「全員より多い」ことになっています。</p>
+  <p><strong>家庭での直し方：</strong>「の」の直前（20人のクラス）がもと。線分図の右端に20人＝1と書き、8人はその途中に置きます。割合は 8÷20＝0.4。一部分の割合なら1より小さくなるはず、と見当を立てます。</p>
+</div>
 
 <h2>つまずき対策のまとめ</h2>
 <table class="cv-table">
@@ -292,7 +372,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <tr><td>かけるかわるかで迷う</td><td>「もと×割合＝くらべる量」の1本から逆算で導く</td></tr>
   <tr><td>答えのおかしさに気づかない</td><td>「もとより大きい？小さい？」の見当を先に立てる（0.4倍なら必ず小さくなる）</td></tr>
 </table>
-<p>なお、割合の土台は小数のかけ算・わり算です。そこが不安なら<a href="/decimal-fraction-guide.html">小数の教え方ガイド</a>で先に固めましょう。割合は6年生の「速さ」や中学の「関数・確率」へ直結する、最重要単元のひとつです。</p>
+<p>なお、割合の土台は小数のかけ算・わり算です。そこが不安なら<a href="/decimal-fraction-guide.html">小数の教え方ガイド</a>で先に固めましょう。割合は6年生の「速さ」や、中学の関数・確率にもつながる単元です。</p>
 
 <h2>割合の理解度チェック表</h2>
 <table class="check-table">
@@ -309,7 +389,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="try-box">
   <div class="try-title">✏️ 5年生ドリルで割合の問題に挑戦する</div>
   <p>割合は「1日1問、線分図をかいてから解く」のが向いています。量をこなすより、図をかいた回数のほうが効いてきます。</p>
-  <a href="/drill.html">5年生のドリルをやってみる →</a>
+  <a href="/drill.html?grade=5">5年生のドリルをやってみる →</a>
 </div>
 
 <div class="ref-box">
@@ -334,7 +414,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p>税率10％なら「税込＝本体×1.1」です。本体1200円なら1200×1.1＝1320円。「もとの100％に10％を足すから110％＝×1.1」という考え方は、値引き（×0.7）と同じ「残り・合計の割合でかける」方式です。レシートを見ながら親子で確かめると、割合が一気に身近になります。</p>
 
 <h2>まとめ</h2>
-<p>割合は5年生最大の難所ですが、「もとにする量の特定」と「線分図」の2つがそろうと、ぐっと解きやすくなります。買い物・打率・消費税と、生活のあらゆる場面が練習台になる単元でもあります。焦らず1問ずつ、図をかきながら進めましょう。</p>
+<p>割合はつまずきやすい単元ですが、「もとにする量の特定」と「線分図・テープ図」の2つがそろうと、ぐっと解きやすくなります。買い物・打率・消費税と、生活のあらゆる場面が練習台になる単元でもあります。焦らず1問ずつ、図をかきながら進めましょう。</p>
 <ul>
   <li>割合＝くらべる量÷もとにする量。「もと」は「の」の直前</li>
   <li>線分図で「もと＝1（100％）」を毎回見える化する</li>
@@ -364,8 +444,8 @@ footer a{color:#94A3B8;text-decoration:underline;}
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+  <p>学年を選んで、その場で採点しながら練習できます</p>
+  <a href="/drill.html?grade=5">5年生の割合ドリルをやってみる →</a>
 </div>
 </div>
 
