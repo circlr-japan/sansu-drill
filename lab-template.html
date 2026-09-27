@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>実践研究室 記録テンプレート（非公開） | にじゅうまる。算数ドリル</title>
+<link rel="canonical" href="https://www.nijumaru-drill.com/lab-template.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',-apple-system,sans-serif;background:#FFFFFF;color:#1E293B;line-height:1.8;}
+@media(min-width:640px){body{max-width:680px;margin:0 auto;}}
+.content{padding:24px 20px 48px;}
+h1{font-size:19px;color:#122A64;margin-bottom:10px;}
+h2{font-size:16px;font-weight:700;margin:28px 0 10px;padding-left:10px;border-left:4px solid #2563EB;}
+p,li{font-size:13.5px;color:#374151;}
+p{margin-bottom:12px;}
+ul,ol{padding-left:22px;margin-bottom:12px;}
+.note{background:#FEF3C7;border:1px solid #FCD34D;border-radius:10px;padding:12px 14px;font-size:12.5px;color:#78350F;margin-bottom:18px;}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0;}
+th,td{border:1px solid #E2E8F0;padding:6px 8px;text-align:left;vertical-align:top;}
+th{background:#F8FAFC;}
+.slot{border:1px dashed #94A3B8;border-radius:10px;padding:10px 12px;margin:8px 0;font-size:12.5px;color:#475569;}
+</style>
+</head>
+<body data-status="draft">
+<div class="content">
+<h1>にじゅうまる。実践研究室 記録テンプレート</h1>
+<div class="note">このページは記録用のテンプレートです。検索結果には表示されず（noindex）、サイトのどこからもリンクしていません。実際の家庭学習の記録が集まった記事だけを、<code>data-status="recorded"</code> を付けて個別のページとして公開します。記録のない記事は公開しません。数値・結果・感想を想像で埋めることはしません。</div>
+
+<h2>記事の構成（すべての実践記事で共通）</h2>
+<ol>
+  <li><strong>目的：</strong>何を確かめたかったか（1〜2文）</li>
+  <li><strong>方法：</strong>期間・1日の量・使った教材（ドリルの学年と難易度、紙の問題など）</li>
+  <li><strong>記録：</strong>下の記録コンポーネントで取ったデータ（JSONで書き出したもの）をそのまま表とグラフにする</li>
+  <li><strong>わかったこと：</strong>記録から言えることだけを書く。言えないことは「この記録からはわからない」と書く</li>
+  <li><strong>一般化できないこと：</strong>1家庭・1人の記録であり、他の子にも同じ結果が出るとは限らないことを明記する</li>
+  <li><strong>家庭で試すなら：</strong>記録のとり方と、試すときの注意</li>
+</ol>
+
+<h2>記録の候補（10本）と、必要なデータ</h2>
+<table>
+  <tr><th>記事の候補</th><th>必要な記録</th><th>使う部品</th></tr>
+  <tr><td>小2で九九を7日間練習した記録</td><td>7日分の問題・正誤・回答時間</td><td>九九記録表</td></tr>
+  <tr><td>九九で止まりやすかった式を記録してみた</td><td>3日以上、ランダム出題で詰まった九九</td><td>九九記録表（ヒートマップ）</td></tr>
+  <tr><td>小4のわり算筆算50問で起きたミス</td><td>50問分のミスの種類</td><td>わり算ミス分類</td></tr>
+  <tr><td>文章題で式を作れなかった問題5例</td><td>実際の問題文・書いた式・止まった段階</td><td>文章題ミス分類＋問題文の写し</td></tr>
+  <tr><td>1日5分ドリルを7日間続けた記録</td><td>日付・学年と難易度・得点・かかった時間</td><td>表（ドリルの結果を転記）</td></tr>
+  <tr><td>紙ドリルとWebドリルを使い分けた記録</td><td>どちらを・いつ・何問・どんな様子だったか</td><td>表</td></tr>
+  <tr><td>1学年前に戻って復習した記録</td><td>戻った学年・期間・戻る前と後の得点</td><td>表</td></tr>
+  <tr><td>間違いノートを1週間使った記録</td><td>ミスの種類と、同じミスがくり返されたか</td><td>わり算／文章題ミス分類</td></tr>
+  <tr><td>初級→中級へ上げるタイミング</td><td>難易度ごとの正答率と、上げた日の判断理由</td><td>表</td></tr>
+  <tr><td>ランダム九九と順番九九の比較</td><td>同じ日に両方で取った時間と正誤</td><td>九九記録表（2つ）</td></tr>
+</table>
+
+<h2>記録コンポーネント</h2>
+<p>記録はこのブラウザの中にだけ保存されます。まとまったら「記録をJSONでコピー」で書き出して、記事の元データにします。</p>
+<div data-record-kit="kuku" data-record-id="lab"></div>
+<div data-record-kit="division" data-record-id="lab"></div>
+<div data-record-kit="bunshoudai" data-record-id="lab"></div>
+
+<h2>本文の枠（記録が入るまで空欄）</h2>
+<div class="slot">目的：</div>
+<div class="slot">方法：</div>
+<div class="slot">記録（表・グラフ）：</div>
+<div class="slot">わかったこと：</div>
+<div class="slot">一般化できないこと：1家庭・1人の記録です。</div>
+<div class="slot">家庭で試すなら：</div>
+</div>
+<script src="/record-kit.js" defer></script>
+</body>
+</html>
