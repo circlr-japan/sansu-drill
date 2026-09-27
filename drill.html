@@ -582,7 +582,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <span class="hero-logo">
       <img src="/logo.png" width="116" height="116" alt="にじゅうまるドリル ロゴ" style="display:block;margin:0 auto;filter:drop-shadow(0 3px 10px rgba(0,0,0,0.28));">
     </span>
-    <div class="hero-title"><span class="brand">にじゅうまる。</span>算数ドリルアプリ</div>
+    <h1 class="hero-title"><span class="brand">にじゅうまる。</span>算数ドリルアプリ</h1>
     <div class="hero-sub">印刷不要・スマホでその場で即採点<br>Webドリルは無料・アプリ不要・学習指導要領を確認して作成</div>
     <span class="hero-badge">小学1〜6年生対応</span>
     <img src="/mascot.png" alt="にじゅうまるドリルのマスコット" style="position:absolute;right:6px;bottom:-10px;width:92px;height:auto;pointer-events:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25));">
@@ -2885,7 +2885,7 @@ function renderDanBadges() {
       continue;
     }
     const best = hist.reduce((m, r) => Math.max(m, r.correct), 0);
-    el.textContent = best === DAN_TOTAL ? `${best}/${DAN_TOTAL}` : `最高 ${best}/${DAN_TOTAL}`;
+    el.textContent = best === DAN_TOTAL ? `${best}/${DAN_TOTAL}` : `自己ベスト ${best}/${DAN_TOTAL}`;
     btn.classList.toggle('dan-clear', best === DAN_TOTAL);
   }
 }
@@ -3291,7 +3291,7 @@ function taReportToLine() {
       : isTime
       ? `🏆 正解数：${taCorrect}問\n📝 回答数：${taTotal}問\n✅ 正解率：${rate}%\n`
       : `🏆 連続正解：${taCorrect}問\n`) +
-    `⭐ 過去最高：${best}問\n` +
+    `⭐ 自己ベスト：${best}問\n` +
     `━━━━━━━━━━━━━━\n` +
     `にじゅうまる。算数ドリル\n` +
     `https://www.nijumaru-drill.com/`;
