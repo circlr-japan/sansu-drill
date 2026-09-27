@@ -576,42 +576,45 @@ const GRADES={
       ()=>{const b=rnd(2,5),q=rnd(2,5);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q};},
       ()=>{const d=rnd(4,6),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d)};},
       ()=>{const p=rnd(1,5)*10,base=rnd(1,5)*100;return{q:`${base}円の${p}% は？`,a:base*p/100};},
-      ()=>{const a=rnd(2,5),b=rnd(2,5),c=rnd(2,5);return{q:`縦${a}cm、横${b}cm、高さ${c}cmの体積は？`,a:a*b*c};}
+      ()=>{const a=rnd(2,5),b=rnd(2,5),c=rnd(2,5);return{q:`縦${a}cm、横${b}cm、高さ${c}cmの体積は？`,a:a*b*c};},
+      ()=>{const s=rnd(1,5)*10,t=rnd(2,4);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s};}
     ],
     normal:[
       ()=>{const a=rnd(1,19)/10,b=rnd(1,19)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2)};},
       ()=>{const b=rnd(2,9),q=rnd(2,8);return{q:`${b*q}.0 ÷ ${b}.0 ＝`,a:q};},
       ()=>{const d=rnd(4,9),n1=rnd(1,d-2),n2=rnd(1,d-1-n1);return{q:`${n1}/${d} ＋ ${n2}/${d} ＝`,a:fracStr(n1+n2,d)};},
       ()=>{const p=rnd(1,10)*10,base=rnd(1,10)*100;return{q:`${base}円の${p}% は何円ですか？`,a:base*p/100};},
-      ()=>{const a=rnd(2,8),b=rnd(2,8),c=rnd(2,8);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の体積は何cm³ですか？`,a:a*b*c};}
+      ()=>{const a=rnd(2,8),b=rnd(2,8),c=rnd(2,8);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の体積は何cm³ですか？`,a:a*b*c};},
+      ()=>{const v=rnd(3,9)*10,t=rnd(2,5);return{q:`時速${v}km で${t}時間進むと、道のりは何kmですか？`,a:v*t};}
     ],
     hard:[
       ()=>{const a=rnd(11,29)/10,b=rnd(11,29)/10;return{q:`${a.toFixed(1)} × ${b.toFixed(1)} ＝`,a:+(a*b).toFixed(2)};},
       ()=>{const b=rnd(3,9),q=rnd(5,15);return{q:`${+(b*q*1.5).toFixed(1)} ÷ ${b} ＝`,a:+(q*1.5).toFixed(1)};},
       ()=>{const d1=rnd(3,6),d2=rnd(3,6),n1=rnd(1,d1-1),n2=rnd(1,d2-1),lcm=d1*d2/gcd(d1,d2);return{q:`${n1}/${d1} ＋ ${n2}/${d2} ＝`,a:fracStr(n1*(lcm/d1)+n2*(lcm/d2),lcm)};},
       ()=>{const p=rnd(1,10)*5,base=rnd(2,20)*100;return{q:`${base}円の${p}% は何円ですか？`,a:base*p/100};},
-      ()=>{const a=rnd(5,12),b=rnd(5,12),c=rnd(5,12);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の体積は何cm³ですか？`,a:a*b*c};}
+      ()=>{const a=rnd(5,12),b=rnd(5,12),c=rnd(5,12);return{q:`縦${a}cm、横${b}cm、高さ${c}cm の体積は何cm³ですか？`,a:a*b*c};},
+      ()=>{const v=rnd(3,12)*5,t=rnd(2,6);return{q:`${v*t}km の道のりを時速${v}km で進むと、何時間かかりますか？`,a:t};}
     ]
   }},
   6:{label:'小学6年生',generators:{
     easy:[
       ()=>{const n1=rnd(1,3),d1=rnd(2,4),n2=rnd(1,3),d2=rnd(2,4);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2)};},
       ()=>{const a=rnd(1,4),b=rnd(1,4),t=rnd(2,3);return{q:`${a*t}：${b*t} を簡単な比にすると？`,a:`${a}：${b}`};},
-      ()=>{const s=rnd(1,5)*10,t=rnd(2,4);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s};},
+      ()=>{const a=rnd(2,9),x=rnd(2,9);return{q:`x × ${a} ＝ ${a*x} のとき、x はいくつですか？`,a:x};},
       ()=>{const r=rnd(2,5);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2)};},
       ()=>{const n=rnd(1,3),d=rnd(2,5),m=rnd(2,4);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d)};}
     ],
     normal:[
       ()=>{const n1=rnd(1,4),d1=rnd(2,6),n2=rnd(1,4),d2=rnd(2,6);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2)};},
       ()=>{const a=rnd(1,6),b=rnd(1,6),t=rnd(2,5);return{q:`${a*t}：${b*t} を最も簡単な整数の比にすると？`,a:`${a}：${b}`};},
-      ()=>{const s=rnd(2,10)*10,t=rnd(2,6);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s};},
+      ()=>{const k=rnd(2,9),x1=rnd(2,5),x2=rnd(6,10);return{q:`y は x に比例し、x＝${x1} のとき y＝${k*x1} です。x＝${x2} のとき、y はいくつですか？`,a:k*x2};},
       ()=>{const r=rnd(2,8);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2)};},
       ()=>{const n=rnd(1,4),d=rnd(2,8),m=rnd(2,5);return{q:`${n}/${d} × ${m} ＝`,a:fracStr(n*m,d)};}
     ],
     hard:[
       ()=>{const n1=rnd(2,6),d1=rnd(3,8),n2=rnd(2,6),d2=rnd(3,8);return{q:`${n1}/${d1} ÷ ${n2}/${d2} ＝`,a:fracStr(n1*d2,d1*n2)};},
       ()=>{const a=rnd(3,9),b=rnd(3,9),t=rnd(4,8);return{q:`${a*t}：${b*t} を最も簡単な整数の比にすると？`,a:`${a}：${b}`};},
-      ()=>{const s=rnd(5,20)*10,t=rnd(3,8);return{q:`${s*t}m を${t}分で進みました。分速は何mですか？`,a:s};},
+      ()=>{const ds=[2,3,4,6],i=rnd(0,3);let j=rnd(0,2);if(j>=i)j++;const c=rnd(2,6)*12,x1=ds[i],x2=ds[j];return{q:`y は x に反比例し、x＝${x1} のとき y＝${c/x1} です。x＝${x2} のとき、y はいくつですか？`,a:c/x2};},
       ()=>{const r=rnd(6,12);return{q:`半径${r}cm の円の面積は何cm²ですか？（π＝3.14）`,a:+(r*r*3.14).toFixed(2)};},
       ()=>{const n1=rnd(2,5),d1=rnd(3,8),n2=rnd(2,5),d2=rnd(3,8);return{q:`${n1}/${d1} × ${n2}/${d2} ＝`,a:fracStr(n1*n2,d1*d2)};}
     ]

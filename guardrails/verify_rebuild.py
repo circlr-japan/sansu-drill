@@ -224,6 +224,16 @@ for p in KEY15:
         check("R12 日数×問数", a * d >= total, f"{p}: {a}×{d}＜{total}")
 
 
+# ── R13. ドリルの出題が平成29年告示の学習指導要領の学年配当に合う（速さは第5学年） ──
+SPEED = re.compile(r"分速は|道のりは|何時間")
+for p in ["drill.html", "daily.html", "premium-pdf.html"]:
+    src = read(p)
+    s5, s6 = src.index("5:{label:'小学5年生'"), src.index("6:{label:'小学6年生'")
+    e6 = src.index("}}", src.index("hard:[", s6))
+    check("R13 速さは5年で出題", len(SPEED.findall(src[s5:s6])) >= 3, f"{p}: 5年に速さの問題が無い")
+    check("R13 6年で速さを出題しない", not SPEED.findall(src[s6:e6]), f"{p}: 6年に速さの問題がある")
+
+
 if failures:
     print(f"NG {len(failures)} / {checks} checks failed\n")
     for f in failures[:120]:
