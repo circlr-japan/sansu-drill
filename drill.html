@@ -178,10 +178,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     grid-column:1;
     grid-row:2;
   }
-  body.quiz-active #quizPage .ad-slot{
-    grid-column:1;
-    grid-row:3;
-  }
   body.quiz-active #quizPage .quiz-footer{
     grid-column:1;
     grid-row:4;
@@ -203,7 +199,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   .freespace-panel{display:none !important;}
 }
 
-.ad-slot{text-align:center;margin:12px 16px;min-height:60px;overflow:hidden;}
 /* カウントダウン広告（画面下部固定） */
 .cd-ad-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(15,23,42,0.85);padding:6px 16px 8px;z-index:100;max-width:640px;margin:0 auto;}
 .cd-ad-bar ins{min-height:50px;}
@@ -574,7 +569,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
 /* ===== AdSense審査中：広告・有料部を一時非表示 ===== */
 /* 審査通過後は以下3行を削除して広告スクリプトのコメントを外す */
-.premium-hidden .ad-slot{ display:none !important; }
 .premium-hidden .cd-ad-bar{ display:none !important; }
 .premium-hidden #premiumNudge{ display:none !important; }
 
@@ -606,7 +600,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     </a>
   </div>
 
-  <div class="ad-slot"></div>
 
   <!-- ===== ドリル選択セクション ===== -->
   <div class="drill-select-section">
@@ -639,7 +632,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="pdf-note">1問4点 × 25問 ＝ 100点満点　※ 5秒カウントダウン後にスタート</div>
   </div>
 
-  <div class="ad-slot"></div>
 
   <!-- ===== 九九チャレンジ ===== -->
   <div class="ta-section">
@@ -762,7 +754,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     </div>
   </div>
 
-  <div class="ad-slot"></div>
 
   <section style="padding:8px 16px 4px;">
     <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:12px;">算数ドリルアプリの使い方と特長</h2>
@@ -959,7 +950,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
   </div>
   <div class="questions-wrap" id="questionsWrap"></div>
-  <div class="ad-slot" style="margin-top:4px;"></div>
   <div class="quiz-footer">
     <button class="btn-submit" onclick="submitQuiz()">採点する ✓</button>
     <p class="unanswered-note">※ 未回答の問題は0点になります</p>
@@ -1008,7 +998,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="result-time-row">回答時間：<strong id="resultTime">-</strong></div>
   </div>
 
-  <div class="ad-slot"></div>
 
   <div class="stats-section">
     <div class="stats-grid">
@@ -1069,7 +1058,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div id="reviewList"></div>
   </div>
 
-  <div class="ad-slot"></div>
 
   <!-- ===== 今日のレポート シェア ===== -->
   <div class="share-section" id="shareSection" style="display:none;">
@@ -3322,6 +3310,20 @@ renderDanBadges();
   if (!id) return;
   const el = document.getElementById(id);
   if (el) setTimeout(() => el.scrollIntoView({ block: 'start' }), 80);
+})();
+
+// 記事からのリンク（?grade=N / ?mode=kuku）で、該当の選択を済ませた位置まで進める
+(function applyEntryParams(){
+  const q = new URLSearchParams(location.search);
+  const g = Number(q.get('grade'));
+  let target = null;
+  if (g >= 1 && g <= 6) {
+    selectDrillGrade(g);
+    target = document.querySelector('.drill-select-section');
+  } else if (q.get('mode') === 'kuku') {
+    target = document.querySelector('.ta-section');
+  }
+  if (target) setTimeout(() => target.scrollIntoView({ block: 'start' }), 80);
 })();
 loadRanking(1);
 
