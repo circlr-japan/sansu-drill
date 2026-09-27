@@ -149,7 +149,8 @@ for p in INDEXABLE:
 
 
 # ── R6. 文字化け・誤字（簡体字の混入） ──
-SIMPLIFIED = re.compile(r"[题为这们对说时会过发经问给来还样]")
+# 日本語と同じ符号位置の字（会・来 など）は入れない。簡体字にしか無い字だけを検出する。
+SIMPLIFIED = re.compile(r"[题为这们对说时过发经问给还样]")
 for p in ALL_HTML:
     hit = SIMPLIFIED.findall(text_of(read(p)))
     check("R6 簡体字", not hit, f"{p} に {hit[:5]}")
