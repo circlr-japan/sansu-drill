@@ -38,7 +38,6 @@ ul li,ol li{margin-bottom:8px;}
 .tip-box p{margin:0;font-size:14px;color:#14532D;}
 .ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
 .ex-box p{margin-bottom:6px;}
-.zu-box{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:14px;margin:14px 0;font-family:monospace;font-size:13px;line-height:1.6;color:#1E293B;overflow-x:auto;}
 .cv-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
 .cv-table th,.cv-table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:center;background:#fff;}
 .cv-table th{background:#FFF7E6;color:#1E3A8A;}
@@ -69,6 +68,18 @@ ul li,ol li{margin-bottom:8px;}
 .try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
@@ -129,9 +140,9 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <h1>文章題の解き方｜つまずきと図のかき方</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>📝 「計算問題は満点なのに、文章題になると手が止まる」——これは算数の相談でいちばん多いお悩みです。原因は計算力ではなく、文章を「図」に変える力。このページでは4ステップの解き方と学年別の対策を解説します。</p>
+  <p>📝 「計算問題は満点なのに、文章題になると手が止まる」——これは算数の相談でよく聞くお悩みです。原因の一つは、計算力ではなく、文章を「図」に変える段階にあります。このページでは、式を作る過程を図で見える化し、よく見られる誤答例と直し方までまとめました。</p>
 </div>
 
 <h2>なぜ文章題でつまずくのか</h2>
@@ -146,25 +157,63 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <h2>文章題を解く4ステップ（型を作る）</h2>
 <div class="ex-box">
-  <p><strong>STEP 1：声に出して読む</strong>——黙読より音読。読み飛ばしが激減します</p>
+  <p><strong>STEP 1：声に出して読む</strong>——黙読より音読。読み飛ばしに気づきやすくなります</p>
   <p><strong>STEP 2：線を引く</strong>——わかっている数に○、聞かれていることに波線</p>
   <p><strong>STEP 3：図をかく</strong>——テープ図・線分図で場面を絵にする</p>
   <p><strong>STEP 4：式→計算→単位チェック</strong>——答えに単位をつけ、「聞かれたことに答えたか」確認</p>
 </div>
-<p>大切なのは、<strong>どんな問題でも毎回この順番で解く</strong>こと。「型」が身につくと、初めて見る問題でも手が動くようになります。逆に「いきなり式を書く」癖がついている子は、数字を適当に足したり引いたりする「あてずっぽう算」から抜け出せません。</p>
+<p>大切なのは、<strong>どんな問題でも毎回この順番で解く</strong>こと。「型」が身につくと、初めて見る問題でも手が動くようになります。逆に「いきなり式を書く」癖がついていると、出てきた数字を足したり引いたりしてみる「あてずっぽう」になりやすくなります。</p>
 
-<h2>いちばん頼りになる道具「テープ図・線分図」のかき方</h2>
+<h2>頼りになる道具「テープ図・線分図」のかき方</h2>
 <p>文章題攻略のカギは図です。小学校で使う図の基本は<strong>テープ図（線分図）</strong>。「全体」と「部分」の関係を長方形や線で表します。</p>
 <div class="ex-box">
   <p><strong>例題1（2年生レベル）：</strong>あめが何こかありました。8こ食べたら、のこりは13こでした。はじめに何こありましたか。</p>
 </div>
-<div class="zu-box">
-はじめ（？こ）<br>
-├────────────────────┤<br>
-├────────┼───────────┤<br>
- 食べた8こ　 のこり13こ
-</div>
-<p>図にすると、「はじめ＝食べた＋のこり」という関係が見えて、式は 8＋13＝21。<strong>答え：21こ</strong>。この問題、文章には「食べたら」「のこり」とあるので引き算だと思い込む子が多いのですが、図をかけば足し算だとわかります。これが<strong>逆思考の問題</strong>で、図の威力がもっとも出るパターンです。</p>
+<figure class="fig">
+<svg viewBox="0 0 460 400" role="img" aria-label="例題1を4段で解く過程。1段目：問題文のわかっている数8と13に丸、聞かれていることに波線。2段目：テープ図で、はじめ（？）が食べた8とのこり13に分かれる。3段目：はじめ＝食べた＋のこりなので8＋13。4段目：答え21こ、検算21−8＝13">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <g font-size="12">
+        <rect x="10" y="10" width="440" height="84" rx="10" fill="#fff" stroke="#CBD5E1"/>
+        <text x="22" y="30" font-weight="700" fill="#2563EB">① 読んで、印をつける</text>
+        <text x="22" y="54" font-size="13" fill="#1E293B">あめが何こかありました。</text>
+        <circle cx="194" cy="50" r="15" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+        <text x="194" y="54" font-size="13" font-weight="700" fill="#B45309" text-anchor="middle">8こ</text>
+        <text x="213" y="54" font-size="13" fill="#1E293B">食べたら、のこりは</text>
+        <circle cx="351" cy="50" r="17" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+        <text x="351" y="54" font-size="13" font-weight="700" fill="#B45309" text-anchor="middle">13こ</text>
+        <text x="372" y="54" font-size="13" fill="#1E293B">でした。</text>
+        <text x="22" y="80" font-size="13" fill="#1E293B">はじめに何こありましたか。</text>
+        <path d="M22 86 q6 -4 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+      </g>
+      <g font-size="12">
+        <rect x="10" y="104" width="440" height="110" rx="10" fill="#fff" stroke="#CBD5E1"/>
+        <text x="22" y="124" font-weight="700" fill="#2563EB">② 図にする（テープ図）</text>
+        <text x="235" y="146" text-anchor="middle" fill="#DC2626" font-weight="700">はじめ ？こ</text>
+        <path d="M60 152 V158 H410 V152" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+        <rect x="60" y="164" width="130" height="30" fill="#FDE68A" stroke="#122A64"/>
+        <rect x="190" y="164" width="220" height="30" fill="#BFDBFE" stroke="#122A64"/>
+        <text x="125" y="184" text-anchor="middle" fill="#92400E" font-weight="700">食べた 8こ</text>
+        <text x="300" y="184" text-anchor="middle" fill="#1E3A8A" font-weight="700">のこり 13こ</text>
+      </g>
+      <g font-size="12">
+        <rect x="10" y="224" width="440" height="76" rx="10" fill="#fff" stroke="#CBD5E1"/>
+        <text x="22" y="244" font-weight="700" fill="#2563EB">③ 図から式を読む</text>
+        <text x="22" y="270" font-size="14" fill="#1E293B">はじめ ＝ 食べた ＋ のこり</text>
+        <text x="22" y="290" font-size="14" font-weight="700" fill="#122A64">8 ＋ 13 ＝ 21</text>
+        <text x="250" y="280" font-size="11" fill="#64748B">「食べた」でも、図で見ると</text>
+        <text x="250" y="295" font-size="11" fill="#64748B">全体を求めるのでたし算</text>
+      </g>
+      <g font-size="12">
+        <rect x="10" y="310" width="440" height="80" rx="10" fill="#F0FDF4" stroke="#86EFAC"/>
+        <text x="22" y="330" font-weight="700" fill="#15803D">④ 答えと、たしかめ</text>
+        <text x="22" y="356" font-size="15" font-weight="700" fill="#14532D">答え 21こ</text>
+        <text x="22" y="378" font-size="12" fill="#166534">たしかめ：21こから8こ食べると 21−8＝13 → 問題文の「のこり13こ」と合う</text>
+      </g>
+    </g>
+  </svg>
+  <figcaption>図：文章題で式を作る過程を4段に分けたもの。「食べた」という言葉だけで引き算にせず、図の全体と部分の関係から式を読む</figcaption>
+</figure>
+<p>図にすると、「はじめ＝食べた＋のこり」という関係が見えて、式は 8＋13＝21。<strong>答え：21こ</strong>。文章には「食べたら」「のこり」とあるので引き算だと考えてしまいやすいのですが、図をかけば足し算だとわかります。これが<strong>逆思考の問題</strong>で、図が特に役に立つ場面です。</p>
 <h3>図をかけるようになる練習法</h3>
 <ul>
   <li><strong>まねから始める：</strong>教科書の図を見ながら同じ図をかき写す</li>
@@ -206,30 +255,99 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <tr><td>5年生</td><td>割合（もとにする量×割合）で何が「もと」か混乱</td><td>線分図で「もと＝1」を明示する</td></tr>
   <tr><td>6年生</td><td>速さ・単位量の関係式を丸暗記して使い分けられない</td><td>「1時間あたり」の意味に戻って図で整理</td></tr>
 </table>
-<p>学年が上がるほど「図がかけるかどうか」の差が広がります。5年生の割合、6年生の速さは、文章題の2大難所ですが、どちらも線分図で「もとにする量」を見える化すれば道が開けます。</p>
+<p>学年が上がるほど「図がかけるかどうか」の差が広がります。5年生の割合、6年生の速さはつまずきやすいところですが、どちらも線分図で「もとにする量」を見える化すると整理しやすくなります。</p>
 
-<h2>例題で練習（3ステップの複合問題）</h2>
+<h2>かけ算か、わり算か：？の位置で決める（3年生）</h2>
+<p>3年生になると、同じ場面から、かけ算の問題もわり算の問題も作れるようになります。どちらを使うかは、「〜ずつ」「分ける」といった言葉ではなく、<strong>わからない数（？）が図のどこにあるか</strong>で決めます。</p>
+<figure class="fig">
+<svg viewBox="0 0 460 250" role="img" aria-label="同じ「4こずつ6人分で24こ」の図で、わからない数（？）の位置が変わる3つの問題。全体が？ならかけ算4×6、1人分が？なら24÷6、何人分かが？なら24÷4">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="30" y="24" font-size="13" font-weight="700" fill="#122A64">A　ぜんぶで何こ？</text>
+      <rect x="30" y="32" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="53" y="52" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><rect x="76" y="32" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="99" y="52" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><rect x="122" y="32" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="145" y="52" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><rect x="168" y="32" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="191" y="52" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><rect x="214" y="32" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="237" y="52" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><rect x="260" y="32" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="283" y="52" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><text x="316" y="45" font-size="12" fill="#475569">全体が？</text><text x="316" y="61" font-size="13" font-weight="700" fill="#122A64">4 × 6 ＝ 24</text>
+      <text x="30" y="100" font-size="13" font-weight="700" fill="#122A64">B　24こを6人で分けると1人分は？</text>
+      <rect x="30" y="108" width="46" height="30" fill="#FEF2F2" stroke="#122A64"/><text x="53" y="128" font-size="13" text-anchor="middle" fill="#DC2626" font-weight="700">？</text><rect x="76" y="108" width="46" height="30" fill="#FEF2F2" stroke="#122A64"/><text x="99" y="128" font-size="13" text-anchor="middle" fill="#DC2626" font-weight="700">？</text><rect x="122" y="108" width="46" height="30" fill="#FEF2F2" stroke="#122A64"/><text x="145" y="128" font-size="13" text-anchor="middle" fill="#DC2626" font-weight="700">？</text><rect x="168" y="108" width="46" height="30" fill="#FEF2F2" stroke="#122A64"/><text x="191" y="128" font-size="13" text-anchor="middle" fill="#DC2626" font-weight="700">？</text><rect x="214" y="108" width="46" height="30" fill="#FEF2F2" stroke="#122A64"/><text x="237" y="128" font-size="13" text-anchor="middle" fill="#DC2626" font-weight="700">？</text><rect x="260" y="108" width="46" height="30" fill="#FEF2F2" stroke="#122A64"/><text x="283" y="128" font-size="13" text-anchor="middle" fill="#DC2626" font-weight="700">？</text><text x="316" y="121" font-size="12" fill="#475569">1つ分が？</text><text x="316" y="137" font-size="13" font-weight="700" fill="#122A64">24 ÷ 6 ＝ 4</text>
+      <text x="30" y="176" font-size="13" font-weight="700" fill="#122A64">C　24こを4こずつ配ると何人分？</text>
+      <rect x="30" y="184" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="53" y="204" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><rect x="76" y="184" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="99" y="204" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700">4</text><rect x="122" y="184" width="46" height="30" fill="#FEF2F2" stroke="#122A64"/><text x="145" y="204" font-size="13" text-anchor="middle" fill="#DC2626" font-weight="700">？</text><rect x="168" y="184" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="191" y="204" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700"></text><rect x="214" y="184" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="237" y="204" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700"></text><rect x="260" y="184" width="46" height="30" fill="#DBEAFE" stroke="#122A64"/><text x="283" y="204" font-size="13" text-anchor="middle" fill="#1E3A8A" font-weight="700"></text><text x="316" y="197" font-size="12" fill="#475569">いくつ分が？</text><text x="316" y="213" font-size="13" font-weight="700" fill="#122A64">24 ÷ 4 ＝ 6</text>
+      <text x="30" y="240" font-size="11" fill="#64748B">※Cは、4こずつ何マス並ぶかをさがす（全部で24こになるまで）</text>
+    </g>
+  </svg>
+  <figcaption>図：同じ場面でも、わからない数（？）がどこにあるかで式が変わる。かけ算かわり算かは、言葉ではなく？の位置で決める</figcaption>
+</figure>
+
+<h2>2段階の問題：まず何を求める？（4年生）</h2>
 <div class="ex-box">
   <p><strong>例題2（4年生レベル）：</strong>1こ85円のパンを6こ買って、1000円札ではらいました。おつりは何円ですか。</p>
   <p><strong>解き方：</strong>STEP2で整理——わかっている数：85円、6こ、1000円。聞かれていること：おつり。</p>
   <p>まず求めるもの：パンの代金 → 85×6＝510円</p>
   <p>次に：おつり → 1000−510＝<strong>490円</strong></p>
 </div>
-<p>2段階の問題は「まず○○を求める」と日本語で書いてから式を立てると、途中で迷子になりません。式だけ書き散らす子には「いま何を計算したの？」と聞いて、言葉にさせましょう。</p>
+<figure class="fig">
+<svg viewBox="0 0 460 200" role="img" aria-label="1000円を1本のテープにし、パン6こ分の代金と、おつり（？）に分けた図。まずパンの代金85×6＝510円、次におつり1000−510＝490円">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <text x="230" y="24" font-size="13" fill="#475569">はらったお金 1000円</text>
+      <path d="M30 32 V38 H430 V32" fill="none" stroke="#94A3B8"/>
+      <rect x="30" y="46" width="204" height="40" fill="#FDE68A" stroke="#122A64"/>
+      <rect x="234" y="46" width="196" height="40" fill="#FEF2F2" stroke="#122A64"/>
+      <text x="132" y="71" font-size="13" font-weight="700" fill="#92400E">パン6こ分の代金</text>
+      <text x="332" y="71" font-size="15" font-weight="700" fill="#DC2626">おつり ？</text>
+      <text x="132" y="116" font-size="13" fill="#374151"><tspan font-weight="700" fill="#B45309">まず</tspan> 85 × 6 ＝ 510円</text>
+      <text x="332" y="116" font-size="13" fill="#374151"><tspan font-weight="700" fill="#DC2626">次に</tspan> 1000 − 510 ＝ 490円</text>
+      <text x="230" y="160" font-size="12" fill="#1E3A8A">「まず何を求める？」を日本語で書いてから式にすると、途中で迷わない</text>
+      <text x="230" y="184" font-size="12" fill="#64748B">510円で止めると「代金」の答えになってしまう（聞かれているのはおつり）</text>
+    </g>
+  </svg>
+  <figcaption>図：2段階の問題は、テープ図のどこを先に求めるかを決めてから式を立てる。1本目の式の答え（510円）は、まだ途中の数</figcaption>
+</figure>
+<p>2段階の問題は「まず○○を求める」と日本語で書いてから式を立てると、途中で迷いにくくなります。式だけ書き散らす子には「いま何を計算したの？」と聞いて、言葉にさせましょう。</p>
 
-<h2>高学年の難所：割合の文章題も線分図で</h2>
+<h2>5年生：割合の文章題も線分図で</h2>
 <div class="ex-box">
   <p><strong>例題3（5年生レベル）：</strong>定価800円の品物を、定価の30％引きで買いました。代金は何円ですか。</p>
   <p><strong>解き方：</strong>線分図で「定価800円＝1（もとにする量）」を1本の線にし、30％分に印をつける。</p>
   <p>引かれる分：800×0.3＝240円 → 代金：800−240＝<strong>560円</strong></p>
   <p>（別解：残りは70％だから 800×0.7＝560円）</p>
 </div>
-<p>割合の文章題で混乱する最大の原因は「何を1（もと）にするか」を見失うこと。線分図の左端に「もと＝800円＝100％」と書いてしまえば、30％がその一部だと目で見てわかります。<strong>高学年になるほど、図の習慣がある子とない子の差が開く</strong>のはこのためです。</p>
+<p>割合の文章題で混乱する原因としてよくあるのが、「何を1（もと）にするか」を見失うことです。線分図の左端に「もと＝800円＝100％」と書いてしまえば、30％がその一部だと目で見てわかります。高学年になるほど、図をかく習慣が役に立つ場面が増えていきます。</p>
+
+<h2>家庭でためす例題（学年別）</h2>
+<p>答えは折りたたんであります。お子さんの学年の問題から、図をかいてから式を立ててみてください。</p>
+<ol class="q-set">
+  <li class="q"><span class="q-text">赤い花が5本、白い花が8本あります。あわせて何本？（1年）</span><details><summary>答えと考え方</summary><p>13本。2つを合わせるのでたし算。5＋8＝13。</p></details></li>
+  <li class="q"><span class="q-text">何円か持っていて、150円使ったら、のこりは230円でした。はじめに何円持っていましたか。（2年）</span><details><summary>答えと考え方</summary><p>380円。テープ図で「はじめ＝使った＋のこり」。150＋230＝380。たしかめ 380−150＝230。</p></details></li>
+  <li class="q"><span class="q-text">ゆうとさんは本を42ページ、妹は27ページ読みました。ちがいは何ページ？（2年）</span><details><summary>答えと考え方</summary><p>15ページ。ちがいを求めるのでひき算。42−27＝15。</p></details></li>
+  <li class="q"><span class="q-text">24このあめを、1人に4こずつ配ります。何人に配れますか。（3年）</span><details><summary>答えと考え方</summary><p>6人。4こずつのまとまりがいくつあるか（？はいくつ分）。24÷4＝6。</p></details></li>
+  <li class="q"><span class="q-text">1本120円のペンを3本と、80円の消しゴムを1こ買いました。代金はいくら？（4年）</span><details><summary>答えと考え方</summary><p>440円。まずペンの代金 120×3＝360円、次に 360＋80＝440円。</p></details></li>
+  <li class="q"><span class="q-text">定価1500円のシャツが20％引き。代金は？（5年）</span><details><summary>答えと考え方</summary><p>1200円。20％引き＝残り80％。1500×0.8＝1200。</p></details></li>
+  <li class="q"><span class="q-text">時速40kmで2.5時間走ると、何km進みますか。（6年）</span><details><summary>答えと考え方</summary><p>100km。道のり＝速さ×時間。40×2.5＝100。</p></details></li>
+</ol>
+
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>文章題の誤答は、計算のまちがいより「式を作る過程」で起きていることがよくあります。どの段階で止まっているかを見てみてください。</p>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>「8こ食べたら、のこりは13こ。はじめは？」→ 13−8＝5</div>
+  <p><strong>何が起きたか：</strong>「食べたら」「のこり」という言葉につられて、ひき算を選んでいます。はじめの数（全体）を求める逆思考の問題です。</p>
+  <p><strong>家庭での直し方：</strong>式の前にテープ図をかき、「？」を全体の位置に書きます。全体を求めるので 8＋13＝21。答えが出たら「21こから8こ食べると13こ？」と問題文に戻して確かめます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>「85円のパンを6こ買って1000円はらった。おつりは？」→ 1000−85−6＝909</div>
+  <p><strong>何が起きたか：</strong>問題に出てきた数字を全部使って、とりあえず計算しています。「6こ」が「6円」として引かれています。</p>
+  <p><strong>家庭での直し方：</strong>わかっている数に○をつけたあと、それぞれに単位（円・こ）を書き込みます。「6こ」は円から引けないことに気づけます。まずパンの代金 85×6＝510円、次におつり 1000−510＝490円。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>同じ問題で → 85×6＝510円（ここで終わり）</div>
+  <p><strong>何が起きたか：</strong>1段目の式（パンの代金）までは正しいのですが、聞かれている「おつり」まで進んでいません。</p>
+  <p><strong>家庭での直し方：</strong>問題文の聞かれていることに波線を引き、答えを書く前に「波線のことに答えた？」と確かめる手順にします。テープ図で510円がどの部分かを指さすと、まだ途中だとわかります。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>「24このあめを4人で分けると1人分は？」→ 24×4＝96こ</div>
+  <p><strong>何が起きたか：</strong>「分ける」問題でかけ算を選んでいます。1人分が、もとの24こより多くなっています。</p>
+  <p><strong>家庭での直し方：</strong>図の「？」が1つ分の位置にあるか確かめます（上の図のB）。分けると1人分はもとより少なくなる、と答えの見当を立てると、96こはおかしいと気づけます。正しくは 24÷4＝6こ。</p>
+</div>
 
 <h2>キーワード頼みは卒業しよう</h2>
 <p>「あわせて＝たし算」「ちがいは＝ひき算」のようなキーワード解法は、低学年の入り口では有効ですが、頼りすぎると例題1のような逆思考問題で崩れます。<strong>言葉は手がかり、決め手は図</strong>。この順番を親子で合言葉にしてください。</p>
 <div class="tip-box">
-  <p>💡 声かけ例：「式の前に、絵にするとどうなる？」「その図のどこが『？』（聞かれていること）？」——答えを教えるのではなく、図に誘導するのが伸びる声かけです。</p>
+  <p>💡 声かけ例：「式の前に、絵にするとどうなる？」「その図のどこが『？』（聞かれていること）？」——答えを教えるのではなく、図に誘導する声かけです。</p>
 </div>
 
 <h2>家庭でできる文章題トレーニング</h2>
@@ -320,8 +438,8 @@ footer a{color:#94A3B8;text-decoration:underline;}
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+  <p>学年を選んで、文章題を含む問題をその場で採点しながら練習できます</p>
+  <a href="/drill.html">学年を選んでドリルをやってみる →</a>
 </div>
 </div>
 
