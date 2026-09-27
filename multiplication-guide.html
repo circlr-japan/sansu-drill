@@ -10,8 +10,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>かけ算をマスターする方法【九九から筆算まで】 | にじゅうまる。算数ドリル</title>
-<meta name="description" content="かけ算の意味（1つ分×いくつ分）から九九、2桁×2桁の筆算まで学年別に解説。筆算で「ずらして書く」理由、分配のきまりを使った暗算、文章題で式の順序に迷わない考え方を例題つきで紹介｜にじゅうまる。算数ドリル">
+<title>かけ算の教え方【九九表・筆算・家庭でつける九九の記録】 | にじゅうまる。算数ドリル</title>
+<meta name="description" content="かけ算を「1つ分×いくつ分」の意味から。九九表を折り返すと覚えるのは45マス、段ごとの正解数と時間の記録表、筆算の2段目を左から書く理由、分配のきまりの面積図、例題7問と誤答例4つ｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/multiplication-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,18 +46,52 @@ ul li,ol li{margin-bottom:8px;}
 .cta a{display:inline-block;background:#fff;color:#1E40AF;font-weight:700;font-size:15px;padding:12px 28px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
+.fig{margin:20px 0;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:#64748B;margin-top:8px;text-align:center;line-height:1.7;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
+.try-box{background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.try-box .try-title{font-size:13px;font-weight:700;color:#1E3A8A;margin-bottom:6px;}
+.try-box p{font-size:13px;color:#1E3A8A;margin-bottom:10px;}
+.try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
+.ref-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin:24px 0;}
+.ref-box .ref-title{font-size:13px;font-weight:700;color:#475569;margin-bottom:8px;}
+.ref-box ul{font-size:12px;color:#64748B;margin-bottom:0;padding-left:18px;}
+.ref-box li{margin-bottom:5px;}
+.ref-box a{color:#2563EB;}
+.check-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;table-layout:fixed;}
+.check-table th,.check-table td{border:1px solid #E2E8F0;padding:8px 6px;text-align:center;background:#fff;}
+.check-table th{background:#EFF6FF;color:#1E3A8A;font-size:12px;}
+.check-table td:first-child,.check-table th:first-child{text-align:left;width:46%;font-size:12px;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="かけ算をマスターする方法【九九から筆算まで】">
-<meta property="og:description" content="かけ算の意味から九九、2桁×2桁の筆算まで学年別に解説。ずらして書く理由や暗算の工夫も。">
+<meta property="og:title" content="かけ算の教え方【九九表・筆算・家庭でつける九九の記録】">
+<meta property="og:description" content="九九表は折り返すと45マス。家庭でつける九九の記録表、筆算の2段目の意味、誤答例と直し方。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/multiplication-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="かけ算をマスターする方法【九九から筆算まで】">
-<meta name="twitter:description" content="かけ算の意味から筆算・暗算の工夫まで学年別に解説。">
+<meta name="twitter:title" content="かけ算の教え方：九九・筆算・家庭での記録">
+<meta name="twitter:description" content="九九＋筆算＋家庭でつける記録。図解と誤答例つき。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -66,26 +100,34 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "かけ算の筆算で2段目を左に1つずらすのはなぜですか？",
+      "name": "筆算の2段目はなぜ左にずらすのですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "2段目は「十の位の数をかけた答え」だからです。23×45の2段目は23×4ではなく23×40の計算なので、答えは十の位から書き始めます。「ずらす」のではなく「十の位からスタートしている」と教えると意味が伝わります。"
+        "text": "2段目は十の位の数をかけた答え（23×40など）だからです。一の位は0になるので、省略して十の位から書いています。一度0まで書かせると納得しやすくなります。"
       }
     },
     {
       "@type": "Question",
-      "name": "九九はできるのに筆算になると間違えます。",
+      "name": "九九はできるのに筆算で間違えます。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "筆算のかけ算は「九九＋くり上がりのたし算」の複合技です。ミスの原因はかけ算部分ではなく、くり上がりを足すときのたし算にあることが多いです。間違えた問題のどの段階でミスしたかを特定して、その部分だけ練習しましょう。"
+        "text": "誤答が九九の段階か、くり上がりを足す段階かを切り分けてみてください。23×4＝82のように足し忘れている場合は、「かけてから、小さい1を足す」を声に出す手順にします。"
       }
     },
     {
       "@type": "Question",
-      "name": "3×4と4×3はどちらでもいいのですか？",
+      "name": "九九はいくつ覚えればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "答えはどちらも12で同じです（交換のきまり）。ただし学校では文章題で「1つ分×いくつ分」の順で式を立てる指導が行われることが多く、場面の意味を式で表せているかが見られています。図をかいて「1つ分はどっちか」を確かめる習慣をつけましょう。"
+        "text": "九九表は81マスですが、3×4と4×3のように順番を入れかえても答えは同じなので、新しく覚えるのはななめの9マスと右上の36マス、あわせて45マスです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "九九が本当にできているか、どう確かめればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "段ごとにランダムに10問出して、正解数とかかった時間を記録する方法があります。正解数が10問でも時間が長い段は、その段だけを練習に回します。"
       }
     },
     {
@@ -93,7 +135,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
       "name": "かけ算は何年生で習いますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "九九は2年生、2桁×1桁や3桁×1桁の筆算は3年生、2桁×2桁・3桁×2桁の筆算は3〜4年生、小数のかけ算は5年生、分数のかけ算は6年生で学習します。"
+        "text": "九九は2年生、筆算は3〜4年生、小数のかけ算は5年生、分数のかけ算は6年生で扱います。"
       }
     }
   ]
@@ -103,135 +145,252 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <body>
 <div class="header">
   <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
-  <h1>かけ算をマスターする方法</h1>
+  <h1>かけ算の教え方：九九・筆算・家庭での記録</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>✖️ かけ算は2年生の九九から6年生の分数のかけ算まで、5年間かけて積み上がる大きな柱です。このページでは「意味→九九→筆算→暗算の工夫」の順に、つまずきやすい所と教え方を解説します。</p>
+  <p>✖️ かけ算は2年生の九九から6年生の分数のかけ算まで、5年間かけて積み上がる単元です。このページでは「意味→九九→筆算」の順に、九九表の見方、家庭でつけられる九九の記録表、筆算の2段目を左から書く理由を図でまとめました。例題と、よくある誤答例の直し方もあります。</p>
 </div>
 
 <h2>かけ算の意味：「1つ分×いくつ分」</h2>
-<p>かけ算の学習で最初に大切なのは、九九の暗記より<strong>意味の理解</strong>です。かけ算は「<strong>1つ分の数 × いくつ分 ＝ ぜんぶの数</strong>」を表します。</p>
-<div class="ex-box">
-  <p><strong>例：</strong>「1皿に3こずつ、4皿分」→ 3×4＝12</p>
-  <p>「3こずつ」が1つ分、「4皿」がいくつ分。同じ数のまとまりが何セットあるか、を一発で計算するのがかけ算です。</p>
-</div>
-<p>この意味がしっかりしていると、3年生のわり算（かけ算の逆）、5年生の小数のかけ算、割合まで、すべての理解がスムーズになります。文章題で式の順序に迷ったら、図をかいて「1つ分はどっち？」を確かめさせましょう。</p>
+<p>かけ算で最初に大切なのは、九九の暗記よりも<strong>意味の理解</strong>です。かけ算は「<strong>1つ分の数 × いくつ分 ＝ ぜんぶの数</strong>」を表します。</p>
+<figure class="fig">
+<svg viewBox="0 0 440 220" role="img" aria-label="お皿が4枚あり、どのお皿にもみかんが3こずつのっている図。1つ分が3こ、いくつ分が4皿で、式は3×4＝12">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <ellipse cx="80" cy="80" rx="42" ry="26" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/><circle cx="64" cy="78" r="9" fill="#F59E0B"/><circle cx="80" cy="72" r="9" fill="#F59E0B"/><circle cx="96" cy="78" r="9" fill="#F59E0B"/><text x="80" y="128" font-size="12" fill="#475569" text-anchor="middle">1皿め</text><ellipse cx="180" cy="80" rx="42" ry="26" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/><circle cx="164" cy="78" r="9" fill="#F59E0B"/><circle cx="180" cy="72" r="9" fill="#F59E0B"/><circle cx="196" cy="78" r="9" fill="#F59E0B"/><text x="180" y="128" font-size="12" fill="#475569" text-anchor="middle">2皿め</text><ellipse cx="280" cy="80" rx="42" ry="26" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/><circle cx="264" cy="78" r="9" fill="#F59E0B"/><circle cx="280" cy="72" r="9" fill="#F59E0B"/><circle cx="296" cy="78" r="9" fill="#F59E0B"/><text x="280" y="128" font-size="12" fill="#475569" text-anchor="middle">3皿め</text><ellipse cx="380" cy="80" rx="42" ry="26" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/><circle cx="364" cy="78" r="9" fill="#F59E0B"/><circle cx="380" cy="72" r="9" fill="#F59E0B"/><circle cx="396" cy="78" r="9" fill="#F59E0B"/><text x="380" y="128" font-size="12" fill="#475569" text-anchor="middle">4皿め</text>
+      <path d="M38 148 H122" stroke="#2563EB" stroke-width="2"/><text x="80" y="168" font-size="13" font-weight="700" fill="#1E3A8A" text-anchor="middle">1つ分＝3こ</text>
+      <path d="M38 186 H422" stroke="#15803D" stroke-width="2"/><text x="230" y="206" font-size="13" font-weight="700" fill="#166534" text-anchor="middle">いくつ分＝4皿　→　3 × 4 ＝ 12</text>
+    </g>
+  </svg>
+  <figcaption>図：かけ算は「1つ分の数 × いくつ分」。同じ数ずつのまとまりが、いくつあるかを数える</figcaption>
+</figure>
+<p>この意味がしっかりしていると、3年生のわり算（かけ算の逆）、5年生の小数のかけ算、割合へと進むときに迷いにくくなります。文章題で式に迷ったら、図をかいて「1つ分はどれ？」を確かめます。</p>
 
 <h2>学年別ステップ</h2>
 <table class="cv-table">
   <tr><th>学年</th><th>学ぶ内容</th><th>ポイント</th></tr>
-  <tr><td>2年生</td><td>かけ算の意味・九九</td><td>意味→暗唱→ランダム即答</td></tr>
-  <tr><td>3年生</td><td>2桁×1桁・3桁×1桁の筆算、0のかけ算</td><td>九九×くり上がりの複合</td></tr>
-  <tr><td>3〜4年生</td><td>2桁×2桁・3桁×2桁の筆算</td><td>2段目の「ずらし」の意味</td></tr>
+  <tr><td>2年生</td><td>かけ算の意味・九九</td><td>意味→唱える→ランダムに答える</td></tr>
+  <tr><td>3年生</td><td>2けた×1けた・3けた×1けたの筆算、0のかけ算、倍</td><td>九九＋くり上がりのたし算</td></tr>
+  <tr><td>3〜4年生</td><td>2けた×2けた・3けた×2けたの筆算</td><td>2段目の書く位置の意味</td></tr>
   <tr><td>5年生</td><td>小数のかけ算</td><td>小数点の位置</td></tr>
   <tr><td>6年生</td><td>分数のかけ算</td><td>分母どうし・分子どうし</td></tr>
 </table>
 
-<h2>九九：暗記のコツは別記事で</h2>
-<p>九九の覚え方（覚える順番・7の段8の段の語呂合わせ・ゲーム練習法）は、<a href="/kuku-tips.html">九九の覚え方ガイド</a>に詳しくまとめました。ここでは1つだけ強調します：<strong>九九のゴールは「言える」ではなく「ランダムに聞かれて2秒以内」</strong>。筆算では九九を順番どおりでなくバラバラに使うからです。</p>
+<h2>九九：表で見ると、覚えるのは45マス</h2>
+<p>九九は81マスありますが、3×4と4×3のように順番を入れかえても答えは同じです。表をななめの線で折り返すと、右上と左下がぴったり重なります。</p>
+<figure class="fig">
+<svg viewBox="0 0 440 330" role="img" aria-label="九九表81マス。ななめの線（同じ数どうし）を黄色、その右上を水色、左下を灰色にしている。左下は右上と同じ答えなので、新しく覚えるのは黄色と水色の45マス">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <text x="65.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">1</text><text x="38" y="63.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">1</text><rect x="50" y="44" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="65.0" y="63.0" font-size="11" text-anchor="middle" fill="#92400E">1</text><rect x="80" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="95.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">2</text><rect x="110" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="125.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">3</text><rect x="140" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="155.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">4</text><rect x="170" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="185.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">5</text><rect x="200" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="215.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">6</text><rect x="230" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="245.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">7</text><rect x="260" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="275.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">8</text><rect x="290" y="44" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="63.0" font-size="11" text-anchor="middle" fill="#1E3A8A">9</text><text x="95.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">2</text><text x="38" y="93.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">2</text><rect x="50" y="74" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="93.0" font-size="11" text-anchor="middle" fill="#CBD5E1">2</text><rect x="80" y="74" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="95.0" y="93.0" font-size="11" text-anchor="middle" fill="#92400E">4</text><rect x="110" y="74" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="125.0" y="93.0" font-size="11" text-anchor="middle" fill="#1E3A8A">6</text><rect x="140" y="74" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="155.0" y="93.0" font-size="11" text-anchor="middle" fill="#1E3A8A">8</text><rect x="170" y="74" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="185.0" y="93.0" font-size="11" text-anchor="middle" fill="#1E3A8A">10</text><rect x="200" y="74" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="215.0" y="93.0" font-size="11" text-anchor="middle" fill="#1E3A8A">12</text><rect x="230" y="74" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="245.0" y="93.0" font-size="11" text-anchor="middle" fill="#1E3A8A">14</text><rect x="260" y="74" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="275.0" y="93.0" font-size="11" text-anchor="middle" fill="#1E3A8A">16</text><rect x="290" y="74" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="93.0" font-size="11" text-anchor="middle" fill="#1E3A8A">18</text><text x="125.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">3</text><text x="38" y="123.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">3</text><rect x="50" y="104" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="123.0" font-size="11" text-anchor="middle" fill="#CBD5E1">3</text><rect x="80" y="104" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="95.0" y="123.0" font-size="11" text-anchor="middle" fill="#CBD5E1">6</text><rect x="110" y="104" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="125.0" y="123.0" font-size="11" text-anchor="middle" fill="#92400E">9</text><rect x="140" y="104" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="155.0" y="123.0" font-size="11" text-anchor="middle" fill="#1E3A8A">12</text><rect x="170" y="104" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="185.0" y="123.0" font-size="11" text-anchor="middle" fill="#1E3A8A">15</text><rect x="200" y="104" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="215.0" y="123.0" font-size="11" text-anchor="middle" fill="#1E3A8A">18</text><rect x="230" y="104" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="245.0" y="123.0" font-size="11" text-anchor="middle" fill="#1E3A8A">21</text><rect x="260" y="104" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="275.0" y="123.0" font-size="11" text-anchor="middle" fill="#1E3A8A">24</text><rect x="290" y="104" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="123.0" font-size="11" text-anchor="middle" fill="#1E3A8A">27</text><text x="155.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">4</text><text x="38" y="153.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">4</text><rect x="50" y="134" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="153.0" font-size="11" text-anchor="middle" fill="#CBD5E1">4</text><rect x="80" y="134" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="95.0" y="153.0" font-size="11" text-anchor="middle" fill="#CBD5E1">8</text><rect x="110" y="134" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="125.0" y="153.0" font-size="11" text-anchor="middle" fill="#CBD5E1">12</text><rect x="140" y="134" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="155.0" y="153.0" font-size="11" text-anchor="middle" fill="#92400E">16</text><rect x="170" y="134" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="185.0" y="153.0" font-size="11" text-anchor="middle" fill="#1E3A8A">20</text><rect x="200" y="134" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="215.0" y="153.0" font-size="11" text-anchor="middle" fill="#1E3A8A">24</text><rect x="230" y="134" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="245.0" y="153.0" font-size="11" text-anchor="middle" fill="#1E3A8A">28</text><rect x="260" y="134" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="275.0" y="153.0" font-size="11" text-anchor="middle" fill="#1E3A8A">32</text><rect x="290" y="134" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="153.0" font-size="11" text-anchor="middle" fill="#1E3A8A">36</text><text x="185.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">5</text><text x="38" y="183.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">5</text><rect x="50" y="164" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="183.0" font-size="11" text-anchor="middle" fill="#CBD5E1">5</text><rect x="80" y="164" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="95.0" y="183.0" font-size="11" text-anchor="middle" fill="#CBD5E1">10</text><rect x="110" y="164" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="125.0" y="183.0" font-size="11" text-anchor="middle" fill="#CBD5E1">15</text><rect x="140" y="164" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="155.0" y="183.0" font-size="11" text-anchor="middle" fill="#CBD5E1">20</text><rect x="170" y="164" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="185.0" y="183.0" font-size="11" text-anchor="middle" fill="#92400E">25</text><rect x="200" y="164" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="215.0" y="183.0" font-size="11" text-anchor="middle" fill="#1E3A8A">30</text><rect x="230" y="164" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="245.0" y="183.0" font-size="11" text-anchor="middle" fill="#1E3A8A">35</text><rect x="260" y="164" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="275.0" y="183.0" font-size="11" text-anchor="middle" fill="#1E3A8A">40</text><rect x="290" y="164" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="183.0" font-size="11" text-anchor="middle" fill="#1E3A8A">45</text><text x="215.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">6</text><text x="38" y="213.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">6</text><rect x="50" y="194" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="213.0" font-size="11" text-anchor="middle" fill="#CBD5E1">6</text><rect x="80" y="194" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="95.0" y="213.0" font-size="11" text-anchor="middle" fill="#CBD5E1">12</text><rect x="110" y="194" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="125.0" y="213.0" font-size="11" text-anchor="middle" fill="#CBD5E1">18</text><rect x="140" y="194" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="155.0" y="213.0" font-size="11" text-anchor="middle" fill="#CBD5E1">24</text><rect x="170" y="194" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="185.0" y="213.0" font-size="11" text-anchor="middle" fill="#CBD5E1">30</text><rect x="200" y="194" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="215.0" y="213.0" font-size="11" text-anchor="middle" fill="#92400E">36</text><rect x="230" y="194" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="245.0" y="213.0" font-size="11" text-anchor="middle" fill="#1E3A8A">42</text><rect x="260" y="194" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="275.0" y="213.0" font-size="11" text-anchor="middle" fill="#1E3A8A">48</text><rect x="290" y="194" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="213.0" font-size="11" text-anchor="middle" fill="#1E3A8A">54</text><text x="245.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">7</text><text x="38" y="243.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">7</text><rect x="50" y="224" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="243.0" font-size="11" text-anchor="middle" fill="#CBD5E1">7</text><rect x="80" y="224" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="95.0" y="243.0" font-size="11" text-anchor="middle" fill="#CBD5E1">14</text><rect x="110" y="224" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="125.0" y="243.0" font-size="11" text-anchor="middle" fill="#CBD5E1">21</text><rect x="140" y="224" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="155.0" y="243.0" font-size="11" text-anchor="middle" fill="#CBD5E1">28</text><rect x="170" y="224" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="185.0" y="243.0" font-size="11" text-anchor="middle" fill="#CBD5E1">35</text><rect x="200" y="224" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="215.0" y="243.0" font-size="11" text-anchor="middle" fill="#CBD5E1">42</text><rect x="230" y="224" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="245.0" y="243.0" font-size="11" text-anchor="middle" fill="#92400E">49</text><rect x="260" y="224" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="275.0" y="243.0" font-size="11" text-anchor="middle" fill="#1E3A8A">56</text><rect x="290" y="224" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="243.0" font-size="11" text-anchor="middle" fill="#1E3A8A">63</text><text x="275.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">8</text><text x="38" y="273.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">8</text><rect x="50" y="254" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="273.0" font-size="11" text-anchor="middle" fill="#CBD5E1">8</text><rect x="80" y="254" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="95.0" y="273.0" font-size="11" text-anchor="middle" fill="#CBD5E1">16</text><rect x="110" y="254" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="125.0" y="273.0" font-size="11" text-anchor="middle" fill="#CBD5E1">24</text><rect x="140" y="254" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="155.0" y="273.0" font-size="11" text-anchor="middle" fill="#CBD5E1">32</text><rect x="170" y="254" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="185.0" y="273.0" font-size="11" text-anchor="middle" fill="#CBD5E1">40</text><rect x="200" y="254" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="215.0" y="273.0" font-size="11" text-anchor="middle" fill="#CBD5E1">48</text><rect x="230" y="254" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="245.0" y="273.0" font-size="11" text-anchor="middle" fill="#CBD5E1">56</text><rect x="260" y="254" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="275.0" y="273.0" font-size="11" text-anchor="middle" fill="#92400E">64</text><rect x="290" y="254" width="30" height="30" fill="#DBEAFE" stroke="#E2E8F0"/><text x="305.0" y="273.0" font-size="11" text-anchor="middle" fill="#1E3A8A">72</text><text x="305.0" y="36" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">9</text><text x="38" y="303.0" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A8A">9</text><rect x="50" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="65.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">9</text><rect x="80" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="95.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">18</text><rect x="110" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="125.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">27</text><rect x="140" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="155.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">36</text><rect x="170" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="185.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">45</text><rect x="200" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="215.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">54</text><rect x="230" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="245.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">63</text><rect x="260" y="284" width="30" height="30" fill="#F8FAFC" stroke="#E2E8F0"/><text x="275.0" y="303.0" font-size="11" text-anchor="middle" fill="#CBD5E1">72</text><rect x="290" y="284" width="30" height="30" fill="#FDE68A" stroke="#E2E8F0"/><text x="305.0" y="303.0" font-size="11" text-anchor="middle" fill="#92400E">81</text>
+      <rect x="338" y="50" width="14" height="14" fill="#FDE68A"/><text x="358" y="62" font-size="11" fill="#475569">同じ数どうし 9</text>
+      <rect x="338" y="74" width="14" height="14" fill="#DBEAFE"/><text x="358" y="86" font-size="11" fill="#475569">右上 36</text>
+      <rect x="338" y="98" width="14" height="14" fill="#F8FAFC" stroke="#E2E8F0"/><text x="358" y="110" font-size="11" fill="#475569">左下は右上と</text>
+      <text x="358" y="124" font-size="11" fill="#475569">同じ答え</text>
+      <text x="338" y="156" font-size="12" font-weight="700" fill="#122A64">覚えるのは</text>
+      <text x="338" y="174" font-size="12" font-weight="700" fill="#122A64">45マス</text>
+    </g>
+  </svg>
+  <figcaption>図：九九表はななめの線で折り返すと重なる（3×4＝4×3）。81マスのうち、新しく覚えるのは45マス</figcaption>
+</figure>
+<p>新しく覚えるのは、ななめの9マスと右上の36マス、あわせて<strong>45マス</strong>です。覚える順番や語呂合わせは<a href="/kuku-tips.html">九九の覚え方ガイド</a>にまとめています。筆算では九九を順番どおりでなくバラバラに使うので、にじゅうまる。では「ランダムに聞かれても迷わず答えられる」を一つの目標にしています。</p>
 
-<h2>筆算①：2桁×1桁（3年生）</h2>
+<h2>九九の記録をつけてみる（家庭でとれるデータ）</h2>
+<p>「九九はできている」と思っていても、段によって答えるまでの時間に差があることがあります。家庭で次のような記録をつけると、どの段に練習を回せばよいかが数字で見えてきます。</p>
+<table class="check-table">
+  <tr><th>段（ランダム10問）</th><th>日付</th><th>正解数</th><th>かかった時間</th></tr>
+  <tr><td>2の段・5の段</td><td></td><td>／10</td><td>秒</td></tr>
+  <tr><td>3の段・4の段</td><td></td><td>／10</td><td>秒</td></tr>
+  <tr><td>6の段</td><td></td><td>／10</td><td>秒</td></tr>
+  <tr><td>7の段</td><td></td><td>／10</td><td>秒</td></tr>
+  <tr><td>8の段</td><td></td><td>／10</td><td>秒</td></tr>
+  <tr><td>9の段</td><td></td><td>／10</td><td>秒</td></tr>
+</table>
+<p>読み方の目安：正解数が8問以下の段は、まず正確さを戻します。正解数が10問でも時間が他の段より長い段は、その段だけをランダムに出す練習に回します。1週間おきに同じ表をつけると、伸びた段と止まっている段が見えてきます。ドリルの九九チャレンジでも、1分間の正解数を記録できます。</p>
+
+<h2>筆算①：2けた×1けた（3年生）</h2>
 <div class="ex-box">
   <p><strong>例題：</strong>23×4</p>
-  <p>①一の位：3×4＝12 → 2を書いて1くり上げ</p>
+  <p>①一の位：3×4＝12 → 2を書いて、1を十の位の上に小さく書く</p>
   <p>②十の位：2×4＝8、くり上がりの1を足して9 → 答え<strong>92</strong></p>
 </div>
-<p>筆算のかけ算は<strong>「九九」＋「くり上がりのたし算」の複合技</strong>です。ミスの多くは、九九ではなく「くり上がりを足すとき」に起きます。間違えたら「九九のミス？足すときのミス？」を切り分けると、対策が絞れます。くり上がりの数字は小さくメモ書きさせましょう。</p>
+<figure class="fig">
+<svg viewBox="0 0 440 200" role="img" aria-label="たて4、よこ23の長方形を、よこ20とよこ3に分けた面積図。左は20×4＝80、右は3×4＝12、あわせて92。筆算23×4の中身と同じ">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="40" y="40" width="260" height="100" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+      <rect x="300" y="40" width="60" height="100" fill="#FDE68A" stroke="#F59E0B" stroke-width="2"/>
+      <text x="170" y="96" font-size="18" font-weight="700" fill="#1E3A8A">20 × 4 ＝ 80</text>
+      <text x="330" y="88" font-size="14" font-weight="700" fill="#92400E">3×4</text>
+      <text x="330" y="106" font-size="14" font-weight="700" fill="#92400E">＝12</text>
+      <text x="170" y="30" font-size="13" fill="#475569">20</text><text x="330" y="30" font-size="13" fill="#475569">3</text>
+      <text x="24" y="95" font-size="13" fill="#475569">4</text>
+      <text x="220" y="178" font-size="16" font-weight="700" fill="#122A64">23 × 4 ＝ 80 ＋ 12 ＝ 92</text>
+    </g>
+  </svg>
+  <figcaption>図：23×4を、20×4と3×4に分けて考える（分配のきまり）。筆算で一の位・十の位を別々にかけているのは、この仕組み</figcaption>
+</figure>
+<p>筆算のかけ算は<strong>「九九」と「くり上がりのたし算」の組み合わせ</strong>です。誤答が出たら「九九のまちがい？ 足すときのまちがい？」を切り分けると、練習する場所が絞れます。</p>
 
-<h2>筆算②：2桁×2桁の「ずらし」の意味（3〜4年生）</h2>
-<div class="hissan">   2 3
- × 4 5
- ─────
- 1 1 5   ← 23×5
- 9 2     ← 23×40（だから十の位から書く）
- ─────
-1 0 3 5</div>
-<p>2桁×2桁で必ず出る質問が「<strong>なんで2段目は左にずらすの？</strong>」。答えは、2段目が23×4ではなく<strong>23×40の計算だから</strong>です。40をかけた答えは必ず十の位以上になるので、十の位から書き始める——「ずらしている」のではなく「正しい位置に書いている」のです。</p>
-<p>ここを「ルールだから」で流すと、ずらし忘れ・ずらしすぎのミスが続きます。一度、2段目に「23×40＝920」と0まで書かせてみると、「0を省略して十の位から書いているだけ」と実感できます。</p>
+<h2>筆算②：2けた×2けたの2段目は、なぜ左から書く？（3〜4年生）</h2>
+<figure class="fig">
+<svg viewBox="0 0 460 250" role="img" aria-label="23×45の筆算。1段目は23×5＝115。2段目は23×40＝920で、一の位の0を省略して十の位から92と書く。合計は1035">
+    <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle">
+      <rect x="0" y="0" width="460" height="250" rx="12" fill="#FFFDF5"/>
+      <g font-size="26" fill="#122A64">
+        <text x="150" y="44">2</text><text x="180" y="44">3</text>
+        <text x="94" y="80" fill="#64748B">×</text><text x="150" y="80">4</text><text x="180" y="80">5</text>
+      </g>
+      <line x1="80" y1="92" x2="196" y2="92" stroke="#122A64" stroke-width="2"/>
+      <g font-size="26">
+        <text x="120" y="126" fill="#122A64">1</text><text x="150" y="126" fill="#122A64">1</text><text x="180" y="126" fill="#122A64">5</text>
+        <text x="120" y="162" fill="#122A64">9</text><text x="150" y="162" fill="#122A64">2</text><text x="180" y="162" fill="#CBD5E1">0</text>
+      </g>
+      <rect x="166" y="138" width="28" height="32" rx="4" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3"/>
+      <line x1="80" y1="174" x2="196" y2="174" stroke="#122A64" stroke-width="2"/>
+      <g font-size="26" font-weight="700" fill="#15803D">
+        <text x="90" y="208">1</text><text x="120" y="208">0</text><text x="150" y="208">3</text><text x="180" y="208">5</text>
+      </g>
+      <g text-anchor="start" font-size="13">
+        <text x="226" y="124" fill="#374151">← 23 × 5 ＝ 115</text>
+        <text x="226" y="160" fill="#374151">← 23 × <tspan font-weight="700" fill="#B45309">40</tspan> ＝ 920</text>
+        <text x="226" y="186" fill="#B45309">0は書かずに省略しているだけ</text>
+        <text x="226" y="206" fill="#374151">115 ＋ 920 ＝ 1035</text>
+      </g>
+    </g>
+  </svg>
+  <figcaption>図：2段目は23×4ではなく23×40。答えの一の位は0なので、省略して十の位から書いている。「ずらす」のではなく「正しい位置に書く」</figcaption>
+</figure>
+<p>「なんで2段目は左にずらすの？」と聞かれたら、2段目は23×4ではなく<strong>23×40の計算だから</strong>と答えます。一度、2段目に「920」と0まで書かせてみると、「0を省略して十の位から書いているだけ」と納得しやすくなります。</p>
 
 <h2>0のかけ算と、かけ算のきまり</h2>
 <ul>
   <li><strong>どんな数×0＝0、0×どんな数＝0</strong>——「3こ入りの袋が0袋なら、ぜんぶで0こ」</li>
-  <li><strong>交換のきまり：</strong>3×4＝4×3——順番を変えても答えは同じ</li>
-  <li><strong>分配のきまり：</strong>23×4＝(20＋3)×4＝20×4＋3×4——筆算はこの仕組みで動いている</li>
+  <li><strong>交換のきまり：</strong>3×4＝4×3——九九表が折り返すと重なる理由</li>
+  <li><strong>分配のきまり：</strong>23×4＝20×4＋3×4——筆算はこの仕組みで動いている</li>
 </ul>
-<p>分配のきまりは、暗算のときにも頼りになります。「102×6は？」→「100×6＋2×6＝612」。「98×5は？」→「100×5−2×5＝490」。数を分けたりまとめたりして計算を楽にする体験は、中学の文字式・因数分解の素地になります。</p>
 
-<h2>暗算の工夫（できると楽しい！）</h2>
+<h2>暗算の工夫</h2>
 <table class="cv-table">
   <tr><th>工夫</th><th>例</th></tr>
-  <tr><td>×10、×100はゼロをつける</td><td>23×10＝230</td></tr>
+  <tr><td>×10、×100は0をつける</td><td>23×10＝230</td></tr>
   <tr><td>×5は「×10の半分」</td><td>24×5 → 240÷2＝120</td></tr>
   <tr><td>キリのいい数に分ける</td><td>102×6 → 600＋12＝612</td></tr>
   <tr><td>キリのいい数から引く</td><td>99×7 → 700−7＝693</td></tr>
 </table>
-<p>暗算テクニックは「必須」ではありませんが、「計算って工夫できるんだ」という発見が、算数を作業から思考に変えてくれます。1つできたら家族に披露させてあげてください。得意げに説明することが、そのまま復習になります。</p>
+<p>1つできたら家族に説明してもらうと、それがそのまま復習になります。</p>
 
-<h2>「倍」の意味もかけ算（3年生）</h2>
-<p>3年生では「2倍、3倍」という<strong>倍の意味</strong>もかけ算として学びます。「6cmのテープの3倍の長さは？」→6×3＝18cm。ここでの「もとの量×倍」という見方は、5年生の<a href="/percentage-guide.html">割合</a>（もとにする量×割合）へまっすぐつながる、実はとても重要な考え方です。</p>
-<p>「兄は弟の2倍のあめを持っている。弟が4こなら兄は？」のように、<strong>何をもとにした倍なのか</strong>を意識させる声かけ（「誰の2倍？」）をしておくと、高学年での割合のつまずきを予防できます。</p>
+<h2>「倍」もかけ算（3年生）</h2>
+<p>「6cmのテープの3倍の長さは？」→ 6×3＝18cm。この「もとの量×倍」という見方は、5年生の<a href="/percentage-guide.html">割合</a>（もとにする量×割合）につながる考え方です。「誰の2倍？」と、何をもとにした倍かを言葉にする声かけをしておくと、高学年で役に立ちます。</p>
 
 <h2>小数・分数のかけ算へ（5・6年生）</h2>
-<p>かけ算は高学年で2回、姿を変えます。</p>
 <ul>
-  <li><strong>小数のかけ算（5年）：</strong>2.3×1.5——整数として計算してから小数点を打つ。「×1より小さい数だと答えがもとより小さくなる」ことが最大の発想転換</li>
+  <li><strong>小数のかけ算（5年）：</strong>2.3×1.5——整数として計算してから小数点を打つ。「1より小さい数をかけると、答えがもとより小さくなる」ことが新しい見方になる</li>
   <li><strong>分数のかけ算（6年）：</strong>2/3×4/5——分母どうし・分子どうしをかける</li>
 </ul>
-<p>どちらも計算手順は新しくなりますが、「1つ分×いくつ分」→「もとの量×倍」という意味の軸は同じです。2〜3年生のうちに意味と九九を固めることが、5年後の学習まで効く投資になります。小数のかけ算の詳細は<a href="/decimal-fraction-guide.html">小数の教え方ガイド</a>をご覧ください。</p>
+<p>手順は新しくなりますが、「1つ分×いくつ分」→「もとの量×倍」という意味の軸は同じです。小数のかけ算は<a href="/decimal-fraction-guide.html">小数の教え方ガイド</a>をご覧ください。</p>
 
-<h2>家庭でできる練習メニュー</h2>
-<ul>
-  <li><strong>九九が不安：</strong>ランダム出題で2秒即答チェック（九九チャレンジの1分間モードが最適）</li>
-  <li><strong>筆算練習中：</strong>1日3問を丁寧に。ミスの種類（九九？くり上がり？位置？）を記録</li>
-  <li><strong>意味の確認：</strong>「このかけ算のお話を作って」と式→場面の逆方向クイズ</li>
-  <li><strong>買い物で実践：</strong>「1こ98円を3こ買ったら？」——暗算の工夫の実践場</li>
-</ul>
+<h2>家庭でためす例題</h2>
+<ol class="q-set">
+  <li class="q"><span class="q-text">1皿に3こずつ、4皿分。ぜんぶで何こ？</span><details><summary>答えと考え方</summary><p>12こ。1つ分が3こ、いくつ分が4皿なので 3×4＝12。</p></details></li>
+  <li class="q"><span class="q-text">23×4（筆算）</span><details><summary>答えと考え方</summary><p>92。3×4＝12 → 2を書いて1をくり上げ。2×4＝8、1を足して9。</p></details></li>
+  <li class="q"><span class="q-text">23×45（筆算）</span><details><summary>答えと考え方</summary><p>1035。23×5＝115、23×40＝920（2段目は十の位から92と書く）、115＋920＝1035。</p></details></li>
+  <li class="q"><span class="q-text">24×5（暗算）</span><details><summary>答えと考え方</summary><p>120。×5は×10の半分。24×10＝240、240÷2＝120。</p></details></li>
+  <li class="q"><span class="q-text">99×7（暗算）</span><details><summary>答えと考え方</summary><p>693。100×7＝700 から 1×7＝7 を引いて 693。</p></details></li>
+  <li class="q"><span class="q-text">6cmのテープの3倍の長さは？</span><details><summary>答えと考え方</summary><p>18cm。もとの量6cm × 3倍 ＝ 18cm。</p></details></li>
+  <li class="q"><span class="q-text">弟はあめを4こ持っています。兄は弟の2倍持っています。兄は何こ？</span><details><summary>答えと考え方</summary><p>8こ。「弟の2倍」なので、もとは弟の4こ。4×2＝8。</p></details></li>
+</ol>
 
-<h2>よくある質問</h2>
-<h3>Q1. 筆算の2段目はなぜ左にずらすの？</h3>
-<p>十の位の数をかけた答え（23×40など）だから、十の位から書き始めています。0まで書かせると一発で納得します。</p>
-<h3>Q2. 九九はできるのに筆算で間違えます。</h3>
-<p>原因はくり上がりのたし算にあることが多いです。ミスの段階を切り分けて、そこだけ練習しましょう。</p>
-<h3>Q3. 3×4と4×3、どちらの式でもいい？</h3>
-<p>答えは同じですが、文章題では「1つ分×いくつ分」で場面を表せているかが大切です。図で1つ分を確かめる習慣を。</p>
-<h3>Q4. かけ算は何年生で習う？</h3>
-<p>九九は2年生、筆算は3〜4年生、小数のかけ算は5年生、分数のかけ算は6年生です。</p>
-<h3>Q5. 九九の表から何か学べますか？</h3>
-<p>九九の表は宝の山です。「3の段と4の段を足すと7の段になる」「表がななめの線で対称になっている（交換のきまり）」「9の段は答えの各位の和が必ず9」など、きまり探しの題材になります。2年生の後半に親子で表を眺めて発見を競うと、かけ算のきまりへの感覚が自然に育ちます。</p>
+<h2>よくある誤答例と、家庭での直し方</h2>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>23×4＝812</div>
+  <p><strong>何が起きたか：</strong>一の位の 3×4＝12 をそのまま「12」と書き、十の位の 2×4＝8 を左に並べています。くり上がりを十の位に送る手順が抜けています。</p>
+  <p><strong>家庭での直し方：</strong>一の位の答えのマスには1つしか書かない、と決めます。12なら2だけ書いて、1は十の位の上に小さく書く。答えの見当（20×4で80くらい）を先に立てると、812が大きすぎることに気づけます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>23×4＝82</div>
+  <p><strong>何が起きたか：</strong>くり上がりの1を書いたか覚えたかしたものの、十の位で 2×4＝8 のあとに足し忘れています。九九はできているので、誤りは「足すとき」にあります。</p>
+  <p><strong>家庭での直し方：</strong>十の位は「かけてから、小さい1を足す」と声に出す手順にします。九九のまちがいと足し忘れのどちらかを、赤ペンで分けて丸をつけると、次に気をつける場所がはっきりします。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>23×45＝207</div>
+  <p><strong>何が起きたか：</strong>2段目の 23×4＝92 を、一の位にそろえて書いています。115＋92＝207 になり、答えが小さすぎます。</p>
+  <p><strong>家庭での直し方：</strong>2段目に一度「920」と0まで書いてから、0を消して練習します。答えの見当（20×50で1000くらい）と比べると、207は小さすぎると気づけます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>「6cmのテープの3倍の長さは？」→ 6＋3＝9cm</div>
+  <p><strong>何が起きたか：</strong>「3倍」を「3つ足す」と混同して、たし算にしています。</p>
+  <p><strong>家庭での直し方：</strong>6cmのテープの絵を3本つなげてかき、「6cmが3つ分」と言葉にします。「いくつ分」はかけ算、と意味に戻ります。</p>
+</div>
+
+<div class="memo-box">
+  <div class="memo-title">🏠 九九表を、覚える前に「眺める」</div>
+  <p>九九表を覚える道具ではなく、きまりを見つける題材として使う方法があります。「3の段と4の段を足すと7の段になる」「9の段は答えの位の数を足すと9になる」「ななめの線で折ると同じ数が重なる」——見つけたきまりを言葉にすると、覚える量が減ります。</p>
+  <p>特に「ななめで折ると重なる」は、覚えるマスを81から45に減らせる見方です。表を横に置いて、同じ答えのマスを指でたどってみてください。</p>
+  <div class="memo-real">
+    <span class="memo-tag">にじゅうまる。家庭実践メモ</span>
+    <p>上の子が2年生の冬、九九表を見ながら「1×9と9×1は同じでしょう。半分だけ覚えたら、あとは同じだよ」と教えました。表を横に置いて、実際に同じ答えのマスを見せながら話した形です。</p>
+  </div>
+</div>
+
+<div class="try-box">
+  <div class="try-title">✏️ 九九と筆算を、その場で採点しながら練習する</div>
+  <p>九九チャレンジでは1分間の正解数を記録できます。3年生のドリルでは、2けた×1けたの筆算を含む問題が出ます。</p>
+  <a href="/drill.html?mode=kuku">九九チャレンジを開く →</a>
+</div>
+
+<div class="ref-box">
+  <div class="ref-title">📚 参考資料と、家庭での使い方</div>
+  <ul>
+    <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
+    <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
+  </ul>
+  <p style="font-size:11.5px;color:#64748B;margin:8px 0 0;line-height:1.8;">確認日: 2026年9月27日。学習指導要領では、第2学年で「乗法九九について知り、1位数と1位数との乗法の計算が確実にできること」が示され、第3学年で2位数や3位数に1位数や2位数をかける乗法とその筆算を扱います。家庭では、九九が「確実に」できているかを、上の記録表のように段ごとに確かめる形で使えます。図解・記録表・誤答例は、にじゅうまる。運営者による整理です。</p>
+</div>
 
 <h2>まとめ</h2>
 <ul>
-  <li>かけ算の核は「1つ分×いくつ分」の意味理解。九九の暗記はその上に</li>
-  <li>筆算＝九九＋くり上がりのたし算。ミスの段階を切り分けて対策</li>
-  <li>2段目のずらしは「十の位×だから」。0まで書けば納得できる</li>
-  <li>分配のきまりで暗算の工夫を楽しむと、計算が思考に変わる</li>
+  <li>かけ算の核は「1つ分×いくつ分」。九九の暗記はその上に</li>
+  <li>九九表は折り返すと重なる。新しく覚えるのは45マス</li>
+  <li>段ごとの正解数と時間を記録すると、練習する段が見える</li>
+  <li>筆算＝九九＋くり上がりのたし算。誤答はどちらの段階かを切り分ける</li>
+  <li>2段目は「×40」だから十の位から。0まで書けば納得できる</li>
 </ul>
+
+<h2>よくある質問</h2>
+<h3>Q1. 筆算の2段目はなぜ左にずらすのですか？</h3>
+<p>2段目は十の位の数をかけた答え（23×40など）だからです。一の位は0になるので、省略して十の位から書いています。一度0まで書かせると納得しやすくなります。</p>
+<h3>Q2. 九九はできるのに筆算で間違えます。</h3>
+<p>誤答が九九の段階か、くり上がりを足す段階かを切り分けてみてください。23×4＝82のように足し忘れている場合は、「かけてから、小さい1を足す」を声に出す手順にします。</p>
+<h3>Q3. 九九はいくつ覚えればいいですか？</h3>
+<p>九九表は81マスですが、3×4と4×3のように順番を入れかえても答えは同じなので、新しく覚えるのはななめの9マスと右上の36マス、あわせて45マスです。</p>
+<h3>Q4. 九九が本当にできているか、どう確かめればいいですか？</h3>
+<p>段ごとにランダムに10問出して、正解数とかかった時間を記録する方法があります。正解数が10問でも時間が長い段は、その段だけを練習に回します。</p>
+<h3>Q5. かけ算は何年生で習いますか？</h3>
+<p>九九は2年生、筆算は3〜4年生、小数のかけ算は5年生、分数のかけ算は6年生で扱います。</p>
 
 <div style="margin:32px 0;padding:20px 16px;background:#FFFFFF;border-radius:14px;border:1px solid #E2E8F0;">
   <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
   <div style="display:grid;gap:8px;">
     <a href="/kuku-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">✖️</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九の覚え方・練習方法</span>
+      <span style="font-size:18px;margin-right:8px;">🧮</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">九九の覚え方ガイド</span>
     </a>
     <a href="/division-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">➗</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">わり算の教え方・つまずき解説</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">わり算の筆算を1工程ずつ</span>
     </a>
-    <a href="/baisuu-yakusuu-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
-      <span style="font-size:18px;margin-right:8px;">🔢</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">倍数と約数（5年生）</span>
+    <a href="/grade-2-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">2️⃣</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">2年生：九九の家庭チェック</span>
     </a>
-    <a href="/grade-3.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+    <a href="/grade-3-tips.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
       <span style="font-size:18px;margin-right:8px;">3️⃣</span>
-      <span style="font-size:13px;font-weight:600;color:#1E40AF;">小学3年生の算数ドリル</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">3年生：九九からわり算へ</span>
     </a>
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
+  <p>九九チャレンジで、1分間の正解数を記録できます</p>
   <a href="/drill.html?mode=kuku">九九チャレンジをやってみる →</a>
 </div>
 </div>
