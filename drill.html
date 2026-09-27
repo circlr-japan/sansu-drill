@@ -63,7 +63,7 @@ if('serviceWorker' in navigator){
   "name": "にじゅうまる。算数ドリル",
   "alternateName": "算数ドリル無料",
   "url": "https://www.nijumaru-drill.com/drill.html",
-  "description": "小学1〜6年生対応の無料算数ドリル。学年別・3段階難易度。毎回ランダム生成で繰り返し使える。PDF印刷対応・スマホ対応。文部科学省学習指導要領準拠。",
+  "description": "小学1〜6年生対応の無料算数ドリル。学年別・3段階難易度。毎回ランダム生成で繰り返し使える。PDF印刷対応・スマホ対応。文部科学省の学習指導要領で学年の範囲を確認して作成。",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": [
@@ -200,8 +200,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 }
 
 /* カウントダウン広告（画面下部固定） */
-.cd-ad-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(15,23,42,0.85);padding:6px 16px 8px;z-index:100;max-width:640px;margin:0 auto;}
-.cd-ad-bar ins{min-height:50px;}
 .page{display:none;}.page.active{display:block;}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -569,7 +567,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
 /* ===== AdSense審査中：広告・有料部を一時非表示 ===== */
 /* 審査通過後は以下3行を削除して広告スクリプトのコメントを外す */
-.premium-hidden .cd-ad-bar{ display:none !important; }
 .premium-hidden #premiumNudge{ display:none !important; }
 
 </style>
@@ -799,8 +796,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="countdown-label" id="taCountdownLabel">秒後にスタート！</div>
     <button class="countdown-cancel" onclick="cancelTaCountdown()">キャンセル</button>
   </div>
-  <div class="cd-ad-bar">
-  </div>
 </div>
 
 <!-- ========== 九九ゲームページ ========== -->
@@ -929,9 +924,6 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
     <div class="countdown-num" id="countdownNum">5</div>
     <div class="countdown-label" id="countdownLabel">秒後にスタート！</div>
     <button class="countdown-cancel" onclick="cancelCountdown()">キャンセル</button>
-  </div>
-  <!-- 広告：画面下部固定・カウントダウンの邪魔にならない位置 -->
-  <div class="cd-ad-bar">
   </div>
 </div>
 
@@ -2467,7 +2459,7 @@ function _renderPage(qs, gradeLabel, diffLabel, diffColor, diffBg, pts, cnt, isA
     ctx.font=`700 ${s(7.5)}px ${F}`; ctx.textAlign='center'; ctx.fillStyle='#fff';
     ctx.fillText(`${gradeLabel}　にじゅうまる。算数ドリル${isAnswer?'【解答】':''}`, PW/2, s(13));
     ctx.font=`400 ${s(3.8)}px ${F}`; ctx.fillStyle='rgba(255,255,255,0.85)';
-    ctx.fillText(`文部科学省 学習指導要領準拠　｜　1問${pts}点 × ${cnt}問 ＝ 100点満点`, PW/2, s(22));
+    ctx.fillText(`学習指導要領に沿った学年別問題　｜　1問${pts}点 × ${cnt}問 ＝ 100点満点`, PW/2, s(22));
 
     // 記入欄
     let cy = s(37);

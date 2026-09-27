@@ -141,7 +141,10 @@ check("R4 記録コンポーネント", os.path.exists(os.path.join(ROOT, "recor
 
 # ── R5. 根拠のない断定表現（§15）：index対象ページ全体 ──
 BANNED = ["最高", "最短", "最強", "唯一", "半分は", "多くの子", "大半", "一番険しい",
-          "最も生まれる", "最難関", "最重要"]
+          "最も生まれる", "最難関", "最重要",
+          # 独立検証（2026-09-27）で見つかった言い回し
+          "最大の原因", "最大の山場", "最大の難所", "最大の混乱", "最大の準備", "最大のテーマ",
+          "劇的", "準拠", "試したかぎり", "一番の対策", "最も多い", "最も効率", "子が多い"]
 for p in INDEXABLE:
     txt = text_of(read(p))  # JSON-LD も対象
     for w in BANNED:
@@ -185,6 +188,40 @@ for p in KEY15:
         if svg:
             check("R9 svg role/label", 'role="img"' in svg.group(0) and "aria-label" in svg.group(0),
                   f"{p}: {svg.group(0)[:70]}")
+
+
+# ── R10. FAQ構造化データは画面に表示している質問だけ（Googleのガイドライン） ──
+import json as _json
+for p in INDEXABLE:
+    src = read(p)
+    vis = text_of(re.sub(r'<script\b.*?</script>', ' ', src[src.find("<body"):], flags=re.S))
+    for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', src, re.S):
+        data = _json.loads(m.group(1))
+        if data.get("@type") != "FAQPage":
+            continue
+        for q in data.get("mainEntity", []):
+            name = re.sub(r"\s+", " ", q["name"]).strip()
+            check("R10 FAQ構造化データが画面にある", name in vis, f"{p}: 「{name[:30]}」が画面に無い")
+
+
+# ── R11. sitemap の lastmod と、記事に表示している最終更新日が一致 ──
+for line in sm.splitlines():
+    m = re.search(rf"<loc>{re.escape(SITE)}([^<]*)</loc><lastmod>(\d+)-(\d+)-(\d+)</lastmod>", line)
+    if not m:
+        continue
+    p = m.group(1) or "index.html"
+    shown = re.search(r"最終更新: (\d+)年(\d+)月(\d+)日", read(p))
+    if shown:
+        want = (int(m.group(2)), int(m.group(3)), int(m.group(4)))
+        got = tuple(int(x) for x in shown.groups())
+        check("R11 最終更新日", got == want, f"{p}: 表示 {got} / sitemap {want}")
+
+
+# ── R12. 例題の答えと考え方に、数え方の誤り（1日n問×日数）が無い ──
+for p in KEY15:
+    for m in re.finditer(r"1日(\d+)問ずつなら、?(\d+)日で(\d+)問", text_of(read(p))):
+        a, d, total = map(int, m.groups())
+        check("R12 日数×問数", a * d >= total, f"{p}: {a}×{d}＜{total}")
 
 
 if failures:

@@ -792,7 +792,7 @@ function _renderPremiumPage(qs, gradeLabel, diffLabel, diffColor, diffBg,
     ctx.fillText(isAnswer ? titleBase+'【解答】' : titleBase, PW/2, s(12));
     const pageInfo = totalPages > 1 ? `　（${pageNum}/${totalPages}ページ）` : '';
     ctx.font=`400 ${s(3.4)}px ${F}`; ctx.fillStyle='rgba(255,255,255,0.85)';
-    ctx.fillText(`文部科学省 学習指導要領準拠　｜　問題 ${qsOffset+1}〜${qsOffset+cnt}${pageInfo}`, PW/2, s(21));
+    ctx.fillText(`学習指導要領に沿った学年別問題　｜　問題 ${qsOffset+1}〜${qsOffset+cnt}${pageInfo}`, PW/2, s(21));
 
     let cy = s(34);
     if (pageNum === 1 && !isAnswer) {

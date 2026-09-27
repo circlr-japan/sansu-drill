@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nijumaru-v9';
+const CACHE_NAME = 'nijumaru-v10';
 const ASSETS = [
   '/',
   '/index.html',
@@ -9,7 +9,7 @@ const ASSETS = [
   '/icon-192.png',
   '/icon-512.png',
   '/how-to-use.html',
-  '/teaching-tips.html',
+  '/math-anxiety.html',
   '/kuku-tips.html',
   '/grade-guide.html',
   '/reduce-mistakes.html',
