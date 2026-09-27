@@ -11,8 +11,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小学1〜6年生 学年別 算数の学習内容まとめ｜つまずきと家庭学習のコツ | にじゅうまる。算数ドリル</title>
-<meta name="description" content="小学1年生から6年生まで、算数で学ぶ内容を学年別に一覧化。各学年の最重要単元・つまずきポイント・家庭学習のコツを整理。学年をまたぐ「つながりマップ」で、さかのぼり復習の道順もわかります｜にじゅうまる。算数ドリル">
+<title>小学算数 6年間のつながりマップ【学年別の内容とさかのぼりの道順】 | にじゅうまる。算数ドリル</title>
+<meta name="description" content="小学算数の6年間を「つながりマップ」で整理した家庭向けガイド。各学年の山、計算の幹のつながり図、さかのぼりの道順3本、学年別の学習内容、学年をまたぐ診断問題6問と、前の学年の穴が見える誤答例｜にじゅうまる。算数ドリル">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nijumaru-drill.com/grade-guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,18 +62,38 @@ ul li,ol li{margin-bottom:8px;}
 .try-box a{display:inline-block;background:#2563EB;color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;}
 footer{text-align:center;padding:16px;font-size:11px;color:#94A3B8;border-top:1px solid #E2E8F0;}
 footer a{color:#94A3B8;text-decoration:underline;}
+.q-set{list-style:none;padding:0;margin:14px 0;counter-reset:q;}
+.q-set .q{counter-increment:q;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.q-set .q::before{content:"問" counter(q);display:block;font-size:11px;font-weight:700;color:#2563EB;margin-bottom:2px;}
+.q-set .q-text{font-size:15px;font-weight:700;color:#1E293B;line-height:1.6;}
+.q-set details{margin-top:6px;}
+.q-set summary{font-size:12px;color:#2563EB;cursor:pointer;}
+.q-set details p{font-size:13px;color:#374151;margin:6px 0 0;}
+.err-case{background:#fff;border:1px solid #FECACA;border-radius:10px;padding:12px 14px;margin:12px 0;}
+.err-case .err-head{font-size:15px;font-weight:700;color:#991B1B;margin-bottom:6px;}
+.err-case .err-tag{display:inline-block;background:#EF4444;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+.err-case p{font-size:13px;margin-bottom:6px;}
+.err-case p:last-child{margin-bottom:0;}
+.memo-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #F59E0B;border-radius:10px;padding:16px 18px;margin:18px 0;}
+.memo-box .memo-title{font-size:13px;font-weight:700;color:#92400E;margin-bottom:8px;}
+.memo-box p{font-size:13px;color:#78350F;margin-bottom:8px;}
+.memo-box p:last-child{margin-bottom:0;}
+.memo-real{margin-top:12px;padding-top:12px;border-top:1px dashed #FCD34D;}
+.memo-tag{display:inline-block;background:#F59E0B;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-bottom:6px;}
+.ex-box{background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:14px 16px;margin:14px 0;}
+.ex-box p{margin-bottom:6px;}
 </style>
 <script>if(location.hostname==="nijumaru-drill.com"){location.replace("https://www.nijumaru-drill.com"+location.pathname+location.search+location.hash);}</script>
 <meta property="og:type" content="article">
-<meta property="og:title" content="小学1〜6年生 学年別 算数の学習内容まとめ｜つまずきと家庭学習のコツ">
-<meta property="og:description" content="学年別の学習内容・最重要単元・つまずきポイント・家庭学習のコツを一覧で整理。">
+<meta property="og:title" content="小学算数 6年間のつながりマップ【学年別の内容とさかのぼりの道順】">
+<meta property="og:description" content="6年間の算数は1本の幹。各学年の山とさかのぼりの道順を図で、学年をまたぐ診断問題つき。">
 <meta property="og:url" content="https://www.nijumaru-drill.com/grade-guide.html">
 <meta property="og:site_name" content="にじゅうまる。算数ドリル">
 <meta property="og:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="学年別 算数の学習内容まとめ【1〜6年生】">
-<meta name="twitter:description" content="学年別の学習内容・つまずき・家庭学習のコツを一覧化。">
+<meta name="twitter:title" content="小学算数 6年間のつながりマップ">
+<meta name="twitter:description" content="小学算数6年間のつながりマップとさかのぼりの道順。">
 <meta name="twitter:image" content="https://www.nijumaru-drill.com/ogp-default.png">
 <script type="application/ld+json">
 {
@@ -82,26 +102,42 @@ footer a{color:#94A3B8;text-decoration:underline;}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "小学算数で一番つまずきやすい学年はいつですか？",
+      "name": "つまずきやすい学年はありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "大きな山は3回あります。1年生後半の「くり上がり・くり下がり」、2年生の「九九」、そして最大の山が5年生の「割合・単位量あたり」です。特に5年生は抽象的な内容が一気に増えるため、「算数嫌い」が最も生まれやすい学年と言われます。"
+        "text": "どの学年にも山があります。1年のくり上がり、2年の九九、3年のわり算、4年のわり算の筆算とがい数、5年の割合と分数、6年の比と比例です。どの山も前の学年の内容が土台になっているので、つまずいたら前の学年に戻って確かめます。"
       }
     },
     {
       "@type": "Question",
-      "name": "学年をさかのぼって復習させるのは効果がありますか？",
+      "name": "さかのぼり復習は、どこまで戻ればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "にじゅうまる。では、有効な方法の一つと考えています。算数は積み上げの教科なので、今の学年の問題を解き続けるより、原因になっている前の学年の単元を固めるほうが、結果的に早く追いつける場合があります。さかのぼりは遅れではなく、前に進むための確認と考えてみてください。"
+        "text": "さかのぼりの道順をたどって、「スラスラできる」ところが見つかるまで戻ります。学年をまたいだ診断問題で、最初にまちがえた学年を目安にする方法もあります。"
       }
     },
     {
       "@type": "Question",
-      "name": "先取り学習はさせるべきですか？",
+      "name": "先取り学習はさせるべき？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "今の学年の内容がスラスラ解ける（テストで安定して高得点）なら、先取りは有効です。逆に今の内容に穴がある状態での先取りは、高学年での失速につながります。順番は「今を完璧に→先へ」です。"
+        "text": "必須ではありません。つながりマップの幹（10の合成分解・九九・小数の計算・割合）に穴がないことを先に確かめるほうが、あとの学年で役に立つことが多いと考えています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "学校の教科書が変わっても、この内容は同じですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "各学年で学ぶ内容は学習指導要領で決まっているため、教科書会社が違っても大きな流れは同じです。単元の順番や細かい扱いは教科書によって違うことがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "授業についていけているか、どう確認すればいい？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "テストの点だけでなく、「今日の算数、何やった？教えて」と説明してもらう方法があります。説明できれば理解できていて、詰まるところがあれば、そこが確かめる場所です。"
       }
     }
   ]
@@ -111,58 +147,28 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <body>
 <div class="header">
   <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
-  <h1>📋 学年別 算数の学習内容</h1>
+  <h1>小学算数 6年間のつながりマップ</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年7月13日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
-  <p>📋 「うちの子の学年では何を学ぶ？」「どこでつまずきやすい？」——1年生から6年生までの学習内容と、各学年の攻略ポイントを1ページに整理しました。学年ガイドの入り口としてお使いください。</p>
+  <p>📋 「うちの子の学年では何を学ぶ？」「つまずきの原因はどこにある？」——小学算数の6年間は、1本の幹のようにつながっています。このページでは、各学年の山とつながりマップ、つまずいたときのさかのぼりの道順を図で示し、学年をまたいで確かめる診断問題をまとめました。</p>
 </div>
 
-<h2>小学1年生：数と計算の「はじめの一歩」</h2>
-<div class="grade-box">
-  <p><strong>主な内容：</strong>10までの数／いくつといくつ／たし算・ひき算／くり上がり・くり下がり／時計の読み方／かたち／大きさくらべ</p>
-  <p><strong>最重要単元：</strong>くり上がり・くり下がり（2学期〜）。ここが6年間の計算の土台です。</p>
-  <p><strong>家庭のコツ：</strong>「10は3と7」のような10の合成分解を遊びで即答レベルに。詳しくは<a href="/grade-1-tips.html">1年生攻略ガイド</a>と<a href="/addition-guide.html#kuriagari">くり上がりのコツ</a>へ。</p>
-</div>
+<h2>6年間の「山」を先に見ておく</h2>
+<figure class="fig">
+<svg viewBox="0 0 470 215" role="img" aria-label="1年から6年までの各学年の「山」を並べた図。1年くり上がり・くり下がり、2年九九、3年わり算、4年わり算の筆算とがい数、5年割合と分数、6年比と比例と分数のかけ算わり算">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <path d="M20 180 L19 146 L45 120 L71 146 L93 136 L119 110 L145 136 L167 140 L193 114 L219 140 L241 128 L267 102 L293 128 L315 110 L341 84 L367 110 L389 122 L415 96 L441 122 L450 180 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="45" y="200" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">1年</text><circle cx="45" cy="120" r="5" fill="#DC2626"/><text x="45" y="94" font-size="11" text-anchor="middle" fill="#991B1B">くり上がり</text><text x="45" y="108" font-size="11" text-anchor="middle" fill="#991B1B">くり下がり</text><text x="119" y="200" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">2年</text><circle cx="119" cy="110" r="5" fill="#DC2626"/><text x="119" y="98" font-size="11" text-anchor="middle" fill="#991B1B">九九</text><text x="193" y="200" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">3年</text><circle cx="193" cy="114" r="5" fill="#DC2626"/><text x="193" y="102" font-size="11" text-anchor="middle" fill="#991B1B">わり算</text><text x="267" y="200" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">4年</text><circle cx="267" cy="102" r="5" fill="#DC2626"/><text x="267" y="76" font-size="11" text-anchor="middle" fill="#991B1B">わり算の筆算</text><text x="267" y="90" font-size="11" text-anchor="middle" fill="#991B1B">がい数</text><text x="341" y="200" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">5年</text><circle cx="341" cy="84" r="5" fill="#DC2626"/><text x="341" y="58" font-size="11" text-anchor="middle" fill="#991B1B">割合</text><text x="341" y="72" font-size="11" text-anchor="middle" fill="#991B1B">分数</text><text x="415" y="200" font-size="13" font-weight="700" text-anchor="middle" fill="#122A64">6年</text><circle cx="415" cy="96" r="5" fill="#DC2626"/><text x="415" y="70" font-size="11" text-anchor="middle" fill="#991B1B">比・比例</text><text x="415" y="84" font-size="11" text-anchor="middle" fill="#991B1B">分数の×÷</text>
+    </g>
+  </svg>
+  <figcaption>図：6年間の各学年の「山」。山の高さはイメージで、どの学年でも、山の前の学年の内容が土台になっている</figcaption>
+</figure>
+<p>どの学年にも、つまずきやすい単元（山）があります。そして、どの山も<strong>前の学年の内容を土台にしている</strong>のが算数の特徴です。お子さんが今つまずいている単元の原因が、1つ前・2つ前の学年に見つかることがあります。</p>
 
-<h2>小学2年生：九九イヤー</h2>
-<div class="grade-box">
-  <p><strong>主な内容：</strong>2桁の筆算／かけ算の意味と九九／長さ（cm・mm）・かさ（L・dL・mL）／時刻と時間／三角形と四角形</p>
-  <p><strong>最重要単元：</strong>九九。3年生以降のわり算・筆算すべての部品になります。</p>
-  <p><strong>家庭のコツ：</strong>九九は「唱えられる」で止めず「ランダムで即答」まで。<a href="/kuku-tips.html">九九の覚え方</a>と<a href="/grade-2-tips.html">2年生攻略ガイド</a>へ。単位は<a href="/tanni-kanzan-guide.html">単位の換算ガイド</a>が便利です。</p>
-</div>
-
-<h2>小学3年生：計算の種類が一気に増える</h2>
-<div class="grade-box">
-  <p><strong>主な内容：</strong>わり算（あまり）／3〜4桁の筆算／かけ算の筆算／小数・分数の入門／時刻と時間の計算／長さ（km）・重さ（g・kg）／円と球</p>
-  <p><strong>最重要単元：</strong>わり算。九九の逆算として学びます。</p>
-  <p><strong>家庭のコツ：</strong>わり算が遅い原因はほぼ九九。<a href="/division-guide.html">わり算ガイド</a>でつまずきの型を確認。<a href="/time-calculation.html">時間の計算</a>もこの学年の難所です。<a href="/grade-3-tips.html">3年生攻略ガイド</a>へ。</p>
-</div>
-
-<h2>小学4年生：「手順の長い計算」と抽象化の入り口</h2>
-<div class="grade-box">
-  <p><strong>主な内容：</strong>わり算の筆算（÷1桁・÷2桁）／がい数と四捨五入／小数のしくみと計算／分数（帯分数・仮分数）／角度／垂直・平行と四角形／面積（長方形・正方形）／折れ線グラフ</p>
-  <p><strong>最重要単元：</strong>わり算の筆算（たてる→かける→ひく→おろす）と、がい数。</p>
-  <p><strong>家庭のコツ：</strong>筆算は手順を声に出して固定。<a href="/gaisuu-shishagoonyuu-guide.html">がい数ガイド</a>で「〜の位まで」と「上から〜桁」の違いを整理。<a href="/grade-4-tips.html">4年生攻略ガイド</a>へ。</p>
-</div>
-
-<h2>小学5年生：つまずきの相談が増えるゾーン</h2>
-<div class="grade-box">
-  <p><strong>主な内容：</strong>小数のかけ算・わり算／倍数と約数／分数の約分・通分と異分母の計算／割合と百分率／単位量あたりの大きさ・速さの素地／図形の面積（三角形・平行四辺形・台形・ひし形）／体積／合同／円周</p>
-  <p><strong>最重要単元：</strong>割合。そして約分・通分。「算数嫌い」が最も生まれる学年です。</p>
-  <p><strong>家庭のコツ：</strong>割合は<a href="/percentage-guide.html">割合ガイド</a>の線分図方式で。<a href="/baisuu-yakusuu-guide.html">倍数・約数</a>→<a href="/fractions-guide.html">分数</a>の順で土台から。<a href="/grade-5-tips.html">5年生攻略ガイド</a>へ。</p>
-</div>
-
-<h2>小学6年生：総仕上げと中学への橋渡し</h2>
-<div class="grade-box">
-  <p><strong>主な内容：</strong>分数のかけ算・わり算／文字と式（xやaの入門）／比とその利用／拡大図・縮図／円の面積／角柱・円柱の体積／比例・反比例／データの活用／場合の数</p>
-  <p><strong>最重要単元：</strong>分数の乗除と比例。中学数学（正負の数・方程式・関数）の直接の土台です。</p>
-  <p><strong>家庭のコツ：</strong><a href="/menseki-enza.html">円の面積</a>と<a href="/data-katsuyou-guide.html">データの活用</a>はテスト頻出。卒業までに5年生の割合の穴を埋めておくと中学が楽です。<a href="/grade-6-tips.html">6年生攻略ガイド</a>へ。</p>
-</div>
-
-<h2>6年間の「つながりマップ」——さかのぼりの道順</h2>
-<p>つまずきの原因が前の学年の単元に見つかることがあります。よくある「さかのぼりの道順」を知っておくと、確認する場所を絞りやすくなります。</p>
+<h2>6年間のつながりマップ</h2>
+<p>小学校の計算は、下の図のように1本の幹でつながっています。学年をさかのぼるのは遅れではなく、上に積み直すための準備です。</p>
 <figure class="fig" data-fig="tsunagari">
 <svg viewBox="0 0 420 702" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figTsuT figTsuD">
   <title id="figTsuT">小学6年間の計算のつながりを示した図</title>
@@ -215,43 +221,117 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <figcaption>図：小学校の計算は1本の幹でつながっています。学年をさかのぼるのは遅れではなく、上に積むための準備です。</figcaption>
 </figure>
 
+<h2>さかのぼりの道順</h2>
+<figure class="fig">
+<svg viewBox="0 0 470 240" role="img" aria-label="つまずきから前の学年へさかのぼる3本の道順。割合がわからないときは小数のかけ算わり算、倍の意味、かけ算の意味へ。分数の計算ができないときは約分通分、倍数約数、九九へ。わり算の筆算が遅いときは、わり算は九九の逆、九九をバラバラに、10の合成分解へ">
+    <g font-family="'Noto Sans JP',sans-serif">
+      <rect x="4" y="26" width="112" height="48" rx="8" fill="#fff" stroke="#16A34A" stroke-width="2"/><text x="60" y="46" font-size="11" font-weight="700" text-anchor="middle" fill="#122A64">割合が</text><text x="60" y="62" font-size="11" font-weight="700" text-anchor="middle" fill="#122A64">わからない（5年）</text><path d="M120 50 L130 50 M126 45 L131 50 L126 55" fill="none" stroke="#16A34A" stroke-width="2"/><rect x="134" y="26" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="184" y="47" font-size="11" text-anchor="middle" fill="#122A64">小数の×÷</text><text x="184" y="63" font-size="10.5" text-anchor="middle" fill="#64748B">（5年）</text><path d="M232 50 L242 50 M238 45 L243 50 L238 55" fill="none" stroke="#16A34A" stroke-width="2"/><rect x="246" y="26" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="296" y="47" font-size="11" text-anchor="middle" fill="#122A64">「倍」の意味</text><text x="296" y="63" font-size="10.5" text-anchor="middle" fill="#64748B">（3年）</text><path d="M344 50 L354 50 M350 45 L355 50 L350 55" fill="none" stroke="#16A34A" stroke-width="2"/><rect x="358" y="26" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="408" y="47" font-size="11" text-anchor="middle" fill="#122A64">かけ算の意味</text><text x="408" y="63" font-size="10.5" text-anchor="middle" fill="#64748B">（2年）</text><rect x="4" y="94" width="112" height="48" rx="8" fill="#fff" stroke="#2563EB" stroke-width="2"/><text x="60" y="114" font-size="11" font-weight="700" text-anchor="middle" fill="#122A64">分数の計算が</text><text x="60" y="130" font-size="11" font-weight="700" text-anchor="middle" fill="#122A64">できない（6年）</text><path d="M120 118 L130 118 M126 113 L131 118 L126 123" fill="none" stroke="#2563EB" stroke-width="2"/><rect x="134" y="94" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="184" y="115" font-size="11" text-anchor="middle" fill="#122A64">約分・通分</text><text x="184" y="131" font-size="10.5" text-anchor="middle" fill="#64748B">（5年）</text><path d="M232 118 L242 118 M238 113 L243 118 L238 123" fill="none" stroke="#2563EB" stroke-width="2"/><rect x="246" y="94" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="296" y="115" font-size="11" text-anchor="middle" fill="#122A64">倍数・約数</text><text x="296" y="131" font-size="10.5" text-anchor="middle" fill="#64748B">（5年）</text><path d="M344 118 L354 118 M350 113 L355 118 L350 123" fill="none" stroke="#2563EB" stroke-width="2"/><rect x="358" y="94" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="408" y="115" font-size="11" text-anchor="middle" fill="#122A64">九九</text><text x="408" y="131" font-size="10.5" text-anchor="middle" fill="#64748B">（2年）</text><rect x="4" y="162" width="112" height="48" rx="8" fill="#fff" stroke="#D97706" stroke-width="2"/><text x="60" y="182" font-size="11" font-weight="700" text-anchor="middle" fill="#122A64">わり算の筆算が</text><text x="60" y="198" font-size="11" font-weight="700" text-anchor="middle" fill="#122A64">遅い（4年）</text><path d="M120 186 L130 186 M126 181 L131 186 L126 191" fill="none" stroke="#D97706" stroke-width="2"/><rect x="134" y="162" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="184" y="183" font-size="11" text-anchor="middle" fill="#122A64">わり算＝九九の逆</text><text x="184" y="199" font-size="10.5" text-anchor="middle" fill="#64748B">（3年）</text><path d="M232 186 L242 186 M238 181 L243 186 L238 191" fill="none" stroke="#D97706" stroke-width="2"/><rect x="246" y="162" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="296" y="183" font-size="11" text-anchor="middle" fill="#122A64">九九をバラバラに</text><text x="296" y="199" font-size="10.5" text-anchor="middle" fill="#64748B">（2年）</text><path d="M344 186 L354 186 M350 181 L355 186 L350 191" fill="none" stroke="#D97706" stroke-width="2"/><rect x="358" y="162" width="100" height="48" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/><text x="408" y="183" font-size="11" text-anchor="middle" fill="#122A64">10の合成分解</text><text x="408" y="199" font-size="10.5" text-anchor="middle" fill="#64748B">（1年）</text>
+      <text x="235" y="236" font-size="11" text-anchor="middle" fill="#64748B">右へ行くほど前の学年。止まったところが、いま練習する場所</text>
+    </g>
+  </svg>
+  <figcaption>図：よくある3本のさかのぼりの道順。左のつまずきから右へたどり、「スラスラできる」ところが見つかったら、そこから上に積み直す</figcaption>
+</figure>
 <table class="cv-table">
-  <tr><th>症状（高学年）</th><th>さかのぼる先</th></tr>
-  <tr><td>割合ができない（5年）</td><td>小数の乗除（5年前半）→「倍」の意味（3年）</td></tr>
+  <tr><th>いまのつまずき</th><th>さかのぼって確かめる先</th></tr>
+  <tr><td>割合ができない（5年）</td><td>小数の×÷（5年前半）→「倍」の意味（3年）</td></tr>
   <tr><td>約分・通分ができない（5年）</td><td>倍数・約数（5年）→ 九九（2年）</td></tr>
   <tr><td>分数の計算ができない（6年）</td><td>約分・通分（5年）→ 分数の意味（3・4年）</td></tr>
-  <tr><td>わり算の筆算が遅い（4年）</td><td>九九の即答（2年）＋ひき算の暗算（1・2年）</td></tr>
-  <tr><td>文章題が全学年苦手</td><td>図（テープ図・線分図）をかく練習——<a href="/bunshoudai-guide.html">文章題ガイド</a>へ</td></tr>
+  <tr><td>わり算の筆算が遅い（4年）</td><td>九九をバラバラに（2年）＋ひき算（1・2年）</td></tr>
+  <tr><td>文章題が全学年で苦手</td><td>テープ図・線分図をかく練習（<a href="/bunshoudai-guide.html">文章題の解き方</a>）</td></tr>
 </table>
-<div class="tip-box">
-  <p>💡 さかのぼりは「遅れ」ではなく、上に積み直すための準備。にじゅうまる。算数ドリルは学年を自由に行き来できるので、診断→さかのぼり→戻る、の流れが簡単にできます。</p>
+<p>にじゅうまる。算数ドリルは学年を自由に行き来できるので、「診断→さかのぼり→戻る」の流れを家庭で作りやすくなっています。</p>
+
+<h2>学年別の学習内容と、この学年の中心</h2>
+<div class="grade-box">
+  <p><strong>1年生：数と計算のはじめの一歩</strong></p>
+  <p><strong>主な内容：</strong>10までの数／いくつといくつ／たし算・ひき算／くり上がり・くり下がり／時計／かたち</p>
+  <p><strong>この学年の中心：</strong>くり上がり・くり下がり。土台は10の合成分解。<a href="/grade-1-tips.html">1年生の家庭チェックリスト →</a></p>
+</div>
+<div class="grade-box">
+  <p><strong>2年生：九九を、順番でもバラバラでも</strong></p>
+  <p><strong>主な内容：</strong>2けたの筆算／かけ算の意味と九九／長さ・かさ／時刻と時間／三角形と四角形</p>
+  <p><strong>この学年の中心：</strong>九九。3年生のわり算は九九を逆から使う。<a href="/grade-2-tips.html">2年生：九九を家庭で仕上げる →</a></p>
+</div>
+<div class="grade-box">
+  <p><strong>3年生：九九からわり算へ</strong></p>
+  <p><strong>主な内容：</strong>わり算（あまり）／3〜4けたの筆算／かけ算の筆算／小数・分数の意味／時間の計算／km・kg</p>
+  <p><strong>この学年の中心：</strong>わり算。九九の逆として学ぶ。<a href="/grade-3-tips.html">3年生：九九からわり算へ →</a></p>
+</div>
+<div class="grade-box">
+  <p><strong>4年生：筆算の手順と見当</strong></p>
+  <p><strong>主な内容：</strong>わり算の筆算／がい数／小数×÷整数／分数（帯分数・仮分数）／角度／面積</p>
+  <p><strong>この学年の中心：</strong>わり算の筆算とがい数。見当→計算→比べる。<a href="/grade-4-tips.html">4年生：筆算の手順とミス →</a></p>
+</div>
+<div class="grade-box">
+  <p><strong>5年生：割合・小数・分数をつなげる</strong></p>
+  <p><strong>主な内容：</strong>小数の×÷／倍数と約数／約分・通分／単位量あたり・速さ／割合と百分率／面積・体積</p>
+  <p><strong>この学年の中心：</strong>割合と約分・通分。1本の幹でつながる。<a href="/grade-5-tips.html">5年生：割合・小数・分数のつながり →</a></p>
+</div>
+<div class="grade-box">
+  <p><strong>6年生：中学数学への接続</strong></p>
+  <p><strong>主な内容：</strong>分数の×÷／文字を使った式／比／比例と反比例／円の面積／場合の数／データの活用</p>
+  <p><strong>この学年の中心：</strong>分数の×÷と比例。中学の方程式・関数の入り口。<a href="/grade-6-tips.html">6年生：中学数学への接続 →</a></p>
 </div>
 
-<h2>長期休みの学年別・おすすめ復習テーマ</h2>
-<p>夏休み・冬休み・春休みは、授業が止まる巻き返しのチャンスです。学年別に「ここだけは」のテーマを挙げます。</p>
-<table class="cv-table">
-  <tr><th>学年</th><th>夏休み</th><th>春休み（進級前）</th></tr>
-  <tr><td>1年生</td><td>10までのたし算ひき算の即答化</td><td>くり上がり・くり下がりの完成</td></tr>
-  <tr><td>2年生</td><td>筆算の手順固め</td><td>九九ランダム即答の総仕上げ</td></tr>
-  <tr><td>3年生</td><td>九九の点検＋わり算</td><td>3年の小数・分数の意味の確認</td></tr>
-  <tr><td>4年生</td><td>わり算の筆算</td><td>小数計算＋がい数（5年の割合に備える）</td></tr>
-  <tr><td>5年生</td><td>約分・通分＋小数の乗除</td><td>割合の総復習（最重要！）</td></tr>
-  <tr><td>6年生</td><td>分数の乗除＋割合の穴埋め</td><td>6年間の計算総点検（中学準備）</td></tr>
-</table>
-<p>ポイントは「休み中に先へ進む」より「直前の学期の穴を埋める」を優先すること。特に<strong>5年生の春休みの割合復習</strong>は、6年生と中学数学の伸びを大きく左右します。</p>
-
-<h2>入学前のお子さんがいる方へ</h2>
-<p>年長さんの場合は、机上の学習より「数・かたち・くらべる」の遊び体験が最優先です。10まで数えられる・まる さんかく しかくがわかる・大小をくらべられる——この状態で入学できれば十分。詳しくは<a href="/nyuugaku-junbi-guide.html">入学前の さんすう準備</a>にまとめています。</p>
-
-<h2>学年共通・家庭学習の3原則</h2>
-<ol>
-  <li><strong>短く毎日：</strong>低学年5〜10分、高学年15分。詰め込みより頻度</li>
-  <li><strong>「今スラスラ解けるレベル」から：</strong>にじゅうまる。では、8〜9割ほど正解できる問題を、ちょうどよい負荷の目安にしています</li>
-  <li><strong>過程を褒める：</strong>点数より「続けたこと」「昨日より速くなったこと」</li>
+<h2>さかのぼり診断問題（学年をまたいで6問）</h2>
+<p>1年生から6年生まで、各学年の中心の単元から1問ずつ選びました。上から順に解いてみて、最初にまちがえた問題の学年が、確かめ直す場所の目安です。</p>
+<ol class="q-set">
+  <li class="q"><span class="q-text">【1年】10は3と□</span><details><summary>答えと考え方</summary><p>7。まちがえたら → 10の合成分解（<a href="/addition-guide.html">たし算の教え方</a>）</p></details></li>
+  <li class="q"><span class="q-text">【2年】7×6</span><details><summary>答えと考え方</summary><p>42。バラバラに聞かれて止まるなら → 止まる九九の特定（<a href="/grade-2-tips.html">2年生の家庭ガイド</a>）</p></details></li>
+  <li class="q"><span class="q-text">【3年】45÷6</span><details><summary>答えと考え方</summary><p>7あまり3。6×7＝42、45−42＝3。あまりが6以上になったら → 九九の逆引き（<a href="/grade-3-tips.html">3年生の家庭ガイド</a>）</p></details></li>
+  <li class="q"><span class="q-text">【4年】504÷7（筆算）</span><details><summary>答えと考え方</summary><p>72。見当は490÷7で70くらい。けたがちがったら → 筆算の4手順（<a href="/grade-4-tips.html">4年生の家庭ガイド</a>）</p></details></li>
+  <li class="q"><span class="q-text">【5年】0.6×0.4</span><details><summary>答えと考え方</summary><p>0.24。6×4＝24、小数点以下は1＋1＝2けた。1より小さい数どうしなので、答えは0.6より小さい。まちがえたら → 小数の×÷（<a href="/grade-5-tips.html">5年生の家庭ガイド</a>）</p></details></li>
+  <li class="q"><span class="q-text">【6年】3/4÷3/8</span><details><summary>答えと考え方</summary><p>2。3/4×8/3＝24/12＝2。まちがえたら → 分数の×÷（<a href="/fractions-guide.html">分数の教え方</a>）</p></details></li>
 </ol>
 
+<h2>前の学年の穴が見える誤答例</h2>
+<p>高学年の誤答の中には、原因が前の学年にあるものがあります。誤答から「どこに戻るか」を読む例です。</p>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例1</span>【5年】12/18を約分して 6/9 で止まる</div>
+  <p><strong>何が起きたか：</strong>2でわったあと、まだ3でわれることに気づいていません。9と6の公約数（3）がすぐ出てこないのは、九九の6・9の段にさかのぼる手がかりです。</p>
+  <p><strong>家庭での直し方：</strong>5年生の約分の練習を増やす前に、2年生の九九（特に6・9の段）をバラバラに聞いて確かめます。止まる九九があれば、そこから練習します。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例2</span>【5年】「20人中5人の割合は？」→ 20÷5＝4</div>
+  <p><strong>何が起きたか：</strong>もとにする量（20人）とくらべる量（5人）を逆にしてわっています。割合が1より大きいのに、全体より少ない人数の割合を答えています。</p>
+  <p><strong>家庭での直し方：</strong>3年生の「倍」の意味（6cmの3倍は？）に戻り、「何をもとにして何倍か」を言葉にする練習をします。割合は 5÷20＝0.25。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例3</span>【3年】45÷6＝6あまり9</div>
+  <p><strong>何が起きたか：</strong>6×6＝36、45−36＝9 と計算しています。あまり9は、わる数6より大きいので、まだ分けられます。</p>
+  <p><strong>家庭での直し方：</strong>あまりの確かめ（あまり＜わる数）に加えて、6の段を逆から（「6の段で45をこえない一番大きいのは？」）聞いて、2年生の九九を確かめます。</p>
+</div>
+<div class="err-case">
+  <div class="err-head"><span class="err-tag">誤答例4</span>【4年】504÷7 の一の位で「ひけない」と止まる</div>
+  <p><strong>何が起きたか：</strong>十の位の商を8とたてて 7×8＝56 を50から引こうとしています。50をこえない7の段（7×7＝49）がすぐに出てきません。</p>
+  <p><strong>家庭での直し方：</strong>筆算の手順より先に、7の段を逆から聞く練習（「7の段で50をこえない一番大きいのは？」）に戻ります。見当（490÷7で70くらい）を立てると、商の十の位は7だとわかります。</p>
+</div>
+
+<div class="memo-box">
+  <div class="memo-title">🏠 6年間の土台は、ふだんの会話の中にもある</div>
+  <p>つながりマップの根元（10の合成分解・九九・倍の意味）は、机に向かう時間だけでなく、ふだんの会話の中でも育てられます。買い物のお釣り、出かけるまでの残り時間、おやつの分け方——どれも、あとの学年の単元（ひき算・時間の計算・わり算・分数）の入り口です。</p>
+  <p>学年が上がっても、「あといくつで10？」「1人分は？」「全体の何％？」と、その学年の見方で同じ場面を話題にすることができます。</p>
+  <div class="memo-real">
+    <span class="memo-tag">にじゅうまる。家庭実践メモ</span>
+    <p>幼稚園のころから、会話の中で計算をやるようにしていました。「あと何分でできる？」「あと何時間でできる？」、買い物中は「1000円出すとお釣りはいくら？」、慣れてきたら「950円のときに1050円出したらお釣りはいくら？」「小銭を少なくするにはどうしたらいい？」。</p>
+    <p>分けるときも同じで、「4人家族で分けると1人どれだけ？」「10個だと何個になる？」「パパは1個でいいから、残りを分けると1人何個？」と聞いていました。</p>
+  </div>
+</div>
+
+<h2>長期休みの学年別・復習テーマ</h2>
+<table class="cv-table">
+  <tr><th>学年</th><th>夏休み</th><th>春休み（進級前）</th></tr>
+  <tr><td>1年生</td><td>10までのたし算ひき算</td><td>くり上がり・くり下がり</td></tr>
+  <tr><td>2年生</td><td>筆算の手順</td><td>九九をバラバラ・逆から</td></tr>
+  <tr><td>3年生</td><td>九九の点検＋わり算</td><td>小数・分数の意味</td></tr>
+  <tr><td>4年生</td><td>わり算の筆算</td><td>小数の計算＋がい数</td></tr>
+  <tr><td>5年生</td><td>約分・通分＋小数の×÷</td><td>割合の総復習</td></tr>
+  <tr><td>6年生</td><td>分数の×÷＋割合</td><td>6年間の計算の総点検</td></tr>
+</table>
+<p>休み中は「先へ進む」より「直前の学期の穴を埋める」を優先するのがおすすめです。</p>
+
 <h2>学年をまたぐ前のチェック表</h2>
-<p>進級の前に、幹の部分だけ確認しておくと、次の学年の入りが変わります。学年に関係なく「まだ難しい」が付いた行が、いま戻る場所です。</p>
+<p>学年に関係なく、「まだ難しい」が付いた行が、いま戻る場所です。</p>
 <table class="check-table">
   <tr><th>チェック項目</th><th>できる</th><th>少し迷う</th><th>まだ難しい</th></tr>
   <tr><td>10の合成分解が即答できる</td><td></td><td></td><td></td></tr>
@@ -262,57 +342,67 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <tr><td>小数点の位置を正しく処理できる</td><td></td><td></td><td></td></tr>
   <tr><td>「もとにする量」を問題文から見つけられる</td><td></td><td></td><td></td></tr>
 </table>
-<p>上から順に並んでいます。<strong>いちばん上の「まだ難しい」から手をつける</strong>のが原則です。下の項目を先に練習しても、土台が揺れたままだと戻ってきます。</p>
 
 <div class="try-box">
-  <div class="try-title">✏️ さかのぼり先が決まったら、その学年で解いてみる</div>
-  <p>にじゅうまる。のドリルは学年を自由に行き来できます。「5年生だけど3年生の問題」も、登録なしでその場で解いて採点まで進みます。戻ることに時間がかからないのが、Webドリルの利点です。</p>
-  <a href="/drill.html">学年を選んでドリルをやってみる →</a>
+  <div class="try-title">✏️ 学年を行き来して、戻る場所を確かめる</div>
+  <p>診断問題で止まった学年のドリルを開いてみてください。学年を自由に切りかえられるので、1学年下を練習するのも簡単です。</p>
+  <a href="/drill.html">学年を選んでドリルを開く →</a>
 </div>
 
 <div class="ref-box">
-  <div class="ref-title">📚 参考資料</div>
+  <div class="ref-title">📚 参考資料と、家庭での使い方</div>
   <ul>
     <li><a href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）」</a></li>
     <li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_004.pdf" target="_blank" rel="noopener">文部科学省「小学校学習指導要領（平成29年告示）解説 算数編」</a></li>
   </ul>
-  <p style="font-size:11px;color:#94A3B8;margin:8px 0 0;">確認日: 2026年8月22日。各学年の配当単元は上記資料をもとに確認しています。つながりマップとチェック表は、にじゅうまる。運営者による整理です。</p>
+  <p style="font-size:11.5px;color:#64748B;margin:8px 0 0;line-height:1.8;">確認日: 2026年9月27日。学習指導要領の算数は、「数と計算」「図形」「測定（1〜3年）・変化と関係（4〜6年）」「データの活用」の領域ごとに、学年をまたいで内容が積み上がるように構成されています。このページのつながりマップとさかのぼりの道順は、この系統のうち家庭でつまずきが見えやすい計算の流れを、戻る場所がわかる形に整理したものです。道順と診断問題は、にじゅうまる。運営者による整理です。</p>
 </div>
 
-<h2>よくある質問</h2>
-<h3>Q1. 一番つまずきやすい学年は？</h3>
-<p>にじゅうまる。に寄せられる相談では、1年生のくり上がり、2年生の九九、5年生の割合の3か所が多くなっています。5年生に入る前に4年生までの計算を固めておくと安心です。</p>
-<h3>Q2. さかのぼり復習は効果ある？</h3>
-<p>にじゅうまる。では、有効な方法の一つと考えています。原因になっている単元を固めるほうが、今の問題を解き続けるより早く追いつける場合があります。</p>
-<h3>Q3. 先取りはさせるべき？</h3>
-<p>今の学年が安定して高得点なら有効。穴がある先取りは高学年での失速のもとです。詳しくは<a href="/advance-study.html">先取り学習の記事</a>へ。</p>
-<h3>Q4. 学校の教科書が変わっても、この内容は同じですか？</h3>
-<p>学習する学年・単元は学習指導要領で定められているため、教科書会社が違っても大枠は共通です。単元の登場順が多少前後することはあるので、細かい進度はお子さんの教科書の目次で確認してください。</p>
-<h3>Q5. 授業についていけているか、どう確認すればいい？</h3>
-<p>単元テストで同じ種類の間違いが続く、宿題にかかる時間が急に伸びた、算数の話を嫌がる——このあたりが早めのシグナルです。点数そのものより、<strong>どこで詰まっているか</strong>を手がかりに、上の「つながりマップ」でさかのぼり先を確認しましょう。</p>
-
 <h2>まとめ</h2>
-<p>6年間の全体地図を持っていると、「今のつまずきがどこから来て、放置するとどこに響くか」が見えるようになります。このページをブックマークして、学期の変わり目ごとに現在地を確認する使い方がおすすめです。</p>
 <ul>
-  <li>1年くり上がり・2年九九・5年割合が三大関門。関門の前学年での貯金が効く</li>
-  <li>つまずいたら「つながりマップ」でさかのぼる。それが積み上げ直す進め方</li>
-  <li>家庭学習は「短く毎日・スラスラレベル・過程を褒める」</li>
+  <li>どの学年にも山があり、どの山も前の学年の内容が土台</li>
+  <li>つまずいたら、つながりマップとさかのぼりの道順で戻る場所を決める</li>
+  <li>診断問題で最初にまちがえた学年が、確かめ直す場所の目安</li>
+  <li>高学年の誤答から、前の学年の穴が見えることがある</li>
+  <li>休み中は先へ進むより、直前の学期の穴を埋める</li>
 </ul>
 
+<h2>よくある質問</h2>
+<h3>Q1. つまずきやすい学年はありますか？</h3>
+<p>どの学年にも山があります。1年のくり上がり、2年の九九、3年のわり算、4年のわり算の筆算とがい数、5年の割合と分数、6年の比と比例です。どの山も前の学年の内容が土台になっているので、つまずいたら前の学年に戻って確かめます。</p>
+<h3>Q2. さかのぼり復習は、どこまで戻ればいいですか？</h3>
+<p>さかのぼりの道順をたどって、「スラスラできる」ところが見つかるまで戻ります。学年をまたいだ診断問題で、最初にまちがえた学年を目安にする方法もあります。</p>
+<h3>Q3. 先取り学習はさせるべき？</h3>
+<p>必須ではありません。つながりマップの幹（10の合成分解・九九・小数の計算・割合）に穴がないことを先に確かめるほうが、あとの学年で役に立つことが多いと考えています。</p>
+<h3>Q4. 学校の教科書が変わっても、この内容は同じですか？</h3>
+<p>各学年で学ぶ内容は学習指導要領で決まっているため、教科書会社が違っても大きな流れは同じです。単元の順番や細かい扱いは教科書によって違うことがあります。</p>
+<h3>Q5. 授業についていけているか、どう確認すればいい？</h3>
+<p>テストの点だけでなく、「今日の算数、何やった？教えて」と説明してもらう方法があります。説明できれば理解できていて、詰まるところがあれば、そこが確かめる場所です。</p>
+
 <div style="margin:32px 0;padding:20px 16px;background:#FFFFFF;border-radius:14px;border:1px solid #E2E8F0;">
-  <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 学年別ドリル・攻略ガイド</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-    <a href="/grade-1.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">1️⃣ 1年生ドリル</span></a>
-    <a href="/grade-2.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">2️⃣ 2年生ドリル</span></a>
-    <a href="/grade-3.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">3️⃣ 3年生ドリル</span></a>
-    <a href="/grade-4.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">4️⃣ 4年生ドリル</span></a>
-    <a href="/grade-5.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">5️⃣ 5年生ドリル</span></a>
-    <a href="/grade-6.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;"><span style="font-size:13px;font-weight:600;color:#1E40AF;">6️⃣ 6年生ドリル</span></a>
+  <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:14px;">📖 関連記事</div>
+  <div style="display:grid;gap:8px;">
+    <a href="/sansu-onayami-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📖</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数のお悩み解決ガイド</span>
+    </a>
+    <a href="/bunshoudai-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">📝</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">文章題の解き方</span>
+    </a>
+    <a href="/nyuugaku-junbi-guide.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">🎒</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">入学準備の算数</span>
+    </a>
+    <a href="/math-anxiety.html" style="display:block;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px;text-decoration:none;">
+      <span style="font-size:18px;margin-right:8px;">💗</span>
+      <span style="font-size:13px;font-weight:600;color:#1E40AF;">算数を嫌がる子への家庭サポート</span>
+    </a>
   </div>
 </div>
 <div class="cta">
-  <p>無料・アプリ不要で今すぐ練習できます！</p>
-  <a href="/">にじゅうまる。算数ドリルをやってみる →</a>
+  <p>学年を自由に行き来して、戻る場所を確かめられます</p>
+  <a href="/drill.html">学年を選んでドリルをやってみる →</a>
 </div>
 </div>
 
