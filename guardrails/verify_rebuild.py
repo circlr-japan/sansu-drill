@@ -234,6 +234,23 @@ for p in ["drill.html", "daily.html", "premium-pdf.html"]:
     check("R13 6年で速さを出題しない", not SPEED.findall(src[s6:e6]), f"{p}: 6年に速さの問題がある")
 
 
+# ── R14. Amazonアソシエイト：必須の表記と、リンクの rel="sponsored" ──
+AMZ_STATEMENT = "Amazonのアソシエイトとして、にじゅうまる。算数ドリルは適格販売により収入を得ています。"
+check("R14 privacy に Amazon の表記", AMZ_STATEMENT in text_of(read("privacy.html")),
+      "privacy.html に Amazon アソシエイトの表記が無い")
+for p in ALL_HTML:
+    src = read(p)
+    links = re.findall(r'<a\b[^>]*href=["\']https?://(?:amzn\.to|amzn\.asia|a\.co|(?:www\.)?amazon\.co\.jp)/[^"\']*["\'][^>]*>', src)
+    if not links:
+        continue
+    check("R14 Amazonリンクのあるページに表記", AMZ_STATEMENT in text_of(src),
+          f"{p} に Amazon アソシエイトの表記が無い")
+    for a in links:
+        rel = re.search(r'rel="([^"]*)"', a)
+        check("R14 Amazonリンクは sponsored", rel is not None and "sponsored" in rel.group(1).split(),
+              f"{p}: {a[:70]}")
+
+
 if failures:
     print(f"NG {len(failures)} / {checks} checks failed\n")
     for f in failures[:120]:
