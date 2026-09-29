@@ -251,6 +251,30 @@ for p in ALL_HTML:
               f"{p}: {a[:70]}")
 
 
+# ── R15. アフィリエイトは比較記事1ページだけ（AdSense審査中の方針）＋クリック計測 ──
+AFF_PAGE = "tablet-sansu-kyozai-hikaku.html"
+AFF_MARK = re.compile(r"px\.a8\.net|rakuten_affiliateId|hb\.afl\.rakuten|amzn\.to|amzn\.asia|amazon\.co\.jp/[^\"']*tag=")
+for p in ALL_HTML:
+    if p != AFF_PAGE:
+        check("R15 アフィリエイトは1ページだけ", not AFF_MARK.search(read(p)), f"{p} にアフィリエイトがある")
+aff = read(AFF_PAGE)
+aff_links = re.findall(r'<a\b[^>]*href="https://(?:px\.a8\.net|amzn\.to)/[^"]*"[^>]*>', aff)
+check("R15 アフィリエイトリンクがある", len(aff_links) >= 5, f"{len(aff_links)}本")
+for a in aff_links:
+    check("R15 計測属性", bool(re.search(r'data-aff="[a-z]+"', a) and re.search(r'data-pos="[a-z]+"', a)),
+          f"data-aff / data-pos が無い: {a[:70]}")
+    rel = re.search(r'rel="([^"]*)"', a)
+    check("R15 sponsored", rel is not None and "sponsored" in rel.group(1).split(),
+          f"rel に sponsored が無い: {a[:70]}")
+check("R15 クリック計測スクリプト", '"affiliate_click"' in aff and 'closest("a[data-aff]")' in aff,
+      "affiliate_click の送信が無い")
+check("R15 本文に Amazon Kids+ の節", '<h2 id="amazon-kids">' in aff
+      and 'data-aff="amazon" data-pos="body"' in aff, "Amazon Kids+ の節か本文リンクが無い")
+check("R15 比較記事への内部リンク",
+      any(f'href="/{AFF_PAGE}' in read(p) for p in INDEXABLE if p != AFF_PAGE),
+      "比較記事がどこからもリンクされていない")
+
+
 if failures:
     print(f"NG {len(failures)} / {checks} checks failed\n")
     for f in failures[:120]:

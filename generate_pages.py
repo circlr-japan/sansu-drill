@@ -11218,6 +11218,7 @@ def generate(page, force=False):
 # メイン
 # ============================================================
 if __name__ == "__main__":
+    raise SystemExit("廃止: 2026-07-06 のページ整理（323→57）以降は使わない。実行すると削除したページと古いアフィリエイトが復活する。")
     force = "--all" in sys.argv
     list_only = "--list" in sys.argv
 
