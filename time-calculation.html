@@ -134,11 +134,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>時刻と時間の計算</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年11月16日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
   <p>🕐 「150分は何時間？」「200秒は何分？」——時間の計算は、ふだんの計算とルールが違う（60進法）ため、小学2・3年生が最初につまずきやすい単元です。まず下の早見表ですぐ答えを確認できます。仕組みと計算のコツも順番に解説します。</p>
 </div>
@@ -316,6 +316,26 @@ footer a{color:#94A3B8;text-decoration:underline;}
   </div>
 </div>
 
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>時間の計算のまちがいは、「60でくり上がる」ことを忘れて、ふだんの10進法のまま計算することから起きます。誤答の例は、算数でよく知られているまちがい方をもとに運営者がまとめたものです。</p>
+<div class="ex-box">
+  <p><strong>誤答例1：</strong>8時50分の40分後を「8時90分」と答える</p>
+  <p><strong>何が起きたか：</strong>50＋40＝90を、そのまま分のところに書いています。分は60になったら1時間にくり上がります。</p>
+  <p><strong>家庭での直し方：</strong>90分の中から60分を取り出して、1時間にします。90－60＝30。8時に1時間を足して、9時30分です。例題3のように「9時まであと10分、残り30分」と区切ると、くり上がりの計算をしなくてすみます。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例2：</strong>1時間15分－40分を「75分」と答える</p>
+  <p><strong>何が起きたか：</strong>1時間を100分と考えて、115－40＝75としています。1時間は60分です。</p>
+  <p><strong>家庭での直し方：</strong>1時間15分を分になおすと、60＋15＝75分。そこから40分を引いて35分です。「1時間は何分？」を、計算の前に声に出して確かめます。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例3：</strong>午前10時20分から午後1時までの時間を「9時間20分」と答える</p>
+  <p><strong>何が起きたか：</strong>10時20分から1時を引いています。午前と午後をまたいでいることが、式に入っていません。</p>
+  <p><strong>家庭での直し方：</strong>午後1時を13時と書きかえるか、正午で区切ります。10時20分から正午までが1時間40分、正午から午後1時までが1時間。合わせて2時間40分です。</p>
+</div>
+<div class="tip-box"><p><strong>家庭での声かけ例：</strong>「ちょうどの時刻まで、あと何分？」「1時間は何分だった？」「午前と午後をまたいでいる？」の3つです。</p></div>
+<p>Webドリルに時刻と時間の問題はまだありませんが、区切って足す・引くときに使うたし算とひき算は、<a href="/drill.html?grade=2">2年生</a>・<a href="/drill.html?grade=3">3年生のWebドリル</a>で練習できます。時刻と時間を学ぶ時期は<a href="/grade-3.html">3年生の学習内容</a>で確認できます。</p>
+
 <h2>よくある質問</h2>
 <h3>Q1. 150分は何時間ですか？</h3>
 <p>2時間30分です。150÷60＝2あまり30なので、2時間と30分になります。同じ手順で、75分は1時間15分、155分は2時間35分と求められます。</p>
@@ -383,10 +403,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>

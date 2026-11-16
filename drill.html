@@ -575,6 +575,7 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
 <!-- ========== TOP PAGE ========== -->
 <div id="topPage" class="page active">
+  <div style="background:#122A64;padding:2px 14px 0;"><nav aria-label="サイトメニュー" style="display:flex;gap:14px;justify-content:flex-end;"><a href="/about.html" style="color:#fff;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#fff;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <div class="hero">
     <span class="hero-logo">
       <img src="/logo.png" width="116" height="116" alt="にじゅうまるドリル ロゴ" style="display:block;margin:0 auto;filter:drop-shadow(0 3px 10px rgba(0,0,0,0.28));">
@@ -754,11 +755,71 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <section style="padding:8px 16px 4px;">
     <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:12px;">算数ドリルアプリの使い方と特長</h2>
-    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">このページは、小学1〜6年生の計算をブラウザでそのまま練習できる無料の算数ドリルです。上で<strong>学年</strong>と<strong>難易度（やさしい・ふつう・むずかしい）</strong>を選んで「スタート」を押すと、その学年の学習範囲に沿った問題が25問出題されます。答えを入力するたびにその場で採点され、最後に正答数と解答を確認できます。問題は毎回ランダムに作られるので、何度でも新しい問題で練習できます。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">このページは、小学1〜6年生の計算をブラウザでそのまま練習できる無料の算数ドリルです。上で<strong>学年</strong>と<strong>難易度（初級・中級・上級）</strong>を選んで「スタート」を押すと、その学年の学習範囲に沿った問題が25問出題されます。答えを入力するたびにその場で採点され、最後に正答数と解答を確認できます。問題は毎回ランダムに作られるので、何度でも新しい問題で練習できます。</p>
     <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">出題される内容は、たし算・ひき算・くり上がり／くり下がり・九九・わり算・分数・小数・割合など、学年ごとの指導内容に対応しています。たとえば1年生では10までのたし算から、6年生では分数の計算や割合まで、それぞれの学年でつまずきやすいポイントを含めて出題します。</p>
     <h3 style="font-size:15px;font-weight:700;color:#1E293B;margin:18px 0 8px;">タイムアタックや九九チャレンジも</h3>
     <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:12px;">通常のドリルに加えて、制限時間内に何問解けるかを競う「九九チャレンジ」や、解いた記録を全国ランキングに登録する機能もあります。ゲーム感覚で取り組めるので、「算数はつまらない」と感じているお子さんの入り口としてもおすすめです。紙で練習したいときは、問題プリントをPDFで保存することもできます。</p>
     <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:8px;">「どう教えたらいいか分からない」という保護者の方は、<a href="/sansu-onayami-guide.html" style="color:#2563EB;">算数のお悩み解決ガイド</a>や<a href="/grade-guide.html" style="color:#2563EB;">学年別の学習内容ガイド</a>もあわせてご覧ください。つまずきの原因と、家庭でできる具体的な対策をまとめています。</p>
+  </section>
+
+  <!-- 学年別：出る問題・考え方・誤答例（初期HTMLに含める） -->
+  <section id="grade-notes" style="padding:8px 16px 4px;">
+    <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:8px;">学年別：出る問題と、まちがえたときの見方</h2>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;">このドリルは問題をその場で作るため、同じ学年・同じ難易度でも毎回ちがう数が出ます。ここでは、学年ごとに「どんな形の問題が出るか」「考え方」「よくある誤答と、その原因」「家庭での確かめ方」をまとめました。まちがえた問題と同じ形の誤答があれば、原因の見当がつきます。誤答の例は、算数でよく知られているまちがい方をもとに運営者がまとめたもので、すべてのお子さんに当てはまるわけではありません。</p>
+
+    <h3 id="grade1" style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">1年生：10のまとまりを作る</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>出る問題。</strong>初級は「3＋4」「5－2」のように答えが10までの計算、中級から「8＋5」「13－6」のくり上がり・くり下がりが入り、上級では「7＋6＋1」のような3つの数のたし算も出ます。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>考え方。</strong>8＋5は、8があと2で10になるので、5を2と3に分けて「10と3で13」。13－6は、13を10と3に分け、10から6を引いた4に3を足して7。どちらも「10を作る・10から引く」が土台です。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>よくある誤答。</strong>「8＋5＝12」は、指で数えたときに8を1つ目として数え始めた数えまちがい。「13－6＝3」は、一の位だけを見て6－3をした答えです。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>家庭での確かめ方。</strong>おはじきを10個並べ、いくつか手でかくして「かくれているのは何個？」。10の分け方（1と9、2と8…）がすぐ出るかを見ます。声かけは「あといくつで10になる？」。</p>
+    <p style="font-size:13px;color:#475569;line-height:1.9;margin-bottom:6px;">読む：<a href="/grade-1.html" style="color:#2563EB;">1年生の学習内容</a>　<a href="/grade-1-tips.html" style="color:#2563EB;">1年生の家庭ガイド</a>　<a href="/addition-guide.html" style="color:#2563EB;">たし算の教え方</a>　<a href="/subtraction-guide.html" style="color:#2563EB;">ひき算の教え方</a></p>
+    <h3 id="grade2" style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">2年生：2けたの計算と九九</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>出る問題。</strong>初級は「32＋5」と2〜5の段の九九、中級は「47＋36」「82－35」のような2けた同士と九九全体、上級は答えが100をこえることもあるたし算と、6〜9の段どうしの九九（7×8、6×9など）が中心です。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>考え方。</strong>2けたの計算は、位ごとに分けます。47＋36なら「40＋30＝70、7＋6＝13、合わせて83」。九九は、7×8が出なければ8×7に入れかえる、7×7＝49に7を足す、という戻り方を持っておくと止まりにくくなります。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>よくある誤答。</strong>「47＋36＝73」はくり上げた1の足し忘れ。「82－35＝53」は、一の位で5－2をしてしまう逆引きです（正しくは47）。九九では7×6＝48、6×8＝42のように、近い答えどうしの取りちがえが目立ちます。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>家庭での確かめ方。</strong>まちがえた九九をふせんに書いて冷蔵庫にはり、通るたびに1回言う。声かけは「7×8が出ないときは、8×7ならどう？」。</p>
+    <p style="font-size:13px;color:#475569;line-height:1.9;margin-bottom:6px;">読む：<a href="/grade-2.html" style="color:#2563EB;">2年生の学習内容</a>　<a href="/grade-2-tips.html" style="color:#2563EB;">2年生の家庭ガイド</a>　<a href="/kuku-tips.html" style="color:#2563EB;">九九の覚え方</a>　<a href="/multiplication-guide.html" style="color:#2563EB;">かけ算の教え方</a></p>
+    <h3 id="grade3" style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">3年生：わり算と、あまり</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>出る問題。</strong>3けたのたし算・ひき算、「24×7」のような2けた×1けた、九九の逆で求めるわり算が出ます。中級・上級には「23÷4」のようなあまりのあるわり算があり、このドリルでは<strong>商（5あまり3の「5」）だけ</strong>を入力します。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>考え方。</strong>23÷4は「4の段で23をこえない、いちばん大きい答え」を探します。4×5＝20、4×6＝24でこえるので商は5、あまりは23－20＝3。あまりは、わる数より小さくなります。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>よくある誤答。</strong>「23÷4＝4あまり7」は、商を1つ小さく取ったもの。あまり7がわる数4より大きいので気づけます。「56÷7＝9」は、7×8と7×9の取りちがえで、九九に戻るサインです。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>家庭での確かめ方。</strong>「わる数×商＋あまり」で元の数に戻るかを一緒に計算します（4×5＋3＝23）。声かけは「あまりは、わる数より小さくなっている？」。</p>
+    <p style="font-size:13px;color:#475569;line-height:1.9;margin-bottom:6px;">読む：<a href="/grade-3.html" style="color:#2563EB;">3年生の学習内容</a>　<a href="/grade-3-tips.html" style="color:#2563EB;">3年生の家庭ガイド</a>　<a href="/division-guide.html" style="color:#2563EB;">わり算の教え方</a></p>
+    <h3 id="grade4" style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">4年生：大きな数・2けたのかけ算・小数</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>出る問題。</strong>「30,000＋45,000」のような大きな数、「23×14」のような2けた×2けた、「96÷4」のように商が2けたになるわり算、「1.7＋0.5」「2.3－0.8」のような小数のたし算・ひき算です。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>考え方。</strong>23×14は「23×10＝230」と「23×4＝92」に分けて足し、322。小数は、0.1がいくつ分かで考えます。1.7＋0.5は、0.1が17個と5個で22個、つまり2.2。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>よくある誤答。</strong>「23×14＝115」は、23×4＝92と23×1＝23を、位をずらさずに足したもの。「1.7＋0.5＝1.12」は、7＋5＝12を小数点の右にそのまま書いた答えです。「2.3－0.8＝2.5」は、8－3をした逆引きです。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>家庭での確かめ方。</strong>答えを出す前に「だいたいいくつ？」と見積もります。23×14なら20×15で300くらい。115は小さすぎると気づけます。小数は、ものさしの目もり（1mm＝0.1cm）で確かめられます。</p>
+    <p style="font-size:13px;color:#475569;line-height:1.9;margin-bottom:6px;">読む：<a href="/grade-4.html" style="color:#2563EB;">4年生の学習内容</a>　<a href="/grade-4-tips.html" style="color:#2563EB;">4年生の家庭ガイド</a>　<a href="/decimal-fraction-guide.html" style="color:#2563EB;">小数と分数</a>　<a href="/gaisuu-shishagoonyuu-guide.html" style="color:#2563EB;">がい数・四捨五入</a></p>
+    <h3 id="grade5" style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">5年生：小数のかけ算・分数・割合・速さ</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>出る問題。</strong>「0.6×0.7」のような小数のかけ算、小数のわり算、分数のたし算（上級は「1/3＋1/4」のように分母がちがうもの）、「800円の30%」、直方体の体積、速さ・道のり・時間が出ます。分数の答えは、分子と分母を分けて入力します。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>考え方。</strong>0.6×0.7は、6×7＝42を出してから、小数点より右のけた数の合計（1けた＋1けた）だけ小数点を動かして0.42。1/3＋1/4は、分母を12にそろえて4/12＋3/12＝7/12。800円の30%は800×0.3＝240円。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>よくある誤答。</strong>「0.6×0.7＝4.2」は小数点の位置ちがい。0.6も0.7も1より小さいので、答えが元の数より大きくなるのはおかしい、と気づけます。「1/3＋1/4＝2/7」は分母どうし・分子どうしを足したもの。「800円の30%＝560円」は「30%引き」と読みちがえた答えです。速さでは、道のり÷時間と、速さ×時間の取りちがえが出ます。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>家庭での確かめ方。</strong>買い物で「20%引きだといくら引かれる？ 払うのはいくら？」と2つに分けて聞きます。声かけは「かける数が1より小さいとき、答えは元より大きくなる？ 小さくなる？」。</p>
+    <p style="font-size:13px;color:#475569;line-height:1.9;margin-bottom:6px;">読む：<a href="/grade-5.html" style="color:#2563EB;">5年生の学習内容</a>　<a href="/grade-5-tips.html" style="color:#2563EB;">5年生の家庭ガイド</a>　<a href="/percentage-guide.html" style="color:#2563EB;">割合の教え方</a>　<a href="/fractions-guide.html" style="color:#2563EB;">分数の教え方</a>　<a href="/baisuu-yakusuu-guide.html" style="color:#2563EB;">倍数・約数</a></p>
+    <h3 id="grade6" style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">6年生：分数のかけ算・わり算、比、比例・反比例</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>出る問題。</strong>「2/3÷3/4」のような分数のわり算、分数のかけ算、「8：12を簡単な比に」、「x×6＝42」のxを求める問題、比例・反比例（中級・上級）、円の面積（円周率は3.14）です。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>考え方。</strong>2/3÷3/4は、わる数の逆数をかけて2/3×4/3＝8/9。8：12は、両方を最大公約数の4でわって2：3。半径4cmの円の面積は、4×4×3.14＝50.24cm²です。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>よくある誤答。</strong>「2/3÷3/4＝6/12」は、ひっくり返さずにかけた答え。「8：12＝4：6」は、2でわっただけで、まだわれます。円の面積で「4×2×3.14＝25.12」としたものは、円周の長さ（直径×3.14）の式とまざっています。反比例で、xが2倍になったらyも2倍にしてしまうのもよく見ます。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>家庭での確かめ方。</strong>比は、めんつゆや乾物の「1：3でうすめる」を実際に量って確かめられます。声かけは「その比、まだ同じ数でわれる？」「面積の式かな、まわりの長さの式かな？」。</p>
+    <p style="font-size:13px;color:#475569;line-height:1.9;margin-bottom:6px;">読む：<a href="/grade-6.html" style="color:#2563EB;">6年生の学習内容</a>　<a href="/grade-6-tips.html" style="color:#2563EB;">6年生の家庭ガイド</a>　<a href="/fractions-guide.html" style="color:#2563EB;">分数の教え方</a>　<a href="/menseki-enza.html" style="color:#2563EB;">円周・円の面積</a></p>
+  </section>
+
+  <section id="feature-notes" style="padding:8px 16px 4px;">
+    <h2 style="font-size:17px;font-weight:700;color:#122A64;margin-bottom:8px;">九九チャレンジ・PDF・ランキングの使い方と注意点</h2>
+
+    <h3 style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">九九チャレンジ・段別トレーニング（めやす：2年生の後半から）</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;">九九チャレンジには、60秒で何問答えられるかを数える「1分間モード」と、まちがえるまで続く「無制限モード」があります。段別トレーニングは、選んだ段の×1〜×9が順番をまぜて1回ずつ、9問出ます。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>使う順番。</strong>学校で九九を習うのは2年生の後半です。まず段別トレーニングで、習った段を1つずつ合格にしていき、全部の段がそろってから1分間モードに進むのがおすすめです。覚えている途中でタイムを計ると、あせって7×6と7×8を取りちがえるなど、あいまいな答えを急いで出す練習になってしまうことがあります。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>3年生以上にも。</strong>わり算で手が止まるときは、九九に時間がかかっていることがあります。無制限モードで、どの段で止まるかを見てください。止まった段は<a href="/kuku-tips.html" style="color:#2563EB;">九九の覚え方</a>で、覚え直す順番を確認できます。</p>
+
+    <h3 style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">PDFダウンロード（全学年）</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;">学年・難易度・問題数（20問・30問・40問）を選ぶと、問題ページだけのPDFを保存できます。無料で、1日3回までです。A4・縦で印刷する想定で作っています。画面より紙のほうが集中できるお子さんや、筆算を書いて解かせたいときに向いています。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>注意点。</strong>無料のPDFには解答ページがつきません。丸つけは保護者の方が計算するか、同じ学年・難易度のWebドリルで形の近い問題を解いて確かめてください。問題は保存するたびに変わるので、同じプリントをもう一度作ることはできません。くり返し使う分は、先に必要な枚数を印刷しておいてください。解答つき・名前欄つきの100問PDFは<a href="/premium.html" style="color:#2563EB;">有料の機能</a>です。印刷して配るときの条件は<a href="/terms.html" style="color:#2563EB;">利用規約</a>に書いています。</p>
+
+    <h3 style="font-size:15px;font-weight:700;color:#122A64;margin:22px 0 8px;padding-left:10px;border-left:4px solid #FFD873;">全国ランキング（全学年・登録は任意）</h3>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;">ドリルを解き終わったあと、ニックネームを入れるとタイムを登録できます。このページには、算数ドリル・九九1分間・九九無制限のそれぞれ上位10件が表示されます。登録しなくても、ドリルと採点はそのまま使えます。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin-bottom:10px;"><strong>注意点。</strong>ニックネームは誰でも見られます。本名・学校名・住んでいる場所が分かる言葉は入れないでください。お子さまが登録するときは、保護者の方が入力内容を確認してください。また、ランキングは速さの順です。正確に解けるようになる前に速さだけを追うと、見直しをしなくなることがあります。まずは全問正解、そのあとでタイム、の順をおすすめします。順位が気になって楽しめないお子さんは、登録せずに自分の前回のタイムとくらべる使い方で十分です。</p>
   </section>
 
   <!-- 関連する学習記事（初期HTMLに含める） -->
@@ -777,10 +838,14 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
 
   <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </div>
 
@@ -910,10 +975,14 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   </div>
   <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </div>
 
@@ -1099,10 +1168,14 @@ footer{text-align:center;padding:20px 16px 32px;font-size:11px;color:var(--text-
   </div>
   <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </div>
 </template>

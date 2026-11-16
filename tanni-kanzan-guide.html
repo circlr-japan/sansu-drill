@@ -105,11 +105,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>単位の換算 完全ガイド（長さ・かさ・重さ）</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年11月16日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
   <p>📏 「1mは何cm？」「3Lは何dL？」——単位の換算は、小学2〜3年生でつまずきやすい単元です。このページでは換算表・覚え方のコツ・例題をまとめて解説します。</p>
 </div>
@@ -259,6 +259,26 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </ol>
 <p>5問目のような複名数の変換までできれば、テストの計算問題はほぼ対応できます。文章題では「単位をそろえてから計算する」ことを忘れずに。たとえば「1m20cmのリボンから45cmを切り取ると残りは？」は、120cm−45cm＝75cmと、先にcmへそろえるのが正解への近道です。</p>
 
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>単位の換算は、「10倍か100倍か1000倍か」と「大きくするのか小さくするのか」の2か所でまちがえます。誤答の例は、算数でよく知られているまちがい方をもとに運営者がまとめたものです。</p>
+<div class="ex-box">
+  <p><strong>誤答例1：</strong>2L＝20mL</p>
+  <p><strong>何が起きたか：</strong>dL（デシリットル）とmL（ミリリットル）がまざっています。1L＝10dLの関係を、mLに使っています。</p>
+  <p><strong>家庭での直し方：</strong>「L→dL→mL」を、1L＝10dL、1dL＝100mLと2段で書きます。2L＝20dL＝2000mL。1Lの牛乳パックと、100mLくらいの小さなカップを並べると、20mLではとても足りないと分かります。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例2：</strong>250cm＝25m</p>
+  <p><strong>何が起きたか：</strong>10でわっています。1cm＝10mmの「10」が、cmとmの間にも出てきています。</p>
+  <p><strong>家庭での直し方：</strong>1m＝100cmなので、250cmの中に100cmが2つと、残り50cm。2m50cmです。「25mはプールの長さ。250cmはそんなに長い？」と、実物とくらべます。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例3：</strong>1500g＝15kg</p>
+  <p><strong>何が起きたか：</strong>1000でわるところを、100でわっています。0を2つ消しただけです。</p>
+  <p><strong>家庭での直し方：</strong>1000g＝1kgなので、1500gは1000gと500g。1kg500g（1.5kg）です。「15kgは、お米の大きな袋より重い。1500gは？」と聞くと、おかしさに気づけます。</p>
+</div>
+<div class="tip-box"><p><strong>家庭での声かけ例：</strong>「大きい単位に直すと、数は大きくなる？ 小さくなる？」「それ、実物だとどのくらいの長さ（重さ）？」の2つです。</p></div>
+<p>Webドリルに単位の換算そのものの問題はまだありませんが、換算で使う「×10・×100・×1000」の感覚は、<a href="/drill.html?grade=4">4年生のWebドリル</a>の大きな数の計算で確かめられます。単位を学ぶ時期は<a href="/grade-3.html">3年生の学習内容</a>でも確認できます。</p>
+
 <h2>よくある質問</h2>
 <h3>Q1. 単位の換算は何年生で習いますか？</h3>
 <p>長さ（mm・cm・m）とかさ（mL・dL・L）は小学2年生、km と重さ（g・kg・t）は小学3年生です。4年生以降も面積や体積の単位が登場するので、2・3年生でのつまずきは早めに解消しておきましょう。</p>
@@ -314,10 +334,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>

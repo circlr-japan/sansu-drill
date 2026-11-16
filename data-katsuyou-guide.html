@@ -121,11 +121,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>データの活用｜ドットプロット・代表値・柱状グラフ</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年11月16日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
   <p>📈 「データの活用」は小学6年生で学ぶ、いちばん新しいタイプの算数。計算のスピードよりも「グラフや表から正しく読み取る力」が問われます。中学の統計、そして大人になってからのデータ読解に直結する単元です。</p>
 </div>
@@ -226,6 +226,26 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </ul>
 <p>データの単元は、身のまわりの数字を「読む」体験がそのまま学習になります。グラフを見て感想を言い合うだけでも、読み取りの力は伸びていきます。</p>
 
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>代表値のまちがいは、計算そのものより「手順を1つ飛ばす」ことで起きます。誤答の例は、算数でよく知られているまちがい方をもとに運営者がまとめたものです。</p>
+<div class="ex-box">
+  <p><strong>誤答例1：</strong>データが「7、3、9、4、5」のとき、中央値を「9」と答える</p>
+  <p><strong>何が起きたか：</strong>書かれている順のまま、真ん中にある数を選んでいます。中央値は、大きさの順に並べたときの真ん中です。</p>
+  <p><strong>家庭での直し方：</strong>まず小さい順に書き直します。3、4、5、7、9。真ん中（3番目）は5です。「並べかえてから数える」を、毎回ノートに書く1行目にします。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例2：</strong>データが「3、5、5、6、8、9」のとき、中央値を「5」または「6」と答える</p>
+  <p><strong>何が起きたか：</strong>データが6個（偶数）なので、真ん中は3番目と4番目の2つになります。そのどちらか片方だけを答えています。</p>
+  <p><strong>家庭での直し方：</strong>真ん中が2つあるときは、その2つの平均をとります。（5＋6）÷2＝5.5。データに無い数が答えになってもかまわない、ということも合わせて伝えます。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例3：</strong>5人の得点「4、0、6、2、3」の平均を「15÷4＝3.75」と計算する</p>
+  <p><strong>何が起きたか：</strong>0点の人を人数に入れていません。0は「データが無い」のではなく、「0というデータがある」です。</p>
+  <p><strong>家庭での直し方：</strong>合計を出す前に、データの個数を数えて書いておきます。5人なので15÷5＝3。0点の人も1人です。</p>
+</div>
+<div class="tip-box"><p><strong>家庭での声かけ例：</strong>「小さい順に並べた？」「全部で何人分？ 0の人も1人だよね」「真ん中は1つ？ 2つ？」の3つで、たいてい自分で気づけます。</p></div>
+<p>Webドリルにデータの活用の問題はまだありませんが、自分の記録はそのまま教材になります。<a href="/drill.html?mode=kuku">九九チャレンジ</a>の1分間モードの正答数を1週間メモして、中央値と平均値を求めてみてください。学年ごとの学習内容は<a href="/grade-6.html">6年生の学習内容</a>で確認できます。</p>
+
 <h2>よくある質問</h2>
 <h3>Q1. ドットプロットとは？</h3>
 <p>数直線の上にデータを点で積み上げた図です。データの集まり具合・散らばり・外れ値がひと目でわかります。</p>
@@ -284,10 +304,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>

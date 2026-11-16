@@ -109,11 +109,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>小数・分数が苦手な子への教え方</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年11月16日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
   <p>🔢 3年生から始まる「小数・分数」は、初めて出会う「1より小さい数」。整数の感覚のまま計算すると、つまずきやすい単元です。このページでは小数を中心に、意味の教え方から小数点の位置のルール、分数との変換までを解説します。</p>
 </div>
@@ -192,6 +192,26 @@ footer a{color:#94A3B8;text-decoration:underline;}
   <li><strong>ドリルで反復：</strong>学年別ドリルで小数の計算を1日5問。位そろえ・小数点の位置を確認しながら</li>
 </ul>
 
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>小数の計算は、整数と同じように計算したあとの「小数点の位置」でまちがえます。答えの大きさを先に見当しておくと、自分で気づけます。誤答の例は、算数でよく知られているまちがい方をもとに運営者がまとめたものです。</p>
+<div class="ex-box">
+  <p><strong>誤答例1：</strong>2.4＋3＝2.7</p>
+  <p><strong>何が起きたか：</strong>筆算で、3を右はしにそろえて書いています。整数の筆算は右そろえですが、小数は小数点の位置でそろえます。</p>
+  <p><strong>家庭での直し方：</strong>3を「3.0」と書いてから筆算にします。2.4＋3.0＝5.4。見当でも、2と3で5より大きくなるはずなので、2.7は小さすぎると分かります。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例2：</strong>0.3×0.2＝0.6</p>
+  <p><strong>何が起きたか：</strong>3×2＝6を出したあと、小数点を1けた分しか動かしていません。小数点より右のけたは、0.3で1けた、0.2で1けた、合わせて2けたです。</p>
+  <p><strong>家庭での直し方：</strong>答えは0.06。「0.3の0.2倍」なので、0.3より小さくなるはず、と先に見当します。0.6は0.3より大きいので、おかしいと気づけます。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例3：</strong>1.2÷0.3＝0.4</p>
+  <p><strong>何が起きたか：</strong>12÷3＝4を出したあと、元の式に小数点があったので、答えにも小数点をつけています。</p>
+  <p><strong>家庭での直し方：</strong>わる数を10倍して3にしたら、わられる数も10倍して12にします。12÷3＝4。「1.2の中に0.3はいくつ入る？」と聞き、0.3、0.6、0.9、1.2と数えると4つで、4と確かめられます。</p>
+</div>
+<div class="tip-box"><p><strong>家庭での声かけ例：</strong>「かける数が1より小さいとき、答えは元の数より大きくなる？ 小さくなる？」「だいたい、いくつくらいになりそう？」と、計算の前に聞きます。</p></div>
+<p>小数のたし算・ひき算は<a href="/drill.html?grade=4">4年生のWebドリル</a>、小数のかけ算・わり算は<a href="/drill.html?grade=5">5年生のWebドリル</a>で練習できます。それぞれの学年で出る問題の形は、<a href="/drill.html#grade4">4年生の出題と誤答例</a>・<a href="/drill.html#grade5">5年生の出題と誤答例</a>にまとめています。</p>
+
 <h2>よくある質問</h2>
 <h3>Q1. 小数の意味はどう教える？</h3>
 <p>「0.1は1を10等分した1つ分」を、1Lます・ものさし・お金で量として体感させましょう。</p>
@@ -249,10 +269,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>

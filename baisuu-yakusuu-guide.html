@@ -103,11 +103,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>倍数と約数｜最大公約数・最小公倍数の求め方</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年11月16日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
   <p>🔢 倍数・約数は小学5年生の単元。言葉が似ていて混同しやすいうえ、直後に学ぶ約分・通分の土台になるため、ここでのつまずきは分数のつまずきに直結します。意味→見つけ方→公倍数・公約数の順に固めましょう。</p>
 </div>
@@ -186,6 +186,26 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <h2>約分・通分とのつながり（ここで効いてくる！）</h2>
 <p>倍数・約数を学んだ直後、5年生は分数の約分・通分を学びます。実は、<strong>約分＝分母と分子を最大公約数でわること、通分＝分母を最小公倍数にそろえること</strong>。たとえば12/18の約分は、12と18の最大公約数6でわって2/3。1/4と1/6の通分は、4と6の最小公倍数12で 3/12と2/12。倍数・約数がスラスラ出てくる子ほど、分数の計算が速く正確になります。詳しくは<a href="/fractions-guide.html">分数の教え方ガイド</a>をご覧ください。</p>
 
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>倍数・約数のまちがいは、「書きもらし」と「最小・最大の取りちがえ」に集まります。誤答の例は、算数でよく知られているまちがい方をもとに運営者がまとめたものです。</p>
+<div class="ex-box">
+  <p><strong>誤答例1：</strong>12の約数を「2、3、4、6」と答える</p>
+  <p><strong>何が起きたか：</strong>1と12（その数自身）を落としています。「わり切れる数」をさがすうちに、当たり前すぎる1と12が抜けます。</p>
+  <p><strong>家庭での直し方：</strong>かけ算のペアで書き出します。1×12、2×6、3×4。ペアの両はしから書くと、1と12が最初に出るので落としません。答えは1、2、3、4、6、12の6個です。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例2：</strong>6と8の最小公倍数を「48」と答える</p>
+  <p><strong>何が起きたか：</strong>6×8をしています。48は公倍数ではありますが、いちばん小さい公倍数ではありません。</p>
+  <p><strong>家庭での直し方：</strong>大きいほうの8の倍数を小さい順に言い、6でわれるかを確かめます。8（われない）、16（われない）、24（24÷6＝4）。最小公倍数は24です。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例3：</strong>12と18の最大公約数を「3」と答える</p>
+  <p><strong>何が起きたか：</strong>両方をわり切れる数を1つ見つけたところで止まっています。3は公約数ですが、最大ではありません。</p>
+  <p><strong>家庭での直し方：</strong>約数を両方とも書き出して、共通する数に丸をつけます。12は1、2、3、4、6、12。18は1、2、3、6、9、18。共通は1、2、3、6なので、最大公約数は6です。</p>
+</div>
+<div class="tip-box"><p><strong>家庭での声かけ例：</strong>最小公倍数には「それより小さい数で、両方の倍数になっているものはない？」、最大公約数には「それより大きい数でも、両方われない？」と、1つだけ聞いてみてください。</p></div>
+<p>倍数・約数は、分母がちがう分数のたし算で使います。<a href="/drill.html?grade=5">5年生のWebドリル</a>の上級には通分が必要な問題が出るので、ここで止まるようなら倍数に戻るサインです。出る問題の形は<a href="/drill.html#grade5">5年生の出題と誤答例</a>にまとめています。</p>
+
 <h2>よくある質問</h2>
 <h3>Q1. 倍数と約数、どっちがどっちか混乱します。</h3>
 <p>「倍数＝かけていく数（無限に続く）」「約数＝わり切る数（個数が決まる）」の対比で覚えましょう。3の倍数は3の段の続き、と九九に結びつけるのも有効です。</p>
@@ -241,10 +261,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>

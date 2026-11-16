@@ -116,11 +116,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>円周の求め方・円の面積｜小学6年生 公式とコツ</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年11月16日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
   <p>⭕ 円周と円の面積は、公式を「覚える」だけでなく「使い分ける」のがポイント。テストによく出る「円周から半径・面積を逆算する問題」まで、例題つきでていねいに解説します。</p>
 </div>
@@ -225,6 +225,10 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <p>「まわりの長さ＝図形をぐるっと一周なぞった長さ」という意味に立ち返れば、直径の分を忘れません。図に指でなぞって確認する習慣をつけましょう。</p>
 
+<h2>家庭での声かけと、ドリルでの確かめ</h2>
+<div class="tip-box"><p><strong>家庭での声かけ例：</strong>式を書く前に「その数は直径？ 半径？」、答えを書いたあとに「求めたのは長さ（cm）？ 広さ（cm²）？」と聞きます。半径4cmの円で「4×2×3.14＝25.12」と書いていたら、それは円周の長さです。面積なら4×4×3.14＝50.24cm²になります。</p></div>
+<p>円の面積は<a href="/drill.html?grade=6">6年生のWebドリル</a>に出ます（円周率は3.14）。答えが小数になるので、半径×半径を先に計算してから3.14をかける順番を、ドリルでも試してみてください。出る問題の形は<a href="/drill.html#grade6">6年生の出題と誤答例</a>にまとめています。</p>
+
 <h2>よくある質問</h2>
 <h3>Q1. 円周25.12cmの円の半径と面積は？</h3>
 <p>半径4cm、面積50.24cm²です。25.12÷3.14＝8（直径）→8÷2＝4（半径）→4×4×3.14＝50.24。</p>
@@ -282,10 +286,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>

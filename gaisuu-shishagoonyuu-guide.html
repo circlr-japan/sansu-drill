@@ -118,11 +118,11 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </head>
 <body>
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>がい数と四捨五入｜切り上げ・切り捨ての使い分け</h1>
 </div>
 <div class="content">
-<p class="byline">最終更新: 2026年9月27日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
+<p class="byline">最終更新: 2026年11月16日｜執筆・運営: <a href="/about.html" style="color:inherit;">丹羽拓馬</a></p>
 <div class="eyecatch">
   <p>📊 がい数（およその数）は小学4年生の単元。四捨五入そのものより、「どの位を四捨五入するのか」という日本語の読み取りでつまずく場合があります。まず混同しやすい「繰り上げ」と「切り上げ」の違いをはっきりさせてから、言い方のパターンを整理して攻略しましょう。</p>
 </div>
@@ -222,6 +222,26 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <p>「計算してから四捨五入」ではなく「四捨五入してから計算」する点に注意。見積もりの目的は「速くおよその大きさを知る」ことだからです。この感覚は、買い物・旅行の予算・ニュースの数字など、大人になってからも毎日使う一生モノのスキルです。</p>
 <p>また、グラフをかくときにも、がい数は活躍します。「1年間の来場者数 38,672人」をそのまま棒グラフにはできないので、「約39,000人」「約4万人」と丸めて目もりを決めます。社会科の資料読み取りでも同じ考え方を使うので、教科をこえてつながる単元です。</p>
 
+<h2>よくある誤答例と、家庭での直し方</h2>
+<p>がい数のまちがいは、「見る位がずれる」「0を書かない」「範囲のはしを入れてしまう」の3つが代表的です。誤答の例は、算数でよく知られているまちがい方をもとに運営者がまとめたものです。</p>
+<div class="ex-box">
+  <p><strong>誤答例1：</strong>3449を百の位までのがい数にして「3500」と答える</p>
+  <p><strong>何が起きたか：</strong>一の位から順に四捨五入を重ねています。9を切り上げて3450、次に5を切り上げて3500、という進め方です。四捨五入で見るのは、残す位の1つ下の数字だけです。</p>
+  <p><strong>家庭での直し方：</strong>百の位まで残すので、見るのは十の位の「4」だけ。4は切り捨てなので3400です。見る数字に丸をつけ、それより下の位は指でかくしてしまいます。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例2：</strong>2961を上から2けたのがい数にして「30」と答える</p>
+  <p><strong>何が起きたか：</strong>上から3けた目の6を切り上げて、29を30にするところまでは合っています。そのあと、残りの位を0でうめていません。</p>
+  <p><strong>家庭での直し方：</strong>がい数にしても、数の大きさ（けた数）は変わりません。2961は約3000。「元の数は何千くらい？」と聞くと、30ではおかしいと気づけます。</p>
+</div>
+<div class="ex-box">
+  <p><strong>誤答例3：</strong>「四捨五入して千の位までのがい数にすると5000になる整数」の範囲を「4500以上5500以下」と答える</p>
+  <p><strong>何が起きたか：</strong>5500を入れています。5500は百の位が5なので切り上げて6000になり、5000にはなりません。</p>
+  <p><strong>家庭での直し方：</strong>はしの数を実際に四捨五入してみます。4500は5000、5499も5000、5500は6000。なので「4500以上5499以下」または「4500以上5500未満」です。</p>
+</div>
+<div class="tip-box"><p><strong>家庭での声かけ例：</strong>「どの位の数字を見て決めた？ その数字に丸をつけてみて」「元の数は、だいたい何千？ 何万？」の2つです。</p></div>
+<p>がい数は、計算の答えを見当するときに使います。<a href="/drill.html?grade=4">4年生のWebドリル</a>の2けた×2けたを解く前に、「だいたいいくつ？」とがい数で見積もってから答えを入れる練習がおすすめです。出る問題の形は<a href="/drill.html#grade4">4年生の出題と誤答例</a>にまとめています。</p>
+
 <h2>よくある質問</h2>
 <h3>Q1. 四捨五入のやり方は？</h3>
 <p>残す位の1つ下の数字を見て、0〜4なら切り捨て、5〜9なら1くり上げます。見る位に○をつけてから判断するのがコツです。</p>
@@ -288,10 +308,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 </div>
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>

@@ -56,7 +56,7 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <body>
 
 <div class="header">
-  <a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 12px;"><a href="/" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;"><img src="/logo.png" alt="にじゅうまるドリル" width="28" height="28" style="display:block;"><span style="color:#122A64;font-size:13px;font-weight:800;">にじゅうまるドリル</span></a><nav aria-label="サイトメニュー" style="display:flex;gap:14px;"><a href="/about.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">サイトについて</a><a href="/contact.html" style="color:#6B5A2E;font-size:12px;font-weight:700;text-decoration:underline;display:inline-block;padding:8px 2px;">お問い合わせ</a></nav></div>
   <h1>📩 お問い合わせ</h1>
   <p>ご質問・ご意見・不具合のご報告</p>
 </div>
@@ -64,11 +64,30 @@ footer a{color:#94A3B8;text-decoration:underline;}
 <div class="content">
 
   <div class="notice">
-    <p>📌 よくあるご質問は <a href="/faq.html" style="color:#1D4ED8;font-weight:700;">FAQ ページ</a> でご確認ください。解決しない場合はメールにてお問い合わせください。</p>
+    <p>📌 よくあるご質問は <a href="/faq.html" style="color:#1D4ED8;font-weight:700;">FAQ ページ</a> でご確認ください。解決しない場合は、下のフォームまたはメールでお問い合わせください。</p>
   </div>
 
   <div class="card">
-    <p style="font-size:14px;color:#334155;line-height:1.9;margin:0;">にじゅうまる。算数ドリルは個人で運営している無料の学習サイトです。お寄せいただいたご意見やご報告は、サイトを改善するうえでとても貴重な手がかりになります。とくに「問題の答えが違うのでは？」「解説のこの部分が分かりにくい」といった内容の誤りに関するご指摘は、確認のうえ速やかに修正しますので、遠慮なくお知らせください。いただいたお問い合わせには、運営者が一つずつ目を通し、通常2〜3営業日以内に返信いたします。</p>
+    <p style="font-size:14px;color:#334155;line-height:1.9;margin:0;">にじゅうまる。算数ドリルは、個人で運営している学習サイトです（Webドリルは無料）。お寄せいただいたご意見やご報告は、サイトを改善するうえでとても貴重な手がかりになります。とくに「問題の答えが違うのでは？」「解説のこの部分が分かりにくい」といった内容の誤りに関するご指摘は、確認のうえ速やかに修正しますので、遠慮なくお知らせください。いただいたお問い合わせには、運営者が一つずつ目を通し、通常2〜3営業日以内に返信いたします。</p>
+  </div>
+
+  <!-- お問い合わせフォーム（Googleフォーム） -->
+  <div class="card" id="form">
+    <div class="card-icon">📝</div>
+    <h2>お問い合わせフォーム</h2>
+    <p>入力するのは、お名前・メールアドレス・お問い合わせの種別・内容（以上は必須）と、お子さまの学年（分かる場合のみ・任意）です。送信すると、受け付けた旨のメッセージが表示されます。通常 <strong>2〜3営業日以内</strong> に、入力いただいたメールアドレスへ返信します。</p>
+    <div style="max-width:720px;margin:0 auto;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-C3X0E85oKahc8rcIIPsheFw1C621gIrv2MiFpqsOy5BU9Q/viewform?embedded=true" style="width:100%;height:1100px;border:0;" loading="lazy" title="にじゅうまるドリル お問い合わせ">読み込んでいます…</iframe>
+    </div>
+    <p class="email-note">フォームが表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSd-C3X0E85oKahc8rcIIPsheFw1C621gIrv2MiFpqsOy5BU9Q/viewform" target="_blank" rel="noopener" style="color:#2563EB;">別のタブでフォームを開く</a>か、下のメールをご利用ください。フォームには Google フォームを利用しています。</p>
+  </div>
+
+  <div class="card">
+    <div class="card-icon">🔒</div>
+    <h2>お問い合わせの前に</h2>
+    <p><strong>保護者の方からお送りください。</strong>当サイトはお子さまの個人情報を集めていません。お子さまが気づいた誤りや要望も、保護者の方が代わりにお知らせください。</p>
+    <p><strong>お預かりする情報の使い道。</strong>お名前とメールアドレスは、お問い合わせへの返信と、ご指摘内容の確認のためだけに使います。広告やお知らせの配信など、ほかの目的には使いません。くわしくは<a href="/privacy.html" style="color:#2563EB;">プライバシーポリシー</a>をご覧ください。</p>
+    <p style="margin-bottom:0;"><strong>誤りのご指摘は歓迎します。</strong>「何年生の、どのページ（またはどのドリル）の、どの問題か」を書いていただけると、早く確認できます。例：「4年生・中級のドリルで、わり算のあまりがわる数より大きくなっていた」「分数の教え方のページ、通分の例題の答えが合わない」。</p>
   </div>
 
   <!-- メールお問い合わせ -->
@@ -107,10 +126,14 @@ footer a{color:#94A3B8;text-decoration:underline;}
 
 <footer>
   © 2025 にじゅうまる。算数ドリル. All rights reserved.<br>
-  <a href="/privacy.html">プライバシーポリシー</a>&nbsp;|&nbsp;
-  <a href="/tokusho.html">特定商取引法に基づく表記</a>&nbsp;|&nbsp;
-  <a href="/contact.html">お問い合わせ</a>&nbsp;|&nbsp;
-  <a href="/about.html">サイトについて</a>
+  <nav aria-label="フッターメニュー" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;margin-top:8px;font-size:13px;line-height:1.6;">
+    <a href="/" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">トップ</a>
+    <a href="/about.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">サイトについて・運営者情報</a>
+    <a href="/privacy.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">プライバシーポリシー</a>
+    <a href="/contact.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">お問い合わせ</a>
+    <a href="/terms.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">利用規約・免責事項</a>
+    <a href="/tokusho.html" style="color:#64748B;text-decoration:underline;display:inline-block;padding:6px 2px;">特定商取引法に基づく表記</a>
+  </nav>
 </footer>
 </body>
 </html>
